@@ -1,0 +1,15 @@
+[54, 57]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest14077.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,23:CD,28:CD,32:CD,37:CD,42:CD,47:CD,51:CD,54
+23 :: CALL :: call :: Ljava/lang/String :: v14 = v10.doSomething(v9)::JM,54:CL,177
+28 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v15 = new java.lang.StringBuilder::JM,54
+32 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v15.append(#(SELECT * from USERS w...))::JM,54
+37 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v19.append(v14)::JM,54
+42 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v21.append(#('))::JM,54
+47 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::JM,54
+51 :: CALL :: call :: Ljava/sql/Statement :: v28 = getSqlStatement()::JM,54
+54 :: CALL :: call :: V :: v28.addBatch(v26)::JM,54
+177 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest14077.Test.doSomething(java.lang.String)::CF,178:CD,182:CD,186
+178 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest14077.Test.doSomething(java.lang.String)::JM,54
+182 :: CALL :: call :: Ljava/lang/String :: v5 = escapeHtml(p1 $param )::JM,182:JM,186
+186 :: NORM :: compound :: Ljava/lang/String :: return v5::CF,178

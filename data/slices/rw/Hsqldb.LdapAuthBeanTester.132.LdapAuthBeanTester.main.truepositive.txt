@@ -1,0 +1,13 @@
+[164, 168, 159]
+1 :: ENTR :: entry :: null :: org.hsqldb.auth.LdapAuthBeanTester.main(java.lang.String[])::CD,37:CD,46:CD,75:CD,79:CD,84:CD,88:CD,158
+158 :: PRED :: IF :: Z :: if (v18 == #(null)) goto 264::CF,159:CD,164:CD,168
+159 :: NORM :: declaration :: Ljava/io/File :: v59 = new java.io.File::JM,168
+164 :: CALL :: call :: Z :: v62 = v59.isFile()::JM,168
+37 :: NORM :: declaration :: Ljava/io/File :: v5 = new java.io.File::
+38 :: EXPR :: reference :: Ljava/lang/Object :: v7 = p1 $sa [#(0)]::
+168 :: PRED :: IF :: Z :: if (v62 != #(0)) goto 260::
+46 :: CALL :: call :: Z :: v10 = v5.isFile()::
+75 :: NORM :: declaration :: Ljava/util/Properties :: v11 = new java.util.Properties::JM,158
+79 :: NORM :: declaration :: Ljava/io/FileInputStream :: v13 = new java.io.FileInputStream::
+84 :: CALL :: call :: V :: v11.load(v13)::
+88 :: CALL :: call :: Ljava/lang/String :: v18 = v11.getProperty(#(trustStore))::JM,158

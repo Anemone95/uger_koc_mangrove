@@ -1,0 +1,23 @@
+[81, 77]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest02186.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,21:CD,25:CD,30:CD,35:CD,40:CD,45:CD,50:CD,51:CD,55:CD,60:CD,65:CD,70:CD,74:CD,77:CD,91:JM,16:JM,20
+7 :: CALL :: call :: Ljava/util/Enumeration :: v7 = p1 $request .getHeaderNames()::JM,16:JM,20:JM,11:JM,15
+11 :: CALL :: call :: Z :: v9 = v7.hasMoreElements()::JM,16:JM,20:JM,11:JM,15
+15 :: PRED :: IF :: Z :: if (v9 == #(0)) goto 32::CF,91:CD,16:CD,20:JM,11:JM,15
+16 :: CALL :: call :: Ljava/lang/Object :: v12 = v7.nextElement()::JM,16:JM,20:JM,11:JM,15
+20 :: EXPR :: assign :: Ljava/lang/Object :: v13 = CHECKCAST v12::DD,91
+21 :: NORM :: declaration :: Ljava/util/ArrayList :: v15 = new java.util.ArrayList::JM,50
+25 :: CALL :: call :: Z :: v19 = v15.add(#(safe))::
+30 :: CALL :: call :: Z :: v21 = v15.add(v14)::
+35 :: CALL :: call :: Z :: v24 = v15.add(#(moresafe))::
+40 :: CALL :: call :: Ljava/lang/Object :: v26 = v15.remove(#(0))::
+45 :: CALL :: call :: Ljava/lang/Object :: v29 = v15.get(#(1))::JM,50
+50 :: EXPR :: assign :: Ljava/lang/Object :: v30 = CHECKCAST v29::JM,77:CF,51
+51 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v31 = new java.lang.StringBuilder::JM,77
+55 :: CALL :: call :: Ljava/lang/StringBuilder :: v35 = v31.append(#(SELECT * from USERS w...))::JM,77
+60 :: CALL :: call :: Ljava/lang/StringBuilder :: v37 = v35.append(v30)::JM,77
+65 :: CALL :: call :: Ljava/lang/StringBuilder :: v40 = v37.append(#('))::JM,77
+70 :: CALL :: call :: Ljava/lang/String :: v42 = v40.toString()::JM,77
+74 :: CALL :: call :: Ljava/sql/Statement :: v44 = getSqlStatement()::JM,77
+77 :: CALL :: call :: Z :: v46 = v44.execute(v42)::JM,77
+91 :: EXPR :: assign :: null :: PHI v14 = #(), v13::CF,21

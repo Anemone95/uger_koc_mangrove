@@ -1,0 +1,29 @@
+[81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 95]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest02178.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,21:CD,25:CD,55:CD,59:CD,64:CD,69:CD,74:CD,78:CD,81:CD,90:CD,105:CD,106:JM,16:JM,20
+7 :: CALL :: call :: Ljava/util/Enumeration :: v7 = p1 $request .getHeaderNames()::JM,16:JM,20:JM,11:JM,15
+11 :: CALL :: call :: Z :: v9 = v7.hasMoreElements()::JM,16:JM,20:JM,11:JM,15
+15 :: PRED :: IF :: Z :: if (v9 == #(0)) goto 36::CF,105:CD,16:CD,20:JM,11:JM,15
+16 :: CALL :: call :: Ljava/lang/Object :: v12 = v7.nextElement()::JM,16:JM,20:JM,11:JM,15
+20 :: EXPR :: assign :: Ljava/lang/Object :: v13 = CHECKCAST v12::DD,105
+21 :: CALL :: call :: I :: v16 = v14.length()::JM,25
+25 :: PRED :: IF :: Z :: if (v16 <= #(1)) goto 79::CF,106:CF,26:CD,31:CD,35:CD,39:CD,40:CD,44:CD,51
+26 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v18 = new java.lang.StringBuilder::JM,106
+31 :: CALL :: call :: I :: v21 = v14.length()::JM,39
+35 :: CALL :: call :: I :: v24 = #(Z).length()::JM,39
+39 :: EXPR :: assign :: Ljava/lang/Object :: v25 = v21 - v24::JM,106
+40 :: CALL :: call :: I :: v27 = v14.length()::JM,106
+44 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v18.replace(v25, v27, #(Z))::JM,106
+51 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::JM,106
+55 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v33 = new java.lang.StringBuilder::JM,90
+59 :: CALL :: call :: Ljava/lang/StringBuilder :: v37 = v33.append(#(SELECT * from USERS w...))::JM,90
+64 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v37.append(v32)::JM,90
+69 :: CALL :: call :: Ljava/lang/StringBuilder :: v42 = v39.append(#('))::JM,90
+74 :: CALL :: call :: Ljava/lang/String :: v44 = v42.toString()::JM,90
+78 :: CALL :: call :: Ljava/sql/Statement :: v46 = getSqlStatement()::JM,90
+81 :: NORM :: declaration :: [I :: v48 = new []::JM,90
+82 :: EXPR :: modify :: I :: v48[#(0)] = #(1)::
+86 :: EXPR :: modify :: I :: v48[#(1)] = #(2)::
+90 :: CALL :: call :: Z :: v50 = v46.execute(v44, v48)::JM,90
+105 :: EXPR :: assign :: null :: PHI v14 = #(), v13::JM,25:JM,39:DD,106
+106 :: EXPR :: assign :: null :: PHI v32 = v14, v31::CF,55:JM,90

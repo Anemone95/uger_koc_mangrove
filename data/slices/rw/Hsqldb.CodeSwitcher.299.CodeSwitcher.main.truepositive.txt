@@ -1,0 +1,58 @@
+[568, 573]
+1 :: ENTR :: entry :: null :: org.hsqldb.util.CodeSwitcher.main(java.lang.String[])::CD,5:JM,513:JM,534:JM,520:JM,527:CD,9:CD,10:JM,104
+513 :: NORM :: declaration :: Ljava/util/Vector :: v4 = new java.util.Vector::DD,517
+5 :: NORM :: declaration :: Lorg/hsqldb/util/CodeSwitcher :: v3 = new org.hsqldb.util.CodeSwitcher::JM,595:JM,568:JM,632:JM,600:JM,617:JM,590
+517 :: EXPR :: modify :: Ljava/util/Vector :: p0 $this .vList = v4::
+520 :: NORM :: declaration :: Ljava/util/Vector :: v6 = new java.util.Vector::DD,524
+9 :: EXPR :: assign :: I :: v5 = p1 $a .length::DD,10
+10 :: PRED :: IF :: Z :: if (v5 != #(0)) goto 24::CD,104:CD,105:CD,309
+524 :: EXPR :: modify :: Ljava/util/Vector :: p0 $this .vSwitchOn = v6::
+15 :: EXPR :: reference :: Ljava/lang/Object :: v9 = p1 $a [v49]::JM,24:JM,43:JM,64:JM,85:JM,595:JM,568:JM,632:JM,600:JM,617:JM,590
+527 :: NORM :: declaration :: Ljava/util/Vector :: v8 = new java.util.Vector::DD,531
+19 :: CALL :: call :: Z :: v12 = v9.startsWith(#(+))::JM,24
+531 :: EXPR :: modify :: Ljava/util/Vector :: p0 $this .vSwitchOff = v8::
+534 :: NORM :: declaration :: Ljava/util/Vector :: v10 = new java.util.Vector::
+24 :: PRED :: IF :: Z :: if (v12 == #(0)) goto 63::CD,28:CD,33:CD,38:CD,43
+25 :: EXPR :: reference :: Ljava/util/Vector :: v13 = v3.vSwitchOn::
+28 :: CALL :: call :: Ljava/lang/String :: v16 = v9.substring(#(1))::
+33 :: CALL :: call :: V :: v13.addElement(v16)::
+38 :: CALL :: call :: Z :: v20 = v9.startsWith(#(--basedir=))::JM,43
+43 :: PRED :: IF :: Z :: if (v20 == #(0)) goto 94::CF,44:CD,45:CD,49:CD,59:CD,64
+44 :: NORM :: declaration :: Ljava/io/File :: v21 = new java.io.File::
+45 :: CALL :: call :: I :: v23 = #(--basedir=).length()::
+49 :: CALL :: call :: Ljava/lang/String :: v25 = v9.substring(v23)::
+563 :: ENTR :: entry :: null :: org.hsqldb.util.CodeSwitcher.addDir(java.lang.String)::CD,568:CD,573:JM,595:JM,632:JM,600:JM,617:JM,590
+568 :: NORM :: declaration :: Ljava/io/File :: v4 = new java.io.File::JM,595:JM,632:JM,600:JM,617:JM,590
+59 :: CALL :: call :: Z :: v29 = v9.startsWith(#(--pathlist=))::JM,64
+573 :: CALL :: call :: V :: p0 $this .addDir(v4)::JM,595:JM,568:JM,632:JM,600:JM,617:JM,590:CL,581
+64 :: PRED :: IF :: Z :: if (v29 == #(0)) goto 125::CF,65:CD,66:CD,70:CD,80:CD,85
+65 :: NORM :: declaration :: Ljava/io/File :: v30 = new java.io.File::
+66 :: CALL :: call :: I :: v32 = #(--pathlist=).length()::
+581 :: ENTR :: entry :: null :: org.hsqldb.util.CodeSwitcher.addDir(java.io.File)::CD,586:CD,590:JM,595:JM,632:JM,600:JM,617
+70 :: CALL :: call :: Ljava/lang/String :: v34 = v9.substring(v32)::
+586 :: CALL :: call :: Z :: v5 = p1 $f .isFile()::JM,595:JM,632:JM,600:JM,617:JM,590
+590 :: PRED :: IF :: Z :: if (v5 == #(0)) goto 34::CD,591:CD,595:CD,600:CD,613:CD,617:JM,632:JM,590
+591 :: CALL :: call :: Ljava/lang/String :: v8 = p1 $f .getName()::JM,595:JM,632:JM,600:JM,617:JM,590
+80 :: CALL :: call :: Z :: v38 = v9.startsWith(#(-))::JM,85
+595 :: CALL :: call :: Z :: v11 = v8.endsWith(#(.java))::JM,595:JM,632:JM,600:JM,617
+85 :: PRED :: IF :: Z :: if (v38 == #(0)) goto 150::CD,89:CD,94:CD,99:JM,595:JM,568:JM,632:JM,600:JM,617:JM,590
+86 :: EXPR :: reference :: Ljava/util/Vector :: v39 = v3.vSwitchOff::
+600 :: PRED :: IF :: Z :: if (v11 == #(0)) goto 34::CD,604:CD,608:CD,613:CD,617:JM,595:JM,632:JM,600:JM,590
+89 :: CALL :: call :: Ljava/lang/String :: v41 = v9.substring(#(1))::
+601 :: EXPR :: reference :: Ljava/util/Vector :: v22 = p0 $this .vList::
+604 :: CALL :: call :: Ljava/lang/String :: v24 = p1 $f .getPath()::JM,595:JM,632:JM,600:JM,617:JM,590
+94 :: CALL :: call :: V :: v39.addElement(v41)::
+608 :: CALL :: call :: V :: v22.addElement(v24)::JM,595:JM,632:JM,600:JM,617
+99 :: CALL :: call :: V :: v3.addDir(v9)::JM,595:JM,568:JM,632:JM,600:JM,617:JM,590:CL,563
+613 :: CALL :: call :: Z :: v13 = p1 $f .isDirectory()::JM,595:JM,632:JM,600:JM,617:JM,590
+103 :: EXPR :: assign :: Ljava/lang/Object :: v46 = v49 + #(1)::DD,309
+104 :: EXPR :: assign :: I :: v8 = p1 $a .length::CF,105
+105 :: PRED :: IF :: Z :: if (v49 < v8) goto 30::CD,19:CD,24:CD,103:CD,104:CD,309
+617 :: PRED :: IF :: Z :: if (v13 == #(0)) goto 66::CD,618:CD,632:CD,633:CD,635:JM,595:JM,600:JM,617:JM,590
+618 :: CALL :: call :: [Ljava/io/File :: v15 = p1 $f .listFiles()::JM,595:JM,632:JM,600:JM,617:JM,590
+627 :: CALL :: call :: V :: p0 $this .addDir(v17)::CL,581
+631 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v21 + #(1)::DD,635
+632 :: EXPR :: assign :: I :: v16 = v15.length::CF,633
+633 :: PRED :: IF :: Z :: if (v21 < v16) goto 53::CD,627:CD,631:CD,632:CD,635
+635 :: EXPR :: assign :: null :: PHI v21 = #(0), v20::DD,631:DD,633:CF,632
+309 :: EXPR :: assign :: null :: PHI v49 = #(0), v46::DD,103:DD,105:CF,104

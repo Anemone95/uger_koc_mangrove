@@ -1,0 +1,70 @@
+[48633, 48634]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.ce.CeMain.main(java.lang.String[])::CD,9:JM,36306:JM,36370
+9 :: CALL :: call :: V :: v3.process(p1 $args )::JM,36306:JM,36370:CL,36211
+36369 :: EXPR :: assign :: Ljava/lang/Object :: v41 = v34 + #(1)::DD,36561
+36370 :: EXPR :: assign :: I :: v6 = p1 $argv .length::CF,36371
+36371 :: PRED :: IF :: Z :: if (v42 < v6) goto 10::CD,36223:CD,36228:CD,36479:CD,36486:CD,36490
+40996 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.ce.StartupParameters.getPdb1()::CE,40997:CD,41003
+40997 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.ce.StartupParameters.getPdb1()::JM,36490
+41000 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .pdb1::DD,41003
+41003 :: NORM :: compound :: Ljava/lang/String :: return v3::CF,40997
+41005 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.ce.StartupParameters.getFile1()::CE,41006:CD,41012
+41006 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.ce.StartupParameters.getFile1()::JM,36491
+41009 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .file1::DD,41012
+41012 :: NORM :: compound :: Ljava/lang/String :: return v3::CF,41006
+41556 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.ce.StartupParameters.getAlignPairs()::CE,41557:CD,41563
+41557 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.ce.StartupParameters.getAlignPairs()::JM,36503:JM,41713:JM,41714:JM,41719
+41560 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .alignPairs::DD,41563
+41817 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.ce.StartupParameters.getSearchFile()::CE,41818:CD,41824
+41818 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.ce.StartupParameters.getSearchFile()::JM,36515
+41563 :: NORM :: compound :: Ljava/lang/String :: return v3::CF,41557
+41565 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.ce.AbstractUserArgumentProcessor.runDBSearch()::CD,41639:CD,41673:CD,41713
+41821 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .searchFile::DD,41824
+41824 :: NORM :: compound :: Ljava/lang/String :: return v3::CF,41818
+36211 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.ce.AbstractUserArgumentProcessor.process(java.lang.String[])::CD,36370:CD,36371:CD,36561:JM,36306
+36219 :: EXPR :: reference :: Ljava/lang/Object :: v7 = p1 $argv [v42]::JM,36228:JM,36234:JM,36240:JM,36257:JM,36263
+36479 :: CALL :: call :: Ljava/lang/String :: v94 = v92.getPdb1()::JM,36490:CL,40996
+36223 :: CALL :: call :: Z :: v10 = v7.equalsIgnoreCase(#(-h))::JM,36228
+36228 :: PRED :: IF :: Z :: if (v10 != #(0)) goto 39::CD,36229:CD,36234
+36229 :: CALL :: call :: Z :: v13 = v7.equalsIgnoreCase(#(-help))::JM,36234
+36486 :: CALL :: call :: Ljava/lang/String :: v97 = v95.getFile1()::JM,36491:CL,41005
+36490 :: PRED :: IF :: Z :: if (v94 != #(null)) goto 381::CD,36491
+36234 :: PRED :: IF :: Z :: if (v13 != #(0)) goto 39::CD,36235:CD,36240
+36491 :: PRED :: IF :: Z :: if (v97 == #(null)) goto 386::CD,36499:CD,36503
+36235 :: CALL :: call :: Z :: v16 = v7.equalsIgnoreCase(#(--help))::JM,36240
+36240 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 53::CD,36252:CD,36257
+36499 :: CALL :: call :: Ljava/lang/String :: v100 = v98.getAlignPairs()::JM,36503:CL,41556
+36503 :: PRED :: IF :: Z :: if (v100 == #(null)) goto 401::CD,36504:CD,36511:CD,36515
+36504 :: CALL :: call :: V :: p0 $this .runDBSearch()::CL,41565
+36252 :: CALL :: call :: Z :: v19 = v7.equalsIgnoreCase(#(-version))::JM,36257
+36511 :: CALL :: call :: Ljava/lang/String :: v103 = v101.getSearchFile()::JM,36515:CL,41817
+36257 :: PRED :: IF :: Z :: if (v19 != #(0)) goto 69::CD,36258:CD,36263
+36258 :: CALL :: call :: Z :: v22 = v7.equalsIgnoreCase(#(--version))::JM,36263
+36515 :: PRED :: IF :: Z :: if (v103 == #(null)) goto 433::CD,36516
+36516 :: CALL :: call :: V :: p0 $this .runDBSearch()::CL,41565
+41639 :: CALL :: call :: Ljava/lang/String :: v38 = v36.getAlignPairs()::JM,41713:JM,41714:JM,41719:CL,41556
+36263 :: PRED :: IF :: Z :: if (v22 == #(0)) goto 121::CD,36306:CD,36307:CD,36308:CD,36314:CD,36369:CD,36370:CD,36371:CD,36558:CD,36559:CD,36561
+41673 :: CALL :: call :: Ljava/lang/String :: v48 = v46.getOutFile()::CL,48597
+36558 :: EXPR :: assign :: null :: PHI v29 = #(null), v28::DD,36314:JM,36320
+36559 :: EXPR :: assign :: null :: PHI v34 = v42, v33::DD,36369
+36561 :: EXPR :: assign :: null :: PHI v42 = #(0), v41::DD,36308:DD,36309:DD,36322:DD,36371:DD,36559:CF,36370
+36306 :: EXPR :: assign :: I :: v24 = p1 $argv .length::DD,36307
+36307 :: EXPR :: assign :: Ljava/lang/Object :: v26 = v24 - #(1)::CF,36308
+36308 :: PRED :: IF :: Z :: if (v42 >= v26) goto 136::CF,36558:CD,36309
+36309 :: EXPR :: assign :: Ljava/lang/Object :: v27 = v42 + #(1)::
+48597 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.ce.StartupParameters.getOutFile()::CE,48598:CD,48604
+48598 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.ce.StartupParameters.getOutFile()::
+36310 :: EXPR :: reference :: Ljava/lang/Object :: v28 = p1 $argv [v27]::DD,36558
+48601 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .outFile::DD,48604
+36314 :: PRED :: IF :: Z :: if (v29 == #(null)) goto 155::CD,36315:CD,36320:CD,36322:CD,36559
+36315 :: CALL :: call :: Z :: v32 = v29.startsWith(#(-))::JM,36320
+48604 :: NORM :: compound :: Ljava/lang/String :: return v3::CF,48598
+48606 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.ce.AbstractUserArgumentProcessor.runAlignPairs(org.biojava.nbio.structure.align.util.AtomCache,java.lang.String,java.lang.String)::CD,48633:CD,48634
+36320 :: PRED :: IF :: Z :: if (v32 == #(0)) goto 155::CD,36322:CD,36559
+36322 :: EXPR :: assign :: Ljava/lang/Object :: v33 = v42 + #(1)::DD,36559
+41713 :: PRED :: IF :: Z :: if (v38 == #(null)) goto 244::CD,41714:CD,41719
+41714 :: CALL :: call :: Z :: v62 = v38.equals(#())::JM,41714:JM,41719
+41719 :: PRED :: IF :: Z :: if (v62 != #(0)) goto 244::CD,41720
+41720 :: CALL :: call :: V :: p0 $this .runAlignPairs(v34, v38, v48)::CL,48606
+48633 :: NORM :: declaration :: Ljava/io/BufferedWriter :: v14 = new java.io.BufferedWriter::CF,48634
+48634 :: NORM :: declaration :: Ljava/io/FileWriter :: v15 = new java.io.FileWriter::

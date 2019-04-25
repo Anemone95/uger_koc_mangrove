@@ -1,0 +1,22 @@
+[80, 75]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest02831.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,16:CD,22:CD,23:CD,27:CD,31:CD,35:CD,40:CD,49:CD,53:CD,58:CD,63:CD,68:CD,72:CD,75:CD,90:JM,17:JM,21
+7 :: CALL :: call :: Ljava/util/Enumeration :: v8 = p1 $request .getHeaders(#(foo))::JM,16:JM,17:JM,21:JM,12
+12 :: CALL :: call :: Z :: v10 = v8.hasMoreElements()::JM,16:JM,17:JM,21:JM,12
+16 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 34::CF,90:CD,17:CD,21:JM,16:JM,12
+17 :: CALL :: call :: Ljava/lang/Object :: v13 = v8.nextElement()::JM,16:JM,17:JM,21:JM,12
+21 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::DD,90
+22 :: NORM :: declaration :: Ljava/lang/String :: v16 = new java.lang.String::JM,22:JM,75:CF,23
+23 :: NORM :: declaration :: Lsun/misc/BASE64Decoder :: v17 = new sun.misc.BASE64Decoder::JM,22:JM,40
+27 :: NORM :: declaration :: Lsun/misc/BASE64Encoder :: v19 = new sun.misc.BASE64Encoder::JM,35:JM,22:JM,40
+31 :: CALL :: call :: [B :: v22 = v15.getBytes()::JM,35:JM,22:JM,40
+35 :: CALL :: call :: Ljava/lang/String :: v24 = v19.encode(v22)::JM,35:JM,22:JM,40
+40 :: CALL :: call :: [B :: v26 = v17.decodeBuffer(v24)::JM,22:JM,40
+49 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v28 = new java.lang.StringBuilder::JM,75
+53 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v28.append(#(UPDATE USERS SET PASS...))::JM,75
+58 :: CALL :: call :: Ljava/lang/StringBuilder :: v34 = v32.append(v16)::JM,75
+63 :: CALL :: call :: Ljava/lang/StringBuilder :: v37 = v34.append(#(' WHERE USERNAME='foo'))::JM,75
+68 :: CALL :: call :: Ljava/lang/String :: v39 = v37.toString()::JM,75
+72 :: CALL :: call :: Ljava/sql/Statement :: v41 = getSqlStatement()::JM,75
+75 :: CALL :: call :: I :: v44 = v41.executeUpdate(v39, #(1))::JM,75
+90 :: EXPR :: assign :: null :: PHI v15 = #(), v14::CF,22:JM,35:JM,40

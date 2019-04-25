@@ -1,0 +1,23 @@
+[85, 78]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest02733.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,16:CD,22:CD,26:CD,31:CD,36:CD,41:CD,46:CD,51:CD,52:CD,56:CD,61:CD,66:CD,71:CD,75:CD,78:CD,99:JM,17:JM,21
+7 :: CALL :: call :: Ljava/util/Enumeration :: v8 = p1 $request .getHeaders(#(foo))::JM,16:JM,17:JM,21:JM,12
+12 :: CALL :: call :: Z :: v10 = v8.hasMoreElements()::JM,16:JM,17:JM,21:JM,12
+16 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 34::CF,99:CD,17:CD,21:JM,16:JM,12
+17 :: CALL :: call :: Ljava/lang/Object :: v13 = v8.nextElement()::JM,16:JM,17:JM,21:JM,12
+21 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::DD,99
+22 :: NORM :: declaration :: Ljava/util/ArrayList :: v16 = new java.util.ArrayList::JM,51
+26 :: CALL :: call :: Z :: v20 = v16.add(#(safe))::
+31 :: CALL :: call :: Z :: v22 = v16.add(v15)::
+36 :: CALL :: call :: Z :: v25 = v16.add(#(moresafe))::
+41 :: CALL :: call :: Ljava/lang/Object :: v27 = v16.remove(#(0))::
+46 :: CALL :: call :: Ljava/lang/Object :: v29 = v16.get(#(0))::JM,51
+51 :: EXPR :: assign :: Ljava/lang/Object :: v30 = CHECKCAST v29::JM,78:CF,52
+52 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v31 = new java.lang.StringBuilder::JM,78
+56 :: CALL :: call :: Ljava/lang/StringBuilder :: v35 = v31.append(#({call verifyUserPassw...))::JM,78
+61 :: CALL :: call :: Ljava/lang/StringBuilder :: v37 = v35.append(v30)::JM,78
+66 :: CALL :: call :: Ljava/lang/StringBuilder :: v40 = v37.append(#(')}))::JM,78
+71 :: CALL :: call :: Ljava/lang/String :: v42 = v40.toString()::JM,78
+75 :: CALL :: call :: Ljava/sql/Connection :: v44 = getSqlConnection()::JM,78
+78 :: CALL :: call :: Ljava/sql/CallableStatement :: v49 = v44.prepareCall(v42, #(1003), #(1007), #(2))::JM,78
+99 :: EXPR :: assign :: null :: PHI v15 = #(), v14::CF,22

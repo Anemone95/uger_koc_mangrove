@@ -1,0 +1,311 @@
+[1203, 1204, 1208]
+1 :: ENTR :: entry :: null :: org.apache.ibatis.io.DefaultVFS.list(java.net.URL,java.lang.String)::CE,2:CD,7:CD,11:CD,16:CD,296:CD,297:CD,314:CD,319:CD,323:CD,328:CD,336:CD,350:CD,355:CD,360:CD,368:CD,372:CD,488:CD,504:JM,387:JM,502:JM,382
+2 :: EXIT :: exit :: Ljava/util/List :: org.apache.ibatis.io.DefaultVFS.list(java.net.URL,java.lang.String)::
+7 :: NORM :: declaration :: Ljava/util/ArrayList :: v6 = new java.util.ArrayList::DD,504
+11 :: CALL :: call :: Ljava/net/URL :: v9 = p0 $this .findJarForResource(p1 $url )::JM,16:CL,986
+16 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 82::CF,60:CD,17:CD,21:CD,23:CD,27:CD,48:CD,53:CD,64:CD,69:CD,378:CD,382:CD,387:CD,406:CD,478:CD,482:CD,501:CD,502:CD,504
+17 :: CALL :: call :: Ljava/io/InputStream :: v202 = v9.openStream()::
+21 :: EXPR :: reference :: Lorg/apache/ibatis/logging/Log :: v203 = org.apache.ibatis.io.DefaultVFS.log::JM,23:JM,27
+23 :: CALL :: call :: Z :: v205 = v203.isDebugEnabled()::JM,23:JM,27
+27 :: PRED :: IF :: Z :: if (v205 == #(0)) goto 65::CD,30:CD,35:CD,40:CF,48
+30 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v207 = new java.lang.StringBuilder::
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v210 = v207.append(p1 $url )::JM,387:JM,502:JM,382
+40 :: CALL :: call :: Ljava/lang/String :: v212 = v210.toString()::JM,387:JM,502:JM,382
+48 :: NORM :: declaration :: Ljava/util/jar/JarInputStream :: v214 = new java.util.jar.JarInputStream::
+53 :: CALL :: call :: Ljava/util/List :: v217 = p0 $this .listResources(v214, p2 $path )::JM,504:CL,1329
+60 :: NORM :: declaration :: Ljava/util/ArrayList :: v10 = new java.util.ArrayList::DD,501
+64 :: CALL :: call :: Z :: v13 = p0 $this .isJar(p1 $url )::JM,69:CL,1507
+69 :: PRED :: IF :: Z :: if (v13 == #(0)) goto 224::CD,70:CD,74:CD,79:CD,81:CD,85:CD,147:CD,151:CD,152:CD,156:CD,160:CD,161:CD,170:CD,243:CD,247:CD,248:CD,252:CD,501:JM,387:JM,502:JM,382
+70 :: CALL :: call :: Ljava/io/InputStream :: v72 = p1 $url .openStream()::JM,387:JM,502:JM,382
+74 :: NORM :: declaration :: Ljava/util/jar/JarInputStream :: v73 = new java.util.jar.JarInputStream::JM,151
+79 :: EXPR :: reference :: Lorg/apache/ibatis/logging/Log :: v75 = org.apache.ibatis.io.DefaultVFS.log::JM,81:JM,85
+81 :: CALL :: call :: Z :: v77 = v75.isDebugEnabled()::JM,81:JM,85
+85 :: PRED :: IF :: Z :: if (v77 == #(0)) goto 206::CD,88:CD,93:CD,98:JM,151
+88 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v79 = new java.lang.StringBuilder::
+93 :: CALL :: call :: Ljava/lang/StringBuilder :: v82 = v79.append(p1 $url )::JM,387:JM,502:JM,382
+98 :: CALL :: call :: Ljava/lang/String :: v84 = v82.toString()::JM,387:JM,502:JM,382
+107 :: EXPR :: reference :: Lorg/apache/ibatis/logging/Log :: v88 = org.apache.ibatis.io.DefaultVFS.log::JM,113:JM,109
+109 :: CALL :: call :: Z :: v90 = v88.isDebugEnabled()::JM,113:JM,109
+113 :: PRED :: IF :: Z :: if (v90 == #(0)) goto 195::CD,116:CD,121:CD,125:CD,130:JM,151
+116 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v92 = new java.lang.StringBuilder::
+121 :: CALL :: call :: Ljava/lang/String :: v96 = v87.getName()::JM,151
+125 :: CALL :: call :: Ljava/lang/StringBuilder :: v98 = v92.append(v96)::
+130 :: CALL :: call :: Ljava/lang/String :: v100 = v98.toString()::
+138 :: CALL :: call :: Ljava/lang/String :: v103 = v87.getName()::JM,151
+142 :: CALL :: call :: Z :: v105 = v10.add(v103)::
+147 :: CALL :: call :: Ljava/util/jar/JarEntry :: v87 = v73.getNextJarEntry()::JM,151
+151 :: PRED :: IF :: Z :: if (v87 != #(null)) goto 152::CD,107:CD,109:CD,113:CD,138:CD,142:CD,147
+152 :: CALL :: call :: V :: v73.close()::
+156 :: CALL :: call :: Ljava/io/InputStream :: v16 = p1 $url .openStream()::JM,387:JM,502:JM,382
+160 :: NORM :: declaration :: Ljava/io/BufferedReader :: v17 = new java.io.BufferedReader::JM,247:CF,161
+161 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v18 = new java.io.InputStreamReader::
+170 :: NORM :: declaration :: Ljava/util/ArrayList :: v21 = new java.util.ArrayList::JM,252
+175 :: EXPR :: reference :: Lorg/apache/ibatis/logging/Log :: v25 = org.apache.ibatis.io.DefaultVFS.log::JM,177:JM,181
+177 :: CALL :: call :: Z :: v27 = v25.isDebugEnabled()::JM,177:JM,181
+181 :: PRED :: IF :: Z :: if (v27 == #(0)) goto 297::CD,184:CD,189:CD,194
+184 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v29 = new java.lang.StringBuilder::
+189 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v29.append(v24)::JM,247
+194 :: CALL :: call :: Ljava/lang/String :: v35 = v33.toString()::
+202 :: CALL :: call :: Z :: v38 = v21.add(v24)::JM,247
+207 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v39 = new java.lang.StringBuilder::JM,387:JM,502:JM,382
+208 :: CALL :: call :: Ljava/lang/String :: v41 = valueOf(p2 $path )::JM,387:JM,502:JM,382
+216 :: CALL :: call :: Ljava/lang/StringBuilder :: v45 = v39.append(#(/))::
+221 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v45.append(v24)::JM,247
+226 :: CALL :: call :: Ljava/lang/String :: v49 = v47.toString()::
+230 :: CALL :: call :: Ljava/util/List :: v51 = getResources(v49)::JM,238:CL,1526
+234 :: CALL :: call :: Z :: v53 = v51.isEmpty()::JM,238
+238 :: PRED :: IF :: Z :: if (v53 == #(0)) goto 350::CD,239:CD,243:CD,247
+239 :: CALL :: call :: V :: v21.clear()::
+243 :: CALL :: call :: Ljava/lang/String :: v24 = v17.readLine()::JM,247
+247 :: PRED :: IF :: Z :: if (v24 != #(null)) goto 257::CD,175:CD,177:CD,181:CD,202:CD,207:CD,208:CD,216:CD,221:CD,226:CD,230:CD,234:CD,238:JM,252
+248 :: CALL :: call :: Z :: v56 = v21.isEmpty()::JM,252
+252 :: PRED :: IF :: Z :: if (v56 != #(0)) goto 543::CD,253:CD,255:CD,259:CD,280:CD,501
+253 :: EXPR :: reference :: Lorg/apache/ibatis/logging/Log :: v57 = org.apache.ibatis.io.DefaultVFS.log::JM,259:JM,255
+255 :: CALL :: call :: Z :: v59 = v57.isDebugEnabled()::JM,259:JM,255
+259 :: PRED :: IF :: Z :: if (v59 == #(0)) goto 408::CD,262:CD,267:CD,272
+262 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v61 = new java.lang.StringBuilder::
+267 :: CALL :: call :: Ljava/lang/StringBuilder :: v65 = v61.append(p1 $url )::JM,387:JM,502:JM,382
+272 :: CALL :: call :: Ljava/lang/String :: v67 = v65.toString()::JM,387:JM,502:JM,382
+280 :: CALL :: call :: Z :: v70 = v10.addAll(v21)::
+296 :: NORM :: declaration :: Ljava/io/File :: v114 = new java.io.File::JM,501
+297 :: CALL :: call :: Ljava/lang/String :: v116 = p1 $url .getFile()::JM,387:JM,502:JM,382
+314 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v122 = new java.lang.StringBuilder::
+319 :: CALL :: call :: Ljava/lang/String :: v126 = v114.getAbsolutePath()::
+323 :: CALL :: call :: Ljava/lang/StringBuilder :: v128 = v122.append(v126)::
+328 :: CALL :: call :: Ljava/lang/String :: v130 = v128.toString()::
+336 :: CALL :: call :: Z :: v133 = v114.isDirectory()::
+350 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v138 = new java.lang.StringBuilder::
+355 :: CALL :: call :: Ljava/lang/StringBuilder :: v141 = v138.append(p1 $url )::JM,387:JM,502:JM,382
+360 :: CALL :: call :: Ljava/lang/String :: v143 = v141.toString()::JM,387:JM,502:JM,382
+368 :: CALL :: call :: [Ljava/lang/String :: v146 = v114.list()::JM,501
+372 :: CALL :: call :: Ljava/util/List :: v148 = asList(v146)::JM,501
+378 :: CALL :: call :: Ljava/lang/String :: v155 = p1 $url .toExternalForm()::JM,387:JM,502:JM,382
+382 :: CALL :: call :: Z :: v157 = v155.endsWith(#(/))::JM,387:JM,502:JM,382
+387 :: PRED :: IF :: Z :: if (v157 != #(0)) goto 582::CF,502:CF,388:CD,389:CD,397:CD,402
+388 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v158 = new java.lang.StringBuilder::JM,502:JM,387:JM,382
+389 :: CALL :: call :: Ljava/lang/String :: v160 = valueOf(v155)::JM,387:JM,502:JM,382
+397 :: CALL :: call :: Ljava/lang/StringBuilder :: v163 = v158.append(#(/))::JM,502
+402 :: CALL :: call :: Ljava/lang/String :: v165 = v163.toString()::JM,502
+406 :: CALL :: call :: Ljava/util/Iterator :: v168 = v151.iterator()::JM,482:JM,415
+411 :: CALL :: call :: Ljava/lang/Object :: v172 = v168.next()::JM,482:JM,415
+415 :: EXPR :: assign :: Ljava/lang/Object :: v173 = CHECKCAST v172::CF,416
+416 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v174 = new java.lang.StringBuilder::JM,387:JM,502:JM,382
+417 :: CALL :: call :: Ljava/lang/String :: v176 = valueOf(p2 $path )::JM,387:JM,502:JM,382
+425 :: CALL :: call :: Ljava/lang/StringBuilder :: v179 = v174.append(#(/))::
+430 :: CALL :: call :: Ljava/lang/StringBuilder :: v181 = v179.append(v173)::
+435 :: CALL :: call :: Ljava/lang/String :: v183 = v181.toString()::
+439 :: CALL :: call :: Z :: v185 = v6.add(v183)::
+444 :: NORM :: declaration :: Ljava/net/URL :: v186 = new java.net.URL::JM,387:JM,502:JM,382:CF,445
+445 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v187 = new java.lang.StringBuilder::
+446 :: CALL :: call :: Ljava/lang/String :: v189 = valueOf(v166)::
+454 :: CALL :: call :: Ljava/lang/StringBuilder :: v192 = v187.append(v173)::
+459 :: CALL :: call :: Ljava/lang/String :: v194 = v192.toString()::
+467 :: CALL :: call :: Ljava/util/List :: v197 = p0 $this .list(v186, v183)::JM,387:JM,502:JM,382:CL,1
+473 :: CALL :: call :: Z :: v199 = v6.addAll(v197)::
+478 :: CALL :: call :: Z :: v170 = v168.hasNext()::JM,482:JM,415
+482 :: PRED :: IF :: Z :: if (v170 != #(0)) goto 594::CD,411:CD,415:CD,416:CD,417:CD,425:CD,430:CD,435:CD,439:CD,444:CD,445:CD,446:CD,454:CD,459:CD,467:CD,473:CD,478:JM,482
+488 :: NORM :: compound :: Ljava/util/List :: return v224::DD,2
+501 :: EXPR :: assign :: null :: PHI v151 = v10, v10, v10, v10, v148::JM,387:JM,502:JM,382:JM,482:JM,415
+502 :: EXPR :: assign :: null :: PHI v166 = v155, v165::JM,482:JM,415
+504 :: EXPR :: assign :: null :: PHI v224 = v217, v6::DD,488
+815 :: ENTR :: entry :: null :: org.apache.ibatis.io.DefaultVFS.<clinit>()::CD,819:CD,823:CD,825
+819 :: CALL :: call :: Lorg/apache/ibatis/logging/Log :: v4 = getLog(v2)::JM,823:CL,1548
+823 :: EXPR :: modify :: Lorg/apache/ibatis/logging/Log :: org.apache.ibatis.io.DefaultVFS.log = v4::
+825 :: NORM :: declaration :: [B :: v6 = new []::
+826 :: EXPR :: modify :: B :: v6[#(0)] = #(80)::
+830 :: EXPR :: modify :: B :: v6[#(1)] = #(75)::
+834 :: EXPR :: modify :: B :: v6[#(2)] = #(3)::
+838 :: EXPR :: modify :: B :: v6[#(3)] = #(4)::
+860 :: ENTR :: entry :: null :: org.apache.ibatis.io.VFS.<clinit>()::CD,883
+883 :: NORM :: declaration :: Ljava/util/ArrayList :: v11 = new java.util.ArrayList::
+951 :: ENTR :: entry :: null :: org.apache.ibatis.io.JBoss6VFS.<clinit>()::CD,961
+961 :: CALL :: call :: V :: initialize()::CL,1632
+986 :: ENTR :: entry :: null :: org.apache.ibatis.io.DefaultVFS.findJarForResource(java.net.URL)::CE,987:CD,1000:CD,1005:CD,1010:CD,1018:CD,1019:CD,1036:CD,1041:CD,1046:CD,1055:CD,1056:CD,1064:CD,1070:CD,1071:CD,1084:CD,1089:CD,1094:CD,1112:CD,1117:CD,1122:CD,1130:CD,1131:CD,1132:CD,1140:CD,1146:CD,1156:CD,1161:CD,1166:CD,1174:CD,1178:CD,1182:CD,1189:CD,1190:CD,1198:CD,1203:CD,1204:CD,1208:CD,1218:CD,1224:CD,1238:CD,1243:CD,1247:CD,1252:CD,1260:CD,1264:CD,1268:CD,1274:CD,1277:CD,1282:CD,1287:CD,1304:CD,1309:CD,1314:CD,1322:CD,1326:CD,1327
+987 :: EXIT :: exit :: Ljava/net/URL :: org.apache.ibatis.io.DefaultVFS.findJarForResource(java.net.URL)::JM,16
+1000 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v9 = new java.lang.StringBuilder::
+1005 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v9.append(p1 $url )::JM,1326
+1010 :: CALL :: call :: Ljava/lang/String :: v15 = v13.toString()::
+1018 :: NORM :: declaration :: Ljava/net/URL :: v17 = new java.net.URL::DD,1326
+1019 :: CALL :: call :: Ljava/lang/String :: v19 = v24.getFile()::
+1036 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v26 = new java.lang.StringBuilder::
+1041 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v26.append(v17)::
+1046 :: CALL :: call :: Ljava/lang/String :: v32 = v30.toString()::
+1055 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v35 = new java.lang.StringBuilder::JM,1070
+1056 :: CALL :: call :: Ljava/lang/String :: v37 = v24.toExternalForm()::
+1064 :: CALL :: call :: I :: v41 = v35.lastIndexOf(#(.jar))::JM,1070
+1070 :: EXPR :: assign :: Ljava/lang/Object :: v56 = v41 + #(4)::
+1071 :: CALL :: call :: V :: v35.setLength(v56)::
+1084 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v62 = new java.lang.StringBuilder::
+1089 :: CALL :: call :: Ljava/lang/StringBuilder :: v66 = v62.append(v35)::
+1094 :: CALL :: call :: Ljava/lang/String :: v68 = v66.toString()::
+1112 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v46 = new java.lang.StringBuilder::
+1117 :: CALL :: call :: Ljava/lang/StringBuilder :: v50 = v46.append(v35)::
+1122 :: CALL :: call :: Ljava/lang/String :: v52 = v50.toString()::
+1130 :: NORM :: compound :: Ljava/net/URL :: return #(null)::DD,987
+1131 :: NORM :: declaration :: Ljava/net/URL :: v70 = new java.net.URL::DD,1146
+1132 :: CALL :: call :: Ljava/lang/String :: v72 = v35.toString()::
+1140 :: CALL :: call :: Z :: v75 = p0 $this .isJar(v70)::CL,1507
+1146 :: NORM :: compound :: Ljava/net/URL :: return v70::DD,987
+1156 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v80 = new java.lang.StringBuilder::
+1161 :: CALL :: call :: Ljava/lang/StringBuilder :: v83 = v80.append(v35)::
+1166 :: CALL :: call :: Ljava/lang/String :: v85 = v83.toString()::
+1174 :: CALL :: call :: I :: v88 = v35.length()::
+1178 :: CALL :: call :: Ljava/lang/String :: v90 = v70.getFile()::
+1182 :: CALL :: call :: Ljava/lang/StringBuilder :: v92 = v35.replace(#(0), v88, v90)::
+1189 :: NORM :: declaration :: Ljava/io/File :: v93 = new java.io.File::DD,1327
+1190 :: CALL :: call :: Ljava/lang/String :: v95 = v35.toString()::
+1198 :: CALL :: call :: Z :: v98 = v93.exists()::
+1203 :: NORM :: declaration :: Ljava/io/File :: v99 = new java.io.File::DD,1327
+1204 :: CALL :: call :: Ljava/lang/String :: v101 = v35.toString()::
+1208 :: CALL :: call :: Ljava/lang/String :: v104 = encode(v101, #(UTF-8))::
+1218 :: NORM :: declaration :: Ljava/lang/RuntimeException :: v106 = new java.lang.RuntimeException::
+1224 :: CALL :: call :: Z :: v112 = v110.exists()::
+1238 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v117 = new java.lang.StringBuilder::
+1243 :: CALL :: call :: Ljava/lang/String :: v121 = v110.getAbsolutePath()::
+1247 :: CALL :: call :: Ljava/lang/StringBuilder :: v123 = v117.append(v121)::
+1252 :: CALL :: call :: Ljava/lang/String :: v125 = v123.toString()::
+1260 :: CALL :: call :: Ljava/net/URI :: v128 = v110.toURI()::JM,1274
+1264 :: CALL :: call :: Ljava/net/URL :: v130 = v128.toURL()::JM,1274
+1268 :: CALL :: call :: Z :: v142 = p0 $this .isJar(v130)::CL,1507
+1274 :: NORM :: compound :: Ljava/net/URL :: return v130::DD,987
+1277 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v133 = new java.lang.StringBuilder::
+1282 :: CALL :: call :: Ljava/lang/StringBuilder :: v137 = v133.append(v35)::
+1287 :: CALL :: call :: Ljava/lang/String :: v139 = v137.toString()::
+1304 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v148 = new java.lang.StringBuilder::
+1309 :: CALL :: call :: Ljava/lang/StringBuilder :: v151 = v148.append(v35)::
+1314 :: CALL :: call :: Ljava/lang/String :: v153 = v151.toString()::
+1322 :: NORM :: compound :: Ljava/net/URL :: return #(null)::DD,987
+1326 :: EXPR :: assign :: null :: PHI v24 = p1 $url , v17, v17, p1 $url ::
+1327 :: EXPR :: assign :: null :: PHI v110 = v93, v99::JM,1274
+1329 :: ENTR :: entry :: null :: org.apache.ibatis.io.DefaultVFS.listResources(java.util.jar.JarInputStream,java.lang.String)::CE,1330:CD,1335:CD,1340:CD,1355:CD,1360:CD,1379:CD,1456:CD,1460:CD,1461:CD,1462:CD,1463:JM,1398:JM,1464:JM,1388
+1330 :: EXIT :: exit :: Ljava/util/List :: org.apache.ibatis.io.DefaultVFS.listResources(java.util.jar.JarInputStream,java.lang.String)::JM,504
+1335 :: CALL :: call :: Z :: v7 = p2 $path .startsWith(#(/))::JM,1460:JM,1462:JM,1398:JM,1464:JM,1340:JM,1388
+1340 :: PRED :: IF :: Z :: if (v7 != #(0)) goto 29::CF,1462:CF,1341:CD,1346:CD,1351
+1341 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v9 = new java.lang.StringBuilder::JM,1462
+1346 :: CALL :: call :: Ljava/lang/StringBuilder :: v12 = v9.append(p2 $path )::JM,1462:JM,1460:JM,1398:JM,1464:JM,1340:JM,1388
+1351 :: CALL :: call :: Ljava/lang/String :: v14 = v12.toString()::JM,1462:JM,1398:JM,1464:JM,1388
+1355 :: CALL :: call :: Z :: v17 = v15.endsWith(#(/))::JM,1360
+1360 :: PRED :: IF :: Z :: if (v17 != #(0)) goto 55::CF,1463:CF,1361:CD,1362:CD,1370:CD,1375
+1361 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v18 = new java.lang.StringBuilder::JM,1463
+1362 :: CALL :: call :: Ljava/lang/String :: v20 = valueOf(v15)::
+1370 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v18.append(#(/))::JM,1463
+1375 :: CALL :: call :: Ljava/lang/String :: v25 = v23.toString()::JM,1463
+1379 :: NORM :: declaration :: Ljava/util/ArrayList :: v27 = new java.util.ArrayList::DD,1461
+1384 :: CALL :: call :: Z :: v33 = v30.isDirectory()::JM,1460:JM,1462:JM,1398:JM,1464:JM,1340:JM,1388
+1388 :: PRED :: IF :: Z :: if (v33 != #(0)) goto 169::CD,1389:CD,1393:CD,1398:CD,1413:CD,1418:CD,1464:JM,1460:JM,1462:JM,1340:JM,1388
+1389 :: CALL :: call :: Ljava/lang/String :: v35 = v30.getName()::JM,1460:JM,1462:JM,1398:JM,1464:JM,1340:JM,1388
+1393 :: CALL :: call :: Z :: v37 = v35.startsWith(#(/))::JM,1462:JM,1398:JM,1464
+1398 :: PRED :: IF :: Z :: if (v37 != #(0)) goto 113::CF,1464:CF,1399:CD,1404:CD,1409
+1399 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v38 = new java.lang.StringBuilder::JM,1464
+1404 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v38.append(v35)::JM,1464:JM,1462:JM,1398
+1409 :: CALL :: call :: Ljava/lang/String :: v43 = v41.toString()::JM,1464
+1413 :: CALL :: call :: Z :: v46 = v44.startsWith(v26)::JM,1418
+1418 :: PRED :: IF :: Z :: if (v46 == #(0)) goto 169::CD,1419:CD,1421:CD,1425:CD,1446:CD,1451:JM,1460:JM,1462:JM,1398:JM,1464:JM,1340:JM,1388
+1419 :: EXPR :: reference :: Lorg/apache/ibatis/logging/Log :: v47 = org.apache.ibatis.io.DefaultVFS.log::JM,1425:JM,1421
+1421 :: CALL :: call :: Z :: v49 = v47.isDebugEnabled()::JM,1425:JM,1421
+1425 :: PRED :: IF :: Z :: if (v49 == #(0)) goto 159::CD,1428:CD,1433:CD,1438
+1428 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v51 = new java.lang.StringBuilder::
+1433 :: CALL :: call :: Ljava/lang/StringBuilder :: v55 = v51.append(v44)::
+1438 :: CALL :: call :: Ljava/lang/String :: v57 = v55.toString()::
+1446 :: CALL :: call :: Ljava/lang/String :: v61 = v44.substring(#(1))::
+1451 :: CALL :: call :: Z :: v63 = v27.add(v61)::
+1456 :: CALL :: call :: Ljava/util/jar/JarEntry :: v30 = p1 $jar .getNextJarEntry()::JM,1460:JM,1462:JM,1398:JM,1464:JM,1340:JM,1388
+1460 :: PRED :: IF :: Z :: if (v30 != #(null)) goto 68::CD,1384:CD,1388:CD,1456:JM,1460:JM,1462:JM,1398:JM,1464:JM,1340:CF,1461
+1461 :: NORM :: compound :: Ljava/util/List :: return v27::DD,1330
+1462 :: EXPR :: assign :: null :: PHI v15 = p2 $path , v14::JM,1360:DD,1463
+1463 :: EXPR :: assign :: null :: PHI v26 = v15, v25::CF,1379:JM,1418
+1464 :: EXPR :: assign :: null :: PHI v44 = v35, v43::JM,1418
+1507 :: ENTR :: entry :: null :: org.apache.ibatis.io.DefaultVFS.isJar(java.net.URL)::CE,1508:CD,1516:CD,1522
+1508 :: EXIT :: exit :: Z :: org.apache.ibatis.io.DefaultVFS.isJar(java.net.URL)::JM,69
+1516 :: CALL :: call :: Z :: v8 = p0 $this .isJar(p1 $url , v6)::JM,1522:CL,1772
+1522 :: NORM :: compound :: Z :: return v8::DD,1508
+1526 :: ENTR :: entry :: null :: org.apache.ibatis.io.VFS.getResources(java.lang.String)::CE,1527:CD,1530:CD,1533:CD,1537:CD,1542:CD,1546
+1527 :: EXIT :: exit :: Ljava/util/List :: org.apache.ibatis.io.VFS.getResources(java.lang.String)::JM,238
+1530 :: CALL :: call :: Ljava/lang/Thread :: v4 = currentThread()::JM,1537:JM,1546
+1533 :: CALL :: call :: Ljava/lang/ClassLoader :: v6 = v4.getContextClassLoader()::JM,1537:JM,1546
+1537 :: CALL :: call :: Ljava/util/Enumeration :: v8 = v6.getResources(p1 $path )::JM,1537:JM,1546
+1542 :: CALL :: call :: Ljava/util/ArrayList :: v10 = list(v8)::JM,1546
+1546 :: NORM :: compound :: Ljava/util/List :: return v10::DD,1527
+1548 :: ENTR :: entry :: null :: org.apache.ibatis.logging.LogFactory.getLog(java.lang.Class)::CF,1549:CD,1556:CD,1560
+1549 :: EXIT :: exit :: Lorg/apache/ibatis/logging/Log :: org.apache.ibatis.logging.LogFactory.getLog(java.lang.Class)::JM,823
+1556 :: CALL :: call :: Lorg/apache/ibatis/logging/Log :: v6 = getLog(v4)::JM,1560:CL,1883
+1560 :: NORM :: compound :: Lorg/apache/ibatis/logging/Log :: return v6::CF,1549
+1632 :: ENTR :: entry :: null :: org.apache.ibatis.io.JBoss6VFS.initialize()::CD,1635:CD,1637
+1635 :: EXPR :: reference :: Ljava/lang/Boolean :: v2 = org.apache.ibatis.io.JBoss6VFS.valid::DD,1637
+1637 :: PRED :: IF :: Z :: if (v2 != #(null)) goto 139::CD,1642:CD,1653:CD,1672:CD,1688:CD,1710:CD,1727:CD,1734:CD,1741
+1642 :: CALL :: call :: Ljava/lang/Class :: v7 = getClass(#(org.jboss.vfs.VFS))::CL,1980
+1653 :: CALL :: call :: Ljava/lang/Class :: v13 = getClass(#(org.jboss.vfs.VirtualFile))::CL,1980
+1672 :: CALL :: call :: Ljava/lang/reflect/Method :: v24 = getMethod(v17, #(getChild), v20)::CL,2039
+1688 :: CALL :: call :: Ljava/lang/reflect/Method :: v32 = getMethod(v28, #(getChildrenRecursively), v30)::CL,2039
+1710 :: CALL :: call :: Ljava/lang/reflect/Method :: v41 = getMethod(v36, #(getPathNameRelativeTo), v38)::CL,2039
+1727 :: CALL :: call :: V :: checkReturnType(v45, v46)::CL,2163
+1734 :: CALL :: call :: V :: checkReturnType(v48, v49)::CL,2163
+1741 :: CALL :: call :: V :: checkReturnType(v51, v52)::CL,2163
+1772 :: ENTR :: entry :: null :: org.apache.ibatis.io.DefaultVFS.isJar(java.net.URL,[])::CE,1773:CD,1792:CD,1794:CD,1799
+1773 :: EXIT :: exit :: Z :: org.apache.ibatis.io.DefaultVFS.isJar(java.net.URL,[])::JM,1522
+1792 :: EXPR :: reference :: [B :: v13 = org.apache.ibatis.io.DefaultVFS.JAR_MAGIC::JM,1799
+1794 :: CALL :: call :: Z :: v15 = equals(p2 $buffer , v13)::JM,1799
+1799 :: PRED :: IF :: Z :: if (v15 == #(0)) goto 116::CD,1800:CD,1802:CD,1806:CD,1832:CD,1850
+1800 :: EXPR :: reference :: Lorg/apache/ibatis/logging/Log :: v18 = org.apache.ibatis.io.DefaultVFS.log::JM,1802:JM,1806
+1802 :: CALL :: call :: Z :: v20 = v18.isDebugEnabled()::JM,1802:JM,1806
+1806 :: PRED :: IF :: Z :: if (v20 == #(0)) goto 65::CD,1809:CD,1814:CD,1819
+1809 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v22 = new java.lang.StringBuilder::
+1814 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v22.append(p1 $url )::JM,1799
+1819 :: CALL :: call :: Ljava/lang/String :: v28 = v26.toString()::JM,1799
+1832 :: NORM :: compound :: Z :: return #(1)::DD,1773
+1850 :: NORM :: compound :: Z :: return #(0)::DD,1773
+1883 :: ENTR :: entry :: null :: org.apache.ibatis.logging.LogFactory.getLog(java.lang.String)::CE,1884:CD,1887:CD,1889:CD,1894:CD,1899:CD,1900
+1884 :: EXIT :: exit :: Lorg/apache/ibatis/logging/Log :: org.apache.ibatis.logging.LogFactory.getLog(java.lang.String)::JM,1560
+1887 :: EXPR :: reference :: Ljava/lang/reflect/Constructor :: v3 = org.apache.ibatis.logging.LogFactory.logConstructor::JM,1894:JM,1899:CF,1889
+1889 :: NORM :: declaration :: [Ljava/lang/Object :: v5 = new java.lang.Object[]::JM,1894:JM,1899
+1894 :: CALL :: call :: Ljava/lang/Object :: v8 = v3.newInstance(v5)::JM,1894:JM,1899
+1899 :: EXPR :: assign :: Ljava/lang/Object :: v9 = CHECKCAST v8::CF,1900
+1900 :: NORM :: compound :: Lorg/apache/ibatis/logging/Log :: return v9::DD,1884
+1980 :: ENTR :: entry :: null :: org.apache.ibatis.io.VFS.getClass(java.lang.String)::CD,1984:CD,1987:CD,2006:CD,2011:CD,2016
+1984 :: CALL :: call :: Ljava/lang/Thread :: v4 = currentThread()::
+1987 :: CALL :: call :: Ljava/lang/ClassLoader :: v6 = v4.getContextClassLoader()::
+2006 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v15 = new java.lang.StringBuilder::
+2011 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v15.append(p1 $className )::
+2016 :: CALL :: call :: Ljava/lang/String :: v21 = v19.toString()::
+2039 :: ENTR :: entry :: null :: org.apache.ibatis.io.VFS.getMethod(java.lang.Class,java.lang.String,java.lang.Class[])::CD,2056:CD,2061:CD,2065:CD,2070:CD,2075:CD,2080:CD,2085:CD,2090:CD,2101:CD,2106:CD,2110:CD,2115:CD,2120:CD,2125:CD,2130:CD,2135:CD,2140:CD,2145:CD,2154:CD,2155
+2056 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v36 = new java.lang.StringBuilder::
+2061 :: CALL :: call :: Ljava/lang/String :: v40 = p1 $clazz .getName()::
+2065 :: CALL :: call :: Ljava/lang/StringBuilder :: v42 = v36.append(v40)::
+2070 :: CALL :: call :: Ljava/lang/StringBuilder :: v44 = v42.append(#(.))::
+2075 :: CALL :: call :: Ljava/lang/StringBuilder :: v46 = v44.append(p2 $methodName )::
+2080 :: CALL :: call :: Ljava/lang/StringBuilder :: v48 = v46.append(#(.  Cause: ))::
+2085 :: CALL :: call :: Ljava/lang/StringBuilder :: v50 = v48.append(v34)::
+2090 :: CALL :: call :: Ljava/lang/String :: v52 = v50.toString()::
+2101 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::
+2106 :: CALL :: call :: Ljava/lang/String :: v14 = p1 $clazz .getName()::
+2110 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v10.append(v14)::
+2115 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v16.append(#(.))::
+2120 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v19.append(p2 $methodName )::
+2125 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v21.append(#(.))::
+2130 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v23.append(p2 $methodName )::
+2135 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v25.append(#(.  Cause: ))::
+2140 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v28.append(v8)::
+2145 :: CALL :: call :: Ljava/lang/String :: v32 = v30.toString()::
+2154 :: EXPR :: assign :: Ljava/lang/Exception :: v34 = catch <exc>::
+2155 :: EXPR :: assign :: Ljava/lang/Exception :: v8 = catch <exc>::
+2163 :: ENTR :: entry :: null :: org.apache.ibatis.io.JBoss6VFS.checkReturnType(java.lang.reflect.Method,java.lang.Class)::CD,2168:JM,2178:JM,2232:JM,2169:JM,2186:JM,2218:JM,2204:JM,2236:JM,2173:JM,2190
+2168 :: PRED :: IF :: Z :: if (p1 $method  == #(null)) goto 92::CD,2169:CD,2173:CD,2178:JM,2232:JM,2186:JM,2218:JM,2204:JM,2236:JM,2190
+2169 :: CALL :: call :: Ljava/lang/Class :: v6 = p1 $method .getReturnType()::JM,2178:JM,2232:JM,2169:JM,2186:JM,2218:JM,2204:JM,2236:JM,2173:JM,2190
+2173 :: CALL :: call :: Z :: v8 = p2 $expected .isAssignableFrom(v6)::JM,2178:JM,2232:JM,2169:JM,2186:JM,2218:JM,2204:JM,2236:JM,2173:JM,2190
+2178 :: PRED :: IF :: Z :: if (v8 != #(0)) goto 92::CD,2181:CD,2186:CD,2190:CD,2194:CD,2199:CD,2204:CD,2208:CD,2213:CD,2218:CD,2222:CD,2227:CD,2232:CD,2236:CD,2240:CD,2245:CD,2250
+2181 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v11 = new java.lang.StringBuilder::
+2186 :: CALL :: call :: Ljava/lang/Class :: v15 = p1 $method .getClass()::JM,2178:JM,2232:JM,2169:JM,2186:JM,2218:JM,2204:JM,2236:JM,2173:JM,2190
+2190 :: CALL :: call :: Ljava/lang/String :: v17 = v15.getName()::JM,2178:JM,2236:JM,2190
+2194 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v11.append(v17)::
+2199 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v19.append(#(.))::
+2204 :: CALL :: call :: Ljava/lang/String :: v24 = p1 $method .getName()::JM,2178:JM,2232:JM,2169:JM,2186:JM,2218:JM,2204:JM,2236:JM,2173:JM,2190
+2208 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v22.append(v24)::JM,2178:JM,2236:JM,2190
+2213 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v26.append(#((..) should return ))::
+2218 :: CALL :: call :: Ljava/lang/String :: v31 = p2 $expected .getName()::JM,2178:JM,2232:JM,2169:JM,2186:JM,2218:JM,2204:JM,2236:JM,2173:JM,2190
+2222 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v29.append(v31)::JM,2236:JM,2190
+2227 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v33.append(#( but returns ))::
+2232 :: CALL :: call :: Ljava/lang/Class :: v38 = p1 $method .getReturnType()::JM,2178:JM,2232:JM,2169:JM,2186:JM,2218:JM,2204:JM,2236:JM,2173:JM,2190
+2236 :: CALL :: call :: Ljava/lang/String :: v40 = v38.getName()::JM,2178:JM,2236:JM,2190
+2240 :: CALL :: call :: Ljava/lang/StringBuilder :: v42 = v36.append(v40)::
+2245 :: CALL :: call :: Ljava/lang/StringBuilder :: v45 = v42.append(#( instead.))::
+2250 :: CALL :: call :: Ljava/lang/String :: v47 = v45.toString()::

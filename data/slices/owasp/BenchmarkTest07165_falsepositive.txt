@@ -1,0 +1,20 @@
+[66, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest07165.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,17:CD,22:CD,26:CD,30:CD,35:CD,40:CD,45:CD,49:CD,52:CD,61:CD,76
+12 :: CALL :: call :: Ljava/lang/String :: v9 = v5.getTheValue(#(foo))::JM,76:CL,178
+17 :: CALL :: call :: C :: v13 = #(ABC).charAt(#(1))::JM,22
+22 :: PRED :: IF :: null :: switch v13::CD,76
+26 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v17 = new java.lang.StringBuilder::JM,61
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v17.append(#(SELECT * from USERS w...))::JM,61
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v21.append(v16)::JM,61
+40 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v23.append(#('))::JM,61
+45 :: CALL :: call :: Ljava/lang/String :: v28 = v26.toString()::JM,61
+49 :: CALL :: call :: Ljava/sql/Statement :: v30 = getSqlStatement()::JM,61
+52 :: NORM :: declaration :: [Ljava/lang/String :: v32 = new java.lang.String[]::JM,61
+53 :: EXPR :: modify :: Ljava/lang/Object :: v32[#(0)] = #(username)::
+57 :: EXPR :: modify :: Ljava/lang/Object :: v32[#(1)] = #(password)::
+61 :: CALL :: call :: Z :: v37 = v30.execute(v28, v32)::JM,61
+76 :: EXPR :: assign :: null :: PHI v16 = v9, #(bob), v9, #(bob's your uncle)::CF,26:JM,61
+178 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheValue(java.lang.String)::CF,179:CD,183
+179 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheValue(java.lang.String)::JM,76
+183 :: NORM :: compound :: Ljava/lang/String :: return #(bar)::CF,179

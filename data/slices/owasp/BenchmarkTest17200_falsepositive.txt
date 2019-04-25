@@ -1,0 +1,24 @@
+[42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 56]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest17200.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,16:CD,20:CD,25:CD,30:CD,35:CD,39:CD,42:CD,51
+12 :: CALL :: call :: Ljava/lang/String :: v9 = doSomething(v7)::JM,51:CL,151
+16 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::JM,51
+20 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v10.append(#(SELECT * from USERS w...))::JM,51
+25 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v14.append(v9)::JM,51
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v16.append(#('))::JM,51
+35 :: CALL :: call :: Ljava/lang/String :: v21 = v19.toString()::JM,51
+39 :: CALL :: call :: Ljava/sql/Connection :: v23 = getSqlConnection()::JM,51
+42 :: NORM :: declaration :: [I :: v25 = new []::JM,51
+43 :: EXPR :: modify :: I :: v25[#(0)] = #(1)::
+47 :: EXPR :: modify :: I :: v25[#(1)] = #(2)::
+51 :: CALL :: call :: Ljava/sql/PreparedStatement :: v29 = v23.prepareStatement(v21, v25)::JM,51
+151 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest17200.doSomething(java.lang.String)::CE,152:CD,155:CD,159:CD,165:CD,169:CD,175:CD,187:CD,192:CD,193
+152 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest17200.doSomething(java.lang.String)::JM,51
+155 :: NORM :: declaration :: Ljava/util/HashMap :: v4 = new java.util.HashMap::JM,192
+159 :: CALL :: call :: Ljava/lang/Object :: v9 = v4.put(#(keyA-14776), #(a_Value))::
+165 :: CALL :: call :: Ljava/lang/String :: v12 = p1 $param .toString()::JM,165:JM,155
+169 :: CALL :: call :: Ljava/lang/Object :: v14 = v4.put(#(keyB-14776), v12)::
+175 :: CALL :: call :: Ljava/lang/Object :: v18 = v4.put(#(keyC), #(another_Value))::
+187 :: CALL :: call :: Ljava/lang/Object :: v23 = v4.get(#(keyA-14776))::JM,192
+192 :: EXPR :: assign :: Ljava/lang/Object :: v24 = CHECKCAST v23::DD,193
+193 :: NORM :: compound :: Ljava/lang/String :: return v24::DD,152

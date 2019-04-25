@@ -1,0 +1,26 @@
+[80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 94]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest02773.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,16:CD,22:CD,26:CD,32:CD,36:CD,42:CD,48:CD,53:CD,54:CD,58:CD,63:CD,68:CD,73:CD,77:CD,80:CD,89:CD,113:JM,17:JM,21
+7 :: CALL :: call :: Ljava/util/Enumeration :: v8 = p1 $request .getHeaders(#(foo))::JM,16:JM,17:JM,21:JM,12
+12 :: CALL :: call :: Z :: v10 = v8.hasMoreElements()::JM,16:JM,17:JM,21:JM,12
+16 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 38::CF,113:CD,17:CD,21:JM,16:JM,12
+17 :: CALL :: call :: Ljava/lang/Object :: v13 = v8.nextElement()::JM,16:JM,17:JM,21:JM,12
+21 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::DD,113
+22 :: NORM :: declaration :: Ljava/util/HashMap :: v17 = new java.util.HashMap::JM,53
+26 :: CALL :: call :: Ljava/lang/Object :: v22 = v17.put(#(keyA-28688), #(a Value))::
+32 :: CALL :: call :: Ljava/lang/String :: v25 = v15.toString()::JM,32
+36 :: CALL :: call :: Ljava/lang/Object :: v27 = v17.put(#(keyB-28688), v25)::
+42 :: CALL :: call :: Ljava/lang/Object :: v31 = v17.put(#(keyC), #(another Value))::
+48 :: CALL :: call :: Ljava/lang/Object :: v33 = v17.get(#(keyB-28688))::JM,53
+53 :: EXPR :: assign :: Ljava/lang/Object :: v34 = CHECKCAST v33::JM,89:CF,54
+54 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v35 = new java.lang.StringBuilder::JM,89
+58 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v35.append(#(SELECT * from USERS w...))::JM,89
+63 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v39.append(v34)::JM,89
+68 :: CALL :: call :: Ljava/lang/StringBuilder :: v44 = v41.append(#('))::JM,89
+73 :: CALL :: call :: Ljava/lang/String :: v46 = v44.toString()::JM,89
+77 :: CALL :: call :: Ljava/sql/Connection :: v48 = getSqlConnection()::JM,89
+80 :: NORM :: declaration :: [I :: v50 = new []::JM,89
+81 :: EXPR :: modify :: I :: v50[#(0)] = #(1)::
+85 :: EXPR :: modify :: I :: v50[#(1)] = #(2)::
+89 :: CALL :: call :: Ljava/sql/PreparedStatement :: v53 = v48.prepareStatement(v46, v50)::JM,89
+113 :: EXPR :: assign :: null :: PHI v15 = #(), v14::JM,32:CF,22

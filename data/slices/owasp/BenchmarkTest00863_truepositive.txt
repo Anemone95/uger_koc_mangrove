@@ -1,0 +1,37 @@
+[96, 97, 98, 99, 100, 101, 106, 92, 93, 94, 95]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest00863.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,36:CD,40:CD,45:CD,50:CD,55:CD,60:CD,65:CD,66:CD,70:CD,75:CD,80:CD,85:CD,89:CD,92:CD,101:CD,130:JM,12
+7 :: CALL :: call :: [Ljavax/servlet/http/Cookie :: v6 = p1 $request .getCookies()::JM,11:JM,12
+11 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 87::CD,12:CD,13:CD,34:CD,125:CD,126:CD,127:CD,130
+12 :: EXPR :: assign :: I :: v10 = v6.length::DD,13:CF,125
+13 :: PRED :: IF :: Z :: if (v25 >= v10) goto 73::CD,18:CD,22:CD,27:CD,32:CD,125:CD,126:CD,127:CD,128:CD,129:CF,34
+14 :: EXPR :: reference :: Ljava/lang/Object :: v11 = v6[v25]::JM,18:JM,22:JM,27:JM,128:JM,28
+18 :: CALL :: call :: Ljava/lang/String :: v13 = v11.getName()::JM,18:JM,22:JM,27
+22 :: CALL :: call :: Z :: v16 = v13.equals(#(foo))::JM,22:JM,27
+27 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 65::CF,128:CD,28:CD,129
+28 :: CALL :: call :: Ljava/lang/String :: v18 = v11.getValue()::JM,128:JM,28
+32 :: EXPR :: assign :: Ljava/lang/Object :: v22 = v25 + #(1)::DD,127
+34 :: PRED :: IF :: Z :: if (v24 != #(0)) goto 87::CF,130
+36 :: NORM :: declaration :: Ljava/util/ArrayList :: v28 = new java.util.ArrayList::JM,65
+40 :: CALL :: call :: Z :: v32 = v28.add(#(safe))::
+45 :: CALL :: call :: Z :: v34 = v28.add(v26)::
+50 :: CALL :: call :: Z :: v37 = v28.add(#(moresafe))::
+55 :: CALL :: call :: Ljava/lang/Object :: v39 = v28.remove(#(0))::
+60 :: CALL :: call :: Ljava/lang/Object :: v41 = v28.get(#(0))::JM,65
+65 :: EXPR :: assign :: Ljava/lang/Object :: v42 = CHECKCAST v41::JM,101:CF,66
+66 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v43 = new java.lang.StringBuilder::JM,101
+70 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v43.append(#(SELECT * from USERS w...))::JM,101
+75 :: CALL :: call :: Ljava/lang/StringBuilder :: v49 = v47.append(v42)::JM,101
+80 :: CALL :: call :: Ljava/lang/StringBuilder :: v52 = v49.append(#('))::JM,101
+85 :: CALL :: call :: Ljava/lang/String :: v54 = v52.toString()::JM,101
+89 :: CALL :: call :: Ljava/sql/Connection :: v56 = getSqlConnection()::JM,101
+92 :: NORM :: declaration :: [I :: v58 = new []::JM,101
+93 :: EXPR :: modify :: I :: v58[#(0)] = #(1)::
+97 :: EXPR :: modify :: I :: v58[#(1)] = #(2)::
+101 :: CALL :: call :: Ljava/sql/PreparedStatement :: v60 = v56.prepareStatement(v54, v58)::JM,101
+125 :: EXPR :: assign :: null :: PHI v23 = v20, #(null)::CF,126:DD,128:DD,130
+126 :: EXPR :: assign :: null :: PHI v24 = v21, #(0)::CF,127:DD,34:DD,129
+127 :: EXPR :: assign :: null :: PHI v25 = v22, #(0)::DD,13:DD,32
+128 :: EXPR :: assign :: null :: PHI v20 = v23, v18::CF,129:DD,125
+129 :: EXPR :: assign :: null :: PHI v21 = v24, #(1)::DD,126:CF,32
+130 :: EXPR :: assign :: null :: PHI v26 = v23, #(), #()::CF,36

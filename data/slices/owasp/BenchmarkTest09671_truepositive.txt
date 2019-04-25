@@ -1,0 +1,24 @@
+[59, 62]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest09671.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,28:CD,33:CD,37:CD,42:CD,47:CD,52:CD,56:CD,59
+28 :: CALL :: call :: Ljava/lang/String :: v20 = v16.doSomething(v15)::JM,59:CL,164
+33 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v21 = new java.lang.StringBuilder::JM,59
+37 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v21.append(#(SELECT * from USERS w...))::JM,59
+42 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v25.append(v20)::JM,59
+47 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v27.append(#('))::JM,59
+52 :: CALL :: call :: Ljava/lang/String :: v32 = v30.toString()::JM,59
+56 :: CALL :: call :: Ljava/sql/Statement :: v34 = getSqlStatement()::JM,59
+59 :: CALL :: call :: V :: v34.addBatch(v32)::JM,59
+164 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest09671.Test.doSomething(java.lang.String)::CE,165:CD,169:CD,173:CD,203:CD,204:JM,187
+165 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest09671.Test.doSomething(java.lang.String)::JM,59
+169 :: CALL :: call :: I :: v5 = p1 $param .length()::JM,187:JM,204:JM,173
+173 :: PRED :: IF :: Z :: if (v5 <= #(1)) goto 44::CF,204:CF,174:CD,179:CD,183:CD,187:CD,188:CD,192:CD,199
+174 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v7 = new java.lang.StringBuilder::JM,204
+179 :: CALL :: call :: I :: v10 = p1 $param .length()::JM,187:JM,204:JM,173
+183 :: CALL :: call :: I :: v13 = #(Z).length()::JM,187
+187 :: EXPR :: assign :: Ljava/lang/Object :: v14 = v10 - v13::JM,204:JM,187:JM,173
+188 :: CALL :: call :: I :: v16 = p1 $param .length()::JM,187:JM,204:JM,173
+192 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v7.replace(v14, v16, #(Z))::JM,204
+199 :: CALL :: call :: Ljava/lang/String :: v20 = v18.toString()::JM,204
+203 :: NORM :: compound :: Ljava/lang/String :: return v21::DD,165
+204 :: EXPR :: assign :: null :: PHI v21 = p1 $param , v20::CF,203

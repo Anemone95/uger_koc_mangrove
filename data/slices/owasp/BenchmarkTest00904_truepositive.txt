@@ -1,0 +1,33 @@
+[89, 93]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest00904.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,36:CD,37:CD,41:CD,45:CD,49:CD,54:CD,63:CD,67:CD,72:CD,77:CD,82:CD,86:CD,89:CD,108:JM,12
+7 :: CALL :: call :: [Ljavax/servlet/http/Cookie :: v6 = p1 $request .getCookies()::JM,11:JM,12
+11 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 87::CD,12:CD,13:CD,34:CD,103:CD,104:CD,105:CD,108
+12 :: EXPR :: assign :: I :: v10 = v6.length::DD,13:CF,103
+13 :: PRED :: IF :: Z :: if (v25 >= v10) goto 73::CD,18:CD,22:CD,27:CD,32:CD,103:CD,104:CD,105:CD,106:CD,107:CF,34
+14 :: EXPR :: reference :: Ljava/lang/Object :: v11 = v6[v25]::JM,18:JM,22:JM,27:JM,106:JM,28
+18 :: CALL :: call :: Ljava/lang/String :: v13 = v11.getName()::JM,18:JM,22:JM,27
+22 :: CALL :: call :: Z :: v16 = v13.equals(#(foo))::JM,22:JM,27
+27 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 65::CF,106:CD,28:CD,107
+28 :: CALL :: call :: Ljava/lang/String :: v18 = v11.getValue()::JM,106:JM,28
+32 :: EXPR :: assign :: Ljava/lang/Object :: v22 = v25 + #(1)::DD,105
+34 :: PRED :: IF :: Z :: if (v24 != #(0)) goto 87::CF,108
+36 :: NORM :: declaration :: Ljava/lang/String :: v28 = new java.lang.String::JM,36:JM,89:CF,37
+37 :: NORM :: declaration :: Lsun/misc/BASE64Decoder :: v29 = new sun.misc.BASE64Decoder::JM,36:JM,54
+41 :: NORM :: declaration :: Lsun/misc/BASE64Encoder :: v31 = new sun.misc.BASE64Encoder::JM,49:JM,36:JM,54
+45 :: CALL :: call :: [B :: v34 = v26.getBytes()::JM,49:JM,36:JM,54
+49 :: CALL :: call :: Ljava/lang/String :: v36 = v31.encode(v34)::JM,49:JM,36:JM,54
+54 :: CALL :: call :: [B :: v38 = v29.decodeBuffer(v36)::JM,36:JM,54
+63 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v40 = new java.lang.StringBuilder::JM,89
+67 :: CALL :: call :: Ljava/lang/StringBuilder :: v44 = v40.append(#(SELECT * from USERS w...))::JM,89
+72 :: CALL :: call :: Ljava/lang/StringBuilder :: v46 = v44.append(v28)::JM,89
+77 :: CALL :: call :: Ljava/lang/StringBuilder :: v49 = v46.append(#('))::JM,89
+82 :: CALL :: call :: Ljava/lang/String :: v51 = v49.toString()::JM,89
+86 :: CALL :: call :: Ljava/sql/Statement :: v53 = getSqlStatement()::JM,89
+89 :: CALL :: call :: Z :: v55 = v53.execute(v51)::JM,89
+103 :: EXPR :: assign :: null :: PHI v23 = v20, #(null)::CF,104:DD,106:DD,108
+104 :: EXPR :: assign :: null :: PHI v24 = v21, #(0)::CF,105:DD,34:DD,107
+105 :: EXPR :: assign :: null :: PHI v25 = v22, #(0)::DD,13:DD,32
+106 :: EXPR :: assign :: null :: PHI v20 = v23, v18::CF,107:DD,103
+107 :: EXPR :: assign :: null :: PHI v21 = v24, #(1)::DD,104:CF,32
+108 :: EXPR :: assign :: null :: PHI v26 = v23, #(), #()::CF,36:JM,49:JM,54

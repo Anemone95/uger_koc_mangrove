@@ -1,0 +1,481 @@
+[20463]
+1 :: ENTR :: entry :: null :: org.apache.giraph.GiraphRunner.run(java.lang.String[])::CD,27:JM,10611:JM,10597:JM,10602:JM,10606:JM,10591
+27 :: CALL :: call :: Lorg/apache/commons/cli/CommandLine :: v14 = parseArgs(v9, p1 $args )::JM,10611:JM,10597:JM,10602:JM,10606:JM,10591:CL,10572
+413 :: ENTR :: entry :: null :: org.apache.giraph.utils.ConfigurationUtils.<clinit>()::CD,423:CD,427:CD,471:CD,478:CD,483:CD,488
+423 :: NORM :: declaration :: Lorg/apache/commons/cli/Options :: v5 = new org.apache.commons.cli.Options::DD,427
+427 :: EXPR :: modify :: Lorg/apache/commons/cli/Options :: org.apache.giraph.utils.ConfigurationUtils.OPTIONS = v5::
+471 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v36 = new java.lang.StringBuilder::
+478 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v36.append(v39)::
+483 :: CALL :: call :: Ljava/lang/StringBuilder :: v44 = v41.append(#( MB.))::
+488 :: CALL :: call :: Ljava/lang/String :: v46 = v44.toString()::
+876 :: ENTR :: entry :: null :: org.apache.giraph.conf.GiraphConstants.<clinit>()::CD,880:CD,890:JM,11344:JM,14034:JM,14037:CD,918:CD,928:CD,939:CD,949:CD,960:CD,971:CD,983:JM,11394:JM,11427:JM,11399:JM,11559:JM,11468:JM,11469:JM,11470:JM,11440:JM,11441:JM,11442:JM,11412:JM,11413:JM,11414:JM,11478:JM,11384:JM,11385:JM,11386:JM,11450:JM,11483:JM,11422:JM,11455:CD,1003:CD,1014:CD,1025:CD,1036:CD,1047:CD,1058:CD,1069:CD,1080:CD,1091:CD,1101:CD,1111:CD,1121:CD,1131:CD,1142:CD,1153:CD,1165:CD,1185:CD,1196:CD,1207:JM,11580:CD,1226:CD,1236:CD,1246:CD,1257:CD,1268:CD,1279:CD,1289:JM,11601:CD,1308:CD,1399:CD,1409:CD,1419:CD,1429:CD,1440:CD,1451:CD,1462:JM,11622:JM,11644:CD,2246:CD,2257:CD,2407:CD,2427:CD,2438:CD,2473:CD,2529:CD,2549
+880 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v7 = create(#(giraph.mappingStoreClass), #(null), v4, #(MappingStore Class))::CL,11311
+890 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v12 = create(#(giraph.mappingStoreOp...), #(null), v9, #(MappingStoreOps class))::CL,11311
+918 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v26 = create(#(giraph.edgeTranslatio...), #(null), v23, #(Class used to conduct...))::CL,11311
+928 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v31 = create(#(giraph.computationClass), #(null), v28, #(Computation class - r...))::CL,11311
+939 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v37 = create(#(giraph.computation.fa...), v33, v34, #(Computation factory c...))::CL,11311
+949 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v42 = create(#(giraph.typesHolder), #(null), v39, #(TypesHolder, used if ...))::CL,11311
+960 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v48 = create(#(giraph.edgeStoreFacto...), v44, v45, #(Edge Store Factory cl...))::CL,11311
+971 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v54 = create(#(giraph.messageStoreFa...), v50, v51, #(Message Store Factory...))::CL,11311
+983 :: CALL :: call :: Lorg/apache/giraph/conf/PerGraphTypeEnumConfOption :: v60 = create(#(giraph.types.language), v56, v57, #(Language user graph t...))::CL,11353
+1003 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v71 = create(#(giraph.vertexIdFactor...), v67, v68, #(Vertex ID factory cla...))::CL,11311
+1014 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v77 = create(#(giraph.vertexValueFac...), v73, v74, #(Vertex value factory ...))::CL,11311
+1025 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v83 = create(#(giraph.edgeValueFacto...), v79, v80, #(Edge value factory cl...))::CL,11311
+1036 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v89 = create(#(giraph.outgoingMessag...), v85, v86, #(Outgoing message valu...))::CL,11311
+1047 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v95 = create(#(giraph.outEdgesClass), v91, v92, #(Vertex edges class - ...))::CL,11311
+1058 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v101 = create(#(giraph.inputOutEdgesClass), v97, v98, #(Vertex edges class to...))::CL,11311
+1069 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v107 = create(#(giraph.outEdgesFactor...), v103, v104, #(OutEdges factory clas...))::CL,11311
+1080 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v113 = create(#(giraph.inputOutEdgesF...), v109, v110, #(OutEdges for input fa...))::CL,11311
+1091 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v119 = create(#(giraph.masterComputeClass), v115, v116, #(Class for Master - op...))::CL,11311
+1101 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v124 = create(#(giraph.master.observers), #(null), v121, #(Classes for Master Ob...))::CL,11311
+1111 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v129 = create(#(giraph.worker.observers), #(null), v126, #(Classes for Worker Ob...))::CL,11311
+1121 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v134 = create(#(giraph.mapper.observers), #(null), v131, #(Classes for Mapper Ob...))::CL,11311
+1131 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v139 = create(#(giraph.messageCombine...), #(null), v136, #(Message combiner clas...))::CL,11311
+1142 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v145 = create(#(giraph.vertexResolver...), v141, v142, #(Vertex resolver class...))::CL,11311
+1153 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v151 = create(#(giraph.vertexValueCom...), v147, v148, #(Vertex value combiner...))::CL,11311
+1165 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v157 = create(#(giraph.computation.la...), v153, v154, #(Which language comput...))::CL,11526
+1185 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v168 = create(#(giraph.graphPartition...), v164, v165, #(Graph partitioner fac...))::CL,11311
+1196 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v174 = create(#(giraph.jobObserverClass), v170, v171, #(Observer class to wat...))::CL,11311
+1207 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v180 = create(#(giraph.jobRetryChecke...), v176, v177, #(Class which decides w...))::CL,11311
+1226 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v190 = create(#(giraph.vertexInputFor...), #(null), v187, #(VertexInputFormat cla...))::CL,11311
+1236 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v195 = create(#(giraph.edgeInputForma...), #(null), v192, #(EdgeInputFormat class))::CL,11311
+1246 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v200 = create(#(giraph.mappingInputFo...), #(null), v197, #(MappingInputFormat class))::CL,11311
+1257 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v206 = create(#(giraph.edgeInputFilte...), v202, v203, #(EdgeInputFilter class))::CL,11311
+1268 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v212 = create(#(giraph.vertexInputFil...), v208, v209, #(VertexInputFilter class))::CL,11311
+1279 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v218 = create(#(giraph.vertexClass), v214, v215, #(Vertex class))::CL,11311
+1289 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v223 = create(#(giraph.vertexOutputFo...), #(null), v220, #(VertexOutputFormat class))::CL,11311
+1308 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v233 = create(#(giraph.edgeOutputForm...), #(null), v230, #(EdgeOutputFormat class))::CL,11311
+1399 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v276 = create(#(giraph.vertexIdClass), #(null), v273, #(Vertex index class))::CL,11311
+1409 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v281 = create(#(giraph.vertexValueClass), #(null), v278, #(Vertex value class))::CL,11311
+1419 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v286 = create(#(giraph.edgeValueClass), #(null), v283, #(Edge value class))::CL,11311
+1429 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v291 = create(#(giraph.outgoingMessag...), #(null), v288, #(Outgoing message valu...))::CL,11311
+1440 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v297 = create(#(giraph.workerContextClass), v293, v294, #(Worker contextclass))::CL,11311
+1451 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v303 = create(#(giraph.aggregatorWrit...), v299, v300, #(AggregatorWriter clas...))::CL,11311
+1462 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v309 = create(#(giraph.partitionClass), v305, v306, #(Partition class - opt...))::CL,11311
+2246 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v689 = create(#(giraph.outOfCoreDataA...), v685, v686, #(Data accessor used in...))::CL,11311
+2257 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v695 = create(#(giraph.outOfCoreOracle), v691, v692, #(Out-of-core oracle th...))::CL,11311
+2407 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v764 = create(#(giraph.messageEncodeA...), v760, v761, #(Select the message_en...))::CL,11526
+2427 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v774 = create(#(giraph.createEdgeSour...), v770, v771, #(Decide whether we sho...))::CL,11311
+2438 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v780 = create(#(giraph.haltInstructio...), v776, v777, #(Class used to write i...))::CL,11311
+2473 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v797 = create(#(giraph.jobProgressTra...), v793, v794, #(Class to use to track...))::CL,11311
+2529 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v825 = create(#(giraph.checkpoint.sup...), v821, v822, #(This is the way to sp...))::CL,11311
+2549 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v835 = create(#(giraph.hadoopOutputFo...), v831, v832, #(Output format class f...))::CL,11311
+3395 :: CALL :: call :: Z :: v4 = v2.desiredAssertionStatus()::
+3456 :: CALL :: call :: J :: v35 = lowMask(#(-_.!~*'()))::
+3462 :: CALL :: call :: J :: v37 = highMask(#(-_.!~*'()))::
+3482 :: CALL :: call :: J :: v46 = lowMask(#(;/?:@&=+$,[]))::
+3488 :: CALL :: call :: J :: v48 = highMask(#(;/?:@&=+$,[]))::
+3512 :: CALL :: call :: J :: v61 = lowMask(#(:@&=+$,))::
+3521 :: CALL :: call :: J :: v65 = highMask(#(:@&=+$,))::
+3530 :: CALL :: call :: J :: v70 = lowMask(#(;/))::
+3539 :: CALL :: call :: J :: v74 = highMask(#(;/))::
+3546 :: CALL :: call :: J :: v78 = lowMask(#(-))::
+3552 :: CALL :: call :: J :: v80 = highMask(#(-))::
+3558 :: CALL :: call :: J :: v83 = lowMask(#(.))::
+3564 :: CALL :: call :: J :: v85 = highMask(#(.))::
+3573 :: CALL :: call :: J :: v90 = lowMask(#(;:&=+$,))::
+3582 :: CALL :: call :: J :: v94 = highMask(#(;:&=+$,))::
+3592 :: CALL :: call :: J :: v100 = lowMask(#($,;:@&=+))::
+3601 :: CALL :: call :: J :: v104 = highMask(#($,;:@&=+))::
+3616 :: CALL :: call :: J :: v113 = lowMask(#(.:@[]))::
+3631 :: CALL :: call :: J :: v121 = highMask(#(.:@[]))::
+3640 :: CALL :: call :: J :: v126 = lowMask(#(%))::
+3649 :: CALL :: call :: J :: v130 = highMask(#(%))::
+3656 :: CALL :: call :: J :: v134 = lowMask(#([))::
+3662 :: CALL :: call :: J :: v136 = highMask(#([))::
+3670 :: CALL :: call :: J :: v140 = lowMask(#(+-.))::
+3679 :: CALL :: call :: J :: v144 = highMask(#(+-.))::
+3689 :: CALL :: call :: J :: v150 = lowMask(#(;?:@&=+$,))::
+3698 :: CALL :: call :: J :: v154 = highMask(#(;?:@&=+$,))::
+3705 :: NORM :: declaration :: [C :: v157 = new []::
+3706 :: EXPR :: modify :: C :: v157[#(0)] = #(48)::
+3710 :: EXPR :: modify :: C :: v157[#(1)] = #(49)::
+3714 :: EXPR :: modify :: C :: v157[#(2)] = #(50)::
+3718 :: EXPR :: modify :: C :: v157[#(3)] = #(51)::
+3722 :: EXPR :: modify :: C :: v157[#(4)] = #(52)::
+3726 :: EXPR :: modify :: C :: v157[#(5)] = #(53)::
+3730 :: EXPR :: modify :: C :: v157[#(6)] = #(54)::
+3734 :: EXPR :: modify :: C :: v157[#(7)] = #(55)::
+3738 :: EXPR :: modify :: C :: v157[#(8)] = #(56)::
+3742 :: EXPR :: modify :: C :: v157[#(9)] = #(57)::
+3746 :: EXPR :: modify :: C :: v157[#(10)] = #(65)::
+3750 :: EXPR :: modify :: C :: v157[#(11)] = #(66)::
+3754 :: EXPR :: modify :: C :: v157[#(12)] = #(67)::
+3758 :: EXPR :: modify :: C :: v157[#(13)] = #(68)::
+3762 :: EXPR :: modify :: C :: v157[#(14)] = #(69)::
+3766 :: EXPR :: modify :: C :: v157[#(15)] = #(70)::
+3927 :: ENTR :: entry :: null :: org.apache.giraph.job.DefaultJobProgressTrackerService.<clinit>()::JM,11344:JM,14034:JM,14037
+3953 :: ENTR :: entry :: null :: org.apache.giraph.job.ClientThriftServer.<clinit>()::JM,11601:JM,14034:JM,14037:JM,11344
+4030 :: ENTR :: entry :: null :: org.apache.giraph.graph.Language.<clinit>()::CD,4033:CD,4039:CD,4041:CD,4047:CD,4049:CD,4050:CD,4056
+4033 :: NORM :: declaration :: Lorg/apache/giraph/graph/Language :: v2 = new org.apache.giraph.graph.Language::DD,4039
+4039 :: EXPR :: modify :: Lorg/apache/giraph/graph/Language :: org.apache.giraph.graph.Language.JAVA = v2::
+4041 :: NORM :: declaration :: Lorg/apache/giraph/graph/Language :: v6 = new org.apache.giraph.graph.Language::DD,4047
+4047 :: EXPR :: modify :: Lorg/apache/giraph/graph/Language :: org.apache.giraph.graph.Language.JYTHON = v6::
+4049 :: NORM :: declaration :: [Lorg/apache/giraph/graph/Language :: v11 = new org.apache.giraph.graph.Language[]::
+4050 :: EXPR :: reference :: Lorg/apache/giraph/graph/Language :: v12 = org.apache.giraph.graph.Language.JAVA::DD,4052
+4052 :: EXPR :: modify :: Ljava/lang/Object :: v11[#(0)] = v12::
+4056 :: EXPR :: reference :: Lorg/apache/giraph/graph/Language :: v13 = org.apache.giraph.graph.Language.JYTHON::DD,4058
+4058 :: EXPR :: modify :: Ljava/lang/Object :: v11[#(1)] = v13::
+4093 :: ENTR :: entry :: null :: org.apache.giraph.ooc.persistence.LocalDiskDataAccessor.<clinit>()::JM,11344:JM,14034:JM,14037
+4119 :: ENTR :: entry :: null :: org.apache.giraph.ooc.policy.MemoryEstimatorOracle.<clinit>()::JM,14034:JM,14037:JM,11580:JM,11644
+4243 :: ENTR :: entry :: null :: org.apache.giraph.comm.messages.MessageEncodeAndStoreType.<clinit>()::CD,4246:JM,11778:CD,4253:CD,4255:CD,4262:CD,4264:CD,4271:CD,4273:CD,4274:CD,4280:CD,4286
+4246 :: NORM :: declaration :: Lorg/apache/giraph/comm/messages/MessageEncodeAndStoreType :: v2 = new org.apache.giraph.comm.messages.MessageEncodeAndStoreType::DD,4253
+4253 :: EXPR :: modify :: Lorg/apache/giraph/comm/messages/MessageEncodeAndStoreType :: org.apache.giraph.comm.messages.MessageEncodeAndStoreType.BYTEARRAY_PER_PARTITION = v2::
+4255 :: NORM :: declaration :: Lorg/apache/giraph/comm/messages/MessageEncodeAndStoreType :: v6 = new org.apache.giraph.comm.messages.MessageEncodeAndStoreType::DD,4262
+4262 :: EXPR :: modify :: Lorg/apache/giraph/comm/messages/MessageEncodeAndStoreType :: org.apache.giraph.comm.messages.MessageEncodeAndStoreType.EXTRACT_BYTEARRAY_PER_PARTITION = v6::
+4264 :: NORM :: declaration :: Lorg/apache/giraph/comm/messages/MessageEncodeAndStoreType :: v10 = new org.apache.giraph.comm.messages.MessageEncodeAndStoreType::DD,4271
+4271 :: EXPR :: modify :: Lorg/apache/giraph/comm/messages/MessageEncodeAndStoreType :: org.apache.giraph.comm.messages.MessageEncodeAndStoreType.POINTER_LIST_PER_VERTEX = v10::
+4273 :: NORM :: declaration :: [Lorg/apache/giraph/comm/messages/MessageEncodeAndStoreType :: v15 = new org.apache.giraph.comm.messages.MessageEncodeAndStoreType[]::
+4274 :: EXPR :: reference :: Lorg/apache/giraph/comm/messages/MessageEncodeAndStoreType :: v16 = org.apache.giraph.comm.messages.MessageEncodeAndStoreType.BYTEARRAY_PER_PARTITION::DD,4276
+4276 :: EXPR :: modify :: Ljava/lang/Object :: v15[#(0)] = v16::
+4280 :: EXPR :: reference :: Lorg/apache/giraph/comm/messages/MessageEncodeAndStoreType :: v17 = org.apache.giraph.comm.messages.MessageEncodeAndStoreType.EXTRACT_BYTEARRAY_PER_PARTITION::DD,4282
+4282 :: EXPR :: modify :: Ljava/lang/Object :: v15[#(1)] = v17::
+4286 :: EXPR :: reference :: Lorg/apache/giraph/comm/messages/MessageEncodeAndStoreType :: v18 = org.apache.giraph.comm.messages.MessageEncodeAndStoreType.POINTER_LIST_PER_VERTEX::DD,4288
+4288 :: EXPR :: modify :: Ljava/lang/Object :: v15[#(2)] = v18::
+4348 :: ENTR :: entry :: null :: org.apache.giraph.scripting.DeployType.<clinit>()::CD,4351:CD,4357:CD,4359:CD,4365:CD,4367:CD,4368:CD,4374
+4351 :: NORM :: declaration :: Lorg/apache/giraph/scripting/DeployType :: v2 = new org.apache.giraph.scripting.DeployType::DD,4357
+4357 :: EXPR :: modify :: Lorg/apache/giraph/scripting/DeployType :: org.apache.giraph.scripting.DeployType.RESOURCE = v2::
+4359 :: NORM :: declaration :: Lorg/apache/giraph/scripting/DeployType :: v6 = new org.apache.giraph.scripting.DeployType::DD,4365
+4365 :: EXPR :: modify :: Lorg/apache/giraph/scripting/DeployType :: org.apache.giraph.scripting.DeployType.DISTRIBUTED_CACHE = v6::
+4367 :: NORM :: declaration :: [Lorg/apache/giraph/scripting/DeployType :: v11 = new org.apache.giraph.scripting.DeployType[]::
+4368 :: EXPR :: reference :: Lorg/apache/giraph/scripting/DeployType :: v12 = org.apache.giraph.scripting.DeployType.RESOURCE::DD,4370
+4370 :: EXPR :: modify :: Ljava/lang/Object :: v11[#(0)] = v12::
+4374 :: EXPR :: reference :: Lorg/apache/giraph/scripting/DeployType :: v13 = org.apache.giraph.scripting.DeployType.DISTRIBUTED_CACHE::DD,4376
+4376 :: EXPR :: modify :: Ljava/lang/Object :: v11[#(1)] = v13::
+4399 :: ENTR :: entry :: null :: org.apache.giraph.scripting.ScriptLoader.<clinit>()::JM,14034:JM,14037
+9833 :: ENTR :: entry :: null :: org.apache.giraph.jython.JythonOptions.<clinit>()::JM,11970:JM,11843:JM,11908:JM,11975:JM,11848:JM,11912:JM,11852:JM,11980:JM,11917:JM,11984:JM,11857:JM,11601:JM,11922:JM,14034:JM,11861:JM,14037:JM,11866:JM,11935:JM,11940:JM,11879:JM,11559:JM,11880:JM,11944:JM,11885:JM,11949:JM,11889:JM,11825:JM,11954:JM,11828:JM,11829:JM,11894:JM,11961:JM,11834:JM,11899:JM,11838:JM,11966:JM,11903
+9933 :: ENTR :: entry :: null :: org.apache.giraph.graph.GraphType.<clinit>()::CD,9936:CD,9942:CD,9944:CD,9950:CD,9952:CD,9958:CD,9960:CD,9966:CD,9968:CD,9969:CD,9975:CD,9981:CD,9987
+9936 :: NORM :: declaration :: Lorg/apache/giraph/graph/GraphType$1 :: v2 = new org.apache.giraph.graph.GraphType$1::DD,9942
+9942 :: EXPR :: modify :: Lorg/apache/giraph/graph/GraphType :: org.apache.giraph.graph.GraphType.VERTEX_ID = v2::
+9944 :: NORM :: declaration :: Lorg/apache/giraph/graph/GraphType$2 :: v6 = new org.apache.giraph.graph.GraphType$2::DD,9950
+9950 :: EXPR :: modify :: Lorg/apache/giraph/graph/GraphType :: org.apache.giraph.graph.GraphType.VERTEX_VALUE = v6::
+9952 :: NORM :: declaration :: Lorg/apache/giraph/graph/GraphType$3 :: v10 = new org.apache.giraph.graph.GraphType$3::DD,9958
+9958 :: EXPR :: modify :: Lorg/apache/giraph/graph/GraphType :: org.apache.giraph.graph.GraphType.EDGE_VALUE = v10::
+9960 :: NORM :: declaration :: Lorg/apache/giraph/graph/GraphType$4 :: v14 = new org.apache.giraph.graph.GraphType$4::DD,9966
+9966 :: EXPR :: modify :: Lorg/apache/giraph/graph/GraphType :: org.apache.giraph.graph.GraphType.OUTGOING_MESSAGE_VALUE = v14::
+9968 :: NORM :: declaration :: [Lorg/apache/giraph/graph/GraphType :: v19 = new org.apache.giraph.graph.GraphType[]::
+9969 :: EXPR :: reference :: Lorg/apache/giraph/graph/GraphType :: v20 = org.apache.giraph.graph.GraphType.VERTEX_ID::DD,9971
+9971 :: EXPR :: modify :: Ljava/lang/Object :: v19[#(0)] = v20::
+9975 :: EXPR :: reference :: Lorg/apache/giraph/graph/GraphType :: v21 = org.apache.giraph.graph.GraphType.VERTEX_VALUE::DD,9977
+9977 :: EXPR :: modify :: Ljava/lang/Object :: v19[#(1)] = v21::
+9981 :: EXPR :: reference :: Lorg/apache/giraph/graph/GraphType :: v22 = org.apache.giraph.graph.GraphType.EDGE_VALUE::DD,9983
+9983 :: EXPR :: modify :: Ljava/lang/Object :: v19[#(2)] = v22::
+9987 :: EXPR :: reference :: Lorg/apache/giraph/graph/GraphType :: v23 = org.apache.giraph.graph.GraphType.OUTGOING_MESSAGE_VALUE::DD,9989
+9989 :: EXPR :: modify :: Ljava/lang/Object :: v19[#(3)] = v23::
+10303 :: ENTR :: entry :: null :: org.apache.giraph.conf.ConfOptionType.<clinit>()::CD,10306:CD,10312:CD,10314:CD,10320:CD,10322:CD,10328:CD,10330:CD,10336:CD,10338:CD,10344:CD,10346:CD,10352:CD,10354:CD,10360:CD,10362:CD,10363:CD,10369:CD,10375:CD,10381:CD,10387:CD,10393:CD,10399
+10306 :: NORM :: declaration :: Lorg/apache/giraph/conf/ConfOptionType :: v2 = new org.apache.giraph.conf.ConfOptionType::DD,10312
+10312 :: EXPR :: modify :: Lorg/apache/giraph/conf/ConfOptionType :: org.apache.giraph.conf.ConfOptionType.BOOLEAN = v2::
+10314 :: NORM :: declaration :: Lorg/apache/giraph/conf/ConfOptionType :: v6 = new org.apache.giraph.conf.ConfOptionType::DD,10320
+10320 :: EXPR :: modify :: Lorg/apache/giraph/conf/ConfOptionType :: org.apache.giraph.conf.ConfOptionType.CLASS = v6::
+10322 :: NORM :: declaration :: Lorg/apache/giraph/conf/ConfOptionType :: v10 = new org.apache.giraph.conf.ConfOptionType::DD,10328
+10328 :: EXPR :: modify :: Lorg/apache/giraph/conf/ConfOptionType :: org.apache.giraph.conf.ConfOptionType.ENUM = v10::
+10330 :: NORM :: declaration :: Lorg/apache/giraph/conf/ConfOptionType :: v14 = new org.apache.giraph.conf.ConfOptionType::DD,10336
+10336 :: EXPR :: modify :: Lorg/apache/giraph/conf/ConfOptionType :: org.apache.giraph.conf.ConfOptionType.INTEGER = v14::
+10338 :: NORM :: declaration :: Lorg/apache/giraph/conf/ConfOptionType :: v18 = new org.apache.giraph.conf.ConfOptionType::DD,10344
+10344 :: EXPR :: modify :: Lorg/apache/giraph/conf/ConfOptionType :: org.apache.giraph.conf.ConfOptionType.FLOAT = v18::
+10346 :: NORM :: declaration :: Lorg/apache/giraph/conf/ConfOptionType :: v22 = new org.apache.giraph.conf.ConfOptionType::DD,10352
+10352 :: EXPR :: modify :: Lorg/apache/giraph/conf/ConfOptionType :: org.apache.giraph.conf.ConfOptionType.LONG = v22::
+10354 :: NORM :: declaration :: Lorg/apache/giraph/conf/ConfOptionType :: v26 = new org.apache.giraph.conf.ConfOptionType::DD,10360
+10360 :: EXPR :: modify :: Lorg/apache/giraph/conf/ConfOptionType :: org.apache.giraph.conf.ConfOptionType.STRING = v26::
+10362 :: NORM :: declaration :: [Lorg/apache/giraph/conf/ConfOptionType :: v31 = new org.apache.giraph.conf.ConfOptionType[]::
+10363 :: EXPR :: reference :: Lorg/apache/giraph/conf/ConfOptionType :: v32 = org.apache.giraph.conf.ConfOptionType.BOOLEAN::DD,10365
+10365 :: EXPR :: modify :: Ljava/lang/Object :: v31[#(0)] = v32::
+10369 :: EXPR :: reference :: Lorg/apache/giraph/conf/ConfOptionType :: v33 = org.apache.giraph.conf.ConfOptionType.CLASS::DD,10371
+10371 :: EXPR :: modify :: Ljava/lang/Object :: v31[#(1)] = v33::
+10375 :: EXPR :: reference :: Lorg/apache/giraph/conf/ConfOptionType :: v34 = org.apache.giraph.conf.ConfOptionType.ENUM::DD,10377
+10377 :: EXPR :: modify :: Ljava/lang/Object :: v31[#(2)] = v34::
+10381 :: EXPR :: reference :: Lorg/apache/giraph/conf/ConfOptionType :: v35 = org.apache.giraph.conf.ConfOptionType.INTEGER::DD,10383
+10383 :: EXPR :: modify :: Ljava/lang/Object :: v31[#(3)] = v35::
+10387 :: EXPR :: reference :: Lorg/apache/giraph/conf/ConfOptionType :: v36 = org.apache.giraph.conf.ConfOptionType.FLOAT::DD,10389
+10389 :: EXPR :: modify :: Ljava/lang/Object :: v31[#(4)] = v36::
+10393 :: EXPR :: reference :: Lorg/apache/giraph/conf/ConfOptionType :: v37 = org.apache.giraph.conf.ConfOptionType.LONG::DD,10395
+10395 :: EXPR :: modify :: Ljava/lang/Object :: v31[#(5)] = v37::
+10399 :: EXPR :: reference :: Lorg/apache/giraph/conf/ConfOptionType :: v38 = org.apache.giraph.conf.ConfOptionType.STRING::DD,10401
+10401 :: EXPR :: modify :: Ljava/lang/Object :: v31[#(6)] = v38::
+10572 :: ENTR :: entry :: null :: org.apache.giraph.utils.ConfigurationUtils.parseArgs(org.apache.giraph.conf.GiraphConfiguration,java.lang.String[])::CD,10585:CD,10589:CD,10591:CD,10597:CD,10602:JM,10611:JM,10606
+10585 :: NORM :: declaration :: Lorg/apache/commons/cli/BasicParser :: v6 = new org.apache.commons.cli.BasicParser::JM,10611:JM,10597:JM,10602:JM,10606:JM,10591
+10589 :: EXPR :: reference :: Lorg/apache/commons/cli/Options :: v8 = org.apache.giraph.utils.ConfigurationUtils.OPTIONS::JM,10611:JM,10597:JM,10602:JM,10606:JM,10591
+10591 :: CALL :: call :: Lorg/apache/commons/cli/CommandLine :: v10 = v6.parse(v8, p2 $args )::JM,10611:JM,10597:JM,10602:JM,10606:JM,10591
+10597 :: CALL :: call :: Z :: v13 = v10.hasOption(#(h))::JM,10611:JM,10597:JM,10602:JM,10606
+10602 :: PRED :: IF :: Z :: if (v13 == #(0)) goto 52::CD,10606:CD,10611:JM,10597:JM,10602
+10606 :: CALL :: call :: Z :: v16 = v10.hasOption(#(la))::JM,10611:JM,10597:JM,10602:JM,10606
+10611 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 64::CD,10612
+10612 :: CALL :: call :: V :: printSupportedAlgorithms()::CL,12308
+11311 :: ENTR :: entry :: null :: org.apache.giraph.conf.ClassConfOption.create(java.lang.String,java.lang.Class,java.lang.Class,java.lang.String)::JM,14034:JM,14037:JM,14011:JM,14014
+11344 :: EXPR :: modify :: I :: p0 $this .defaultValue = p2 $defaultValue ::
+11353 :: ENTR :: entry :: null :: org.apache.giraph.conf.PerGraphTypeEnumConfOption.create(java.lang.String,java.lang.Class,java.lang.Enum,java.lang.String)::JM,14113:JM,14114:JM,14085:JM,14086:JM,14150:JM,14057:JM,14058:JM,14122:JM,14155:JM,14094:JM,14127:JM,14159:JM,14066:JM,14099:JM,14131:JM,14071:JM,14103:JM,14075:JM,14141:JM,14142
+11384 :: NORM :: declaration :: Lorg/apache/giraph/conf/BooleanConfOption :: v7 = new org.apache.giraph.conf.BooleanConfOption::DD,11409:CF,11385
+11385 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v8 = new java.lang.StringBuilder::JM,14034:JM,14037:JM,11559
+11386 :: CALL :: call :: Ljava/lang/String :: v10 = valueOf(p1 $keyPrefix )::
+11394 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v8.append(#(.vertex.id))::
+11399 :: CALL :: call :: Ljava/lang/String :: v16 = v14.toString()::
+11409 :: EXPR :: modify :: Lorg/apache/giraph/conf/BooleanConfOption :: p0 $this .vertexId = v7::
+11412 :: NORM :: declaration :: Lorg/apache/giraph/conf/BooleanConfOption :: v18 = new org.apache.giraph.conf.BooleanConfOption::DD,11437:CF,11413
+11413 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v19 = new java.lang.StringBuilder::JM,14034:JM,14037:JM,11559
+11414 :: CALL :: call :: Ljava/lang/String :: v21 = valueOf(p1 $keyPrefix )::
+11422 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v19.append(#(.vertex.value))::
+11427 :: CALL :: call :: Ljava/lang/String :: v27 = v25.toString()::
+11437 :: EXPR :: modify :: Lorg/apache/giraph/conf/BooleanConfOption :: p0 $this .vertexValue = v18::
+11440 :: NORM :: declaration :: Lorg/apache/giraph/conf/BooleanConfOption :: v29 = new org.apache.giraph.conf.BooleanConfOption::DD,11465:CF,11441
+11441 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v30 = new java.lang.StringBuilder::JM,14034:JM,14037:JM,11559
+11442 :: CALL :: call :: Ljava/lang/String :: v32 = valueOf(p1 $keyPrefix )::
+11450 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v30.append(#(.edge.value))::
+11455 :: CALL :: call :: Ljava/lang/String :: v38 = v36.toString()::
+11465 :: EXPR :: modify :: Lorg/apache/giraph/conf/BooleanConfOption :: p0 $this .edgeValue = v29::
+11468 :: NORM :: declaration :: Lorg/apache/giraph/conf/BooleanConfOption :: v40 = new org.apache.giraph.conf.BooleanConfOption::DD,11493:CF,11469
+11469 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v41 = new java.lang.StringBuilder::JM,14034:JM,14037:JM,11559
+11470 :: CALL :: call :: Ljava/lang/String :: v43 = valueOf(p1 $keyPrefix )::
+11478 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v41.append(#(.outgoing.message))::
+11483 :: CALL :: call :: Ljava/lang/String :: v49 = v47.toString()::
+11493 :: EXPR :: modify :: Lorg/apache/giraph/conf/BooleanConfOption :: p0 $this .outgoingMessage = v40::
+11526 :: ENTR :: entry :: null :: org.apache.giraph.conf.EnumConfOption.create(java.lang.String,java.lang.Class,java.lang.Enum,java.lang.String)::CE,11527:CD,11533:JM,14034:JM,14212:JM,14037:JM,14215:CD,11541
+11527 :: EXIT :: exit :: Lorg/apache/giraph/conf/EnumConfOption :: org.apache.giraph.conf.EnumConfOption.create(java.lang.String,java.lang.Class,java.lang.Enum,java.lang.String)::JM,11991:JM,14082:JM,14110:JM,14138:JM,14166
+11533 :: NORM :: declaration :: Lorg/apache/giraph/conf/EnumConfOption :: v6 = new org.apache.giraph.conf.EnumConfOption::DD,11541
+11541 :: NORM :: compound :: Lorg/apache/giraph/conf/EnumConfOption :: return v6::DD,11527
+11559 :: EXPR :: modify :: Z :: p0 $this .defaultValue = p2 $defaultValue ::
+11580 :: EXPR :: modify :: J :: p0 $this .defaultValue = p2 $defaultValue ::
+11601 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .defaultValue = p2 $defaultValue ::
+11622 :: EXPR :: assign :: I :: v7 = CONVERT J to I p2 $defaultValue ::DD,11623
+11623 :: EXPR :: modify :: I :: p0 $this .defaultValue = v7::
+11644 :: EXPR :: modify :: F :: p0 $this .defaultValue = p2 $defaultValue ::
+11778 :: EXPR :: modify :: Z :: p0 $this .oneMessageToManyIdsEncoding = p3 $oneMessageToManyIdsEncoding ::
+11825 :: EXPR :: modify :: Lorg/apache/giraph/graph/GraphType :: p0 $this .graphType = p1 $graphType ::
+11828 :: NORM :: declaration :: Lorg/apache/giraph/conf/StrConfOption :: v5 = new org.apache.giraph.conf.StrConfOption::DD,11876:CF,11829
+11829 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v6 = new java.lang.StringBuilder::JM,11825:JM,11601:JM,14034:JM,14037:JM,11559
+11834 :: CALL :: call :: Ljava/lang/String :: v10 = p1 $graphType .dotString()::CL,14289
+11838 :: CALL :: call :: Ljava/lang/StringBuilder :: v12 = v6.append(v10)::
+11843 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v12.append(#(.class.name))::
+11848 :: CALL :: call :: Ljava/lang/String :: v17 = v15.toString()::
+11852 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v19 = new java.lang.StringBuilder::JM,11825:JM,11601:JM,14034:JM,14037:JM,11559
+11857 :: CALL :: call :: Ljava/lang/String :: v23 = p1 $graphType .spaceString()::CL,14307
+11861 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v19.append(v23)::
+11866 :: CALL :: call :: Ljava/lang/String :: v27 = v25.toString()::
+11876 :: EXPR :: modify :: Lorg/apache/giraph/conf/StrConfOption :: p0 $this .jythonClassNameOption = v5::
+11879 :: NORM :: declaration :: Lorg/apache/giraph/conf/BooleanConfOption :: v29 = new org.apache.giraph.conf.BooleanConfOption::DD,11932:CF,11880
+11880 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v30 = new java.lang.StringBuilder::JM,11825:JM,11601:JM,14034:JM,14037:JM,11559
+11885 :: CALL :: call :: Ljava/lang/String :: v33 = p1 $graphType .dotString()::CL,14289
+11889 :: CALL :: call :: Ljava/lang/StringBuilder :: v35 = v30.append(v33)::
+11894 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v35.append(#(.needs.wrapper))::
+11899 :: CALL :: call :: Ljava/lang/String :: v40 = v38.toString()::
+11903 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v42 = new java.lang.StringBuilder::JM,11825:JM,11601:JM,14034:JM,14037:JM,11559
+11908 :: CALL :: call :: Ljava/lang/String :: v46 = p1 $graphType .spaceString()::CL,14307
+11912 :: CALL :: call :: Ljava/lang/StringBuilder :: v48 = v42.append(v46)::
+11917 :: CALL :: call :: Ljava/lang/StringBuilder :: v51 = v48.append(#( jython type needs a ...))::
+11922 :: CALL :: call :: Ljava/lang/String :: v53 = v51.toString()::
+11932 :: EXPR :: modify :: Lorg/apache/giraph/conf/BooleanConfOption :: p0 $this .needsWrapperOption = v29::
+11935 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v55 = new java.lang.StringBuilder::JM,11825:JM,11601:JM,14034:JM,14037:JM,11559
+11940 :: CALL :: call :: Ljava/lang/String :: v59 = p1 $graphType .dotString()::CL,14289
+11944 :: CALL :: call :: Ljava/lang/StringBuilder :: v61 = v55.append(v59)::
+11949 :: CALL :: call :: Ljava/lang/StringBuilder :: v64 = v61.append(#(.language))::
+11954 :: CALL :: call :: Ljava/lang/String :: v66 = v64.toString()::
+11961 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v69 = new java.lang.StringBuilder::JM,11825:JM,11601:JM,14034:JM,14037:JM,11559
+11966 :: CALL :: call :: Ljava/lang/String :: v73 = p1 $graphType .spaceString()::CL,14307
+11970 :: CALL :: call :: Ljava/lang/StringBuilder :: v75 = v69.append(v73)::
+11975 :: CALL :: call :: Ljava/lang/StringBuilder :: v78 = v75.append(#( is implemented in))::
+11980 :: CALL :: call :: Ljava/lang/String :: v80 = v78.toString()::
+11984 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v82 = create(v66, v67, v68, v80)::JM,11991:CL,11526
+11991 :: EXPR :: modify :: Lorg/apache/giraph/conf/EnumConfOption :: p0 $this .languageOption = v82::
+12308 :: ENTR :: entry :: null :: org.apache.giraph.utils.ConfigurationUtils.printSupportedAlgorithms()::CD,12322
+12322 :: CALL :: call :: Ljava/util/List :: v10 = getAnnotatedClasses(v7, #(org.apache.giraph))::CL,15892
+14011 :: EXPR :: modify :: Ljava/lang/Class :: p0 $this .defaultClass = p2 $defaultClass ::
+14014 :: EXPR :: modify :: Ljava/lang/Class :: p0 $this .interfaceClass = p3 $interfaceClass ::
+14034 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .key = p1 $key ::
+14037 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .description = p2 $description ::
+14057 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v8 = new java.lang.StringBuilder::
+14058 :: CALL :: call :: Ljava/lang/String :: v10 = valueOf(p1 $keyPrefix )::
+14066 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v8.append(#(.vertex.id))::
+14071 :: CALL :: call :: Ljava/lang/String :: v16 = v14.toString()::
+14075 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v18 = create(v16, p2 $klass , p3 $defaultValue , p4 $description )::JM,14082:CL,11526
+14082 :: EXPR :: modify :: Lorg/apache/giraph/conf/EnumConfOption :: p0 $this .vertexId = v18::
+14085 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v19 = new java.lang.StringBuilder::
+14086 :: CALL :: call :: Ljava/lang/String :: v21 = valueOf(p1 $keyPrefix )::
+14094 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v19.append(#(.vertex.value))::
+14099 :: CALL :: call :: Ljava/lang/String :: v27 = v25.toString()::
+14103 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v29 = create(v27, p2 $klass , p3 $defaultValue , p4 $description )::JM,14110:CL,11526
+14110 :: EXPR :: modify :: Lorg/apache/giraph/conf/EnumConfOption :: p0 $this .vertexValue = v29::
+14113 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v30 = new java.lang.StringBuilder::
+14114 :: CALL :: call :: Ljava/lang/String :: v32 = valueOf(p1 $keyPrefix )::
+14122 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v30.append(#(.edge.value))::
+14127 :: CALL :: call :: Ljava/lang/String :: v38 = v36.toString()::
+14131 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v40 = create(v38, p2 $klass , p3 $defaultValue , p4 $description )::JM,14138:CL,11526
+14138 :: EXPR :: modify :: Lorg/apache/giraph/conf/EnumConfOption :: p0 $this .edgeValue = v40::
+14141 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v41 = new java.lang.StringBuilder::
+14142 :: CALL :: call :: Ljava/lang/String :: v43 = valueOf(p1 $keyPrefix )::
+14150 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v41.append(#(.outgoing.message))::
+14155 :: CALL :: call :: Ljava/lang/String :: v49 = v47.toString()::
+14159 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v51 = create(v49, p2 $klass , p3 $defaultValue , p4 $description )::JM,14166:CL,11526
+14166 :: EXPR :: modify :: Lorg/apache/giraph/conf/EnumConfOption :: p0 $this .outgoingMessage = v51::
+14212 :: EXPR :: modify :: Ljava/lang/Class :: p0 $this .klass = p2 $klass ::
+14215 :: EXPR :: modify :: Ljava/lang/Enum :: p0 $this .defaultValue = p3 $defaultValue ::
+14289 :: ENTR :: entry :: null :: org.apache.giraph.graph.GraphType.dotString()::CE,14290:CD,14293:CD,14297:CD,14303
+14290 :: EXIT :: exit :: Ljava/lang/String :: org.apache.giraph.graph.GraphType.dotString()::
+14293 :: CALL :: call :: Ljava/lang/String :: v4 = p0 $this .toString()::CL,17065
+14297 :: CALL :: call :: Ljava/lang/String :: v8 = v4.replaceAll(#(_), #(.))::JM,14303
+14303 :: NORM :: compound :: Ljava/lang/String :: return v8::DD,14290
+14307 :: ENTR :: entry :: null :: org.apache.giraph.graph.GraphType.spaceString()::CE,14308:CD,14311:CD,14315:CD,14321
+14308 :: EXIT :: exit :: Ljava/lang/String :: org.apache.giraph.graph.GraphType.spaceString()::
+14311 :: CALL :: call :: Ljava/lang/String :: v4 = p0 $this .toString()::CL,17065
+14315 :: CALL :: call :: Ljava/lang/String :: v8 = v4.replaceAll(#(_), #( ))::JM,14321
+14321 :: NORM :: compound :: Ljava/lang/String :: return v8::DD,14308
+15892 :: ENTR :: entry :: null :: org.apache.giraph.utils.AnnotationUtils.getAnnotatedClasses(java.lang.Class,java.lang.String)::CD,15897:CD,15901
+15897 :: NORM :: declaration :: Ljava/util/ArrayList :: v4 = new java.util.ArrayList::
+15901 :: CALL :: call :: Ljava/util/Iterator :: v7 = getClassesIterator(p2 $packageName )::CL,18563
+17065 :: ENTR :: entry :: null :: org.apache.giraph.graph.GraphType.toString()::CD,17073
+17073 :: CALL :: call :: Ljava/lang/String :: v6 = v4.toLowerCase()::
+18563 :: ENTR :: entry :: null :: org.apache.giraph.utils.AnnotationUtils.getClassesIterator(java.lang.String)::CD,18567:CD,18570
+18567 :: CALL :: call :: Z :: v4 = isExecutedFromJar()::JM,18570:CL,20431
+18570 :: PRED :: IF :: Z :: if (v4 == #(0)) goto 25::CF,18571:JM,20460:JM,20461:JM,20462:JM,20463
+18571 :: NORM :: declaration :: Lorg/apache/giraph/utils/AnnotationUtils$JarClassesIterator :: v8 = new org.apache.giraph.utils.AnnotationUtils$JarClassesIterator::JM,20460:JM,20461:JM,20462:JM,20463
+20431 :: ENTR :: entry :: null :: org.apache.giraph.utils.AnnotationUtils.isExecutedFromJar()::CE,20432:CD,20435:CD,20440:CD,20444:CD,20449
+20432 :: EXIT :: exit :: Z :: org.apache.giraph.utils.AnnotationUtils.isExecutedFromJar()::JM,18570
+20435 :: CALL :: call :: Ljava/net/URL :: v5 = v2.getResource(#(AnnotationUtils.class))::JM,20449:JM,20440:JM,20444
+20440 :: CALL :: call :: Ljava/lang/String :: v7 = v5.getProtocol()::JM,20449:JM,20440:JM,20444
+20444 :: CALL :: call :: Z :: v10 = v7.equals(#(jar))::JM,20449:JM,20444
+20449 :: NORM :: compound :: Z :: return v10::DD,20432
+20460 :: NORM :: declaration :: Ljava/util/jar/JarInputStream :: v5 = new java.util.jar.JarInputStream::CF,20461
+20461 :: NORM :: declaration :: Ljava/io/FileInputStream :: v6 = new java.io.FileInputStream::CF,20462
+20462 :: NORM :: declaration :: Ljava/io/File :: v7 = new java.io.File::
+20463 :: CALL :: call :: Ljava/lang/String :: v9 = access$0()::CL,22166
+22166 :: ENTR :: entry :: null :: org.apache.giraph.utils.AnnotationUtils.access$0()::CE,22167:CD,22169:CD,22172
+22167 :: EXIT :: exit :: Ljava/lang/String :: org.apache.giraph.utils.AnnotationUtils.access$0()::
+22169 :: CALL :: call :: Ljava/lang/String :: v3 = getCurrentJar()::JM,22172:CL,24133
+22172 :: NORM :: compound :: Ljava/lang/String :: return v3::DD,22167
+24133 :: ENTR :: entry :: null :: org.apache.giraph.utils.AnnotationUtils.getCurrentJar()::CE,24134:CD,24137:CD,24141:CD,24145:CD,24149:CD,24153
+24134 :: EXIT :: exit :: Ljava/lang/String :: org.apache.giraph.utils.AnnotationUtils.getCurrentJar()::JM,22172
+24137 :: CALL :: call :: Ljava/security/ProtectionDomain :: v4 = v2.getProtectionDomain()::JM,24145:JM,24149:JM,24153
+24141 :: CALL :: call :: Ljava/security/CodeSource :: v6 = v4.getCodeSource()::JM,24145:JM,24149:JM,24153
+24145 :: CALL :: call :: Ljava/net/URL :: v8 = v6.getLocation()::JM,24145:JM,24149:JM,24153
+24149 :: CALL :: call :: Ljava/lang/String :: v10 = v8.getFile()::JM,24149:JM,24153
+24153 :: NORM :: compound :: Ljava/lang/String :: return v10::DD,24134
+25385 :: PRED :: IF :: Z :: if (p3 $handler  == #(null)) goto 50::CF,25386:CD,25389:JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25386 :: CALL :: call :: Ljava/lang/SecurityManager :: v11 = getSecurityManager()::JM,25389
+25389 :: PRED :: IF :: Z :: if (v11 == #(null)) goto 50::CD,25390:JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25390 :: CALL :: call :: V :: p0 $this .checkSpecifyHandler(v11)::
+25394 :: CALL :: call :: I :: v14 = p2 $spec .length()::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25399 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v21 + #(-1)::DD,25658
+25400 :: PRED :: IF :: Z :: if (v21 <= #(0)) goto 89::CF,25659:CD,25401:CD,25402:CD,25407
+25401 :: EXPR :: assign :: Ljava/lang/Object :: v16 = v21 - #(1)::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25402 :: CALL :: call :: C :: v18 = p2 $spec .charAt(v16)::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25407 :: PRED :: IF :: Z :: if (v18 <= #(32)) goto 58::CD,25399:CD,25400:CD,25658:CD,25659
+25409 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v25 + #(1)::DD,25659
+25410 :: PRED :: IF :: Z :: if (v25 >= v21) goto 111::CD,25411:CD,25416:JM,25440:JM,25665:JM,25667:JM,25607:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25411 :: CALL :: call :: C :: v23 = p2 $spec .charAt(v25)::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25416 :: PRED :: IF :: Z :: if (v23 <= #(32)) goto 82::CD,25409:CD,25410:CD,25659:JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25417 :: CALL :: call :: Z :: v29 = p2 $spec .regionMatches(#(1), v25, #(url:), #(0), #(4))::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25426 :: PRED :: IF :: Z :: if (v29 == #(0)) goto 123::CF,25660:CD,25427
+25427 :: EXPR :: assign :: Ljava/lang/Object :: v30 = v25 + #(4)::DD,25660
+25428 :: CALL :: call :: I :: v33 = p2 $spec .length()::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25432 :: PRED :: IF :: Z :: if (v31 >= v33) goto 147::CF,25661:CD,25433:CD,25438:JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25407
+25433 :: CALL :: call :: C :: v35 = p2 $spec .charAt(v31)::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25438 :: PRED :: IF :: Z :: if (v35 != #(35)) goto 147::CF,25661
+25440 :: PRED :: IF :: Z :: if (v39 != #(58)) goto 192::CD,25441:CD,25447:CD,25451:CD,25456:CD,25459:CD,25460:CD,25662:CD,25663:CD,25664:JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25441 :: CALL :: call :: Ljava/lang/String :: v45 = p2 $spec .substring(v31, v43)::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25447 :: CALL :: call :: Ljava/lang/String :: v47 = v45.toLowerCase()::JM,25664:JM,25456
+25451 :: CALL :: call :: Z :: v49 = p0 $this .isValidProtocol(v47)::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25471:JM,25407:JM,25664
+25456 :: PRED :: IF :: Z :: if (v49 == #(0)) goto 224::CF,25663:CD,25457:CD,25664
+25457 :: EXPR :: assign :: Ljava/lang/Object :: v50 = v43 + #(1)::DD,25663
+25459 :: EXPR :: assign :: Ljava/lang/Object :: v42 = v43 + #(1)::DD,25662
+25460 :: PRED :: IF :: Z :: if (v37 != #(0)) goto 224::CF,25663:CD,25461:CD,25664
+25461 :: PRED :: IF :: Z :: if (v43 >= v21) goto 224::CF,25663:CD,25462:CD,25467:CD,25664:JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25438:JM,25407
+25462 :: CALL :: call :: C :: v39 = p2 $spec .charAt(v43)::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25467 :: PRED :: IF :: Z :: if (v39 != #(47)) goto 154::CF,25663:CD,25440
+25471 :: PRED :: IF :: Z :: if (p1 $context  == #(null)) goto 344::CF,25667:CD,25472
+25472 :: PRED :: IF :: Z :: if (v52 == #(null)) goto 249::CD,25476:CD,25481:CD,25482:CD,25489:CD,25499:CD,25665:CD,25666:CD,25667
+25473 :: EXPR :: reference :: Ljava/lang/String :: v53 = p1 $context .protocol::JM,25481
+25476 :: CALL :: call :: Z :: v55 = v52.equalsIgnoreCase(v53)::JM,25481
+25481 :: PRED :: IF :: Z :: if (v55 == #(0)) goto 344::CF,25667:CD,25482:CD,25489:CD,25499:CD,25665:CD,25666
+25482 :: PRED :: IF :: Z :: if (p3 $handler  != #(null)) goto 258::CF,25665
+25483 :: EXPR :: reference :: Ljava/net/URLStreamHandler :: v56 = p1 $context .handler::DD,25665
+25486 :: EXPR :: reference :: Ljava/lang/String :: v58 = p1 $context .path::DD,25489
+25489 :: PRED :: IF :: Z :: if (v58 == #(null)) goto 281::CF,25666:CD,25493:CD,25498
+25490 :: EXPR :: reference :: Ljava/lang/String :: v59 = p1 $context .path::JM,25493:JM,25498
+25493 :: CALL :: call :: Z :: v62 = v59.startsWith(#(/))::JM,25493:JM,25498
+25498 :: PRED :: IF :: Z :: if (v62 == #(0)) goto 281::CF,25666
+25499 :: PRED :: IF :: Z :: if (v63 != #(null)) goto 344::CF,25667
+25546 :: NORM :: declaration :: Ljava/net/MalformedURLException :: v99 = new java.net.MalformedURLException::
+25547 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v100 = new java.lang.StringBuilder::
+25552 :: CALL :: call :: Ljava/lang/StringBuilder :: v104 = v100.append(p2 $spec )::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25557 :: CALL :: call :: Ljava/lang/String :: v106 = v104.toString()::JM,25607:JM,25608
+25566 :: PRED :: IF :: Z :: if (v71 != #(null)) goto 420::CD,25570
+25570 :: CALL :: call :: Ljava/net/URLStreamHandler :: v77 = getURLStreamHandler(v75)::
+25575 :: NORM :: declaration :: Ljava/net/MalformedURLException :: v89 = new java.net.MalformedURLException::
+25576 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v90 = new java.lang.StringBuilder::
+25581 :: EXPR :: reference :: Ljava/lang/String :: v93 = p0 $this .protocol::
+25584 :: CALL :: call :: Ljava/lang/StringBuilder :: v95 = v90.append(v93)::
+25589 :: CALL :: call :: Ljava/lang/String :: v97 = v95.toString()::
+25601 :: CALL :: call :: I :: v80 = p2 $spec .indexOf(#(35), v51)::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25607 :: PRED :: IF :: Z :: if (v80 < #(0)) goto 458::CD,25608:CD,25609
+25608 :: EXPR :: assign :: Ljava/lang/Object :: v81 = v80 + #(1)::JM,25456:JM,25440:JM,25426:JM,25607:JM,25416:JM,25432:JM,25608:JM,25658:JM,25467:JM,25438:JM,25407:JM,25665:JM,25667:JM,25385:JM,25482
+25609 :: CALL :: call :: Ljava/lang/String :: v83 = p2 $spec .substring(v81, v21)::JM,25440:JM,25665:JM,25667:JM,25607:JM,25416:JM,25608:JM,25385:JM,25482:JM,25456:JM,25426:JM,25432:JM,25658:JM,25467:JM,25438:JM,25407
+25645 :: NORM :: declaration :: Ljava/net/MalformedURLException :: v116 = new java.net.MalformedURLException::
+25646 :: CALL :: call :: Ljava/lang/String :: v118 = v108.getMessage()::
+25657 :: EXPR :: assign :: Ljava/lang/Exception :: v108 = catch <exc>::
+25658 :: EXPR :: assign :: null :: PHI v21 = v14, v20::DD,25399:DD,25400:DD,25401:DD,25410:DD,25461:JM,25440:JM,25426:JM,25607:JM,25416:JM,25432:JM,25608:JM,25658:JM,25467:JM,25438:JM,25407
+25659 :: EXPR :: assign :: null :: PHI v25 = #(0), #(0), v24::DD,25409:DD,25410:JM,25456:JM,25440:JM,25426:JM,25607:JM,25416:JM,25432:JM,25608:JM,25658:JM,25467:JM,25438:JM,25407:DD,25427:DD,25660
+25660 :: EXPR :: assign :: null :: PHI v31 = v25, v30::DD,25432:JM,25456:JM,25440:JM,25426:JM,25607:JM,25416:JM,25608:JM,25658:JM,25467:JM,25438:JM,25407:DD,25662:DD,25663:JM,25665:JM,25667:JM,25385:JM,25482
+25661 :: EXPR :: assign :: null :: PHI v37 = #(0), #(0), #(1)::DD,25460
+25662 :: EXPR :: assign :: null :: PHI v43 = v31, v42::JM,25440:JM,25426:JM,25607:JM,25416:JM,25432:JM,25608:JM,25658:JM,25467:JM,25438:JM,25407:DD,25457:DD,25459:DD,25461:JM,25456:CF,25460
+25663 :: EXPR :: assign :: null :: PHI v51 = v31, v50, v31, v31, v31::CF,25664:JM,25440:JM,25426:JM,25607:JM,25416:JM,25432:JM,25608:JM,25658:JM,25467:JM,25438:JM,25407
+25664 :: EXPR :: assign :: null :: PHI v52 = #(null), v47, #(null), #(null), #(null)::DD,25472:JM,25481:DD,25666
+25665 :: EXPR :: assign :: null :: PHI v57 = p3 $handler , v56::DD,25667
+25666 :: EXPR :: assign :: null :: PHI v63 = v52, v52, #(null)::DD,25499
+25667 :: EXPR :: assign :: null :: PHI v71 = p3 $handler , p3 $handler , v57, v57::DD,25566
+26975 :: CALL :: call :: V :: p1 $sm .checkPermission(v4)::
+26985 :: EXPR :: reference :: Ljava/util/Hashtable :: v3 = java.net.URL.handlers::JM,26992
+26987 :: CALL :: call :: Ljava/lang/Object :: v5 = v3.get(p1 $protocol )::JM,26992:JM,27169:JM,27172:JM,26999:JM,27143:JM,27096:JM,27133:JM,27166
+26992 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST v5::DD,26993:DD,27166
+26993 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 315::CD,26994:CD,26996:CD,27004:CD,27126:CD,27128:CD,27133:CD,27134:CD,27166:CD,27167:CD,27171
+26994 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v9 = java.net.URL.factory::DD,26996
+26996 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 36::CF,27166:CD,26997:CD,26999:CD,27167
+26997 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v10 = java.net.URL.factory::JM,26999:JM,27166
+26999 :: CALL :: call :: Ljava/net/URLStreamHandler :: v12 = v10.createURLStreamHandler(p1 $protocol )::JM,26999:JM,27166:JM,26992:JM,27169:JM,27172:JM,27143:JM,27096:JM,27133
+27004 :: PRED :: IF :: Z :: if (v14 != #(null)) goto 233::CF,27171:CD,27011:CD,27015:CD,27016:CD,27035:CD,27036:CD,27044:CD,27049:CD,27053:CD,27117:CD,27170
+27011 :: CALL :: call :: Ljava/lang/Object :: v21 = doPrivileged(v16)::JM,27015
+27015 :: EXPR :: assign :: Ljava/lang/Object :: v22 = CHECKCAST v21::DD,27016
+27016 :: PRED :: IF :: Z :: if (v22 == #()) goto 88::CF,27017:CD,27018:CD,27026:CD,27031
+27017 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v23 = new java.lang.StringBuilder::
+27018 :: CALL :: call :: Ljava/lang/String :: v25 = valueOf(v22)::
+27026 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v23.append(#(|))::
+27031 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::
+27035 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v33 = new java.lang.StringBuilder::
+27036 :: CALL :: call :: Ljava/lang/String :: v35 = valueOf(v32)::
+27044 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v33.append(#(sun.net.www.protocol))::
+27049 :: CALL :: call :: Ljava/lang/String :: v41 = v39.toString()::
+27053 :: NORM :: declaration :: Ljava/util/StringTokenizer :: v42 = new java.util.StringTokenizer::JM,27122
+27060 :: CALL :: call :: Ljava/lang/String :: v47 = v42.nextToken()::
+27064 :: CALL :: call :: Ljava/lang/String :: v49 = v47.trim()::
+27068 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v50 = new java.lang.StringBuilder::JM,27169:JM,27096
+27069 :: CALL :: call :: Ljava/lang/String :: v52 = valueOf(v49)::
+27077 :: CALL :: call :: Ljava/lang/StringBuilder :: v56 = v50.append(#(.))::JM,27169:JM,27096
+27082 :: CALL :: call :: Ljava/lang/StringBuilder :: v58 = v56.append(p1 $protocol )::JM,27169:JM,27096:JM,26992:JM,27172:JM,26999:JM,27143:JM,27133:JM,27166
+27087 :: CALL :: call :: Ljava/lang/StringBuilder :: v61 = v58.append(#(.Handler))::JM,27169:JM,27172:JM,27096:JM,27133
+27092 :: CALL :: call :: Ljava/lang/String :: v63 = v61.toString()::JM,27169:JM,27096
+27096 :: CALL :: call :: Ljava/lang/Class :: v65 = forName(v63)::JM,27169:JM,27096
+27101 :: CALL :: call :: Ljava/lang/ClassLoader :: v68 = getSystemClassLoader()::JM,27169
+27105 :: CALL :: call :: Ljava/lang/Class :: v70 = v68.loadClass(v63)::JM,27169:JM,27096
+27110 :: PRED :: IF :: Z :: if (v72 == #(null)) goto 222::CF,27170:CD,27111:CD,27115
+27111 :: CALL :: call :: Ljava/lang/Object :: v75 = v72.newInstance()::JM,27111:JM,27115
+27115 :: EXPR :: assign :: Ljava/lang/Object :: v76 = CHECKCAST v75::DD,27170
+27117 :: PRED :: IF :: Z :: if (v77 != #(null)) goto 233::CF,27171:CD,27118:CD,27122
+27118 :: CALL :: call :: Z :: v45 = v42.hasMoreTokens()::JM,27122
+27122 :: PRED :: IF :: Z :: if (v45 != #(0)) goto 127::CF,27171:CD,27060:CD,27064:CD,27068:CD,27069:CD,27077:CD,27082:CD,27087:CD,27092:CD,27096:CD,27110:CD,27117:CD,27169:CD,27170
+27126 :: EXPR :: reference :: Ljava/util/Hashtable :: v82 = java.net.URL.handlers::JM,27133
+27128 :: CALL :: call :: Ljava/lang/Object :: v84 = v82.get(p1 $protocol )::JM,27133:JM,26992:JM,27169:JM,27172:JM,26999:JM,27143:JM,27096:JM,27166
+27133 :: EXPR :: assign :: Ljava/lang/Object :: v85 = CHECKCAST v84::DD,27134:DD,27172
+27134 :: PRED :: IF :: Z :: if (v85 == #(null)) goto 265::CD,27137:CD,27148:CD,27149:CD,27172:CD,27173
+27137 :: PRED :: IF :: Z :: if (v15 != #(0)) goto 287::CF,27172:CD,27138:CD,27140
+27138 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v86 = java.net.URL.factory::DD,27140
+27140 :: PRED :: IF :: Z :: if (v86 == #(null)) goto 287::CF,27172:CD,27141:CD,27143
+27141 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v87 = java.net.URL.factory::JM,27172:JM,27143
+27143 :: CALL :: call :: Ljava/net/URLStreamHandler :: v89 = v87.createURLStreamHandler(p1 $protocol )::JM,27172:JM,27143:JM,26992:JM,27169:JM,26999:JM,27096:JM,27133:JM,27166
+27148 :: PRED :: IF :: Z :: if (v90 == #(null)) goto 294::CF,27173
+27149 :: PRED :: IF :: Z :: if (v91 == #(null)) goto 307::CD,27150:CD,27152
+27150 :: EXPR :: reference :: Ljava/util/Hashtable :: v92 = java.net.URL.handlers::
+27152 :: CALL :: call :: Ljava/lang/Object :: v94 = v92.put(p1 $protocol , v91)::JM,26992:JM,27169:JM,27172:JM,26999:JM,27143:JM,27096:JM,27133:JM,27166
+27166 :: EXPR :: assign :: null :: PHI v14 = v6, v12::CF,27167:DD,27004:DD,27170:DD,27171
+27167 :: EXPR :: assign :: null :: PHI v15 = #(0), #(1)::DD,27137:CF,27004
+27169 :: EXPR :: assign :: null :: PHI v72 = v65, #(null), v70::DD,27110:JM,27111:JM,27115
+27170 :: EXPR :: assign :: null :: PHI v77 = v14, v77, v76, v77::DD,27117:DD,27170:DD,27171
+27171 :: EXPR :: assign :: null :: PHI v80 = v14, v77, v77::DD,27173
+27172 :: EXPR :: assign :: null :: PHI v90 = v85, v85, v89::DD,27148:DD,27173
+27173 :: EXPR :: assign :: null :: PHI v91 = v80, v90::DD,27149:JM,26992:JM,27169:JM,27172:JM,27096:JM,27133:JM,27166

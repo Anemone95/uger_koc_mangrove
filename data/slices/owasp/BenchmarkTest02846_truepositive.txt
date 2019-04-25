@@ -1,0 +1,22 @@
+[64, 65, 66, 71, 57, 58, 59, 60, 61, 62, 63]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest02846.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,16:CD,22:CD,27:CD,31:CD,35:CD,40:CD,45:CD,50:CD,54:CD,57:CD,66:CD,81:CD,82:JM,17:JM,21
+7 :: CALL :: call :: Ljava/util/Enumeration :: v8 = p1 $request .getHeaders(#(foo))::JM,16:JM,17:JM,21:JM,12
+12 :: CALL :: call :: Z :: v10 = v8.hasMoreElements()::JM,16:JM,17:JM,21:JM,12
+16 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 41::CF,81:CD,17:CD,21:JM,16:JM,12
+17 :: CALL :: call :: Ljava/lang/Object :: v13 = v8.nextElement()::JM,16:JM,17:JM,21:JM,12
+21 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::DD,81
+22 :: CALL :: call :: C :: v19 = #(ABC).charAt(#(2))::JM,27
+27 :: PRED :: IF :: null :: switch v19::CD,82
+31 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v22 = new java.lang.StringBuilder::JM,66
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v22.append(#(UPDATE USERS SET PASS...))::JM,66
+40 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v26.append(v21)::JM,66
+45 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v28.append(#(' WHERE USERNAME='foo'))::JM,66
+50 :: CALL :: call :: Ljava/lang/String :: v33 = v31.toString()::JM,66
+54 :: CALL :: call :: Ljava/sql/Statement :: v35 = getSqlStatement()::JM,66
+57 :: NORM :: declaration :: [Ljava/lang/String :: v36 = new java.lang.String[]::JM,66
+58 :: EXPR :: modify :: Ljava/lang/Object :: v36[#(0)] = #(user)::
+62 :: EXPR :: modify :: Ljava/lang/Object :: v36[#(1)] = #(password)::
+66 :: CALL :: call :: I :: v41 = v35.executeUpdate(v33, v36)::JM,66
+81 :: EXPR :: assign :: null :: PHI v15 = #(), v14::DD,82:JM,27
+82 :: EXPR :: assign :: null :: PHI v21 = v15, #(bobs_your_uncle), v15, #(bobs_your_uncle)::CF,31:JM,66

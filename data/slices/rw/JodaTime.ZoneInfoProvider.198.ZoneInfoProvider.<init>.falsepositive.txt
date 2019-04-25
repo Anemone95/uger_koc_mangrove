@@ -1,0 +1,108 @@
+[6200, 6201, 6202, 6214]
+18 :: CALL :: call :: Z :: v10 = p1 $null .endsWith(#(/))::JM,48:JM,49:JM,23
+23 :: PRED :: IF :: Z :: if (v10 != #(0)) goto 49::CF,24:CD,28:CD,33:CD,38
+24 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::
+28 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v12.append(p1 $null )::JM,48:JM,49:JM,23
+33 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v15.append(#(47))::
+38 :: CALL :: call :: Ljava/lang/String :: v20 = v18.toString()::
+42 :: EXPR :: modify :: Ljava/io/File :: p0 $null .iFileDir = #(null)::
+48 :: PRED :: IF :: Z :: if (p2 $null  != #(null)) goto 75::CD,49
+49 :: PRED :: IF :: Z :: if (p3 $null  != #(0)) goto 75::CD,54
+54 :: CALL :: call :: Ljava/lang/ClassLoader :: v25 = v23.getClassLoader()::
+61 :: CALL :: call :: Ljava/io/InputStream :: v29 = p0 $null .openResource(#(ZoneInfoMap))::JM,48:JM,49:JM,23:CL,6191
+500 :: ENTR :: entry :: null :: org.joda.time.UTCDateTimeZone.<clinit>()::JM,7042:JM,7048
+6191 :: ENTR :: entry :: null :: org.joda.time.tz.ZoneInfoProvider.openResource(java.lang.String)::CD,6199:JM,23
+6196 :: EXPR :: reference :: Ljava/io/File :: v4 = p0 $null .iFileDir::DD,6199
+6199 :: PRED :: IF :: Z :: if (v4 == #(null)) goto 31::CF,6200:CD,6201:CD,6214
+6200 :: NORM :: declaration :: Ljava/io/FileInputStream :: v37 = new java.io.FileInputStream::CF,6201
+6201 :: NORM :: declaration :: Ljava/io/File :: v38 = new java.io.File::
+6202 :: EXPR :: reference :: Ljava/io/File :: v39 = p0 $null .iFileDir::
+6214 :: NORM :: compound :: Ljava/lang/Object :: goto 120::
+7042 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v6 = new java.lang.IllegalArgumentException::JM,7042:JM,7048
+7048 :: EXPR :: modify :: Ljava/lang/String :: p0 $null .iID = p1 $null ::
+7310 :: ENTR :: entry :: null :: org.joda.time.tz.ZoneInfoProvider.1.run()::CE,7311:CD,7314:CD,7318
+7311 :: EXIT :: exit :: Ljava/lang/Object :: org.joda.time.tz.ZoneInfoProvider.1.run()::
+7314 :: CALL :: call :: Ljava/io/InputStream :: v4 = p0 $null .run()::JM,7318:CL,8286
+7318 :: NORM :: compound :: Ljava/lang/Object :: return v4::DD,7311
+8286 :: ENTR :: entry :: null :: org.joda.time.tz.ZoneInfoProvider.1.run()::CE,8287:CD,8293:CD,8297
+8287 :: EXIT :: exit :: Ljava/io/InputStream :: org.joda.time.tz.ZoneInfoProvider.1.run()::JM,7318
+8293 :: CALL :: call :: Ljava/lang/ClassLoader :: v5 = access$000(v3)::JM,8297:CL,9275
+8297 :: PRED :: IF :: Z :: if (v5 == #(null)) goto 26::CD,8301:CD,8308:CD,8313:CD,8317:CD,8321
+8301 :: CALL :: call :: Ljava/lang/ClassLoader :: v12 = access$000(v10)::JM,8313:CL,9275
+8305 :: EXPR :: reference :: Ljava/lang/String :: v13 = p0 $null .val$path::JM,8313
+8308 :: CALL :: call :: Ljava/io/InputStream :: v15 = v12.getResourceAsStream(v13)::JM,8313
+8313 :: NORM :: compound :: Ljava/io/InputStream :: return v15::DD,8287
+8317 :: CALL :: call :: Ljava/io/InputStream :: v9 = getSystemResourceAsStream(v7)::JM,8321
+8321 :: NORM :: compound :: Ljava/io/InputStream :: return v9::DD,8287
+9275 :: ENTR :: entry :: null :: org.joda.time.tz.ZoneInfoProvider.access$000(org.joda.time.tz.ZoneInfoProvider)::CE,9276:CD,9282
+9276 :: EXIT :: exit :: Ljava/lang/ClassLoader :: org.joda.time.tz.ZoneInfoProvider.access$000(org.joda.time.tz.ZoneInfoProvider)::JM,8297:JM,8313
+9279 :: EXPR :: reference :: Ljava/lang/ClassLoader :: v3 = p1 $null .iLoader::DD,9282
+9282 :: NORM :: compound :: Ljava/lang/ClassLoader :: return v3::CF,9276
+9910 :: PRED :: IF :: Z :: if (p3 $handler  == #(null)) goto 50::CF,9911:CD,9914:JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9911 :: CALL :: call :: Ljava/lang/SecurityManager :: v11 = getSecurityManager()::JM,9914
+9914 :: PRED :: IF :: Z :: if (v11 == #(null)) goto 50::CD,9915:JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9915 :: CALL :: call :: V :: p0 $this .checkSpecifyHandler(v11)::
+9919 :: CALL :: call :: I :: v14 = p2 $spec .length()::JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9924 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v21 + #(-1)::DD,10183
+9925 :: PRED :: IF :: Z :: if (v21 <= #(0)) goto 89::CF,10184:CD,9926:CD,9927:CD,9932
+9926 :: EXPR :: assign :: Ljava/lang/Object :: v16 = v21 - #(1)::JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9927 :: CALL :: call :: C :: v18 = p2 $spec .charAt(v16)::JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9932 :: PRED :: IF :: Z :: if (v18 <= #(32)) goto 58::CD,9924:CD,9925:CD,10183:CD,10184
+9934 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v25 + #(1)::DD,10184
+9935 :: PRED :: IF :: Z :: if (v25 >= v21) goto 111::CD,9936:CD,9941:JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9910:JM,10007:JM,9981:JM,9951
+9936 :: CALL :: call :: C :: v23 = p2 $spec .charAt(v25)::JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9941 :: PRED :: IF :: Z :: if (v23 <= #(32)) goto 82::CD,9934:CD,9935:CD,10184:JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9942 :: CALL :: call :: Z :: v29 = p2 $spec .regionMatches(#(1), v25, #(url:), #(0), #(4))::JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9951 :: PRED :: IF :: Z :: if (v29 == #(0)) goto 123::CF,10185:CD,9952
+9952 :: EXPR :: assign :: Ljava/lang/Object :: v30 = v25 + #(4)::DD,10185
+9953 :: CALL :: call :: I :: v33 = p2 $spec .length()::JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9957 :: PRED :: IF :: Z :: if (v31 >= v33) goto 147::CF,10186:CD,9958:CD,9963:JM,9957:JM,10183:JM,9992:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9958 :: CALL :: call :: C :: v35 = p2 $spec .charAt(v31)::JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9963 :: PRED :: IF :: Z :: if (v35 != #(35)) goto 147::CF,10186
+9965 :: PRED :: IF :: Z :: if (v39 != #(58)) goto 192::CD,9966:CD,9972:CD,9976:CD,9981:CD,9984:CD,9985:CD,10187:CD,10189:JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9951
+9966 :: CALL :: call :: Ljava/lang/String :: v45 = p2 $spec .substring(v31, v43)::JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9972 :: CALL :: call :: Ljava/lang/String :: v47 = v45.toLowerCase()::JM,10189:JM,9981
+9976 :: CALL :: call :: Z :: v49 = p0 $this .isValidProtocol(v47)::JM,9957:JM,10183:JM,9992:JM,9963:JM,9996:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951:JM,10189
+9981 :: PRED :: IF :: Z :: if (v49 == #(0)) goto 224::CD,10189
+9984 :: EXPR :: assign :: Ljava/lang/Object :: v42 = v43 + #(1)::DD,10187
+9985 :: PRED :: IF :: Z :: if (v37 != #(0)) goto 224::CD,9986:CD,10189
+9986 :: PRED :: IF :: Z :: if (v43 >= v21) goto 224::CD,9987:CD,9992:CD,10189:JM,9957:JM,10183:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9987 :: CALL :: call :: C :: v39 = p2 $spec .charAt(v43)::JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,10190:JM,10192:JM,9941:JM,9910:JM,10007:JM,9981:JM,9951
+9992 :: PRED :: IF :: Z :: if (v39 != #(47)) goto 154::CD,9965
+9996 :: PRED :: IF :: Z :: if (p1 $context  == #(null)) goto 344::CF,10192:CD,9997
+9997 :: PRED :: IF :: Z :: if (v52 == #(null)) goto 249::CD,10001:CD,10006:CD,10007:CD,10014:CD,10024:CD,10190:CD,10191:CD,10192
+9998 :: EXPR :: reference :: Ljava/lang/String :: v53 = p1 $context .protocol::JM,10006
+10001 :: CALL :: call :: Z :: v55 = v52.equalsIgnoreCase(v53)::JM,10006
+10006 :: PRED :: IF :: Z :: if (v55 == #(0)) goto 344::CF,10192:CD,10007:CD,10014:CD,10024:CD,10190:CD,10191
+10007 :: PRED :: IF :: Z :: if (p3 $handler  != #(null)) goto 258::CF,10190
+10008 :: EXPR :: reference :: Ljava/net/URLStreamHandler :: v56 = p1 $context .handler::DD,10190
+10011 :: EXPR :: reference :: Ljava/lang/String :: v58 = p1 $context .path::DD,10014
+10014 :: PRED :: IF :: Z :: if (v58 == #(null)) goto 281::CF,10191:CD,10018:CD,10023
+10015 :: EXPR :: reference :: Ljava/lang/String :: v59 = p1 $context .path::JM,10018:JM,10023
+10018 :: CALL :: call :: Z :: v62 = v59.startsWith(#(/))::JM,10018:JM,10023
+10023 :: PRED :: IF :: Z :: if (v62 == #(0)) goto 281::CF,10191
+10024 :: PRED :: IF :: Z :: if (v63 != #(null)) goto 344::CF,10192
+10091 :: PRED :: IF :: Z :: if (v71 != #(null)) goto 420::CD,10095
+10095 :: CALL :: call :: Ljava/net/URLStreamHandler :: v77 = getURLStreamHandler(v75)::
+10183 :: EXPR :: assign :: null :: PHI v21 = v14, v20::DD,9924:DD,9925:DD,9926:DD,9935:DD,9986
+10184 :: EXPR :: assign :: null :: PHI v25 = #(0), #(0), v24::DD,9934:DD,9935:JM,9941:JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9981:JM,9965:JM,9951:DD,9952:DD,10185
+10185 :: EXPR :: assign :: null :: PHI v31 = v25, v30::DD,9957:JM,9941:JM,10183:JM,9992:JM,9963:JM,9932:JM,9981:JM,9965:JM,9951:DD,10187:JM,10190:JM,10192:JM,9910:JM,10007
+10186 :: EXPR :: assign :: null :: PHI v37 = #(0), #(0), #(1)::DD,9985
+10187 :: EXPR :: assign :: null :: PHI v43 = v31, v42::JM,9941:JM,9957:JM,10183:JM,9992:JM,9963:JM,9932:JM,9965:JM,9951:DD,9984:DD,9986:JM,9981:CF,9985
+10189 :: EXPR :: assign :: null :: PHI v52 = #(null), v47, #(null), #(null), #(null)::DD,9997:JM,10006:DD,10191
+10190 :: EXPR :: assign :: null :: PHI v57 = p3 $handler , v56::DD,10192
+10191 :: EXPR :: assign :: null :: PHI v63 = v52, v52, #(null)::DD,10024
+10192 :: EXPR :: assign :: null :: PHI v71 = p3 $handler , p3 $handler , v57, v57::DD,10091
+10403 :: CALL :: call :: V :: p1 $sm .checkPermission(v4)::
+10417 :: EXPR :: reference :: Ljava/util/Hashtable :: v3 = java.net.URL.handlers::JM,10424
+10419 :: CALL :: call :: Ljava/lang/Object :: v5 = v3.get(p1 $protocol )::JM,10424:JM,10598:JM,10431
+10424 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST v5::DD,10425:DD,10598
+10425 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 315::CD,10426:CD,10428:CD,10436:CD,10598
+10426 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v9 = java.net.URL.factory::DD,10428
+10428 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 36::CF,10598:CD,10429:CD,10431
+10429 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v10 = java.net.URL.factory::JM,10598:JM,10431
+10431 :: CALL :: call :: Ljava/net/URLStreamHandler :: v12 = v10.createURLStreamHandler(p1 $protocol )::JM,10598:JM,10431:JM,10424
+10436 :: PRED :: IF :: Z :: if (v14 != #(null)) goto 233::CD,10443
+10443 :: CALL :: call :: Ljava/lang/Object :: v21 = doPrivileged(v16)::
+10533 :: CALL :: call :: Ljava/lang/ClassLoader :: v68 = getSystemClassLoader()::
+10598 :: EXPR :: assign :: null :: PHI v14 = v6, v12::DD,10436

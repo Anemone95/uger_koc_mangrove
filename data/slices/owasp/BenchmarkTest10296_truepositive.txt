@@ -1,0 +1,23 @@
+[49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 63]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest10296.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,18:CD,23:CD,27:CD,32:CD,37:CD,42:CD,46:CD,49:CD,58
+18 :: CALL :: call :: Ljava/lang/String :: v12 = v8.doSomething(v7)::JM,58:CL,160
+23 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::JM,58
+27 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v13.append(#(UPDATE USERS SET PASS...))::JM,58
+32 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v17.append(v12)::JM,58
+37 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v19.append(#(' WHERE USERNAME='foo'))::JM,58
+42 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::JM,58
+46 :: CALL :: call :: Ljava/sql/Statement :: v26 = getSqlStatement()::JM,58
+49 :: NORM :: declaration :: [Ljava/lang/String :: v28 = new java.lang.String[]::JM,58
+50 :: EXPR :: modify :: Ljava/lang/Object :: v28[#(0)] = #(user)::
+54 :: EXPR :: modify :: Ljava/lang/Object :: v28[#(1)] = #(password)::
+58 :: CALL :: call :: I :: v34 = v26.executeUpdate(v24, v28)::JM,58
+160 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest10296.Test.doSomething(java.lang.String)::CE,161:CD,165:CD,166:CD,170:CD,174:CD,178:CD,183:CD,192
+161 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest10296.Test.doSomething(java.lang.String)::JM,58
+165 :: NORM :: declaration :: Ljava/lang/String :: v4 = new java.lang.String::JM,165:DD,192:CF,166
+166 :: NORM :: declaration :: Lsun/misc/BASE64Decoder :: v5 = new sun.misc.BASE64Decoder::JM,165:JM,183
+170 :: NORM :: declaration :: Lsun/misc/BASE64Encoder :: v7 = new sun.misc.BASE64Encoder::JM,178:JM,165:JM,183
+174 :: CALL :: call :: [B :: v10 = p1 $param .getBytes()::JM,178:JM,165:JM,183:JM,174
+178 :: CALL :: call :: Ljava/lang/String :: v12 = v7.encode(v10)::JM,178:JM,165:JM,183
+183 :: CALL :: call :: [B :: v14 = v5.decodeBuffer(v12)::JM,165:JM,183
+192 :: NORM :: compound :: Ljava/lang/String :: return v4::DD,161

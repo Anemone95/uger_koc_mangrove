@@ -1,0 +1,27 @@
+[73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 87]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest07747.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,42:CD,47:CD,51:CD,56:CD,61:CD,66:CD,70:CD,73:CD,82
+257 :: EXPR :: assign :: Ljava/lang/Object :: v14 = v10 - v13::JM,274:JM,257:JM,243
+258 :: CALL :: call :: I :: v16 = p1 $param .length()::JM,257:JM,274:JM,243
+262 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v7.replace(v14, v16, #(Z))::JM,274
+269 :: CALL :: call :: Ljava/lang/String :: v20 = v18.toString()::JM,274
+273 :: NORM :: compound :: Ljava/lang/String :: return v21::DD,235
+274 :: EXPR :: assign :: null :: PHI v21 = p1 $param , v20::CF,273
+42 :: CALL :: call :: Ljava/lang/String :: v31 = v28.doSomething(v26)::JM,82:CL,234
+47 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v32 = new java.lang.StringBuilder::JM,82
+51 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v32.append(#(SELECT * from USERS w...))::JM,82
+56 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v36.append(v31)::JM,82
+61 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v38.append(#('))::JM,82
+66 :: CALL :: call :: Ljava/lang/String :: v43 = v41.toString()::JM,82
+70 :: CALL :: call :: Ljava/sql/Connection :: v45 = getSqlConnection()::JM,82
+73 :: NORM :: declaration :: [Ljava/lang/String :: v47 = new java.lang.String[]::JM,82
+74 :: EXPR :: modify :: Ljava/lang/Object :: v47[#(0)] = #(Column1)::
+78 :: EXPR :: modify :: Ljava/lang/Object :: v47[#(1)] = #(Column2)::
+82 :: CALL :: call :: Ljava/sql/PreparedStatement :: v51 = v45.prepareStatement(v43, v47)::JM,82
+234 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest07747.Test.doSomething(java.lang.String)::CE,235:CD,239:CD,243:CD,273:CD,274:JM,257
+235 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest07747.Test.doSomething(java.lang.String)::JM,82
+239 :: CALL :: call :: I :: v5 = p1 $param .length()::JM,257:JM,274:JM,243
+243 :: PRED :: IF :: Z :: if (v5 <= #(1)) goto 44::CF,274:CF,244:CD,249:CD,253:CD,257:CD,258:CD,262:CD,269
+244 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v7 = new java.lang.StringBuilder::JM,274
+249 :: CALL :: call :: I :: v10 = p1 $param .length()::JM,257:JM,274:JM,243
+253 :: CALL :: call :: I :: v13 = #(Z).length()::JM,257

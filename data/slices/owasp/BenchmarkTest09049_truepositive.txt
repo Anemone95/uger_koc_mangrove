@@ -1,0 +1,24 @@
+[58, 62]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest09049.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,27:CD,32:CD,36:CD,41:CD,46:CD,51:CD,55:CD,58
+27 :: CALL :: call :: Ljava/lang/String :: v19 = v15.doSomething(v14)::JM,58:CL,158
+32 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v20 = new java.lang.StringBuilder::JM,58
+36 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v20.append(#(SELECT * from USERS w...))::JM,58
+41 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v24.append(v19)::JM,58
+46 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v26.append(#('))::JM,58
+51 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::JM,58
+55 :: CALL :: call :: Ljava/sql/Statement :: v33 = getSqlStatement()::JM,58
+58 :: CALL :: call :: Ljava/sql/ResultSet :: v35 = v33.executeQuery(v31)::JM,58
+158 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest09049.Test.doSomething(java.lang.String)::CE,159:CD,163:CD,167:CD,197:CD,198:JM,181
+159 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest09049.Test.doSomething(java.lang.String)::JM,58
+163 :: CALL :: call :: I :: v5 = p1 $param .length()::JM,181:JM,198:JM,167
+167 :: PRED :: IF :: Z :: if (v5 <= #(1)) goto 44::CF,198:CF,168:CD,173:CD,177:CD,181:CD,182:CD,186:CD,193
+168 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v7 = new java.lang.StringBuilder::JM,198
+173 :: CALL :: call :: I :: v10 = p1 $param .length()::JM,181:JM,198:JM,167
+177 :: CALL :: call :: I :: v13 = #(Z).length()::JM,181
+181 :: EXPR :: assign :: Ljava/lang/Object :: v14 = v10 - v13::JM,198:JM,181:JM,167
+182 :: CALL :: call :: I :: v16 = p1 $param .length()::JM,181:JM,198:JM,167
+186 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v7.replace(v14, v16, #(Z))::JM,198
+193 :: CALL :: call :: Ljava/lang/String :: v20 = v18.toString()::JM,198
+197 :: NORM :: compound :: Ljava/lang/String :: return v21::DD,159
+198 :: EXPR :: assign :: null :: PHI v21 = p1 $param , v20::CF,197

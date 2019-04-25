@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1507185614000" analysisTimestamp="1507521104607" release="">
+  <Project projectName="">
+    <Jar>/Users/ukoc/workspace-corpus/jetty/jetty-server/target/jetty-server-9.4.8-SNAPSHOT.jar</Jar>
+    <Jar>/Users/ukoc/workspace-corpus/jetty/jetty-jaas/target/jetty-jaas-9.4.8-SNAPSHOT.jar</Jar>
+    <Jar>/Users/ukoc/workspace-corpus/jetty/jetty-security/target/jetty-security-9.4.8-SNAPSHOT.jar</Jar>
+    <Jar>/Users/ukoc/workspace-corpus/jetty/jetty-plus/target/jetty-plus-9.4.8-SNAPSHOT.jar</Jar>
+    <Plugin id="com.h3xstream.findsecbugs" enabled="true"/>
+    <Plugin id="edu.umd.cs.findbugs.plugins.noUpdateChecks" enabled="true"/>
+  </Project>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="43" end="173" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" name="getRoles" signature="(Ljava/lang/String;)Ljava/util/List;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="122" end="143" startBytecode="0" endBytecode="947" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="128" end="128" startBytecode="21" endBytecode="21" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="128" end="128" startBytecode="18" endBytecode="18" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="43" end="173" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" name="getUserInfo" signature="(Ljava/lang/String;)Lorg/eclipse/jetty/jaas/spi/UserInfo;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="90" end="115" startBytecode="0" endBytecode="1048" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="95" end="95" startBytecode="15" endBytecode="15" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="95" end="95" startBytecode="12" endBytecode="12" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+  </BugInstance>
+  <BugInstance type="LDAP_INJECTION" priority="2" rank="12" abbrev="SECLDAPI" category="SECURITY">
+    <Class classname="org.eclipse.jetty.jaas.spi.LdapLoginModule">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="84" end="725" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" name="findUser" signature="(Ljava/lang/String;)Ljavax/naming/directory/SearchResult;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="535" end="560" startBytecode="0" endBytecode="399" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="550" end="550" startBytecode="125" endBytecode="125" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+    <String value="DirContext.search(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="550" end="550" startBytecode="118" endBytecode="118" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+  </BugInstance>
+  <BugInstance type="LDAP_INJECTION" priority="2" rank="12" abbrev="SECLDAPI" category="SECURITY">
+    <Class classname="org.eclipse.jetty.jaas.spi.LdapLoginModule">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="84" end="725" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" name="getUserRolesByDn" signature="(Ljavax/naming/directory/DirContext;Ljava/lang/String;)Ljava/util/List;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="346" end="389" startBytecode="0" endBytecode="637" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="360" end="360" startBytecode="111" endBytecode="111" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+    <String value="DirContext.search(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="360" end="360" startBytecode="102" endBytecode="102" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.plus.security.DataSourceLoginService">
+      <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="52" end="526" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.plus.security.DataSourceLoginService" name="loadRoleInfo" signature="(Lorg/eclipse/jetty/security/AbstractLoginService$UserPrincipal;)[Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="323" end="353" startBytecode="0" endBytecode="1226" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="328" end="328" startBytecode="18" endBytecode="18" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="328" end="328" startBytecode="15" endBytecode="15" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.plus.security.DataSourceLoginService">
+      <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="52" end="526" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.plus.security.DataSourceLoginService" name="loadUserInfo" signature="(Ljava/lang/String;)Lorg/eclipse/jetty/security/AbstractLoginService$UserPrincipal;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="292" end="316" startBytecode="0" endBytecode="1282" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="293" end="293" startBytecode="12" endBytecode="12" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="293" end="293" startBytecode="9" endBytecode="9" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.plus.security.DataSourceLoginService">
+      <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="52" end="526" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.plus.security.DataSourceLoginService" name="prepareTables" signature="()V" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="419" end="514" startBytecode="0" endBytecode="2818" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="441" end="441" startBytecode="201" endBytecode="201" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    <String value="Statement.executeUpdate(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="441" end="441" startBytecode="139" endBytecode="139" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.plus.security.DataSourceLoginService">
+      <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="52" end="526" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.plus.security.DataSourceLoginService" name="prepareTables" signature="()V" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="419" end="514" startBytecode="0" endBytecode="2818" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="460" end="460" startBytecode="494" endBytecode="494" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    <String value="Statement.executeUpdate(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="458" end="458" startBytecode="459" endBytecode="459" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.plus.security.DataSourceLoginService">
+      <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="52" end="526" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.plus.security.DataSourceLoginService" name="prepareTables" signature="()V" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="419" end="514" startBytecode="0" endBytecode="2818" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="478" end="478" startBytecode="795" endBytecode="795" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    <String value="Statement.executeUpdate(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="478" end="478" startBytecode="753" endBytecode="753" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.plus.security.DataSourceLoginService">
+      <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="52" end="526" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.plus.security.DataSourceLoginService" name="prepareTables" signature="()V" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="419" end="514" startBytecode="0" endBytecode="2818" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="481" end="481" startBytecode="841" endBytecode="841" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+    <String value="Statement.executeUpdate(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.plus.security.DataSourceLoginService" start="481" end="481" startBytecode="827" endBytecode="827" sourcefile="DataSourceLoginService.java" sourcepath="org/eclipse/jetty/plus/security/DataSourceLoginService.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.security.JDBCLoginService">
+      <SourceLine classname="org.eclipse.jetty.security.JDBCLoginService" start="57" end="317" sourcefile="JDBCLoginService.java" sourcepath="org/eclipse/jetty/security/JDBCLoginService.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.security.JDBCLoginService" name="loadRoleInfo" signature="(Lorg/eclipse/jetty/security/AbstractLoginService$UserPrincipal;)[Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.security.JDBCLoginService" start="260" end="290" startBytecode="0" endBytecode="938" sourcefile="JDBCLoginService.java" sourcepath="org/eclipse/jetty/security/JDBCLoginService.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.security.JDBCLoginService" start="273" end="273" startBytecode="51" endBytecode="51" sourcefile="JDBCLoginService.java" sourcepath="org/eclipse/jetty/security/JDBCLoginService.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.security.JDBCLoginService" start="273" end="273" startBytecode="48" endBytecode="48" sourcefile="JDBCLoginService.java" sourcepath="org/eclipse/jetty/security/JDBCLoginService.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.security.JDBCLoginService">
+      <SourceLine classname="org.eclipse.jetty.security.JDBCLoginService" start="57" end="317" sourcefile="JDBCLoginService.java" sourcepath="org/eclipse/jetty/security/JDBCLoginService.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.security.JDBCLoginService" name="loadUserInfo" signature="(Ljava/lang/String;)Lorg/eclipse/jetty/security/AbstractLoginService$UserPrincipal;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.security.JDBCLoginService" start="226" end="253" startBytecode="0" endBytecode="936" sourcefile="JDBCLoginService.java" sourcepath="org/eclipse/jetty/security/JDBCLoginService.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.security.JDBCLoginService" start="232" end="232" startBytecode="38" endBytecode="38" sourcefile="JDBCLoginService.java" sourcepath="org/eclipse/jetty/security/JDBCLoginService.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.security.JDBCLoginService" start="232" end="232" startBytecode="35" endBytecode="35" sourcefile="JDBCLoginService.java" sourcepath="org/eclipse/jetty/security/JDBCLoginService.java"/>
+  </BugInstance>
+  <BugInstance type="XSS_SERVLET" priority="2" rank="12" abbrev="SECXSS2" category="SECURITY">
+    <Class classname="org.eclipse.jetty.security.SecurityHandler">
+      <SourceLine classname="org.eclipse.jetty.security.SecurityHandler" start="61" end="663" sourcefile="SecurityHandler.java" sourcepath="org/eclipse/jetty/security/SecurityHandler.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.security.SecurityHandler" name="handle" signature="(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.security.SecurityHandler" start="435" end="567" startBytecode="0" endBytecode="1483" sourcefile="SecurityHandler.java" sourcepath="org/eclipse/jetty/security/SecurityHandler.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.security.SecurityHandler" start="557" end="557" startBytecode="610" endBytecode="610" sourcefile="SecurityHandler.java" sourcepath="org/eclipse/jetty/security/SecurityHandler.java"/>
+    <String value="HttpServletResponse.sendError(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.security.SecurityHandler" start="557" end="557" startBytecode="607" endBytecode="607" sourcefile="SecurityHandler.java" sourcepath="org/eclipse/jetty/security/SecurityHandler.java"/>
+  </BugInstance>
+  <BugInstance type="XSS_SERVLET" priority="2" rank="12" abbrev="SECXSS2" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.ResourceService">
+      <SourceLine classname="org.eclipse.jetty.server.ResourceService" start="67" end="870" sourcefile="ResourceService.java" sourcepath="org/eclipse/jetty/server/ResourceService.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.ResourceService" name="doGet" signature="(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.ResourceService" start="201" end="312" startBytecode="0" endBytecode="1727" sourcefile="ResourceService.java" sourcepath="org/eclipse/jetty/server/ResourceService.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.ResourceService" start="302" end="302" startBytecode="763" endBytecode="763" sourcefile="ResourceService.java" sourcepath="org/eclipse/jetty/server/ResourceService.java"/>
+    <String value="HttpServletResponse.sendError(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.ResourceService" start="302" end="302" startBytecode="760" endBytecode="760" sourcefile="ResourceService.java" sourcepath="org/eclipse/jetty/server/ResourceService.java"/>
+  </BugInstance>
+  <BugInstance type="XSS_SERVLET" priority="2" rank="12" abbrev="SECXSS2" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.ResourceService">
+      <SourceLine classname="org.eclipse.jetty.server.ResourceService" start="67" end="870" sourcefile="ResourceService.java" sourcepath="org/eclipse/jetty/server/ResourceService.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.ResourceService" name="passConditionalHeaders" signature="(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Lorg/eclipse/jetty/http/HttpContent;)Z" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.ResourceService" start="473" end="609" startBytecode="0" endBytecode="1466" sourcefile="ResourceService.java" sourcepath="org/eclipse/jetty/server/ResourceService.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.ResourceService" start="606" end="606" startBytecode="702" endBytecode="702" sourcefile="ResourceService.java" sourcepath="org/eclipse/jetty/server/ResourceService.java"/>
+    <String value="HttpServletResponse.sendError(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.ResourceService" start="606" end="606" startBytecode="699" endBytecode="699" sourcefile="ResourceService.java" sourcepath="org/eclipse/jetty/server/ResourceService.java"/>
+  </BugInstance>
+  <BugInstance type="XSS_SERVLET" priority="2" rank="12" abbrev="SECXSS2" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.handler.AbstractHandler">
+      <SourceLine classname="org.eclipse.jetty.server.handler.AbstractHandler" start="56" end="155" sourcefile="AbstractHandler.java" sourcepath="org/eclipse/jetty/server/handler/AbstractHandler.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.handler.AbstractHandler" name="doError" signature="(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.handler.AbstractHandler" start="95" end="101" startBytecode="0" endBytecode="247" sourcefile="AbstractHandler.java" sourcepath="org/eclipse/jetty/server/handler/AbstractHandler.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.handler.AbstractHandler" start="100" end="100" startBytecode="85" endBytecode="85" sourcefile="AbstractHandler.java" sourcepath="org/eclipse/jetty/server/handler/AbstractHandler.java"/>
+    <String value="HttpServletResponse.sendError(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.handler.AbstractHandler" start="97" end="97" startBytecode="56" endBytecode="56" sourcefile="AbstractHandler.java" sourcepath="org/eclipse/jetty/server/handler/AbstractHandler.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.handler.AbstractHandler" start="98" end="98" startBytecode="70" endBytecode="70" sourcefile="AbstractHandler.java" sourcepath="org/eclipse/jetty/server/handler/AbstractHandler.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore" start="50" end="982" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore" name="doInsert" signature="(Ljava/lang/String;Lorg/eclipse/jetty/server/session/SessionData;)V" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore" start="733" end="772" startBytecode="0" endBytecode="1073" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore" start="739" end="739" startBytecode="31" endBytecode="31" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore" start="733" end="733" startBytecode="4" endBytecode="4" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="70" end="553" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" name="getAllAncientExpiredSessionsStatement" signature="(Ljava/sql/Connection;)Ljava/sql/PreparedStatement;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="352" end="358" startBytecode="0" endBytecode="207" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="355" end="355" startBytecode="105" endBytecode="105" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="355" end="355" startBytecode="55" endBytecode="55" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="356" end="356" startBytecode="67" endBytecode="67" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="357" end="357" startBytecode="79" endBytecode="79" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="70" end="553" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" name="getCheckSessionExistsStatement" signature="(Ljava/sql/Connection;Lorg/eclipse/jetty/server/session/SessionContext;)Ljava/sql/PreparedStatement;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="365" end="379" startBytecode="0" endBytecode="309" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="372" end="372" startBytecode="130" endBytecode="130" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="372" end="372" startBytecode="71" endBytecode="71" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="373" end="373" startBytecode="80" endBytecode="80" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="374" end="374" startBytecode="100" endBytecode="100" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="375" end="375" startBytecode="112" endBytecode="112" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="376" end="376" startBytecode="119" endBytecode="119" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="70" end="553" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" name="getDeleteStatement" signature="(Ljava/sql/Connection;Ljava/lang/String;Lorg/eclipse/jetty/server/session/SessionContext;)Ljava/sql/PreparedStatement;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="438" end="453" startBytecode="0" endBytecode="304" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="446" end="446" startBytecode="109" endBytecode="109" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="446" end="446" startBytecode="59" endBytecode="59" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="447" end="447" startBytecode="79" endBytecode="79" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="448" end="448" startBytecode="103" endBytecode="103" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="70" end="553" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" name="getExpiredSessionsStatement" signature="(Ljava/sql/Connection;Ljava/lang/String;Ljava/lang/String;J)Ljava/sql/PreparedStatement;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="305" end="320" startBytecode="0" endBytecode="349" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="312" end="312" startBytecode="142" endBytecode="142" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="312" end="312" startBytecode="76" endBytecode="76" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="313" end="313" startBytecode="92" endBytecode="92" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="314" end="314" startBytecode="112" endBytecode="112" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="315" end="315" startBytecode="124" endBytecode="124" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="70" end="553" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" name="getLoadStatement" signature="(Ljava/sql/Connection;Ljava/lang/String;Lorg/eclipse/jetty/server/session/SessionContext;)Ljava/sql/PreparedStatement;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="387" end="402" startBytecode="0" endBytecode="304" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="395" end="395" startBytecode="109" endBytecode="109" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="395" end="395" startBytecode="59" endBytecode="59" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="396" end="396" startBytecode="83" endBytecode="83" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="397" end="397" startBytecode="95" endBytecode="95" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="70" end="553" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" name="getMyExpiredSessionsStatement" signature="(Ljava/sql/Connection;Lorg/eclipse/jetty/server/session/SessionContext;J)Ljava/sql/PreparedStatement;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="327" end="345" startBytecode="0" endBytecode="380" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="334" end="334" startBytecode="157" endBytecode="157" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="334" end="334" startBytecode="67" endBytecode="67" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="335" end="335" startBytecode="91" endBytecode="91" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="336" end="336" startBytecode="95" endBytecode="95" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="337" end="337" startBytecode="107" endBytecode="107" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="338" end="338" startBytecode="119" endBytecode="119" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="339" end="339" startBytecode="131" endBytecode="131" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="70" end="553" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" name="getUpdateSessionStatement" signature="(Ljava/sql/Connection;Ljava/lang/String;Lorg/eclipse/jetty/server/session/SessionContext;)Ljava/sql/PreparedStatement;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="284" end="298" startBytecode="0" endBytecode="390" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="294" end="294" startBytecode="180" endBytecode="180" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="284" end="284" startBytecode="21" endBytecode="21" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="285" end="285" startBytecode="33" endBytecode="33" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="286" end="286" startBytecode="73" endBytecode="73" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="287" end="287" startBytecode="97" endBytecode="97" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="288" end="288" startBytecode="141" endBytecode="141" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="70" end="553" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" name="getUpdateStatement" signature="(Ljava/sql/Connection;Ljava/lang/String;Lorg/eclipse/jetty/server/session/SessionContext;)Ljava/sql/PreparedStatement;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="410" end="429" startBytecode="0" endBytecode="413" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="424" end="424" startBytecode="197" endBytecode="197" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="417" end="417" startBytecode="58" endBytecode="58" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="418" end="418" startBytecode="85" endBytecode="85" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="419" end="419" startBytecode="114" endBytecode="114" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="420" end="420" startBytecode="138" endBytecode="138" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="421" end="421" startBytecode="178" endBytecode="178" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="70" end="553" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" name="prepareTables" signature="()V" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="465" end="546" startBytecode="0" endBytecode="1980" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="482" end="482" startBytecode="103" endBytecode="103" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Statement.executeUpdate(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="482" end="482" startBytecode="100" endBytecode="100" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="70" end="553" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" name="prepareTables" signature="()V" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="465" end="546" startBytecode="0" endBytecode="1980" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="507" end="507" startBytecode="226" endBytecode="226" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Statement.executeUpdate(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="507" end="507" startBytecode="223" endBytecode="223" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="70" end="553" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" name="prepareTables" signature="()V" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="465" end="546" startBytecode="0" endBytecode="1980" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="542" end="542" startBytecode="651" endBytecode="651" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Statement.executeUpdate(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="525" end="525" startBytecode="424" endBytecode="424" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="542" end="542" startBytecode="648" endBytecode="648" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="70" end="553" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" name="prepareTables" signature="()V" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="465" end="546" startBytecode="0" endBytecode="1980" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="544" end="544" startBytecode="669" endBytecode="669" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <String value="Statement.executeUpdate(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="526" end="526" startBytecode="450" endBytecode="450" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+    <SourceLine classname="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" start="544" end="544" startBytecode="666" endBytecode="666" sourcefile="JDBCSessionDataStore.java" sourcepath="org/eclipse/jetty/server/session/JDBCSessionDataStore.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="202">
+    <MissingClass>javax.servlet.AsyncContext</MissingClass>
+    <MissingClass>javax.servlet.AsyncEvent</MissingClass>
+    <MissingClass>javax.servlet.AsyncListener</MissingClass>
+    <MissingClass>javax.servlet.DispatcherType</MissingClass>
+    <MissingClass>javax.servlet.HttpConstraintElement</MissingClass>
+    <MissingClass>javax.servlet.HttpMethodConstraintElement</MissingClass>
+    <MissingClass>javax.servlet.ReadListener</MissingClass>
+    <MissingClass>javax.servlet.RequestDispatcher</MissingClass>
+    <MissingClass>javax.servlet.ServletContainerInitializer</MissingClass>
+    <MissingClass>javax.servlet.ServletContext</MissingClass>
+    <MissingClass>javax.servlet.ServletContextAttributeEvent</MissingClass>
+    <MissingClass>javax.servlet.ServletContextAttributeListener</MissingClass>
+    <MissingClass>javax.servlet.ServletContextEvent</MissingClass>
+    <MissingClass>javax.servlet.ServletContextListener</MissingClass>
+    <MissingClass>javax.servlet.ServletException</MissingClass>
+    <MissingClass>javax.servlet.ServletInputStream</MissingClass>
+    <MissingClass>javax.servlet.ServletOutputStream</MissingClass>
+    <MissingClass>javax.servlet.ServletRegistration$Dynamic</MissingClass>
+    <MissingClass>javax.servlet.ServletRequest</MissingClass>
+    <MissingClass>javax.servlet.ServletRequestAttributeEvent</MissingClass>
+    <MissingClass>javax.servlet.ServletRequestAttributeListener</MissingClass>
+    <MissingClass>javax.servlet.ServletRequestEvent</MissingClass>
+    <MissingClass>javax.servlet.ServletRequestListener</MissingClass>
+    <MissingClass>javax.servlet.ServletRequestWrapper</MissingClass>
+    <MissingClass>javax.servlet.ServletResponse</MissingClass>
+    <MissingClass>javax.servlet.ServletResponseWrapper</MissingClass>
+    <MissingClass>javax.servlet.ServletSecurityElement</MissingClass>
+    <MissingClass>javax.servlet.SessionCookieConfig</MissingClass>
+    <MissingClass>javax.servlet.SessionTrackingMode</MissingClass>
+    <MissingClass>javax.servlet.UnavailableException</MissingClass>
+    <MissingClass>javax.servlet.WriteListener</MissingClass>
+    <MissingClass>javax.servlet.annotation.ServletSecurity$EmptyRoleSemantic</MissingClass>
+    <MissingClass>javax.servlet.annotation.ServletSecurity$TransportGuarantee</MissingClass>
+    <MissingClass>javax.servlet.http.Cookie</MissingClass>
+    <MissingClass>javax.servlet.http.HttpServletRequest</MissingClass>
+    <MissingClass>javax.servlet.http.HttpServletRequestWrapper</MissingClass>
+    <MissingClass>javax.servlet.http.HttpServletResponse</MissingClass>
+    <MissingClass>javax.servlet.http.HttpServletResponseWrapper</MissingClass>
+    <MissingClass>javax.servlet.http.HttpSession</MissingClass>
+    <MissingClass>javax.servlet.http.HttpSessionActivationListener</MissingClass>
+    <MissingClass>javax.servlet.http.HttpSessionAttributeListener</MissingClass>
+    <MissingClass>javax.servlet.http.HttpSessionBindingEvent</MissingClass>
+    <MissingClass>javax.servlet.http.HttpSessionBindingListener</MissingClass>
+    <MissingClass>javax.servlet.http.HttpSessionContext</MissingClass>
+    <MissingClass>javax.servlet.http.HttpSessionEvent</MissingClass>
+    <MissingClass>javax.servlet.http.HttpSessionIdListener</MissingClass>
+    <MissingClass>javax.servlet.http.HttpSessionListener</MissingClass>
+    <MissingClass>javax.transaction.UserTransaction</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.BadMessageException</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.CompressedContentFormat</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.CookieCompliance</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.DateGenerator</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.DateParser</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.GZIPContentDecoder</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HostPortHttpField</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpCompliance</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpContent</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpContent$ContentFactory</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpCookie</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpField</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpFields</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpGenerator</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpGenerator$Result</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpHeader</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpHeaderValue</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpMethod</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpParser</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpParser$RequestHandler</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpParser$ResponseHandler</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpScheme</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpStatus</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpURI</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.HttpVersion</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.MetaData$Request</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.MetaData$Response</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.MimeTypes</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.MimeTypes$Type</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.PathMap</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.PreEncodedHttpField</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.PrecompressedHttpContent</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.QuotedCSV</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.QuotedQualityCSV</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.ResourceHttpContent</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.Syntax</MissingClass>
+    <MissingClass>org.eclipse.jetty.http.pathmap.PathMappings</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.AbstractConnection</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.ArrayByteBufferPool</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.ByteArrayEndPoint</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.ByteBufferPool</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.Connection</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.Connection$Listener</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.Connection$UpgradeFrom</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.ConnectionStatistics</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.EndPoint</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.EofException</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.IdleTimeout</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.NetworkTrafficSelectChannelEndPoint</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.QuietException</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.RuntimeIOException</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.SelectorManager</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.SocketChannelEndPoint</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.WriterOutputStream</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.ssl.SslConnection</MissingClass>
+    <MissingClass>org.eclipse.jetty.io.ssl.SslConnection$DecryptedEndPoint</MissingClass>
+    <MissingClass>org.eclipse.jetty.jmx.ObjectMBean</MissingClass>
+    <MissingClass>org.eclipse.jetty.jndi.ContextFactory</MissingClass>
+    <MissingClass>org.eclipse.jetty.jndi.NamingContext</MissingClass>
+    <MissingClass>org.eclipse.jetty.jndi.NamingContext$Listener</MissingClass>
+    <MissingClass>org.eclipse.jetty.jndi.NamingUtil</MissingClass>
+    <MissingClass>org.eclipse.jetty.jndi.local.localContextRoot</MissingClass>
+    <MissingClass>org.eclipse.jetty.servlet.ServletHolder</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.ArrayTernaryTrie</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.ArrayUtil</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.Attributes</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.AttributesMap</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.B64Code</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.BlockingArrayQueue</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.BufferUtil</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.ByteArrayISO8859Writer</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.ByteArrayOutputStream2</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.Callback</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.Callback$Nested</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.ClassLoadingObjectInputStream</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.DateCache</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.DecoratedObjectFactory</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.Decorator</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.FutureCallback</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.IO</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.IPAddressMap</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.IncludeExclude</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.IncludeExcludeSet</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.IntrospectionUtil</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.IteratingCallback</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.IteratingCallback$Action</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.IteratingNestedCallback</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.Jetty</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.LazyList</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.Loader</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.MultiException</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.MultiMap</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.MultiPartInputStreamParser</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.MultiPartInputStreamParser$MultiPart</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.MultiPartOutputStream</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.PathWatcher</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.PathWatcher$Listener</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.PathWatcher$PathWatchEvent</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.QuotedStringTokenizer</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.RolloverFileOutputStream</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.SharedBlockingCallback</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.SharedBlockingCallback$Blocker</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.StringUtil</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.TreeTrie</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.Trie</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.TypeUtil</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.URIUtil</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.Uptime</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.UrlEncoded</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.component.AbstractLifeCycle</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.component.Container</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.component.ContainerLifeCycle</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.component.Destroyable</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.component.Dumpable</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.component.DumpableCollection</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.component.Graceful</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.component.LifeCycle</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.log.Log</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.log.Logger</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.log.Slf4jLog</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.resource.JarFileResource</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.resource.PathResource</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.resource.Resource</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.resource.ResourceFactory</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.security.CertificateUtils</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.security.CertificateValidator</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.security.Constraint</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.security.Credential</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.security.Credential$MD5</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.security.Password</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.ssl.SslContextFactory</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.ssl.X509</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.statistic.CounterStatistic</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.statistic.SampleStatistic</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.thread.Invocable$InvocationType</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.thread.Locker</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.thread.Locker$Lock</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.thread.QueuedThreadPool</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.thread.ScheduledExecutorScheduler</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.thread.Scheduler</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.thread.Scheduler$Task</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.thread.ShutdownThread</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.thread.ThreadPool</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.thread.ThreadPoolBudget</MissingClass>
+    <MissingClass>org.eclipse.jetty.util.thread.ThreadPoolBudget$Lease</MissingClass>
+    <MissingClass>org.eclipse.jetty.webapp.AbstractConfiguration</MissingClass>
+    <MissingClass>org.eclipse.jetty.webapp.Descriptor</MissingClass>
+    <MissingClass>org.eclipse.jetty.webapp.IterativeDescriptorProcessor</MissingClass>
+    <MissingClass>org.eclipse.jetty.webapp.MetaData</MissingClass>
+    <MissingClass>org.eclipse.jetty.webapp.Origin</MissingClass>
+    <MissingClass>org.eclipse.jetty.webapp.WebAppClassLoader</MissingClass>
+    <MissingClass>org.eclipse.jetty.webapp.WebAppContext</MissingClass>
+    <MissingClass>org.eclipse.jetty.xml.XmlConfiguration</MissingClass>
+    <MissingClass>org.eclipse.jetty.xml.XmlParser$Node</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Thu, 5 Oct 2017 02:40:14 -0400" total_classes="381" referenced_classes="677" total_bugs="29" total_size="23090" num_packages="16" java_version="1.8.0_101" vm_version="25.101-b13" cpu_seconds="64.96" clock_seconds="14.43" peak_mbytes="1460.02" alloc_mbytes="3641.00" gc_seconds="0.52" priority_2="29">
+    <PackageStats package="org.eclipse.jetty.jaas" total_bugs="0" total_types="9" total_size="232">
+      <ClassStats class="org.eclipse.jetty.jaas.JAASGroup" sourceFile="JAASGroup.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.JAASGroup$1MembersEnumeration" sourceFile="JAASGroup.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.JAASLoginService" sourceFile="JAASLoginService.java" interface="false" size="106" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.JAASLoginService$1" sourceFile="JAASLoginService.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.JAASPrincipal" sourceFile="JAASPrincipal.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.JAASRole" sourceFile="JAASRole.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.JAASUserPrincipal" sourceFile="JAASUserPrincipal.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.RoleCheckPolicy" sourceFile="RoleCheckPolicy.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.StrictRoleCheckPolicy" sourceFile="StrictRoleCheckPolicy.java" interface="false" size="15" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.jaas.callback" total_bugs="0" total_types="4" total_size="69">
+      <ClassStats class="org.eclipse.jetty.jaas.callback.AbstractCallbackHandler" sourceFile="AbstractCallbackHandler.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.callback.DefaultCallbackHandler" sourceFile="DefaultCallbackHandler.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.callback.ObjectCallback" sourceFile="ObjectCallback.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.callback.RequestParameterCallback" sourceFile="RequestParameterCallback.java" interface="false" size="15" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.jaas.spi" total_bugs="4" total_types="10" total_size="598" priority_2="4">
+      <ClassStats class="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" sourceFile="AbstractDatabaseLoginModule.java" interface="false" size="56" bugs="2" priority_2="2"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule$JDBCUserInfo" sourceFile="AbstractDatabaseLoginModule.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.AbstractLoginModule" sourceFile="AbstractLoginModule.java" interface="false" size="96" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.AbstractLoginModule$JAASUserInfo" sourceFile="AbstractLoginModule.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.DataSourceLoginModule" sourceFile="DataSourceLoginModule.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.JDBCLoginModule" sourceFile="JDBCLoginModule.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.LdapLoginModule" sourceFile="LdapLoginModule.java" interface="false" size="254" bugs="2" priority_2="2"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.LdapLoginModule$LDAPUserInfo" sourceFile="LdapLoginModule.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.PropertyFileLoginModule" sourceFile="PropertyFileLoginModule.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.UserInfo" sourceFile="UserInfo.java" interface="false" size="37" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.plus.annotation" total_bugs="0" total_types="9" total_size="494">
+      <ClassStats class="org.eclipse.jetty.plus.annotation.ContainerInitializer" sourceFile="ContainerInitializer.java" interface="false" size="92" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.annotation.Injection" sourceFile="Injection.java" interface="false" size="92" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.annotation.InjectionCollection" sourceFile="InjectionCollection.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.annotation.LifeCycleCallback" sourceFile="LifeCycleCallback.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.annotation.LifeCycleCallbackCollection" sourceFile="LifeCycleCallbackCollection.java" interface="false" size="76" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.annotation.PostConstructCallback" sourceFile="PostConstructCallback.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.annotation.PreDestroyCallback" sourceFile="PreDestroyCallback.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.annotation.RunAs" sourceFile="RunAs.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.annotation.RunAsCollection" sourceFile="RunAsCollection.java" interface="false" size="30" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.plus.jndi" total_bugs="0" total_types="6" total_size="234">
+      <ClassStats class="org.eclipse.jetty.plus.jndi.EnvEntry" sourceFile="EnvEntry.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.jndi.Link" sourceFile="Link.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.jndi.NamingEntry" sourceFile="NamingEntry.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.jndi.NamingEntryUtil" sourceFile="NamingEntryUtil.java" interface="false" size="92" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.jndi.Resource" sourceFile="Resource.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.jndi.Transaction" sourceFile="Transaction.java" interface="false" size="36" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.plus.security" total_bugs="6" total_types="2" total_size="219" priority_2="6">
+      <ClassStats class="org.eclipse.jetty.plus.security.DataSourceLoginService" sourceFile="DataSourceLoginService.java" interface="false" size="209" bugs="6" priority_2="6"/>
+      <ClassStats class="org.eclipse.jetty.plus.security.DataSourceLoginService$DBUserPrincipal" sourceFile="DataSourceLoginService.java" interface="false" size="10" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.plus.webapp" total_bugs="0" total_types="7" total_size="578">
+      <ClassStats class="org.eclipse.jetty.plus.webapp.EnvConfiguration" sourceFile="EnvConfiguration.java" interface="false" size="111" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.webapp.EnvConfiguration$1" sourceFile="EnvConfiguration.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.webapp.EnvConfiguration$Bound" sourceFile="EnvConfiguration.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.webapp.PlusConfiguration" sourceFile="PlusConfiguration.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.webapp.PlusDecorator" sourceFile="PlusDecorator.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.webapp.PlusDescriptorProcessor" sourceFile="PlusDescriptorProcessor.java" interface="false" size="361" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.plus.webapp.PlusDescriptorProcessor$1" sourceFile="PlusDescriptorProcessor.java" interface="false" size="4" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.security" total_bugs="3" total_types="35" total_size="1545" priority_2="3">
+      <ClassStats class="org.eclipse.jetty.security.AbstractLoginService" sourceFile="AbstractLoginService.java" interface="false" size="60" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.AbstractLoginService$RolePrincipal" sourceFile="AbstractLoginService.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.AbstractLoginService$UserPrincipal" sourceFile="AbstractLoginService.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.AbstractUserAuthentication" sourceFile="AbstractUserAuthentication.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.Authenticator" sourceFile="Authenticator.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.Authenticator$AuthConfiguration" sourceFile="Authenticator.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.Authenticator$Factory" sourceFile="Authenticator.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.ConstraintAware" sourceFile="ConstraintAware.java" interface="true" size="9" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.ConstraintMapping" sourceFile="ConstraintMapping.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.ConstraintSecurityHandler" sourceFile="ConstraintSecurityHandler.java" interface="false" size="348" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.DefaultAuthenticatorFactory" sourceFile="DefaultAuthenticatorFactory.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.DefaultIdentityService" sourceFile="DefaultIdentityService.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.DefaultUserIdentity" sourceFile="DefaultUserIdentity.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.HashLoginService" sourceFile="HashLoginService.java" interface="false" size="74" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.IdentityService" sourceFile="IdentityService.java" interface="true" size="11" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.JDBCLoginService" sourceFile="JDBCLoginService.java" interface="false" size="126" bugs="2" priority_2="2"/>
+      <ClassStats class="org.eclipse.jetty.security.JDBCLoginService$JDBCUserPrincipal" sourceFile="JDBCLoginService.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.LoginService" sourceFile="LoginService.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.PropertyUserStore" sourceFile="PropertyUserStore.java" interface="false" size="166" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.PropertyUserStore$UserListener" sourceFile="PropertyUserStore.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.RoleInfo" sourceFile="RoleInfo.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.RoleRunAsToken" sourceFile="RoleRunAsToken.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.RunAsToken" sourceFile="RunAsToken.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.SecurityHandler" sourceFile="SecurityHandler.java" interface="false" size="256" bugs="1" priority_2="1"/>
+      <ClassStats class="org.eclipse.jetty.security.SecurityHandler$1" sourceFile="SecurityHandler.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.SecurityHandler$2" sourceFile="SecurityHandler.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.SecurityHandler$3" sourceFile="SecurityHandler.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.SecurityHandler$NotChecked" sourceFile="SecurityHandler.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.ServerAuthException" sourceFile="ServerAuthException.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.SpnegoLoginService" sourceFile="SpnegoLoginService.java" interface="false" size="78" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.SpnegoUserIdentity" sourceFile="SpnegoUserIdentity.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.SpnegoUserPrincipal" sourceFile="SpnegoUserPrincipal.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.UserAuthentication" sourceFile="UserAuthentication.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.UserDataConstraint" sourceFile="UserDataConstraint.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.UserStore" sourceFile="UserStore.java" interface="false" size="27" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.security.authentication" total_bugs="0" total_types="17" total_size="967">
+      <ClassStats class="org.eclipse.jetty.security.authentication.BasicAuthenticator" sourceFile="BasicAuthenticator.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.ClientCertAuthenticator" sourceFile="ClientCertAuthenticator.java" interface="false" size="106" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.DeferredAuthentication" sourceFile="DeferredAuthentication.java" interface="false" size="55" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.DeferredAuthentication$1" sourceFile="DeferredAuthentication.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.DeferredAuthentication$2" sourceFile="DeferredAuthentication.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.DigestAuthenticator" sourceFile="DigestAuthenticator.java" interface="false" size="134" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.DigestAuthenticator$Digest" sourceFile="DigestAuthenticator.java" interface="false" size="59" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.DigestAuthenticator$Nonce" sourceFile="DigestAuthenticator.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.FormAuthenticator" sourceFile="FormAuthenticator.java" interface="false" size="219" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.FormAuthenticator$FormAuthentication" sourceFile="FormAuthenticator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.FormAuthenticator$FormRequest" sourceFile="FormAuthenticator.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.FormAuthenticator$FormResponse" sourceFile="FormAuthenticator.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.LoginAuthenticator" sourceFile="LoginAuthenticator.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.LoginCallback" sourceFile="LoginCallback.java" interface="true" size="11" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.LoginCallbackImpl" sourceFile="LoginCallbackImpl.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.SessionAuthentication" sourceFile="SessionAuthentication.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.security.authentication.SpnegoAuthenticator" sourceFile="SpnegoAuthenticator.java" interface="false" size="49" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.server" total_bugs="2" total_types="172" total_size="10818" priority_2="2">
+      <ClassStats class="org.eclipse.jetty.server.AbstractConnectionFactory" sourceFile="AbstractConnectionFactory.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.AbstractConnector" sourceFile="AbstractConnector.java" interface="false" size="281" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.AbstractConnector$1" sourceFile="AbstractConnector.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.AbstractConnector$Acceptor" sourceFile="AbstractConnector.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.AbstractNCSARequestLog" sourceFile="AbstractNCSARequestLog.java" interface="false" size="186" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.AbstractNCSARequestLog$1" sourceFile="AbstractNCSARequestLog.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.AbstractNetworkConnector" sourceFile="AbstractNetworkConnector.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.AsyncContextEvent" sourceFile="AsyncContextEvent.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.AsyncContextState" sourceFile="AsyncContextState.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.AsyncContextState$1" sourceFile="AsyncContextState.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.AsyncContextState$2" sourceFile="AsyncContextState.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.AsyncNCSARequestLog" sourceFile="AsyncNCSARequestLog.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.AsyncNCSARequestLog$WriterThread" sourceFile="AsyncNCSARequestLog.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication" sourceFile="Authentication.java" interface="true" size="12" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$1" sourceFile="Authentication.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$2" sourceFile="Authentication.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$3" sourceFile="Authentication.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$4" sourceFile="Authentication.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$5" sourceFile="Authentication.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$Challenge" sourceFile="Authentication.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$Deferred" sourceFile="Authentication.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$Failed" sourceFile="Authentication.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$Failure" sourceFile="Authentication.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$ResponseSent" sourceFile="Authentication.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$SendSuccess" sourceFile="Authentication.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$User" sourceFile="Authentication.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Authentication$Wrapped" sourceFile="Authentication.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.CachedContentFactory" sourceFile="CachedContentFactory.java" interface="false" size="177" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.CachedContentFactory$1" sourceFile="CachedContentFactory.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.CachedContentFactory$CachedHttpContent" sourceFile="CachedContentFactory.java" interface="false" size="143" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.CachedContentFactory$CachedPrecompressedHttpContent" sourceFile="CachedContentFactory.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ClassLoaderDump" sourceFile="ClassLoaderDump.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ConnectionFactory" sourceFile="ConnectionFactory.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ConnectionFactory$Upgrading" sourceFile="ConnectionFactory.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ConnectionLimit" sourceFile="ConnectionLimit.java" interface="false" size="70" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Connector" sourceFile="Connector.java" interface="true" size="14" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ConnectorStatistics" sourceFile="ConnectorStatistics.java" interface="false" size="131" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ConnectorStatistics$Sample" sourceFile="ConnectorStatistics.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.CookieCutter" sourceFile="CookieCutter.java" interface="false" size="193" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.DebugListener" sourceFile="DebugListener.java" interface="false" size="95" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.DebugListener$1" sourceFile="DebugListener.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.DebugListener$2" sourceFile="DebugListener.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.DebugListener$3" sourceFile="DebugListener.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Dispatcher" sourceFile="Dispatcher.java" interface="false" size="138" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Dispatcher$ForwardAttributes" sourceFile="Dispatcher.java" interface="false" size="73" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Dispatcher$IncludeAttributes" sourceFile="Dispatcher.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.EncodingHttpWriter" sourceFile="EncodingHttpWriter.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ForwardedRequestCustomizer" sourceFile="ForwardedRequestCustomizer.java" interface="false" size="187" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ForwardedRequestCustomizer$1" sourceFile="ForwardedRequestCustomizer.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ForwardedRequestCustomizer$RFC7239" sourceFile="ForwardedRequestCustomizer.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Handler" sourceFile="Handler.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HandlerContainer" sourceFile="HandlerContainer.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HomeBaseWarning" sourceFile="HomeBaseWarning.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HostHeaderCustomizer" sourceFile="HostHeaderCustomizer.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannel" sourceFile="HttpChannel.java" interface="false" size="385" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannel$1" sourceFile="HttpChannel.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannel$Commit100Callback" sourceFile="HttpChannel.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannel$CommitCallback" sourceFile="HttpChannel.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannel$CommitCallback$1" sourceFile="HttpChannel.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannelOverHttp" sourceFile="HttpChannelOverHttp.java" interface="false" size="247" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannelOverHttp$1" sourceFile="HttpChannelOverHttp.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannelState" sourceFile="HttpChannelState.java" interface="false" size="564" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannelState$1" sourceFile="HttpChannelState.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannelState$2" sourceFile="HttpChannelState.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannelState$3" sourceFile="HttpChannelState.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannelState$4" sourceFile="HttpChannelState.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannelState$5" sourceFile="HttpChannelState.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannelState$Action" sourceFile="HttpChannelState.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannelState$Async" sourceFile="HttpChannelState.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannelState$AsyncRead" sourceFile="HttpChannelState.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpChannelState$State" sourceFile="HttpChannelState.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpConfiguration" sourceFile="HttpConfiguration.java" interface="false" size="197" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpConfiguration$ConnectionFactory" sourceFile="HttpConfiguration.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpConfiguration$Customizer" sourceFile="HttpConfiguration.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpConnection" sourceFile="HttpConnection.java" interface="false" size="280" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpConnection$1" sourceFile="HttpConnection.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpConnection$AsyncReadCallback" sourceFile="HttpConnection.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpConnection$BlockingReadCallback" sourceFile="HttpConnection.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpConnection$Content" sourceFile="HttpConnection.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpConnection$SendCallback" sourceFile="HttpConnection.java" interface="false" size="96" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpConnectionFactory" sourceFile="HttpConnectionFactory.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput" sourceFile="HttpInput.java" interface="false" size="403" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$1" sourceFile="HttpInput.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$2" sourceFile="HttpInput.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$3" sourceFile="HttpInput.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$4" sourceFile="HttpInput.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$5" sourceFile="HttpInput.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$ChainedInterceptor" sourceFile="HttpInput.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$Content" sourceFile="HttpInput.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$EOFState" sourceFile="HttpInput.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$EofContent" sourceFile="HttpInput.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$ErrorState" sourceFile="HttpInput.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$Interceptor" sourceFile="HttpInput.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$SentinelContent" sourceFile="HttpInput.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInput$State" sourceFile="HttpInput.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpInputOverHTTP" sourceFile="HttpInputOverHTTP.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpOutput" sourceFile="HttpOutput.java" interface="false" size="429" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpOutput$1" sourceFile="HttpOutput.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpOutput$2" sourceFile="HttpOutput.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpOutput$AsyncFlush" sourceFile="HttpOutput.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpOutput$AsyncICB" sourceFile="HttpOutput.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpOutput$AsyncWrite" sourceFile="HttpOutput.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpOutput$InputStreamWritingCB" sourceFile="HttpOutput.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpOutput$Interceptor" sourceFile="HttpOutput.java" interface="true" size="9" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpOutput$OutputState" sourceFile="HttpOutput.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpOutput$ReadableByteChannelWritingCB" sourceFile="HttpOutput.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpOutput$WriteBlocker" sourceFile="HttpOutput.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpTransport" sourceFile="HttpTransport.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.HttpWriter" sourceFile="HttpWriter.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.InclusiveByteRange" sourceFile="InclusiveByteRange.java" interface="false" size="95" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Iso88591HttpWriter" sourceFile="Iso88591HttpWriter.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.LocalConnector" sourceFile="LocalConnector.java" interface="false" size="90" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.LocalConnector$LocalEndPoint" sourceFile="LocalConnector.java" interface="false" size="83" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.LocalConnector$LocalEndPoint$1" sourceFile="LocalConnector.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.LowResourceMonitor" sourceFile="LowResourceMonitor.java" interface="false" size="166" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.LowResourceMonitor$1" sourceFile="LowResourceMonitor.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.LowResourceMonitor$LRMScheduler" sourceFile="LowResourceMonitor.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.MultiPartCleanerListener" sourceFile="MultiPartCleanerListener.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.NCSARequestLog" sourceFile="NCSARequestLog.java" interface="false" size="93" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.NegotiatingServerConnection" sourceFile="NegotiatingServerConnection.java" interface="false" size="67" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.NegotiatingServerConnection$CipherDiscriminator" sourceFile="NegotiatingServerConnection.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.NegotiatingServerConnectionFactory" sourceFile="NegotiatingServerConnectionFactory.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.NetworkConnector" sourceFile="NetworkConnector.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.NetworkTrafficServerConnector" sourceFile="NetworkTrafficServerConnector.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ProxyConnectionFactory" sourceFile="ProxyConnectionFactory.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ProxyConnectionFactory$1" sourceFile="ProxyConnectionFactory.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ProxyConnectionFactory$Family" sourceFile="ProxyConnectionFactory.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ProxyConnectionFactory$ProxyEndPoint" sourceFile="ProxyConnectionFactory.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ProxyConnectionFactory$ProxyProtocolV1Connection" sourceFile="ProxyConnectionFactory.java" interface="false" size="85" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ProxyConnectionFactory$ProxyProtocolV1orV2Connection" sourceFile="ProxyConnectionFactory.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ProxyConnectionFactory$ProxyProtocolV2Connection" sourceFile="ProxyConnectionFactory.java" interface="false" size="135" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ProxyConnectionFactory$Transport" sourceFile="ProxyConnectionFactory.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.PushBuilder" sourceFile="PushBuilder.java" interface="true" size="21" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.PushBuilderImpl" sourceFile="PushBuilderImpl.java" interface="false" size="106" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.QuietServletException" sourceFile="QuietServletException.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Request" sourceFile="Request.java" interface="false" size="1009" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Request$1" sourceFile="Request.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Request$2" sourceFile="Request.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.RequestLog" sourceFile="RequestLog.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.RequestLogCollection" sourceFile="RequestLogCollection.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ResourceContentFactory" sourceFile="ResourceContentFactory.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ResourceService" sourceFile="ResourceService.java" interface="false" size="439" bugs="2" priority_2="2"/>
+      <ClassStats class="org.eclipse.jetty.server.ResourceService$1" sourceFile="ResourceService.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ResourceService$2" sourceFile="ResourceService.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ResourceService$WelcomeFactory" sourceFile="ResourceService.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Response" sourceFile="Response.java" interface="false" size="758" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Response$1" sourceFile="Response.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Response$EncodingFrom" sourceFile="Response.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Response$OutputType" sourceFile="Response.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ResponseWriter" sourceFile="ResponseWriter.java" interface="false" size="243" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.SecureRequestCustomizer" sourceFile="SecureRequestCustomizer.java" interface="false" size="115" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.SecureRequestCustomizer$CachedInfo" sourceFile="SecureRequestCustomizer.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Server" sourceFile="Server.java" interface="false" size="307" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Server$DateField" sourceFile="Server.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ServerConnectionStatistics" sourceFile="ServerConnectionStatistics.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ServerConnector" sourceFile="ServerConnector.java" interface="false" size="169" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ServerConnector$ServerConnectorManager" sourceFile="ServerConnector.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ServletRequestHttpWrapper" sourceFile="ServletRequestHttpWrapper.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ServletResponseHttpWrapper" sourceFile="ServletResponseHttpWrapper.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.SessionIdManager" sourceFile="SessionIdManager.java" interface="true" size="12" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ShutdownMonitor" sourceFile="ShutdownMonitor.java" interface="false" size="150" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ShutdownMonitor$1" sourceFile="ShutdownMonitor.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ShutdownMonitor$Holder" sourceFile="ShutdownMonitor.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.ShutdownMonitor$ShutdownMonitorRunnable" sourceFile="ShutdownMonitor.java" interface="false" size="80" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Slf4jRequestLog" sourceFile="Slf4jRequestLog.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.SocketCustomizationListener" sourceFile="SocketCustomizationListener.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.SslConnectionFactory" sourceFile="SslConnectionFactory.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.UserIdentity" sourceFile="UserIdentity.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.UserIdentity$1" sourceFile="UserIdentity.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.UserIdentity$Scope" sourceFile="UserIdentity.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.UserIdentity$UnauthenticatedUserIdentity" sourceFile="UserIdentity.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.Utf8HttpWriter" sourceFile="Utf8HttpWriter.java" interface="false" size="85" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.server.handler" total_bugs="1" total_types="48" total_size="3394" priority_2="1">
+      <ClassStats class="org.eclipse.jetty.server.handler.AbstractHandler" sourceFile="AbstractHandler.java" interface="false" size="45" bugs="1" priority_2="1"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.AbstractHandler$ErrorDispatchHandler" sourceFile="AbstractHandler.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.AbstractHandlerContainer" sourceFile="AbstractHandlerContainer.java" interface="false" size="56" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.AllowSymLinkAliasChecker" sourceFile="AllowSymLinkAliasChecker.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.AsyncDelayHandler" sourceFile="AsyncDelayHandler.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.BufferedResponseHandler" sourceFile="BufferedResponseHandler.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.BufferedResponseHandler$BufferedInterceptor" sourceFile="BufferedResponseHandler.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.BufferedResponseHandler$BufferedInterceptor$1" sourceFile="BufferedResponseHandler.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ContextHandler" sourceFile="ContextHandler.java" interface="false" size="804" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ContextHandler$1" sourceFile="ContextHandler.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ContextHandler$AliasCheck" sourceFile="ContextHandler.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ContextHandler$ApproveAliases" sourceFile="ContextHandler.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ContextHandler$ApproveNonExistentDirectoryAliases" sourceFile="ContextHandler.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ContextHandler$Availability" sourceFile="ContextHandler.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ContextHandler$Context" sourceFile="ContextHandler.java" interface="false" size="264" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ContextHandler$ContextScopeListener" sourceFile="ContextHandler.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ContextHandler$StaticContext" sourceFile="ContextHandler.java" interface="false" size="138" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ContextHandlerCollection" sourceFile="ContextHandlerCollection.java" interface="false" size="112" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ContextHandlerCollection$Branch" sourceFile="ContextHandlerCollection.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.DebugHandler" sourceFile="DebugHandler.java" interface="false" size="76" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.DefaultHandler" sourceFile="DefaultHandler.java" interface="false" size="96" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ErrorHandler" sourceFile="ErrorHandler.java" interface="false" size="169" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ErrorHandler$ErrorPageMapper" sourceFile="ErrorHandler.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.HandlerCollection" sourceFile="HandlerCollection.java" interface="false" size="79" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.HandlerList" sourceFile="HandlerList.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.HandlerWrapper" sourceFile="HandlerWrapper.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.HotSwapHandler" sourceFile="HotSwapHandler.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.IPAccessHandler" sourceFile="IPAccessHandler.java" interface="false" size="118" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.IdleTimeoutHandler" sourceFile="IdleTimeoutHandler.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.IdleTimeoutHandler$1" sourceFile="IdleTimeoutHandler.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.InetAccessHandler" sourceFile="InetAccessHandler.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ManagedAttributeListener" sourceFile="ManagedAttributeListener.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.MovedContextHandler" sourceFile="MovedContextHandler.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.MovedContextHandler$1" sourceFile="MovedContextHandler.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.MovedContextHandler$Redirector" sourceFile="MovedContextHandler.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.RequestLogHandler" sourceFile="RequestLogHandler.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ResourceHandler" sourceFile="ResourceHandler.java" interface="false" size="178" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ResourceHandler$1" sourceFile="ResourceHandler.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ScopedHandler" sourceFile="ScopedHandler.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.SecuredRedirectHandler" sourceFile="SecuredRedirectHandler.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ShutdownHandler" sourceFile="ShutdownHandler.java" interface="false" size="103" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ShutdownHandler$1" sourceFile="ShutdownHandler.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.StatisticsHandler" sourceFile="StatisticsHandler.java" interface="false" size="215" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.StatisticsHandler$1" sourceFile="StatisticsHandler.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ThreadLimitHandler" sourceFile="ThreadLimitHandler.java" interface="false" size="134" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ThreadLimitHandler$1" sourceFile="ThreadLimitHandler.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ThreadLimitHandler$RFC7239" sourceFile="ThreadLimitHandler.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.ThreadLimitHandler$Remote" sourceFile="ThreadLimitHandler.java" interface="false" size="41" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.server.handler.gzip" total_bugs="0" total_types="9" total_size="574">
+      <ClassStats class="org.eclipse.jetty.server.handler.gzip.GzipFactory" sourceFile="GzipFactory.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.gzip.GzipHandler" sourceFile="GzipHandler.java" interface="false" size="290" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.gzip.GzipHttpInputInterceptor" sourceFile="GzipHttpInputInterceptor.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.gzip.GzipHttpInputInterceptor$1" sourceFile="GzipHttpInputInterceptor.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.gzip.GzipHttpInputInterceptor$Decoder" sourceFile="GzipHttpInputInterceptor.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.gzip.GzipHttpOutputInterceptor" sourceFile="GzipHttpOutputInterceptor.java" interface="false" size="159" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.gzip.GzipHttpOutputInterceptor$1" sourceFile="GzipHttpOutputInterceptor.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.gzip.GzipHttpOutputInterceptor$GZState" sourceFile="GzipHttpOutputInterceptor.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.gzip.GzipHttpOutputInterceptor$GzipBufferCB" sourceFile="GzipHttpOutputInterceptor.java" interface="false" size="63" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.server.handler.jmx" total_bugs="0" total_types="2" total_size="72">
+      <ClassStats class="org.eclipse.jetty.server.handler.jmx.AbstractHandlerMBean" sourceFile="AbstractHandlerMBean.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.handler.jmx.ContextHandlerMBean" sourceFile="ContextHandlerMBean.java" interface="false" size="26" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.server.jmx" total_bugs="0" total_types="2" total_size="28">
+      <ClassStats class="org.eclipse.jetty.server.jmx.AbstractConnectorMBean" sourceFile="AbstractConnectorMBean.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.jmx.ServerMBean" sourceFile="ServerMBean.java" interface="false" size="12" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.server.nio" total_bugs="0" total_types="1" total_size="16">
+      <ClassStats class="org.eclipse.jetty.server.nio.NetworkTrafficSelectChannelConnector" sourceFile="NetworkTrafficSelectChannelConnector.java" interface="false" size="16" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.server.session" total_bugs="13" total_types="48" total_size="3252" priority_2="13">
+      <ClassStats class="org.eclipse.jetty.server.session.AbstractSessionCache" sourceFile="AbstractSessionCache.java" interface="false" size="269" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.AbstractSessionCache$PlaceHolderSession" sourceFile="AbstractSessionCache.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.AbstractSessionDataStore" sourceFile="AbstractSessionDataStore.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.AbstractSessionDataStoreFactory" sourceFile="AbstractSessionDataStoreFactory.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.CachingSessionDataStore" sourceFile="CachingSessionDataStore.java" interface="false" size="61" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.CachingSessionDataStoreFactory" sourceFile="CachingSessionDataStoreFactory.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.DatabaseAdaptor" sourceFile="DatabaseAdaptor.java" interface="false" size="119" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.DefaultSessionCache" sourceFile="DefaultSessionCache.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.DefaultSessionCacheFactory" sourceFile="DefaultSessionCacheFactory.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.DefaultSessionIdManager" sourceFile="DefaultSessionIdManager.java" interface="false" size="191" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.FileSessionDataStore" sourceFile="FileSessionDataStore.java" interface="false" size="230" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.FileSessionDataStore$1" sourceFile="FileSessionDataStore.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.FileSessionDataStore$2" sourceFile="FileSessionDataStore.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.FileSessionDataStore$3" sourceFile="FileSessionDataStore.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.FileSessionDataStore$4" sourceFile="FileSessionDataStore.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.FileSessionDataStore$5" sourceFile="FileSessionDataStore.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.FileSessionDataStore$6" sourceFile="FileSessionDataStore.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.FileSessionDataStoreFactory" sourceFile="FileSessionDataStoreFactory.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.HouseKeeper" sourceFile="HouseKeeper.java" interface="false" size="102" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.HouseKeeper$Runner" sourceFile="HouseKeeper.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.JDBCSessionDataStore" sourceFile="JDBCSessionDataStore.java" interface="false" size="204" bugs="1" priority_2="1"/>
+      <ClassStats class="org.eclipse.jetty.server.session.JDBCSessionDataStore$1" sourceFile="JDBCSessionDataStore.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.JDBCSessionDataStore$SessionTableSchema" sourceFile="JDBCSessionDataStore.java" interface="false" size="308" bugs="12" priority_2="12"/>
+      <ClassStats class="org.eclipse.jetty.server.session.JDBCSessionDataStoreFactory" sourceFile="JDBCSessionDataStoreFactory.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.NullSessionCache" sourceFile="NullSessionCache.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.NullSessionCacheFactory" sourceFile="NullSessionCacheFactory.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.NullSessionDataStore" sourceFile="NullSessionDataStore.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.NullSessionDataStoreFactory" sourceFile="NullSessionDataStoreFactory.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.Session" sourceFile="Session.java" interface="false" size="354" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.Session$1" sourceFile="Session.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.Session$2" sourceFile="Session.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.Session$SessionInactivityTimeout" sourceFile="Session.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.Session$State" sourceFile="Session.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionCache" sourceFile="SessionCache.java" interface="true" size="27" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionCacheFactory" sourceFile="SessionCacheFactory.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionContext" sourceFile="SessionContext.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionData" sourceFile="SessionData.java" interface="false" size="189" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionDataMap" sourceFile="SessionDataMap.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionDataMapFactory" sourceFile="SessionDataMapFactory.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionDataStore" sourceFile="SessionDataStore.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionDataStoreFactory" sourceFile="SessionDataStoreFactory.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionHandler" sourceFile="SessionHandler.java" interface="false" size="550" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionHandler$1" sourceFile="SessionHandler.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionHandler$CookieConfig" sourceFile="SessionHandler.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionHandler$SessionAsyncListener" sourceFile="SessionHandler.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.SessionHandler$SessionIf" sourceFile="SessionHandler.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.UnreadableSessionDataException" sourceFile="UnreadableSessionDataException.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.server.session.UnwriteableSessionDataException" sourceFile="UnwriteableSessionDataException.java" interface="false" size="11" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="636" invocations="3553" avgMicrosecondsPerInvocation="179" maxMicrosecondsPerInvocation="9095" standardDeviationMircosecondsPerInvocation="487"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="617" invocations="3547" avgMicrosecondsPerInvocation="173" maxMicrosecondsPerInvocation="7244" standardDeviationMircosecondsPerInvocation="413"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.taintanalysis.TaintDataflowEngine" totalMilliseconds="590" invocations="3553" avgMicrosecondsPerInvocation="166" maxMicrosecondsPerInvocation="14480" standardDeviationMircosecondsPerInvocation="579"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="568" invocations="3549" avgMicrosecondsPerInvocation="160" maxMicrosecondsPerInvocation="32895" standardDeviationMircosecondsPerInvocation="793"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="562" invocations="3699" avgMicrosecondsPerInvocation="152" maxMicrosecondsPerInvocation="9048" standardDeviationMircosecondsPerInvocation="452"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="497" invocations="3633" avgMicrosecondsPerInvocation="136" maxMicrosecondsPerInvocation="8432" standardDeviationMircosecondsPerInvocation="369"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="379" invocations="1982" avgMicrosecondsPerInvocation="191" maxMicrosecondsPerInvocation="16490" standardDeviationMircosecondsPerInvocation="756"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="341" invocations="3758" avgMicrosecondsPerInvocation="90" maxMicrosecondsPerInvocation="8731" standardDeviationMircosecondsPerInvocation="213"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="339" invocations="2427" avgMicrosecondsPerInvocation="139" maxMicrosecondsPerInvocation="4855" standardDeviationMircosecondsPerInvocation="318"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="290" invocations="677" avgMicrosecondsPerInvocation="429" maxMicrosecondsPerInvocation="7714" standardDeviationMircosecondsPerInvocation="857"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindSqlInjection" totalMilliseconds="289" invocations="381" avgMicrosecondsPerInvocation="758" maxMicrosecondsPerInvocation="277713" standardDeviationMircosecondsPerInvocation="14208"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="287" invocations="677" avgMicrosecondsPerInvocation="425" maxMicrosecondsPerInvocation="6576" standardDeviationMircosecondsPerInvocation="792"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="274" invocations="4472" avgMicrosecondsPerInvocation="61" maxMicrosecondsPerInvocation="3555" standardDeviationMircosecondsPerInvocation="145"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="175" invocations="381" avgMicrosecondsPerInvocation="460" maxMicrosecondsPerInvocation="20408" standardDeviationMircosecondsPerInvocation="1803"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="171" invocations="381" avgMicrosecondsPerInvocation="450" maxMicrosecondsPerInvocation="71705" standardDeviationMircosecondsPerInvocation="3683"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="148" invocations="3553" avgMicrosecondsPerInvocation="41" maxMicrosecondsPerInvocation="4600" standardDeviationMircosecondsPerInvocation="144"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.TrustBoundaryViolationDetector" totalMilliseconds="138" invocations="381" avgMicrosecondsPerInvocation="363" maxMicrosecondsPerInvocation="20009" standardDeviationMircosecondsPerInvocation="1175"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.file.PathTraversalDetector" totalMilliseconds="137" invocations="381" avgMicrosecondsPerInvocation="361" maxMicrosecondsPerInvocation="4036" standardDeviationMircosecondsPerInvocation="657"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="137" invocations="381" avgMicrosecondsPerInvocation="360" maxMicrosecondsPerInvocation="7003" standardDeviationMircosecondsPerInvocation="817"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="125" invocations="381" avgMicrosecondsPerInvocation="329" maxMicrosecondsPerInvocation="4122" standardDeviationMircosecondsPerInvocation="609"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="121" invocations="71388" avgMicrosecondsPerInvocation="1" maxMicrosecondsPerInvocation="1133" standardDeviationMircosecondsPerInvocation="7"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.xpath.XPathInjectionDetector" totalMilliseconds="120" invocations="381" avgMicrosecondsPerInvocation="315" maxMicrosecondsPerInvocation="3569" standardDeviationMircosecondsPerInvocation="601"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.xml.StdXmlTransformDetector" totalMilliseconds="118" invocations="381" avgMicrosecondsPerInvocation="312" maxMicrosecondsPerInvocation="3820" standardDeviationMircosecondsPerInvocation="604"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.script.ScriptInjectionDetector" totalMilliseconds="117" invocations="381" avgMicrosecondsPerInvocation="308" maxMicrosecondsPerInvocation="3694" standardDeviationMircosecondsPerInvocation="599"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.command.CommandInjectionDetector" totalMilliseconds="117" invocations="381" avgMicrosecondsPerInvocation="308" maxMicrosecondsPerInvocation="3498" standardDeviationMircosecondsPerInvocation="599"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.sql.SqlInjectionDetector" totalMilliseconds="115" invocations="381" avgMicrosecondsPerInvocation="301" maxMicrosecondsPerInvocation="5001" standardDeviationMircosecondsPerInvocation="636"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.custom.CustomInjectionDetector" totalMilliseconds="114" invocations="381" avgMicrosecondsPerInvocation="299" maxMicrosecondsPerInvocation="4868" standardDeviationMircosecondsPerInvocation="614"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.HttpResponseSplittingDetector" totalMilliseconds="113" invocations="381" avgMicrosecondsPerInvocation="297" maxMicrosecondsPerInvocation="3722" standardDeviationMircosecondsPerInvocation="594"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.CrlfLogInjectionDetector" totalMilliseconds="111" invocations="381" avgMicrosecondsPerInvocation="291" maxMicrosecondsPerInvocation="3529" standardDeviationMircosecondsPerInvocation="596"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="111" invocations="3758" avgMicrosecondsPerInvocation="29" maxMicrosecondsPerInvocation="28231" standardDeviationMircosecondsPerInvocation="461"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.redirect.UnvalidatedRedirectDetector" totalMilliseconds="110" invocations="381" avgMicrosecondsPerInvocation="288" maxMicrosecondsPerInvocation="3608" standardDeviationMircosecondsPerInvocation="541"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.ldap.LdapInjectionDetector" totalMilliseconds="110" invocations="381" avgMicrosecondsPerInvocation="288" maxMicrosecondsPerInvocation="3815" standardDeviationMircosecondsPerInvocation="579"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.ExternalConfigurationControlDetector" totalMilliseconds="108" invocations="381" avgMicrosecondsPerInvocation="284" maxMicrosecondsPerInvocation="3856" standardDeviationMircosecondsPerInvocation="578"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="105" invocations="381" avgMicrosecondsPerInvocation="276" maxMicrosecondsPerInvocation="4223" standardDeviationMircosecondsPerInvocation="473"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="99" invocations="677" avgMicrosecondsPerInvocation="147" maxMicrosecondsPerInvocation="3018" standardDeviationMircosecondsPerInvocation="313"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref$CheckCallSitesAndReturnInstructions" totalMilliseconds="96" invocations="3547" avgMicrosecondsPerInvocation="27" maxMicrosecondsPerInvocation="796" standardDeviationMircosecondsPerInvocation="54"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="96" invocations="1016" avgMicrosecondsPerInvocation="94" maxMicrosecondsPerInvocation="12574" standardDeviationMircosecondsPerInvocation="426"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="89" invocations="677" avgMicrosecondsPerInvocation="131" maxMicrosecondsPerInvocation="2225" standardDeviationMircosecondsPerInvocation="260"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RuntimeExceptionCapture" totalMilliseconds="87" invocations="381" avgMicrosecondsPerInvocation="230" maxMicrosecondsPerInvocation="4450" standardDeviationMircosecondsPerInvocation="486"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.password.ConstantPasswordDetector" totalMilliseconds="87" invocations="381" avgMicrosecondsPerInvocation="228" maxMicrosecondsPerInvocation="2620" standardDeviationMircosecondsPerInvocation="427"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DefaultEncodingDetector" totalMilliseconds="86" invocations="381" avgMicrosecondsPerInvocation="225" maxMicrosecondsPerInvocation="4521" standardDeviationMircosecondsPerInvocation="605"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="73" invocations="3414" avgMicrosecondsPerInvocation="21" maxMicrosecondsPerInvocation="1028" standardDeviationMircosecondsPerInvocation="55"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="72" invocations="381" avgMicrosecondsPerInvocation="191" maxMicrosecondsPerInvocation="4923" standardDeviationMircosecondsPerInvocation="521"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="70" invocations="677" avgMicrosecondsPerInvocation="104" maxMicrosecondsPerInvocation="1826" standardDeviationMircosecondsPerInvocation="177"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.MethodReturnCheck" totalMilliseconds="70" invocations="381" avgMicrosecondsPerInvocation="184" maxMicrosecondsPerInvocation="3488" standardDeviationMircosecondsPerInvocation="398"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="68" invocations="381" avgMicrosecondsPerInvocation="178" maxMicrosecondsPerInvocation="2359" standardDeviationMircosecondsPerInvocation="311"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.file.FileUploadFilenameDetector" totalMilliseconds="67" invocations="381" avgMicrosecondsPerInvocation="176" maxMicrosecondsPerInvocation="25302" standardDeviationMircosecondsPerInvocation="1308"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindPuzzlers" totalMilliseconds="67" invocations="381" avgMicrosecondsPerInvocation="176" maxMicrosecondsPerInvocation="2662" standardDeviationMircosecondsPerInvocation="345"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindSelfComparison" totalMilliseconds="66" invocations="381" avgMicrosecondsPerInvocation="174" maxMicrosecondsPerInvocation="2246" standardDeviationMircosecondsPerInvocation="347"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SwitchFallthrough" totalMilliseconds="63" invocations="381" avgMicrosecondsPerInvocation="166" maxMicrosecondsPerInvocation="3081" standardDeviationMircosecondsPerInvocation="347"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="62" invocations="677" avgMicrosecondsPerInvocation="92" maxMicrosecondsPerInvocation="1971" standardDeviationMircosecondsPerInvocation="209"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindHEmismatch" totalMilliseconds="61" invocations="381" avgMicrosecondsPerInvocation="162" maxMicrosecondsPerInvocation="2755" standardDeviationMircosecondsPerInvocation="305"/>
+      <ClassProfile name="edu.umd.cs.findbugs.DetectorToDetector2Adapter" totalMilliseconds="61" invocations="70611" avgMicrosecondsPerInvocation="0" maxMicrosecondsPerInvocation="84" standardDeviationMircosecondsPerInvocation="0"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="60" invocations="381" avgMicrosecondsPerInvocation="159" maxMicrosecondsPerInvocation="2123" standardDeviationMircosecondsPerInvocation="285"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="60" invocations="381" avgMicrosecondsPerInvocation="159" maxMicrosecondsPerInvocation="3936" standardDeviationMircosecondsPerInvocation="339"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.PredictableRandomDetector" totalMilliseconds="58" invocations="381" avgMicrosecondsPerInvocation="154" maxMicrosecondsPerInvocation="2162" standardDeviationMircosecondsPerInvocation="277"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="58" invocations="3758" avgMicrosecondsPerInvocation="15" maxMicrosecondsPerInvocation="3681" standardDeviationMircosecondsPerInvocation="74"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="58" invocations="1989" avgMicrosecondsPerInvocation="29" maxMicrosecondsPerInvocation="898" standardDeviationMircosecondsPerInvocation="31"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RepeatedConditionals" totalMilliseconds="58" invocations="381" avgMicrosecondsPerInvocation="152" maxMicrosecondsPerInvocation="2298" standardDeviationMircosecondsPerInvocation="302"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FormatStringChecker" totalMilliseconds="57" invocations="381" avgMicrosecondsPerInvocation="151" maxMicrosecondsPerInvocation="4896" standardDeviationMircosecondsPerInvocation="371"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref" totalMilliseconds="57" invocations="381" avgMicrosecondsPerInvocation="151" maxMicrosecondsPerInvocation="2155" standardDeviationMircosecondsPerInvocation="246"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDoubleCheck" totalMilliseconds="56" invocations="381" avgMicrosecondsPerInvocation="148" maxMicrosecondsPerInvocation="2201" standardDeviationMircosecondsPerInvocation="282"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.WeakFilenameUtilsMethodDetector" totalMilliseconds="55" invocations="381" avgMicrosecondsPerInvocation="145" maxMicrosecondsPerInvocation="1974" standardDeviationMircosecondsPerInvocation="256"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteLoop" totalMilliseconds="55" invocations="381" avgMicrosecondsPerInvocation="144" maxMicrosecondsPerInvocation="2055" standardDeviationMircosecondsPerInvocation="282"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="55" invocations="677" avgMicrosecondsPerInvocation="81" maxMicrosecondsPerInvocation="3774" standardDeviationMircosecondsPerInvocation="226"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

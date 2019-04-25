@@ -1,0 +1,32 @@
+[545]
+768 :: NORM :: declaration :: Ljava/util/zip/GZIPInputStream :: v20 = new java.util.zip.GZIPInputStream::DD,774
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.getPositionInQueue(java.lang.String,java.lang.String,java.lang.String,java.lang.String)::CD,9
+388 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,int)::CE,389:CD,393:CD,399
+389 :: EXIT :: exit :: Ljava/io/InputStream :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,int)::JM,314
+773 :: NORM :: compound :: Ljava/io/InputStream :: return v22::DD,733
+774 :: EXPR :: assign :: null :: PHI v22 = v17, v17, v20::CF,773
+520 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.xml.PositionInQueueXMLConverter.fromXML(java.lang.String)::CD,525:CD,528:CD,532:CD,545
+9 :: CALL :: call :: I :: v9 = p0 $this .getPositionInQueue(p1 $serverLocation , p2 $method , p3 $name1 , p4 $name2 , #(5000))::CL,254
+393 :: CALL :: call :: Ljava/io/InputStream :: v6 = getInputStream(p1 $url , #(1), p2 $timeout )::JM,399:CL,732
+525 :: CALL :: call :: Ljavax/xml/parsers/DocumentBuilderFactory :: v6 = newInstance()::JM,528:JM,545
+399 :: NORM :: compound :: Ljava/io/InputStream :: return v6::DD,389
+528 :: CALL :: call :: Ljavax/xml/parsers/DocumentBuilder :: v8 = v6.newDocumentBuilder()::JM,528:JM,545
+532 :: NORM :: declaration :: Lorg/xml/sax/InputSource :: v9 = new org.xml.sax.InputSource::JM,545
+545 :: CALL :: call :: Lorg/w3c/dom/Document :: v15 = v8.parse(v9)::JM,545
+309 :: CALL :: call :: Ljava/io/InputStream :: v31 = getInputStream(v28, p5 $timeout )::JM,314:CL,388
+314 :: PRED :: IF :: Z :: if (v31 == #(null)) goto 126::CD,323
+962 :: NORM :: compound :: Ljava/net/HttpURLConnection :: return v7::DD,846
+323 :: CALL :: call :: I :: v42 = v39.fromXML(v38)::CL,520
+845 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::CE,846:CD,850:CD,854:CD,962
+846 :: EXIT :: exit :: Ljava/net/HttpURLConnection :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::JM,753:JM,757:JM,774:JM,761:JM,762:JM,767
+850 :: CALL :: call :: Ljava/net/URLConnection :: v6 = p1 $url .openConnection()::JM,854
+854 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST v6::DD,962
+732 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,boolean,int)::CE,733:CD,738:CD,753:CD,757:CD,761:CD,773:CD,774
+733 :: EXIT :: exit :: Ljava/io/InputStream :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,boolean,int)::JM,399
+738 :: CALL :: call :: Ljava/net/HttpURLConnection :: v7 = openHttpURLConnection(p1 $url , p3 $timeout )::JM,753:JM,757:JM,774:JM,761:JM,762:JM,767:CL,845
+753 :: CALL :: call :: Ljava/lang/String :: v15 = v7.getContentEncoding()::JM,753:JM,757:JM,774:JM,761:JM,762:JM,767
+757 :: CALL :: call :: Ljava/io/InputStream :: v17 = v7.getInputStream()::JM,753:JM,757:JM,774:JM,761:JM,762:JM,767
+761 :: PRED :: IF :: Z :: if (v15 == #(null)) goto 67::CF,774:CD,762:CD,767
+762 :: CALL :: call :: Z :: v19 = v15.contains(#(gzip))::JM,774:JM,762:JM,767
+254 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.getPositionInQueue(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int)::CD,309:CD,314
+767 :: PRED :: IF :: Z :: if (v19 == #(0)) goto 67::CF,774:CF,768

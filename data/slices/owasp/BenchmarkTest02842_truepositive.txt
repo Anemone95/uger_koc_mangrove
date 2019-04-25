@@ -1,0 +1,25 @@
+[75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 89]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest02842.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,16:CD,22:CD,23:CD,27:CD,31:CD,35:CD,40:CD,49:CD,53:CD,58:CD,63:CD,68:CD,72:CD,75:CD,84:CD,99:JM,17:JM,21
+7 :: CALL :: call :: Ljava/util/Enumeration :: v8 = p1 $request .getHeaders(#(foo))::JM,16:JM,17:JM,21:JM,12
+12 :: CALL :: call :: Z :: v10 = v8.hasMoreElements()::JM,16:JM,17:JM,21:JM,12
+16 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 34::CF,99:CD,17:CD,21:JM,16:JM,12
+17 :: CALL :: call :: Ljava/lang/Object :: v13 = v8.nextElement()::JM,16:JM,17:JM,21:JM,12
+21 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::DD,99
+22 :: NORM :: declaration :: Ljava/lang/String :: v16 = new java.lang.String::JM,22:JM,84:CF,23
+23 :: NORM :: declaration :: Lsun/misc/BASE64Decoder :: v17 = new sun.misc.BASE64Decoder::JM,22:JM,40
+27 :: NORM :: declaration :: Lsun/misc/BASE64Encoder :: v19 = new sun.misc.BASE64Encoder::JM,35:JM,22:JM,40
+31 :: CALL :: call :: [B :: v22 = v15.getBytes()::JM,35:JM,22:JM,40
+35 :: CALL :: call :: Ljava/lang/String :: v24 = v19.encode(v22)::JM,35:JM,22:JM,40
+40 :: CALL :: call :: [B :: v26 = v17.decodeBuffer(v24)::JM,22:JM,40
+49 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v28 = new java.lang.StringBuilder::JM,84
+53 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v28.append(#(UPDATE USERS SET PASS...))::JM,84
+58 :: CALL :: call :: Ljava/lang/StringBuilder :: v34 = v32.append(v16)::JM,84
+63 :: CALL :: call :: Ljava/lang/StringBuilder :: v37 = v34.append(#(' WHERE USERNAME='foo'))::JM,84
+68 :: CALL :: call :: Ljava/lang/String :: v39 = v37.toString()::JM,84
+72 :: CALL :: call :: Ljava/sql/Statement :: v41 = getSqlStatement()::JM,84
+75 :: NORM :: declaration :: [Ljava/lang/String :: v43 = new java.lang.String[]::JM,84
+76 :: EXPR :: modify :: Ljava/lang/Object :: v43[#(0)] = #(user)::
+80 :: EXPR :: modify :: Ljava/lang/Object :: v43[#(1)] = #(password)::
+84 :: CALL :: call :: I :: v48 = v41.executeUpdate(v39, v43)::JM,84
+99 :: EXPR :: assign :: null :: PHI v15 = #(), v14::CF,22:JM,35:JM,40

@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/Users/ukoc/workspace-corpus/maven.1504075349146/h2/bin/h2-1.4.196.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>80927 lines of code analyzed,
+	in 694 classes, 
+	in 35 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">5</td>
+<td align="right">0.06</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">28</td>
+<td align="right">0.35</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>33</b>
+</td>
+<td align="right">
+<b>0.41</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">33</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>33</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67978');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of Runtime.exec(...) can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67978" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.h2.tools.Server<br/>In method org.h2.tools.Server.openBrowser(String)<br/>At Server.java:[line 640]<br/>Sink method Runtime.exec(...)<br/>At Console.java:[line 262]<br/>At Console.java:[line 533]<br/>At Console.java:[line 540]<br/>At Console.java:[line 548]<br/>At Server.java:[line 333]<br/>At Server.java:[line 638]<br/>At Server.java:[line 715]<br/>At Server.java:[line 717]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68117');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of Runtime.exec(...) can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68117" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.h2.tools.Server<br/>In method org.h2.tools.Server.openBrowser(String)<br/>At Server.java:[line 642]<br/>Sink method Runtime.exec(...)<br/>At Console.java:[line 262]<br/>At Console.java:[line 533]<br/>At Console.java:[line 540]<br/>At Console.java:[line 548]<br/>At Server.java:[line 333]<br/>At Server.java:[line 715]<br/>At Server.java:[line 717]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68246');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of Runtime.exec(...) can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68246" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.h2.tools.Server<br/>In method org.h2.tools.Server.openBrowser(String)<br/>At Server.java:[line 644]<br/>Sink method Runtime.exec(...)<br/>At Console.java:[line 262]<br/>At Console.java:[line 533]<br/>At Console.java:[line 540]<br/>At Console.java:[line 548]<br/>At Server.java:[line 333]<br/>At Server.java:[line 715]<br/>At Server.java:[line 717]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68375');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of Runtime.exec(...) can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68375" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.h2.tools.Server<br/>In method org.h2.tools.Server.openBrowser(String)<br/>At Server.java:[line 668]<br/>Sink method Runtime.exec(...)<br/>At Console.java:[line 262]<br/>At Console.java:[line 533]<br/>At Console.java:[line 540]<br/>At Console.java:[line 548]<br/>At Server.java:[line 333]<br/>At Server.java:[line 715]<br/>At Server.java:[line 717]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68504');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of Runtime.exec(...) can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68504" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.h2.tools.Server<br/>In method org.h2.tools.Server.openBrowser(String)<br/>At Server.java:[line 671]<br/>Sink method Runtime.exec(...)<br/>At Console.java:[line 262]<br/>At Console.java:[line 533]<br/>At Console.java:[line 540]<br/>At Console.java:[line 548]<br/>At Server.java:[line 333]<br/>At Server.java:[line 715]<br/>At Server.java:[line 717]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68633');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of Runtime.exec(...) can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68633" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.h2.tools.Server<br/>In method org.h2.tools.Server.openBrowser(String)<br/>At Server.java:[line 679]<br/>Sink method Runtime.exec(...)<br/>At Console.java:[line 262]<br/>At Console.java:[line 533]<br/>At Console.java:[line 540]<br/>At Console.java:[line 548]<br/>At Server.java:[line 333]<br/>At Server.java:[line 715]<br/>At Server.java:[line 717]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69312');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of ProcessBuilder.command(...) can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69312" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.h2.util.SourceCompiler<br/>In method org.h2.util.SourceCompiler.exec(String[])<br/>At SourceCompiler.java:[line 316]<br/>Sink method ProcessBuilder.command(...)<br/>At SourceCompiler.java:[line 300]<br/>At SourceCompiler.java:[line 304]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65554');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65554" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.fulltext.FullTextSettings<br/>In method org.h2.fulltext.FullTextSettings.prepare(Connection, String)<br/>At FullTextSettings.java:[line 177]<br/>Sink method Connection.prepareStatement(...)<br/>Method usage not detected<br/>At FullTextSettings.java:[line 172]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65628');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65628" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.jdbcx.JdbcXAConnection<br/>In method org.h2.jdbcx.JdbcXAConnection.commit(Xid, boolean)<br/>At JdbcXAConnection.java:[line 350]<br/>Sink method Statement.execute(...)<br/>At JdbcXAConnection.java:[line 350]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65697');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65697" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.jdbcx.JdbcXAConnection<br/>In method org.h2.jdbcx.JdbcXAConnection.prepare(Xid)<br/>At JdbcXAConnection.java:[line 234]<br/>Sink method Statement.execute(...)<br/>At JdbcXAConnection.java:[line 234]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65766');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65766" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.jdbcx.JdbcXAConnection<br/>In method org.h2.jdbcx.JdbcXAConnection.rollback(Xid)<br/>At JdbcXAConnection.java:[line 269]<br/>Sink method Statement.execute(...)<br/>At JdbcXAConnection.java:[line 269]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65835');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65835" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.server.pg.PgServerThread<br/>In method org.h2.server.pg.PgServerThread.installPgCatalog(Statement)<br/>At PgServerThread.java:[line 837]<br/>Sink method Statement.execute(...)<br/>At PgServerThread.java:[line 833]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65904');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65904" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.server.pg.PgServerThread<br/>In method org.h2.server.pg.PgServerThread.process()<br/>At PgServerThread.java:[line 240]<br/>Sink method Connection.prepareStatement(...)<br/>At PgServerThread.java:[line 240]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65973');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65973" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.server.web.WebApp<br/>In method org.h2.server.web.WebApp.executeLoop(Connection, int, String)<br/>At WebApp.java:[line 1453]<br/>Sink method Statement.execute(...)<br/>At WebApp.java:[line 988]<br/>At WebApp.java:[line 992]<br/>At WebApp.java:[line 1028]<br/>At WebApp.java:[line 1029]<br/>At WebApp.java:[line 1053]<br/>At WebApp.java:[line 1089]<br/>At WebApp.java:[line 1091]<br/>At WebApp.java:[line 1256]<br/>At WebApp.java:[line 1300]<br/>At WebApp.java:[line 1301]<br/>At WebApp.java:[line 1305]<br/>At WebApp.java:[line 1309]<br/>At WebApp.java:[line 1318]<br/>At WebApp.java:[line 1321]<br/>At WebApp.java:[line 1322]<br/>At WebApp.java:[line 1430]<br/>At WebApp.java:[line 1440]<br/>At WebApp.java:[line 1448]<br/>At WebApp.java:[line 1450]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66222');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66222" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.server.web.WebApp<br/>In method org.h2.server.web.WebApp.executeLoop(Connection, int, String)<br/>At WebApp.java:[line 1463]<br/>Sink method Connection.prepareStatement(...)<br/>At WebApp.java:[line 988]<br/>At WebApp.java:[line 992]<br/>At WebApp.java:[line 1028]<br/>At WebApp.java:[line 1029]<br/>At WebApp.java:[line 1053]<br/>At WebApp.java:[line 1089]<br/>At WebApp.java:[line 1091]<br/>At WebApp.java:[line 1256]<br/>At WebApp.java:[line 1300]<br/>At WebApp.java:[line 1301]<br/>At WebApp.java:[line 1305]<br/>At WebApp.java:[line 1309]<br/>At WebApp.java:[line 1318]<br/>At WebApp.java:[line 1321]<br/>At WebApp.java:[line 1322]<br/>At WebApp.java:[line 1430]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66441');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66441" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.server.web.WebApp<br/>In method org.h2.server.web.WebApp.getResult(Connection, int, String, boolean, boolean)<br/>At WebApp.java:[line 1330]<br/>Sink method Connection.prepareStatement(...)<br/>At WebApp.java:[line 988]<br/>At WebApp.java:[line 992]<br/>At WebApp.java:[line 1028]<br/>At WebApp.java:[line 1029]<br/>At WebApp.java:[line 1053]<br/>At WebApp.java:[line 1089]<br/>At WebApp.java:[line 1091]<br/>At WebApp.java:[line 1256]<br/>At WebApp.java:[line 1300]<br/>At WebApp.java:[line 1301]<br/>At WebApp.java:[line 1305]<br/>At WebApp.java:[line 1309]<br/>At WebApp.java:[line 1329]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66630');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66630" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.server.web.WebApp<br/>In method org.h2.server.web.WebApp.getResult(Connection, int, String, boolean, boolean)<br/>At WebApp.java:[line 1380]<br/>Sink method Statement.execute(...)<br/>At WebApp.java:[line 988]<br/>At WebApp.java:[line 992]<br/>At WebApp.java:[line 1028]<br/>At WebApp.java:[line 1029]<br/>At WebApp.java:[line 1053]<br/>At WebApp.java:[line 1089]<br/>At WebApp.java:[line 1091]<br/>At WebApp.java:[line 1256]<br/>At WebApp.java:[line 1300]<br/>At WebApp.java:[line 1301]<br/>At WebApp.java:[line 1305]<br/>At WebApp.java:[line 1309]<br/>At WebApp.java:[line 1313]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66819');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66819" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.table.LinkSchema<br/>In method org.h2.table.LinkSchema.linkSchema(Connection, String, String, String, String, String, String)<br/>At LinkSchema.java:[line 86]<br/>Sink method Statement.execute(...)<br/>At LinkSchema.java:[line 76]<br/>At LinkSchema.java:[line 77]<br/>At LinkSchema.java:[line 78]<br/>At LinkSchema.java:[line 79]<br/>At LinkSchema.java:[line 80]<br/>At LinkSchema.java:[line 81]<br/>At LinkSchema.java:[line 82]<br/>At LinkSchema.java:[line 83]<br/>At LinkSchema.java:[line 84]<br/>At LinkSchema.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66978');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66978" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.table.TableLink<br/>In method org.h2.table.TableLink.execute(String, ArrayList, boolean)<br/>At TableLink.java:[line 499]<br/>Sink method Connection.prepareStatement(...)<br/>At LinkedIndex.java:[line 76]<br/>At LinkedIndex.java:[line 78]<br/>At LinkedIndex.java:[line 122]<br/>At LinkedIndex.java:[line 124]<br/>At LinkedIndex.java:[line 203]<br/>At LinkedIndex.java:[line 205]<br/>At LinkedIndex.java:[line 251]<br/>At LinkedIndex.java:[line 253]<br/>At TableLink.java:[line 449]<br/>At TableLink.java:[line 451]<br/>At StatementBuilder.java:[line 118]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67147');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.executeQuery(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67147" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.table.TableLink<br/>In method org.h2.table.TableLink.readMetaData()<br/>At TableLink.java:[line 172]<br/>Sink method Statement.executeQuery(...)<br/>At TableLink.java:[line 172]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67216');">
+<td>
+<span class="priority-1">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.executeUpdate(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67216" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.tools.CreateCluster<br/>In method org.h2.tools.CreateCluster.process(String, String, String, String, String)<br/>At CreateCluster.java:[line 164]<br/>Sink method Statement.executeUpdate(...)<br/>Method usage with tainted arguments detected<br/>At CreateCluster.java:[line 48]<br/>At CreateCluster.java:[line 81]<br/>At CreateCluster.java:[line 95]<br/>At CreateCluster.java:[line 164]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67320');">
+<td>
+<span class="priority-1">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.executeUpdate(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67320" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.tools.CreateCluster<br/>In method org.h2.tools.CreateCluster.process(String, String, String, String, String)<br/>At CreateCluster.java:[line 165]<br/>Sink method Statement.executeUpdate(...)<br/>Method usage with tainted arguments detected<br/>At CreateCluster.java:[line 48]<br/>At CreateCluster.java:[line 81]<br/>At CreateCluster.java:[line 95]<br/>At CreateCluster.java:[line 165]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67424');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.executeQuery(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67424" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.tools.Csv<br/>In method org.h2.tools.Csv.write(Connection, String, String, String)<br/>At Csv.java:[line 166]<br/>Sink method Statement.executeQuery(...)<br/>At Function.java:[line 1604]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67493');">
+<td>
+<span class="priority-1">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67493" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.tools.RunScript<br/>In method org.h2.tools.RunScript.processRunscript(String, String, String, String, String)<br/>At RunScript.java:[line 283]<br/>Sink method Statement.execute(...)<br/>Method usage with tainted arguments detected<br/>At RunScript.java:[line 69]<br/>At RunScript.java:[line 124]<br/>At RunScript.java:[line 126]<br/>At RunScript.java:[line 140]<br/>At RunScript.java:[line 282]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67607');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67607" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.tools.RunScript<br/>In method org.h2.tools.RunScript.execute(Connection, Reader)<br/>At RunScript.java:[line 171]<br/>Sink method Statement.execute(...)<br/>At RunScript.java:[line 164]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67676');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67676" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.tools.RunScript<br/>In method org.h2.tools.RunScript.process(Connection, boolean, String, Reader, Charset)<br/>At RunScript.java:[line 224]<br/>Sink method Statement.execute(...)<br/>At RunScript.java:[line 202]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67745');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67745" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.tools.RunScript<br/>In method org.h2.tools.RunScript.process(Connection, boolean, String, Reader, Charset)<br/>At RunScript.java:[line 261]<br/>Sink method Statement.execute(...)<br/>At RunScript.java:[line 202]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67814');">
+<td>
+<span class="priority-1">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67814" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.tools.Script<br/>In method org.h2.tools.Script.process(Connection, String, String, String)<br/>At Script.java:[line 139]<br/>Sink method Statement.execute(...)<br/>Method usage with tainted arguments detected<br/>At Script.java:[line 45]<br/>At Script.java:[line 75]<br/>At Script.java:[line 78]<br/>At Script.java:[line 81]<br/>At Script.java:[line 84]<br/>At Script.java:[line 87]<br/>At Script.java:[line 88]<br/>At Script.java:[line 100]<br/>At Script.java:[line 119]<br/>At Script.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68762');">
+<td>
+<span class="priority-1">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68762" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.tools.Shell<br/>In method org.h2.tools.Shell.execute(String)<br/>At Shell.java:[line 456]<br/>Sink method Statement.execute(...)<br/>Method usage with tainted arguments detected<br/>At Shell.java:[line 156]<br/>At Shell.java:[line 160]<br/>At Shell.java:[line 219]<br/>At Shell.java:[line 229]<br/>At Shell.java:[line 286]<br/>At Shell.java:[line 295]<br/>At Shell.java:[line 441]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68896');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68896" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.upgrade.DbUpgrade<br/>In method org.h2.upgrade.DbUpgrade.upgrade(ConnectionInfo, Properties)<br/>At DbUpgrade.java:[line 139]<br/>Sink method Statement.execute(...)<br/>At DbUpgrade.java:[line 113]<br/>At DbUpgrade.java:[line 125]<br/>At DbUpgrade.java:[line 127]<br/>At DbUpgrade.java:[line 137]<br/>At DbUpgrade.java:[line 139]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69005');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69005" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.upgrade.DbUpgrade<br/>In method org.h2.upgrade.DbUpgrade.upgrade(ConnectionInfo, Properties)<br/>At DbUpgrade.java:[line 142]<br/>Sink method Statement.execute(...)<br/>At DbUpgrade.java:[line 113]<br/>At DbUpgrade.java:[line 125]<br/>At DbUpgrade.java:[line 127]<br/>At DbUpgrade.java:[line 142]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69104');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69104" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.upgrade.DbUpgrade<br/>In method org.h2.upgrade.DbUpgrade.upgrade(ConnectionInfo, Properties)<br/>At DbUpgrade.java:[line 154]<br/>Sink method Statement.execute(...)<br/>At DbUpgrade.java:[line 113]<br/>At DbUpgrade.java:[line 125]<br/>At DbUpgrade.java:[line 127]<br/>At DbUpgrade.java:[line 137]<br/>At DbUpgrade.java:[line 154]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69213');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69213" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.h2.upgrade.DbUpgrade<br/>In method org.h2.upgrade.DbUpgrade.upgrade(ConnectionInfo, Properties)<br/>At DbUpgrade.java:[line 157]<br/>Sink method Statement.execute(...)<br/>At DbUpgrade.java:[line 113]<br/>At DbUpgrade.java:[line 125]<br/>At DbUpgrade.java:[line 127]<br/>At DbUpgrade.java:[line 157]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="http://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="SQL_INJECTION_JDBC">SQL_INJECTION_JDBC: Potential JDBC Injection</a>
+</h2>
+            
+<p>
+The input values included in SQL queries need to be passed in safely.
+Bind variables in prepared statements can be used to easily mitigate the risk of SQL injection.
+</p>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>Connection conn = [...];
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("update COFFEES set SALES = "+nbSales+" where COF_NAME = '"+coffeeName+"'");</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+    <pre>Connection conn = [...];
+conn.prepareStatement("update COFFEES set SALES = ? where COF_NAME = ?");
+updateSales.setInt(1, nbSales);
+updateSales.setString(2, coffeeName);</pre>
+</p>
+<br/>
+
+<b>References (JDBC)</b><br/>
+<a href="http://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html">Oracle Documentation: The Java Tutorials &gt; Prepared Statements</a><br/>
+<b>References (SQL injection)</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246963/SQL%20Injection">WASC-19: SQL Injection</a><br/>
+<a href="http://capec.mitre.org/data/definitions/66.html">CAPEC-66: SQL Injection</a><br/>
+<a href="http://cwe.mitre.org/data/definitions/89.html">CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet">OWASP: SQL Injection Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet">OWASP: Query Parameterization Cheat Sheet</a><br/>
+</p>
+
+        </body>
+</html>

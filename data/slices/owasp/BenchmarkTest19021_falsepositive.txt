@@ -1,0 +1,21 @@
+[54, 47]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest19021.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,17:CD,21:CD,25:CD,30:CD,35:CD,40:CD,44:CD,47
+17 :: CALL :: call :: Ljava/lang/String :: v11 = doSomething(v9)::JM,47:CL,179
+21 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::JM,47
+25 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v12.append(#(SELECT * from USERS w...))::JM,47
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v16.append(v11)::JM,47
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v18.append(#('))::JM,47
+40 :: CALL :: call :: Ljava/lang/String :: v23 = v21.toString()::JM,47
+44 :: CALL :: call :: Ljava/sql/Connection :: v25 = getSqlConnection()::JM,47
+47 :: CALL :: call :: Ljava/sql/PreparedStatement :: v30 = v25.prepareStatement(v23, #(1003), #(1007), #(2))::JM,47
+179 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest19021.doSomething(java.lang.String)::CE,180:CD,183:CD,187:CD,193:CD,197:CD,203:CD,215:CD,220:CD,221
+180 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest19021.doSomething(java.lang.String)::JM,47
+183 :: NORM :: declaration :: Ljava/util/HashMap :: v4 = new java.util.HashMap::JM,220
+187 :: CALL :: call :: Ljava/lang/Object :: v9 = v4.put(#(keyA-92461), #(a_Value))::
+193 :: CALL :: call :: Ljava/lang/String :: v12 = p1 $param .toString()::JM,193:JM,183
+197 :: CALL :: call :: Ljava/lang/Object :: v14 = v4.put(#(keyB-92461), v12)::
+203 :: CALL :: call :: Ljava/lang/Object :: v18 = v4.put(#(keyC), #(another_Value))::
+215 :: CALL :: call :: Ljava/lang/Object :: v23 = v4.get(#(keyA-92461))::JM,220
+220 :: EXPR :: assign :: Ljava/lang/Object :: v24 = CHECKCAST v23::DD,221
+221 :: NORM :: compound :: Ljava/lang/String :: return v24::DD,180

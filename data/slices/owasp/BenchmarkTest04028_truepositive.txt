@@ -1,0 +1,17 @@
+[52, 56]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest04028.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,26:CD,30:CD,35:CD,40:CD,45:CD,49:CD,52:CD,70:JM,16:JM,21
+7 :: CALL :: call :: Ljava/util/Map :: v6 = p1 $request .getParameterMap()::JM,16:JM,21:JM,11:JM,15
+11 :: CALL :: call :: Z :: v9 = v6.isEmpty()::JM,16:JM,21:JM,11:JM,15
+15 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 39::CF,70:CD,16:CD,21:JM,11:JM,15
+16 :: CALL :: call :: Ljava/lang/Object :: v13 = v6.get(#(foo))::JM,16:JM,21:JM,11:JM,15
+21 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::
+22 :: EXPR :: reference :: Ljava/lang/Object :: v15 = v14[#(0)]::DD,70
+26 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v17 = new java.lang.StringBuilder::JM,52
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v17.append(#({call verifyUserPassw...))::JM,52
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v21.append(v16)::JM,52
+40 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v23.append(#(')}))::JM,52
+45 :: CALL :: call :: Ljava/lang/String :: v28 = v26.toString()::JM,52
+49 :: CALL :: call :: Ljava/sql/Connection :: v30 = getSqlConnection()::JM,52
+52 :: CALL :: call :: Ljava/sql/CallableStatement :: v32 = v30.prepareCall(v28)::JM,52
+70 :: EXPR :: assign :: null :: PHI v16 = #(), v15::JM,52:CF,26

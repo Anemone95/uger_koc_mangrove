@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/Users/ukoc/workspace-corpus/mybatis-3/target/mybatis-3.4.6-SNAPSHOT.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>52663 lines of code analyzed,
+	in 949 classes, 
+	in 73 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">2</td>
+<td align="right">0.04</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">18</td>
+<td align="right">0.34</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>20</b>
+</td>
+<td align="right">
+<b>0.38</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">20</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>20</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65554');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.executeQuery(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65554" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.datasource.pooled.PooledDataSource<br/>In method org.apache.ibatis.datasource.pooled.PooledDataSource.pingConnection(PooledConnection)<br/>At PooledDataSource.java:[line 527]<br/>Sink method Statement.executeQuery(...)<br/>At PooledDataSource.java:[line 527]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65623');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareCall(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65623" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.executor.statement.CallableStatementHandler<br/>In method org.apache.ibatis.executor.statement.CallableStatementHandler.instantiateStatement(Connection)<br/>At CallableStatementHandler.java:[line 86]<br/>Sink method Connection.prepareCall(...)<br/>At CallableStatementHandler.java:[line 84]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65692');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareCall(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65692" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.executor.statement.CallableStatementHandler<br/>In method org.apache.ibatis.executor.statement.CallableStatementHandler.instantiateStatement(Connection)<br/>At CallableStatementHandler.java:[line 88]<br/>Sink method Connection.prepareCall(...)<br/>At CallableStatementHandler.java:[line 84]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65761');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65761" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.executor.statement.PreparedStatementHandler<br/>In method org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(Connection)<br/>At PreparedStatementHandler.java:[line 80]<br/>Sink method Connection.prepareStatement(...)<br/>At PreparedStatementHandler.java:[line 76]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65830');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65830" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.executor.statement.PreparedStatementHandler<br/>In method org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(Connection)<br/>At PreparedStatementHandler.java:[line 82]<br/>Sink method Connection.prepareStatement(...)<br/>At PreparedStatementHandler.java:[line 76]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65899');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65899" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.executor.statement.PreparedStatementHandler<br/>In method org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(Connection)<br/>At PreparedStatementHandler.java:[line 85]<br/>Sink method Connection.prepareStatement(...)<br/>At PreparedStatementHandler.java:[line 76]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65968');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65968" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.executor.statement.PreparedStatementHandler<br/>In method org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(Connection)<br/>At PreparedStatementHandler.java:[line 87]<br/>Sink method Connection.prepareStatement(...)<br/>At PreparedStatementHandler.java:[line 76]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66037');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.addBatch(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66037" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.executor.statement.SimpleStatementHandler<br/>In method org.apache.ibatis.executor.statement.SimpleStatementHandler.batch(Statement)<br/>At SimpleStatementHandler.java:[line 67]<br/>Sink method Statement.addBatch(...)<br/>At SimpleStatementHandler.java:[line 66]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66106');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66106" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.executor.statement.SimpleStatementHandler<br/>In method org.apache.ibatis.executor.statement.SimpleStatementHandler.query(Statement, ResultHandler)<br/>At SimpleStatementHandler.java:[line 73]<br/>Sink method Statement.execute(...)<br/>At SimpleStatementHandler.java:[line 72]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66175');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66175" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.executor.statement.SimpleStatementHandler<br/>In method org.apache.ibatis.executor.statement.SimpleStatementHandler.queryCursor(Statement)<br/>At SimpleStatementHandler.java:[line 80]<br/>Sink method Statement.execute(...)<br/>At SimpleStatementHandler.java:[line 79]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66244');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66244" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.executor.statement.SimpleStatementHandler<br/>In method org.apache.ibatis.executor.statement.SimpleStatementHandler.update(Statement)<br/>At SimpleStatementHandler.java:[line 50]<br/>Sink method Statement.execute(...)<br/>At SimpleStatementHandler.java:[line 45]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66313');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66313" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.executor.statement.SimpleStatementHandler<br/>In method org.apache.ibatis.executor.statement.SimpleStatementHandler.update(Statement)<br/>At SimpleStatementHandler.java:[line 54]<br/>Sink method Statement.execute(...)<br/>At SimpleStatementHandler.java:[line 45]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66382');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66382" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.executor.statement.SimpleStatementHandler<br/>In method org.apache.ibatis.executor.statement.SimpleStatementHandler.update(Statement)<br/>At SimpleStatementHandler.java:[line 58]<br/>Sink method Statement.execute(...)<br/>At SimpleStatementHandler.java:[line 45]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66451');">
+<td>
+<span class="priority-1">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66451" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.jdbc.ScriptRunner<br/>In method org.apache.ibatis.jdbc.ScriptRunner.executeStatement(String)<br/>At ScriptRunner.java:[line 235]<br/>Sink method Statement.execute(...)<br/>Method usage with tainted arguments detected<br/>At ScriptRunner.java:[line 119]<br/>At ScriptRunner.java:[line 120]<br/>At ScriptRunner.java:[line 121]<br/>At ScriptRunner.java:[line 123]<br/>At ScriptRunner.java:[line 125]<br/>At ScriptRunner.java:[line 139]<br/>At ScriptRunner.java:[line 140]<br/>At ScriptRunner.java:[line 205]<br/>At ScriptRunner.java:[line 206]<br/>At ScriptRunner.java:[line 207]<br/>At ScriptRunner.java:[line 208]<br/>At ScriptRunner.java:[line 232]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66635');">
+<td>
+<span class="priority-1">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66635" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.jdbc.ScriptRunner<br/>In method org.apache.ibatis.jdbc.ScriptRunner.executeStatement(String)<br/>At ScriptRunner.java:[line 246]<br/>Sink method Statement.execute(...)<br/>Method usage with tainted arguments detected<br/>At ScriptRunner.java:[line 119]<br/>At ScriptRunner.java:[line 120]<br/>At ScriptRunner.java:[line 121]<br/>At ScriptRunner.java:[line 123]<br/>At ScriptRunner.java:[line 125]<br/>At ScriptRunner.java:[line 139]<br/>At ScriptRunner.java:[line 140]<br/>At ScriptRunner.java:[line 205]<br/>At ScriptRunner.java:[line 206]<br/>At ScriptRunner.java:[line 207]<br/>At ScriptRunner.java:[line 208]<br/>At ScriptRunner.java:[line 232]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66819');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66819" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.jdbc.SqlRunner<br/>In method org.apache.ibatis.jdbc.SqlRunner.insert(String, Object[])<br/>At SqlRunner.java:[line 105]<br/>Sink method Connection.prepareStatement(...)<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66883');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66883" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.jdbc.SqlRunner<br/>In method org.apache.ibatis.jdbc.SqlRunner.insert(String, Object[])<br/>At SqlRunner.java:[line 107]<br/>Sink method Connection.prepareStatement(...)<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66947');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Statement.execute(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66947" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.jdbc.SqlRunner<br/>In method org.apache.ibatis.jdbc.SqlRunner.run(String)<br/>At SqlRunner.java:[line 184]<br/>Sink method Statement.execute(...)<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67011');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67011" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.jdbc.SqlRunner<br/>In method org.apache.ibatis.jdbc.SqlRunner.selectAll(String, Object[])<br/>At SqlRunner.java:[line 80]<br/>Sink method Connection.prepareStatement(...)<br/>Method usage not detected<br/>At SqlRunner.java:[line 64]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67085');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of Connection.prepareStatement(...) can be vulnerable to SQL injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67085" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.ibatis.jdbc.SqlRunner<br/>In method org.apache.ibatis.jdbc.SqlRunner.update(String, Object[])<br/>At SqlRunner.java:[line 149]<br/>Sink method Connection.prepareStatement(...)<br/>Method usage not detected<br/>At SqlRunner.java:[line 171]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="SQL_INJECTION_JDBC">SQL_INJECTION_JDBC: Potential JDBC Injection</a>
+</h2>
+            
+<p>
+The input values included in SQL queries need to be passed in safely.
+Bind variables in prepared statements can be used to easily mitigate the risk of SQL injection.
+</p>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>Connection conn = [...];
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("update COFFEES set SALES = "+nbSales+" where COF_NAME = '"+coffeeName+"'");</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+    <pre>Connection conn = [...];
+conn.prepareStatement("update COFFEES set SALES = ? where COF_NAME = ?");
+updateSales.setInt(1, nbSales);
+updateSales.setString(2, coffeeName);</pre>
+</p>
+<br/>
+
+<b>References (JDBC)</b><br/>
+<a href="http://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html">Oracle Documentation: The Java Tutorials &gt; Prepared Statements</a><br/>
+<b>References (SQL injection)</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246963/SQL%20Injection">WASC-19: SQL Injection</a><br/>
+<a href="http://capec.mitre.org/data/definitions/66.html">CAPEC-66: SQL Injection</a><br/>
+<a href="http://cwe.mitre.org/data/definitions/89.html">CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet">OWASP: SQL Injection Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet">OWASP: Query Parameterization Cheat Sheet</a><br/>
+</p>
+
+        </body>
+</html>

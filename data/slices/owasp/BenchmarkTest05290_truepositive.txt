@@ -1,0 +1,19 @@
+[57, 60]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest05290.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,17:CD,22:CD,27:CD,31:CD,35:CD,40:CD,45:CD,50:CD,54:CD,57
+12 :: CALL :: call :: Ljava/lang/String :: v9 = v5.getTheParameter(#(foo))::CL,161
+17 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::JM,57
+22 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v10.append(#(_SafeStuff))::JM,57
+27 :: CALL :: call :: Ljava/lang/String :: v16 = v14.toString()::JM,57
+31 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v17 = new java.lang.StringBuilder::JM,57
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v17.append(#(SELECT * from USERS w...))::JM,57
+40 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v21.append(v16)::JM,57
+45 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v23.append(#('))::JM,57
+50 :: CALL :: call :: Ljava/lang/String :: v28 = v26.toString()::JM,57
+54 :: CALL :: call :: Ljava/sql/Statement :: v30 = getSqlStatement()::JM,57
+57 :: CALL :: call :: V :: v30.addBatch(v28)::JM,57
+161 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::CE,162:CD,169:CD,174
+162 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::
+166 :: EXPR :: reference :: Ljavax/servlet/http/HttpServletRequest :: v4 = p0 $this .request::JM,174
+169 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getParameter(p1 $p )::JM,174
+174 :: NORM :: compound :: Ljava/lang/String :: return v6::CF,162

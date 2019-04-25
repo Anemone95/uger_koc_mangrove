@@ -1,0 +1,24 @@
+[41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 55]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest20333.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,11:CD,15:CD,19:CD,24:CD,29:CD,34:CD,38:CD,41:CD,50
+11 :: CALL :: call :: Ljava/lang/String :: v8 = doSomething(v6)::JM,50:CL,149
+15 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v9 = new java.lang.StringBuilder::JM,50
+19 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v9.append(#(SELECT * from USERS w...))::JM,50
+24 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v13.append(v8)::JM,50
+29 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v15.append(#('))::JM,50
+34 :: CALL :: call :: Ljava/lang/String :: v20 = v18.toString()::JM,50
+38 :: CALL :: call :: Ljava/sql/Connection :: v22 = getSqlConnection()::JM,50
+41 :: NORM :: declaration :: [Ljava/lang/String :: v24 = new java.lang.String[]::JM,50
+42 :: EXPR :: modify :: Ljava/lang/Object :: v24[#(0)] = #(Column1)::
+46 :: EXPR :: modify :: Ljava/lang/Object :: v24[#(1)] = #(Column2)::
+50 :: CALL :: call :: Ljava/sql/PreparedStatement :: v30 = v22.prepareStatement(v20, v24)::JM,50
+149 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest20333.doSomething(java.lang.String)::CE,150:CD,153:CD,157:CD,163:CD,167:CD,173:CD,185:CD,190:CD,191
+150 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest20333.doSomething(java.lang.String)::JM,50
+153 :: NORM :: declaration :: Ljava/util/HashMap :: v4 = new java.util.HashMap::JM,190
+157 :: CALL :: call :: Ljava/lang/Object :: v9 = v4.put(#(keyA-4017), #(a_Value))::
+163 :: CALL :: call :: Ljava/lang/String :: v12 = p1 $param .toString()::JM,163:JM,153
+167 :: CALL :: call :: Ljava/lang/Object :: v14 = v4.put(#(keyB-4017), v12)::
+173 :: CALL :: call :: Ljava/lang/Object :: v18 = v4.put(#(keyC), #(another_Value))::
+185 :: CALL :: call :: Ljava/lang/Object :: v23 = v4.get(#(keyA-4017))::JM,190
+190 :: EXPR :: assign :: Ljava/lang/Object :: v24 = CHECKCAST v23::DD,191
+191 :: NORM :: compound :: Ljava/lang/String :: return v24::DD,150

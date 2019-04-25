@@ -1,0 +1,434 @@
+[935, 936, 940, 945, 950]
+1 :: ENTR :: entry :: null :: freecs.util.logger.LogFile.main(java.lang.String[])::CD,14:CD,19
+14 :: NORM :: declaration :: Lfreecs/util/logger/LogFile$LogFileShrinker :: v7 = new freecs.util.logger.LogFile$LogFileShrinker::
+19 :: CALL :: call :: V :: v7.start()::
+4153 :: CALL :: call :: I :: v35 = p0 $this .size()::JM,4157:CL,4213
+4157 :: EXPR :: modify :: I :: p0 $this .nextAdd = v35::
+4213 :: ENTR :: entry :: null :: freecs.util.ObjectBuffer.size()::CE,4214:CD,4220
+4214 :: EXIT :: exit :: I :: freecs.util.ObjectBuffer.size()::JM,4157
+4217 :: EXPR :: reference :: I :: v3 = p0 $this .counter::DD,4220
+4220 :: NORM :: compound :: I :: return v3::CF,4214
+237 :: ENTR :: entry :: null :: freecs.Server.<clinit>()::CD,247
+247 :: CALL :: call :: Ljava/util/Calendar :: v6 = getInstance()::
+354 :: ENTR :: entry :: null :: freecs.util.logger.LogCleaner.<clinit>()::JM,755
+366 :: ENTR :: entry :: null :: freecs.util.logger.LogWriter.<clinit>()::CD,369:JM,2337:JM,803:JM,788:JM,773:JM,793:JM,809:JM,2313:JM,813:JM,2335:CD,373
+369 :: NORM :: declaration :: Lfreecs/util/logger/LogWriter :: v2 = new freecs.util.logger.LogWriter::JM,2337:JM,803:JM,788:JM,773:JM,793:JM,809:JM,2313:JM,813:JM,2335:DD,373
+373 :: EXPR :: modify :: Lfreecs/util/logger/LogWriter :: freecs.util.logger.LogWriter.instance = v2::
+478 :: ENTR :: entry :: null :: freecs.Server.log(java.lang.Object,java.lang.String,short,short)::CD,485:CD,489:CD,495:CD,499:CD,656:CD,658:CD,662:CD,664:CD,668:CD,672:CD,676:JM,577:JM,564:JM,616:JM,521:JM,539:JM,603:JM,651:JM,590
+485 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v6 = new java.lang.StringBuffer::
+489 :: EXPR :: reference :: [Ljava/lang/Short :: v8 = freecs.Server.LOG_MASK::
+491 :: EXPR :: reference :: Ljava/lang/Object :: v9 = v8[p3 $type ]::JM,499:JM,495
+495 :: CALL :: call :: I :: v11 = v9.intValue()::JM,499:JM,495
+499 :: PRED :: IF :: Z :: if (v11 >= p4 $lvl ) goto 33::CD,500:CD,502:CD,504:CD,512:CD,516:CD,521:CD,539:CD,554:CD,559:CD,564:CD,651
+500 :: EXPR :: reference :: Z :: v12 = freecs.Server.DEBUG::DD,502
+502 :: PRED :: IF :: Z :: if (v12 != #(0)) goto 33::CD,504:CD,512:CD,516:CD,521:CD,539:CD,554:CD,559:CD,564:CD,651
+504 :: CALL :: call :: Ljava/lang/StringBuffer :: v16 = v6.append(#([))::
+512 :: CALL :: call :: Ljava/lang/String :: v20 = formatDefaultTimeStamp(v18)::CL,2225
+516 :: CALL :: call :: Ljava/lang/StringBuffer :: v22 = v6.append(v20)::
+521 :: PRED :: IF :: null :: switch p4 $lvl ::CD,522:CD,528:CD,534
+522 :: CALL :: call :: Ljava/lang/StringBuffer :: v31 = v6.append(#(] MAJOR-| ))::
+528 :: CALL :: call :: Ljava/lang/StringBuffer :: v28 = v6.append(#(] HALT -| ))::
+534 :: CALL :: call :: Ljava/lang/StringBuffer :: v25 = v6.append(#(]      -| ))::
+539 :: PRED :: IF :: Z :: if (p1 $o  == #(null)) goto 131::CD,540:CD,544:CD,549:JM,577:JM,499:JM,564:JM,616:JM,521:JM,603:JM,651:JM,590
+540 :: CALL :: call :: Ljava/lang/String :: v34 = p1 $o .toString()::JM,577:JM,499:JM,564:JM,616:JM,521:JM,603:JM,651:JM,590
+544 :: CALL :: call :: Ljava/lang/StringBuffer :: v36 = v6.append(v34)::
+549 :: CALL :: call :: Ljava/lang/StringBuffer :: v39 = v6.append(#(: ))::
+554 :: CALL :: call :: Ljava/lang/StringBuffer :: v41 = v6.append(p2 $msg )::JM,577:JM,499:JM,564:JM,616:JM,521:JM,603:JM,651:JM,590
+559 :: CALL :: call :: Ljava/lang/StringBuffer :: v44 = v6.append(#())::
+564 :: PRED :: IF :: Z :: if (p3 $type  != #(0)) goto 163::CD,565:CD,571:CD,576:CD,577
+565 :: EXPR :: reference :: [Ljava/lang/String :: v45 = freecs.Server.LOGFILE::
+567 :: EXPR :: reference :: Ljava/lang/Object :: v46 = v45[#(0)]::JM,576
+571 :: CALL :: call :: Z :: v49 = v46.equals(#(console))::JM,576
+576 :: PRED :: IF :: Z :: if (v49 != #(0)) goto 233::CD,577:CD,629:CD,631:CD,635
+577 :: PRED :: IF :: Z :: if (p3 $type  != #(1)) goto 181::CD,578:CD,584:CD,589:CD,590
+578 :: EXPR :: reference :: [Ljava/lang/String :: v51 = freecs.Server.LOGFILE::
+580 :: EXPR :: reference :: Ljava/lang/Object :: v52 = v51[#(1)]::JM,589
+584 :: CALL :: call :: Z :: v54 = v52.equals(#(console))::JM,589
+589 :: PRED :: IF :: Z :: if (v54 != #(0)) goto 233::CD,590:CD,629:CD,631:CD,635
+590 :: PRED :: IF :: Z :: if (p3 $type  != #(2)) goto 199::CD,591:CD,597:CD,602:CD,603
+591 :: EXPR :: reference :: [Ljava/lang/String :: v56 = freecs.Server.LOGFILE::
+593 :: EXPR :: reference :: Ljava/lang/Object :: v57 = v56[#(2)]::JM,602
+597 :: CALL :: call :: Z :: v59 = v57.equals(#(console))::JM,602
+602 :: PRED :: IF :: Z :: if (v59 != #(0)) goto 233::CD,603:CD,629:CD,631:CD,635
+603 :: PRED :: IF :: Z :: if (p3 $type  != #(3)) goto 217::CD,604:CD,610:CD,615:CD,616
+604 :: EXPR :: reference :: [Ljava/lang/String :: v61 = freecs.Server.LOGFILE::
+606 :: EXPR :: reference :: Ljava/lang/Object :: v62 = v61[#(3)]::JM,615
+610 :: CALL :: call :: Z :: v64 = v62.equals(#(console))::JM,615
+615 :: PRED :: IF :: Z :: if (v64 != #(0)) goto 233::CD,616:CD,629:CD,631:CD,635
+616 :: PRED :: IF :: Z :: if (p3 $type  != #(4)) goto 247::CD,617:CD,623:CD,628:CD,642:CD,646
+617 :: EXPR :: reference :: [Ljava/lang/String :: v66 = freecs.Server.LOGFILE::
+619 :: EXPR :: reference :: Ljava/lang/Object :: v67 = v66[#(4)]::JM,628
+623 :: CALL :: call :: Z :: v69 = v67.equals(#(console))::JM,628
+628 :: PRED :: IF :: Z :: if (v69 == #(0)) goto 247::CD,629:CD,631:CD,635:CD,642:CD,646
+629 :: EXPR :: reference :: Ljava/io/PrintStream :: v74 = java.lang.System.out::
+631 :: CALL :: call :: Ljava/lang/String :: v76 = v6.toString()::
+635 :: CALL :: call :: V :: v74.print(v76)::
+642 :: CALL :: call :: Ljava/lang/String :: v72 = v6.toString()::
+646 :: CALL :: call :: V :: v70.addLogMessage(p3 $type , v72)::CL,2252
+651 :: PRED :: IF :: Z :: if (p4 $lvl  != #(0)) goto 297::CD,652
+652 :: CALL :: call :: V :: exit(#(1))::
+656 :: EXPR :: reference :: Ljava/io/PrintStream :: v80 = java.lang.System.err::
+658 :: CALL :: call :: V :: v80.println(#(Server.log caused Exc...))::
+662 :: EXPR :: reference :: Ljava/io/PrintStream :: v83 = java.lang.System.err::
+664 :: CALL :: call :: Ljava/lang/String :: v85 = v6.toString()::
+668 :: CALL :: call :: V :: v83.print(v85)::
+672 :: CALL :: call :: V :: v79.printStackTrace()::
+676 :: EXPR :: assign :: Ljava/lang/Exception :: v79 = catch <exc>::
+755 :: NORM :: declaration :: Ljava/util/HashMap :: v4 = new java.util.HashMap::
+773 :: NORM :: declaration :: Ljava/util/HashMap :: v4 = new java.util.HashMap::JM,2337:JM,2313:JM,2335
+788 :: CALL :: call :: Ljava/lang/String :: v12 = getProperty(#(file.encoding), #(iso-8859-1))::JM,788
+793 :: CALL :: call :: Ljava/nio/charset/Charset :: v14 = forName(v12)::
+803 :: CALL :: call :: Ljava/util/Calendar :: v17 = getInstance()::
+809 :: CALL :: call :: V :: p0 $this .setPriority(#(10))::JM,2337:JM,2313:JM,2335
+813 :: CALL :: call :: V :: p0 $this .start()::JM,2337:JM,2313:JM,2335
+832 :: ENTR :: entry :: null :: freecs.util.logger.LogFile.LogFileShrinker.run()::CD,839:CD,843:CD,844:CD,852:CD,857:CD,861:CD,907:CD,911:CD,919:CD,926:CD,931:CD,935:CD,936:CD,940:CD,945:CD,950
+836 :: EXPR :: reference :: Ljava/io/File :: v3 = p0 $this .toZip::JM,839
+839 :: CALL :: call :: Ljava/lang/String :: v5 = v3.getAbsolutePath()::JM,839
+843 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v6 = new java.lang.StringBuilder::
+844 :: CALL :: call :: Ljava/lang/String :: v8 = valueOf(v5)::
+852 :: CALL :: call :: Ljava/lang/StringBuilder :: v12 = v6.append(#(.gz))::
+857 :: CALL :: call :: Ljava/lang/String :: v14 = v12.toString()::
+861 :: NORM :: declaration :: Ljava/io/FileInputStream :: v16 = new java.io.FileInputStream::
+862 :: EXPR :: reference :: Ljava/io/File :: v17 = p0 $this .toZip::
+907 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v37 = new java.lang.StringBuffer::
+908 :: EXPR :: reference :: Ljava/io/File :: v38 = p0 $this .toZip::JM,911
+911 :: CALL :: call :: Ljava/lang/String :: v40 = v38.getAbsolutePath()::JM,911
+919 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v42 = new java.lang.StringBuffer::
+926 :: CALL :: call :: Ljava/lang/StringBuffer :: v46 = v42.append(#(.gz))::
+931 :: CALL :: call :: V :: v44.addLogDestination(v46)::CL,2541
+935 :: NORM :: declaration :: Ljava/io/File :: v48 = new java.io.File::CF,936
+936 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v49 = new java.lang.StringBuilder::
+940 :: CALL :: call :: Ljava/lang/StringBuilder :: v52 = v49.append(v37)::
+945 :: CALL :: call :: Ljava/lang/StringBuilder :: v54 = v52.append(#(.gz))::
+950 :: CALL :: call :: Ljava/lang/String :: v56 = v54.toString()::
+1352 :: ENTR :: entry :: null :: freecs.util.logger.LogWriter.run()::CD,1414:CD,1415:CD,1423:CD,1428:CD,1432:CD,1437:CD,1442:CD,1446:CD,1451:CD,1456:CD,1460:CD,1461:CD,1466:CD,1472:CD,1481:CD,1485:CD,1490:CD,1499:CD,1503:CD,1508:CD,1517:CD,1521:CD,1526:CD,1531:CD,1534:CD,1536:CD,1540:CD,1545:CD,1547:CD,1551:CD,1555:CD,1575:CD,1579:CD,1585:CD,1587:CD,1588:CD,1589
+1367 :: CALL :: call :: Z :: v9 = v7.isEmpty()::JM,1371:CL,2606
+1371 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 19::CD,1367:CD,1584
+1390 :: CALL :: call :: Ljava/lang/Object :: v22 = v14.get()::JM,1394:CL,2620
+1394 :: EXPR :: assign :: Ljava/lang/Object :: v23 = CHECKCAST v22::DD,1586:DD,1587
+1395 :: CALL :: call :: Z :: v25 = p0 $this .writeToChannel(v23)::JM,1400:CL,2646
+1400 :: PRED :: IF :: Z :: if (v25 == #(0)) goto 96::CF,1586
+1405 :: CALL :: call :: Z :: v20 = v14.isEmpty()::JM,1409:CL,2606
+1409 :: PRED :: IF :: Z :: if (v20 == #(0)) goto 73::CD,1390:CD,1394:CD,1395:CD,1400:CD,1405:CD,1586
+1414 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v33 = new java.lang.StringBuffer::
+1415 :: CALL :: call :: Ljava/lang/String :: v35 = p0 $this .toString()::
+1423 :: CALL :: call :: Ljava/lang/StringBuffer :: v39 = v33.append(#(run:))::
+1428 :: CALL :: call :: Ljava/lang/String :: v41 = v31.getMessage()::
+1432 :: CALL :: call :: Ljava/lang/StringBuffer :: v43 = v33.append(v41)::
+1437 :: CALL :: call :: Ljava/lang/StringBuffer :: v46 = v33.append(#(())::
+1442 :: CALL :: call :: Ljava/lang/Throwable :: v48 = v31.getCause()::
+1446 :: CALL :: call :: Ljava/lang/StringBuffer :: v50 = v33.append(v48)::
+1451 :: CALL :: call :: Ljava/lang/StringBuffer :: v53 = v33.append(#() StackTraceElements: ))::
+1456 :: CALL :: call :: [Ljava/lang/StackTraceElement :: v55 = v31.getStackTrace()::JM,1460
+1460 :: EXPR :: assign :: I :: v56 = v55.length::
+1461 :: CALL :: call :: Ljava/lang/StringBuffer :: v58 = v33.append(v56)::
+1466 :: CALL :: call :: Ljava/lang/StringBuffer :: v61 = v33.append(#())::
+1472 :: CALL :: call :: Ljava/lang/StringBuffer :: v65 = v33.append(#(at ))::
+1477 :: EXPR :: reference :: Ljava/lang/Object :: v66 = v55[v91]::
+1481 :: CALL :: call :: Ljava/lang/String :: v68 = v66.getClassName()::
+1485 :: CALL :: call :: Ljava/lang/StringBuffer :: v70 = v33.append(v68)::
+1490 :: CALL :: call :: Ljava/lang/StringBuffer :: v73 = v33.append(#( ))::
+1495 :: EXPR :: reference :: Ljava/lang/Object :: v74 = v55[v91]::
+1499 :: CALL :: call :: Ljava/lang/String :: v76 = v74.getMethodName()::
+1503 :: CALL :: call :: Ljava/lang/StringBuffer :: v78 = v33.append(v76)::
+1508 :: CALL :: call :: Ljava/lang/StringBuffer :: v80 = v33.append(#(())::
+1513 :: EXPR :: reference :: Ljava/lang/Object :: v81 = v55[v91]::
+1517 :: CALL :: call :: I :: v83 = v81.getLineNumber()::
+1521 :: CALL :: call :: Ljava/lang/StringBuffer :: v85 = v33.append(v83)::
+1526 :: CALL :: call :: Ljava/lang/StringBuffer :: v88 = v33.append(#()))::
+1531 :: EXPR :: assign :: Ljava/lang/Object :: v90 = v91 + #(1)::DD,1588
+1534 :: EXPR :: reference :: Ljava/io/PrintStream :: v92 = java.lang.System.out::
+1536 :: CALL :: call :: Ljava/lang/String :: v94 = v33.toString()::
+1540 :: CALL :: call :: V :: v92.println(v94)::
+1545 :: EXPR :: reference :: Ljava/io/PrintStream :: v96 = java.lang.System.out::
+1547 :: CALL :: call :: Ljava/lang/String :: v98 = v32.toString()::
+1551 :: CALL :: call :: V :: v96.println(v98)::
+1555 :: CALL :: call :: V :: v31.printStackTrace()::
+1572 :: EXPR :: reference :: Z :: v5 = p0 $this .stopped::DD,1575
+1575 :: PRED :: IF :: Z :: if (v5 == #(0)) goto 11::CD,1367:CD,1371:JM,2337:JM,2313:JM,2335:CD,1405:CD,1409:CD,1584:CD,1586:CD,1589
+1579 :: EXPR :: assign :: Ljava/lang/Exception :: v31 = catch <exc>::JM,1460
+1584 :: EXPR :: assign :: null :: PHI v103 = v102, v103, v103::DD,1584:DD,1585:DD,1586
+1585 :: EXPR :: assign :: null :: PHI v104 = v103, v103, v103, v103, v103, v103, v103, v103, v103, v104::DD,1585:DD,1587
+1586 :: EXPR :: assign :: null :: PHI v28 = v103, v23, v23::DD,1587:DD,1589
+1587 :: EXPR :: assign :: null :: PHI v32 = v102, v104, v28, v28, v23, v23, v28, v28::DD,1589
+1588 :: EXPR :: assign :: null :: PHI v91 = #(0), v90::DD,1531
+1589 :: EXPR :: assign :: null :: PHI v102 = #(null), v32, v32, v28, v28::DD,1584:DD,1587
+2225 :: ENTR :: entry :: null :: freecs.Server.formatDefaultTimeStamp(long)::CE,2226:CD,2229:CD,2231:CD,2235:CD,2237:CD,2239:CD,2243:CD,2248
+2226 :: EXIT :: exit :: Ljava/lang/String :: freecs.Server.formatDefaultTimeStamp(long)::
+2229 :: EXPR :: reference :: Ljava/util/Calendar :: v3 = freecs.Server.cal::
+2231 :: CALL :: call :: V :: v3.setTimeInMillis(p1 $ts )::
+2235 :: EXPR :: reference :: Ljava/text/SimpleDateFormat :: v5 = freecs.Server.defaultDateFormat::JM,2243:JM,2248
+2237 :: EXPR :: reference :: Ljava/util/Calendar :: v6 = freecs.Server.cal::JM,2243:JM,2248
+2239 :: CALL :: call :: Ljava/util/Date :: v8 = v6.getTime()::JM,2243:JM,2248
+2243 :: CALL :: call :: Ljava/lang/String :: v10 = v5.format(v8)::JM,2243:JM,2248
+2248 :: NORM :: compound :: Ljava/lang/String :: return v10::DD,2226
+2252 :: ENTR :: entry :: null :: freecs.util.logger.LogWriter.addLogMessage(int,java.lang.String)::CD,2264:JM,3241:CD,2284
+2264 :: CALL :: call :: Lfreecs/util/logger/LogDestination :: v8 = p0 $this .getLogDestination(v6)::CL,3185
+2284 :: CALL :: call :: V :: p0 $this .addLogElement(v9)::CL,3255
+2313 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v13 = new java.lang.IllegalArgumentException::
+2335 :: EXPR :: reference :: Z :: v9 = freecs.Server.TRACE_CREATE_AND_FINALIZE::DD,2337
+2337 :: PRED :: IF :: Z :: if (v9 == #(0)) goto 64::CD,2338
+2338 :: CALL :: call :: V :: log(p0 $this , #(+++++++++++++++++++++...), #(2), #(4))::CL,478
+2541 :: ENTR :: entry :: null :: freecs.util.logger.LogCleaner.addLogDestination(java.lang.StringBuffer)::CD,2549:CD,2553:CD,2558
+2546 :: EXPR :: reference :: Ljava/util/HashMap :: v4 = p0 $this .logDestinations::JM,2558
+2549 :: CALL :: call :: Ljava/lang/String :: v6 = p1 $zippath .toString()::JM,2558
+2553 :: CALL :: call :: Z :: v8 = v4.containsKey(v6)::JM,2558
+2558 :: PRED :: IF :: Z :: if (v8 != #(0)) goto 51::CD,2562:CD,2566:CD,2572:CD,2577:CD,2582:CD,2586
+2559 :: EXPR :: reference :: Ljava/util/HashMap :: v10 = p0 $this .logDestinations::
+2562 :: CALL :: call :: Ljava/lang/String :: v12 = p1 $zippath .toString()::JM,2558
+2566 :: CALL :: call :: Ljava/lang/Object :: v15 = v10.put(v12, #(null))::JM,2558
+2572 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v17 = new java.lang.StringBuilder::
+2577 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v17.append(p1 $zippath )::JM,2558
+2582 :: CALL :: call :: Ljava/lang/String :: v23 = v21.toString()::JM,2558
+2586 :: CALL :: call :: V :: log(#([LogCleaner]), v23, #(2), #(3))::CL,478
+2606 :: ENTR :: entry :: null :: freecs.util.ObjectBuffer.isEmpty()::CE,2607:CD,2613
+2607 :: EXIT :: exit :: Z :: freecs.util.ObjectBuffer.isEmpty()::JM,1371:JM,1409:JM,2628:JM,4080
+2610 :: EXPR :: reference :: I :: v3 = p0 $this .counter::DD,2613
+2613 :: PRED :: IF :: Z :: if (v3 != #(0)) goto 10::CD,2614:CD,2615
+2614 :: NORM :: compound :: Z :: return #(1)::CF,2607
+2615 :: NORM :: compound :: Z :: return #(0)::CF,2607
+2620 :: ENTR :: entry :: null :: freecs.util.ObjectBuffer.get()::CE,2621:CD,2624:CD,2628
+2621 :: EXIT :: exit :: Ljava/lang/Object :: freecs.util.ObjectBuffer.get()::JM,1394
+2624 :: CALL :: call :: Z :: v4 = p0 $this .isEmpty()::JM,2628:CL,2606
+2628 :: PRED :: IF :: Z :: if (v4 == #(0)) goto 10::CD,2629:CD,2640
+2629 :: NORM :: compound :: Ljava/lang/Object :: return #(null)::CF,2621
+2630 :: EXPR :: reference :: [Ljava/lang/Object :: v6 = p0 $this .elements::
+2633 :: EXPR :: reference :: I :: v7 = p0 $this .nextRemove::
+2636 :: EXPR :: reference :: Ljava/lang/Object :: v8 = v6[v7]::DD,2640
+2640 :: NORM :: compound :: Ljava/lang/Object :: return v8::CF,2621
+2646 :: ENTR :: entry :: null :: freecs.util.logger.LogWriter.writeToChannel(freecs.util.logger.LogWriter.LogEntry)::CE,2647:CD,2654:CD,2669:CD,2673:CD,2675:CD,2676:CD,2684:CD,2689:CD,2693:CD,2698:CD,2703:CD,2707:CD,2712:CD,2717:CD,2721:CD,2722:CD,2727:CD,2733:CD,2742:CD,2746:CD,2751:CD,2760:CD,2764:CD,2769:CD,2778:CD,2782:CD,2787:CD,2792:CD,2795:CD,2797:CD,2801:CD,2805:CD,2806:CD,2807:CD,2815:CD,2820:CD,2824:CD,2829:CD,2834:CD,2838:CD,2843:CD,2848:CD,2852:CD,2853:CD,2858:CD,2864:CD,2873:CD,2877:CD,2882:CD,2891:CD,2895:CD,2900:CD,2909:CD,2913:CD,2918:CD,2923:CD,2926:CD,2928:CD,2932:CD,2936:CD,2938:CD,2939:CD,2940:CD,2941
+2647 :: EXIT :: exit :: Z :: freecs.util.logger.LogWriter.writeToChannel(freecs.util.logger.LogWriter.LogEntry)::JM,1400
+2651 :: EXPR :: reference :: Lfreecs/util/logger/LogDestination :: v4 = p1 $le .ld::
+2654 :: CALL :: call :: Ljava/nio/channels/WritableByteChannel :: v6 = v4.getChannel()::CL,3321
+2666 :: EXPR :: reference :: Ljava/nio/ByteBuffer :: v75 = p1 $le .buf::JM,2673:JM,2669
+2669 :: CALL :: call :: Z :: v77 = v75.hasRemaining()::JM,2673:JM,2669
+2673 :: PRED :: IF :: Z :: if (v77 != #(0)) goto 384::CD,2674:CD,2937
+2674 :: NORM :: compound :: Z :: return #(1)::DD,2647
+2675 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v11 = new java.lang.StringBuffer::
+2676 :: CALL :: call :: Ljava/lang/String :: v13 = p0 $this .toString()::
+2684 :: CALL :: call :: Ljava/lang/StringBuffer :: v17 = v11.append(#(run:))::
+2689 :: CALL :: call :: Ljava/lang/String :: v19 = v10.getMessage()::
+2693 :: CALL :: call :: Ljava/lang/StringBuffer :: v21 = v11.append(v19)::
+2698 :: CALL :: call :: Ljava/lang/StringBuffer :: v24 = v11.append(#(())::
+2703 :: CALL :: call :: Ljava/lang/Throwable :: v26 = v10.getCause()::
+2707 :: CALL :: call :: Ljava/lang/StringBuffer :: v28 = v11.append(v26)::
+2712 :: CALL :: call :: Ljava/lang/StringBuffer :: v31 = v11.append(#() StackTraceElements: ))::
+2717 :: CALL :: call :: [Ljava/lang/StackTraceElement :: v33 = v10.getStackTrace()::JM,2721
+2721 :: EXPR :: assign :: I :: v34 = v33.length::
+2722 :: CALL :: call :: Ljava/lang/StringBuffer :: v36 = v11.append(v34)::
+2727 :: CALL :: call :: Ljava/lang/StringBuffer :: v39 = v11.append(#())::
+2733 :: CALL :: call :: Ljava/lang/StringBuffer :: v44 = v11.append(#(at ))::
+2738 :: EXPR :: reference :: Ljava/lang/Object :: v45 = v33[v70]::
+2742 :: CALL :: call :: Ljava/lang/String :: v47 = v45.getClassName()::
+2746 :: CALL :: call :: Ljava/lang/StringBuffer :: v49 = v11.append(v47)::
+2751 :: CALL :: call :: Ljava/lang/StringBuffer :: v52 = v11.append(#( ))::
+2756 :: EXPR :: reference :: Ljava/lang/Object :: v53 = v33[v70]::
+2760 :: CALL :: call :: Ljava/lang/String :: v55 = v53.getMethodName()::
+2764 :: CALL :: call :: Ljava/lang/StringBuffer :: v57 = v11.append(v55)::
+2769 :: CALL :: call :: Ljava/lang/StringBuffer :: v59 = v11.append(#(())::
+2774 :: EXPR :: reference :: Ljava/lang/Object :: v60 = v33[v70]::
+2778 :: CALL :: call :: I :: v62 = v60.getLineNumber()::
+2782 :: CALL :: call :: Ljava/lang/StringBuffer :: v64 = v11.append(v62)::
+2787 :: CALL :: call :: Ljava/lang/StringBuffer :: v67 = v11.append(#()))::
+2792 :: EXPR :: assign :: Ljava/lang/Object :: v69 = v70 + #(1)::DD,2940
+2795 :: EXPR :: reference :: Ljava/io/PrintStream :: v71 = java.lang.System.out::
+2797 :: CALL :: call :: Ljava/lang/String :: v73 = v11.toString()::
+2801 :: CALL :: call :: V :: v71.println(v73)::
+2805 :: NORM :: compound :: Z :: return #(1)::DD,2647
+2806 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v79 = new java.lang.StringBuffer::
+2807 :: CALL :: call :: Ljava/lang/String :: v81 = p0 $this .toString()::
+2815 :: CALL :: call :: Ljava/lang/StringBuffer :: v84 = v79.append(#(run:))::
+2820 :: CALL :: call :: Ljava/lang/String :: v86 = v78.getMessage()::
+2824 :: CALL :: call :: Ljava/lang/StringBuffer :: v88 = v79.append(v86)::
+2829 :: CALL :: call :: Ljava/lang/StringBuffer :: v90 = v79.append(#(())::
+2834 :: CALL :: call :: Ljava/lang/Throwable :: v92 = v78.getCause()::
+2838 :: CALL :: call :: Ljava/lang/StringBuffer :: v94 = v79.append(v92)::
+2843 :: CALL :: call :: Ljava/lang/StringBuffer :: v96 = v79.append(#() StackTraceElements: ))::
+2848 :: CALL :: call :: [Ljava/lang/StackTraceElement :: v98 = v78.getStackTrace()::JM,2852
+2852 :: EXPR :: assign :: I :: v99 = v98.length::
+2853 :: CALL :: call :: Ljava/lang/StringBuffer :: v101 = v79.append(v99)::
+2858 :: CALL :: call :: Ljava/lang/StringBuffer :: v103 = v79.append(#())::
+2864 :: CALL :: call :: Ljava/lang/StringBuffer :: v106 = v79.append(#(at ))::
+2869 :: EXPR :: reference :: Ljava/lang/Object :: v107 = v98[v129]::
+2873 :: CALL :: call :: Ljava/lang/String :: v109 = v107.getClassName()::
+2877 :: CALL :: call :: Ljava/lang/StringBuffer :: v111 = v79.append(v109)::
+2882 :: CALL :: call :: Ljava/lang/StringBuffer :: v113 = v79.append(#( ))::
+2887 :: EXPR :: reference :: Ljava/lang/Object :: v114 = v98[v129]::
+2891 :: CALL :: call :: Ljava/lang/String :: v116 = v114.getMethodName()::
+2895 :: CALL :: call :: Ljava/lang/StringBuffer :: v118 = v79.append(v116)::
+2900 :: CALL :: call :: Ljava/lang/StringBuffer :: v120 = v79.append(#(())::
+2905 :: EXPR :: reference :: Ljava/lang/Object :: v121 = v98[v129]::
+2909 :: CALL :: call :: I :: v123 = v121.getLineNumber()::
+2913 :: CALL :: call :: Ljava/lang/StringBuffer :: v125 = v79.append(v123)::
+2918 :: CALL :: call :: Ljava/lang/StringBuffer :: v127 = v79.append(#()))::
+2923 :: EXPR :: assign :: Ljava/lang/Object :: v128 = v129 + #(1)::DD,2941
+2926 :: EXPR :: reference :: Ljava/io/PrintStream :: v130 = java.lang.System.out::
+2928 :: CALL :: call :: Ljava/lang/String :: v132 = v79.toString()::
+2932 :: CALL :: call :: V :: v130.println(v132)::
+2936 :: NORM :: compound :: Z :: return #(1)::DD,2647
+2937 :: NORM :: compound :: Z :: return #(0)::DD,2647
+2938 :: EXPR :: assign :: Ljava/lang/Exception :: v10 = catch <exc>::JM,2721
+2939 :: EXPR :: assign :: Ljava/lang/Exception :: v78 = catch <exc>::JM,2852
+2940 :: EXPR :: assign :: null :: PHI v70 = #(0), v69::DD,2792
+2941 :: EXPR :: assign :: null :: PHI v129 = #(0), v128::DD,2923
+3185 :: ENTR :: entry :: null :: freecs.util.logger.LogWriter.getLogDestination(java.lang.String)::CD,3193:CD,3198:CD,3199
+3190 :: EXPR :: reference :: Ljava/util/HashMap :: v4 = p0 $this .logDestinations::JM,3198
+3193 :: CALL :: call :: Ljava/lang/Object :: v6 = v4.get(p1 $path )::JM,3198
+3198 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST v6::DD,3199
+3199 :: PRED :: IF :: Z :: if (v7 != #(null)) goto 36::CF,3200:JM,3528:CD,3208
+3200 :: NORM :: declaration :: Lfreecs/util/logger/LogFile :: v9 = new freecs.util.logger.LogFile::JM,3198
+3205 :: EXPR :: reference :: Ljava/util/HashMap :: v11 = p0 $this .logDestinations::
+3208 :: CALL :: call :: Ljava/lang/Object :: v13 = v11.put(p1 $path , v9)::JM,3198
+3241 :: EXPR :: modify :: Lfreecs/util/logger/LogDestination :: p0 $this .ld = p2 $ld ::
+3255 :: ENTR :: entry :: null :: freecs.util.logger.LogWriter.addLogElement(freecs.util.logger.LogWriter.LogEntry)::CD,3295:CD,3298:CD,3299
+3265 :: CALL :: call :: Z :: v7 = v5.put(p1 $le )::JM,3299:CL,3535
+3277 :: EXPR :: assign :: Ljava/lang/Object :: v10 = v12 + #(1)::DD,3278:DD,3298
+3278 :: PRED :: IF :: Z :: if (v10 <= #(5)) goto 62::CF,3298:CD,3279:CD,3281:CD,3285:CD,3287:CD,3291
+3279 :: EXPR :: reference :: Ljava/io/PrintStream :: v14 = java.lang.System.out::
+3281 :: CALL :: call :: V :: v14.print(#(LQ-full: ))::
+3285 :: EXPR :: reference :: Ljava/io/PrintStream :: v17 = java.lang.System.out::
+3287 :: CALL :: call :: Ljava/lang/String :: v19 = p1 $le .toString()::
+3291 :: CALL :: call :: V :: v17.print(v19)::
+3295 :: PRED :: IF :: Z :: if (v13 == #(0)) goto 11::CD,3265:CD,3277:CD,3278:CD,3298:CD,3299
+3298 :: EXPR :: assign :: null :: PHI v12 = #(0), v10, v10::CF,3299:DD,3277
+3299 :: EXPR :: assign :: null :: PHI v13 = #(0), v7, v7::DD,3295
+3321 :: ENTR :: entry :: null :: freecs.util.logger.LogFile.getChannel()::CD,3328
+3325 :: EXPR :: reference :: Ljava/nio/channels/WritableByteChannel :: v3 = p0 $this .fc::DD,3328
+3328 :: PRED :: IF :: Z :: if (v3 != #(null)) goto 20::CD,3329:CD,3340:CD,3345:CD,3348:CD,3355:CD,3360:CD,3365
+3329 :: CALL :: call :: Ljava/nio/channels/WritableByteChannel :: v22 = p0 $this .createNewLogFile()::JM,3333:CL,3678
+3333 :: EXPR :: modify :: Ljava/nio/channels/WritableByteChannel :: p0 $this .fc = v22::
+3340 :: EXPR :: reference :: Lfreecs/util/logger/LogWriter :: v5 = freecs.util.logger.LogWriter.instance::
+3342 :: EXPR :: reference :: Ljava/util/Calendar :: v6 = v5.cal::
+3345 :: CALL :: call :: J :: v8 = currentTimeMillis()::
+3348 :: CALL :: call :: V :: v6.setTimeInMillis(v8)::
+3352 :: EXPR :: reference :: I :: v10 = p0 $this .logFileDay::DD,3365
+3355 :: EXPR :: reference :: Lfreecs/util/logger/LogWriter :: v11 = freecs.util.logger.LogWriter.instance::
+3357 :: EXPR :: reference :: Ljava/util/Calendar :: v12 = v11.cal::JM,3365
+3360 :: CALL :: call :: I :: v15 = v12.get(#(5))::JM,3365
+3365 :: PRED :: IF :: Z :: if (v10 != v15) goto 55::CD,3370:CD,3373
+3370 :: CALL :: call :: V :: p0 $this .backupLogFile()::CL,3800
+3373 :: CALL :: call :: Ljava/nio/channels/WritableByteChannel :: v18 = p0 $this .createNewLogFile()::JM,3377:CL,3678
+3377 :: EXPR :: modify :: Ljava/nio/channels/WritableByteChannel :: p0 $this .fc = v18::
+3528 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .path = p1 $path ::
+3535 :: ENTR :: entry :: null :: freecs.util.ObjectBuffer.put(java.lang.Object)::CE,3536:CD,3541:CD,3547:CD,3551
+3536 :: EXIT :: exit :: Z :: freecs.util.ObjectBuffer.put(java.lang.Object)::JM,3299
+3541 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v31 = new java.lang.NullPointerException::
+3547 :: CALL :: call :: Z :: v6 = p0 $this .isFull()::JM,3551:CL,4035
+3551 :: PRED :: IF :: Z :: if (v6 == #(0)) goto 24::CD,3552:CD,3556:CD,3571
+3552 :: NORM :: compound :: Z :: return #(0)::DD,3536
+3553 :: EXPR :: reference :: I :: v8 = p0 $this .counter::DD,3556
+3556 :: PRED :: IF :: Z :: if (v8 != #(0)) goto 49::CD,3560
+3557 :: EXPR :: reference :: [Ljava/lang/Object :: v9 = p0 $this .elements::DD,3560
+3560 :: PRED :: IF :: Z :: if (v9 != #(null)) goto 49::CD,3564
+3561 :: EXPR :: reference :: I :: v10 = p0 $this .capacity::DD,3564
+3564 :: NORM :: declaration :: [Ljava/lang/Object :: v11 = new java.lang.Object[]::DD,3565
+3565 :: EXPR :: modify :: [Ljava/lang/Object :: p0 $this .elements = v11::
+3568 :: EXPR :: reference :: [Ljava/lang/Object :: v12 = p0 $this .elements::DD,3571
+3571 :: PRED :: IF :: Z :: if (v12 != #(null)) goto 58::CD,3572:CD,3579:CD,3609:CD,3619:CD,3637
+3572 :: NORM :: compound :: Z :: return #(0)::DD,3536
+3573 :: EXPR :: reference :: I :: v13 = p0 $this .nextAdd::DD,3579
+3576 :: EXPR :: reference :: I :: v14 = p0 $this .capacity::DD,3579
+3579 :: PRED :: IF :: Z :: if (v13 < v14) goto 90::CD,3586:CD,3590
+3580 :: EXPR :: modify :: I :: p0 $this .nextAdd = #(0)::
+3586 :: CALL :: call :: V :: p0 $this .resizeTo(v15)::CL,4052
+3590 :: CALL :: call :: V :: log(p0 $this , #(resize to capacity), #(2), #(1))::CL,478
+3606 :: EXPR :: reference :: I :: v23 = p0 $this .nextAdd::DD,3609
+3609 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v23 + #(1)::DD,3610
+3610 :: EXPR :: modify :: I :: p0 $this .nextAdd = v24::
+3613 :: EXPR :: reference :: I :: v25 = p0 $this .nextAdd::DD,3619
+3616 :: EXPR :: reference :: I :: v26 = p0 $this .capacity::DD,3619
+3619 :: PRED :: IF :: Z :: if (v25 < v26) goto 135::CD,3626
+3620 :: EXPR :: modify :: I :: p0 $this .nextAdd = #(0)::
+3626 :: CALL :: call :: V :: p0 $this .resizeTo(v27)::CL,4052
+3637 :: NORM :: compound :: Z :: return #(1)::DD,3536
+3678 :: ENTR :: entry :: null :: freecs.util.logger.LogFile.createNewLogFile()::CE,3679:CD,3682:CD,3687:CD,3690:CD,3694:CD,3702:CD,3706:CD,3751:CD,3756:CD,3764:CD,3775:CD,3779:CD,3780
+3679 :: EXIT :: exit :: Ljava/nio/channels/WritableByteChannel :: freecs.util.logger.LogFile.createNewLogFile()::JM,3333:JM,3377
+3682 :: EXPR :: reference :: Lfreecs/util/logger/LogWriter :: v3 = freecs.util.logger.LogWriter.instance::
+3684 :: EXPR :: reference :: Ljava/util/Calendar :: v4 = v3.cal::
+3687 :: CALL :: call :: J :: v6 = currentTimeMillis()::
+3690 :: CALL :: call :: V :: v4.setTimeInMillis(v6)::
+3694 :: NORM :: declaration :: Ljava/io/File :: v8 = new java.io.File::JM,3706:DD,3780
+3695 :: EXPR :: reference :: Ljava/lang/String :: v9 = p0 $this .path::
+3702 :: CALL :: call :: Z :: v12 = v8.exists()::JM,3706
+3706 :: PRED :: IF :: Z :: if (v12 == #(0)) goto 78::CF,3780:CD,3707:CD,3712:CD,3716:CD,3723:CD,3728:CD,3733:CD,3737
+3707 :: EXPR :: reference :: Lfreecs/util/logger/LogWriter :: v14 = freecs.util.logger.LogWriter.instance::
+3709 :: EXPR :: reference :: Ljava/util/Calendar :: v15 = v14.cal::
+3712 :: CALL :: call :: J :: v17 = v8.lastModified()::
+3716 :: CALL :: call :: V :: v15.setTimeInMillis(v17)::
+3720 :: EXPR :: reference :: I :: v19 = p0 $this .logFileDay::DD,3733
+3723 :: EXPR :: reference :: Lfreecs/util/logger/LogWriter :: v20 = freecs.util.logger.LogWriter.instance::
+3725 :: EXPR :: reference :: Ljava/util/Calendar :: v21 = v20.cal::JM,3733
+3728 :: CALL :: call :: I :: v24 = v21.get(#(5))::JM,3733
+3733 :: PRED :: IF :: Z :: if (v19 == v24) goto 65::CF,3737:CD,3734
+3734 :: CALL :: call :: V :: p0 $this .backupLogFile()::CL,3800
+3737 :: NORM :: declaration :: Ljava/io/File :: v26 = new java.io.File::DD,3780
+3738 :: EXPR :: reference :: Ljava/lang/String :: v27 = p0 $this .path::
+3751 :: EXPR :: reference :: Lfreecs/util/logger/LogWriter :: v32 = freecs.util.logger.LogWriter.instance::
+3753 :: EXPR :: reference :: Ljava/util/Calendar :: v33 = v32.cal::JM,3761
+3756 :: CALL :: call :: I :: v35 = v33.get(#(5))::JM,3761
+3761 :: EXPR :: modify :: I :: p0 $this .logFileDay = v35::
+3764 :: NORM :: declaration :: Ljava/io/FileOutputStream :: v36 = new java.io.FileOutputStream::DD,3769
+3769 :: EXPR :: modify :: Ljava/io/FileOutputStream :: p0 $this .fos = v36::
+3772 :: EXPR :: reference :: Ljava/io/FileOutputStream :: v38 = p0 $this .fos::JM,3779
+3775 :: CALL :: call :: Ljava/nio/channels/FileChannel :: v40 = v38.getChannel()::JM,3779
+3779 :: NORM :: compound :: Ljava/nio/channels/WritableByteChannel :: return v40::DD,3679
+3780 :: EXPR :: assign :: null :: PHI v29 = v8, v26::
+3800 :: ENTR :: entry :: null :: freecs.util.logger.LogFile.backupLogFile()::CD,3804:CD,3809:CD,3812:CD,3819:CD,3824:CD,3971:CD,3979:CD,3984:CD,3989:CD,3994:CD,3998
+3804 :: EXPR :: reference :: Lfreecs/util/logger/LogWriter :: v3 = freecs.util.logger.LogWriter.instance::
+3806 :: EXPR :: reference :: Ljava/util/Calendar :: v4 = v3.cal::
+3809 :: CALL :: call :: J :: v6 = currentTimeMillis()::
+3812 :: CALL :: call :: V :: v4.setTimeInMillis(v6)::
+3816 :: EXPR :: reference :: Ljava/lang/String :: v8 = p0 $this .path::JM,3824
+3819 :: CALL :: call :: I :: v11 = v8.indexOf(#(.))::JM,3824
+3824 :: PRED :: IF :: Z :: if (v11 <= #(-1)) goto 101::CF,3903:CF,3825:CD,3832:CD,3837:CD,3843:CD,3851:CD,3856:CD,3858:CD,3863:CD,3867:CD,3872:CD,3883:CD,3888:CD,3893:CD,3898:CD,3907:CD,3915:CD,3920:CD,3922:CD,3927:CD,3931:CD,3936:CD,3941:CD,3998
+3825 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v32 = new java.lang.StringBuilder::JM,3998
+3826 :: EXPR :: reference :: Ljava/lang/String :: v33 = p0 $this .path::
+3829 :: EXPR :: reference :: Ljava/lang/String :: v35 = p0 $this .path::
+3832 :: CALL :: call :: I :: v37 = v35.lastIndexOf(#(.))::
+3837 :: CALL :: call :: Ljava/lang/String :: v39 = v33.substring(#(0), v37)::
+3843 :: CALL :: call :: Ljava/lang/String :: v41 = valueOf(v39)::
+3851 :: CALL :: call :: Ljava/lang/StringBuilder :: v44 = v32.append(#(_))::JM,3998
+3856 :: EXPR :: reference :: Ljava/text/SimpleDateFormat :: v45 = freecs.util.logger.LogFile.date::JM,3867:JM,3998
+3858 :: EXPR :: reference :: Lfreecs/util/logger/LogWriter :: v46 = freecs.util.logger.LogWriter.instance::
+3860 :: EXPR :: reference :: Ljava/util/Calendar :: v47 = v46.cal::JM,3867:JM,3998
+3863 :: CALL :: call :: Ljava/util/Date :: v49 = v47.getTime()::JM,3867:JM,3998
+3867 :: CALL :: call :: Ljava/lang/String :: v51 = v45.format(v49)::JM,3867:JM,3998
+3872 :: CALL :: call :: Ljava/lang/StringBuilder :: v53 = v44.append(v51)::JM,3998
+3877 :: EXPR :: reference :: Ljava/lang/String :: v54 = p0 $this .path::JM,3998
+3880 :: EXPR :: reference :: Ljava/lang/String :: v55 = p0 $this .path::JM,3998
+3883 :: CALL :: call :: I :: v57 = v55.lastIndexOf(#(.))::JM,3998
+3888 :: CALL :: call :: Ljava/lang/String :: v59 = v54.substring(v57)::JM,3998
+3893 :: CALL :: call :: Ljava/lang/StringBuilder :: v61 = v53.append(v59)::JM,3998
+3898 :: CALL :: call :: Ljava/lang/String :: v63 = v61.toString()::JM,3998
+3903 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::JM,3998
+3904 :: EXPR :: reference :: Ljava/lang/String :: v14 = p0 $this .path::
+3907 :: CALL :: call :: Ljava/lang/String :: v16 = valueOf(v14)::
+3915 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v13.append(#(_))::JM,3998
+3920 :: EXPR :: reference :: Ljava/text/SimpleDateFormat :: v21 = freecs.util.logger.LogFile.date::JM,3931:JM,3998
+3922 :: EXPR :: reference :: Lfreecs/util/logger/LogWriter :: v22 = freecs.util.logger.LogWriter.instance::
+3924 :: EXPR :: reference :: Ljava/util/Calendar :: v23 = v22.cal::JM,3931:JM,3998
+3927 :: CALL :: call :: Ljava/util/Date :: v25 = v23.getTime()::JM,3931:JM,3998
+3931 :: CALL :: call :: Ljava/lang/String :: v27 = v21.format(v25)::JM,3931:JM,3998
+3936 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v20.append(v27)::JM,3998
+3941 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::JM,3998
+3971 :: NORM :: declaration :: Ljava/io/File :: v74 = new java.io.File::
+3972 :: EXPR :: reference :: Ljava/lang/String :: v75 = p0 $this .path::
+3979 :: NORM :: declaration :: Ljava/io/File :: v77 = new java.io.File::
+3984 :: CALL :: call :: Z :: v80 = v74.renameTo(v77)::
+3989 :: NORM :: declaration :: Lfreecs/util/logger/LogFile$LogFileShrinker :: v81 = new freecs.util.logger.LogFile$LogFileShrinker::
+3994 :: CALL :: call :: V :: v81.start()::
+3998 :: EXPR :: assign :: null :: PHI v64 = v63, v31::
+4035 :: ENTR :: entry :: null :: freecs.util.ObjectBuffer.isFull()::CE,4036:CD,4045
+4036 :: EXIT :: exit :: Z :: freecs.util.ObjectBuffer.isFull()::JM,3551
+4039 :: EXPR :: reference :: I :: v3 = p0 $this .counter::DD,4045
+4042 :: EXPR :: reference :: I :: v4 = p0 $this .capacity::DD,4045
+4045 :: PRED :: IF :: Z :: if (v3 != v4) goto 14::CD,4046:CD,4047
+4046 :: NORM :: compound :: Z :: return #(1)::CF,4036
+4047 :: NORM :: compound :: Z :: return #(0)::CF,4036
+4052 :: ENTR :: entry :: null :: freecs.util.ObjectBuffer.resizeTo(int)::CD,4062:CD,4071:CD,4072
+4062 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v37 = new java.lang.IllegalArgumentException::
+4068 :: EXPR :: reference :: [Ljava/lang/Object :: v6 = p0 $this .elements::DD,4071
+4071 :: EXPR :: assign :: I :: v7 = v6.length::CF,4072
+4072 :: PRED :: IF :: Z :: if (p1 $size  != v7) goto 29::CD,4076:CD,4080
+4076 :: CALL :: call :: Z :: v10 = p0 $this .isEmpty()::JM,4080:CL,2606
+4080 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 53::CD,4153

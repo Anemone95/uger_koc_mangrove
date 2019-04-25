@@ -1,0 +1,1408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1503400154000" analysisTimestamp="1503416479134" release="">
+  <Project projectName="">
+    <Jar>../data/h2-1.4.196.jar</Jar>
+    <Plugin id="com.h3xstream.findsecbugs" enabled="true"/>
+    <Plugin id="edu.umd.cs.findbugs.plugins.noUpdateChecks" enabled="true"/>
+  </Project>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.fulltext.FullTextSettings">
+      <SourceLine classname="org.h2.fulltext.FullTextSettings" start="26" end="229" sourcefile="FullTextSettings.java" sourcepath="org/h2/fulltext/FullTextSettings.java"/>
+    </Class>
+    <Method classname="org.h2.fulltext.FullTextSettings" name="prepare" signature="(Ljava/sql/Connection;Ljava/lang/String;)Ljava/sql/PreparedStatement;" isStatic="false">
+      <SourceLine classname="org.h2.fulltext.FullTextSettings" start="167" end="180" startBytecode="0" endBytecode="176" sourcefile="FullTextSettings.java" sourcepath="org/h2/fulltext/FullTextSettings.java"/>
+    </Method>
+    <SourceLine classname="org.h2.fulltext.FullTextSettings" start="177" end="177" startBytecode="74" endBytecode="74" sourcefile="FullTextSettings.java" sourcepath="org/h2/fulltext/FullTextSettings.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <String value="not detected" role="Method usage"/>
+    <SourceLine classname="org.h2.fulltext.FullTextSettings" start="172" end="172" startBytecode="36" endBytecode="36" sourcefile="FullTextSettings.java" sourcepath="org/h2/fulltext/FullTextSettings.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.jdbcx.JdbcXAConnection">
+      <SourceLine classname="org.h2.jdbcx.JdbcXAConnection" start="42" end="434" sourcefile="JdbcXAConnection.java" sourcepath="org/h2/jdbcx/JdbcXAConnection.java"/>
+    </Class>
+    <Method classname="org.h2.jdbcx.JdbcXAConnection" name="commit" signature="(Ljavax/transaction/xa/Xid;Z)V" isStatic="false">
+      <SourceLine classname="org.h2.jdbcx.JdbcXAConnection" start="341" end="359" startBytecode="0" endBytecode="439" sourcefile="JdbcXAConnection.java" sourcepath="org/h2/jdbcx/JdbcXAConnection.java"/>
+    </Method>
+    <SourceLine classname="org.h2.jdbcx.JdbcXAConnection" start="350" end="350" startBytecode="95" endBytecode="95" sourcefile="JdbcXAConnection.java" sourcepath="org/h2/jdbcx/JdbcXAConnection.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.jdbcx.JdbcXAConnection" start="350" end="350" startBytecode="86" endBytecode="86" sourcefile="JdbcXAConnection.java" sourcepath="org/h2/jdbcx/JdbcXAConnection.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.jdbcx.JdbcXAConnection">
+      <SourceLine classname="org.h2.jdbcx.JdbcXAConnection" start="42" end="434" sourcefile="JdbcXAConnection.java" sourcepath="org/h2/jdbcx/JdbcXAConnection.java"/>
+    </Class>
+    <Method classname="org.h2.jdbcx.JdbcXAConnection" name="prepare" signature="(Ljavax/transaction/xa/Xid;)I" isStatic="false">
+      <SourceLine classname="org.h2.jdbcx.JdbcXAConnection" start="225" end="239" startBytecode="0" endBytecode="416" sourcefile="JdbcXAConnection.java" sourcepath="org/h2/jdbcx/JdbcXAConnection.java"/>
+    </Method>
+    <SourceLine classname="org.h2.jdbcx.JdbcXAConnection" start="234" end="234" startBytecode="96" endBytecode="96" sourcefile="JdbcXAConnection.java" sourcepath="org/h2/jdbcx/JdbcXAConnection.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.jdbcx.JdbcXAConnection" start="234" end="234" startBytecode="93" endBytecode="93" sourcefile="JdbcXAConnection.java" sourcepath="org/h2/jdbcx/JdbcXAConnection.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.jdbcx.JdbcXAConnection">
+      <SourceLine classname="org.h2.jdbcx.JdbcXAConnection" start="42" end="434" sourcefile="JdbcXAConnection.java" sourcepath="org/h2/jdbcx/JdbcXAConnection.java"/>
+    </Class>
+    <Method classname="org.h2.jdbcx.JdbcXAConnection" name="rollback" signature="(Ljavax/transaction/xa/Xid;)V" isStatic="false">
+      <SourceLine classname="org.h2.jdbcx.JdbcXAConnection" start="263" end="280" startBytecode="0" endBytecode="425" sourcefile="JdbcXAConnection.java" sourcepath="org/h2/jdbcx/JdbcXAConnection.java"/>
+    </Method>
+    <SourceLine classname="org.h2.jdbcx.JdbcXAConnection" start="269" end="269" startBytecode="78" endBytecode="78" sourcefile="JdbcXAConnection.java" sourcepath="org/h2/jdbcx/JdbcXAConnection.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.jdbcx.JdbcXAConnection" start="269" end="269" startBytecode="69" endBytecode="69" sourcefile="JdbcXAConnection.java" sourcepath="org/h2/jdbcx/JdbcXAConnection.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.server.pg.PgServerThread">
+      <SourceLine classname="org.h2.server.pg.PgServerThread" start="67" end="996" sourcefile="PgServerThread.java" sourcepath="org/h2/server/pg/PgServerThread.java"/>
+    </Class>
+    <Method classname="org.h2.server.pg.PgServerThread" name="installPgCatalog" signature="(Ljava/sql/Statement;)V" isStatic="true">
+      <SourceLine classname="org.h2.server.pg.PgServerThread" start="829" end="843" startBytecode="0" endBytecode="379" sourcefile="PgServerThread.java" sourcepath="org/h2/server/pg/PgServerThread.java"/>
+    </Method>
+    <SourceLine classname="org.h2.server.pg.PgServerThread" start="837" end="837" startBytecode="49" endBytecode="49" sourcefile="PgServerThread.java" sourcepath="org/h2/server/pg/PgServerThread.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.server.pg.PgServerThread" start="833" end="833" startBytecode="33" endBytecode="33" sourcefile="PgServerThread.java" sourcepath="org/h2/server/pg/PgServerThread.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.server.pg.PgServerThread">
+      <SourceLine classname="org.h2.server.pg.PgServerThread" start="67" end="996" sourcefile="PgServerThread.java" sourcepath="org/h2/server/pg/PgServerThread.java"/>
+    </Class>
+    <Method classname="org.h2.server.pg.PgServerThread" name="process" signature="()V" isStatic="false">
+      <SourceLine classname="org.h2.server.pg.PgServerThread" start="131" end="449" startBytecode="0" endBytecode="3863" sourcefile="PgServerThread.java" sourcepath="org/h2/server/pg/PgServerThread.java"/>
+    </Method>
+    <SourceLine classname="org.h2.server.pg.PgServerThread" start="240" end="240" startBytecode="815" endBytecode="815" sourcefile="PgServerThread.java" sourcepath="org/h2/server/pg/PgServerThread.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.server.pg.PgServerThread" start="240" end="240" startBytecode="812" endBytecode="812" sourcefile="PgServerThread.java" sourcepath="org/h2/server/pg/PgServerThread.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.server.web.WebApp">
+      <SourceLine classname="org.h2.server.web.WebApp" start="109" end="1888" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    </Class>
+    <Method classname="org.h2.server.web.WebApp" name="executeLoop" signature="(Ljava/sql/Connection;ILjava/lang/String;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.h2.server.web.WebApp" start="1421" end="1500" startBytecode="0" endBytecode="1234" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    </Method>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1453" end="1453" startBytecode="332" endBytecode="332" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="988" end="988" startBytecode="35" endBytecode="35" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="992" end="992" startBytecode="51" endBytecode="51" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1028" end="1028" startBytecode="196" endBytecode="196" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1029" end="1029" startBytecode="217" endBytecode="217" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1053" end="1053" startBytecode="83" endBytecode="83" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1089" end="1089" startBytecode="292" endBytecode="292" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1091" end="1091" startBytecode="326" endBytecode="326" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1256" end="1256" startBytecode="1" endBytecode="1" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1300" end="1300" startBytecode="337" endBytecode="337" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1301" end="1301" startBytecode="349" endBytecode="349" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1305" end="1305" startBytecode="375" endBytecode="375" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1309" end="1309" startBytecode="402" endBytecode="402" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1318" end="1318" startBytecode="494" endBytecode="494" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1321" end="1321" startBytecode="527" endBytecode="527" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1322" end="1322" startBytecode="536" endBytecode="536" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1430" end="1430" startBytecode="72" endBytecode="72" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1440" end="1440" startBytecode="157" endBytecode="157" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1448" end="1448" startBytecode="277" endBytecode="277" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1450" end="1450" startBytecode="300" endBytecode="300" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.server.web.WebApp">
+      <SourceLine classname="org.h2.server.web.WebApp" start="109" end="1888" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    </Class>
+    <Method classname="org.h2.server.web.WebApp" name="executeLoop" signature="(Ljava/sql/Connection;ILjava/lang/String;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.h2.server.web.WebApp" start="1421" end="1500" startBytecode="0" endBytecode="1234" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    </Method>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1463" end="1463" startBytecode="390" endBytecode="390" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="988" end="988" startBytecode="35" endBytecode="35" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="992" end="992" startBytecode="51" endBytecode="51" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1028" end="1028" startBytecode="196" endBytecode="196" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1029" end="1029" startBytecode="217" endBytecode="217" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1053" end="1053" startBytecode="83" endBytecode="83" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1089" end="1089" startBytecode="292" endBytecode="292" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1091" end="1091" startBytecode="326" endBytecode="326" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1256" end="1256" startBytecode="1" endBytecode="1" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1300" end="1300" startBytecode="337" endBytecode="337" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1301" end="1301" startBytecode="349" endBytecode="349" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1305" end="1305" startBytecode="375" endBytecode="375" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1309" end="1309" startBytecode="402" endBytecode="402" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1318" end="1318" startBytecode="494" endBytecode="494" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1321" end="1321" startBytecode="527" endBytecode="527" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1322" end="1322" startBytecode="536" endBytecode="536" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1430" end="1430" startBytecode="72" endBytecode="72" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.server.web.WebApp">
+      <SourceLine classname="org.h2.server.web.WebApp" start="109" end="1888" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    </Class>
+    <Method classname="org.h2.server.web.WebApp" name="getResult" signature="(Ljava/sql/Connection;ILjava/lang/String;ZZ)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.h2.server.web.WebApp" start="1256" end="1411" startBytecode="0" endBytecode="2396" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    </Method>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1330" end="1330" startBytecode="653" endBytecode="653" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="988" end="988" startBytecode="35" endBytecode="35" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="992" end="992" startBytecode="51" endBytecode="51" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1028" end="1028" startBytecode="196" endBytecode="196" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1029" end="1029" startBytecode="217" endBytecode="217" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1053" end="1053" startBytecode="83" endBytecode="83" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1089" end="1089" startBytecode="292" endBytecode="292" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1091" end="1091" startBytecode="326" endBytecode="326" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1256" end="1256" startBytecode="1" endBytecode="1" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1300" end="1300" startBytecode="337" endBytecode="337" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1301" end="1301" startBytecode="349" endBytecode="349" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1305" end="1305" startBytecode="375" endBytecode="375" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1309" end="1309" startBytecode="402" endBytecode="402" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1329" end="1329" startBytecode="647" endBytecode="647" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.server.web.WebApp">
+      <SourceLine classname="org.h2.server.web.WebApp" start="109" end="1888" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    </Class>
+    <Method classname="org.h2.server.web.WebApp" name="getResult" signature="(Ljava/sql/Connection;ILjava/lang/String;ZZ)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.h2.server.web.WebApp" start="1256" end="1411" startBytecode="0" endBytecode="2396" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    </Method>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1380" end="1380" startBytecode="1098" endBytecode="1098" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="988" end="988" startBytecode="35" endBytecode="35" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="992" end="992" startBytecode="51" endBytecode="51" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1028" end="1028" startBytecode="196" endBytecode="196" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1029" end="1029" startBytecode="217" endBytecode="217" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1053" end="1053" startBytecode="83" endBytecode="83" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1089" end="1089" startBytecode="292" endBytecode="292" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1091" end="1091" startBytecode="326" endBytecode="326" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1256" end="1256" startBytecode="1" endBytecode="1" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1300" end="1300" startBytecode="337" endBytecode="337" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1301" end="1301" startBytecode="349" endBytecode="349" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1305" end="1305" startBytecode="375" endBytecode="375" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1309" end="1309" startBytecode="402" endBytecode="402" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+    <SourceLine classname="org.h2.server.web.WebApp" start="1313" end="1313" startBytecode="429" endBytecode="429" sourcefile="WebApp.java" sourcepath="org/h2/server/web/WebApp.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.table.LinkSchema">
+      <SourceLine classname="org.h2.table.LinkSchema" start="24" end="96" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+    </Class>
+    <Method classname="org.h2.table.LinkSchema" name="linkSchema" signature="(Ljava/sql/Connection;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/ResultSet;" isStatic="true">
+      <SourceLine classname="org.h2.table.LinkSchema" start="44" end="96" startBytecode="0" endBytecode="721" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+    </Method>
+    <SourceLine classname="org.h2.table.LinkSchema" start="86" end="86" startBytecode="341" endBytecode="341" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.table.LinkSchema" start="76" end="76" startBytecode="274" endBytecode="274" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+    <SourceLine classname="org.h2.table.LinkSchema" start="77" end="77" startBytecode="279" endBytecode="279" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+    <SourceLine classname="org.h2.table.LinkSchema" start="78" end="78" startBytecode="283" endBytecode="283" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+    <SourceLine classname="org.h2.table.LinkSchema" start="79" end="79" startBytecode="291" endBytecode="291" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+    <SourceLine classname="org.h2.table.LinkSchema" start="80" end="80" startBytecode="299" endBytecode="299" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+    <SourceLine classname="org.h2.table.LinkSchema" start="81" end="81" startBytecode="304" endBytecode="304" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+    <SourceLine classname="org.h2.table.LinkSchema" start="82" end="82" startBytecode="312" endBytecode="312" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+    <SourceLine classname="org.h2.table.LinkSchema" start="83" end="83" startBytecode="317" endBytecode="317" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+    <SourceLine classname="org.h2.table.LinkSchema" start="84" end="84" startBytecode="325" endBytecode="325" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+    <SourceLine classname="org.h2.table.LinkSchema" start="86" end="86" startBytecode="338" endBytecode="338" sourcefile="LinkSchema.java" sourcepath="org/h2/table/LinkSchema.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.table.TableLink">
+      <SourceLine classname="org.h2.table.TableLink" start="53" end="708" sourcefile="TableLink.java" sourcepath="org/h2/table/TableLink.java"/>
+    </Class>
+    <Method classname="org.h2.table.TableLink" name="execute" signature="(Ljava/lang/String;Ljava/util/ArrayList;Z)Ljava/sql/PreparedStatement;" isStatic="false">
+      <SourceLine classname="org.h2.table.TableLink" start="491" end="494" startBytecode="0" endBytecode="641" sourcefile="TableLink.java" sourcepath="org/h2/table/TableLink.java"/>
+    </Method>
+    <SourceLine classname="org.h2.table.TableLink" start="499" end="499" startBytecode="49" endBytecode="49" sourcefile="TableLink.java" sourcepath="org/h2/table/TableLink.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.index.LinkedIndex" start="76" end="76" startBytecode="127" endBytecode="127" sourcefile="LinkedIndex.java" sourcepath="org/h2/index/LinkedIndex.java"/>
+    <SourceLine classname="org.h2.index.LinkedIndex" start="78" end="78" startBytecode="140" endBytecode="140" sourcefile="LinkedIndex.java" sourcepath="org/h2/index/LinkedIndex.java"/>
+    <SourceLine classname="org.h2.index.LinkedIndex" start="122" end="122" startBytecode="269" endBytecode="269" sourcefile="LinkedIndex.java" sourcepath="org/h2/index/LinkedIndex.java"/>
+    <SourceLine classname="org.h2.index.LinkedIndex" start="124" end="124" startBytecode="283" endBytecode="283" sourcefile="LinkedIndex.java" sourcepath="org/h2/index/LinkedIndex.java"/>
+    <SourceLine classname="org.h2.index.LinkedIndex" start="203" end="203" startBytecode="141" endBytecode="141" sourcefile="LinkedIndex.java" sourcepath="org/h2/index/LinkedIndex.java"/>
+    <SourceLine classname="org.h2.index.LinkedIndex" start="205" end="205" startBytecode="154" endBytecode="154" sourcefile="LinkedIndex.java" sourcepath="org/h2/index/LinkedIndex.java"/>
+    <SourceLine classname="org.h2.index.LinkedIndex" start="251" end="251" startBytecode="238" endBytecode="238" sourcefile="LinkedIndex.java" sourcepath="org/h2/index/LinkedIndex.java"/>
+    <SourceLine classname="org.h2.index.LinkedIndex" start="253" end="253" startBytecode="251" endBytecode="251" sourcefile="LinkedIndex.java" sourcepath="org/h2/index/LinkedIndex.java"/>
+    <SourceLine classname="org.h2.table.TableLink" start="449" end="449" startBytecode="13" endBytecode="13" sourcefile="TableLink.java" sourcepath="org/h2/table/TableLink.java"/>
+    <SourceLine classname="org.h2.table.TableLink" start="451" end="451" startBytecode="32" endBytecode="32" sourcefile="TableLink.java" sourcepath="org/h2/table/TableLink.java"/>
+    <SourceLine classname="org.h2.util.StatementBuilder" start="118" end="118" startBytecode="1" endBytecode="1" sourcefile="StatementBuilder.java" sourcepath="org/h2/util/StatementBuilder.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.table.TableLink">
+      <SourceLine classname="org.h2.table.TableLink" start="53" end="708" sourcefile="TableLink.java" sourcepath="org/h2/table/TableLink.java"/>
+    </Class>
+    <Method classname="org.h2.table.TableLink" name="readMetaData" signature="()V" isStatic="false">
+      <SourceLine classname="org.h2.table.TableLink" start="116" end="280" startBytecode="0" endBytecode="2179" sourcefile="TableLink.java" sourcepath="org/h2/table/TableLink.java"/>
+    </Method>
+    <SourceLine classname="org.h2.table.TableLink" start="172" end="172" startBytecode="476" endBytecode="476" sourcefile="TableLink.java" sourcepath="org/h2/table/TableLink.java"/>
+    <String value="Statement.executeQuery(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.table.TableLink" start="172" end="172" startBytecode="462" endBytecode="462" sourcefile="TableLink.java" sourcepath="org/h2/table/TableLink.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="10" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.tools.CreateCluster">
+      <SourceLine classname="org.h2.tools.CreateCluster" start="25" end="178" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+    </Class>
+    <Method classname="org.h2.tools.CreateCluster" name="process" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.h2.tools.CreateCluster" start="100" end="178" startBytecode="0" endBytecode="812" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.CreateCluster" start="164" end="164" startBytecode="351" endBytecode="351" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+    <String value="Statement.executeUpdate(...)" role="Sink method"/>
+    <String value="with tainted arguments detected" role="Method usage"/>
+    <SourceLine classname="org.h2.tools.CreateCluster" start="48" end="48" startBytecode="8" endBytecode="8" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+    <SourceLine classname="org.h2.tools.CreateCluster" start="81" end="81" startBytecode="217" endBytecode="217" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+    <SourceLine classname="org.h2.tools.CreateCluster" start="95" end="95" startBytecode="8" endBytecode="8" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+    <SourceLine classname="org.h2.tools.CreateCluster" start="164" end="164" startBytecode="348" endBytecode="348" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="10" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.tools.CreateCluster">
+      <SourceLine classname="org.h2.tools.CreateCluster" start="25" end="178" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+    </Class>
+    <Method classname="org.h2.tools.CreateCluster" name="process" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.h2.tools.CreateCluster" start="100" end="178" startBytecode="0" endBytecode="812" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.CreateCluster" start="165" end="165" startBytecode="384" endBytecode="384" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+    <String value="Statement.executeUpdate(...)" role="Sink method"/>
+    <String value="with tainted arguments detected" role="Method usage"/>
+    <SourceLine classname="org.h2.tools.CreateCluster" start="48" end="48" startBytecode="8" endBytecode="8" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+    <SourceLine classname="org.h2.tools.CreateCluster" start="81" end="81" startBytecode="217" endBytecode="217" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+    <SourceLine classname="org.h2.tools.CreateCluster" start="95" end="95" startBytecode="8" endBytecode="8" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+    <SourceLine classname="org.h2.tools.CreateCluster" start="165" end="165" startBytecode="373" endBytecode="373" sourcefile="CreateCluster.java" sourcepath="org/h2/tools/CreateCluster.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.tools.Csv">
+      <SourceLine classname="org.h2.tools.Csv" start="43" end="879" sourcefile="Csv.java" sourcepath="org/h2/tools/Csv.java"/>
+    </Class>
+    <Method classname="org.h2.tools.Csv" name="write" signature="(Ljava/sql/Connection;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I" isStatic="false">
+      <SourceLine classname="org.h2.tools.Csv" start="165" end="169" startBytecode="0" endBytecode="78" sourcefile="Csv.java" sourcepath="org/h2/tools/Csv.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.Csv" start="166" end="166" startBytecode="11" endBytecode="11" sourcefile="Csv.java" sourcepath="org/h2/tools/Csv.java"/>
+    <String value="Statement.executeQuery(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.expression.Function" start="1604" end="1604" startBytecode="4014" endBytecode="4014" sourcefile="Function.java" sourcepath="org/h2/expression/Function.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="10" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.tools.RunScript">
+      <SourceLine classname="org.h2.tools.RunScript" start="35" end="336" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    </Class>
+    <Method classname="org.h2.tools.RunScript" name="processRunscript" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.h2.tools.RunScript" start="276" end="288" startBytecode="0" endBytecode="224" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.RunScript" start="283" end="283" startBytecode="62" endBytecode="62" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <String value="with tainted arguments detected" role="Method usage"/>
+    <SourceLine classname="org.h2.tools.RunScript" start="69" end="69" startBytecode="8" endBytecode="8" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    <SourceLine classname="org.h2.tools.RunScript" start="124" end="124" startBytecode="257" endBytecode="257" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    <SourceLine classname="org.h2.tools.RunScript" start="126" end="126" startBytecode="276" endBytecode="276" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    <SourceLine classname="org.h2.tools.RunScript" start="140" end="140" startBytecode="358" endBytecode="358" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    <SourceLine classname="org.h2.tools.RunScript" start="282" end="282" startBytecode="45" endBytecode="45" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.tools.RunScript">
+      <SourceLine classname="org.h2.tools.RunScript" start="35" end="336" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    </Class>
+    <Method classname="org.h2.tools.RunScript" name="execute" signature="(Ljava/sql/Connection;Ljava/io/Reader;)Ljava/sql/ResultSet;" isStatic="true">
+      <SourceLine classname="org.h2.tools.RunScript" start="160" end="180" startBytecode="0" endBytecode="205" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.RunScript" start="171" end="171" startBytecode="51" endBytecode="51" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.tools.RunScript" start="164" end="164" startBytecode="21" endBytecode="21" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.tools.RunScript">
+      <SourceLine classname="org.h2.tools.RunScript" start="35" end="336" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    </Class>
+    <Method classname="org.h2.tools.RunScript" name="process" signature="(Ljava/sql/Connection;ZLjava/lang/String;Ljava/io/Reader;Ljava/nio/charset/Charset;)V" isStatic="false">
+      <SourceLine classname="org.h2.tools.RunScript" start="199" end="272" startBytecode="0" endBytecode="957" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.RunScript" start="224" end="224" startBytecode="204" endBytecode="204" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.tools.RunScript" start="202" end="202" startBytecode="21" endBytecode="21" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.tools.RunScript">
+      <SourceLine classname="org.h2.tools.RunScript" start="35" end="336" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    </Class>
+    <Method classname="org.h2.tools.RunScript" name="process" signature="(Ljava/sql/Connection;ZLjava/lang/String;Ljava/io/Reader;Ljava/nio/charset/Charset;)V" isStatic="false">
+      <SourceLine classname="org.h2.tools.RunScript" start="199" end="272" startBytecode="0" endBytecode="957" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.RunScript" start="261" end="261" startBytecode="524" endBytecode="524" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.tools.RunScript" start="202" end="202" startBytecode="21" endBytecode="21" sourcefile="RunScript.java" sourcepath="org/h2/tools/RunScript.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="10" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.tools.Script">
+      <SourceLine classname="org.h2.tools.Script" start="20" end="141" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+    </Class>
+    <Method classname="org.h2.tools.Script" name="process" signature="(Ljava/sql/Connection;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.h2.tools.Script" start="137" end="141" startBytecode="0" endBytecode="341" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.Script" start="139" end="139" startBytecode="54" endBytecode="54" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <String value="with tainted arguments detected" role="Method usage"/>
+    <SourceLine classname="org.h2.tools.Script" start="45" end="45" startBytecode="8" endBytecode="8" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+    <SourceLine classname="org.h2.tools.Script" start="75" end="75" startBytecode="222" endBytecode="222" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+    <SourceLine classname="org.h2.tools.Script" start="78" end="78" startBytecode="253" endBytecode="253" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+    <SourceLine classname="org.h2.tools.Script" start="81" end="81" startBytecode="274" endBytecode="274" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+    <SourceLine classname="org.h2.tools.Script" start="84" end="84" startBytecode="295" endBytecode="295" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+    <SourceLine classname="org.h2.tools.Script" start="87" end="87" startBytecode="307" endBytecode="307" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+    <SourceLine classname="org.h2.tools.Script" start="88" end="88" startBytecode="314" endBytecode="314" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+    <SourceLine classname="org.h2.tools.Script" start="100" end="100" startBytecode="388" endBytecode="388" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+    <SourceLine classname="org.h2.tools.Script" start="119" end="119" startBytecode="22" endBytecode="22" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+    <SourceLine classname="org.h2.tools.Script" start="138" end="138" startBytecode="33" endBytecode="33" sourcefile="Script.java" sourcepath="org/h2/tools/Script.java"/>
+  </BugInstance>
+  <BugInstance type="COMMAND_INJECTION" priority="2" rank="12" abbrev="SECCI" category="SECURITY">
+    <Class classname="org.h2.tools.Server">
+      <SourceLine classname="org.h2.tools.Server" start="35" end="724" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    </Class>
+    <Method classname="org.h2.tools.Server" name="openBrowser" signature="(Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.h2.tools.Server" start="619" end="698" startBytecode="0" endBytecode="1004" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.Server" start="640" end="640" startBytecode="130" endBytecode="130" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <String value="Runtime.exec(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.tools.Console" start="262" end="262" startBytecode="886" endBytecode="886" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="533" end="533" startBytecode="11" endBytecode="11" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="540" end="540" startBytecode="69" endBytecode="69" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="548" end="548" startBytecode="1" endBytecode="1" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="333" end="333" startBytecode="727" endBytecode="727" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="638" end="638" startBytecode="117" endBytecode="117" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="715" end="715" startBytecode="56" endBytecode="56" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="717" end="717" startBytecode="63" endBytecode="63" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+  </BugInstance>
+  <BugInstance type="COMMAND_INJECTION" priority="2" rank="12" abbrev="SECCI" category="SECURITY">
+    <Class classname="org.h2.tools.Server">
+      <SourceLine classname="org.h2.tools.Server" start="35" end="724" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    </Class>
+    <Method classname="org.h2.tools.Server" name="openBrowser" signature="(Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.h2.tools.Server" start="619" end="698" startBytecode="0" endBytecode="1004" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.Server" start="642" end="642" startBytecode="169" endBytecode="169" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <String value="Runtime.exec(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.tools.Console" start="262" end="262" startBytecode="886" endBytecode="886" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="533" end="533" startBytecode="11" endBytecode="11" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="540" end="540" startBytecode="69" endBytecode="69" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="548" end="548" startBytecode="1" endBytecode="1" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="333" end="333" startBytecode="727" endBytecode="727" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="715" end="715" startBytecode="56" endBytecode="56" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="717" end="717" startBytecode="63" endBytecode="63" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+  </BugInstance>
+  <BugInstance type="COMMAND_INJECTION" priority="2" rank="12" abbrev="SECCI" category="SECURITY">
+    <Class classname="org.h2.tools.Server">
+      <SourceLine classname="org.h2.tools.Server" start="35" end="724" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    </Class>
+    <Method classname="org.h2.tools.Server" name="openBrowser" signature="(Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.h2.tools.Server" start="619" end="698" startBytecode="0" endBytecode="1004" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.Server" start="644" end="644" startBytecode="189" endBytecode="189" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <String value="Runtime.exec(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.tools.Console" start="262" end="262" startBytecode="886" endBytecode="886" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="533" end="533" startBytecode="11" endBytecode="11" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="540" end="540" startBytecode="69" endBytecode="69" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="548" end="548" startBytecode="1" endBytecode="1" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="333" end="333" startBytecode="727" endBytecode="727" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="715" end="715" startBytecode="56" endBytecode="56" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="717" end="717" startBytecode="63" endBytecode="63" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+  </BugInstance>
+  <BugInstance type="COMMAND_INJECTION" priority="2" rank="12" abbrev="SECCI" category="SECURITY">
+    <Class classname="org.h2.tools.Server">
+      <SourceLine classname="org.h2.tools.Server" start="35" end="724" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    </Class>
+    <Method classname="org.h2.tools.Server" name="openBrowser" signature="(Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.h2.tools.Server" start="619" end="698" startBytecode="0" endBytecode="1004" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.Server" start="668" end="668" startBytecode="329" endBytecode="329" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <String value="Runtime.exec(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.tools.Console" start="262" end="262" startBytecode="886" endBytecode="886" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="533" end="533" startBytecode="11" endBytecode="11" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="540" end="540" startBytecode="69" endBytecode="69" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="548" end="548" startBytecode="1" endBytecode="1" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="333" end="333" startBytecode="727" endBytecode="727" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="715" end="715" startBytecode="56" endBytecode="56" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="717" end="717" startBytecode="63" endBytecode="63" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+  </BugInstance>
+  <BugInstance type="COMMAND_INJECTION" priority="2" rank="12" abbrev="SECCI" category="SECURITY">
+    <Class classname="org.h2.tools.Server">
+      <SourceLine classname="org.h2.tools.Server" start="35" end="724" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    </Class>
+    <Method classname="org.h2.tools.Server" name="openBrowser" signature="(Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.h2.tools.Server" start="619" end="698" startBytecode="0" endBytecode="1004" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.Server" start="671" end="671" startBytecode="370" endBytecode="370" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <String value="Runtime.exec(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.tools.Console" start="262" end="262" startBytecode="886" endBytecode="886" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="533" end="533" startBytecode="11" endBytecode="11" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="540" end="540" startBytecode="69" endBytecode="69" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="548" end="548" startBytecode="1" endBytecode="1" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="333" end="333" startBytecode="727" endBytecode="727" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="715" end="715" startBytecode="56" endBytecode="56" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="717" end="717" startBytecode="63" endBytecode="63" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+  </BugInstance>
+  <BugInstance type="COMMAND_INJECTION" priority="2" rank="12" abbrev="SECCI" category="SECURITY">
+    <Class classname="org.h2.tools.Server">
+      <SourceLine classname="org.h2.tools.Server" start="35" end="724" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    </Class>
+    <Method classname="org.h2.tools.Server" name="openBrowser" signature="(Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.h2.tools.Server" start="619" end="698" startBytecode="0" endBytecode="1004" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.Server" start="679" end="679" startBytecode="481" endBytecode="481" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <String value="Runtime.exec(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.tools.Console" start="262" end="262" startBytecode="886" endBytecode="886" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="533" end="533" startBytecode="11" endBytecode="11" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="540" end="540" startBytecode="69" endBytecode="69" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Console" start="548" end="548" startBytecode="1" endBytecode="1" sourcefile="Console.java" sourcepath="org/h2/tools/Console.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="333" end="333" startBytecode="727" endBytecode="727" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="715" end="715" startBytecode="56" endBytecode="56" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+    <SourceLine classname="org.h2.tools.Server" start="717" end="717" startBytecode="63" endBytecode="63" sourcefile="Server.java" sourcepath="org/h2/tools/Server.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="10" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.tools.Shell">
+      <SourceLine classname="org.h2.tools.Shell" start="38" end="608" sourcefile="Shell.java" sourcepath="org/h2/tools/Shell.java"/>
+    </Class>
+    <Method classname="org.h2.tools.Shell" name="execute" signature="(Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.h2.tools.Shell" start="449" end="478" startBytecode="0" endBytecode="482" sourcefile="Shell.java" sourcepath="org/h2/tools/Shell.java"/>
+    </Method>
+    <SourceLine classname="org.h2.tools.Shell" start="456" end="456" startBytecode="23" endBytecode="23" sourcefile="Shell.java" sourcepath="org/h2/tools/Shell.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <String value="with tainted arguments detected" role="Method usage"/>
+    <SourceLine classname="org.h2.tools.Shell" start="156" end="156" startBytecode="290" endBytecode="290" sourcefile="Shell.java" sourcepath="org/h2/tools/Shell.java"/>
+    <SourceLine classname="org.h2.tools.Shell" start="160" end="160" startBytecode="306" endBytecode="306" sourcefile="Shell.java" sourcepath="org/h2/tools/Shell.java"/>
+    <SourceLine classname="org.h2.tools.Shell" start="219" end="219" startBytecode="114" endBytecode="114" sourcefile="Shell.java" sourcepath="org/h2/tools/Shell.java"/>
+    <SourceLine classname="org.h2.tools.Shell" start="229" end="229" startBytecode="161" endBytecode="161" sourcefile="Shell.java" sourcepath="org/h2/tools/Shell.java"/>
+    <SourceLine classname="org.h2.tools.Shell" start="286" end="286" startBytecode="714" endBytecode="714" sourcefile="Shell.java" sourcepath="org/h2/tools/Shell.java"/>
+    <SourceLine classname="org.h2.tools.Shell" start="295" end="295" startBytecode="761" endBytecode="761" sourcefile="Shell.java" sourcepath="org/h2/tools/Shell.java"/>
+    <SourceLine classname="org.h2.tools.Shell" start="441" end="441" startBytecode="4" endBytecode="4" sourcefile="Shell.java" sourcepath="org/h2/tools/Shell.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.upgrade.DbUpgrade">
+      <SourceLine classname="org.h2.upgrade.DbUpgrade" start="27" end="185" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    </Class>
+    <Method classname="org.h2.upgrade.DbUpgrade" name="upgrade" signature="(Lorg/h2/engine/ConnectionInfo;Ljava/util/Properties;)V" isStatic="true">
+      <SourceLine classname="org.h2.upgrade.DbUpgrade" start="113" end="185" startBytecode="0" endBytecode="1188" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    </Method>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="139" end="139" startBytecode="329" endBytecode="329" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="113" end="113" startBytecode="1" endBytecode="1" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="125" end="125" startBytecode="166" endBytecode="166" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="127" end="127" startBytecode="182" endBytecode="182" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="137" end="137" startBytecode="282" endBytecode="282" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="139" end="139" startBytecode="326" endBytecode="326" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.upgrade.DbUpgrade">
+      <SourceLine classname="org.h2.upgrade.DbUpgrade" start="27" end="185" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    </Class>
+    <Method classname="org.h2.upgrade.DbUpgrade" name="upgrade" signature="(Lorg/h2/engine/ConnectionInfo;Ljava/util/Properties;)V" isStatic="true">
+      <SourceLine classname="org.h2.upgrade.DbUpgrade" start="113" end="185" startBytecode="0" endBytecode="1188" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    </Method>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="142" end="142" startBytecode="365" endBytecode="365" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="113" end="113" startBytecode="1" endBytecode="1" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="125" end="125" startBytecode="166" endBytecode="166" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="127" end="127" startBytecode="182" endBytecode="182" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="142" end="142" startBytecode="354" endBytecode="354" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.upgrade.DbUpgrade">
+      <SourceLine classname="org.h2.upgrade.DbUpgrade" start="27" end="185" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    </Class>
+    <Method classname="org.h2.upgrade.DbUpgrade" name="upgrade" signature="(Lorg/h2/engine/ConnectionInfo;Ljava/util/Properties;)V" isStatic="true">
+      <SourceLine classname="org.h2.upgrade.DbUpgrade" start="113" end="185" startBytecode="0" endBytecode="1188" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    </Method>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="154" end="154" startBytecode="476" endBytecode="476" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="113" end="113" startBytecode="1" endBytecode="1" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="125" end="125" startBytecode="166" endBytecode="166" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="127" end="127" startBytecode="182" endBytecode="182" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="137" end="137" startBytecode="282" endBytecode="282" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="154" end="154" startBytecode="460" endBytecode="460" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="12" abbrev="SECSQLIJDBC" category="SECURITY">
+    <Class classname="org.h2.upgrade.DbUpgrade">
+      <SourceLine classname="org.h2.upgrade.DbUpgrade" start="27" end="185" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    </Class>
+    <Method classname="org.h2.upgrade.DbUpgrade" name="upgrade" signature="(Lorg/h2/engine/ConnectionInfo;Ljava/util/Properties;)V" isStatic="true">
+      <SourceLine classname="org.h2.upgrade.DbUpgrade" start="113" end="185" startBytecode="0" endBytecode="1188" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    </Method>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="157" end="157" startBytecode="512" endBytecode="512" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="113" end="113" startBytecode="1" endBytecode="1" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="125" end="125" startBytecode="166" endBytecode="166" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="127" end="127" startBytecode="182" endBytecode="182" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+    <SourceLine classname="org.h2.upgrade.DbUpgrade" start="157" end="157" startBytecode="501" endBytecode="501" sourcefile="DbUpgrade.java" sourcepath="org/h2/upgrade/DbUpgrade.java"/>
+  </BugInstance>
+  <BugInstance type="COMMAND_INJECTION" priority="2" rank="12" abbrev="SECCI" category="SECURITY">
+    <Class classname="org.h2.util.SourceCompiler">
+      <SourceLine classname="org.h2.util.SourceCompiler" start="46" end="386" sourcefile="SourceCompiler.java" sourcepath="org/h2/util/SourceCompiler.java"/>
+    </Class>
+    <Method classname="org.h2.util.SourceCompiler" name="exec" signature="([Ljava/lang/String;)I" isStatic="true">
+      <SourceLine classname="org.h2.util.SourceCompiler" start="308" end="326" startBytecode="0" endBytecode="199" sourcefile="SourceCompiler.java" sourcepath="org/h2/util/SourceCompiler.java"/>
+    </Method>
+    <SourceLine classname="org.h2.util.SourceCompiler" start="316" end="316" startBytecode="34" endBytecode="34" sourcefile="SourceCompiler.java" sourcepath="org/h2/util/SourceCompiler.java"/>
+    <String value="ProcessBuilder.command(...)" role="Sink method"/>
+    <SourceLine classname="org.h2.util.SourceCompiler" start="300" end="300" startBytecode="51" endBytecode="51" sourcefile="SourceCompiler.java" sourcepath="org/h2/util/SourceCompiler.java"/>
+    <SourceLine classname="org.h2.util.SourceCompiler" start="304" end="304" startBytecode="47" endBytecode="47" sourcefile="SourceCompiler.java" sourcepath="org/h2/util/SourceCompiler.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="42">
+    <MissingClass>com.vividsolutions.jts.geom.CoordinateSequence</MissingClass>
+    <MissingClass>com.vividsolutions.jts.geom.CoordinateSequenceFilter</MissingClass>
+    <MissingClass>com.vividsolutions.jts.geom.Envelope</MissingClass>
+    <MissingClass>com.vividsolutions.jts.geom.Geometry</MissingClass>
+    <MissingClass>com.vividsolutions.jts.geom.GeometryFactory</MissingClass>
+    <MissingClass>com.vividsolutions.jts.geom.PrecisionModel</MissingClass>
+    <MissingClass>com.vividsolutions.jts.io.WKBReader</MissingClass>
+    <MissingClass>com.vividsolutions.jts.io.WKBWriter</MissingClass>
+    <MissingClass>com.vividsolutions.jts.io.WKTReader</MissingClass>
+    <MissingClass>com.vividsolutions.jts.io.WKTWriter</MissingClass>
+    <MissingClass>javax.servlet.ServletConfig</MissingClass>
+    <MissingClass>javax.servlet.ServletContext</MissingClass>
+    <MissingClass>javax.servlet.ServletContextEvent</MissingClass>
+    <MissingClass>javax.servlet.ServletContextListener</MissingClass>
+    <MissingClass>javax.servlet.ServletOutputStream</MissingClass>
+    <MissingClass>javax.servlet.http.HttpServlet</MissingClass>
+    <MissingClass>javax.servlet.http.HttpServletRequest</MissingClass>
+    <MissingClass>javax.servlet.http.HttpServletResponse</MissingClass>
+    <MissingClass>org.apache.lucene.analysis.standard.StandardAnalyzer</MissingClass>
+    <MissingClass>org.apache.lucene.document.DateTools</MissingClass>
+    <MissingClass>org.apache.lucene.document.DateTools$Resolution</MissingClass>
+    <MissingClass>org.apache.lucene.document.Document</MissingClass>
+    <MissingClass>org.apache.lucene.document.Field</MissingClass>
+    <MissingClass>org.apache.lucene.document.Field$Index</MissingClass>
+    <MissingClass>org.apache.lucene.document.Field$Store</MissingClass>
+    <MissingClass>org.apache.lucene.index.IndexReader</MissingClass>
+    <MissingClass>org.apache.lucene.index.IndexWriter</MissingClass>
+    <MissingClass>org.apache.lucene.index.IndexWriterConfig</MissingClass>
+    <MissingClass>org.apache.lucene.index.IndexWriterConfig$OpenMode</MissingClass>
+    <MissingClass>org.apache.lucene.index.Term</MissingClass>
+    <MissingClass>org.apache.lucene.queryParser.QueryParser</MissingClass>
+    <MissingClass>org.apache.lucene.search.IndexSearcher</MissingClass>
+    <MissingClass>org.apache.lucene.search.ScoreDoc</MissingClass>
+    <MissingClass>org.apache.lucene.search.TopDocs</MissingClass>
+    <MissingClass>org.apache.lucene.store.FSDirectory</MissingClass>
+    <MissingClass>org.apache.lucene.store.RAMDirectory</MissingClass>
+    <MissingClass>org.apache.lucene.util.Version</MissingClass>
+    <MissingClass>org.osgi.framework.BundleActivator</MissingClass>
+    <MissingClass>org.osgi.framework.BundleContext</MissingClass>
+    <MissingClass>org.osgi.service.jdbc.DataSourceFactory</MissingClass>
+    <MissingClass>org.slf4j.Logger</MissingClass>
+    <MissingClass>org.slf4j.LoggerFactory</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Tue, 22 Aug 2017 07:09:14 -0400" total_classes="694" referenced_classes="1299" total_bugs="33" total_size="80927" num_packages="35" java_version="1.8.0_101" vm_version="25.101-b13" cpu_seconds="163.75" clock_seconds="38.15" peak_mbytes="1552.21" alloc_mbytes="3641.00" gc_seconds="0.94" priority_2="28" priority_1="5">
+    <PackageStats package="org.h2" total_bugs="0" total_types="2" total_size="69">
+      <ClassStats class="org.h2.Driver" sourceFile="Driver.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.h2.JdbcDriverBackwardsCompat" sourceFile="JdbcDriverBackwardsCompat.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.api" total_bugs="0" total_types="9" total_size="343">
+      <ClassStats class="org.h2.api.Aggregate" sourceFile="Aggregate.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.h2.api.AggregateFunction" sourceFile="AggregateFunction.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.h2.api.CustomDataTypesHandler" sourceFile="CustomDataTypesHandler.java" interface="true" size="11" bugs="0"/>
+      <ClassStats class="org.h2.api.DatabaseEventListener" sourceFile="DatabaseEventListener.java" interface="true" size="14" bugs="0"/>
+      <ClassStats class="org.h2.api.ErrorCode" sourceFile="ErrorCode.java" interface="false" size="201" bugs="0"/>
+      <ClassStats class="org.h2.api.JavaObjectSerializer" sourceFile="JavaObjectSerializer.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.h2.api.TableEngine" sourceFile="TableEngine.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.h2.api.TimestampWithTimeZone" sourceFile="TimestampWithTimeZone.java" interface="false" size="93" bugs="0"/>
+      <ClassStats class="org.h2.api.Trigger" sourceFile="Trigger.java" interface="true" size="9" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.bnf" total_bugs="0" total_types="10" total_size="543">
+      <ClassStats class="org.h2.bnf.Bnf" sourceFile="Bnf.java" interface="false" size="201" bugs="0"/>
+      <ClassStats class="org.h2.bnf.BnfVisitor" sourceFile="BnfVisitor.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.h2.bnf.Rule" sourceFile="Rule.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.h2.bnf.RuleElement" sourceFile="RuleElement.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.h2.bnf.RuleFixed" sourceFile="RuleFixed.java" interface="false" size="121" bugs="0"/>
+      <ClassStats class="org.h2.bnf.RuleHead" sourceFile="RuleHead.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.h2.bnf.RuleList" sourceFile="RuleList.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.h2.bnf.RuleOptional" sourceFile="RuleOptional.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.h2.bnf.RuleRepeat" sourceFile="RuleRepeat.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.h2.bnf.Sentence" sourceFile="Sentence.java" interface="false" size="65" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.bnf.context" total_bugs="0" total_types="6" total_size="529">
+      <ClassStats class="org.h2.bnf.context.DbColumn" sourceFile="DbColumn.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.h2.bnf.context.DbContents" sourceFile="DbContents.java" interface="false" size="140" bugs="0"/>
+      <ClassStats class="org.h2.bnf.context.DbContextRule" sourceFile="DbContextRule.java" interface="false" size="210" bugs="0"/>
+      <ClassStats class="org.h2.bnf.context.DbProcedure" sourceFile="DbProcedure.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.h2.bnf.context.DbSchema" sourceFile="DbSchema.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.h2.bnf.context.DbTableOrView" sourceFile="DbTableOrView.java" interface="false" size="35" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.command" total_bugs="0" total_types="9" total_size="5140">
+      <ClassStats class="org.h2.command.Command" sourceFile="Command.java" interface="false" size="174" bugs="0"/>
+      <ClassStats class="org.h2.command.CommandContainer" sourceFile="CommandContainer.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.h2.command.CommandInterface" sourceFile="CommandInterface.java" interface="true" size="99" bugs="0"/>
+      <ClassStats class="org.h2.command.CommandList" sourceFile="CommandList.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.h2.command.CommandRemote" sourceFile="CommandRemote.java" interface="false" size="184" bugs="0"/>
+      <ClassStats class="org.h2.command.Parser" sourceFile="Parser.java" interface="false" size="4419" bugs="0"/>
+      <ClassStats class="org.h2.command.Parser$1" sourceFile="Parser.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.command.Parser$2" sourceFile="Parser.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.command.Prepared" sourceFile="Prepared.java" interface="false" size="136" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.command.ddl" total_bugs="0" total_types="45" total_size="2680">
+      <ClassStats class="org.h2.command.ddl.AlterIndexRename" sourceFile="AlterIndexRename.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.AlterSchemaRename" sourceFile="AlterSchemaRename.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.AlterTableAddConstraint" sourceFile="AlterTableAddConstraint.java" interface="false" size="273" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.AlterTableAlterColumn" sourceFile="AlterTableAlterColumn.java" interface="false" size="373" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.AlterTableDropConstraint" sourceFile="AlterTableDropConstraint.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.AlterTableRename" sourceFile="AlterTableRename.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.AlterTableRenameColumn" sourceFile="AlterTableRenameColumn.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.AlterTableRenameConstraint" sourceFile="AlterTableRenameConstraint.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.AlterUser" sourceFile="AlterUser.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.AlterView" sourceFile="AlterView.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.Analyze" sourceFile="Analyze.java" interface="false" size="79" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateAggregate" sourceFile="CreateAggregate.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateConstant" sourceFile="CreateConstant.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateFunctionAlias" sourceFile="CreateFunctionAlias.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateIndex" sourceFile="CreateIndex.java" interface="false" size="85" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateLinkedTable" sourceFile="CreateLinkedTable.java" interface="false" size="80" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateRole" sourceFile="CreateRole.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateSchema" sourceFile="CreateSchema.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateSequence" sourceFile="CreateSequence.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateTable" sourceFile="CreateTable.java" interface="false" size="206" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateTableData" sourceFile="CreateTableData.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateTrigger" sourceFile="CreateTrigger.java" interface="false" size="84" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateUser" sourceFile="CreateUser.java" interface="false" size="70" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateUserDataType" sourceFile="CreateUserDataType.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.CreateView" sourceFile="CreateView.java" interface="false" size="81" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DeallocateProcedure" sourceFile="DeallocateProcedure.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DefineCommand" sourceFile="DefineCommand.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropAggregate" sourceFile="DropAggregate.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropConstant" sourceFile="DropConstant.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropDatabase" sourceFile="DropDatabase.java" interface="false" size="94" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropFunctionAlias" sourceFile="DropFunctionAlias.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropIndex" sourceFile="DropIndex.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropRole" sourceFile="DropRole.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropSchema" sourceFile="DropSchema.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropSequence" sourceFile="DropSequence.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropTable" sourceFile="DropTable.java" interface="false" size="66" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropTrigger" sourceFile="DropTrigger.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropUser" sourceFile="DropUser.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropUserDataType" sourceFile="DropUserDataType.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.DropView" sourceFile="DropView.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.GrantRevoke" sourceFile="GrantRevoke.java" interface="false" size="123" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.PrepareProcedure" sourceFile="PrepareProcedure.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.SchemaCommand" sourceFile="SchemaCommand.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.SetComment" sourceFile="SetComment.java" interface="false" size="93" bugs="0"/>
+      <ClassStats class="org.h2.command.ddl.TruncateTable" sourceFile="TruncateTable.java" interface="false" size="18" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.command.dml" total_bugs="0" total_types="32" total_size="4222">
+      <ClassStats class="org.h2.command.dml.AlterSequence" sourceFile="AlterSequence.java" interface="false" size="81" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.AlterTableSet" sourceFile="AlterTableSet.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.BackupCommand" sourceFile="BackupCommand.java" interface="false" size="97" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Call" sourceFile="Call.java" interface="false" size="54" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Delete" sourceFile="Delete.java" interface="false" size="91" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.ExecuteProcedure" sourceFile="ExecuteProcedure.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Explain" sourceFile="Explain.java" interface="false" size="86" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Insert" sourceFile="Insert.java" interface="false" size="238" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Merge" sourceFile="Merge.java" interface="false" size="192" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.NoOperation" sourceFile="NoOperation.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Optimizer" sourceFile="Optimizer.java" interface="false" size="157" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Query" sourceFile="Query.java" interface="false" size="246" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Replace" sourceFile="Replace.java" interface="false" size="197" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.RunScriptCommand" sourceFile="RunScriptCommand.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.ScriptBase" sourceFile="ScriptBase.java" interface="false" size="125" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.ScriptCommand" sourceFile="ScriptCommand.java" interface="false" size="392" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.ScriptCommand$1" sourceFile="ScriptCommand.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.ScriptCommand$2" sourceFile="ScriptCommand.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.ScriptCommand$3" sourceFile="ScriptCommand.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.ScriptCommand$4" sourceFile="ScriptCommand.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Select" sourceFile="Select.java" interface="false" size="882" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Select$LazyResultGroupSorted" sourceFile="Select.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Select$LazyResultQueryFlat" sourceFile="Select.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Select$LazyResultSelect" sourceFile="Select.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.SelectListColumnResolver" sourceFile="SelectListColumnResolver.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.SelectOrderBy" sourceFile="SelectOrderBy.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.SelectUnion" sourceFile="SelectUnion.java" interface="false" size="275" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.SelectUnion$LazyResultUnion" sourceFile="SelectUnion.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Set" sourceFile="Set.java" interface="false" size="358" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.SetTypes" sourceFile="SetTypes.java" interface="false" size="111" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.TransactionCommand" sourceFile="TransactionCommand.java" interface="false" size="76" bugs="0"/>
+      <ClassStats class="org.h2.command.dml.Update" sourceFile="Update.java" interface="false" size="124" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.compress" total_bugs="0" total_types="6" total_size="396">
+      <ClassStats class="org.h2.compress.CompressDeflate" sourceFile="CompressDeflate.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.h2.compress.CompressLZF" sourceFile="CompressLZF.java" interface="false" size="178" bugs="0"/>
+      <ClassStats class="org.h2.compress.CompressNo" sourceFile="CompressNo.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.h2.compress.Compressor" sourceFile="Compressor.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.h2.compress.LZFInputStream" sourceFile="LZFInputStream.java" interface="false" size="85" bugs="0"/>
+      <ClassStats class="org.h2.compress.LZFOutputStream" sourceFile="LZFOutputStream.java" interface="false" size="62" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.constraint" total_bugs="0" total_types="4" total_size="614">
+      <ClassStats class="org.h2.constraint.Constraint" sourceFile="Constraint.java" interface="false" size="55" bugs="0"/>
+      <ClassStats class="org.h2.constraint.ConstraintCheck" sourceFile="ConstraintCheck.java" interface="false" size="83" bugs="0"/>
+      <ClassStats class="org.h2.constraint.ConstraintReferential" sourceFile="ConstraintReferential.java" interface="false" size="400" bugs="0"/>
+      <ClassStats class="org.h2.constraint.ConstraintUnique" sourceFile="ConstraintUnique.java" interface="false" size="76" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.engine" total_bugs="0" total_types="36" total_size="5429">
+      <ClassStats class="org.h2.engine.Comment" sourceFile="Comment.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.h2.engine.ConnectionInfo" sourceFile="ConnectionInfo.java" interface="false" size="319" bugs="0"/>
+      <ClassStats class="org.h2.engine.Constants" sourceFile="Constants.java" interface="false" size="109" bugs="0"/>
+      <ClassStats class="org.h2.engine.Database" sourceFile="Database.java" interface="false" size="1603" bugs="0"/>
+      <ClassStats class="org.h2.engine.DatabaseCloser" sourceFile="DatabaseCloser.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.h2.engine.DbObject" sourceFile="DbObject.java" interface="true" size="32" bugs="0"/>
+      <ClassStats class="org.h2.engine.DbObjectBase" sourceFile="DbObjectBase.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.h2.engine.DbSettings" sourceFile="DbSettings.java" interface="false" size="93" bugs="0"/>
+      <ClassStats class="org.h2.engine.Engine" sourceFile="Engine.java" interface="false" size="185" bugs="0"/>
+      <ClassStats class="org.h2.engine.FunctionAlias" sourceFile="FunctionAlias.java" interface="false" size="154" bugs="0"/>
+      <ClassStats class="org.h2.engine.FunctionAlias$JavaMethod" sourceFile="FunctionAlias.java" interface="false" size="123" bugs="0"/>
+      <ClassStats class="org.h2.engine.MetaRecord" sourceFile="MetaRecord.java" interface="false" size="69" bugs="0"/>
+      <ClassStats class="org.h2.engine.Mode" sourceFile="Mode.java" interface="false" size="114" bugs="0"/>
+      <ClassStats class="org.h2.engine.Procedure" sourceFile="Procedure.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.h2.engine.QueryStatisticsData" sourceFile="QueryStatisticsData.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.h2.engine.QueryStatisticsData$1" sourceFile="QueryStatisticsData.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.engine.QueryStatisticsData$QueryEntry" sourceFile="QueryStatisticsData.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.h2.engine.Right" sourceFile="Right.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="org.h2.engine.RightOwner" sourceFile="RightOwner.java" interface="false" size="70" bugs="0"/>
+      <ClassStats class="org.h2.engine.Role" sourceFile="Role.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.h2.engine.Session" sourceFile="Session.java" interface="false" size="877" bugs="0"/>
+      <ClassStats class="org.h2.engine.Session$Savepoint" sourceFile="Session.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.h2.engine.Session$TimeoutValue" sourceFile="Session.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.engine.SessionFactory" sourceFile="SessionFactory.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.h2.engine.SessionInterface" sourceFile="SessionInterface.java" interface="true" size="20" bugs="0"/>
+      <ClassStats class="org.h2.engine.SessionRemote" sourceFile="SessionRemote.java" interface="false" size="510" bugs="0"/>
+      <ClassStats class="org.h2.engine.SessionWithState" sourceFile="SessionWithState.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.h2.engine.Setting" sourceFile="Setting.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.h2.engine.SettingsBase" sourceFile="SettingsBase.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.h2.engine.SysProperties" sourceFile="SysProperties.java" interface="false" size="185" bugs="0"/>
+      <ClassStats class="org.h2.engine.UndoLog" sourceFile="UndoLog.java" interface="false" size="139" bugs="0"/>
+      <ClassStats class="org.h2.engine.UndoLogRecord" sourceFile="UndoLogRecord.java" interface="false" size="128" bugs="0"/>
+      <ClassStats class="org.h2.engine.User" sourceFile="User.java" interface="false" size="123" bugs="0"/>
+      <ClassStats class="org.h2.engine.UserAggregate" sourceFile="UserAggregate.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.h2.engine.UserAggregate$AggregateWrapper" sourceFile="UserAggregate.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.h2.engine.UserDataType" sourceFile="UserDataType.java" interface="false" size="24" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.expression" total_bugs="0" total_types="41" total_size="5064">
+      <ClassStats class="org.h2.expression.Aggregate" sourceFile="Aggregate.java" interface="false" size="330" bugs="0"/>
+      <ClassStats class="org.h2.expression.Aggregate$1" sourceFile="Aggregate.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.h2.expression.AggregateData" sourceFile="AggregateData.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.h2.expression.AggregateDataCount" sourceFile="AggregateDataCount.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.h2.expression.AggregateDataCountAll" sourceFile="AggregateDataCountAll.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.h2.expression.AggregateDataDefault" sourceFile="AggregateDataDefault.java" interface="false" size="108" bugs="0"/>
+      <ClassStats class="org.h2.expression.AggregateDataGroupConcat" sourceFile="AggregateDataGroupConcat.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.h2.expression.AggregateDataHistogram" sourceFile="AggregateDataHistogram.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.h2.expression.AggregateDataHistogram$1" sourceFile="AggregateDataHistogram.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.h2.expression.AggregateDataSelectivity" sourceFile="AggregateDataSelectivity.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.h2.expression.Alias" sourceFile="Alias.java" interface="false" size="54" bugs="0"/>
+      <ClassStats class="org.h2.expression.CompareLike" sourceFile="CompareLike.java" interface="false" size="306" bugs="0"/>
+      <ClassStats class="org.h2.expression.Comparison" sourceFile="Comparison.java" interface="false" size="279" bugs="0"/>
+      <ClassStats class="org.h2.expression.Condition" sourceFile="Condition.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.h2.expression.ConditionAndOr" sourceFile="ConditionAndOr.java" interface="false" size="163" bugs="0"/>
+      <ClassStats class="org.h2.expression.ConditionExists" sourceFile="ConditionExists.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.h2.expression.ConditionIn" sourceFile="ConditionIn.java" interface="false" size="132" bugs="0"/>
+      <ClassStats class="org.h2.expression.ConditionInConstantSet" sourceFile="ConditionInConstantSet.java" interface="false" size="78" bugs="0"/>
+      <ClassStats class="org.h2.expression.ConditionInConstantSet$1" sourceFile="ConditionInConstantSet.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.expression.ConditionInSelect" sourceFile="ConditionInSelect.java" interface="false" size="112" bugs="0"/>
+      <ClassStats class="org.h2.expression.ConditionNot" sourceFile="ConditionNot.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.h2.expression.Expression" sourceFile="Expression.java" interface="false" size="81" bugs="0"/>
+      <ClassStats class="org.h2.expression.ExpressionColumn" sourceFile="ExpressionColumn.java" interface="false" size="185" bugs="0"/>
+      <ClassStats class="org.h2.expression.ExpressionList" sourceFile="ExpressionList.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.h2.expression.ExpressionVisitor" sourceFile="ExpressionVisitor.java" interface="false" size="91" bugs="0"/>
+      <ClassStats class="org.h2.expression.Function" sourceFile="Function.java" interface="false" size="1852" bugs="0"/>
+      <ClassStats class="org.h2.expression.FunctionCall" sourceFile="FunctionCall.java" interface="true" size="9" bugs="0"/>
+      <ClassStats class="org.h2.expression.FunctionInfo" sourceFile="FunctionInfo.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.h2.expression.JavaAggregate" sourceFile="JavaAggregate.java" interface="false" size="109" bugs="0"/>
+      <ClassStats class="org.h2.expression.JavaFunction" sourceFile="JavaFunction.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="org.h2.expression.Operation" sourceFile="Operation.java" interface="false" size="227" bugs="0"/>
+      <ClassStats class="org.h2.expression.Parameter" sourceFile="Parameter.java" interface="false" size="80" bugs="0"/>
+      <ClassStats class="org.h2.expression.ParameterInterface" sourceFile="ParameterInterface.java" interface="true" size="9" bugs="0"/>
+      <ClassStats class="org.h2.expression.ParameterRemote" sourceFile="ParameterRemote.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.h2.expression.Rownum" sourceFile="Rownum.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.h2.expression.SequenceValue" sourceFile="SequenceValue.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.h2.expression.Subquery" sourceFile="Subquery.java" interface="false" size="61" bugs="0"/>
+      <ClassStats class="org.h2.expression.TableFunction" sourceFile="TableFunction.java" interface="false" size="91" bugs="0"/>
+      <ClassStats class="org.h2.expression.ValueExpression" sourceFile="ValueExpression.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.h2.expression.Variable" sourceFile="Variable.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.h2.expression.Wildcard" sourceFile="Wildcard.java" interface="false" size="44" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.fulltext" total_bugs="1" total_types="7" total_size="993" priority_2="1">
+      <ClassStats class="org.h2.fulltext.FullText" sourceFile="FullText.java" interface="false" size="397" bugs="0"/>
+      <ClassStats class="org.h2.fulltext.FullText$FullTextTrigger" sourceFile="FullText.java" interface="false" size="159" bugs="0"/>
+      <ClassStats class="org.h2.fulltext.FullTextLucene" sourceFile="FullTextLucene.java" interface="false" size="212" bugs="0"/>
+      <ClassStats class="org.h2.fulltext.FullTextLucene$FullTextTrigger" sourceFile="FullTextLucene.java" interface="false" size="131" bugs="0"/>
+      <ClassStats class="org.h2.fulltext.FullTextLucene$IndexAccess" sourceFile="FullTextLucene.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.fulltext.FullTextSettings" sourceFile="FullTextSettings.java" interface="false" size="79" bugs="1" priority_2="1"/>
+      <ClassStats class="org.h2.fulltext.IndexInfo" sourceFile="IndexInfo.java" interface="false" size="9" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.index" total_bugs="0" total_types="46" total_size="4862">
+      <ClassStats class="org.h2.index.BaseIndex" sourceFile="BaseIndex.java" interface="false" size="228" bugs="0"/>
+      <ClassStats class="org.h2.index.Cursor" sourceFile="Cursor.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.h2.index.FunctionCursor" sourceFile="FunctionCursor.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.h2.index.FunctionCursorResultSet" sourceFile="FunctionCursorResultSet.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.h2.index.FunctionIndex" sourceFile="FunctionIndex.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.h2.index.HashIndex" sourceFile="HashIndex.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.h2.index.Index" sourceFile="Index.java" interface="true" size="31" bugs="0"/>
+      <ClassStats class="org.h2.index.IndexCondition" sourceFile="IndexCondition.java" interface="false" size="149" bugs="0"/>
+      <ClassStats class="org.h2.index.IndexCondition$1" sourceFile="IndexCondition.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.index.IndexCursor" sourceFile="IndexCursor.java" interface="false" size="190" bugs="0"/>
+      <ClassStats class="org.h2.index.IndexLookupBatch" sourceFile="IndexLookupBatch.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.h2.index.IndexType" sourceFile="IndexType.java" interface="false" size="74" bugs="0"/>
+      <ClassStats class="org.h2.index.LinkedCursor" sourceFile="LinkedCursor.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.h2.index.LinkedIndex" sourceFile="LinkedIndex.java" interface="false" size="150" bugs="0"/>
+      <ClassStats class="org.h2.index.MetaCursor" sourceFile="MetaCursor.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.h2.index.MetaIndex" sourceFile="MetaIndex.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.h2.index.MultiVersionCursor" sourceFile="MultiVersionCursor.java" interface="false" size="117" bugs="0"/>
+      <ClassStats class="org.h2.index.MultiVersionIndex" sourceFile="MultiVersionIndex.java" interface="false" size="196" bugs="0"/>
+      <ClassStats class="org.h2.index.NonUniqueHashCursor" sourceFile="NonUniqueHashCursor.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.h2.index.NonUniqueHashIndex" sourceFile="NonUniqueHashIndex.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.h2.index.PageBtree" sourceFile="PageBtree.java" interface="false" size="93" bugs="0"/>
+      <ClassStats class="org.h2.index.PageBtreeCursor" sourceFile="PageBtreeCursor.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.h2.index.PageBtreeIndex" sourceFile="PageBtreeIndex.java" interface="false" size="246" bugs="0"/>
+      <ClassStats class="org.h2.index.PageBtreeLeaf" sourceFile="PageBtreeLeaf.java" interface="false" size="239" bugs="0"/>
+      <ClassStats class="org.h2.index.PageBtreeNode" sourceFile="PageBtreeNode.java" interface="false" size="370" bugs="0"/>
+      <ClassStats class="org.h2.index.PageData" sourceFile="PageData.java" interface="false" size="66" bugs="0"/>
+      <ClassStats class="org.h2.index.PageDataCursor" sourceFile="PageDataCursor.java" interface="false" size="60" bugs="0"/>
+      <ClassStats class="org.h2.index.PageDataIndex" sourceFile="PageDataIndex.java" interface="false" size="318" bugs="0"/>
+      <ClassStats class="org.h2.index.PageDataLeaf" sourceFile="PageDataLeaf.java" interface="false" size="380" bugs="0"/>
+      <ClassStats class="org.h2.index.PageDataNode" sourceFile="PageDataNode.java" interface="false" size="277" bugs="0"/>
+      <ClassStats class="org.h2.index.PageDataOverflow" sourceFile="PageDataOverflow.java" interface="false" size="123" bugs="0"/>
+      <ClassStats class="org.h2.index.PageDelegateIndex" sourceFile="PageDelegateIndex.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.h2.index.PageIndex" sourceFile="PageIndex.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.h2.index.RangeCursor" sourceFile="RangeCursor.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.h2.index.RangeIndex" sourceFile="RangeIndex.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.h2.index.ScanCursor" sourceFile="ScanCursor.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.h2.index.ScanIndex" sourceFile="ScanIndex.java" interface="false" size="140" bugs="0"/>
+      <ClassStats class="org.h2.index.SingleRowCursor" sourceFile="SingleRowCursor.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.h2.index.SpatialIndex" sourceFile="SpatialIndex.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.h2.index.SpatialTreeIndex" sourceFile="SpatialTreeIndex.java" interface="false" size="112" bugs="0"/>
+      <ClassStats class="org.h2.index.SpatialTreeIndex$SpatialCursor" sourceFile="SpatialTreeIndex.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.h2.index.TreeCursor" sourceFile="TreeCursor.java" interface="false" size="67" bugs="0"/>
+      <ClassStats class="org.h2.index.TreeIndex" sourceFile="TreeIndex.java" interface="false" size="260" bugs="0"/>
+      <ClassStats class="org.h2.index.TreeNode" sourceFile="TreeNode.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.h2.index.ViewCursor" sourceFile="ViewCursor.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.h2.index.ViewIndex" sourceFile="ViewIndex.java" interface="false" size="236" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.jdbc" total_bugs="0" total_types="23" total_size="5443">
+      <ClassStats class="org.h2.jdbc.JdbcArray" sourceFile="JdbcArray.java" interface="false" size="111" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcBatchUpdateException" sourceFile="JdbcBatchUpdateException.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcBlob" sourceFile="JdbcBlob.java" interface="false" size="89" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcBlob$1" sourceFile="JdbcBlob.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcBlob$2" sourceFile="JdbcBlob.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcCallableStatement" sourceFile="JdbcCallableStatement.java" interface="false" size="373" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcCallableStatementBackwardsCompat" sourceFile="JdbcCallableStatementBackwardsCompat.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcClob" sourceFile="JdbcClob.java" interface="false" size="101" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcClob$1" sourceFile="JdbcClob.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcClob$2" sourceFile="JdbcClob.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcConnection" sourceFile="JdbcConnection.java" interface="false" size="901" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcConnectionBackwardsCompat" sourceFile="JdbcConnectionBackwardsCompat.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcDatabaseMetaData" sourceFile="JdbcDatabaseMetaData.java" interface="false" size="845" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcDatabaseMetaDataBackwardsCompat" sourceFile="JdbcDatabaseMetaDataBackwardsCompat.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcParameterMetaData" sourceFile="JdbcParameterMetaData.java" interface="false" size="91" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcPreparedStatement" sourceFile="JdbcPreparedStatement.java" interface="false" size="687" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcResultSet" sourceFile="JdbcResultSet.java" interface="false" size="1449" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcResultSetBackwardsCompat" sourceFile="JdbcResultSetBackwardsCompat.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcResultSetMetaData" sourceFile="JdbcResultSetMetaData.java" interface="false" size="168" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcSQLException" sourceFile="JdbcSQLException.java" interface="false" size="66" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcSavepoint" sourceFile="JdbcSavepoint.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcStatement" sourceFile="JdbcStatement.java" interface="false" size="446" bugs="0"/>
+      <ClassStats class="org.h2.jdbc.JdbcStatementBackwardsCompat" sourceFile="JdbcStatementBackwardsCompat.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.jdbcx" total_bugs="3" total_types="8" total_size="547" priority_2="3">
+      <ClassStats class="org.h2.jdbcx.JdbcConnectionPool" sourceFile="JdbcConnectionPool.java" interface="false" size="112" bugs="0"/>
+      <ClassStats class="org.h2.jdbcx.JdbcConnectionPoolBackwardsCompat" sourceFile="JdbcConnectionPoolBackwardsCompat.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.h2.jdbcx.JdbcDataSource" sourceFile="JdbcDataSource.java" interface="false" size="142" bugs="0"/>
+      <ClassStats class="org.h2.jdbcx.JdbcDataSourceBackwardsCompat" sourceFile="JdbcDataSourceBackwardsCompat.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.h2.jdbcx.JdbcDataSourceFactory" sourceFile="JdbcDataSourceFactory.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.h2.jdbcx.JdbcXAConnection" sourceFile="JdbcXAConnection.java" interface="false" size="197" bugs="3" priority_2="3"/>
+      <ClassStats class="org.h2.jdbcx.JdbcXAConnection$PooledJdbcConnection" sourceFile="JdbcXAConnection.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.h2.jdbcx.JdbcXid" sourceFile="JdbcXid.java" interface="false" size="37" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.jmx" total_bugs="0" total_types="3" total_size="192">
+      <ClassStats class="org.h2.jmx.DatabaseInfo" sourceFile="DatabaseInfo.java" interface="false" size="140" bugs="0"/>
+      <ClassStats class="org.h2.jmx.DatabaseInfoMBean" sourceFile="DatabaseInfoMBean.java" interface="true" size="20" bugs="0"/>
+      <ClassStats class="org.h2.jmx.DocumentedMBean" sourceFile="DocumentedMBean.java" interface="false" size="32" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.message" total_bugs="0" total_types="6" total_size="584">
+      <ClassStats class="org.h2.message.DbException" sourceFile="DbException.java" interface="false" size="138" bugs="0"/>
+      <ClassStats class="org.h2.message.Trace" sourceFile="Trace.java" interface="false" size="130" bugs="0"/>
+      <ClassStats class="org.h2.message.TraceObject" sourceFile="TraceObject.java" interface="false" size="110" bugs="0"/>
+      <ClassStats class="org.h2.message.TraceSystem" sourceFile="TraceSystem.java" interface="false" size="170" bugs="0"/>
+      <ClassStats class="org.h2.message.TraceWriter" sourceFile="TraceWriter.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.h2.message.TraceWriterAdapter" sourceFile="TraceWriterAdapter.java" interface="false" size="31" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.mvstore" total_bugs="0" total_types="33" total_size="4369">
+      <ClassStats class="org.h2.mvstore.Chunk" sourceFile="Chunk.java" interface="false" size="109" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.ConcurrentArrayList" sourceFile="ConcurrentArrayList.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.ConcurrentArrayList$1" sourceFile="ConcurrentArrayList.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.Cursor" sourceFile="Cursor.java" interface="false" size="81" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.CursorPos" sourceFile="CursorPos.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.DataUtils" sourceFile="DataUtils.java" interface="false" size="343" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.DataUtils$MapEntry" sourceFile="DataUtils.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.FileStore" sourceFile="FileStore.java" interface="false" size="127" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.FreeSpaceBitSet" sourceFile="FreeSpaceBitSet.java" interface="false" size="82" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVMap" sourceFile="MVMap.java" interface="false" size="484" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVMap$1" sourceFile="MVMap.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVMap$2" sourceFile="MVMap.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVMap$2$1" sourceFile="MVMap.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVMap$3" sourceFile="MVMap.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVMap$Builder" sourceFile="MVMap.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVMap$MapBuilder" sourceFile="MVMap.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVMapConcurrent" sourceFile="MVMapConcurrent.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVMapConcurrent$Builder" sourceFile="MVMapConcurrent.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVStore" sourceFile="MVStore.java" interface="false" size="1375" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVStore$1" sourceFile="MVStore.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVStore$2" sourceFile="MVStore.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVStore$BackgroundWriterThread" sourceFile="MVStore.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVStore$Builder" sourceFile="MVStore.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVStoreTool" sourceFile="MVStoreTool.java" interface="false" size="427" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVStoreTool$1" sourceFile="MVStoreTool.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.MVStoreTool$GenericDataType" sourceFile="MVStoreTool.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.OffHeapStore" sourceFile="OffHeapStore.java" interface="false" size="89" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.Page" sourceFile="Page.java" interface="false" size="454" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.Page$PageChildren" sourceFile="Page.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.Page$PageReference" sourceFile="Page.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.StreamStore" sourceFile="StreamStore.java" interface="false" size="220" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.StreamStore$Stream" sourceFile="StreamStore.java" interface="false" size="94" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.WriteBuffer" sourceFile="WriteBuffer.java" interface="false" size="104" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.mvstore.cache" total_bugs="0" total_types="6" total_size="571">
+      <ClassStats class="org.h2.mvstore.cache.CacheLongKeyLIRS" sourceFile="CacheLongKeyLIRS.java" interface="false" size="168" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.cache.CacheLongKeyLIRS$Config" sourceFile="CacheLongKeyLIRS.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.cache.CacheLongKeyLIRS$Entry" sourceFile="CacheLongKeyLIRS.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.cache.CacheLongKeyLIRS$Segment" sourceFile="CacheLongKeyLIRS.java" interface="false" size="286" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.cache.FilePathCache" sourceFile="FilePathCache.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.cache.FilePathCache$FileCache" sourceFile="FilePathCache.java" interface="false" size="78" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.mvstore.db" total_bugs="0" total_types="27" total_size="2722">
+      <ClassStats class="org.h2.mvstore.db.MVDelegateIndex" sourceFile="MVDelegateIndex.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVIndex" sourceFile="MVIndex.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVPrimaryIndex" sourceFile="MVPrimaryIndex.java" interface="false" size="193" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVPrimaryIndex$MVStoreCursor" sourceFile="MVPrimaryIndex.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVSecondaryIndex" sourceFile="MVSecondaryIndex.java" interface="false" size="258" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVSecondaryIndex$1Source" sourceFile="MVSecondaryIndex.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVSecondaryIndex$MVStoreCursor" sourceFile="MVSecondaryIndex.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVSpatialIndex" sourceFile="MVSpatialIndex.java" interface="false" size="157" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVSpatialIndex$MVStoreCursor" sourceFile="MVSpatialIndex.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVTable" sourceFile="MVTable.java" interface="false" size="509" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVTable$1" sourceFile="MVTable.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVTableEngine" sourceFile="MVTableEngine.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVTableEngine$1" sourceFile="MVTableEngine.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVTableEngine$MVInDoubtTransaction" sourceFile="MVTableEngine.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.MVTableEngine$Store" sourceFile="MVTableEngine.java" interface="false" size="149" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.TransactionStore" sourceFile="TransactionStore.java" interface="false" size="227" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.TransactionStore$1" sourceFile="TransactionStore.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.TransactionStore$ArrayType" sourceFile="TransactionStore.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.TransactionStore$Change" sourceFile="TransactionStore.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.TransactionStore$Transaction" sourceFile="TransactionStore.java" interface="false" size="82" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.TransactionStore$TransactionMap" sourceFile="TransactionStore.java" interface="false" size="203" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.TransactionStore$TransactionMap$1" sourceFile="TransactionStore.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.TransactionStore$TransactionMap$2" sourceFile="TransactionStore.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.TransactionStore$TransactionMap$3" sourceFile="TransactionStore.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.TransactionStore$VersionedValue" sourceFile="TransactionStore.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.TransactionStore$VersionedValueType" sourceFile="TransactionStore.java" interface="false" size="56" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.db.ValueDataType" sourceFile="ValueDataType.java" interface="false" size="407" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.mvstore.rtree" total_bugs="0" total_types="7" total_size="589">
+      <ClassStats class="org.h2.mvstore.rtree.MVRTreeMap" sourceFile="MVRTreeMap.java" interface="false" size="241" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.rtree.MVRTreeMap$1" sourceFile="MVRTreeMap.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.rtree.MVRTreeMap$2" sourceFile="MVRTreeMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.rtree.MVRTreeMap$Builder" sourceFile="MVRTreeMap.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.rtree.MVRTreeMap$RTreeCursor" sourceFile="MVRTreeMap.java" interface="false" size="59" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.rtree.SpatialDataType" sourceFile="SpatialDataType.java" interface="false" size="213" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.rtree.SpatialKey" sourceFile="SpatialKey.java" interface="false" size="43" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.mvstore.type" total_bugs="0" total_types="20" total_size="898">
+      <ClassStats class="org.h2.mvstore.type.DataType" sourceFile="DataType.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType" sourceFile="ObjectDataType.java" interface="false" size="204" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$AutoDetectDataType" sourceFile="ObjectDataType.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$BigDecimalType" sourceFile="ObjectDataType.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$BigIntegerType" sourceFile="ObjectDataType.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$BooleanType" sourceFile="ObjectDataType.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$ByteType" sourceFile="ObjectDataType.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$CharacterType" sourceFile="ObjectDataType.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$DateType" sourceFile="ObjectDataType.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$DoubleType" sourceFile="ObjectDataType.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$FloatType" sourceFile="ObjectDataType.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$IntegerType" sourceFile="ObjectDataType.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$LongType" sourceFile="ObjectDataType.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$NullType" sourceFile="ObjectDataType.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$ObjectArrayType" sourceFile="ObjectDataType.java" interface="false" size="174" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$SerializedObjectType" sourceFile="ObjectDataType.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$ShortType" sourceFile="ObjectDataType.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$StringType" sourceFile="ObjectDataType.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.ObjectDataType$UUIDType" sourceFile="ObjectDataType.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.h2.mvstore.type.StringDataType" sourceFile="StringDataType.java" interface="false" size="27" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.result" total_bugs="0" total_types="18" total_size="1449">
+      <ClassStats class="org.h2.result.LazyResult" sourceFile="LazyResult.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="org.h2.result.LocalResult" sourceFile="LocalResult.java" interface="false" size="288" bugs="0"/>
+      <ClassStats class="org.h2.result.ResultColumn" sourceFile="ResultColumn.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.h2.result.ResultExternal" sourceFile="ResultExternal.java" interface="true" size="10" bugs="0"/>
+      <ClassStats class="org.h2.result.ResultInterface" sourceFile="ResultInterface.java" interface="true" size="27" bugs="0"/>
+      <ClassStats class="org.h2.result.ResultRemote" sourceFile="ResultRemote.java" interface="false" size="158" bugs="0"/>
+      <ClassStats class="org.h2.result.ResultTarget" sourceFile="ResultTarget.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.h2.result.ResultTempTable" sourceFile="ResultTempTable.java" interface="false" size="192" bugs="0"/>
+      <ClassStats class="org.h2.result.Row" sourceFile="Row.java" interface="true" size="15" bugs="0"/>
+      <ClassStats class="org.h2.result.RowFactory" sourceFile="RowFactory.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.result.RowFactory$DefaultRowFactory" sourceFile="RowFactory.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.h2.result.RowImpl" sourceFile="RowImpl.java" interface="false" size="91" bugs="0"/>
+      <ClassStats class="org.h2.result.RowList" sourceFile="RowList.java" interface="false" size="157" bugs="0"/>
+      <ClassStats class="org.h2.result.SearchRow" sourceFile="SearchRow.java" interface="true" size="12" bugs="0"/>
+      <ClassStats class="org.h2.result.SimpleRow" sourceFile="SimpleRow.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.h2.result.SimpleRowValue" sourceFile="SimpleRowValue.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.h2.result.SortOrder" sourceFile="SortOrder.java" interface="false" size="98" bugs="0"/>
+      <ClassStats class="org.h2.result.UpdatableRow" sourceFile="UpdatableRow.java" interface="false" size="183" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.schema" total_bugs="0" total_types="6" total_size="728">
+      <ClassStats class="org.h2.schema.Constant" sourceFile="Constant.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.h2.schema.Schema" sourceFile="Schema.java" interface="false" size="265" bugs="0"/>
+      <ClassStats class="org.h2.schema.SchemaObject" sourceFile="SchemaObject.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.h2.schema.SchemaObjectBase" sourceFile="SchemaObjectBase.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.h2.schema.Sequence" sourceFile="Sequence.java" interface="false" size="180" bugs="0"/>
+      <ClassStats class="org.h2.schema.TriggerObject" sourceFile="TriggerObject.java" interface="false" size="239" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.security" total_bugs="0" total_types="7" total_size="840">
+      <ClassStats class="org.h2.security.AES" sourceFile="AES.java" interface="false" size="219" bugs="0"/>
+      <ClassStats class="org.h2.security.BlockCipher" sourceFile="BlockCipher.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.h2.security.CipherFactory" sourceFile="CipherFactory.java" interface="false" size="149" bugs="0"/>
+      <ClassStats class="org.h2.security.Fog" sourceFile="Fog.java" interface="false" size="67" bugs="0"/>
+      <ClassStats class="org.h2.security.SHA256" sourceFile="SHA256.java" interface="false" size="164" bugs="0"/>
+      <ClassStats class="org.h2.security.SecureFileStore" sourceFile="SecureFileStore.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.h2.security.XTEA" sourceFile="XTEA.java" interface="false" size="158" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.server" total_bugs="0" total_types="5" total_size="672">
+      <ClassStats class="org.h2.server.Service" sourceFile="Service.java" interface="true" size="12" bugs="0"/>
+      <ClassStats class="org.h2.server.ShutdownHandler" sourceFile="ShutdownHandler.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.h2.server.TcpServer" sourceFile="TcpServer.java" interface="false" size="278" bugs="0"/>
+      <ClassStats class="org.h2.server.TcpServerThread" sourceFile="TcpServerThread.java" interface="false" size="353" bugs="0"/>
+      <ClassStats class="org.h2.server.TcpServerThread$CachedInputStream" sourceFile="TcpServerThread.java" interface="false" size="27" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.server.pg" total_bugs="2" total_types="4" total_size="948" priority_2="2">
+      <ClassStats class="org.h2.server.pg.PgServer" sourceFile="PgServer.java" interface="false" size="257" bugs="0"/>
+      <ClassStats class="org.h2.server.pg.PgServerThread" sourceFile="PgServerThread.java" interface="false" size="678" bugs="2" priority_2="2"/>
+      <ClassStats class="org.h2.server.pg.PgServerThread$Portal" sourceFile="PgServerThread.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.server.pg.PgServerThread$Prepared" sourceFile="PgServerThread.java" interface="false" size="7" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.server.web" total_bugs="4" total_types="12" total_size="2420" priority_2="4">
+      <ClassStats class="org.h2.server.web.ConnectionInfo" sourceFile="ConnectionInfo.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.h2.server.web.DbStarter" sourceFile="DbStarter.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.h2.server.web.PageParser" sourceFile="PageParser.java" interface="false" size="211" bugs="0"/>
+      <ClassStats class="org.h2.server.web.WebApp" sourceFile="WebApp.java" interface="false" size="1254" bugs="4" priority_2="4"/>
+      <ClassStats class="org.h2.server.web.WebApp$1" sourceFile="WebApp.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.h2.server.web.WebApp$2" sourceFile="WebApp.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.server.web.WebApp$IndexInfo" sourceFile="WebApp.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.server.web.WebServer" sourceFile="WebServer.java" interface="false" size="379" bugs="0"/>
+      <ClassStats class="org.h2.server.web.WebServer$TranslateThread" sourceFile="WebServer.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.h2.server.web.WebServlet" sourceFile="WebServlet.java" interface="false" size="100" bugs="0"/>
+      <ClassStats class="org.h2.server.web.WebSession" sourceFile="WebSession.java" interface="false" size="117" bugs="0"/>
+      <ClassStats class="org.h2.server.web.WebThread" sourceFile="WebThread.java" interface="false" size="227" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.store" total_bugs="0" total_types="31" total_size="4814">
+      <ClassStats class="org.h2.store.CountingReaderInputStream" sourceFile="CountingReaderInputStream.java" interface="false" size="59" bugs="0"/>
+      <ClassStats class="org.h2.store.Data" sourceFile="Data.java" interface="false" size="686" bugs="0"/>
+      <ClassStats class="org.h2.store.DataHandler" sourceFile="DataHandler.java" interface="true" size="14" bugs="0"/>
+      <ClassStats class="org.h2.store.DataReader" sourceFile="DataReader.java" interface="false" size="74" bugs="0"/>
+      <ClassStats class="org.h2.store.DataReader$FastEOFException" sourceFile="DataReader.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.store.FileLister" sourceFile="FileLister.java" interface="false" size="56" bugs="0"/>
+      <ClassStats class="org.h2.store.FileLock" sourceFile="FileLock.java" interface="false" size="306" bugs="0"/>
+      <ClassStats class="org.h2.store.FileStore" sourceFile="FileStore.java" interface="false" size="223" bugs="0"/>
+      <ClassStats class="org.h2.store.FileStoreInputStream" sourceFile="FileStoreInputStream.java" interface="false" size="101" bugs="0"/>
+      <ClassStats class="org.h2.store.FileStoreOutputStream" sourceFile="FileStoreOutputStream.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.h2.store.InDoubtTransaction" sourceFile="InDoubtTransaction.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.h2.store.LimitInputStream" sourceFile="LimitInputStream.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.h2.store.LobStorageBackend" sourceFile="LobStorageBackend.java" interface="false" size="364" bugs="0"/>
+      <ClassStats class="org.h2.store.LobStorageBackend$LobInputStream" sourceFile="LobStorageBackend.java" interface="false" size="110" bugs="0"/>
+      <ClassStats class="org.h2.store.LobStorageFrontend" sourceFile="LobStorageFrontend.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.h2.store.LobStorageInterface" sourceFile="LobStorageInterface.java" interface="true" size="10" bugs="0"/>
+      <ClassStats class="org.h2.store.LobStorageMap" sourceFile="LobStorageMap.java" interface="false" size="197" bugs="0"/>
+      <ClassStats class="org.h2.store.LobStorageRemoteInputStream" sourceFile="LobStorageRemoteInputStream.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.h2.store.Page" sourceFile="Page.java" interface="false" size="78" bugs="0"/>
+      <ClassStats class="org.h2.store.PageFreeList" sourceFile="PageFreeList.java" interface="false" size="96" bugs="0"/>
+      <ClassStats class="org.h2.store.PageInputStream" sourceFile="PageInputStream.java" interface="false" size="105" bugs="0"/>
+      <ClassStats class="org.h2.store.PageLog" sourceFile="PageLog.java" interface="false" size="460" bugs="0"/>
+      <ClassStats class="org.h2.store.PageOutputStream" sourceFile="PageOutputStream.java" interface="false" size="124" bugs="0"/>
+      <ClassStats class="org.h2.store.PageStore" sourceFile="PageStore.java" interface="false" size="1170" bugs="0"/>
+      <ClassStats class="org.h2.store.PageStoreInDoubtTransaction" sourceFile="PageStoreInDoubtTransaction.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.h2.store.PageStreamData" sourceFile="PageStreamData.java" interface="false" size="66" bugs="0"/>
+      <ClassStats class="org.h2.store.PageStreamTrunk" sourceFile="PageStreamTrunk.java" interface="false" size="93" bugs="0"/>
+      <ClassStats class="org.h2.store.PageStreamTrunk$Iterator" sourceFile="PageStreamTrunk.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.h2.store.RecoverTester" sourceFile="RecoverTester.java" interface="false" size="120" bugs="0"/>
+      <ClassStats class="org.h2.store.SessionState" sourceFile="SessionState.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.h2.store.WriterThread" sourceFile="WriterThread.java" interface="false" size="59" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.store.fs" total_bugs="0" total_types="42" total_size="2622">
+      <ClassStats class="org.h2.store.fs.FileBase" sourceFile="FileBase.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileChannelInputStream" sourceFile="FileChannelInputStream.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileChannelOutputStream" sourceFile="FileChannelOutputStream.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileDisk" sourceFile="FilePathDisk.java" interface="false" size="55" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileMem" sourceFile="FilePathMem.java" interface="false" size="83" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileMem$1" sourceFile="FilePathMem.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileMemData" sourceFile="FilePathMem.java" interface="false" size="162" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileMemData$Cache" sourceFile="FilePathMem.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileMemData$CompressItem" sourceFile="FilePathMem.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileNio" sourceFile="FilePathNio.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileNioMapped" sourceFile="FilePathNioMapped.java" interface="false" size="136" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileNioMem" sourceFile="FilePathNioMem.java" interface="false" size="71" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileNioMem$1" sourceFile="FilePathNioMem.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileNioMemData" sourceFile="FilePathNioMem.java" interface="false" size="168" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileNioMemData$1" sourceFile="FilePathNioMem.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileNioMemData$2" sourceFile="FilePathNioMem.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileNioMemData$CompressItem" sourceFile="FilePathNioMem.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileNioMemData$CompressLaterCache" sourceFile="FilePathNioMem.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePath" sourceFile="FilePath.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathDisk" sourceFile="FilePathDisk.java" interface="false" size="200" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathEncrypt" sourceFile="FilePathEncrypt.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathEncrypt$FileEncrypt" sourceFile="FilePathEncrypt.java" interface="false" size="175" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathEncrypt$XTS" sourceFile="FilePathEncrypt.java" interface="false" size="67" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathMem" sourceFile="FilePathMem.java" interface="false" size="120" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathMemLZF" sourceFile="FilePathMem.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathNio" sourceFile="FilePathNio.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathNioMapped" sourceFile="FilePathNioMapped.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathNioMem" sourceFile="FilePathNioMem.java" interface="false" size="111" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathNioMemLZF" sourceFile="FilePathNioMem.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathRec" sourceFile="FilePathRec.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathRetryOnInterrupt" sourceFile="FilePathRetryOnInterrupt.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathSplit" sourceFile="FilePathSplit.java" interface="false" size="119" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathWrapper" sourceFile="FilePathWrapper.java" interface="false" size="66" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FilePathZip" sourceFile="FilePathZip.java" interface="false" size="131" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileRec" sourceFile="FilePathRec.java" interface="false" size="58" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileRetryOnInterrupt" sourceFile="FilePathRetryOnInterrupt.java" interface="false" size="106" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileRetryOnInterrupt$FileLockRetry" sourceFile="FilePathRetryOnInterrupt.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileSplit" sourceFile="FilePathSplit.java" interface="false" size="137" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileUtils" sourceFile="FileUtils.java" interface="false" size="90" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileZip" sourceFile="FilePathZip.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.FileZip$1" sourceFile="FilePathZip.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.store.fs.Recorder" sourceFile="Recorder.java" interface="true" size="9" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.table" total_bugs="3" total_types="41" total_size="4898" priority_2="3">
+      <ClassStats class="org.h2.table.Column" sourceFile="Column.java" interface="false" size="429" bugs="0"/>
+      <ClassStats class="org.h2.table.ColumnResolver" sourceFile="ColumnResolver.java" interface="true" size="10" bugs="0"/>
+      <ClassStats class="org.h2.table.FunctionTable" sourceFile="FunctionTable.java" interface="false" size="115" bugs="0"/>
+      <ClassStats class="org.h2.table.IndexColumn" sourceFile="IndexColumn.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.h2.table.IndexHints" sourceFile="IndexHints.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.h2.table.JoinBatch" sourceFile="JoinBatch.java" interface="false" size="183" bugs="0"/>
+      <ClassStats class="org.h2.table.JoinBatch$1" sourceFile="JoinBatch.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.h2.table.JoinBatch$FakeLookupBatch" sourceFile="JoinBatch.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.h2.table.JoinBatch$JoinFilter" sourceFile="JoinBatch.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.h2.table.JoinBatch$JoinRow" sourceFile="JoinBatch.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.h2.table.JoinBatch$QueryRunner" sourceFile="JoinBatch.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.h2.table.JoinBatch$QueryRunnerBase" sourceFile="JoinBatch.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.h2.table.JoinBatch$QueryRunnerUnion" sourceFile="JoinBatch.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.h2.table.JoinBatch$SingletonList" sourceFile="JoinBatch.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.h2.table.JoinBatch$ViewIndexLookupBatch" sourceFile="JoinBatch.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.h2.table.JoinBatch$ViewIndexLookupBatchBase" sourceFile="JoinBatch.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.h2.table.JoinBatch$ViewIndexLookupBatchUnion" sourceFile="JoinBatch.java" interface="false" size="59" bugs="0"/>
+      <ClassStats class="org.h2.table.LinkSchema" sourceFile="LinkSchema.java" interface="false" size="52" bugs="1" priority_2="1"/>
+      <ClassStats class="org.h2.table.MetaTable" sourceFile="MetaTable.java" interface="false" size="887" bugs="0"/>
+      <ClassStats class="org.h2.table.Plan" sourceFile="Plan.java" interface="false" size="73" bugs="0"/>
+      <ClassStats class="org.h2.table.Plan$1" sourceFile="Plan.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.h2.table.PlanItem" sourceFile="PlanItem.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.h2.table.RangeTable" sourceFile="RangeTable.java" interface="false" size="92" bugs="0"/>
+      <ClassStats class="org.h2.table.RegularTable" sourceFile="RegularTable.java" interface="false" size="476" bugs="0"/>
+      <ClassStats class="org.h2.table.RegularTable$1" sourceFile="RegularTable.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.table.SingleColumnResolver" sourceFile="SingleColumnResolver.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.h2.table.SubQueryInfo" sourceFile="SubQueryInfo.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.h2.table.Table" sourceFile="Table.java" interface="false" size="485" bugs="0"/>
+      <ClassStats class="org.h2.table.TableBase" sourceFile="TableBase.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.h2.table.TableFilter" sourceFile="TableFilter.java" interface="false" size="572" bugs="0"/>
+      <ClassStats class="org.h2.table.TableFilter$1" sourceFile="TableFilter.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.table.TableFilter$2" sourceFile="TableFilter.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.table.TableFilter$3" sourceFile="TableFilter.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.table.TableFilter$4" sourceFile="TableFilter.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.table.TableFilter$5" sourceFile="TableFilter.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.table.TableFilter$TableFilterVisitor" sourceFile="TableFilter.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.h2.table.TableLink" sourceFile="TableLink.java" interface="false" size="417" bugs="2" priority_2="2"/>
+      <ClassStats class="org.h2.table.TableLinkConnection" sourceFile="TableLinkConnection.java" interface="false" size="61" bugs="0"/>
+      <ClassStats class="org.h2.table.TableType" sourceFile="TableType.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.h2.table.TableView" sourceFile="TableView.java" interface="false" size="337" bugs="0"/>
+      <ClassStats class="org.h2.table.TableView$CacheKey" sourceFile="TableView.java" interface="false" size="26" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.tools" total_bugs="15" total_types="26" total_size="4609" priority_2="10" priority_1="5">
+      <ClassStats class="org.h2.tools.Backup" sourceFile="Backup.java" interface="false" size="88" bugs="0"/>
+      <ClassStats class="org.h2.tools.ChangeFileEncryption" sourceFile="ChangeFileEncryption.java" interface="false" size="165" bugs="0"/>
+      <ClassStats class="org.h2.tools.CompressTool" sourceFile="CompressTool.java" interface="false" size="173" bugs="0"/>
+      <ClassStats class="org.h2.tools.Console" sourceFile="Console.java" interface="false" size="359" bugs="0"/>
+      <ClassStats class="org.h2.tools.ConvertTraceFile" sourceFile="ConvertTraceFile.java" interface="false" size="131" bugs="0"/>
+      <ClassStats class="org.h2.tools.ConvertTraceFile$Stat" sourceFile="ConvertTraceFile.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.h2.tools.CreateCluster" sourceFile="CreateCluster.java" interface="false" size="81" bugs="2" priority_1="2"/>
+      <ClassStats class="org.h2.tools.Csv" sourceFile="Csv.java" interface="false" size="434" bugs="1" priority_2="1"/>
+      <ClassStats class="org.h2.tools.DeleteDbFiles" sourceFile="DeleteDbFiles.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.h2.tools.MultiDimension" sourceFile="MultiDimension.java" interface="false" size="166" bugs="0"/>
+      <ClassStats class="org.h2.tools.Recover" sourceFile="Recover.java" interface="false" size="972" bugs="0"/>
+      <ClassStats class="org.h2.tools.Recover$1" sourceFile="Recover.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.h2.tools.Recover$2" sourceFile="Recover.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.tools.Recover$PageInputStream" sourceFile="Recover.java" interface="false" size="112" bugs="0"/>
+      <ClassStats class="org.h2.tools.Recover$Stats" sourceFile="Recover.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.h2.tools.Restore" sourceFile="Restore.java" interface="false" size="102" bugs="0"/>
+      <ClassStats class="org.h2.tools.RunScript" sourceFile="RunScript.java" interface="false" size="166" bugs="4" priority_2="3" priority_1="1"/>
+      <ClassStats class="org.h2.tools.Script" sourceFile="Script.java" interface="false" size="66" bugs="1" priority_1="1"/>
+      <ClassStats class="org.h2.tools.Server" sourceFile="Server.java" interface="false" size="349" bugs="6" priority_2="6"/>
+      <ClassStats class="org.h2.tools.Shell" sourceFile="Shell.java" interface="false" size="387" bugs="1" priority_1="1"/>
+      <ClassStats class="org.h2.tools.SimpleResultSet" sourceFile="SimpleResultSet.java" interface="false" size="659" bugs="0"/>
+      <ClassStats class="org.h2.tools.SimpleResultSet$Column" sourceFile="SimpleResultSet.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.tools.SimpleResultSet$SimpleArray" sourceFile="SimpleResultSet.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.h2.tools.SimpleRowSource" sourceFile="SimpleRowSource.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.h2.tools.TriggerAdapter" sourceFile="TriggerAdapter.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.h2.tools.TriggerAdapter$TriggerRowSource" sourceFile="TriggerAdapter.java" interface="false" size="13" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.upgrade" total_bugs="4" total_types="1" total_size="96" priority_2="4">
+      <ClassStats class="org.h2.upgrade.DbUpgrade" sourceFile="DbUpgrade.java" interface="false" size="96" bugs="4" priority_2="4"/>
+    </PackageStats>
+    <PackageStats package="org.h2.util" total_bugs="1" total_types="74" total_size="5573" priority_2="1">
+      <ClassStats class="org.h2.util.AbbaDetector" sourceFile="AbbaDetector.java" interface="false" size="61" bugs="0"/>
+      <ClassStats class="org.h2.util.AbbaDetector$1" sourceFile="AbbaDetector.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.util.AbbaDetector$2" sourceFile="AbbaDetector.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.h2.util.AbbaLockingDetector" sourceFile="AbbaLockingDetector.java" interface="false" size="137" bugs="0"/>
+      <ClassStats class="org.h2.util.AbbaLockingDetector$1" sourceFile="AbbaLockingDetector.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.util.AbbaLockingDetector$2" sourceFile="AbbaLockingDetector.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.h2.util.AutoCloseInputStream" sourceFile="AutoCloseInputStream.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.h2.util.BitField" sourceFile="BitField.java" interface="false" size="89" bugs="0"/>
+      <ClassStats class="org.h2.util.Cache" sourceFile="Cache.java" interface="true" size="11" bugs="0"/>
+      <ClassStats class="org.h2.util.CacheHead" sourceFile="CacheHead.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.util.CacheLRU" sourceFile="CacheLRU.java" interface="false" size="194" bugs="0"/>
+      <ClassStats class="org.h2.util.CacheObject" sourceFile="CacheObject.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.h2.util.CacheSecondLevel" sourceFile="CacheSecondLevel.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.h2.util.CacheTQ" sourceFile="CacheTQ.java" interface="false" size="74" bugs="0"/>
+      <ClassStats class="org.h2.util.CacheWriter" sourceFile="CacheWriter.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.h2.util.CloseWatcher" sourceFile="CloseWatcher.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.h2.util.DateTimeUtils" sourceFile="DateTimeUtils.java" interface="false" size="407" bugs="0"/>
+      <ClassStats class="org.h2.util.DbDriverActivator" sourceFile="DbDriverActivator.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.h2.util.DebuggingThreadLocal" sourceFile="DebuggingThreadLocal.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.h2.util.DoneFuture" sourceFile="DoneFuture.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.h2.util.HashBase" sourceFile="HashBase.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.h2.util.IOUtils" sourceFile="IOUtils.java" interface="false" size="172" bugs="0"/>
+      <ClassStats class="org.h2.util.IntArray" sourceFile="IntArray.java" interface="false" size="76" bugs="0"/>
+      <ClassStats class="org.h2.util.IntIntHashMap" sourceFile="IntIntHashMap.java" interface="false" size="85" bugs="0"/>
+      <ClassStats class="org.h2.util.JdbcUtils" sourceFile="JdbcUtils.java" interface="false" size="167" bugs="0"/>
+      <ClassStats class="org.h2.util.JdbcUtils$1" sourceFile="JdbcUtils.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.util.LazyFuture" sourceFile="LazyFuture.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.h2.util.LocalDateTimeUtils" sourceFile="LocalDateTimeUtils.java" interface="false" size="243" bugs="0"/>
+      <ClassStats class="org.h2.util.MathUtils" sourceFile="MathUtils.java" interface="false" size="121" bugs="0"/>
+      <ClassStats class="org.h2.util.MathUtils$1" sourceFile="MathUtils.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.h2.util.NetUtils" sourceFile="NetUtils.java" interface="false" size="118" bugs="0"/>
+      <ClassStats class="org.h2.util.New" sourceFile="New.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.h2.util.OsgiDataSourceFactory" sourceFile="OsgiDataSourceFactory.java" interface="false" size="107" bugs="0"/>
+      <ClassStats class="org.h2.util.Permutations" sourceFile="Permutations.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.h2.util.Profiler" sourceFile="Profiler.java" interface="false" size="300" bugs="0"/>
+      <ClassStats class="org.h2.util.Profiler$1" sourceFile="Profiler.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.h2.util.ScriptReader" sourceFile="ScriptReader.java" interface="false" size="149" bugs="0"/>
+      <ClassStats class="org.h2.util.SmallLRUCache" sourceFile="SmallLRUCache.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.h2.util.SmallMap" sourceFile="SmallMap.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.h2.util.SoftHashMap" sourceFile="SoftHashMap.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.h2.util.SoftHashMap$SoftValue" sourceFile="SoftHashMap.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.h2.util.SortedProperties" sourceFile="SortedProperties.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.h2.util.SourceCompiler" sourceFile="SourceCompiler.java" interface="false" size="164" bugs="1" priority_2="1"/>
+      <ClassStats class="org.h2.util.SourceCompiler$1" sourceFile="SourceCompiler.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.h2.util.SourceCompiler$2" sourceFile="SourceCompiler.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.util.SourceCompiler$ClassFileManager" sourceFile="SourceCompiler.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.h2.util.SourceCompiler$ClassFileManager$1" sourceFile="SourceCompiler.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.util.SourceCompiler$GroovyCompiler" sourceFile="SourceCompiler.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.h2.util.SourceCompiler$JavaClassObject" sourceFile="SourceCompiler.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.h2.util.SourceCompiler$StringJavaFileObject" sourceFile="SourceCompiler.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.h2.util.StatementBuilder" sourceFile="StatementBuilder.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.h2.util.StringUtils" sourceFile="StringUtils.java" interface="false" size="453" bugs="0"/>
+      <ClassStats class="org.h2.util.SynchronizedVerifier" sourceFile="SynchronizedVerifier.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.h2.util.Task" sourceFile="Task.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.h2.util.TempFileDeleter" sourceFile="TempFileDeleter.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.h2.util.ThreadDeadlockDetector" sourceFile="ThreadDeadlockDetector.java" interface="false" size="94" bugs="0"/>
+      <ClassStats class="org.h2.util.ThreadDeadlockDetector$1" sourceFile="ThreadDeadlockDetector.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.h2.util.ToChar" sourceFile="ToChar.java" interface="false" size="424" bugs="0"/>
+      <ClassStats class="org.h2.util.ToChar$1" sourceFile="ToChar.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.h2.util.ToChar$Capitalization" sourceFile="ToChar.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.h2.util.ToDateParser" sourceFile="ToDateParser.java" interface="false" size="110" bugs="0"/>
+      <ClassStats class="org.h2.util.ToDateParser$ConfigParam" sourceFile="ToDateParser.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.h2.util.ToDateTokenizer" sourceFile="ToDateTokenizer.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.h2.util.ToDateTokenizer$1" sourceFile="ToDateTokenizer.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.h2.util.ToDateTokenizer$DayParslet" sourceFile="ToDateTokenizer.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.h2.util.ToDateTokenizer$FormatTokenEnum" sourceFile="ToDateTokenizer.java" interface="false" size="136" bugs="0"/>
+      <ClassStats class="org.h2.util.ToDateTokenizer$MonthParslet" sourceFile="ToDateTokenizer.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.h2.util.ToDateTokenizer$TimeParslet" sourceFile="ToDateTokenizer.java" interface="false" size="78" bugs="0"/>
+      <ClassStats class="org.h2.util.ToDateTokenizer$ToDateParslet" sourceFile="ToDateTokenizer.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.h2.util.ToDateTokenizer$YearParslet" sourceFile="ToDateTokenizer.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="org.h2.util.Tool" sourceFile="Tool.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.h2.util.Utils" sourceFile="Utils.java" interface="false" size="324" bugs="0"/>
+      <ClassStats class="org.h2.util.Utils$ClassFactory" sourceFile="Utils.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.h2.util.ValueHashMap" sourceFile="ValueHashMap.java" interface="false" size="94" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.h2.value" total_bugs="0" total_types="41" total_size="4459">
+      <ClassStats class="org.h2.value.CaseInsensitiveConcurrentMap" sourceFile="CaseInsensitiveConcurrentMap.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.h2.value.CaseInsensitiveMap" sourceFile="CaseInsensitiveMap.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.h2.value.CompareMode" sourceFile="CompareMode.java" interface="false" size="111" bugs="0"/>
+      <ClassStats class="org.h2.value.CompareModeDefault" sourceFile="CompareModeDefault.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.h2.value.CompareModeIcu4J" sourceFile="CompareModeIcu4J.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.h2.value.DataType" sourceFile="DataType.java" interface="false" size="628" bugs="0"/>
+      <ClassStats class="org.h2.value.NullableKeyConcurrentMap" sourceFile="NullableKeyConcurrentMap.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.h2.value.Transfer" sourceFile="Transfer.java" interface="false" size="398" bugs="0"/>
+      <ClassStats class="org.h2.value.Value" sourceFile="Value.java" interface="false" size="462" bugs="0"/>
+      <ClassStats class="org.h2.value.Value$ValueBlob" sourceFile="Value.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.h2.value.Value$ValueClob" sourceFile="Value.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueArray" sourceFile="ValueArray.java" interface="false" size="113" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueBoolean" sourceFile="ValueBoolean.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueByte" sourceFile="ValueByte.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueBytes" sourceFile="ValueBytes.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueDate" sourceFile="ValueDate.java" interface="false" size="59" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueDecimal" sourceFile="ValueDecimal.java" interface="false" size="121" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueDouble" sourceFile="ValueDouble.java" interface="false" size="85" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueEnum" sourceFile="ValueEnum.java" interface="false" size="78" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueEnum$1" sourceFile="ValueEnum.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueEnum$Validation" sourceFile="ValueEnum.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueEnumBase" sourceFile="ValueEnumBase.java" interface="false" size="58" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueFloat" sourceFile="ValueFloat.java" interface="false" size="79" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueGeometry" sourceFile="ValueGeometry.java" interface="false" size="91" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueGeometry$ZVisitor" sourceFile="ValueGeometry.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueInt" sourceFile="ValueInt.java" interface="false" size="79" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueJavaObject" sourceFile="ValueJavaObject.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueJavaObject$NotSerialized" sourceFile="ValueJavaObject.java" interface="false" size="67" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueLob" sourceFile="ValueLob.java" interface="false" size="419" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueLobDb" sourceFile="ValueLobDb.java" interface="false" size="347" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueLong" sourceFile="ValueLong.java" interface="false" size="99" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueNull" sourceFile="ValueNull.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueResultSet" sourceFile="ValueResultSet.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueShort" sourceFile="ValueShort.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueString" sourceFile="ValueString.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueStringFixed" sourceFile="ValueStringFixed.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueStringIgnoreCase" sourceFile="ValueStringIgnoreCase.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueTime" sourceFile="ValueTime.java" interface="false" size="89" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueTimestamp" sourceFile="ValueTimestamp.java" interface="false" size="155" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueTimestampTimeZone" sourceFile="ValueTimestampTimeZone.java" interface="false" size="158" bugs="0"/>
+      <ClassStats class="org.h2.value.ValueUuid" sourceFile="ValueUuid.java" interface="false" size="94" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="1946" invocations="10269" avgMicrosecondsPerInvocation="189" maxMicrosecondsPerInvocation="17999" standardDeviationMircosecondsPerInvocation="636"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.taintanalysis.TaintDataflowEngine" totalMilliseconds="1924" invocations="9649" avgMicrosecondsPerInvocation="199" maxMicrosecondsPerInvocation="68148" standardDeviationMircosecondsPerInvocation="1141"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="1890" invocations="9474" avgMicrosecondsPerInvocation="199" maxMicrosecondsPerInvocation="32072" standardDeviationMircosecondsPerInvocation="761"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="1865" invocations="9650" avgMicrosecondsPerInvocation="193" maxMicrosecondsPerInvocation="35633" standardDeviationMircosecondsPerInvocation="694"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="1695" invocations="9530" avgMicrosecondsPerInvocation="177" maxMicrosecondsPerInvocation="52767" standardDeviationMircosecondsPerInvocation="819"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="1507" invocations="10146" avgMicrosecondsPerInvocation="148" maxMicrosecondsPerInvocation="13127" standardDeviationMircosecondsPerInvocation="444"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="1314" invocations="7337" avgMicrosecondsPerInvocation="179" maxMicrosecondsPerInvocation="334321" standardDeviationMircosecondsPerInvocation="3917"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="872" invocations="10104" avgMicrosecondsPerInvocation="86" maxMicrosecondsPerInvocation="9552" standardDeviationMircosecondsPerInvocation="201"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="810" invocations="12125" avgMicrosecondsPerInvocation="66" maxMicrosecondsPerInvocation="5980" standardDeviationMircosecondsPerInvocation="182"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="603" invocations="2692" avgMicrosecondsPerInvocation="224" maxMicrosecondsPerInvocation="13993" standardDeviationMircosecondsPerInvocation="628"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="571" invocations="1299" avgMicrosecondsPerInvocation="439" maxMicrosecondsPerInvocation="33796" standardDeviationMircosecondsPerInvocation="1305"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="548" invocations="1299" avgMicrosecondsPerInvocation="422" maxMicrosecondsPerInvocation="19678" standardDeviationMircosecondsPerInvocation="932"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="488" invocations="9649" avgMicrosecondsPerInvocation="50" maxMicrosecondsPerInvocation="5411" standardDeviationMircosecondsPerInvocation="170"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="382" invocations="694" avgMicrosecondsPerInvocation="551" maxMicrosecondsPerInvocation="44244" standardDeviationMircosecondsPerInvocation="2246"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.xml.StdXmlTransformDetector" totalMilliseconds="367" invocations="694" avgMicrosecondsPerInvocation="529" maxMicrosecondsPerInvocation="54886" standardDeviationMircosecondsPerInvocation="2297"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.file.PathTraversalDetector" totalMilliseconds="362" invocations="694" avgMicrosecondsPerInvocation="522" maxMicrosecondsPerInvocation="15007" standardDeviationMircosecondsPerInvocation="1083"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="355" invocations="694" avgMicrosecondsPerInvocation="511" maxMicrosecondsPerInvocation="16453" standardDeviationMircosecondsPerInvocation="1113"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="343" invocations="694" avgMicrosecondsPerInvocation="495" maxMicrosecondsPerInvocation="13310" standardDeviationMircosecondsPerInvocation="1056"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.CrlfLogInjectionDetector" totalMilliseconds="337" invocations="694" avgMicrosecondsPerInvocation="486" maxMicrosecondsPerInvocation="40110" standardDeviationMircosecondsPerInvocation="1805"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.custom.CustomInjectionDetector" totalMilliseconds="332" invocations="694" avgMicrosecondsPerInvocation="479" maxMicrosecondsPerInvocation="32598" standardDeviationMircosecondsPerInvocation="1578"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.obl.ObligationAnalysis" totalMilliseconds="325" invocations="3496" avgMicrosecondsPerInvocation="93" maxMicrosecondsPerInvocation="9606" standardDeviationMircosecondsPerInvocation="272"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.command.CommandInjectionDetector" totalMilliseconds="322" invocations="694" avgMicrosecondsPerInvocation="464" maxMicrosecondsPerInvocation="14872" standardDeviationMircosecondsPerInvocation="1066"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.xpath.XPathInjectionDetector" totalMilliseconds="318" invocations="694" avgMicrosecondsPerInvocation="458" maxMicrosecondsPerInvocation="14820" standardDeviationMircosecondsPerInvocation="1003"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.script.ScriptInjectionDetector" totalMilliseconds="309" invocations="694" avgMicrosecondsPerInvocation="446" maxMicrosecondsPerInvocation="14722" standardDeviationMircosecondsPerInvocation="1004"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.TrustBoundaryViolationDetector" totalMilliseconds="308" invocations="694" avgMicrosecondsPerInvocation="444" maxMicrosecondsPerInvocation="14236" standardDeviationMircosecondsPerInvocation="989"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.sql.SqlInjectionDetector" totalMilliseconds="304" invocations="694" avgMicrosecondsPerInvocation="438" maxMicrosecondsPerInvocation="14648" standardDeviationMircosecondsPerInvocation="1006"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="298" invocations="694" avgMicrosecondsPerInvocation="430" maxMicrosecondsPerInvocation="9914" standardDeviationMircosecondsPerInvocation="741"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.ldap.LdapInjectionDetector" totalMilliseconds="295" invocations="694" avgMicrosecondsPerInvocation="425" maxMicrosecondsPerInvocation="14387" standardDeviationMircosecondsPerInvocation="986"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.HttpResponseSplittingDetector" totalMilliseconds="295" invocations="694" avgMicrosecondsPerInvocation="425" maxMicrosecondsPerInvocation="14485" standardDeviationMircosecondsPerInvocation="991"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.ExternalConfigurationControlDetector" totalMilliseconds="293" invocations="694" avgMicrosecondsPerInvocation="423" maxMicrosecondsPerInvocation="14137" standardDeviationMircosecondsPerInvocation="976"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.redirect.UnvalidatedRedirectDetector" totalMilliseconds="286" invocations="694" avgMicrosecondsPerInvocation="412" maxMicrosecondsPerInvocation="12299" standardDeviationMircosecondsPerInvocation="935"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="271" invocations="694" avgMicrosecondsPerInvocation="391" maxMicrosecondsPerInvocation="14417" standardDeviationMircosecondsPerInvocation="800"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref$CheckCallSitesAndReturnInstructions" totalMilliseconds="269" invocations="9474" avgMicrosecondsPerInvocation="28" maxMicrosecondsPerInvocation="1294" standardDeviationMircosecondsPerInvocation="62"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="250" invocations="310284" avgMicrosecondsPerInvocation="0" maxMicrosecondsPerInvocation="1453" standardDeviationMircosecondsPerInvocation="4"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RuntimeExceptionCapture" totalMilliseconds="244" invocations="694" avgMicrosecondsPerInvocation="352" maxMicrosecondsPerInvocation="9394" standardDeviationMircosecondsPerInvocation="821"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.password.ConstantPasswordDetector" totalMilliseconds="243" invocations="694" avgMicrosecondsPerInvocation="350" maxMicrosecondsPerInvocation="9828" standardDeviationMircosecondsPerInvocation="716"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="241" invocations="9456" avgMicrosecondsPerInvocation="25" maxMicrosecondsPerInvocation="2537" standardDeviationMircosecondsPerInvocation="81"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.MethodReturnCheck" totalMilliseconds="238" invocations="694" avgMicrosecondsPerInvocation="343" maxMicrosecondsPerInvocation="45990" standardDeviationMircosecondsPerInvocation="1824"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.StreamResourceTracker" totalMilliseconds="220" invocations="668" avgMicrosecondsPerInvocation="329" maxMicrosecondsPerInvocation="6286" standardDeviationMircosecondsPerInvocation="666"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="215" invocations="10104" avgMicrosecondsPerInvocation="21" maxMicrosecondsPerInvocation="31696" standardDeviationMircosecondsPerInvocation="318"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DefaultEncodingDetector" totalMilliseconds="209" invocations="694" avgMicrosecondsPerInvocation="302" maxMicrosecondsPerInvocation="26647" standardDeviationMircosecondsPerInvocation="1261"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindPuzzlers" totalMilliseconds="205" invocations="694" avgMicrosecondsPerInvocation="296" maxMicrosecondsPerInvocation="8049" standardDeviationMircosecondsPerInvocation="615"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="195" invocations="694" avgMicrosecondsPerInvocation="281" maxMicrosecondsPerInvocation="6954" standardDeviationMircosecondsPerInvocation="671"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteRecursiveLoop" totalMilliseconds="194" invocations="694" avgMicrosecondsPerInvocation="280" maxMicrosecondsPerInvocation="47241" standardDeviationMircosecondsPerInvocation="1853"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindSelfComparison" totalMilliseconds="192" invocations="694" avgMicrosecondsPerInvocation="277" maxMicrosecondsPerInvocation="7204" standardDeviationMircosecondsPerInvocation="590"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RepeatedConditionals" totalMilliseconds="182" invocations="694" avgMicrosecondsPerInvocation="262" maxMicrosecondsPerInvocation="7761" standardDeviationMircosecondsPerInvocation="553"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SynchronizingOnContentsOfFieldToProtectField" totalMilliseconds="181" invocations="694" avgMicrosecondsPerInvocation="261" maxMicrosecondsPerInvocation="37284" standardDeviationMircosecondsPerInvocation="1476"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SwitchFallthrough" totalMilliseconds="177" invocations="694" avgMicrosecondsPerInvocation="255" maxMicrosecondsPerInvocation="6834" standardDeviationMircosecondsPerInvocation="522"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.PredictableRandomDetector" totalMilliseconds="175" invocations="694" avgMicrosecondsPerInvocation="253" maxMicrosecondsPerInvocation="6825" standardDeviationMircosecondsPerInvocation="497"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.WeakFilenameUtilsMethodDetector" totalMilliseconds="175" invocations="694" avgMicrosecondsPerInvocation="252" maxMicrosecondsPerInvocation="6640" standardDeviationMircosecondsPerInvocation="478"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindHEmismatch" totalMilliseconds="173" invocations="694" avgMicrosecondsPerInvocation="250" maxMicrosecondsPerInvocation="6615" standardDeviationMircosecondsPerInvocation="512"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteLoop" totalMilliseconds="169" invocations="694" avgMicrosecondsPerInvocation="244" maxMicrosecondsPerInvocation="7311" standardDeviationMircosecondsPerInvocation="533"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="167" invocations="694" avgMicrosecondsPerInvocation="241" maxMicrosecondsPerInvocation="5828" standardDeviationMircosecondsPerInvocation="456"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDoubleCheck" totalMilliseconds="166" invocations="694" avgMicrosecondsPerInvocation="240" maxMicrosecondsPerInvocation="6724" standardDeviationMircosecondsPerInvocation="515"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CrossSiteScripting" totalMilliseconds="166" invocations="694" avgMicrosecondsPerInvocation="239" maxMicrosecondsPerInvocation="6894" standardDeviationMircosecondsPerInvocation="509"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="165" invocations="10104" avgMicrosecondsPerInvocation="16" maxMicrosecondsPerInvocation="2894" standardDeviationMircosecondsPerInvocation="64"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="161" invocations="694" avgMicrosecondsPerInvocation="231" maxMicrosecondsPerInvocation="11061" standardDeviationMircosecondsPerInvocation="744"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FormatStringChecker" totalMilliseconds="160" invocations="694" avgMicrosecondsPerInvocation="231" maxMicrosecondsPerInvocation="6304" standardDeviationMircosecondsPerInvocation="479"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.crypto.HazelcastSymmetricEncryptionDetector" totalMilliseconds="160" invocations="694" avgMicrosecondsPerInvocation="230" maxMicrosecondsPerInvocation="6209" standardDeviationMircosecondsPerInvocation="452"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.android.ExternalFileAccessDetector" totalMilliseconds="159" invocations="694" avgMicrosecondsPerInvocation="229" maxMicrosecondsPerInvocation="6702" standardDeviationMircosecondsPerInvocation="465"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BadSyntaxForRegularExpression" totalMilliseconds="158" invocations="694" avgMicrosecondsPerInvocation="228" maxMicrosecondsPerInvocation="10312" standardDeviationMircosecondsPerInvocation="564"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="157" invocations="1299" avgMicrosecondsPerInvocation="121" maxMicrosecondsPerInvocation="3888" standardDeviationMircosecondsPerInvocation="248"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.jsp.JspIncludeDetector" totalMilliseconds="156" invocations="694" avgMicrosecondsPerInvocation="225" maxMicrosecondsPerInvocation="6566" standardDeviationMircosecondsPerInvocation="479"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

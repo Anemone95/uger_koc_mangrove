@@ -1,0 +1,23 @@
+[64, 65, 66, 67, 68, 69, 70, 75, 61, 62, 63]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest04063.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,26:CD,31:CD,35:CD,39:CD,44:CD,49:CD,54:CD,58:CD,61:CD,70:CD,94:CD,95:JM,16:JM,21
+7 :: CALL :: call :: Ljava/util/Map :: v6 = p1 $request .getParameterMap()::JM,16:JM,21:JM,11:JM,15
+11 :: CALL :: call :: Z :: v9 = v6.isEmpty()::JM,16:JM,21:JM,11:JM,15
+15 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 42::CF,94:CD,16:CD,21:JM,11:JM,15
+16 :: CALL :: call :: Ljava/lang/Object :: v13 = v6.get(#(foo))::JM,16:JM,21:JM,11:JM,15
+21 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::
+22 :: EXPR :: reference :: Ljava/lang/Object :: v15 = v14[#(0)]::DD,94
+26 :: CALL :: call :: C :: v20 = #(ABC).charAt(#(1))::JM,31
+31 :: PRED :: IF :: null :: switch v20::CD,95
+35 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v24 = new java.lang.StringBuilder::JM,70
+39 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v24.append(#(SELECT * from USERS w...))::JM,70
+44 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v28.append(v23)::JM,70
+49 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v30.append(#('))::JM,70
+54 :: CALL :: call :: Ljava/lang/String :: v35 = v33.toString()::JM,70
+58 :: CALL :: call :: Ljava/sql/Connection :: v37 = getSqlConnection()::JM,70
+61 :: NORM :: declaration :: [Ljava/lang/String :: v39 = new java.lang.String[]::JM,70
+62 :: EXPR :: modify :: Ljava/lang/Object :: v39[#(0)] = #(Column1)::
+66 :: EXPR :: modify :: Ljava/lang/Object :: v39[#(1)] = #(Column2)::
+70 :: CALL :: call :: Ljava/sql/PreparedStatement :: v43 = v37.prepareStatement(v35, v39)::JM,70
+94 :: EXPR :: assign :: null :: PHI v16 = #(), v15::DD,95:JM,31
+95 :: EXPR :: assign :: null :: PHI v23 = v16, #(bob), v16, #(bob's your uncle)::CF,35:JM,70

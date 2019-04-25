@@ -1,0 +1,30 @@
+[20069]
+1 :: ENTR :: entry :: null :: org.h2.test.jaqu.SamplesTest.test()::CD,5:CD,105
+5 :: CALL :: call :: Lorg/h2/jaqu/Db :: v6 = open(#(jdbc:h2:mem:), #(sa), #(sa))::JM,11:CL,13720
+11 :: EXPR :: modify :: Lorg/h2/jaqu/Db :: p0 $null .db = v6::
+20057 :: ENTR :: entry :: null :: org.h2.jaqu.Db.executeUpdate(java.lang.String)::CD,20065:CD,20069
+20062 :: EXPR :: reference :: Ljava/sql/Connection :: v4 = p0 $null .conn::JM,20065:JM,20069
+18014 :: CALL :: call :: Ljava/util/HashMap :: v6 = hashMap()::JM,18017:CL,17557
+20065 :: CALL :: call :: Ljava/sql/Statement :: v6 = v4.createStatement()::JM,20065:JM,20069
+18017 :: EXPR :: modify :: Ljava/util/Map :: p0 $null .classMap = v6::
+18020 :: NORM :: declaration :: Lorg/h2/jaqu/DbUpgrader$DefaultDbUpgrader :: v7 = new org.h2.jaqu.DbUpgrader$DefaultDbUpgrader::DD,18024
+20069 :: CALL :: call :: I :: v8 = v6.executeUpdate(p1 $null )::JM,20069
+18024 :: EXPR :: modify :: Lorg/h2/jaqu/DbUpgrader :: p0 $null .dbUpgrader = v7::
+105 :: CALL :: call :: V :: p0 $null .testReverseColumns()::CL,15983
+18027 :: NORM :: declaration :: Ljava/util/HashSet :: v9 = new java.util.HashSet::JM,18035:JM,18031
+15983 :: ENTR :: entry :: null :: org.h2.test.jaqu.SamplesTest.testReverseColumns()::CD,15990
+18031 :: CALL :: call :: Ljava/util/Set :: v12 = synchronizedSet(v9)::JM,18035:JM,18031
+15987 :: EXPR :: reference :: Lorg/h2/jaqu/Db :: v3 = p0 $null .db::JM,20069
+18035 :: EXPR :: modify :: Ljava/util/Set :: p0 $null .upgradeChecked = v12::
+15990 :: CALL :: call :: I :: v6 = v3.executeUpdate(#(create table TestReve...))::JM,20069:CL,20057
+18038 :: EXPR :: modify :: Ljava/sql/Connection :: p0 $null .conn = p1 $null ::
+18041 :: NORM :: declaration :: Lorg/h2/jaqu/SQLDialect$DefaultSQLDialect :: v13 = new org.h2.jaqu.SQLDialect$DefaultSQLDialect::DD,18045
+18045 :: EXPR :: modify :: Lorg/h2/jaqu/SQLDialect :: p0 $null .dialect = v13::
+17557 :: ENTR :: entry :: null :: org.h2.util.New.hashMap()::CF,17560:CE,17558:CD,17564
+17558 :: EXIT :: exit :: Ljava/util/HashMap :: org.h2.util.New.hashMap()::JM,18017
+13720 :: ENTR :: entry :: null :: org.h2.jaqu.Db.open(java.lang.String,java.lang.String,java.lang.String)::CE,13721:CD,13733:JM,18020:JM,18038:JM,18041:JM,18027:JM,18014:JM,18031:CD,13738
+17560 :: NORM :: declaration :: Ljava/util/HashMap :: v2 = new java.util.HashMap::DD,17564
+13721 :: EXIT :: exit :: Lorg/h2/jaqu/Db :: org.h2.jaqu.Db.open(java.lang.String,java.lang.String,java.lang.String)::JM,11
+17564 :: NORM :: compound :: Ljava/util/HashMap :: return v2::DD,17558
+13733 :: NORM :: declaration :: Lorg/h2/jaqu/Db :: v8 = new org.h2.jaqu.Db::DD,13738
+13738 :: NORM :: compound :: Lorg/h2/jaqu/Db :: return v8::DD,13721

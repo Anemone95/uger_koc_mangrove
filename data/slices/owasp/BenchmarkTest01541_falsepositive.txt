@@ -1,0 +1,17 @@
+[41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 55]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest01541.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,13:CD,15:CD,19:CD,24:CD,29:CD,34:CD,38:CD,41:CD,50:CD,65
+7 :: CALL :: call :: Ljava/lang/String :: v7 = p1 $request .getHeader(#(foo))::JM,65
+12 :: EXPR :: assign :: Ljava/lang/Object :: v10 = #(126) + #(106)::DD,13
+13 :: PRED :: IF :: Z :: if (v10 <= #(200)) goto 32::CD,65
+15 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v14 = new java.lang.StringBuilder::JM,50
+19 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v14.append(#(SELECT * from USERS w...))::JM,50
+24 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v18.append(v13)::JM,50
+29 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v20.append(#('))::JM,50
+34 :: CALL :: call :: Ljava/lang/String :: v25 = v23.toString()::JM,50
+38 :: CALL :: call :: Ljava/sql/Statement :: v27 = getSqlStatement()::JM,50
+41 :: NORM :: declaration :: [I :: v29 = new []::JM,50
+42 :: EXPR :: modify :: I :: v29[#(0)] = #(1)::
+46 :: EXPR :: modify :: I :: v29[#(1)] = #(2)::
+50 :: CALL :: call :: Z :: v33 = v27.execute(v25, v29)::JM,50
+65 :: EXPR :: assign :: null :: PHI v13 = #(This_should_always_happen), v7::CF,15:JM,50

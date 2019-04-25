@@ -1,0 +1,104 @@
+[51, 52]
+1 :: ENTR :: entry :: null :: ai.susi.server.api.cms.CreateSkillService.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::JM,2515:CD,16:CD,21:CD,26:JM,545:JM,50:JM,27
+16 :: CALL :: call :: Ljavax/servlet/http/Part :: v13 = p1 $req .getPart(#(image))::JM,16:JM,545:JM,50:JM,26:JM,27
+21 :: CALL :: call :: Ljava/lang/String :: v16 = p1 $req .getParameter(#(access_token))::JM,16:JM,545:JM,50:JM,26:JM,27
+26 :: PRED :: IF :: Z :: if (v16 == #(null)) goto 865::CD,27
+27 :: PRED :: IF :: Z :: if (v13 != #(null)) goto 71::CD,45:CD,50:CD,51:CD,52:CD,545
+45 :: CALL :: call :: Ljava/lang/String :: v38 = p1 $req .getParameter(#(model))::JM,16:JM,545:JM,50:JM,26:JM,27
+50 :: PRED :: IF :: Z :: if (v38 != #(null)) goto 97::CF,545
+51 :: NORM :: declaration :: Ljava/io/File :: v41 = new java.io.File::
+52 :: EXPR :: reference :: Ljava/io/File :: v42 = ai.susi.DAO.model_watch_dir::
+2101 :: ENTR :: entry :: null :: ai.susi.mind.SusiAction.SelectionType.<clinit>()::
+2152 :: ENTR :: entry :: null :: ai.susi.mind.SusiInference.<clinit>()::CD,2166:CD,2170:CD,2172:CD,2176:CD,2178:CD,2182:CD,2184:CD,2188:CD,2190:CD,2192:CD,2196:CD,2199:CD,2205:CD,2207:CD,2211:CD,2214:CD,2220:CD,2222:CD,2226:CD,2229:CD,2235:CD,2237:CD,2241:CD,2244:CD,2250:CD,2252:CD,2256:CD,2259:CD,2265:CD,2267:CD,2271:CD,2274:CD,2280:CD,2282:CD,2286:CD,2289:CD,2295:CD,2297:CD,2301:CD,2304:CD,2310:CD,2312:CD,2316:CD,2319:CD,2325:CD,2327:CD,2331:CD,2334:CD,2340:CD,2342:CD,2346:CD,2349:CD,2355:CD,2357:CD,2361:CD,2364:CD,2370:CD,2372:CD,2376:CD,2379
+2166 :: NORM :: declaration :: Lai/susi/mind/SusiProcedures :: v7 = new ai.susi.mind.SusiProcedures::DD,2170
+2170 :: EXPR :: modify :: Lai/susi/mind/SusiProcedures :: ai.susi.mind.SusiInference.flowProcedures = v7::
+2172 :: NORM :: declaration :: Lai/susi/mind/SusiProcedures :: v9 = new ai.susi.mind.SusiProcedures::DD,2176
+2176 :: EXPR :: modify :: Lai/susi/mind/SusiProcedures :: ai.susi.mind.SusiInference.memoryProcedures = v9::
+2178 :: NORM :: declaration :: Lai/susi/mind/SusiProcedures :: v11 = new ai.susi.mind.SusiProcedures::DD,2182
+2182 :: EXPR :: modify :: Lai/susi/mind/SusiProcedures :: ai.susi.mind.SusiInference.javascriptProcedures = v11::
+2184 :: NORM :: declaration :: Lai/susi/mind/SusiProcedures :: v13 = new ai.susi.mind.SusiProcedures::DD,2188
+2188 :: EXPR :: modify :: Lai/susi/mind/SusiProcedures :: ai.susi.mind.SusiInference.prologProcedures = v13::
+2190 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v15 = ai.susi.mind.SusiInference.flowProcedures::
+2192 :: CALL :: call :: Ljava/util/regex/Pattern :: v18 = compile(#(SQUASH))::
+2196 :: CALL :: call :: Ljava/util/function/BiFunction :: v20 = apply()::
+2199 :: CALL :: call :: Ljava/lang/Object :: v22 = v15.put(v18, v20)::
+2205 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v23 = ai.susi.mind.SusiInference.flowProcedures::
+2207 :: CALL :: call :: Ljava/util/regex/Pattern :: v26 = compile(#(FIRST))::
+2211 :: CALL :: call :: Ljava/util/function/BiFunction :: v28 = apply()::
+2214 :: CALL :: call :: Ljava/lang/Object :: v30 = v23.put(v26, v28)::
+2220 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v31 = ai.susi.mind.SusiInference.flowProcedures::
+2222 :: CALL :: call :: Ljava/util/regex/Pattern :: v34 = compile(#(REST))::
+2226 :: CALL :: call :: Ljava/util/function/BiFunction :: v36 = apply()::
+2229 :: CALL :: call :: Ljava/lang/Object :: v38 = v31.put(v34, v36)::
+2235 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v39 = ai.susi.mind.SusiInference.memoryProcedures::
+2237 :: CALL :: call :: Ljava/util/regex/Pattern :: v42 = compile(#(SET\h+?([^=]*?)\h+?=\...))::
+2241 :: CALL :: call :: Ljava/util/function/BiFunction :: v44 = apply()::
+2244 :: CALL :: call :: Ljava/lang/Object :: v46 = v39.put(v42, v44)::
+2250 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v47 = ai.susi.mind.SusiInference.memoryProcedures::
+2252 :: CALL :: call :: Ljava/util/regex/Pattern :: v50 = compile(#(SET\h+?([^=]*?)\h+?=\...))::
+2256 :: CALL :: call :: Ljava/util/function/BiFunction :: v52 = apply()::
+2259 :: CALL :: call :: Ljava/lang/Object :: v54 = v47.put(v50, v52)::
+2265 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v55 = ai.susi.mind.SusiInference.memoryProcedures::
+2267 :: CALL :: call :: Ljava/util/regex/Pattern :: v58 = compile(#(CLEAR\h+?(.*)\h*?))::
+2271 :: CALL :: call :: Ljava/util/function/BiFunction :: v60 = apply()::
+2274 :: CALL :: call :: Ljava/lang/Object :: v62 = v55.put(v58, v60)::
+2280 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v63 = ai.susi.mind.SusiInference.memoryProcedures::
+2282 :: CALL :: call :: Ljava/util/regex/Pattern :: v66 = compile(#(IF\h+?([^=]*)\h*?))::
+2286 :: CALL :: call :: Ljava/util/function/BiFunction :: v68 = apply()::
+2289 :: CALL :: call :: Ljava/lang/Object :: v70 = v63.put(v66, v68)::
+2295 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v71 = ai.susi.mind.SusiInference.memoryProcedures::
+2297 :: CALL :: call :: Ljava/util/regex/Pattern :: v74 = compile(#(IF\h+?([^=]*?)\h*=\h*...))::
+2301 :: CALL :: call :: Ljava/util/function/BiFunction :: v76 = apply()::
+2304 :: CALL :: call :: Ljava/lang/Object :: v78 = v71.put(v74, v76)::
+2310 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v79 = ai.susi.mind.SusiInference.memoryProcedures::
+2312 :: CALL :: call :: Ljava/util/regex/Pattern :: v82 = compile(#(NOT\h*))::
+2316 :: CALL :: call :: Ljava/util/function/BiFunction :: v84 = apply()::
+2319 :: CALL :: call :: Ljava/lang/Object :: v86 = v79.put(v82, v84)::
+2325 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v87 = ai.susi.mind.SusiInference.memoryProcedures::
+2327 :: CALL :: call :: Ljava/util/regex/Pattern :: v90 = compile(#(NOT\h+?([^=]*)\h*?))::
+2331 :: CALL :: call :: Ljava/util/function/BiFunction :: v92 = apply()::
+2334 :: CALL :: call :: Ljava/lang/Object :: v94 = v87.put(v90, v92)::
+2340 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v95 = ai.susi.mind.SusiInference.memoryProcedures::
+2342 :: CALL :: call :: Ljava/util/regex/Pattern :: v98 = compile(#(NOT\h+?([^=]*?)\h*=\h...))::
+2346 :: CALL :: call :: Ljava/util/function/BiFunction :: v100 = apply()::
+2349 :: CALL :: call :: Ljava/lang/Object :: v102 = v95.put(v98, v100)::
+2355 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v103 = ai.susi.mind.SusiInference.javascriptProcedures::
+2357 :: CALL :: call :: Ljava/util/regex/Pattern :: v106 = compile(#((?s:(.*))))::
+2361 :: CALL :: call :: Ljava/util/function/BiFunction :: v108 = apply()::
+2364 :: CALL :: call :: Ljava/lang/Object :: v110 = v103.put(v106, v108)::
+2370 :: EXPR :: reference :: Lai/susi/mind/SusiProcedures :: v111 = ai.susi.mind.SusiInference.prologProcedures::
+2372 :: CALL :: call :: Ljava/util/regex/Pattern :: v113 = compile(#((?s:(.*))))::
+2376 :: CALL :: call :: Ljava/util/function/BiFunction :: v115 = apply()::
+2379 :: CALL :: call :: Ljava/lang/Object :: v117 = v111.put(v113, v115)::
+2427 :: ENTR :: entry :: null :: ai.susi.server.ClientIdentity.Type.<clinit>()::
+2515 :: NORM :: declaration :: Ljava/util/HashMap :: v4 = new java.util.HashMap::
+545 :: EXPR :: assign :: null :: PHI v40 = v38, #(general)::CF,51
+1037 :: ENTR :: entry :: null :: ai.susi.server.AbstractAPIHandler.<clinit>()::CD,1040:CD,1046
+1040 :: CALL :: call :: Ljava/lang/Long :: v4 = valueOf(#(604800 l))::
+1046 :: CALL :: call :: Ljava/lang/Long :: v7 = valueOf(#(86400 l))::
+1057 :: ENTR :: entry :: null :: org.json.JSONObject.<clinit>()::
+1071 :: ENTR :: entry :: null :: ai.susi.DAO.<clinit>()::CD,1074:CD,1075:CD,1085:CD,1139:CD,1140
+1074 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lai/susi/DAO>-><Primordial,Ljava/lang/Class>::
+1075 :: CALL :: call :: Z :: v4 = v2.desiredAssertionStatus()::
+1085 :: NORM :: declaration :: Ljava/util/HashMap :: v9 = new java.util.HashMap::
+1139 :: NORM :: declaration :: Ljava/util/Random :: v30 = new java.util.Random::CF,1140
+1140 :: CALL :: call :: J :: v32 = currentTimeMillis()::
+1193 :: ENTR :: entry :: null :: ai.susi.server.ClientCredential.Type.<clinit>()::
+1340 :: ENTR :: entry :: null :: ai.susi.mind.SusiUtterance.<clinit>()::CD,1343:CD,1347:CD,1353:CD,1357:CD,1363:CD,1369
+1343 :: CALL :: call :: Ljava/lang/String :: v4 = quote(#((^\S+)))::
+1347 :: CALL :: call :: Ljava/util/regex/Pattern :: v6 = compile(v4)::
+1353 :: CALL :: call :: Ljava/lang/String :: v9 = quote(#((.*)))::
+1357 :: CALL :: call :: Ljava/util/regex/Pattern :: v11 = compile(v9)::
+1363 :: CALL :: call :: Ljava/util/regex/Pattern :: v14 = compile(#(  ))::
+1369 :: CALL :: call :: Ljava/util/regex/Pattern :: v17 = compile(#(,|;:))::
+1384 :: ENTR :: entry :: null :: ai.susi.mind.SusiInference.Type.<clinit>()::
+1498 :: ENTR :: entry :: null :: ai.susi.mind.SusiAction.<clinit>()::CD,1501:CD,1502:CD,1511:CD,1517:CD,1523
+1501 :: NORM :: declaration :: Ljava/util/Random :: v2 = new java.util.Random::CF,1502
+1502 :: CALL :: call :: J :: v4 = currentTimeMillis()::
+1511 :: CALL :: call :: Ljava/util/regex/Pattern :: v8 = compile(#((?:(?:.*)[\?\!\s,\.;-...))::
+1517 :: CALL :: call :: Ljava/util/regex/Pattern :: v11 = compile(#((?:.*?)\^(.*?)\^>([_a...))::
+1523 :: CALL :: call :: Ljava/util/regex/Pattern :: v14 = compile(#(.*?`([^`]*?)`.*?))::
+1538 :: ENTR :: entry :: null :: ai.susi.mind.SusiIntent.<clinit>()::CD,1541
+1541 :: CALL :: call :: Ljava/util/regex/Pattern :: v4 = compile(#( ))::
+1550 :: ENTR :: entry :: null :: ai.susi.mind.SusiUtterance.Type.<clinit>()::
+1651 :: ENTR :: entry :: null :: ai.susi.mind.SusiAction.RenderType.<clinit>()::

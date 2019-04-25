@@ -1,0 +1,26 @@
+[96, 97, 102, 88, 89, 90, 91, 92, 93, 94, 95]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest05884.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,13:CD,24:CD,28:CD,34:CD,38:CD,44:CD,56:CD,61:CD,62:CD,66:CD,71:CD,76:CD,81:CD,85:CD,88:CD,97:CD,121
+7 :: CALL :: call :: [Ljava/lang/String :: v7 = p1 $request .getParameterValues(#(foo))::JM,12
+12 :: EXPR :: assign :: I :: v8 = v7.length::DD,13
+13 :: PRED :: IF :: Z :: if (v8 == #(0)) goto 36::CD,14:CD,121:JM,12
+14 :: CALL :: call :: [Ljava/lang/String :: v12 = p1 $request .getParameterValues(#(foo))::JM,12
+19 :: EXPR :: reference :: Ljava/lang/Object :: v13 = v12[#(0)]::DD,121
+24 :: NORM :: declaration :: Ljava/util/HashMap :: v16 = new java.util.HashMap::JM,61
+28 :: CALL :: call :: Ljava/lang/Object :: v21 = v16.put(#(keyA-71777), #(a_Value))::
+34 :: CALL :: call :: Ljava/lang/String :: v24 = v14.toString()::JM,34
+38 :: CALL :: call :: Ljava/lang/Object :: v26 = v16.put(#(keyB-71777), v24)::
+44 :: CALL :: call :: Ljava/lang/Object :: v30 = v16.put(#(keyC), #(another_Value))::
+56 :: CALL :: call :: Ljava/lang/Object :: v35 = v16.get(#(keyA-71777))::JM,61
+61 :: EXPR :: assign :: Ljava/lang/Object :: v36 = CHECKCAST v35::JM,97:CF,62
+62 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v37 = new java.lang.StringBuilder::JM,97
+66 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v37.append(#(SELECT * from USERS w...))::JM,97
+71 :: CALL :: call :: Ljava/lang/StringBuilder :: v43 = v41.append(v36)::JM,97
+76 :: CALL :: call :: Ljava/lang/StringBuilder :: v46 = v43.append(#('))::JM,97
+81 :: CALL :: call :: Ljava/lang/String :: v48 = v46.toString()::JM,97
+85 :: CALL :: call :: Ljava/sql/Connection :: v50 = getSqlConnection()::JM,97
+88 :: NORM :: declaration :: [I :: v52 = new []::JM,97
+89 :: EXPR :: modify :: I :: v52[#(0)] = #(1)::
+93 :: EXPR :: modify :: I :: v52[#(1)] = #(2)::
+97 :: CALL :: call :: Ljava/sql/PreparedStatement :: v55 = v50.prepareStatement(v48, v52)::JM,97
+121 :: EXPR :: assign :: null :: PHI v14 = v13, #(null)::JM,34:CF,24

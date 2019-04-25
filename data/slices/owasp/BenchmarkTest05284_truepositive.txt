@@ -1,0 +1,26 @@
+[81, 77]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest05284.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,17:CD,21:CD,51:CD,55:CD,60:CD,65:CD,70:CD,74:CD,77:CD,100
+12 :: CALL :: call :: Ljava/lang/String :: v9 = v5.getTheParameter(#(foo))::JM,17:JM,35:JM,100:JM,36:JM,21:JM,27:CL,199
+17 :: CALL :: call :: I :: v11 = v9.length()::JM,17:JM,35:JM,100:JM,36:JM,21:JM,27
+21 :: PRED :: IF :: Z :: if (v11 <= #(1)) goto 69::CF,100:CF,22:CD,27:CD,31:CD,35:CD,36:CD,40:CD,47
+22 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::JM,100
+27 :: CALL :: call :: I :: v16 = v9.length()::JM,17:JM,35:JM,100:JM,36:JM,21:JM,27
+31 :: CALL :: call :: I :: v19 = #(Z).length()::JM,35
+35 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v16 - v19::JM,100:JM,17:JM,35:JM,36:JM,21:JM,27
+36 :: CALL :: call :: I :: v22 = v9.length()::JM,17:JM,35:JM,100:JM,36:JM,21:JM,27
+40 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v13.replace(v20, v22, #(Z))::JM,100
+47 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::JM,100
+51 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v28 = new java.lang.StringBuilder::JM,77
+55 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v28.append(#(SELECT * from USERS w...))::JM,77
+60 :: CALL :: call :: Ljava/lang/StringBuilder :: v34 = v32.append(v27)::JM,77
+65 :: CALL :: call :: Ljava/lang/StringBuilder :: v37 = v34.append(#('))::JM,77
+70 :: CALL :: call :: Ljava/lang/String :: v39 = v37.toString()::JM,77
+74 :: CALL :: call :: Ljava/sql/Connection :: v41 = getSqlConnection()::JM,77
+77 :: CALL :: call :: Ljava/sql/PreparedStatement :: v43 = v41.prepareStatement(v39)::JM,77
+100 :: EXPR :: assign :: null :: PHI v27 = v9, v26::CF,51:JM,77
+199 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::CE,200:CD,207:CD,212
+200 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::JM,17:JM,35:JM,100:JM,36:JM,21:JM,27
+204 :: EXPR :: reference :: Ljavax/servlet/http/HttpServletRequest :: v4 = p0 $this .request::JM,212
+207 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getParameter(p1 $p )::JM,212
+212 :: NORM :: compound :: Ljava/lang/String :: return v6::CF,200

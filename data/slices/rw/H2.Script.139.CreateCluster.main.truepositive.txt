@@ -1,0 +1,493 @@
+[3895]
+1 :: ENTR :: entry :: null :: org.h2.tools.CreateCluster.main(java.lang.String[])::CD,9:JM,1657:JM,1546:JM,1547
+4097 :: CALL :: call :: Ljava/lang/String :: v6 = getState(p1 $null )::CL,4425
+4101 :: CALL :: call :: Ljava/lang/String :: v8 = translate(v6, p3 $null )::CL,4481
+9 :: CALL :: call :: V :: v3.runTool(p1 $null )::JM,1657:JM,1546:JM,1547:CL,1541
+4129 :: ENTR :: entry :: null :: org.h2.util.IOUtils.readBytesAndClose(java.io.InputStream,int)::CE,4130:CD,4134:CD,4135:CD,4140:CD,4146:CD,4152:CD,4159:CD,4160:CD,4171
+4130 :: EXIT :: exit :: [B :: org.h2.util.IOUtils.readBytesAndClose(java.io.InputStream,int)::JM,3554
+4134 :: PRED :: IF :: Z :: if (p2 $null  > #(0)) goto 11::CF,4171
+4135 :: CALL :: call :: I :: v9 = min(#(4096), v6)::JM,4135
+4140 :: NORM :: declaration :: Ljava/io/ByteArrayOutputStream :: v10 = new java.io.ByteArrayOutputStream::JM,4159
+4146 :: CALL :: call :: J :: v14 = copy(p1 $null , v10, v12)::CL,4586
+4152 :: CALL :: call :: [B :: v16 = v10.toByteArray()::JM,4159
+4159 :: NORM :: compound :: [B :: return v16::DD,4130
+4160 :: CALL :: call :: Ljava/io/IOException :: v19 = convertToIOException(v17)::CL,4670
+4171 :: EXPR :: assign :: null :: PHI v6 = p2 $null , #(2147483647)::JM,4135
+4189 :: ENTR :: entry :: null :: org.h2.util.IOUtils.copy(java.io.InputStream,java.io.OutputStream)::CD,4194
+4194 :: CALL :: call :: J :: v6 = copy(p1 $null , p2 $null , #(9223372036854775807 l))::CL,4586
+173 :: ENTR :: entry :: null :: org.h2.util.Utils.<clinit>()::CD,185
+185 :: CALL :: call :: Ljava/util/HashMap :: v7 = hashMap()::CL,1756
+198 :: ENTR :: entry :: null :: org.h2.Driver.<clinit>()::CD,207:CD,213
+207 :: NORM :: declaration :: Ljava/lang/ThreadLocal :: v4 = new java.lang.ThreadLocal::
+213 :: CALL :: call :: Lorg/h2/Driver :: v7 = load()::CL,1774
+222 :: ENTR :: entry :: null :: org.h2.util.JdbcUtils.<clinit>()::CD,428:CD,434:CD,436:CD,449:CD,454:CD,456:CD,469
+4425 :: ENTR :: entry :: null :: org.h2.api.ErrorCode.getState(int)::CD,4429
+4429 :: PRED :: IF :: null :: switch p1 $null ::CF,4444:CD,4448:CD,4453:CD,4458
+4444 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v3 = new java.lang.StringBuilder::
+4448 :: CALL :: call :: Ljava/lang/StringBuilder :: v7 = v3.append(#())::
+4453 :: CALL :: call :: Ljava/lang/StringBuilder :: v9 = v7.append(p1 $null )::JM,4429
+4458 :: CALL :: call :: Ljava/lang/String :: v11 = v9.toString()::
+4481 :: ENTR :: entry :: null :: org.h2.message.DbException.translate(java.lang.String,java.lang.String[])::CD,4486:CD,4488:CD,4496:CD,4520:CD,4550:JM,4521
+4486 :: EXPR :: reference :: Ljava/util/Properties :: v5 = org.h2.message.DbException.MESSAGES::DD,4488
+4488 :: PRED :: IF :: Z :: if (v5 == #(null)) goto 17::CF,4550:CD,4489:CD,4491
+4489 :: EXPR :: reference :: Ljava/util/Properties :: v6 = org.h2.message.DbException.MESSAGES::JM,4550
+4491 :: CALL :: call :: Ljava/lang/String :: v8 = v6.getProperty(p1 $null )::JM,4550:JM,4520:JM,4521
+4496 :: PRED :: IF :: Z :: if (v9 != #(null)) goto 46::CF,4497:CD,4501:CD,4506:CD,4511:CD,4516
+4497 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::
+4501 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v10.append(#((Message ))::
+4506 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v14.append(p1 $null )::JM,4550:JM,4520:JM,4521
+4511 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v16.append(#( not found)))::
+4516 :: CALL :: call :: Ljava/lang/String :: v21 = v19.toString()::
+4520 :: PRED :: IF :: Z :: if (p2 $null  == #(null)) goto 99::CD,4521:CD,4522:CD,4552
+4521 :: EXPR :: assign :: I :: v24 = p2 $null .length::CF,4522
+4522 :: PRED :: IF :: Z :: if (v32 >= v24) goto 91::CD,4521:CD,4527:CD,4541:CD,4552
+4523 :: EXPR :: reference :: Ljava/lang/Object :: v25 = p2 $null [v32]::DD,4527:JM,4532
+428 :: NORM :: declaration :: Ljava/util/ArrayList :: v103 = new java.util.ArrayList::
+4527 :: PRED :: IF :: Z :: if (v25 == #(null)) goto 83::CD,4528:CD,4532:CF,4541
+4528 :: CALL :: call :: I :: v27 = v25.length()::JM,4532
+434 :: EXPR :: reference :: Ljava/lang/String :: v105 = org.h2.engine.SysProperties.JAVA_OBJECT_SERIALIZER::DD,436
+436 :: PRED :: IF :: Z :: if (v105 == #(null)) goto 342::CD,437
+4532 :: PRED :: IF :: Z :: if (v27 <= #(0)) goto 83::CD,4533:CF,4541
+437 :: CALL :: call :: Ljava/lang/Class :: v108 = loadUserClass(v105)::CL,1800
+4533 :: CALL :: call :: Ljava/lang/String :: v29 = quoteIdentifier(v25)::JM,4537:CL,5418
+4537 :: EXPR :: modify :: Ljava/lang/Object :: p2 $null [v32] = v29::
+4541 :: EXPR :: assign :: Ljava/lang/Object :: v31 = v32 + #(1)::DD,4552
+449 :: CALL :: call :: Lorg/h2/message/DbException :: v114 = convert(v112)::CL,2113
+454 :: EXPR :: reference :: Ljava/lang/String :: v115 = org.h2.engine.SysProperties.CUSTOM_DATA_TYPES_HANDLER::DD,456
+4550 :: EXPR :: assign :: null :: PHI v9 = #(null), v8::DD,4496
+456 :: PRED :: IF :: Z :: if (v115 == #(null)) goto 372::CD,457
+4552 :: EXPR :: assign :: null :: PHI v32 = v31, #(0)::DD,4522:DD,4541:CF,4521
+457 :: CALL :: call :: Ljava/lang/Class :: v117 = loadUserClass(v115)::CL,1800
+469 :: CALL :: call :: Lorg/h2/message/DbException :: v123 = convert(v121)::CL,2113
+4586 :: ENTR :: entry :: null :: org.h2.util.IOUtils.copy(java.io.InputStream,java.io.OutputStream,long)::CD,4592:CD,4597:CD,4598:CD,4599:CD,4600:CD,4629:CD,4635:CD,4637:JM,4608:JM,4610:JM,4619
+4592 :: CALL :: call :: J :: v8 = min(p3 $null , #(4096 l))::JM,4608:JM,4592:JM,4597:JM,4635:JM,4619
+4597 :: EXPR :: assign :: I :: v9 = CONVERT J to I v8::DD,4598:DD,4637
+4598 :: NORM :: declaration :: [B :: v10 = new []::JM,4608:JM,4592:JM,4597:JM,4619:CF,4635
+4599 :: EXPR :: assign :: Z :: v11 = v24 == #(0 l)::DD,4600
+4600 :: PRED :: IF :: Z :: if (v11 <= #(0)) goto 86::CD,4601:CD,4608:JM,4592:JM,4610:JM,4597:JM,4635:JM,4619
+4601 :: CALL :: call :: I :: v14 = p1 $null .read(v10, #(0), v26)::JM,4608:JM,4592:JM,4610:JM,4597:JM,4635:JM,4619
+4608 :: PRED :: IF :: Z :: if (v14 >= #(0)) goto 45::CD,4599:CD,4600:CD,4610:CD,4619:CD,4620:CD,4621:CD,4626:CD,4635:CD,4637
+4610 :: PRED :: IF :: Z :: if (p2 $null  == #(null)) goto 61::CD,4611:JM,4608:JM,4592:JM,4597:JM,4635:JM,4619
+4611 :: CALL :: call :: V :: p2 $null .write(v10, #(0), v14)::JM,4608:JM,4592:JM,4597:JM,4635:JM,4619
+4619 :: EXPR :: assign :: J :: v19 = CONVERT I to J v14::CF,4620
+4620 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v24 - v19::JM,4626:JM,4621:DD,4635
+4621 :: CALL :: call :: J :: v22 = min(v20, #(4096 l))::JM,4626:JM,4621
+4626 :: EXPR :: assign :: I :: v23 = CONVERT J to I v22::DD,4637
+4629 :: CALL :: call :: Ljava/io/IOException :: v31 = convertToIOException(v27)::CL,4670
+4635 :: EXPR :: assign :: null :: PHI v24 = v20, p3 $null ::DD,4599:DD,4620
+4637 :: EXPR :: assign :: null :: PHI v26 = v23, v9::JM,4608:JM,4592:JM,4597:JM,4619:CF,4599
+4670 :: ENTR :: entry :: null :: org.h2.message.DbException.convertToIOException(java.lang.Throwable)::CD,4674:CD,4675:JM,4678:JM,4680:JM,4701
+4674 :: EXPR :: assign :: Z :: v3=p1 $null  INSTANCEOF java.io.IOException::DD,4675
+4675 :: PRED :: IF :: Z :: if (v3 == #(0)) goto 13::CD,4678:CD,4679:CD,4690:CD,4691:CD,4701
+4678 :: EXPR :: assign :: Z :: v5=p1 $null  INSTANCEOF org.h2.jdbc.JdbcSQLException::DD,4679
+4679 :: PRED :: IF :: Z :: if (v5 == #(0)) goto 36::CF,4701:CD,4680:CD,4681:CD,4685
+4680 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST p1 $null ::JM,4681:JM,4685:JM,4701:JM,4686
+4681 :: CALL :: call :: Ljava/lang/Throwable :: v8 = v6.getOriginalCause()::JM,4681:JM,4685
+4685 :: PRED :: IF :: Z :: if (v8 == #(null)) goto 36::CF,4701:CD,4686
+4686 :: CALL :: call :: Ljava/lang/Throwable :: v11 = v6.getOriginalCause()::JM,4701:JM,4686
+4690 :: NORM :: declaration :: Ljava/io/IOException :: v13 = new java.io.IOException::
+4691 :: CALL :: call :: Ljava/lang/String :: v15 = v12.toString()::
+4701 :: EXPR :: assign :: null :: PHI v12 = p1 $null , p1 $null , v11::CF,4690
+643 :: ENTR :: entry :: null :: org.h2.message.DbException.<clinit>()::CD,646:CD,650:CD,652:CD,656:CD,668:CD,671:CD,675:CD,680:CD,796:CD,800
+646 :: NORM :: declaration :: Ljava/util/Properties :: v2 = new java.util.Properties::DD,650
+650 :: EXPR :: modify :: Ljava/util/Properties :: org.h2.message.DbException.MESSAGES = v2::
+652 :: CALL :: call :: [B :: v6 = getResource(#(/org/h2/res/_messages...))::JM,656:CL,2249
+656 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 34::CD,657:CD,659:CD,664
+657 :: EXPR :: reference :: Ljava/util/Properties :: v8 = org.h2.message.DbException.MESSAGES::CF,659
+659 :: NORM :: declaration :: Ljava/io/ByteArrayInputStream :: v9 = new java.io.ByteArrayInputStream::
+664 :: CALL :: call :: V :: v8.load(v9)::
+668 :: CALL :: call :: Ljava/util/Locale :: v13 = getDefault()::JM,680
+671 :: CALL :: call :: Ljava/lang/String :: v15 = v13.getLanguage()::JM,680
+675 :: CALL :: call :: Z :: v18 = #(en).equals(v15)::JM,680
+680 :: PRED :: IF :: Z :: if (v18 != #(0)) goto 220::CF,681:CD,685:CD,690:CD,695:CD,700:CD,704:CD,708
+681 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v20 = new java.lang.StringBuilder::
+685 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v20.append(#(/org/h2/res/_messages_))::
+690 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v24.append(v15)::JM,680
+695 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v26.append(#(.prop))::
+700 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::
+704 :: CALL :: call :: [B :: v33 = getResource(v31)::JM,708:CL,2249
+708 :: PRED :: IF :: Z :: if (v33 == #(null)) goto 220::CD,717:CD,721:CD,725:CD,729:CD,733
+717 :: CALL :: call :: Lorg/h2/util/SortedProperties :: v40 = fromLines(v34)::JM,738:JM,733:CL,2289
+721 :: CALL :: call :: Ljava/util/Set :: v42 = v40.entrySet()::JM,738:JM,733
+725 :: CALL :: call :: Ljava/util/Iterator :: v44 = v42.iterator()::JM,738:JM,733
+729 :: CALL :: call :: Z :: v46 = v44.hasNext()::JM,738:JM,733
+733 :: PRED :: IF :: Z :: if (v46 == #(0)) goto 220::CD,729:CD,734:CD,738:CD,739:CD,743:CD,744:CD,748:CD,749:JM,733
+734 :: CALL :: call :: Ljava/lang/Object :: v48 = v44.next()::JM,738:JM,733
+738 :: EXPR :: assign :: Ljava/lang/Object :: v49 = CHECKCAST v48::JM,743:JM,748
+739 :: CALL :: call :: Ljava/lang/Object :: v51 = v49.getKey()::JM,743
+743 :: EXPR :: assign :: Ljava/lang/Object :: v52 = CHECKCAST v51::JM,748
+744 :: CALL :: call :: Ljava/lang/Object :: v54 = v49.getValue()::JM,748
+748 :: EXPR :: assign :: Ljava/lang/Object :: v55 = CHECKCAST v54::DD,749:JM,755
+749 :: PRED :: IF :: Z :: if (v55 == #(null)) goto 217::CD,750:CD,755
+750 :: CALL :: call :: Z :: v58 = v55.startsWith(#(#))::JM,755
+755 :: PRED :: IF :: Z :: if (v58 != #(0)) goto 217::CD,756:CD,758:CD,763:CD,767:CD,772:CD,777:CD,782:CD,786:CD,788
+756 :: EXPR :: reference :: Ljava/util/Properties :: v59 = org.h2.message.DbException.MESSAGES::
+758 :: CALL :: call :: Ljava/lang/String :: v61 = v59.getProperty(v52)::
+763 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v62 = new java.lang.StringBuilder::
+767 :: CALL :: call :: Ljava/lang/StringBuilder :: v65 = v62.append(v55)::
+772 :: CALL :: call :: Ljava/lang/StringBuilder :: v68 = v65.append(#())::
+777 :: CALL :: call :: Ljava/lang/StringBuilder :: v70 = v68.append(v61)::
+782 :: CALL :: call :: Ljava/lang/String :: v72 = v70.toString()::
+786 :: EXPR :: reference :: Ljava/util/Properties :: v73 = org.h2.message.DbException.MESSAGES::
+788 :: CALL :: call :: Ljava/lang/Object :: v75 = v73.put(v52, v72)::
+796 :: CALL :: call :: V :: traceThrowable(v76)::CL,2368
+800 :: CALL :: call :: V :: traceThrowable(v37)::CL,2368
+871 :: ENTR :: entry :: null :: org.h2.engine.SysProperties.<clinit>()::
+5418 :: ENTR :: entry :: null :: org.h2.util.StringUtils.quoteIdentifier(java.lang.String)::CE,5419:CD,5422:CD,5426:CD,5427:CD,5432:CD,5437:CD,5456:CD,5461:CD,5465:CD,5466:JM,5443
+5419 :: EXIT :: exit :: Ljava/lang/String :: org.h2.util.StringUtils.quoteIdentifier(java.lang.String)::JM,4537
+5422 :: CALL :: call :: I :: v4 = p1 $null .length()::JM,5427:JM,5443:JM,5437
+5426 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v5 = new java.lang.StringBuilder::JM,5465:CF,5427
+5427 :: EXPR :: assign :: Ljava/lang/Object :: v7 = v4 + #(2)::
+5432 :: CALL :: call :: Ljava/lang/StringBuilder :: v11 = v5.append(#(34))::
+5437 :: PRED :: IF :: Z :: if (v21 >= v4) goto 67::CD,5438:CD,5443:CD,5449:CD,5454:CD,5466:JM,5427:JM,5437:JM,5465
+5438 :: CALL :: call :: C :: v14 = p1 $null .charAt(v21)::JM,5427:JM,5443:JM,5437
+5443 :: PRED :: IF :: Z :: if (v14 != #(34)) goto 54::CD,5444
+5444 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v5.append(v14)::
+5449 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v5.append(v14)::
+5454 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v21 + #(1)::DD,5466
+5456 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v5.append(#(34))::JM,5465
+5461 :: CALL :: call :: Ljava/lang/String :: v25 = v23.toString()::JM,5465
+5465 :: NORM :: compound :: Ljava/lang/String :: return v25::DD,5419
+5466 :: EXPR :: assign :: null :: PHI v21 = v20, #(0)::DD,5437:JM,5427:JM,5443:DD,5454
+1427 :: ENTR :: entry :: null :: org.h2.util.StringUtils.<clinit>()::CD,1430:CD,1437
+1430 :: NORM :: declaration :: Ljava/lang/ref/SoftReference :: v2 = new java.lang.ref.SoftReference::
+1437 :: CALL :: call :: [C :: v7 = #(0123456789abcdef).toCharArray()::
+1541 :: ENTR :: entry :: null :: org.h2.tools.CreateCluster.runTool(java.lang.String[])::CD,1546:CD,1657:CD,1658:CD,1659:CD,1660:CD,1662:JM,1547
+1546 :: PRED :: IF :: Z :: if (p1 $null  == #(null)) goto 182::CD,1547:CD,1548:CD,1648
+1547 :: EXPR :: assign :: I :: v7 = p1 $null .length::CF,1548
+1548 :: PRED :: IF :: Z :: if (v55 >= v7) goto 182::CD,1553:CD,1558:CD,1648
+1549 :: EXPR :: reference :: Ljava/lang/Object :: v8 = p1 $null [v55]::JM,1558:JM,1570:JM,1582:JM,1594:JM,1606:JM,1618:JM,1624
+1553 :: CALL :: call :: Z :: v11 = v8.equals(#(-urlSource))::JM,1558
+1558 :: PRED :: IF :: Z :: if (v11 == #(0)) goto 60::CD,1546:CD,1559:CD,1565:CD,1570:CD,1634:CD,1657:CD,1658:CD,1659:CD,1660:CD,1662:CD,1663:CD,1664:CD,1665:CD,1666:CD,1668
+1559 :: EXPR :: assign :: Ljava/lang/Object :: v13 = v55 + #(1)::DD,1668
+1560 :: EXPR :: reference :: Ljava/lang/Object :: v14 = p1 $null [v13]::DD,1663
+1565 :: CALL :: call :: Z :: v17 = v8.equals(#(-urlTarget))::JM,1570
+1570 :: PRED :: IF :: Z :: if (v17 == #(0)) goto 81::CD,1546:CD,1571:CD,1577:CD,1582:CD,1634:CD,1657:CD,1658:CD,1659:CD,1660:CD,1662:CD,1663:CD,1664:CD,1665:CD,1666:CD,1668
+1571 :: EXPR :: assign :: Ljava/lang/Object :: v18 = v55 + #(1)::DD,1668
+1572 :: EXPR :: reference :: Ljava/lang/Object :: v19 = p1 $null [v18]::DD,1664
+1577 :: CALL :: call :: Z :: v22 = v8.equals(#(-user))::JM,1582
+1582 :: PRED :: IF :: Z :: if (v22 == #(0)) goto 103::CD,1546:CD,1583:CD,1589:CD,1594:CD,1634:CD,1657:CD,1658:CD,1659:CD,1660:CD,1662:CD,1663:CD,1664:CD,1665:CD,1666:CD,1668
+1583 :: EXPR :: assign :: Ljava/lang/Object :: v23 = v55 + #(1)::DD,1668
+1584 :: EXPR :: reference :: Ljava/lang/Object :: v24 = p1 $null [v23]::DD,1665
+1589 :: CALL :: call :: Z :: v27 = v8.equals(#(-password))::JM,1594
+1594 :: PRED :: IF :: Z :: if (v27 == #(0)) goto 125::CD,1546:CD,1595:CD,1601:CD,1606:CD,1634:CD,1657:CD,1658:CD,1659:CD,1660:CD,1662:CD,1663:CD,1664:CD,1665:CD,1666:CD,1668
+1595 :: EXPR :: assign :: Ljava/lang/Object :: v28 = v55 + #(1)::DD,1668
+1596 :: EXPR :: reference :: Ljava/lang/Object :: v29 = p1 $null [v28]::DD,1666
+1601 :: CALL :: call :: Z :: v32 = v8.equals(#(-serverList))::JM,1606
+1606 :: PRED :: IF :: Z :: if (v32 == #(0)) goto 147::CD,1546:CD,1607:CD,1613:CD,1618:CD,1634:CD,1657:CD,1658:CD,1659:CD,1660:CD,1662:CD,1663:CD,1664:CD,1665:CD,1666:CD,1668
+1607 :: EXPR :: assign :: Ljava/lang/Object :: v33 = v55 + #(1)::DD,1668
+1613 :: CALL :: call :: Z :: v37 = v8.equals(#(-help))::JM,1618
+1618 :: PRED :: IF :: Z :: if (v37 != #(0)) goto 164::CD,1619:CD,1624
+1619 :: CALL :: call :: Z :: v40 = v8.equals(#(-?))::JM,1624
+1624 :: PRED :: IF :: Z :: if (v40 == #(0)) goto 171::CD,1546:CD,1629:CD,1634:CD,1657:CD,1658:CD,1659:CD,1660:CD,1662:CD,1663:CD,1664:CD,1665:CD,1666:CD,1668
+1629 :: CALL :: call :: Ljava/sql/SQLException :: v42 = p0 $null .showUsageAndThrowUnsupportedOption(v8)::CL,2754
+1634 :: EXPR :: assign :: Ljava/lang/Object :: v49 = v48 + #(1)::DD,1662
+1648 :: CALL :: call :: V :: p0 $null .process(v50, v51, v52, v53, v54)::JM,3895:JM,2875:JM,3853:CL,2768
+1657 :: EXPR :: assign :: null :: PHI v50 = v43, #(null)::CF,1658:JM,3895:JM,2875:JM,3853:DD,1663
+1658 :: EXPR :: assign :: null :: PHI v51 = v44, #(null)::CF,1659:JM,3895:JM,2875:JM,3853:DD,1664
+1659 :: EXPR :: assign :: null :: PHI v52 = v45, #()::CF,1660:JM,3895:JM,2875:JM,3853:DD,1665
+1660 :: EXPR :: assign :: null :: PHI v53 = v46, #()::JM,3895:JM,2875:JM,3853:DD,1666
+1662 :: EXPR :: assign :: null :: PHI v55 = v49, #(0)::DD,1548:DD,1559:DD,1571:DD,1583:DD,1595:DD,1607:DD,1668:CF,1546
+1663 :: EXPR :: assign :: null :: PHI v43 = v14, v50, v50, v50, v50, v50::CF,1664:DD,1657
+1664 :: EXPR :: assign :: null :: PHI v44 = v51, v19, v51, v51, v51, v51::CF,1665:DD,1658
+1665 :: EXPR :: assign :: null :: PHI v45 = v52, v52, v24, v52, v52, v52::CF,1666:DD,1659
+1666 :: EXPR :: assign :: null :: PHI v46 = v53, v53, v53, v29, v53, v53::DD,1660
+1668 :: EXPR :: assign :: null :: PHI v48 = v13, v18, v23, v28, v33, v55::DD,1634
+1756 :: ENTR :: entry :: null :: org.h2.util.New.hashMap()::CF,1759
+1759 :: NORM :: declaration :: Ljava/util/HashMap :: v2 = new java.util.HashMap::
+1774 :: ENTR :: entry :: null :: org.h2.Driver.load()::CD,1788
+1788 :: CALL :: call :: V :: traceThrowable(v7)::CL,2368
+1800 :: ENTR :: entry :: null :: org.h2.util.JdbcUtils.loadUserClass(java.lang.String)::CD,1804:CD,1806:CD,1910:CD,1916:CD,1919:CD,1923:CD,1927:CD,1952:CD,1965:CD,1968:CD,1972:CD,1984:CD,1996:CD,2008:JM,1938:JM,1939:JM,1944:JM,1933
+1804 :: EXPR :: reference :: Ljava/util/HashSet :: v3 = org.h2.util.JdbcUtils.allowedClassNames::DD,1806
+1806 :: PRED :: IF :: Z :: if (v3 != #(null)) goto 139::CD,1809:CD,1812:CD,1815:CD,1821:CD,1822:CD,1864:CD,1868:CD,1869:CD,1871:CD,1873:CD,2021
+1809 :: CALL :: call :: Ljava/util/ArrayList :: v7 = arrayList()::JM,1868:CL,3183
+1812 :: CALL :: call :: Ljava/util/HashSet :: v10 = hashSet()::CL,3194
+1815 :: CALL :: call :: [Ljava/lang/String :: v14 = arraySplit(v5, #(44), #(1))::JM,1821:CL,3203
+1821 :: EXPR :: assign :: I :: v15 = v14.length::DD,1822
+1822 :: PRED :: IF :: Z :: if (v34 >= v15) goto 113::CD,1827:CD,1832:CD,1862:CD,2021:JM,1868
+1823 :: EXPR :: reference :: Ljava/lang/Object :: v16 = v14[v34]::JM,1832:JM,1839:JM,1844
+1827 :: CALL :: call :: Z :: v19 = v16.equals(#(*))::JM,1832
+1832 :: PRED :: IF :: Z :: if (v19 == #(0)) goto 71::CD,1834:CD,1839
+1834 :: CALL :: call :: Z :: v21 = v16.endsWith(#(*))::JM,1839
+1839 :: PRED :: IF :: Z :: if (v21 == #(0)) goto 102::CD,1840:CD,1844:CD,1845:CD,1851:CD,1857
+1840 :: CALL :: call :: I :: v23 = v16.length()::JM,1844
+1844 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v23 - #(1)::
+1845 :: CALL :: call :: Ljava/lang/String :: v26 = v16.substring(#(0), v24)::
+1851 :: CALL :: call :: Z :: v28 = v7.add(v26)::JM,1868
+1857 :: CALL :: call :: Z :: v30 = v10.add(v16)::
+1862 :: EXPR :: assign :: Ljava/lang/Object :: v32 = v34 + #(1)::DD,2021
+1864 :: CALL :: call :: I :: v36 = v7.size()::JM,1868
+1868 :: NORM :: declaration :: [Ljava/lang/String :: v37 = new java.lang.String[]::CF,1869
+1869 :: EXPR :: modify :: [Ljava/lang/String :: org.h2.util.JdbcUtils.allowedClassNamePrefixes = v37::
+1871 :: EXPR :: reference :: [Ljava/lang/String :: v38 = org.h2.util.JdbcUtils.allowedClassNamePrefixes::JM,1868
+1873 :: CALL :: call :: [Ljava/lang/Object :: v40 = v7.toArray(v38)::JM,1868
+1910 :: CALL :: call :: Lorg/h2/message/DbException :: v96 = get(#(90134), p1 $null )::CL,3366
+1916 :: CALL :: call :: Ljava/util/ArrayList :: v55 = getUserClassFactories()::JM,1927:JM,1932:CL,3387
+1919 :: CALL :: call :: Ljava/util/Iterator :: v57 = v55.iterator()::JM,1927:JM,1932
+1923 :: CALL :: call :: Z :: v59 = v57.hasNext()::JM,1927:JM,1932
+1927 :: PRED :: IF :: Z :: if (v59 == #(0)) goto 280::CD,1928:CD,1932:CD,1933:CD,1938:JM,1927
+1928 :: CALL :: call :: Ljava/lang/Object :: v61 = v57.next()::JM,1927:JM,1932
+1932 :: EXPR :: assign :: Ljava/lang/Object :: v62 = CHECKCAST v61::JM,1938:JM,1933:JM,1939:JM,1944
+1933 :: CALL :: call :: Z :: v64 = v62.match(p1 $null )::JM,1938:JM,1933:JM,1939:JM,1944
+1938 :: PRED :: IF :: Z :: if (v64 == #(0)) goto 276::CD,1923:CD,1927:CD,1939:CD,1944
+1939 :: CALL :: call :: Ljava/lang/Class :: v66 = v62.loadClass(p1 $null )::JM,1939:JM,1944:JM,1938:JM,1933
+1944 :: PRED :: IF :: Z :: if (v66 == #(null)) goto 257::CD,1923:CD,1927
+1952 :: CALL :: call :: Lorg/h2/message/DbException :: v93 = get(#(90086), v90, v91)::CL,3406
+1965 :: CALL :: call :: Ljava/lang/Thread :: v81 = currentThread()::
+1968 :: CALL :: call :: Ljava/lang/ClassLoader :: v83 = v81.getContextClassLoader()::
+1972 :: CALL :: call :: Ljava/lang/Class :: v85 = forName(p1 $null , #(1), v83)::JM,1938:JM,1939:JM,1944:JM,1933
+1984 :: CALL :: call :: Lorg/h2/message/DbException :: v89 = get(#(90086), v79, v87)::CL,3406
+1996 :: CALL :: call :: Lorg/h2/message/DbException :: v78 = get(#(90086), v74, v76)::CL,3406
+2008 :: CALL :: call :: Lorg/h2/message/DbException :: v73 = get(#(50000), v69, v71)::CL,3406
+2021 :: EXPR :: assign :: null :: PHI v34 = v32, #(0)::DD,1822:DD,1862
+2113 :: ENTR :: entry :: null :: org.h2.message.DbException.convert(java.lang.Throwable)::CD,2117:CD,2118:JM,2130:JM,2167:JM,2121:JM,2169:JM,2139:JM,2157
+2117 :: EXPR :: assign :: Z :: v3=p1 $null  INSTANCEOF org.h2.message.DbException::DD,2118
+2118 :: PRED :: IF :: Z :: if (v3 == #(0)) goto 13::CD,2121:CD,2122
+2121 :: EXPR :: assign :: Z :: v5=p1 $null  INSTANCEOF java.sql.SQLException::DD,2122
+2122 :: PRED :: IF :: Z :: if (v5 == #(0)) goto 32::JM,3433:CD,2130:CD,2131
+2130 :: EXPR :: assign :: Z :: v6=p1 $null  INSTANCEOF java.lang.reflect.InvocationTargetException::DD,2131
+2131 :: PRED :: IF :: Z :: if (v6 == #(0)) goto 48::CD,2133:CD,2139:CD,2140
+2133 :: CALL :: call :: Lorg/h2/message/DbException :: v38 = convertInvocation(v35, #(null))::CL,3446
+2139 :: EXPR :: assign :: Z :: v7=p1 $null  INSTANCEOF java.io.IOException::DD,2140
+2140 :: PRED :: IF :: Z :: if (v7 == #(0)) goto 73::CD,2142:CD,2150:CD,2157:CD,2158
+2142 :: CALL :: call :: Ljava/lang/String :: v32 = p1 $null .toString()::JM,2117:JM,2167:JM,2169:JM,2157
+2150 :: CALL :: call :: Lorg/h2/message/DbException :: v34 = get(#(90028), p1 $null , v30)::CL,3406
+2157 :: EXPR :: assign :: Z :: v8=p1 $null  INSTANCEOF java.lang.OutOfMemoryError::DD,2158
+2158 :: PRED :: IF :: Z :: if (v8 == #(0)) goto 91::CD,2160:CD,2167:CD,2168
+2160 :: CALL :: call :: Lorg/h2/message/DbException :: v28 = get(#(90108), p1 $null , v26)::CL,3406
+2167 :: EXPR :: assign :: Z :: v9=p1 $null  INSTANCEOF java.lang.StackOverflowError::DD,2168
+2168 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 108::CD,2169:CD,2170:CD,2172:CD,2180
+2169 :: EXPR :: assign :: Z :: v10=p1 $null  INSTANCEOF java.lang.LinkageError::DD,2170
+2170 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 123::CD,2172:CD,2180:CD,2192:CD,2200
+2172 :: CALL :: call :: Ljava/lang/String :: v22 = p1 $null .toString()::JM,2117
+2180 :: CALL :: call :: Lorg/h2/message/DbException :: v24 = get(#(50000), p1 $null , v20)::CL,3406
+2192 :: CALL :: call :: Ljava/lang/String :: v16 = p1 $null .toString()::JM,2117
+2200 :: CALL :: call :: Lorg/h2/message/DbException :: v18 = get(#(50000), p1 $null , v14)::CL,3406
+2249 :: ENTR :: entry :: null :: org.h2.util.Utils.getResource(java.lang.String)::CE,2250:CD,2253:CD,2255:CD,2260:CD,2261:CD,2275:CD,2276
+2250 :: EXIT :: exit :: [B :: org.h2.util.Utils.getResource(java.lang.String)::JM,656:JM,708:JM,2548
+2253 :: EXPR :: reference :: Ljava/util/HashMap :: v3 = org.h2.util.Utils.RESOURCES::JM,2260
+2255 :: CALL :: call :: Ljava/lang/Object :: v5 = v3.get(p1 $null )::JM,2260
+2260 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST v5::DD,2261:DD,2276
+2261 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 34::CF,2276:CD,2262:CD,2266
+2262 :: CALL :: call :: [B :: v9 = loadResource(p1 $null )::JM,2276:JM,2266:CL,3530
+2266 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 34::CF,2276:CD,2267:CD,2269
+2267 :: EXPR :: reference :: Ljava/util/HashMap :: v10 = org.h2.util.Utils.RESOURCES::
+2269 :: CALL :: call :: Ljava/lang/Object :: v12 = v10.put(p1 $null , v9)::JM,2260:JM,2276
+2275 :: NORM :: compound :: [B :: return v13::DD,2250
+2276 :: EXPR :: assign :: null :: PHI v13 = v6, v9, v9::CF,2275
+2289 :: ENTR :: entry :: null :: org.h2.util.SortedProperties.fromLines(java.lang.String)::CE,2290:CD,2293:CD,2297:CD,2303:CD,2304:CD,2335:CD,2336
+2290 :: EXIT :: exit :: Lorg/h2/util/SortedProperties :: org.h2.util.SortedProperties.fromLines(java.lang.String)::JM,738:JM,733
+2293 :: NORM :: declaration :: Lorg/h2/util/SortedProperties :: v3 = new org.h2.util.SortedProperties::DD,2335
+2297 :: CALL :: call :: [Ljava/lang/String :: v8 = arraySplit(p1 $null , #(10), #(1))::JM,2303:CL,3203
+2303 :: EXPR :: assign :: I :: v9 = v8.length::DD,2304:CF,2336
+2304 :: PRED :: IF :: Z :: if (v23 >= v9) goto 77::CD,2309:CD,2314:CD,2333:CD,2336:CF,2335
+2305 :: EXPR :: reference :: Ljava/lang/Object :: v11 = v8[v23]::JM,2321:JM,2314
+2309 :: CALL :: call :: I :: v14 = v11.indexOf(#(61))::JM,2321:JM,2314
+2314 :: PRED :: IF :: Z :: if (v14 <= #(0)) goto 70::CD,2315:CD,2321:CD,2322:CD,2327:CF,2333
+2315 :: CALL :: call :: Ljava/lang/String :: v16 = v11.substring(#(0), v14)::JM,2321
+2321 :: EXPR :: assign :: Ljava/lang/Object :: v17 = v14 + #(1)::
+2322 :: CALL :: call :: Ljava/lang/String :: v19 = v11.substring(v17)::
+2327 :: CALL :: call :: Ljava/lang/Object :: v21 = v3.put(v16, v19)::
+2333 :: EXPR :: assign :: Ljava/lang/Object :: v22 = v23 + #(1)::DD,2336
+2335 :: NORM :: compound :: Lorg/h2/util/SortedProperties :: return v3::DD,2290
+2336 :: EXPR :: assign :: null :: PHI v23 = v22, #(0)::DD,2304:DD,2333
+2368 :: ENTR :: entry :: null :: org.h2.message.DbException.traceThrowable(java.lang.Throwable)::CD,2372:CD,2375
+2372 :: CALL :: call :: Ljava/io/PrintWriter :: v4 = getLogWriter()::JM,2375
+2375 :: PRED :: IF :: Z :: if (v4 == #(null)) goto 13::CD,2376
+2376 :: CALL :: call :: V :: p1 $null .printStackTrace(v4)::
+2529 :: ENTR :: entry :: null :: org.h2.util.Tool.showUsage()::CD,2536:CD,2565:CD,2569:CD,2574:CD,2579:CD,2583:CD,2587:CD,2591:CD,2601:CD,2606:CD,2613:CD,2617:CD,2622:CD,2626:CD,2630:CD,2635:CD,2640:CD,2644:CD,2654:CD,2658:CD,2663:CD,2668:CD,2672:CD,2677:CD,2684:CD,2688:CD,2693:CD,2699:CD,2704:CD,2709:CD,2713
+2533 :: EXPR :: reference :: Ljava/util/Properties :: v3 = p0 $null .resources::DD,2536
+2536 :: PRED :: IF :: Z :: if (v3 != #(null)) goto 76::CD,2537:CD,2544:CD,2548:JM,2626:JM,2587:JM,2622:JM,2591
+2537 :: NORM :: declaration :: Ljava/util/Properties :: v5 = new java.util.Properties::DD,2541
+2541 :: EXPR :: modify :: Ljava/util/Properties :: p0 $null .resources = v5::
+2544 :: CALL :: call :: [B :: v9 = getResource(#(/org/h2/res/javadoc.p...))::JM,2548:CL,2249
+2548 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 45::CD,2552:CD,2557
+2549 :: EXPR :: reference :: Ljava/util/Properties :: v10 = p0 $null .resources::
+2552 :: NORM :: declaration :: Ljava/io/ByteArrayInputStream :: v11 = new java.io.ByteArrayInputStream::
+2557 :: CALL :: call :: V :: v10.load(v11)::
+2562 :: EXPR :: reference :: Ljava/io/PrintStream :: v15 = p0 $null .out::
+2565 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v16 = new java.lang.StringBuilder::
+2569 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v16.append(#(Cannot load ))::
+2574 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v20.append(#(/org/h2/res/javadoc.p...))::
+2579 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::
+2583 :: CALL :: call :: V :: v15.println(v24)::
+2587 :: CALL :: call :: Ljava/lang/Class :: v28 = p0 $null .getClass()::JM,2626:JM,2587:JM,2622:JM,2591
+2591 :: CALL :: call :: Ljava/lang/String :: v30 = v28.getName()::JM,2626:JM,2591
+2595 :: EXPR :: reference :: Ljava/io/PrintStream :: v31 = p0 $null .out::
+2598 :: EXPR :: reference :: Ljava/util/Properties :: v32 = p0 $null .resources::
+2601 :: CALL :: call :: Ljava/lang/Object :: v34 = v32.get(v30)::
+2606 :: CALL :: call :: V :: v31.println(v34)::
+2610 :: EXPR :: reference :: Ljava/io/PrintStream :: v36 = p0 $null .out::
+2613 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v37 = new java.lang.StringBuilder::
+2617 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v37.append(#(Usage: java ))::
+2622 :: CALL :: call :: Ljava/lang/Class :: v43 = p0 $null .getClass()::JM,2626:JM,2587:JM,2622:JM,2591
+2626 :: CALL :: call :: Ljava/lang/String :: v45 = v43.getName()::JM,2626:JM,2591
+2630 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v41.append(v45)::
+2635 :: CALL :: call :: Ljava/lang/StringBuilder :: v50 = v47.append(#( <options>))::
+2640 :: CALL :: call :: Ljava/lang/String :: v52 = v50.toString()::
+2644 :: CALL :: call :: V :: v36.println(v52)::
+2648 :: EXPR :: reference :: Ljava/io/PrintStream :: v54 = p0 $null .out::
+2651 :: EXPR :: reference :: Ljava/util/Properties :: v55 = p0 $null .resources::
+2654 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v56 = new java.lang.StringBuilder::
+2658 :: CALL :: call :: Ljava/lang/StringBuilder :: v59 = v56.append(v30)::
+2663 :: CALL :: call :: Ljava/lang/StringBuilder :: v62 = v59.append(#(.main))::
+2668 :: CALL :: call :: Ljava/lang/String :: v64 = v62.toString()::
+2672 :: CALL :: call :: Ljava/lang/Object :: v66 = v55.get(v64)::
+2677 :: CALL :: call :: V :: v54.println(v66)::
+2681 :: EXPR :: reference :: Ljava/io/PrintStream :: v68 = p0 $null .out::
+2684 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v69 = new java.lang.StringBuilder::
+2688 :: CALL :: call :: Ljava/lang/StringBuilder :: v73 = v69.append(#(See also http://h2dat...))::
+2693 :: CALL :: call :: Ljava/lang/String :: v77 = v30.replace(#(46), #(47))::
+2699 :: CALL :: call :: Ljava/lang/StringBuilder :: v79 = v73.append(v77)::
+2704 :: CALL :: call :: Ljava/lang/StringBuilder :: v82 = v79.append(#(.html))::
+2709 :: CALL :: call :: Ljava/lang/String :: v84 = v82.toString()::
+2713 :: CALL :: call :: V :: v68.println(v84)::
+2754 :: ENTR :: entry :: null :: org.h2.util.Tool.showUsageAndThrowUnsupportedOption(java.lang.String)::CD,2759:CD,2762
+2759 :: CALL :: call :: V :: p0 $null .showUsage()::CL,2529
+2762 :: CALL :: call :: Ljava/sql/SQLException :: v6 = p0 $null .throwUnsupportedOption(p1 $null )::CL,3811
+2768 :: ENTR :: entry :: null :: org.h2.tools.CreateCluster.process(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)::CD,2777:CD,2780:CD,2784:CD,2789:CD,2794:CD,2799:CD,2857:CD,2861:CD,2866:CD,2871:CD,2875:CD,2901:JM,3895:JM,3853
+2777 :: CALL :: call :: Lorg/h2/Driver :: v11 = load()::CL,1774
+2780 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::
+2784 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v13.append(p2 $null )::JM,3895:JM,2875:JM,3853
+2789 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v16.append(#(;IFEXISTS=TRUE;CLUSTER=))::JM,3895:JM,3853
+2794 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v19.append(#(TRUE))::JM,3895:JM,3853
+2799 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::JM,3895
+2857 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v44 = new java.lang.StringBuilder::JM,3895:JM,2875:JM,3853
+2861 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v44.append(p1 $null )::JM,3895:JM,2875:JM,3853
+2866 :: CALL :: call :: Ljava/lang/StringBuilder :: v50 = v47.append(#(;CLUSTER=''))::JM,3895:JM,2875:JM,3853
+2871 :: CALL :: call :: Ljava/lang/String :: v52 = v50.toString()::JM,3895:JM,2875:JM,3853
+2875 :: CALL :: call :: Ljava/sql/Connection :: v54 = getConnection(v52, p3 $null , p4 $null )::JM,3895:JM,2875:JM,3853
+2901 :: CALL :: call :: V :: process(v54, #(backup.sql), #(), #())::JM,3895:JM,3853:CL,3846
+3183 :: ENTR :: entry :: null :: org.h2.util.New.arrayList()::CE,3184:CD,3186:CD,3191
+3184 :: EXIT :: exit :: Ljava/util/ArrayList :: org.h2.util.New.arrayList()::JM,1868:JM,3294
+3186 :: NORM :: declaration :: Ljava/util/ArrayList :: v2 = new java.util.ArrayList::DD,3191
+3191 :: NORM :: compound :: Ljava/util/ArrayList :: return v2::DD,3184
+3194 :: ENTR :: entry :: null :: org.h2.util.New.hashSet()::CF,3197:CE,3195:CD,3201
+3195 :: EXIT :: exit :: Ljava/util/HashSet :: org.h2.util.New.hashSet()::
+3197 :: NORM :: declaration :: Ljava/util/HashSet :: v2 = new java.util.HashSet::DD,3201
+3201 :: NORM :: compound :: Ljava/util/HashSet :: return v2::DD,3195
+3203 :: ENTR :: entry :: null :: org.h2.util.StringUtils.arraySplit(java.lang.String,char,boolean)::CE,3204:CD,3209:JM,3232:JM,3237:JM,3253:JM,3254:JM,3226:JM,3279:JM,3215
+3204 :: EXIT :: exit :: [Ljava/lang/String :: org.h2.util.StringUtils.arraySplit(java.lang.String,char,boolean)::JM,1821:JM,2303
+3209 :: PRED :: IF :: Z :: if (p1 $null  != #(null)) goto 7::CD,3210:CD,3211:CD,3215:JM,3232:JM,3237:JM,3253:JM,3254:JM,3209:JM,3226:JM,3279
+3210 :: NORM :: compound :: [Ljava/lang/String :: return #(null)::DD,3204
+3211 :: CALL :: call :: I :: v7 = p1 $null .length()::JM,3232:JM,3237:JM,3253:JM,3254:JM,3209:JM,3226:JM,3279:JM,3215
+3215 :: PRED :: IF :: Z :: if (v7 != #(0)) goto 20::CD,3216:CD,3217:CD,3218:CD,3221:CD,3226:CD,3275:CD,3279:CD,3285:CD,3290:CD,3294:CD,3295:CD,3300:CD,3301:CD,3304
+3216 :: NORM :: declaration :: [Ljava/lang/String :: v48 = new java.lang.String[]::CF,3217
+3217 :: NORM :: compound :: [Ljava/lang/String :: return v48::DD,3204
+3218 :: CALL :: call :: Ljava/util/ArrayList :: v10 = arrayList()::JM,3294:CL,3183
+3221 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v11 = new java.lang.StringBuilder::JM,3302:JM,3304
+3226 :: PRED :: IF :: Z :: if (v35 >= v7) goto 143::CD,3227:CD,3232:CD,3273:CD,3301:CD,3303:JM,3237:JM,3253:JM,3254:JM,3209:JM,3226:JM,3279:JM,3215:JM,3304
+3227 :: CALL :: call :: C :: v14 = p1 $null .charAt(v35)::JM,3232:JM,3237:JM,3253:JM,3254:JM,3209:JM,3226:JM,3279:JM,3215
+3232 :: PRED :: IF :: Z :: if (v14 != p2 $null ) goto 98::CD,3233:CD,3237:CD,3243:CD,3248:CD,3253:CD,3302:CD,3303
+3233 :: CALL :: call :: Ljava/lang/String :: v16 = v11.toString()::JM,3302
+3237 :: PRED :: IF :: Z :: if (p3 $null  == #(0)) goto 81::CD,3238:CD,3302
+3238 :: CALL :: call :: Ljava/lang/String :: v18 = v16.trim()::JM,3302
+3243 :: CALL :: call :: Z :: v21 = v10.add(v19)::JM,3294
+3248 :: CALL :: call :: V :: v11.setLength(#(0))::
+3253 :: PRED :: IF :: Z :: if (v14 != #(92)) goto 131::CD,3254:CD,3255:CD,3268:CD,3303
+3254 :: EXPR :: assign :: Ljava/lang/Object :: v25 = v7 - #(1)::CF,3255
+3255 :: PRED :: IF :: Z :: if (v35 >= v25) goto 131::CD,3256:CD,3257:CD,3262:CD,3268:CD,3303
+3256 :: EXPR :: assign :: Ljava/lang/Object :: v26 = v35 + #(1)::JM,3232:JM,3237:JM,3253:JM,3254:JM,3209:JM,3226:JM,3279:JM,3215:DD,3303
+3257 :: CALL :: call :: C :: v28 = p1 $null .charAt(v26)::JM,3232:JM,3237:JM,3253:JM,3254:JM,3209:JM,3226:JM,3279:JM,3215
+3262 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v11.append(v28)::
+3268 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v11.append(v14)::
+3273 :: EXPR :: assign :: Ljava/lang/Object :: v34 = v33 + #(1)::DD,3301
+3275 :: CALL :: call :: Ljava/lang/String :: v37 = v11.toString()::JM,3304
+3279 :: PRED :: IF :: Z :: if (p3 $null  == #(0)) goto 164::CD,3280:CD,3304
+3280 :: CALL :: call :: Ljava/lang/String :: v39 = v37.trim()::JM,3304
+3285 :: CALL :: call :: Z :: v42 = v10.add(v40)::JM,3294
+3290 :: CALL :: call :: I :: v44 = v10.size()::JM,3294
+3294 :: NORM :: declaration :: [Ljava/lang/String :: v45 = new java.lang.String[]::JM,3294:DD,3300
+3295 :: CALL :: call :: [Ljava/lang/Object :: v47 = v10.toArray(v45)::JM,3294
+3300 :: NORM :: compound :: [Ljava/lang/String :: return v45::DD,3204
+3301 :: EXPR :: assign :: null :: PHI v35 = v34, #(0)::DD,3226:JM,3232:JM,3237:JM,3253:JM,3254:JM,3209:JM,3279:JM,3215:DD,3255:DD,3256:DD,3303
+3302 :: EXPR :: assign :: null :: PHI v19 = v18, v16::JM,3294
+3303 :: EXPR :: assign :: null :: PHI v33 = v35, v26, v35::DD,3273
+3304 :: EXPR :: assign :: null :: PHI v40 = v39, v37::JM,3294
+3366 :: ENTR :: entry :: null :: org.h2.message.DbException.get(int,java.lang.String)::CD,3376
+3376 :: CALL :: call :: Lorg/h2/message/DbException :: v8 = get(p1 $null , v5)::CL,4070
+3387 :: ENTR :: entry :: null :: org.h2.util.JdbcUtils.getUserClassFactories()::CE,3388:CD,3390:CD,3392:CD,3399:CD,3401
+3388 :: EXIT :: exit :: Ljava/util/ArrayList :: org.h2.util.JdbcUtils.getUserClassFactories()::JM,1927:JM,1932
+3390 :: EXPR :: reference :: Ljava/util/ArrayList :: v2 = org.h2.util.JdbcUtils.userClassFactories::DD,3392
+3392 :: PRED :: IF :: Z :: if (v2 != #(null)) goto 16::CF,3393:CD,3397
+3393 :: NORM :: declaration :: Ljava/util/ArrayList :: v4 = new java.util.ArrayList::DD,3397
+3397 :: EXPR :: modify :: Ljava/util/ArrayList :: org.h2.util.JdbcUtils.userClassFactories = v4::
+3399 :: EXPR :: reference :: Ljava/util/ArrayList :: v6 = org.h2.util.JdbcUtils.userClassFactories::CF,3401
+3401 :: NORM :: compound :: Ljava/util/ArrayList :: return v6::DD,3388
+3406 :: ENTR :: entry :: null :: org.h2.message.DbException.get(int,java.lang.Throwable,java.lang.String[])::CD,3413:JM,3433
+3413 :: CALL :: call :: Lorg/h2/jdbc/JdbcSQLException :: v7 = getJdbcSQLException(p1 $null , p2 $null , p3 $null )::CL,4091
+3433 :: CALL :: call :: Ljava/lang/String :: v5 = p1 $null .getMessage()::JM,3433
+3446 :: ENTR :: entry :: null :: org.h2.message.DbException.convertInvocation(java.lang.reflect.InvocationTargetException,java.lang.String)::CD,3451:CD,3455:CD,3456:JM,3457:JM,3464:JM,3484
+3451 :: CALL :: call :: Ljava/lang/Throwable :: v5 = p1 $null .getTargetException()::JM,3457:JM,3464:JM,3451:JM,3484:JM,3455
+3455 :: EXPR :: assign :: Z :: v6=v5 INSTANCEOF java.sql.SQLException::DD,3456
+3456 :: PRED :: IF :: Z :: if (v6 != #(0)) goto 20::CD,3457:CD,3458:CD,3459
+3457 :: EXPR :: assign :: Z :: v8=v5 INSTANCEOF org.h2.message.DbException::DD,3458
+3458 :: PRED :: IF :: Z :: if (v8 == #(0)) goto 25::CD,3459:CD,3464:CD,3502
+3459 :: CALL :: call :: Lorg/h2/message/DbException :: v32 = convert(v5)::CL,2113
+3464 :: PRED :: IF :: Z :: if (p2 $null  != #(null)) goto 35::CF,3470:CD,3474:CD,3479:CD,3484:CD,3488:CD,3493
+3470 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::
+3474 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v10.append(p2 $null )::JM,3457:JM,3451:JM,3484:JM,3455
+3479 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v13.append(#(: ))::JM,3484
+3484 :: CALL :: call :: Ljava/lang/String :: v18 = v5.getMessage()::JM,3484
+3488 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v16.append(v18)::
+3493 :: CALL :: call :: Ljava/lang/String :: v22 = v20.toString()::
+3502 :: CALL :: call :: Lorg/h2/message/DbException :: v30 = get(#(90105), v5, v28)::CL,3406
+3530 :: ENTR :: entry :: null :: org.h2.util.Utils.loadResource(java.lang.String)::CE,3531:CD,3534:CD,3535:CD,3540:CD,3653:CD,3662:CD,3667:CD,3676:JM,3547:JM,3599
+3531 :: EXIT :: exit :: [B :: org.h2.util.Utils.loadResource(java.lang.String)::JM,2276:JM,2266
+3534 :: EXPR :: assign :: Ljava/lang/Class :: v3 = metadata <Application,Lorg/h2/util/Utils>-><Primordial,Ljava/lang/Class>::JM,3540
+3535 :: CALL :: call :: Ljava/io/InputStream :: v6 = v3.getResourceAsStream(#(data.zip))::JM,3540
+3540 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 31::CF,3555:CF,3541:CD,3542:CD,3547:CD,3560:CD,3564
+3541 :: EXPR :: assign :: Ljava/lang/Class :: v63 = metadata <Application,Lorg/h2/util/Utils>-><Primordial,Ljava/lang/Class>::JM,3547
+3542 :: CALL :: call :: Ljava/io/InputStream :: v65 = v63.getResourceAsStream(p1 $null )::JM,3547:JM,3599
+3547 :: PRED :: IF :: Z :: if (v65 != #(null)) goto 27::CD,3548:CD,3549:CD,3554
+3548 :: NORM :: compound :: [B :: return #(null)::DD,3531
+3549 :: CALL :: call :: [B :: v67 = readBytesAndClose(v65, #(0))::JM,3554:CL,4129
+3554 :: NORM :: compound :: [B :: return v67::DD,3531
+3555 :: NORM :: declaration :: Ljava/util/zip/ZipInputStream :: v8 = new java.util.zip.ZipInputStream::JM,3575:JM,3564:JM,3677:DD,3616:DD,3635
+3560 :: CALL :: call :: Ljava/util/zip/ZipEntry :: v11 = v8.getNextEntry()::JM,3575:JM,3564:JM,3677
+3564 :: PRED :: IF :: Z :: if (v11 != #(null)) goto 58::CD,3566:CD,3570:CD,3575:CD,3594:CD,3599:CD,3635:CD,3670:CD,3677
+3566 :: CALL :: call :: Ljava/lang/String :: v13 = v11.getName()::JM,3575:JM,3677
+3570 :: CALL :: call :: Z :: v16 = v13.startsWith(#(/))::JM,3575:JM,3677
+3575 :: PRED :: IF :: Z :: if (v16 != #(0)) goto 98::CF,3677:CF,3576:CD,3580:CD,3585:CD,3590
+3576 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v18 = new java.lang.StringBuilder::JM,3677
+3580 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v18.append(#(/))::JM,3677
+3585 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v21.append(v13)::JM,3677:JM,3575
+3590 :: CALL :: call :: Ljava/lang/String :: v25 = v23.toString()::JM,3677
+3594 :: CALL :: call :: Z :: v28 = v26.equals(p1 $null )::JM,3599:JM,3547
+3599 :: PRED :: IF :: Z :: if (v28 == #(0)) goto 165::CF,3600:CD,3560:CD,3564:CD,3604:CD,3609:CD,3612:CD,3616:CD,3630:CD,3631
+3600 :: NORM :: declaration :: Ljava/io/ByteArrayOutputStream :: v30 = new java.io.ByteArrayOutputStream::JM,3630
+3604 :: CALL :: call :: J :: v33 = copy(v8, v30)::CL,4189
+3609 :: CALL :: call :: V :: v8.closeEntry()::
+3612 :: CALL :: call :: [B :: v36 = v30.toByteArray()::JM,3630
+3616 :: PRED :: IF :: Z :: if (v8 == #(null)) goto 163::CD,3617:CF,3630
+3617 :: PRED :: IF :: Z :: if (#(null) == #(null)) goto 158::CD,3618:CD,3627
+3618 :: CALL :: call :: V :: v8.close()::
+3627 :: CALL :: call :: V :: v8.close()::
+3630 :: NORM :: compound :: [B :: return v36::DD,3531
+3631 :: CALL :: call :: V :: v8.closeEntry()::
+3635 :: PRED :: IF :: Z :: if (v8 == #(null)) goto 247::CD,3636
+3636 :: PRED :: IF :: Z :: if (#(null) == #(null)) goto 198::CD,3637:CD,3646
+3637 :: CALL :: call :: V :: v8.close()::
+3646 :: CALL :: call :: V :: v8.close()::
+3653 :: CALL :: call :: V :: v8.close()::
+3662 :: CALL :: call :: V :: v8.close()::
+3667 :: CALL :: call :: V :: v52.printStackTrace()::
+3670 :: NORM :: compound :: [B :: return #(null)::DD,3531
+3676 :: EXPR :: assign :: Ljava/lang/Exception :: v52 = catch <exc>::
+3677 :: EXPR :: assign :: null :: PHI v26 = v13, v25::JM,3599
+3811 :: ENTR :: entry :: null :: org.h2.util.Tool.throwUnsupportedOption(java.lang.String)::CD,3816
+3816 :: CALL :: call :: Lorg/h2/message/DbException :: v6 = get(#(50100), p1 $null )::CL,3366
+3846 :: ENTR :: entry :: null :: org.h2.tools.Script.process(java.sql.Connection,java.lang.String,java.lang.String,java.lang.String)::CD,3853:CD,3857:CD,3861:CD,3866:CD,3871:CD,3876:CD,3881:CD,3886:CD,3891:CD,3895
+3853 :: CALL :: call :: Ljava/sql/Statement :: v7 = p1 $null .createStatement()::JM,3895:JM,3853
+3857 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v9 = new java.lang.StringBuilder::JM,3895
+3861 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v9.append(#(SCRIPT ))::JM,3895
+3866 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v13.append(p3 $null )::JM,3895
+3871 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v15.append(#( TO '))::JM,3895
+3876 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v18.append(p2 $null )::JM,3895:JM,3853
+3881 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v20.append(#(' ))::JM,3895
+3886 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v23.append(p4 $null )::JM,3895
+3891 :: CALL :: call :: Ljava/lang/String :: v27 = v25.toString()::JM,3895
+3895 :: CALL :: call :: Z :: v29 = v7.execute(v27)::JM,3895
+4070 :: ENTR :: entry :: null :: org.h2.message.DbException.get(int,java.lang.String[])::CD,4076:JM,3433
+4076 :: CALL :: call :: Lorg/h2/jdbc/JdbcSQLException :: v7 = getJdbcSQLException(p1 $null , #(null), p2 $null )::CL,4091
+4091 :: ENTR :: entry :: null :: org.h2.message.DbException.getJdbcSQLException(int,java.lang.Throwable,java.lang.String[])::CD,4097:CD,4101

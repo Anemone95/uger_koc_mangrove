@@ -1,0 +1,17 @@
+[51, 57]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest18419.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,21:CD,25:CD,29:CD,34:CD,39:CD,44:CD,48:CD,51
+21 :: CALL :: call :: Ljava/lang/String :: v16 = doSomething(v14)::JM,51:CL,152
+152 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest18419.doSomething(java.lang.String)::CF,153:CD,156:CD,157:CD,159:CD,160
+25 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v17 = new java.lang.StringBuilder::JM,51
+153 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest18419.doSomething(java.lang.String)::JM,51
+156 :: EXPR :: assign :: Ljava/lang/Object :: v5 = #(294) - #(86)::DD,157
+29 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v17.append(#(SELECT * from USERS w...))::JM,51
+157 :: PRED :: IF :: Z :: if (v5 <= #(200)) goto 23::CD,160
+159 :: NORM :: compound :: Ljava/lang/String :: return v8::CF,153
+160 :: EXPR :: assign :: null :: PHI v8 = #(This_should_always_happen), p1 $param ::CF,159
+34 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v21.append(v16)::JM,51
+39 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v23.append(#('))::JM,51
+44 :: CALL :: call :: Ljava/lang/String :: v28 = v26.toString()::JM,51
+48 :: CALL :: call :: Ljava/sql/Connection :: v30 = getSqlConnection()::JM,51
+51 :: CALL :: call :: Ljava/sql/PreparedStatement :: v34 = v30.prepareStatement(v28, #(1003), #(1007))::JM,51

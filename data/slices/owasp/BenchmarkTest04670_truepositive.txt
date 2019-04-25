@@ -1,0 +1,26 @@
+[81, 85]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest04670.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,21:CD,25:CD,55:CD,59:CD,64:CD,69:CD,74:CD,78:CD,81:CD,104:CD,105:JM,16:JM,20
+7 :: CALL :: call :: Ljava/util/Enumeration :: v7 = p1 $request .getParameterNames()::JM,16:JM,20:JM,11:JM,15
+11 :: CALL :: call :: Z :: v9 = v7.hasMoreElements()::JM,16:JM,20:JM,11:JM,15
+15 :: PRED :: IF :: Z :: if (v9 == #(0)) goto 36::CF,104:CD,16:CD,20:JM,11:JM,15
+16 :: CALL :: call :: Ljava/lang/Object :: v12 = v7.nextElement()::JM,16:JM,20:JM,11:JM,15
+20 :: EXPR :: assign :: Ljava/lang/Object :: v13 = CHECKCAST v12::DD,104
+21 :: CALL :: call :: I :: v16 = v14.length()::JM,25
+25 :: PRED :: IF :: Z :: if (v16 <= #(1)) goto 79::CF,105:CF,26:CD,31:CD,35:CD,39:CD,40:CD,44:CD,51
+26 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v18 = new java.lang.StringBuilder::JM,105
+31 :: CALL :: call :: I :: v21 = v14.length()::JM,39
+35 :: CALL :: call :: I :: v24 = #(Z).length()::JM,39
+39 :: EXPR :: assign :: Ljava/lang/Object :: v25 = v21 - v24::JM,105
+40 :: CALL :: call :: I :: v27 = v14.length()::JM,105
+44 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v18.replace(v25, v27, #(Z))::JM,105
+51 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::JM,105
+55 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v33 = new java.lang.StringBuilder::JM,81
+59 :: CALL :: call :: Ljava/lang/StringBuilder :: v37 = v33.append(#(SELECT * from USERS w...))::JM,81
+64 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v37.append(v32)::JM,81
+69 :: CALL :: call :: Ljava/lang/StringBuilder :: v42 = v39.append(#('))::JM,81
+74 :: CALL :: call :: Ljava/lang/String :: v44 = v42.toString()::JM,81
+78 :: CALL :: call :: Ljava/sql/Connection :: v46 = getSqlConnection()::JM,81
+81 :: CALL :: call :: Ljava/sql/PreparedStatement :: v48 = v46.prepareStatement(v44)::JM,81
+104 :: EXPR :: assign :: null :: PHI v14 = #(), v13::JM,25:JM,39:DD,105
+105 :: EXPR :: assign :: null :: PHI v32 = v14, v31::CF,55:JM,81

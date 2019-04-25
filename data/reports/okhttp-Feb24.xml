@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.2-dev-20160306-90c514b" sequence="1" timestamp="1519522455517" analysisTimestamp="1519522452555" release="">
+ <BugInstance type="PATH_TRAVERSAL_IN" priority="1" rank="5" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="okhttp3.mockwebserver.internal.http2.Http2Server">
+      <SourceLine classname="okhttp3.mockwebserver.internal.http2.Http2Server" sourcefile="Http2Server.java" sourcepath="okhttp3/mockwebserver/internal/http2/Http2Server.java"/>
+    </Class>
+    <Method classname="okhttp3.mockwebserver.internal.http2.Http2Server" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="okhttp3.mockwebserver.internal.http2.Http2Server" start="182" end="190" startBytecode="0" endBytecode="149" sourcefile="Http2Server.java" sourcepath="okhttp3/mockwebserver/internal/http2/Http2Server.java"/>
+    </Method>
+    <SourceLine classname="okhttp3.mockwebserver.internal.http2.Http2Server" start="187" end="187" startBytecode="39" endBytecode="39" sourcefile="Http2Server.java" sourcepath="okhttp3/mockwebserver/internal/http2/Http2Server.java"/>
+    <String value="File(...)" role="Sink method"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="okhttp3.mockwebserver.internal.http2.Http2Server">
+      <SourceLine classname="okhttp3.mockwebserver.internal.http2.Http2Server" sourcefile="Http2Server.java" sourcepath="okhttp3/mockwebserver/internal/http2/Http2Server.java"/>
+    </Class>
+    <Method classname="okhttp3.mockwebserver.internal.http2.Http2Server" name="onStream" signature="(Lokhttp3/internal/http2/Http2Stream;)V" isStatic="false">
+      <SourceLine classname="okhttp3.mockwebserver.internal.http2.Http2Server" start="98" end="124" startBytecode="0" endBytecode="463" sourcefile="Http2Server.java" sourcepath="okhttp3/mockwebserver/internal/http2/Http2Server.java"/>
+    </Method>
+    <SourceLine classname="okhttp3.mockwebserver.internal.http2.Http2Server" start="112" end="112" startBytecode="112" endBytecode="112" sourcefile="Http2Server.java" sourcepath="okhttp3/mockwebserver/internal/http2/Http2Server.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="okhttp3.mockwebserver.internal.http2.Http2Server" start="102" end="102" startBytecode="58" endBytecode="58" sourcefile="Http2Server.java" sourcepath="okhttp3/mockwebserver/internal/http2/Http2Server.java"/>
+    <SourceLine classname="okhttp3.mockwebserver.internal.http2.Http2Server" start="112" end="112" startBytecode="106" endBytecode="106" sourcefile="Http2Server.java" sourcepath="okhttp3/mockwebserver/internal/http2/Http2Server.java"/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="okhttp3.mockwebserver.internal.tls.SslClient$Builder">
+      <SourceLine classname="okhttp3.mockwebserver.internal.tls.SslClient$Builder" sourcefile="SslClient.java" sourcepath="okhttp3/mockwebserver/internal/tls/SslClient.java"/>
+    </Class>
+    <Method classname="okhttp3.mockwebserver.internal.tls.SslClient$Builder" name="build" signature="()Lokhttp3/mockwebserver/internal/tls/SslClient;" isStatic="false">
+      <SourceLine classname="okhttp3.mockwebserver.internal.tls.SslClient$Builder" start="129" end="163" startBytecode="0" endBytecode="577" sourcefile="SslClient.java" sourcepath="okhttp3/mockwebserver/internal/tls/SslClient.java"/>
+    </Method>
+    <SourceLine classname="okhttp3.mockwebserver.internal.tls.SslClient$Builder" start="145" end="145" startBytecode="123" endBytecode="123" sourcefile="SslClient.java" sourcepath="okhttp3/mockwebserver/internal/tls/SslClient.java"/>
+    <Method classname="javax.net.ssl.KeyManagerFactory" name="init" signature="(Ljava/security/KeyStore;[C)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="javax.net.ssl.KeyManagerFactory" start="259" end="260" startBytecode="0" endBytecode="37" sourcefile="KeyManagerFactory.java" sourcepath="javax/net/ssl/KeyManagerFactory.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <Method classname="java.lang.String" name="toCharArray" signature="()[C" isStatic="false" role="METHOD_RETURN_VALUE_OF">
+      <SourceLine classname="java.lang.String" start="2748" end="2750" startBytecode="0" endBytecode="56" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+  </BugInstance>
+</BugCollection>

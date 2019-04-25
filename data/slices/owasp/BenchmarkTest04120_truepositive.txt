@@ -1,0 +1,24 @@
+[84, 88]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest04120.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,26:CD,30:CD,36:CD,40:CD,46:CD,52:CD,57:CD,58:CD,62:CD,67:CD,72:CD,77:CD,81:CD,84:CD,98:JM,16:JM,21
+7 :: CALL :: call :: Ljava/util/Map :: v6 = p1 $request .getParameterMap()::JM,16:JM,21:JM,11:JM,15
+11 :: CALL :: call :: Z :: v9 = v6.isEmpty()::JM,16:JM,21:JM,11:JM,15
+15 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 39::CF,98:CD,16:CD,21:JM,11:JM,15
+16 :: CALL :: call :: Ljava/lang/Object :: v13 = v6.get(#(foo))::JM,16:JM,21:JM,11:JM,15
+21 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::
+22 :: EXPR :: reference :: Ljava/lang/Object :: v15 = v14[#(0)]::DD,98
+26 :: NORM :: declaration :: Ljava/util/HashMap :: v18 = new java.util.HashMap::JM,57
+30 :: CALL :: call :: Ljava/lang/Object :: v23 = v18.put(#(keyA-67788), #(a Value))::
+36 :: CALL :: call :: Ljava/lang/String :: v26 = v16.toString()::JM,36
+40 :: CALL :: call :: Ljava/lang/Object :: v28 = v18.put(#(keyB-67788), v26)::
+46 :: CALL :: call :: Ljava/lang/Object :: v32 = v18.put(#(keyC), #(another Value))::
+52 :: CALL :: call :: Ljava/lang/Object :: v34 = v18.get(#(keyB-67788))::JM,57
+57 :: EXPR :: assign :: Ljava/lang/Object :: v35 = CHECKCAST v34::JM,84:CF,58
+58 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v36 = new java.lang.StringBuilder::JM,84
+62 :: CALL :: call :: Ljava/lang/StringBuilder :: v40 = v36.append(#(UPDATE USERS SET PASS...))::JM,84
+67 :: CALL :: call :: Ljava/lang/StringBuilder :: v42 = v40.append(v35)::JM,84
+72 :: CALL :: call :: Ljava/lang/StringBuilder :: v45 = v42.append(#(' WHERE USERNAME='foo'))::JM,84
+77 :: CALL :: call :: Ljava/lang/String :: v47 = v45.toString()::JM,84
+81 :: CALL :: call :: Ljava/sql/Statement :: v49 = getSqlStatement()::JM,84
+84 :: CALL :: call :: I :: v51 = v49.executeUpdate(v47)::JM,84
+98 :: EXPR :: assign :: null :: PHI v16 = #(), v15::JM,36:CF,26

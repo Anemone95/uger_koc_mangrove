@@ -1,0 +1,24 @@
+[54, 58]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest14105.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,23:CD,28:CD,32:CD,37:CD,42:CD,47:CD,51:CD,54
+23 :: CALL :: call :: Ljava/lang/String :: v14 = v10.doSomething(v9)::JM,54:CL,173
+28 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v15 = new java.lang.StringBuilder::JM,54
+32 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v15.append(#(SELECT * from USERS w...))::JM,54
+37 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v19.append(v14)::JM,54
+42 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v21.append(#('))::JM,54
+47 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::JM,54
+51 :: CALL :: call :: Ljava/sql/Statement :: v28 = getSqlStatement()::JM,54
+54 :: CALL :: call :: Z :: v30 = v28.execute(v26)::JM,54
+173 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest14105.Test.doSomething(java.lang.String)::CE,174:CD,178:CD,182:CD,212:CD,213:JM,196
+174 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest14105.Test.doSomething(java.lang.String)::JM,54
+178 :: CALL :: call :: I :: v5 = p1 $param .length()::JM,196:JM,213:JM,182
+182 :: PRED :: IF :: Z :: if (v5 <= #(1)) goto 44::CF,213:CF,183:CD,188:CD,192:CD,196:CD,197:CD,201:CD,208
+183 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v7 = new java.lang.StringBuilder::JM,213
+188 :: CALL :: call :: I :: v10 = p1 $param .length()::JM,196:JM,213:JM,182
+192 :: CALL :: call :: I :: v13 = #(Z).length()::JM,196
+196 :: EXPR :: assign :: Ljava/lang/Object :: v14 = v10 - v13::JM,213:JM,196:JM,182
+197 :: CALL :: call :: I :: v16 = p1 $param .length()::JM,196:JM,213:JM,182
+201 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v7.replace(v14, v16, #(Z))::JM,213
+208 :: CALL :: call :: Ljava/lang/String :: v20 = v18.toString()::JM,213
+212 :: NORM :: compound :: Ljava/lang/String :: return v21::DD,174
+213 :: EXPR :: assign :: null :: PHI v21 = p1 $param , v20::CF,212

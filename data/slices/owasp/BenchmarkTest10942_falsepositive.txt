@@ -1,0 +1,24 @@
+[64, 65, 66, 67, 68, 69, 70, 71, 72, 77, 63]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest10942.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,32:CD,37:CD,41:CD,46:CD,51:CD,56:CD,60:CD,63:CD,72
+32 :: CALL :: call :: Ljava/lang/String :: v21 = v17.doSomething(v16)::JM,72:CL,182
+37 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v22 = new java.lang.StringBuilder::JM,72
+41 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v22.append(#(UPDATE USERS SET PASS...))::JM,72
+46 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v26.append(v21)::JM,72
+51 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v28.append(#(' WHERE USERNAME='foo'))::JM,72
+56 :: CALL :: call :: Ljava/lang/String :: v33 = v31.toString()::JM,72
+60 :: CALL :: call :: Ljava/sql/Statement :: v35 = getSqlStatement()::JM,72
+63 :: NORM :: declaration :: [I :: v37 = new []::JM,72
+64 :: EXPR :: modify :: I :: v37[#(0)] = #(1)::
+68 :: EXPR :: modify :: I :: v37[#(1)] = #(2)::
+72 :: CALL :: call :: I :: v40 = v35.executeUpdate(v33, v37)::JM,72
+182 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest10942.Test.doSomething(java.lang.String)::CE,183:CD,187:CD,191:CD,196:CD,201:CD,206:CD,211:CD,216:CD,217
+183 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest10942.Test.doSomething(java.lang.String)::JM,72
+187 :: NORM :: declaration :: Ljava/util/ArrayList :: v4 = new java.util.ArrayList::JM,216
+191 :: CALL :: call :: Z :: v8 = v4.add(#(safe))::
+196 :: CALL :: call :: Z :: v10 = v4.add(p1 $param )::
+201 :: CALL :: call :: Z :: v13 = v4.add(#(moresafe))::
+206 :: CALL :: call :: Ljava/lang/Object :: v16 = v4.remove(#(0))::
+211 :: CALL :: call :: Ljava/lang/Object :: v19 = v4.get(#(1))::JM,216
+216 :: EXPR :: assign :: Ljava/lang/Object :: v20 = CHECKCAST v19::DD,217
+217 :: NORM :: compound :: Ljava/lang/String :: return v20::DD,183

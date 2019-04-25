@@ -1,0 +1,14 @@
+[50, 47]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest03434.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,17:CD,21:CD,25:CD,30:CD,35:CD,40:CD,44:CD,47:CD,64
+7 :: CALL :: call :: Ljava/lang/String :: v7 = p1 $request .getParameter(#(foo))::JM,64
+12 :: CALL :: call :: C :: v11 = #(ABC).charAt(#(1))::JM,17
+17 :: PRED :: IF :: null :: switch v11::CD,64
+21 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v15 = new java.lang.StringBuilder::JM,47
+25 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v15.append(#(SELECT * from USERS w...))::JM,47
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v19.append(v14)::JM,47
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v21.append(#('))::JM,47
+40 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::JM,47
+44 :: CALL :: call :: Ljava/sql/Statement :: v28 = getSqlStatement()::JM,47
+47 :: CALL :: call :: V :: v28.addBatch(v26)::JM,47
+64 :: EXPR :: assign :: null :: PHI v14 = v7, #(bob), v7, #(bob's your uncle)::CF,21:JM,47

@@ -1,0 +1,20 @@
+[37, 38]
+1 :: ENTR :: entry :: null :: freecs.util.MessageTemplateFinder.main(java.lang.String[])::CD,5:CD,21:CD,22:JM,6
+5 :: PRED :: IF :: Z :: if (p1 $args  == #(null)) goto 10::CD,6:CD,7:CD,8:CD,10:CD,14
+6 :: EXPR :: assign :: I :: v4 = p1 $args .length::DD,7
+7 :: PRED :: IF :: Z :: if (v4 >= #(1)) goto 24::CD,8:CD,10:CD,14
+8 :: EXPR :: reference :: Ljava/io/PrintStream :: v6 = java.lang.System.out::
+10 :: CALL :: call :: V :: v6.println(#(please specify the pa...))::
+14 :: CALL :: call :: V :: exit(#(1))::
+21 :: EXPR :: assign :: I :: v12 = p1 $args .length::DD,22
+22 :: PRED :: IF :: Z :: if (v12 <= #(1)) goto 85::CD,27
+23 :: EXPR :: reference :: Ljava/lang/Object :: v13 = p1 $args [#(1)]::DD,27
+27 :: PRED :: IF :: Z :: if (v13 == #(null)) goto 85::CD,32:CD,36
+28 :: EXPR :: reference :: Ljava/lang/Object :: v14 = p1 $args [#(1)]::JM,36
+32 :: CALL :: call :: I :: v16 = v14.length()::JM,36
+36 :: PRED :: IF :: Z :: if (v16 <= #(0)) goto 85::CF,37
+37 :: NORM :: declaration :: Ljava/io/FileInputStream :: v17 = new java.io.FileInputStream::
+38 :: EXPR :: reference :: Ljava/lang/Object :: v18 = p1 $args [#(1)]::
+439 :: ENTR :: entry :: null :: freecs.util.MessageTemplateFinder.<clinit>()::CD,442:CD,448
+442 :: NORM :: declaration :: Ljava/util/TreeSet :: v2 = new java.util.TreeSet::
+448 :: NORM :: declaration :: Ljava/util/Properties :: v4 = new java.util.Properties::

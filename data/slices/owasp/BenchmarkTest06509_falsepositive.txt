@@ -1,0 +1,14 @@
+[40, 44]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest06509.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,12:CD,14:CD,18:CD,23:CD,28:CD,33:CD,37:CD,40:CD,63
+7 :: CALL :: call :: Ljava/lang/String :: v6 = p1 $request .getQueryString()::JM,63
+11 :: EXPR :: assign :: Ljava/lang/Object :: v9 = #(294) - #(86)::DD,12
+12 :: PRED :: IF :: Z :: if (v9 <= #(200)) goto 33::CD,63
+14 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::JM,40
+18 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v13.append(#(SELECT * from USERS w...))::JM,40
+23 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v17.append(v12)::JM,40
+28 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v19.append(#('))::JM,40
+33 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::JM,40
+37 :: CALL :: call :: Ljava/sql/Connection :: v26 = getSqlConnection()::JM,40
+40 :: CALL :: call :: Ljava/sql/PreparedStatement :: v28 = v26.prepareStatement(v24)::JM,40
+63 :: EXPR :: assign :: null :: PHI v12 = #(This_should_always_happen), v6::CF,14:JM,40

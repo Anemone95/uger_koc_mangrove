@@ -1,0 +1,18 @@
+[70, 77]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest03377.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,16:CD,22:CD,26:CD,32:CD,38:CD,43:CD,44:CD,48:CD,53:CD,58:CD,63:CD,67:CD,70
+7 :: CALL :: call :: Ljava/lang/String :: v7 = p1 $request .getParameter(#(foo))::JM,22
+12 :: NORM :: declaration :: Ljava/util/HashMap :: v9 = new java.util.HashMap::JM,43
+16 :: CALL :: call :: Ljava/lang/Object :: v14 = v9.put(#(keyA-15530), #(a Value))::
+22 :: CALL :: call :: Ljava/lang/String :: v17 = v7.toString()::JM,22
+26 :: CALL :: call :: Ljava/lang/Object :: v19 = v9.put(#(keyB-15530), v17)::
+32 :: CALL :: call :: Ljava/lang/Object :: v23 = v9.put(#(keyC), #(another Value))::
+38 :: CALL :: call :: Ljava/lang/Object :: v25 = v9.get(#(keyB-15530))::JM,43
+43 :: EXPR :: assign :: Ljava/lang/Object :: v26 = CHECKCAST v25::JM,70:CF,44
+44 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v27 = new java.lang.StringBuilder::JM,70
+48 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v27.append(#({call verifyUserPassw...))::JM,70
+53 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v31.append(v26)::JM,70
+58 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v33.append(#(')}))::JM,70
+63 :: CALL :: call :: Ljava/lang/String :: v38 = v36.toString()::JM,70
+67 :: CALL :: call :: Ljava/sql/Connection :: v40 = getSqlConnection()::JM,70
+70 :: CALL :: call :: Ljava/sql/CallableStatement :: v45 = v40.prepareCall(v38, #(1003), #(1007), #(2))::JM,70

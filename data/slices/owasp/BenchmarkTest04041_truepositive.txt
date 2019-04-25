@@ -1,0 +1,27 @@
+[86, 92]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest04041.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,26:CD,30:CD,60:CD,64:CD,69:CD,74:CD,79:CD,83:CD,86:CD,111:CD,112:JM,16:JM,21
+7 :: CALL :: call :: Ljava/util/Map :: v6 = p1 $request .getParameterMap()::JM,16:JM,21:JM,11:JM,15
+11 :: CALL :: call :: Z :: v9 = v6.isEmpty()::JM,16:JM,21:JM,11:JM,15
+15 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 41::CF,111:CD,16:CD,21:JM,11:JM,15
+16 :: CALL :: call :: Ljava/lang/Object :: v13 = v6.get(#(foo))::JM,16:JM,21:JM,11:JM,15
+21 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::
+22 :: EXPR :: reference :: Ljava/lang/Object :: v15 = v14[#(0)]::DD,111
+26 :: CALL :: call :: I :: v18 = v16.length()::JM,30
+30 :: PRED :: IF :: Z :: if (v18 <= #(1)) goto 87::CF,112:CF,31:CD,36:CD,40:CD,44:CD,45:CD,49:CD,56
+31 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v20 = new java.lang.StringBuilder::JM,112
+36 :: CALL :: call :: I :: v23 = v16.length()::JM,44
+40 :: CALL :: call :: I :: v26 = #(Z).length()::JM,44
+44 :: EXPR :: assign :: Ljava/lang/Object :: v27 = v23 - v26::JM,112
+45 :: CALL :: call :: I :: v29 = v16.length()::JM,112
+49 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v20.replace(v27, v29, #(Z))::JM,112
+56 :: CALL :: call :: Ljava/lang/String :: v33 = v31.toString()::JM,112
+60 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v35 = new java.lang.StringBuilder::JM,86
+64 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v35.append(#(SELECT * from USERS w...))::JM,86
+69 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v39.append(v34)::JM,86
+74 :: CALL :: call :: Ljava/lang/StringBuilder :: v44 = v41.append(#('))::JM,86
+79 :: CALL :: call :: Ljava/lang/String :: v46 = v44.toString()::JM,86
+83 :: CALL :: call :: Ljava/sql/Connection :: v48 = getSqlConnection()::JM,86
+86 :: CALL :: call :: Ljava/sql/PreparedStatement :: v52 = v48.prepareStatement(v46, #(1003), #(1007))::JM,86
+111 :: EXPR :: assign :: null :: PHI v16 = #(), v15::JM,30:JM,44:DD,112
+112 :: EXPR :: assign :: null :: PHI v34 = v16, v33::CF,60:JM,86

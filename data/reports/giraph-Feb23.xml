@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BugCollection version="3.0.2-dev-20160306-90c514b" sequence="1" timestamp="1519367964102" analysisTimestamp="1519367941657" release="">
+  <BugInstance type="PATH_TRAVERSAL_OUT" priority="1" rank="5" abbrev="SECPTO" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.conf.AllOptions">
+      <SourceLine classname="org.apache.giraph.conf.AllOptions" sourcefile="AllOptions.java" sourcepath="org/apache/giraph/conf/AllOptions.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.conf.AllOptions" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.apache.giraph.conf.AllOptions" start="139" end="166" startBytecode="0" endBytecode="442" sourcefile="AllOptions.java" sourcepath="org/apache/giraph/conf/AllOptions.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.conf.AllOptions" start="154" end="154" startBytecode="98" endBytecode="98" sourcefile="AllOptions.java" sourcepath="org/apache/giraph/conf/AllOptions.java"/>
+    <String value="FileWriter(...)" role="Sink method"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_OUT" priority="2" rank="7" abbrev="SECPTO" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.generate.GeneratePrimitiveClasses">
+      <SourceLine classname="org.apache.giraph.generate.GeneratePrimitiveClasses" sourcefile="GeneratePrimitiveClasses.java" sourcepath="org/apache/giraph/generate/GeneratePrimitiveClasses.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.generate.GeneratePrimitiveClasses" name="generateAndWrite" signature="(Lfreemarker/template/Configuration;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.apache.giraph.generate.GeneratePrimitiveClasses" start="254" end="258" startBytecode="0" endBytecode="163" sourcefile="GeneratePrimitiveClasses.java" sourcepath="org/apache/giraph/generate/GeneratePrimitiveClasses.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.generate.GeneratePrimitiveClasses" start="255" end="255" startBytecode="16" endBytecode="16" sourcefile="GeneratePrimitiveClasses.java" sourcepath="org/apache/giraph/generate/GeneratePrimitiveClasses.java"/>
+    <String value="FileOutputStream(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.generate.GeneratePrimitiveClasses" start="223" end="223" startBytecode="53" endBytecode="53" sourcefile="GeneratePrimitiveClasses.java" sourcepath="org/apache/giraph/generate/GeneratePrimitiveClasses.java"/>
+    <SourceLine classname="org.apache.giraph.generate.GeneratePrimitiveClasses" start="225" end="225" startBytecode="47" endBytecode="47" sourcefile="GeneratePrimitiveClasses.java" sourcepath="org/apache/giraph/generate/GeneratePrimitiveClasses.java"/>
+    <SourceLine classname="org.apache.giraph.generate.GeneratePrimitiveClasses" start="242" end="242" startBytecode="101" endBytecode="101" sourcefile="GeneratePrimitiveClasses.java" sourcepath="org/apache/giraph/generate/GeneratePrimitiveClasses.java"/>
+    <SourceLine classname="org.apache.giraph.generate.GeneratePrimitiveClasses" start="244" end="244" startBytecode="86" endBytecode="86" sourcefile="GeneratePrimitiveClasses.java" sourcepath="org/apache/giraph/generate/GeneratePrimitiveClasses.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor">
+      <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" name="&lt;init&gt;" signature="(Lorg/apache/giraph/conf/ImmutableClassesGiraphConfiguration;)V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="81" end="106" startBytecode="0" endBytecode="521" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="98" end="98" startBytecode="144" endBytecode="144" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="84" end="84" startBytecode="8" endBytecode="8" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="95" end="95" startBytecode="86" endBytecode="86" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="97" end="97" startBytecode="117" endBytecode="117" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor">
+      <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" name="dataExist" signature="(ILorg/apache/giraph/ooc/persistence/DataIndex;)Z" isStatic="false">
+      <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="147" end="147" startBytecode="0" endBytecode="98" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="147" end="147" startBytecode="30" endBytecode="30" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.DataIndex" start="83" end="83" startBytecode="9" endBytecode="9" sourcefile="DataIndex.java" sourcepath="org/apache/giraph/ooc/persistence/DataIndex.java"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.DataIndex" start="84" end="84" startBytecode="33" endBytecode="33" sourcefile="DataIndex.java" sourcepath="org/apache/giraph/ooc/persistence/DataIndex.java"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.DataIndex" start="86" end="86" startBytecode="47" endBytecode="47" sourcefile="DataIndex.java" sourcepath="org/apache/giraph/ooc/persistence/DataIndex.java"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="147" end="147" startBytecode="17" endBytecode="17" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor">
+      <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" name="shutdown" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="113" end="123" startBytecode="0" endBytecode="329" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="114" end="114" startBytecode="24" endBytecode="24" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="113" end="113" startBytecode="1" endBytecode="1" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor">
+      <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" name="shutdown" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="113" end="123" startBytecode="0" endBytecode="329" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="116" end="116" startBytecode="64" endBytecode="64" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="115" end="115" startBytecode="31" endBytecode="31" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor$LocalDiskDataInputWrapper">
+      <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor$LocalDiskDataInputWrapper" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor$LocalDiskDataInputWrapper" name="&lt;init&gt;" signature="(Ljava/lang/String;[B)V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor$LocalDiskDataInputWrapper" start="167" end="177" startBytecode="0" endBytecode="221" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor$LocalDiskDataInputWrapper" start="169" end="169" startBytecode="10" endBytecode="10" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.DataIndex" start="83" end="83" startBytecode="9" endBytecode="9" sourcefile="DataIndex.java" sourcepath="org/apache/giraph/ooc/persistence/DataIndex.java"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.DataIndex" start="84" end="84" startBytecode="33" endBytecode="33" sourcefile="DataIndex.java" sourcepath="org/apache/giraph/ooc/persistence/DataIndex.java"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.DataIndex" start="86" end="86" startBytecode="47" endBytecode="47" sourcefile="DataIndex.java" sourcepath="org/apache/giraph/ooc/persistence/DataIndex.java"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="133" end="133" startBytecode="36" endBytecode="36" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor$LocalDiskDataOutputWrapper">
+      <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor$LocalDiskDataOutputWrapper" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor$LocalDiskDataOutputWrapper" name="&lt;init&gt;" signature="(Ljava/lang/String;Z[B)V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor$LocalDiskDataOutputWrapper" start="213" end="232" startBytecode="0" endBytecode="367" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor$LocalDiskDataOutputWrapper" start="215" end="215" startBytecode="10" endBytecode="10" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.DataIndex" start="83" end="83" startBytecode="9" endBytecode="9" sourcefile="DataIndex.java" sourcepath="org/apache/giraph/ooc/persistence/DataIndex.java"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.DataIndex" start="84" end="84" startBytecode="33" endBytecode="33" sourcefile="DataIndex.java" sourcepath="org/apache/giraph/ooc/persistence/DataIndex.java"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.DataIndex" start="86" end="86" startBytecode="47" endBytecode="47" sourcefile="DataIndex.java" sourcepath="org/apache/giraph/ooc/persistence/DataIndex.java"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="140" end="140" startBytecode="37" endBytecode="37" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+    <SourceLine classname="org.apache.giraph.ooc.persistence.LocalDiskDataAccessor" start="141" end="141" startBytecode="14" endBytecode="14" sourcefile="LocalDiskDataAccessor.java" sourcepath="org/apache/giraph/ooc/persistence/LocalDiskDataAccessor.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.scripting.ScriptLoader">
+      <SourceLine classname="org.apache.giraph.scripting.ScriptLoader" sourcefile="ScriptLoader.java" sourcepath="org/apache/giraph/scripting/ScriptLoader.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.scripting.ScriptLoader" name="openScriptInputStream" signature="(Lorg/apache/hadoop/conf/Configuration;Lorg/apache/giraph/scripting/DeployedScript;)Ljava/io/InputStream;" isStatic="true">
+      <SourceLine classname="org.apache.giraph.scripting.ScriptLoader" start="213" end="251" startBytecode="0" endBytecode="653" sourcefile="ScriptLoader.java" sourcepath="org/apache/giraph/scripting/ScriptLoader.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.scripting.ScriptLoader" start="241" end="241" startBytecode="208" endBytecode="208" sourcefile="ScriptLoader.java" sourcepath="org/apache/giraph/scripting/ScriptLoader.java"/>
+    <String value="FileInputStream(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.scripting.ScriptLoader" start="239" end="239" startBytecode="187" endBytecode="187" sourcefile="ScriptLoader.java" sourcepath="org/apache/giraph/scripting/ScriptLoader.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.utils.AnnotationUtils$GeneralClassesIterator">
+      <SourceLine classname="org.apache.giraph.utils.AnnotationUtils$GeneralClassesIterator" sourcefile="AnnotationUtils.java" sourcepath="org/apache/giraph/utils/AnnotationUtils.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.utils.AnnotationUtils$GeneralClassesIterator" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.utils.AnnotationUtils$GeneralClassesIterator" start="193" end="202" startBytecode="0" endBytecode="251" sourcefile="AnnotationUtils.java" sourcepath="org/apache/giraph/utils/AnnotationUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.utils.AnnotationUtils$GeneralClassesIterator" start="197" end="197" startBytecode="51" endBytecode="51" sourcefile="AnnotationUtils.java" sourcepath="org/apache/giraph/utils/AnnotationUtils.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.utils.AnnotationUtils" start="52" end="52" startBytecode="9" endBytecode="9" sourcefile="AnnotationUtils.java" sourcepath="org/apache/giraph/utils/AnnotationUtils.java"/>
+    <SourceLine classname="org.apache.giraph.utils.AnnotationUtils" start="76" end="76" startBytecode="30" endBytecode="30" sourcefile="AnnotationUtils.java" sourcepath="org/apache/giraph/utils/AnnotationUtils.java"/>
+    <SourceLine classname="org.apache.giraph.utils.AnnotationUtils$GeneralClassesIterator" start="195" end="195" startBytecode="12" endBytecode="12" sourcefile="AnnotationUtils.java" sourcepath="org/apache/giraph/utils/AnnotationUtils.java"/>
+    <SourceLine classname="org.apache.giraph.utils.AnnotationUtils$GeneralClassesIterator" start="196" end="196" startBytecode="25" endBytecode="25" sourcefile="AnnotationUtils.java" sourcepath="org/apache/giraph/utils/AnnotationUtils.java"/>
+    <SourceLine classname="org.apache.giraph.utils.AnnotationUtils$GeneralClassesIterator" start="197" end="197" startBytecode="48" endBytecode="48" sourcefile="AnnotationUtils.java" sourcepath="org/apache/giraph/utils/AnnotationUtils.java"/>
+    <SourceLine classname="org.apache.giraph.utils.ConfigurationUtils" start="543" end="543" startBytecode="18" endBytecode="18" sourcefile="ConfigurationUtils.java" sourcepath="org/apache/giraph/utils/ConfigurationUtils.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.utils.AnnotationUtils$JarClassesIterator">
+      <SourceLine classname="org.apache.giraph.utils.AnnotationUtils$JarClassesIterator" sourcefile="AnnotationUtils.java" sourcepath="org/apache/giraph/utils/AnnotationUtils.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.utils.AnnotationUtils$JarClassesIterator" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.utils.AnnotationUtils$JarClassesIterator" start="119" end="125" startBytecode="0" endBytecode="135" sourcefile="AnnotationUtils.java" sourcepath="org/apache/giraph/utils/AnnotationUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.utils.AnnotationUtils$JarClassesIterator" start="121" end="121" startBytecode="20" endBytecode="20" sourcefile="AnnotationUtils.java" sourcepath="org/apache/giraph/utils/AnnotationUtils.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.utils.AnnotationUtils$JarClassesIterator" start="121" end="121" startBytecode="17" endBytecode="17" sourcefile="AnnotationUtils.java" sourcepath="org/apache/giraph/utils/AnnotationUtils.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.utils.FileUtils">
+      <SourceLine classname="org.apache.giraph.utils.FileUtils" sourcefile="FileUtils.java" sourcepath="org/apache/giraph/utils/FileUtils.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.utils.FileUtils" name="createTestDir" signature="(Ljava/lang/String;)Ljava/io/File;" isStatic="true">
+      <SourceLine classname="org.apache.giraph.utils.FileUtils" start="56" end="64" startBytecode="0" endBytecode="212" sourcefile="FileUtils.java" sourcepath="org/apache/giraph/utils/FileUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.utils.FileUtils" start="58" end="58" startBytecode="45" endBytecode="45" sourcefile="FileUtils.java" sourcepath="org/apache/giraph/utils/FileUtils.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.utils.FileUtils" start="59" end="59" startBytecode="35" endBytecode="35" sourcefile="FileUtils.java" sourcepath="org/apache/giraph/utils/FileUtils.java"/>
+    <SourceLine classname="org.apache.giraph.utils.InternalVertexRunner" start="125" end="125" startBytecode="4" endBytecode="4" sourcefile="InternalVertexRunner.java" sourcepath="org/apache/giraph/utils/InternalVertexRunner.java"/>
+    <SourceLine classname="org.apache.giraph.utils.InternalVertexRunner" start="241" end="241" startBytecode="4" endBytecode="4" sourcefile="InternalVertexRunner.java" sourcepath="org/apache/giraph/utils/InternalVertexRunner.java"/>
+    <SourceLine classname="org.apache.giraph.utils.InternalVertexRunner" start="321" end="321" startBytecode="4" endBytecode="4" sourcefile="InternalVertexRunner.java" sourcepath="org/apache/giraph/utils/InternalVertexRunner.java"/>
+  </BugInstance>
+  <BugInstance type="COMMAND_INJECTION" priority="2" rank="7" abbrev="SECCI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.utils.JMap">
+      <SourceLine classname="org.apache.giraph.utils.JMap" sourcefile="JMap.java" sourcepath="org/apache/giraph/utils/JMap.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.utils.JMap" name="heapHistogramDump" signature="(IZLjava/io/PrintStream;)V" isStatic="true">
+      <SourceLine classname="org.apache.giraph.utils.JMap" start="97" end="113" startBytecode="0" endBytecode="475" sourcefile="JMap.java" sourcepath="org/apache/giraph/utils/JMap.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.utils.JMap" start="98" end="98" startBytecode="38" endBytecode="38" sourcefile="JMap.java" sourcepath="org/apache/giraph/utils/JMap.java"/>
+    <String value="Runtime.exec(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.utils.JMap" start="98" end="98" startBytecode="26" endBytecode="26" sourcefile="JMap.java" sourcepath="org/apache/giraph/utils/JMap.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.utils.YourKitContext">
+      <SourceLine classname="org.apache.giraph.utils.YourKitContext" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.utils.YourKitContext" name="snapshot" signature="(JLjava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.utils.YourKitContext" start="60" end="78" startBytecode="0" endBytecode="288" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.utils.YourKitContext" start="70" end="70" startBytecode="28" endBytecode="28" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.utils.YourKitContext" start="88" end="88" startBytecode="3" endBytecode="3" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+    <SourceLine classname="org.apache.giraph.utils.YourKitContext" start="101" end="101" startBytecode="50" endBytecode="50" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+    <SourceLine classname="org.apache.giraph.utils.YourKitContext" start="102" end="102" startBytecode="47" endBytecode="47" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+    <SourceLine classname="org.apache.giraph.utils.YourKitContext" start="112" end="112" startBytecode="3" endBytecode="3" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+    <SourceLine classname="org.apache.giraph.utils.YourKitContext" start="123" end="123" startBytecode="50" endBytecode="50" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+    <SourceLine classname="org.apache.giraph.utils.YourKitContext" start="124" end="124" startBytecode="47" endBytecode="47" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.utils.YourKitContext">
+      <SourceLine classname="org.apache.giraph.utils.YourKitContext" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.utils.YourKitContext" name="snapshot" signature="(JLjava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.utils.YourKitContext" start="60" end="78" startBytecode="0" endBytecode="288" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.utils.YourKitContext" start="72" end="72" startBytecode="44" endBytecode="44" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.utils.YourKitContext" start="63" end="63" startBytecode="12" endBytecode="12" sourcefile="YourKitContext.java" sourcepath="org/apache/giraph/utils/YourKitContext.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.zk.InProcessZooKeeperRunner$ZooKeeperServerRunner">
+      <SourceLine classname="org.apache.giraph.zk.InProcessZooKeeperRunner$ZooKeeperServerRunner" sourcefile="InProcessZooKeeperRunner.java" sourcepath="org/apache/giraph/zk/InProcessZooKeeperRunner.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.zk.InProcessZooKeeperRunner$ZooKeeperServerRunner" name="runFromConfig" signature="(Lorg/apache/giraph/zk/ZookeeperConfig;)V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.zk.InProcessZooKeeperRunner$ZooKeeperServerRunner" start="175" end="197" startBytecode="0" endBytecode="301" sourcefile="InProcessZooKeeperRunner.java" sourcepath="org/apache/giraph/zk/InProcessZooKeeperRunner.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.zk.InProcessZooKeeperRunner$ZooKeeperServerRunner" start="183" end="183" startBytecode="31" endBytecode="31" sourcefile="InProcessZooKeeperRunner.java" sourcepath="org/apache/giraph/zk/InProcessZooKeeperRunner.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.zk.InProcessZooKeeperRunner$ZooKeeperServerRunner" start="184" end="184" startBytecode="28" endBytecode="28" sourcefile="InProcessZooKeeperRunner.java" sourcepath="org/apache/giraph/zk/InProcessZooKeeperRunner.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.zk.InProcessZooKeeperRunner$ZooKeeperServerRunner">
+      <SourceLine classname="org.apache.giraph.zk.InProcessZooKeeperRunner$ZooKeeperServerRunner" sourcefile="InProcessZooKeeperRunner.java" sourcepath="org/apache/giraph/zk/InProcessZooKeeperRunner.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.zk.InProcessZooKeeperRunner$ZooKeeperServerRunner" name="runFromConfig" signature="(Lorg/apache/giraph/zk/ZookeeperConfig;)V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.zk.InProcessZooKeeperRunner$ZooKeeperServerRunner" start="175" end="197" startBytecode="0" endBytecode="301" sourcefile="InProcessZooKeeperRunner.java" sourcepath="org/apache/giraph/zk/InProcessZooKeeperRunner.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.zk.InProcessZooKeeperRunner$ZooKeeperServerRunner" start="184" end="184" startBytecode="42" endBytecode="42" sourcefile="InProcessZooKeeperRunner.java" sourcepath="org/apache/giraph/zk/InProcessZooKeeperRunner.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.zk.InProcessZooKeeperRunner$ZooKeeperServerRunner" start="184" end="184" startBytecode="39" endBytecode="39" sourcefile="InProcessZooKeeperRunner.java" sourcepath="org/apache/giraph/zk/InProcessZooKeeperRunner.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.zk.ZooKeeperManager">
+      <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.zk.ZooKeeperManager" name="generateZooKeeperConfig" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" start="430" end="454" startBytecode="0" endBytecode="458" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" start="434" end="434" startBytecode="43" endBytecode="43" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" start="434" end="434" startBytecode="40" endBytecode="40" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.zk.ZooKeeperManager">
+      <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.zk.ZooKeeperManager" name="offlineZooKeeperServers" signature="(Lorg/apache/giraph/zk/ZooKeeperManager$State;)V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" start="670" end="700" startBytecode="0" endBytecode="431" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" start="687" end="687" startBytecode="114" endBytecode="114" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" start="687" end="687" startBytecode="111" endBytecode="111" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.zk.ZooKeeperManager">
+      <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.zk.ZooKeeperManager" name="onlineZooKeeperServer" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" start="461" end="596" startBytecode="0" endBytecode="1875" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" start="462" end="462" startBytecode="19" endBytecode="19" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" start="462" end="462" startBytecode="16" endBytecode="16" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+  </BugInstance>
+  <BugInstance type="UNENCRYPTED_SOCKET" priority="2" rank="7" abbrev="SECUS" category="SECURITY" first="1">
+    <Class classname="org.apache.giraph.zk.ZooKeeperManager">
+      <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+    </Class>
+    <Method classname="org.apache.giraph.zk.ZooKeeperManager" name="onlineZooKeeperServer" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" start="461" end="596" startBytecode="0" endBytecode="1875" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+    </Method>
+    <SourceLine classname="org.apache.giraph.zk.ZooKeeperManager" start="500" end="500" startBytecode="263" endBytecode="263" sourcefile="ZooKeeperManager.java" sourcepath="org/apache/giraph/zk/ZooKeeperManager.java"/>
+    <String value="remote host"/>
+  </BugInstance>
+  </BugCollection>

@@ -1,0 +1,24 @@
+[42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 56]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest15308.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,16:CD,20:CD,25:CD,30:CD,35:CD,39:CD,42:CD,51
+12 :: CALL :: call :: Ljava/lang/String :: v9 = doSomething(v7)::JM,51:CL,151
+16 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::JM,51
+20 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v10.append(#(SELECT * from USERS w...))::JM,51
+25 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v14.append(v9)::JM,51
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v16.append(#('))::JM,51
+35 :: CALL :: call :: Ljava/lang/String :: v21 = v19.toString()::JM,51
+39 :: CALL :: call :: Ljava/sql/Connection :: v23 = getSqlConnection()::JM,51
+42 :: NORM :: declaration :: [Ljava/lang/String :: v25 = new java.lang.String[]::JM,51
+43 :: EXPR :: modify :: Ljava/lang/Object :: v25[#(0)] = #(Column1)::
+47 :: EXPR :: modify :: Ljava/lang/Object :: v25[#(1)] = #(Column2)::
+51 :: CALL :: call :: Ljava/sql/PreparedStatement :: v31 = v23.prepareStatement(v21, v25)::JM,51
+151 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest15308.doSomething(java.lang.String)::CE,152:CD,155:CD,159:CD,164:CD,169:CD,174:CD,179:CD,184:CD,185
+152 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest15308.doSomething(java.lang.String)::JM,51
+155 :: NORM :: declaration :: Ljava/util/ArrayList :: v3 = new java.util.ArrayList::JM,184
+159 :: CALL :: call :: Z :: v7 = v3.add(#(safe))::
+164 :: CALL :: call :: Z :: v9 = v3.add(p1 $param )::
+169 :: CALL :: call :: Z :: v12 = v3.add(#(moresafe))::
+174 :: CALL :: call :: Ljava/lang/Object :: v15 = v3.remove(#(0))::
+179 :: CALL :: call :: Ljava/lang/Object :: v18 = v3.get(#(1))::JM,184
+184 :: EXPR :: assign :: Ljava/lang/Object :: v19 = CHECKCAST v18::DD,185
+185 :: NORM :: compound :: Ljava/lang/String :: return v19::DD,152

@@ -1,0 +1,84 @@
+[834, 838, 842, 814, 816, 820, 825, 829]
+1031 :: NORM :: declaration :: Ljava/io/FileInputStream :: v45 = new java.io.FileInputStream::DD,1036
+1036 :: NORM :: compound :: Ljava/io/InputStream :: return v45::DD,910
+1038 :: NORM :: compound :: Ljava/io/InputStream :: return #(null)::DD,910
+1040 :: EXPR :: assign :: null :: PHI v20 = v19, #(0)::DD,916:DD,967
+1097 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.core.utils.ClassLoaderUtil.getLoader()::CF,1098:CD,1100:CD,1102
+1098 :: EXIT :: exit :: Ljava/lang/ClassLoader :: com.ctrip.framework.apollo.core.utils.ClassLoaderUtil.getLoader()::JM,977:JM,972
+1100 :: EXPR :: reference :: Ljava/lang/ClassLoader :: v2 = com.ctrip.framework.apollo.core.utils.ClassLoaderUtil.loader::CF,1102
+1102 :: NORM :: compound :: Ljava/lang/ClassLoader :: return v2::CF,1098
+1104 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.core.utils.ResourceUtils.getResourceAsStream(java.net.URL)::JM,1109:CF,1105:CF,1115:CD,1108:CD,1114:CD,1117
+1105 :: EXIT :: exit :: Ljava/io/InputStream :: com.ctrip.framework.apollo.core.utils.ResourceUtils.getResourceAsStream(java.net.URL)::JM,994:JM,982
+1108 :: PRED :: IF :: Z :: if (p1 $url  == #(null)) goto 12::CD,1109:CD,1117:JM,1108
+1109 :: CALL :: call :: Ljava/io/InputStream :: v5 = p1 $url .openStream()::JM,1108:JM,1109:JM,1117
+1114 :: NORM :: compound :: Ljava/io/InputStream :: return v7::CF,1105
+1115 :: NORM :: compound :: Ljava/io/InputStream :: return #(null)::CF,1105
+1117 :: EXPR :: assign :: null :: PHI v7 = v5, #(null)::CF,1114
+139 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.core.MetaDomainConsts.<clinit>()::CD,142:CD,148:CD,152
+142 :: NORM :: declaration :: Ljava/util/HashMap :: v2 = new java.util.HashMap::
+148 :: NORM :: declaration :: Ljava/util/Properties :: v4 = new java.util.Properties::JM,678
+152 :: CALL :: call :: Ljava/util/Properties :: v8 = readConfigFile(#(apollo-env.properties), v4)::JM,678:CL,669
+669 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.core.utils.ResourceUtils.readConfigFile(java.lang.String,java.util.Properties)::CD,674:CD,678:CD,683:CD,687:CD,754:CD,756:CD,760
+674 :: NORM :: declaration :: Ljava/util/Properties :: v4 = new java.util.Properties::JM,769:JM,773:JM,777:JM,778:JM,765:JM,782
+678 :: PRED :: IF :: Z :: if (p2 $defaults  == #(null)) goto 18::CD,679
+679 :: CALL :: call :: V :: v4.putAll(p2 $defaults )::
+683 :: CALL :: call :: Ljava/io/InputStream :: v9 = loadConfigFileFromDefaultSearchLocations(p1 $configPath )::JM,687:CL,909
+687 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 32::CD,688
+688 :: CALL :: call :: V :: v4.load(v9)::
+754 :: EXPR :: reference :: Lorg/slf4j/Logger :: v38 = com.ctrip.framework.apollo.core.utils.ResourceUtils.logger::JM,756:JM,760
+756 :: CALL :: call :: Z :: v40 = v38.isDebugEnabled()::JM,756:JM,760
+760 :: PRED :: IF :: Z :: if (v40 == #(0)) goto 279::CF,761:CD,765:CD,769:CD,773:CD,777:CD,809:CD,813
+761 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v42 = new java.lang.StringBuilder::JM,813:JM,838
+765 :: CALL :: call :: Ljava/util/Set :: v45 = v4.stringPropertyNames()::JM,769:JM,773:JM,777:JM,778:JM,765:JM,782
+769 :: CALL :: call :: Ljava/util/Iterator :: v47 = v45.iterator()::JM,769:JM,773:JM,777:JM,778:JM,782
+773 :: CALL :: call :: Z :: v49 = v47.hasNext()::JM,773:JM,777:JM,778:JM,782
+777 :: PRED :: IF :: Z :: if (v49 == #(0)) goto 228::CD,773:CD,778:CD,782:CD,783:CD,788:CD,793:CD,798:CD,803:JM,777:JM,813
+778 :: CALL :: call :: Ljava/lang/Object :: v51 = v47.next()::JM,773:JM,777:JM,778:JM,782
+782 :: EXPR :: assign :: Ljava/lang/Object :: v52 = CHECKCAST v51::
+783 :: CALL :: call :: Ljava/lang/StringBuilder :: v54 = v42.append(v52)::
+788 :: CALL :: call :: Ljava/lang/StringBuilder :: v57 = v54.append(#(61))::
+793 :: CALL :: call :: Ljava/lang/String :: v59 = v4.getProperty(v52)::
+798 :: CALL :: call :: Ljava/lang/StringBuilder :: v61 = v57.append(v59)::
+803 :: CALL :: call :: Ljava/lang/StringBuilder :: v64 = v61.append(#(10))::
+809 :: CALL :: call :: I :: v66 = v42.length()::JM,813
+813 :: PRED :: IF :: Z :: if (v66 <= #(0)) goto 268::CD,814:CD,816:CD,820:CD,825:CD,829:CD,834:CD,838:CD,842
+814 :: EXPR :: reference :: Lorg/slf4j/Logger :: v70 = com.ctrip.framework.apollo.core.utils.ResourceUtils.logger::CF,816:JM,838
+816 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v71 = new java.lang.StringBuilder::JM,838
+820 :: CALL :: call :: Ljava/lang/StringBuilder :: v75 = v71.append(#(Reading properties: ))::JM,838
+825 :: CALL :: call :: Ljava/lang/String :: v77 = v42.toString()::JM,838
+829 :: CALL :: call :: Ljava/lang/StringBuilder :: v79 = v75.append(v77)::JM,838
+834 :: CALL :: call :: Ljava/lang/String :: v81 = v79.toString()::JM,838
+838 :: CALL :: call :: V :: v70.debug(v81)::JM,838
+842 :: NORM :: compound :: Ljava/lang/Object :: goto 279::
+909 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.core.utils.ResourceUtils.loadConfigFileFromDefaultSearchLocations(java.lang.String)::CE,910:CD,913:CD,915:CD,916:CD,1040:JM,977:JM,972
+910 :: EXIT :: exit :: Ljava/io/InputStream :: com.ctrip.framework.apollo.core.utils.ResourceUtils.loadConfigFileFromDefaultSearchLocations(java.lang.String)::JM,687
+913 :: EXPR :: reference :: [Ljava/lang/String :: v3 = com.ctrip.framework.apollo.core.utils.ResourceUtils.DEFAULT_FILE_SEARCH_LOCATIONS::DD,915
+915 :: EXPR :: assign :: I :: v4 = v3.length::DD,916:CF,1040
+916 :: PRED :: IF :: Z :: if (v20 >= v4) goto 94::CD,921:CD,926:CD,931:CD,935:CD,939:CD,969:CD,972:CD,977
+917 :: EXPR :: reference :: Ljava/lang/Object :: v6 = v3[v20]::JM,944:JM,945:JM,931:JM,949:JM,935:JM,939:JM,940:JM,926
+921 :: NORM :: declaration :: [Ljava/lang/String :: v8 = new java.lang.String[]::JM,944:JM,945:JM,931:JM,949:JM,935:JM,939:JM,940:JM,926
+926 :: CALL :: call :: Ljava/nio/file/Path :: v10 = get(v6, v8)::JM,944:JM,945:JM,931:JM,949:JM,935:JM,939:JM,940:JM,926
+931 :: CALL :: call :: Ljava/io/File :: v12 = v10.toFile()::JM,944:JM,945:JM,931:JM,949:JM,935:JM,939:JM,940
+935 :: CALL :: call :: Z :: v14 = v12.exists()::JM,944:JM,945:JM,949:JM,935:JM,939:JM,940
+939 :: PRED :: IF :: Z :: if (v14 == #(0)) goto 88::CD,916:CD,940:CD,944:CD,967:CD,1040:JM,945:JM,949:JM,935:JM,939
+940 :: CALL :: call :: Z :: v16 = v12.isFile()::JM,944:JM,945:JM,949:JM,935:JM,939:JM,940
+944 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 88::CD,916:CD,945:CD,949:CD,967:CD,1040:JM,944:JM,935:JM,939:JM,940
+945 :: CALL :: call :: Z :: v18 = v12.canRead()::JM,944:JM,945:JM,949:JM,935:JM,939:JM,940
+949 :: PRED :: IF :: Z :: if (v18 == #(0)) goto 88::CD,916:CD,961:CD,966:CD,967:CD,1040
+961 :: NORM :: declaration :: Ljava/io/FileInputStream :: v55 = new java.io.FileInputStream::DD,966
+966 :: NORM :: compound :: Ljava/io/InputStream :: return v55::DD,910
+967 :: EXPR :: assign :: Ljava/lang/Object :: v19 = v20 + #(1)::DD,1040
+969 :: CALL :: call :: Ljava/lang/ClassLoader :: v22 = getLoader()::JM,977:JM,972:CL,1097
+972 :: CALL :: call :: Ljava/net/URL :: v24 = v22.getResource(p1 $configPath )::JM,977:JM,972
+977 :: PRED :: IF :: Z :: if (v24 == #(null)) goto 131::CF,995:CD,978:CD,982:CD,996:CD,1005:CD,1009
+978 :: CALL :: call :: Ljava/io/InputStream :: v27 = getResourceAsStream(v24)::JM,994:JM,982:CL,1104
+982 :: PRED :: IF :: Z :: if (v27 == #(null)) goto 131::CF,995:CD,994:CD,996:CD,1005:CD,1009
+994 :: NORM :: compound :: Ljava/io/InputStream :: return v27::DD,910
+995 :: NORM :: declaration :: Ljava/io/File :: v29 = new java.io.File::JM,1009:JM,1014:JM,1019:JM,996
+996 :: CALL :: call :: Ljava/lang/String :: v32 = getProperty(#(user.dir))::JM,996
+1005 :: CALL :: call :: Z :: v35 = v29.exists()::JM,1009
+1009 :: PRED :: IF :: Z :: if (v35 == #(0)) goto 189::CD,1010:CD,1014:CD,1038
+1010 :: CALL :: call :: Z :: v37 = v29.isFile()::JM,1014
+1014 :: PRED :: IF :: Z :: if (v37 == #(0)) goto 189::CD,1015:CD,1019:CD,1038
+1015 :: CALL :: call :: Z :: v39 = v29.canRead()::JM,1019
+1019 :: PRED :: IF :: Z :: if (v39 == #(0)) goto 189::CD,1031:CD,1036:CD,1038

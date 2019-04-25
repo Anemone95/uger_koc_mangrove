@@ -1,0 +1,24 @@
+[47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 61]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest19097.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,17:CD,21:CD,25:CD,30:CD,35:CD,40:CD,44:CD,47:CD,56
+17 :: CALL :: call :: Ljava/lang/String :: v11 = doSomething(v9)::JM,56:CL,176
+21 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::JM,56
+25 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v12.append(#(UPDATE USERS SET PASS...))::JM,56
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v16.append(v11)::JM,56
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v18.append(#(' WHERE USERNAME='foo'))::JM,56
+40 :: CALL :: call :: Ljava/lang/String :: v23 = v21.toString()::JM,56
+44 :: CALL :: call :: Ljava/sql/Statement :: v25 = getSqlStatement()::JM,56
+47 :: NORM :: declaration :: [I :: v27 = new []::JM,56
+48 :: EXPR :: modify :: I :: v27[#(0)] = #(1)::
+52 :: EXPR :: modify :: I :: v27[#(1)] = #(2)::
+56 :: CALL :: call :: I :: v31 = v25.executeUpdate(v23, v27)::JM,56
+176 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest19097.doSomething(java.lang.String)::CE,177:CD,180:CD,184:CD,190:CD,194:CD,200:CD,212:CD,217:CD,218
+177 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest19097.doSomething(java.lang.String)::JM,56
+180 :: NORM :: declaration :: Ljava/util/HashMap :: v4 = new java.util.HashMap::JM,217
+184 :: CALL :: call :: Ljava/lang/Object :: v9 = v4.put(#(keyA-50746), #(a_Value))::
+190 :: CALL :: call :: Ljava/lang/String :: v12 = p1 $param .toString()::JM,180:JM,190
+194 :: CALL :: call :: Ljava/lang/Object :: v14 = v4.put(#(keyB-50746), v12)::
+200 :: CALL :: call :: Ljava/lang/Object :: v18 = v4.put(#(keyC), #(another_Value))::
+212 :: CALL :: call :: Ljava/lang/Object :: v23 = v4.get(#(keyA-50746))::JM,217
+217 :: EXPR :: assign :: Ljava/lang/Object :: v24 = CHECKCAST v23::DD,218
+218 :: NORM :: compound :: Ljava/lang/String :: return v24::DD,177

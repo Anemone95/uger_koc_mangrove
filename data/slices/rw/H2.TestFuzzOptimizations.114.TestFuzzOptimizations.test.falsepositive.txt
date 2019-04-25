@@ -1,0 +1,991 @@
+[962, 966, 940, 943, 947, 952, 957]
+1 :: ENTR :: entry :: null :: org.h2.test.synth.TestFuzzOptimizations.test()::CD,5:CD,9:CD,13:CD,17:CD,31
+5 :: CALL :: call :: Ljava/lang/String :: v4 = p0 $null .getTestName()::CL,640
+9 :: CALL :: call :: V :: p0 $null .deleteDb(v4)::CL,654
+13 :: CALL :: call :: Ljava/lang/String :: v7 = p0 $null .getTestName()::CL,640
+17 :: CALL :: call :: Ljava/sql/Connection :: v9 = p0 $null .getConnection(v7)::JM,22:CL,672
+22 :: EXPR :: modify :: Ljava/sql/Connection :: p0 $null .conn = v9::
+25 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v10 = p0 $null .config::
+28 :: EXPR :: reference :: Z :: v11 = v10.diskResult::DD,31
+31 :: PRED :: IF :: Z :: if (v11 != #(0)) goto 35::CD,32
+32 :: CALL :: call :: V :: p0 $null .testIn()::CL,703
+228 :: ENTR :: entry :: null :: org.h2.test.TestBase.<clinit>()::CD,231
+231 :: CALL :: call :: Ljava/lang/String :: v4 = getTestDir(#())::CL,2550
+240 :: ENTR :: entry :: null :: org.h2.Driver.<clinit>()::CD,249:CD,255
+249 :: NORM :: declaration :: Ljava/lang/ThreadLocal :: v4 = new java.lang.ThreadLocal::
+255 :: CALL :: call :: Lorg/h2/Driver :: v7 = load()::CL,2585
+264 :: ENTR :: entry :: null :: org.h2.message.DbException.<clinit>()::CD,267:CD,271:CD,273:CD,277:CD,289:CD,292:CD,296:CD,301:CD,417:CD,421
+267 :: NORM :: declaration :: Ljava/util/Properties :: v2 = new java.util.Properties::DD,271
+271 :: EXPR :: modify :: Ljava/util/Properties :: org.h2.message.DbException.MESSAGES = v2::
+273 :: CALL :: call :: [B :: v6 = getResource(#(/org/h2/res/_messages...))::JM,277:CL,2611
+277 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 34::CD,278:CD,280:CD,285
+278 :: EXPR :: reference :: Ljava/util/Properties :: v8 = org.h2.message.DbException.MESSAGES::CF,280
+280 :: NORM :: declaration :: Ljava/io/ByteArrayInputStream :: v9 = new java.io.ByteArrayInputStream::
+285 :: CALL :: call :: V :: v8.load(v9)::
+289 :: CALL :: call :: Ljava/util/Locale :: v13 = getDefault()::JM,301
+292 :: CALL :: call :: Ljava/lang/String :: v15 = v13.getLanguage()::JM,301
+296 :: CALL :: call :: Z :: v18 = #(en).equals(v15)::JM,301
+301 :: PRED :: IF :: Z :: if (v18 != #(0)) goto 220::CF,302:CD,306:CD,311:CD,316:CD,321:CD,325:CD,329
+302 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v20 = new java.lang.StringBuilder::
+306 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v20.append(#(/org/h2/res/_messages_))::
+311 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v24.append(v15)::JM,301
+316 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v26.append(#(.prop))::
+321 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::
+325 :: CALL :: call :: [B :: v33 = getResource(v31)::JM,329:CL,2611
+329 :: PRED :: IF :: Z :: if (v33 == #(null)) goto 220::CD,338:CD,342:CD,346:CD,350:CD,354
+338 :: CALL :: call :: Lorg/h2/util/SortedProperties :: v40 = fromLines(v34)::JM,354:JM,359:CL,2651
+342 :: CALL :: call :: Ljava/util/Set :: v42 = v40.entrySet()::JM,354:JM,359
+346 :: CALL :: call :: Ljava/util/Iterator :: v44 = v42.iterator()::JM,354:JM,359
+350 :: CALL :: call :: Z :: v46 = v44.hasNext()::JM,354:JM,359
+354 :: PRED :: IF :: Z :: if (v46 == #(0)) goto 220::CD,350:CD,355:CD,359:CD,360:CD,364:CD,365:CD,369:CD,370:JM,354
+355 :: CALL :: call :: Ljava/lang/Object :: v48 = v44.next()::JM,354:JM,359
+359 :: EXPR :: assign :: Ljava/lang/Object :: v49 = CHECKCAST v48::JM,364:JM,369
+360 :: CALL :: call :: Ljava/lang/Object :: v51 = v49.getKey()::JM,364
+364 :: EXPR :: assign :: Ljava/lang/Object :: v52 = CHECKCAST v51::JM,369
+365 :: CALL :: call :: Ljava/lang/Object :: v54 = v49.getValue()::JM,369
+369 :: EXPR :: assign :: Ljava/lang/Object :: v55 = CHECKCAST v54::DD,370:JM,376
+370 :: PRED :: IF :: Z :: if (v55 == #(null)) goto 217::CD,371:CD,376
+371 :: CALL :: call :: Z :: v58 = v55.startsWith(#(#))::JM,376
+376 :: PRED :: IF :: Z :: if (v58 != #(0)) goto 217::CD,377:CD,379:CD,384:CD,388:CD,393:CD,398:CD,403:CD,407:CD,409
+377 :: EXPR :: reference :: Ljava/util/Properties :: v59 = org.h2.message.DbException.MESSAGES::
+379 :: CALL :: call :: Ljava/lang/String :: v61 = v59.getProperty(v52)::
+384 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v62 = new java.lang.StringBuilder::
+388 :: CALL :: call :: Ljava/lang/StringBuilder :: v65 = v62.append(v55)::
+393 :: CALL :: call :: Ljava/lang/StringBuilder :: v68 = v65.append(#())::
+398 :: CALL :: call :: Ljava/lang/StringBuilder :: v70 = v68.append(v61)::
+403 :: CALL :: call :: Ljava/lang/String :: v72 = v70.toString()::
+407 :: EXPR :: reference :: Ljava/util/Properties :: v73 = org.h2.message.DbException.MESSAGES::
+409 :: CALL :: call :: Ljava/lang/Object :: v75 = v73.put(v52, v72)::
+417 :: CALL :: call :: V :: traceThrowable(v76)::CL,2730
+421 :: CALL :: call :: V :: traceThrowable(v37)::CL,2730
+476 :: ENTR :: entry :: null :: org.h2.util.Utils.<clinit>()::CD,488
+488 :: CALL :: call :: Ljava/util/HashMap :: v7 = hashMap()::CL,2748
+517 :: ENTR :: entry :: null :: org.h2.util.StringUtils.<clinit>()::CD,520:CD,527
+520 :: NORM :: declaration :: Ljava/lang/ref/SoftReference :: v2 = new java.lang.ref.SoftReference::
+527 :: CALL :: call :: [C :: v7 = #(0123456789abcdef).toCharArray()::
+629 :: NORM :: declaration :: Ljava/util/LinkedList :: v4 = new java.util.LinkedList::
+640 :: ENTR :: entry :: null :: org.h2.test.TestBase.getTestName()::CD,644:CD,648
+644 :: CALL :: call :: Ljava/lang/Class :: v4 = p0 $null .getClass()::JM,644
+648 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getSimpleName()::
+654 :: ENTR :: entry :: null :: org.h2.test.TestBase.deleteDb(java.lang.String)::CD,659:CD,663
+659 :: CALL :: call :: Ljava/lang/String :: v5 = p0 $null .getBaseDir()::CL,2757
+663 :: CALL :: call :: V :: p0 $null .deleteDb(v5, p1 $null )::CL,2835
+672 :: ENTR :: entry :: null :: org.h2.test.TestBase.getConnection(java.lang.String)::CE,673:CD,677:CD,687:CD,691:CD,697
+673 :: EXIT :: exit :: Ljava/sql/Connection :: org.h2.test.TestBase.getConnection(java.lang.String)::JM,22
+677 :: CALL :: call :: Ljava/lang/String :: v6 = p0 $null .getURL(p1 $null , #(1))::CL,2850
+687 :: CALL :: call :: Ljava/lang/String :: v10 = p0 $null .getPassword()::CL,3583
+691 :: CALL :: call :: Ljava/sql/Connection :: v12 = getConnectionInternal(v6, v8, v10)::JM,697:CL,3595
+697 :: NORM :: compound :: Ljava/sql/Connection :: return v12::DD,673
+703 :: ENTR :: entry :: null :: org.h2.test.synth.TestFuzzOptimizations.testIn()::JM,3623:JM,3641:CD,715:CD,719:CD,723:CD,727:CD,731:CD,735:CD,739:CD,743:CD,747:CD,751:CD,756:CD,761:CD,764:CD,781:CD,859:CD,865:CD,1126
+715 :: CALL :: call :: V :: v3.execute(#(create table test0(a ...))::CL,3655
+719 :: CALL :: call :: V :: v3.execute(#(create index idx_1 on...))::CL,3655
+723 :: CALL :: call :: V :: v3.execute(#(create index idx_2 on...))::CL,3655
+727 :: CALL :: call :: V :: v3.execute(#(create table test1(a ...))::CL,3655
+731 :: CALL :: call :: V :: v3.execute(#(insert into test0 sel...))::CL,3655
+735 :: CALL :: call :: V :: v3.execute(#(update test0 set a = ...))::CL,3655
+739 :: CALL :: call :: V :: v3.execute(#(update test0 set b = ...))::CL,3655
+743 :: CALL :: call :: V :: v3.execute(#(update test0 set c = ...))::CL,3655
+747 :: CALL :: call :: V :: v3.execute(#(insert into test1 sel...))::CL,3655
+751 :: CALL :: call :: Lorg/h2/test/db/Db$Prepared :: v26 = v3.prepare(#(select * from test0 w...))::CL,3679
+756 :: CALL :: call :: Lorg/h2/test/db/Db$Prepared :: v29 = v26.set(#(1))::CL,3746
+761 :: CALL :: call :: V :: v26.execute()::CL,3780
+764 :: NORM :: declaration :: Ljava/util/Random :: v31 = new java.util.Random::
+781 :: NORM :: declaration :: [Ljava/lang/String :: v41 = new java.lang.String[]::DD,1054
+782 :: EXPR :: modify :: Ljava/lang/Object :: v41[#(0)] = #(null)::
+786 :: EXPR :: modify :: Ljava/lang/Object :: v41[#(1)] = #(0)::
+790 :: EXPR :: modify :: Ljava/lang/Object :: v41[#(2)] = #(0)::
+794 :: EXPR :: modify :: Ljava/lang/Object :: v41[#(3)] = #(1)::
+798 :: EXPR :: modify :: Ljava/lang/Object :: v41[#(4)] = #(2)::
+802 :: EXPR :: modify :: Ljava/lang/Object :: v41[#(5)] = #(10)::
+806 :: EXPR :: modify :: Ljava/lang/Object :: v41[#(6)] = #(a)::
+810 :: EXPR :: modify :: Ljava/lang/Object :: v41[#(7)] = #(?)::
+859 :: CALL :: call :: I :: v69 = p0 $null .getSize(#(100), #(1000))::JM,865:CL,3801
+865 :: PRED :: IF :: Z :: if (v180 >= v69) goto 624::CD,866:CD,870:CD,874:CD,879:CD,884:CD,888:CD,892:CD,897:CD,900:CD,912:CD,916:CD,921:CD,926:CD,931:CD,943:CD,947:CD,952:CD,957:CD,962:CD,966:CD,971:CD,975:CD,1010:CD,1014:CD,1019:CD,1024:CD,1029:CD,1034:CD,1038:CD,1044:CD,1048:CD,1119:CD,1126:CD,1127:CD,1128:CD,1131
+866 :: CALL :: call :: J :: v71 = v31.nextLong()::
+870 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v72 = new java.lang.StringBuilder::
+874 :: CALL :: call :: Ljava/lang/StringBuilder :: v76 = v72.append(#(seed: ))::
+879 :: CALL :: call :: Ljava/lang/StringBuilder :: v78 = v76.append(v71)::
+884 :: CALL :: call :: Ljava/lang/String :: v80 = v78.toString()::
+888 :: CALL :: call :: V :: p0 $null .println(v80)::CL,3832
+892 :: NORM :: declaration :: Ljava/util/Random :: v82 = new java.util.Random::
+897 :: CALL :: call :: Ljava/util/ArrayList :: v85 = arrayList()::JM,1048:JM,1053:JM,975:CL,3918
+900 :: CALL :: call :: Ljava/lang/String :: v87 = p0 $null .getRandomCondition(v82, v85, v34, v53, v41)::JM,966:CL,3929
+912 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v89 = new java.lang.StringBuilder::
+916 :: CALL :: call :: Ljava/lang/StringBuilder :: v93 = v89.append(#(select * from test0 w...))::
+921 :: CALL :: call :: Ljava/lang/StringBuilder :: v95 = v93.append(v87)::JM,966
+926 :: CALL :: call :: Ljava/lang/StringBuilder :: v98 = v95.append(#( order by 1, 2, 3))::JM,966
+931 :: CALL :: call :: Ljava/lang/String :: v100 = v98.toString()::JM,966
+940 :: EXPR :: reference :: Ljava/sql/Connection :: v103 = p0 $null .conn::JM,966
+943 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v104 = new java.lang.StringBuilder::JM,966
+947 :: CALL :: call :: Ljava/lang/StringBuilder :: v108 = v104.append(#(select * from test1 w...))::JM,966
+952 :: CALL :: call :: Ljava/lang/StringBuilder :: v110 = v108.append(v87)::JM,966
+957 :: CALL :: call :: Ljava/lang/StringBuilder :: v112 = v110.append(#( order by 1, 2, 3))::JM,966
+962 :: CALL :: call :: Ljava/lang/String :: v114 = v112.toString()::JM,966
+966 :: CALL :: call :: Ljava/sql/PreparedStatement :: v116 = v103.prepareStatement(v114)::JM,966
+971 :: CALL :: call :: I :: v118 = v85.size()::JM,1048:JM,1053:JM,975
+975 :: PRED :: IF :: Z :: if (v130 >= v118) goto 445::CD,971:CD,977:CD,989:CD,1000:CD,1127:CD,1128
+977 :: CALL :: call :: Ljava/lang/Object :: v121 = v85.get(v130)::JM,1048:JM,1053:JM,975
+989 :: CALL :: call :: Ljava/lang/Object :: v126 = v85.get(v130)::JM,1048:JM,1053:JM,975
+1000 :: EXPR :: assign :: Ljava/lang/Object :: v129 = v130 + #(1)::DD,1128
+1010 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v135 = new java.lang.StringBuilder::
+1014 :: CALL :: call :: Ljava/lang/StringBuilder :: v138 = v135.append(#(seed: ))::
+1019 :: CALL :: call :: Ljava/lang/StringBuilder :: v140 = v138.append(v71)::
+1024 :: CALL :: call :: Ljava/lang/StringBuilder :: v143 = v140.append(#( ))::
+1029 :: CALL :: call :: Ljava/lang/StringBuilder :: v145 = v143.append(v87)::JM,966
+1034 :: CALL :: call :: Ljava/lang/String :: v147 = v145.toString()::JM,966
+1038 :: CALL :: call :: V :: p0 $null .assertEquals(v147, v132, v134)::CL,4275
+1044 :: CALL :: call :: I :: v150 = v85.size()::JM,1048:JM,1053:JM,975
+1048 :: PRED :: IF :: Z :: if (v150 <= #(0)) goto 615::CF,1131:CD,1049:CD,1053:CD,1085:CD,1089:CD,1094:CD,1099:CD,1104:CD,1109:CD,1113:CD,1129:CD,1130
+1049 :: CALL :: call :: I :: v152 = v85.size()::JM,1048:JM,1053:JM,975
+1053 :: PRED :: IF :: Z :: if (v165 >= v152) goto 578::CD,1049:CD,1054:CD,1055:CD,1056:CD,1065:CD,1083:CD,1129:CD,1130:CF,1085
+1054 :: EXPR :: assign :: I :: v153 = v41.length::DD,1055
+1055 :: EXPR :: assign :: Ljava/lang/Object :: v154 = v153 - #(2)::
+1056 :: CALL :: call :: I :: v156 = v82.nextInt(v154)::
+1061 :: EXPR :: reference :: Ljava/lang/Object :: v157 = v41[v156]::JM,1048:JM,1053:JM,975
+1065 :: CALL :: call :: Ljava/lang/Object :: v159 = v85.set(v165, v157)::JM,1048:JM,1053:JM,975
+1083 :: EXPR :: assign :: Ljava/lang/Object :: v164 = v165 + #(1)::DD,1130
+1085 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v166 = new java.lang.StringBuilder::
+1089 :: CALL :: call :: Ljava/lang/StringBuilder :: v169 = v166.append(#(seed: ))::
+1094 :: CALL :: call :: Ljava/lang/StringBuilder :: v171 = v169.append(v71)::
+1099 :: CALL :: call :: Ljava/lang/StringBuilder :: v173 = v171.append(#( ))::
+1104 :: CALL :: call :: Ljava/lang/StringBuilder :: v175 = v173.append(v87)::JM,966
+1109 :: CALL :: call :: Ljava/lang/String :: v177 = v175.toString()::JM,966
+1113 :: CALL :: call :: V :: p0 $null .assertEquals(v177, v132, v134)::CL,4275
+1119 :: EXPR :: assign :: Ljava/lang/Object :: v179 = v183 + #(1)::DD,1126
+1126 :: EXPR :: assign :: null :: PHI v180 = v179, #(0)::DD,865:DD,1127
+1127 :: EXPR :: assign :: null :: PHI v181 = v181, v180::CF,1128:DD,1127:DD,1129:DD,1131
+1128 :: EXPR :: assign :: null :: PHI v130 = v129, #(0)::DD,975:JM,1048:JM,1053:DD,1000
+1129 :: EXPR :: assign :: null :: PHI v182 = v182, v181::CF,1130:DD,1129:DD,1131
+1130 :: EXPR :: assign :: null :: PHI v165 = v164, #(0)::DD,1053:JM,1048:JM,975:DD,1083
+1131 :: EXPR :: assign :: null :: PHI v183 = v181, v182::DD,1119
+2550 :: ENTR :: entry :: null :: org.h2.test.TestBase.getTestDir(java.lang.String)::CD,2554:CD,2558:CD,2563:CD,2568
+2554 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v3 = new java.lang.StringBuilder::
+2558 :: CALL :: call :: Ljava/lang/StringBuilder :: v7 = v3.append(#(./data/test))::
+2563 :: CALL :: call :: Ljava/lang/StringBuilder :: v9 = v7.append(p1 $null )::
+2568 :: CALL :: call :: Ljava/lang/String :: v11 = v9.toString()::
+2585 :: ENTR :: entry :: null :: org.h2.Driver.load()::CD,2599
+2599 :: CALL :: call :: V :: traceThrowable(v7)::CL,2730
+2611 :: ENTR :: entry :: null :: org.h2.util.Utils.getResource(java.lang.String)::CE,2612:CD,2615:CD,2617:CD,2622:CD,2623:CD,2637:CD,2638
+2612 :: EXIT :: exit :: [B :: org.h2.util.Utils.getResource(java.lang.String)::JM,277:JM,329
+2615 :: EXPR :: reference :: Ljava/util/HashMap :: v3 = org.h2.util.Utils.RESOURCES::JM,2622
+2617 :: CALL :: call :: Ljava/lang/Object :: v5 = v3.get(p1 $null )::JM,2622
+2622 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST v5::DD,2623:DD,2638
+2623 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 34::CF,2638:CD,2624:CD,2628
+2624 :: CALL :: call :: [B :: v9 = loadResource(p1 $null )::JM,2628:JM,2638:CL,4521
+2628 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 34::CF,2638:CD,2629:CD,2631
+2629 :: EXPR :: reference :: Ljava/util/HashMap :: v10 = org.h2.util.Utils.RESOURCES::
+2631 :: CALL :: call :: Ljava/lang/Object :: v12 = v10.put(p1 $null , v9)::JM,2622:JM,2638
+2637 :: NORM :: compound :: [B :: return v13::DD,2612
+2638 :: EXPR :: assign :: null :: PHI v13 = v6, v9, v9::CF,2637
+2651 :: ENTR :: entry :: null :: org.h2.util.SortedProperties.fromLines(java.lang.String)::CE,2652:CD,2655:CD,2659:CD,2665:CD,2666:CD,2697:CD,2698
+2652 :: EXIT :: exit :: Lorg/h2/util/SortedProperties :: org.h2.util.SortedProperties.fromLines(java.lang.String)::JM,354:JM,359
+2655 :: NORM :: declaration :: Lorg/h2/util/SortedProperties :: v3 = new org.h2.util.SortedProperties::DD,2697
+2659 :: CALL :: call :: [Ljava/lang/String :: v8 = arraySplit(p1 $null , #(10), #(1))::JM,2665:CL,4732
+2665 :: EXPR :: assign :: I :: v9 = v8.length::DD,2666:CF,2698
+2666 :: PRED :: IF :: Z :: if (v23 >= v9) goto 77::CD,2671:CD,2676:CD,2695:CD,2698:CF,2697
+2667 :: EXPR :: reference :: Ljava/lang/Object :: v11 = v8[v23]::JM,2676:JM,2683
+2671 :: CALL :: call :: I :: v14 = v11.indexOf(#(61))::JM,2676:JM,2683
+2676 :: PRED :: IF :: Z :: if (v14 <= #(0)) goto 70::CD,2677:CD,2683:CD,2684:CD,2689:CF,2695
+2677 :: CALL :: call :: Ljava/lang/String :: v16 = v11.substring(#(0), v14)::JM,2683
+2683 :: EXPR :: assign :: Ljava/lang/Object :: v17 = v14 + #(1)::
+2684 :: CALL :: call :: Ljava/lang/String :: v19 = v11.substring(v17)::
+2689 :: CALL :: call :: Ljava/lang/Object :: v21 = v3.put(v16, v19)::
+2695 :: EXPR :: assign :: Ljava/lang/Object :: v22 = v23 + #(1)::DD,2698
+2697 :: NORM :: compound :: Lorg/h2/util/SortedProperties :: return v3::DD,2652
+2698 :: EXPR :: assign :: null :: PHI v23 = v22, #(0)::DD,2666:DD,2695
+2730 :: ENTR :: entry :: null :: org.h2.message.DbException.traceThrowable(java.lang.Throwable)::CD,2734:CD,2737
+2734 :: CALL :: call :: Ljava/io/PrintWriter :: v4 = getLogWriter()::JM,2737
+2737 :: PRED :: IF :: Z :: if (v4 == #(null)) goto 13::CD,2738
+2738 :: CALL :: call :: V :: p1 $null .printStackTrace(v4)::
+2748 :: ENTR :: entry :: null :: org.h2.util.New.hashMap()::CF,2751:CE,2749:CD,2755
+2749 :: EXIT :: exit :: Ljava/util/HashMap :: org.h2.util.New.hashMap()::JM,6793:JM,6715
+2751 :: NORM :: declaration :: Ljava/util/HashMap :: v2 = new java.util.HashMap::DD,2755
+2755 :: NORM :: compound :: Ljava/util/HashMap :: return v2::DD,2749
+2757 :: ENTR :: entry :: null :: org.h2.test.TestBase.getBaseDir()::CE,2758:CD,2761:CD,2766:CD,2817:CD,2819
+2758 :: EXIT :: exit :: Ljava/lang/String :: org.h2.test.TestBase.getBaseDir()::JM,3389
+2761 :: EXPR :: reference :: Ljava/lang/String :: v3 = org.h2.test.TestBase.baseDir::DD,2818:DD,2819
+2763 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v4 = p0 $null .config::DD,2766
+2766 :: PRED :: IF :: Z :: if (v4 == #(null)) goto 72::CF,2819:CD,2773:CD,2798:CD,2818
+2767 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v6 = p0 $null .config::
+2770 :: EXPR :: reference :: Z :: v7 = v6.reopen::DD,2773
+2773 :: PRED :: IF :: Z :: if (v7 == #(0)) goto 42::CF,2818:CF,2774:CD,2778:CD,2783:CD,2788
+2774 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v9 = new java.lang.StringBuilder::JM,2818
+2778 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v9.append(#(rec:memFS:))::JM,2818
+2783 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v13.append(v3)::JM,2818
+2788 :: CALL :: call :: Ljava/lang/String :: v17 = v15.toString()::JM,2818
+2792 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v19 = p0 $null .config::
+2795 :: EXPR :: reference :: Z :: v20 = v19.splitFileSystem::DD,2798
+2798 :: PRED :: IF :: Z :: if (v20 == #(0)) goto 72::CF,2819:CF,2799:CD,2803:CD,2808:CD,2813
+2799 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v21 = new java.lang.StringBuilder::JM,2819
+2803 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v21.append(#(split:16:))::JM,2819
+2808 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v25.append(v18)::JM,2819
+2813 :: CALL :: call :: Ljava/lang/String :: v29 = v27.toString()::JM,2819
+2817 :: NORM :: compound :: Ljava/lang/String :: return v30::DD,2758
+2818 :: EXPR :: assign :: null :: PHI v18 = v3, v17::DD,2819
+2819 :: EXPR :: assign :: null :: PHI v30 = v3, v18, v29::CF,2817
+2835 :: ENTR :: entry :: null :: org.h2.test.TestBase.deleteDb(java.lang.String,java.lang.String)::CD,2841
+2841 :: CALL :: call :: V :: execute(p1 $null , p2 $null , #(1))::CL,4895
+2850 :: ENTR :: entry :: null :: org.h2.test.TestBase.getURL(java.lang.String,boolean)::CD,2856:CD,2861:JM,2882:JM,3251:JM,3237:JM,3304:JM,3082:JM,3324:JM,3389:JM,2909:JM,2910:JM,3055
+2856 :: CALL :: call :: Z :: v7 = p1 $null .startsWith(#(jdbc:))::JM,2882:JM,3251:JM,3237:JM,3304:JM,3082:JM,3324:JM,3389:JM,2861:JM,2909:JM,2910:JM,3055
+2861 :: PRED :: IF :: Z :: if (v7 == #(0)) goto 31::CD,2868:CD,2877:CD,2882:CD,2944:CD,3027:CD,3047:CD,3068:CD,3081:CD,3119:CD,3131:CD,3200:CD,3204:CD,3215:CD,3220:CD,3224:CD,3236:CD,3250:CD,3264:CD,3277:CD,3290:CD,3303:CD,3323:CD,3343:CD,3362:CD,3369:CD,3373:CD,3378:CD,3383:CD,3389:CD,3396:CD,3397:CD,3398:CD,3399:CD,3400:CD,3401:CD,3402:CD,3403:CD,3404
+2862 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v244 = p0 $null .config::
+2865 :: EXPR :: reference :: Z :: v245 = v244.mvStore::DD,2868
+2868 :: PRED :: IF :: Z :: if (v245 == #(0)) goto 29::CD,2869
+2869 :: CALL :: call :: Ljava/lang/String :: v247 = addOption(p1 $null , #(MV_STORE), #(true))::CL,4916
+2877 :: CALL :: call :: I :: v11 = p1 $null .indexOf(#(58))::JM,2882:JM,3251:JM,3237:JM,3304:JM,3082:JM,3324:JM,3389:JM,2861:JM,2909:JM,2910:JM,3055
+2882 :: PRED :: IF :: Z :: if (v11 != #(-1)) goto 83::CD,2889:CD,2909
+2883 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v13 = p0 $null .config::
+2886 :: EXPR :: reference :: Z :: v14 = v13.memory::DD,2889
+2889 :: PRED :: IF :: Z :: if (v14 == #(0)) goto 83::CF,2890:CD,2894:CD,2899:CD,2904:CD,2909:CD,3389
+2890 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v29 = new java.lang.StringBuilder::JM,3389
+2894 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v29.append(#(mem:))::JM,3389
+2899 :: CALL :: call :: Ljava/lang/StringBuilder :: v35 = v33.append(p1 $null )::JM,3389:JM,2882:JM,3251:JM,3237:JM,3304:JM,3082:JM,3324:JM,2861:JM,2909:JM,2910:JM,3055
+2904 :: CALL :: call :: Ljava/lang/String :: v37 = v35.toString()::JM,3389
+2909 :: PRED :: IF :: Z :: if (v11 < #(0)) goto 93::CF,2911:CD,2910:CD,2915:CD,2919:CD,2924:CD,2929:CD,2934:CD,3389
+2910 :: PRED :: IF :: Z :: if (v11 <= #(10)) goto 121::CF,3389:CF,2911:CD,2915:CD,2919:CD,2924:CD,2929:CD,2934
+2911 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v16 = new java.lang.StringBuilder::JM,3389
+2915 :: CALL :: call :: Ljava/lang/String :: v19 = p0 $null .getBaseDir()::JM,3389:CL,2757
+2919 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v16.append(v19)::JM,3389
+2924 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v21.append(#(/))::JM,3389
+2929 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v24.append(p1 $null )::JM,3389:JM,2882:JM,3251:JM,3237:JM,3304:JM,3082:JM,3324:JM,2861:JM,2909:JM,2910:JM,3055
+2934 :: CALL :: call :: Ljava/lang/String :: v28 = v26.toString()::JM,3389
+2938 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v39 = p0 $null .config::
+2941 :: EXPR :: reference :: Z :: v40 = v39.networked::DD,2944
+2944 :: PRED :: IF :: Z :: if (v40 == #(0)) goto 187::CD,2951:CD,2996
+2945 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v55 = p0 $null .config::
+2948 :: EXPR :: reference :: Z :: v56 = v55.ssl::DD,2951
+2951 :: PRED :: IF :: Z :: if (v56 == #(0)) goto 163::CF,2971:CF,2952:CD,2956:CD,2961:CD,2966:CD,2975:CD,2980:CD,2985
+2952 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v66 = new java.lang.StringBuilder::
+2956 :: CALL :: call :: Ljava/lang/StringBuilder :: v70 = v66.append(#(ssl://localhost:9192/))::
+2961 :: CALL :: call :: Ljava/lang/StringBuilder :: v72 = v70.append(v38)::
+2966 :: CALL :: call :: Ljava/lang/String :: v74 = v72.toString()::
+2971 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v57 = new java.lang.StringBuilder::
+2975 :: CALL :: call :: Ljava/lang/StringBuilder :: v61 = v57.append(#(tcp://localhost:9192/))::
+2980 :: CALL :: call :: Ljava/lang/StringBuilder :: v63 = v61.append(v38)::
+2985 :: CALL :: call :: Ljava/lang/String :: v65 = v63.toString()::
+2990 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v41 = p0 $null .config::
+2993 :: EXPR :: reference :: Z :: v42 = v41.googleAppEngine::DD,2996
+2996 :: PRED :: IF :: Z :: if (v42 == #(0)) goto 227::CF,2997:CD,3001:CD,3006:CD,3011:CD,3016
+2997 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v43 = new java.lang.StringBuilder::
+3001 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v43.append(#(gae://))::
+3006 :: CALL :: call :: Ljava/lang/StringBuilder :: v49 = v47.append(v38)::
+3011 :: CALL :: call :: Ljava/lang/StringBuilder :: v52 = v49.append(#(;FILE_LOCK=NO;AUTO_SE...))::
+3016 :: CALL :: call :: Ljava/lang/String :: v54 = v52.toString()::
+3021 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v76 = p0 $null .config::
+3024 :: EXPR :: reference :: Z :: v77 = v76.mvStore::DD,3027
+3027 :: PRED :: IF :: Z :: if (v77 == #(0)) goto 253::CD,3028:CD,3035
+3028 :: CALL :: call :: Ljava/lang/String :: v84 = addOption(v75, #(MV_STORE), #(true))::CL,4916
+3035 :: CALL :: call :: Ljava/lang/String :: v81 = addOption(v75, #(MV_STORE), #(false))::CL,4916
+3041 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v86 = p0 $null .config::
+3044 :: EXPR :: reference :: Z :: v87 = v86.memory::DD,3047
+3047 :: PRED :: IF :: Z :: if (v87 != #(0)) goto 291::CD,3054
+3048 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v88 = p0 $null .config::
+3051 :: EXPR :: reference :: Z :: v89 = v88.smallLog::DD,3054
+3054 :: PRED :: IF :: Z :: if (v89 == #(0)) goto 291::CD,3055
+3055 :: PRED :: IF :: Z :: if (p2 $null  == #(0)) goto 291::CD,3056
+3056 :: CALL :: call :: Ljava/lang/String :: v93 = addOption(v85, #(MAX_LOG_SIZE), #(1))::CL,4916
+3062 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v95 = p0 $null .config::
+3065 :: EXPR :: reference :: Z :: v96 = v95.traceSystemOut::DD,3068
+3068 :: PRED :: IF :: Z :: if (v96 == #(0)) goto 310::CD,3069
+3069 :: CALL :: call :: Ljava/lang/String :: v100 = addOption(v94, #(TRACE_LEVEL_SYSTEM_OUT), #(2))::CL,4916
+3075 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v102 = p0 $null .config::
+3078 :: EXPR :: reference :: I :: v103 = v102.traceLevelFile::DD,3081
+3081 :: PRED :: IF :: Z :: if (v103 <= #(0)) goto 369::CD,3082
+3082 :: PRED :: IF :: Z :: if (p2 $null  == #(0)) goto 369::CD,3083:CD,3087:CD,3098:CD,3103:CD,3107:CD,3113
+3083 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v105 = new java.lang.StringBuilder::
+3087 :: CALL :: call :: Ljava/lang/StringBuilder :: v109 = v105.append(#())::
+3092 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v110 = p0 $null .config::
+3095 :: EXPR :: reference :: I :: v111 = v110.traceLevelFile::
+3098 :: CALL :: call :: Ljava/lang/StringBuilder :: v113 = v109.append(v111)::
+3103 :: CALL :: call :: Ljava/lang/String :: v115 = v113.toString()::
+3107 :: CALL :: call :: Ljava/lang/String :: v117 = addOption(v101, #(TRACE_LEVEL_FILE), v115)::CL,4916
+3113 :: CALL :: call :: Ljava/lang/String :: v121 = addOption(v117, #(TRACE_MAX_FILE_SIZE), #(8))::CL,4916
+3119 :: CALL :: call :: Ljava/lang/String :: v125 = addOption(v122, #(LOG), #(1))::CL,4916
+3125 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v126 = p0 $null .config::
+3128 :: EXPR :: reference :: I :: v127 = v126.throttleDefault::DD,3131
+3131 :: PRED :: IF :: Z :: if (v127 <= #(0)) goto 419::CD,3132:CD,3136:CD,3147:CD,3152:CD,3156:CD,3169
+3132 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v143 = new java.lang.StringBuilder::
+3136 :: CALL :: call :: Ljava/lang/StringBuilder :: v146 = v143.append(#())::
+3141 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v147 = p0 $null .config::
+3144 :: EXPR :: reference :: I :: v148 = v147.throttleDefault::
+3147 :: CALL :: call :: Ljava/lang/StringBuilder :: v150 = v146.append(v148)::
+3152 :: CALL :: call :: Ljava/lang/String :: v152 = v150.toString()::
+3156 :: CALL :: call :: Ljava/lang/String :: v154 = addOption(v125, #(THROTTLE), v152)::CL,4916
+3163 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v128 = p0 $null .config::
+3166 :: EXPR :: reference :: I :: v129 = v128.throttle::DD,3169
+3169 :: PRED :: IF :: Z :: if (v129 <= #(0)) goto 463::CD,3170:CD,3174:CD,3185:CD,3190:CD,3194
+3170 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v131 = new java.lang.StringBuilder::
+3174 :: CALL :: call :: Ljava/lang/StringBuilder :: v134 = v131.append(#())::
+3179 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v135 = p0 $null .config::
+3182 :: EXPR :: reference :: I :: v136 = v135.throttle::
+3185 :: CALL :: call :: Ljava/lang/StringBuilder :: v138 = v134.append(v136)::
+3190 :: CALL :: call :: Ljava/lang/String :: v140 = v138.toString()::
+3194 :: CALL :: call :: Ljava/lang/String :: v142 = addOption(v125, #(THROTTLE), v140)::CL,4916
+3200 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v157 = new java.lang.StringBuilder::
+3204 :: CALL :: call :: Ljava/lang/StringBuilder :: v160 = v157.append(#())::
+3209 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v161 = p0 $null .config::
+3212 :: EXPR :: reference :: I :: v162 = v161.lockTimeout::
+3215 :: CALL :: call :: Ljava/lang/StringBuilder :: v164 = v160.append(v162)::
+3220 :: CALL :: call :: Ljava/lang/String :: v166 = v164.toString()::
+3224 :: CALL :: call :: Ljava/lang/String :: v168 = addOption(v155, #(LOCK_TIMEOUT), v166)::JM,3396:CL,4916
+3230 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v169 = p0 $null .config::
+3233 :: EXPR :: reference :: Z :: v170 = v169.diskUndo::DD,3236
+3236 :: PRED :: IF :: Z :: if (v170 == #(0)) goto 516::CF,3396:CD,3237
+3237 :: PRED :: IF :: Z :: if (p2 $null  == #(0)) goto 516::CF,3396:CD,3238
+3238 :: CALL :: call :: Ljava/lang/String :: v174 = addOption(v168, #(MAX_MEMORY_UNDO), #(3))::JM,3396:CL,4916
+3244 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v176 = p0 $null .config::
+3247 :: EXPR :: reference :: Z :: v177 = v176.big::DD,3250
+3250 :: PRED :: IF :: Z :: if (v177 == #(0)) goto 539::CF,3397:CD,3251
+3251 :: PRED :: IF :: Z :: if (p2 $null  == #(0)) goto 539::CF,3397:CD,3252
+3252 :: CALL :: call :: Ljava/lang/String :: v180 = addOption(v175, #(MAX_OPERATION_MEMORY), #(1))::JM,3397:CL,4916
+3258 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v182 = p0 $null .config::
+3261 :: EXPR :: reference :: Z :: v183 = v182.mvcc::DD,3264
+3264 :: PRED :: IF :: Z :: if (v183 == #(0)) goto 558::CF,3398:CD,3265
+3265 :: CALL :: call :: Ljava/lang/String :: v187 = addOption(v181, #(MVCC), #(TRUE))::JM,3398:CL,4916
+3271 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v189 = p0 $null .config::
+3274 :: EXPR :: reference :: Z :: v190 = v189.multiThreaded::DD,3277
+3277 :: PRED :: IF :: Z :: if (v190 == #(0)) goto 577::CF,3399:CD,3278
+3278 :: CALL :: call :: Ljava/lang/String :: v193 = addOption(v188, #(MULTI_THREADED), #(TRUE))::JM,3399:CL,4916
+3284 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v195 = p0 $null .config::
+3287 :: EXPR :: reference :: Z :: v196 = v195.lazy::DD,3290
+3290 :: PRED :: IF :: Z :: if (v196 == #(0)) goto 596::CF,3400:CD,3291
+3291 :: CALL :: call :: Ljava/lang/String :: v199 = addOption(v194, #(LAZY_QUERY_EXECUTION), #(1))::JM,3400:CL,4916
+3297 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v201 = p0 $null .config::
+3300 :: EXPR :: reference :: Ljava/lang/String :: v202 = v201.cacheType::DD,3303
+3303 :: PRED :: IF :: Z :: if (v202 == #(null)) goto 624::CF,3401:CD,3304
+3304 :: PRED :: IF :: Z :: if (p2 $null  == #(0)) goto 624::CF,3401:CD,3311
+3311 :: CALL :: call :: Ljava/lang/String :: v208 = addOption(v200, #(CACHE_TYPE), v206)::JM,3401:CL,4916
+3317 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v210 = p0 $null .config::
+3320 :: EXPR :: reference :: Z :: v211 = v210.diskResult::DD,3323
+3323 :: PRED :: IF :: Z :: if (v211 == #(0)) goto 656::CF,3402:CD,3324
+3324 :: PRED :: IF :: Z :: if (p2 $null  == #(0)) goto 656::CF,3402:CD,3325:CD,3331
+3325 :: CALL :: call :: Ljava/lang/String :: v215 = addOption(v209, #(MAX_MEMORY_ROWS), #(100))::CL,4916
+3331 :: CALL :: call :: Ljava/lang/String :: v219 = addOption(v215, #(CACHE_SIZE), #(0))::JM,3402:CL,4916
+3337 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v221 = p0 $null .config::
+3340 :: EXPR :: reference :: Ljava/lang/String :: v222 = v221.cipher::DD,3343
+3343 :: PRED :: IF :: Z :: if (v222 == #(null)) goto 680::CF,3403:CD,3350
+3350 :: CALL :: call :: Ljava/lang/String :: v227 = addOption(v220, #(CIPHER), v225)::JM,3403:CL,4916
+3356 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v229 = p0 $null .config::
+3359 :: EXPR :: reference :: Z :: v230 = v229.defrag::DD,3362
+3362 :: PRED :: IF :: Z :: if (v230 == #(0)) goto 698::CF,3404:CD,3363
+3363 :: CALL :: call :: Ljava/lang/String :: v233 = addOption(v228, #(DEFRAG_ALWAYS), #(TRUE))::JM,3404:CL,4916
+3369 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v235 = new java.lang.StringBuilder::
+3373 :: CALL :: call :: Ljava/lang/StringBuilder :: v239 = v235.append(#(jdbc:h2:))::
+3378 :: CALL :: call :: Ljava/lang/StringBuilder :: v241 = v239.append(v234)::
+3383 :: CALL :: call :: Ljava/lang/String :: v243 = v241.toString()::
+3389 :: EXPR :: assign :: null :: PHI v38 = v37, p1 $null , v28::
+3396 :: EXPR :: assign :: null :: PHI v175 = v168, v168, v174::DD,3397
+3397 :: EXPR :: assign :: null :: PHI v181 = v175, v175, v180::DD,3398
+3398 :: EXPR :: assign :: null :: PHI v188 = v181, v187::DD,3399
+3399 :: EXPR :: assign :: null :: PHI v194 = v188, v193::DD,3400
+3400 :: EXPR :: assign :: null :: PHI v200 = v194, v199::DD,3401
+3401 :: EXPR :: assign :: null :: PHI v209 = v200, v200, v208::DD,3402
+3402 :: EXPR :: assign :: null :: PHI v220 = v209, v209, v219::DD,3403
+3403 :: EXPR :: assign :: null :: PHI v228 = v220, v227::DD,3404
+3404 :: EXPR :: assign :: null :: PHI v234 = v228, v233::CF,3369
+3583 :: ENTR :: entry :: null :: org.h2.test.TestBase.getPassword()::CD,3587
+3587 :: CALL :: call :: Ljava/lang/String :: v5 = p0 $null .getPassword(#(123))::CL,4999
+3595 :: ENTR :: entry :: null :: org.h2.test.TestBase.getConnectionInternal(java.lang.String,java.lang.String,java.lang.String)::CE,3596:CD,3601:CD,3604:CD,3610
+3596 :: EXIT :: exit :: Ljava/sql/Connection :: org.h2.test.TestBase.getConnectionInternal(java.lang.String,java.lang.String,java.lang.String)::JM,697
+3601 :: CALL :: call :: Lorg/h2/Driver :: v6 = load()::CL,2585
+3604 :: CALL :: call :: Ljava/sql/Connection :: v8 = getConnection(p1 $null , p2 $null , p3 $null )::JM,3604:JM,3610
+3610 :: NORM :: compound :: Ljava/sql/Connection :: return v8::DD,3596
+3623 :: NORM :: declaration :: Ljava/util/HashMap :: v5 = new java.util.HashMap::
+3641 :: CALL :: call :: Ljava/lang/RuntimeException :: v11 = convert(v9)::CL,5054
+3655 :: ENTR :: entry :: null :: org.h2.test.db.Db.execute(java.lang.String)::CD,3669
+3669 :: CALL :: call :: Ljava/lang/RuntimeException :: v9 = convert(v7)::CL,5054
+3679 :: ENTR :: entry :: null :: org.h2.test.db.Db.prepare(java.lang.String)::CD,3687:CD,3692:CD,3693:CD,3725:JM,3697
+3684 :: EXPR :: reference :: Ljava/util/HashMap :: v4 = p0 $null .prepared::JM,3692
+3687 :: CALL :: call :: Ljava/lang/Object :: v6 = v4.get(p1 $null )::JM,3692:JM,3697
+3692 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST v6::DD,3693
+3693 :: PRED :: IF :: Z :: if (v7 != #(null)) goto 37::CD,3697:CD,3705
+3694 :: EXPR :: reference :: Ljava/sql/Connection :: v9 = p0 $null .conn::JM,3697
+3697 :: CALL :: call :: Ljava/sql/PreparedStatement :: v11 = v9.prepareStatement(p1 $null )::JM,3697:JM,3692
+3702 :: EXPR :: reference :: Ljava/util/HashMap :: v12 = p0 $null .prepared::
+3705 :: CALL :: call :: Ljava/lang/Object :: v14 = v12.put(p1 $null , v11)::JM,3697:JM,3692
+3725 :: CALL :: call :: Ljava/lang/RuntimeException :: v23 = convert(v21)::CL,5054
+3746 :: ENTR :: entry :: null :: org.h2.test.db.Db.Prepared.set(int)::CD,3767
+3767 :: CALL :: call :: Ljava/lang/RuntimeException :: v11 = convert(v9)::CL,5054
+3780 :: ENTR :: entry :: null :: org.h2.test.db.Db.Prepared.execute()::CD,3792
+3792 :: CALL :: call :: Ljava/lang/RuntimeException :: v8 = convert(v6)::CL,5054
+3801 :: ENTR :: entry :: null :: org.h2.test.TestBase.getSize(int,int)::CE,3802:CD,3813:CD,3823:CD,3824
+3802 :: EXIT :: exit :: I :: org.h2.test.TestBase.getSize(int,int)::JM,865
+3807 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v5 = p0 $null .config::
+3810 :: EXPR :: reference :: Z :: v6 = v5.endless::DD,3813
+3813 :: PRED :: IF :: Z :: if (v6 == #(0)) goto 16::CD,3821:CD,3824
+3815 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v8 = p0 $null .config::
+3818 :: EXPR :: reference :: Z :: v9 = v8.big::DD,3821
+3821 :: PRED :: IF :: Z :: if (v9 == #(0)) goto 30::CD,3824
+3823 :: NORM :: compound :: I :: return v11::CF,3802
+3824 :: EXPR :: assign :: null :: PHI v11 = #(2147483647), p2 $null , p1 $null ::CF,3823
+3832 :: ENTR :: entry :: null :: org.h2.test.TestBase.println(java.lang.String)::CD,3837:CD,3840:CD,3842:CD,3844:CD,3849:CD,3850:CD,3851:JM,3873:JM,3869
+3837 :: CALL :: call :: J :: v5 = nanoTime()::JM,3850
+3840 :: EXPR :: reference :: J :: v6 = org.h2.test.TestBase.lastPrint::DD,3849
+3842 :: EXPR :: reference :: Ljava/util/concurrent/TimeUnit :: v7 = java.util.concurrent.TimeUnit.SECONDS::JM,3849
+3844 :: CALL :: call :: J :: v10 = v7.toNanos(#(1 l))::JM,3849
+3849 :: EXPR :: assign :: Ljava/lang/Object :: v11 = v6 + v10::CF,3850
+3850 :: EXPR :: assign :: Z :: v12 = v5 == v11::DD,3851
+3851 :: PRED :: IF :: Z :: if (v12 <= #(0)) goto 72::CD,3865:CD,3869:CD,3873:CD,3877:CD,3882:CD,3887:CD,3892:CD,3896
+3865 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v19 = new java.lang.StringBuilder::
+3869 :: CALL :: call :: Ljava/lang/Class :: v22 = p0 $null .getClass()::JM,3873:JM,3869
+3873 :: CALL :: call :: Ljava/lang/String :: v24 = v22.getName()::JM,3873
+3877 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v19.append(v24)::
+3882 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v26.append(#( ))::
+3887 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v29.append(p1 $null )::JM,3873:JM,3869
+3892 :: CALL :: call :: Ljava/lang/String :: v33 = v31.toString()::JM,3873
+3896 :: CALL :: call :: V :: printlnWithTime(v18, v33)::CL,5087
+3918 :: ENTR :: entry :: null :: org.h2.util.New.arrayList()::CE,3919:CD,3921:CD,3926
+3919 :: EXIT :: exit :: Ljava/util/ArrayList :: org.h2.util.New.arrayList()::JM,1048:JM,1053:JM,975:JM,4823:JM,6256
+3921 :: NORM :: declaration :: Ljava/util/ArrayList :: v2 = new java.util.ArrayList::DD,3926
+3926 :: NORM :: compound :: Ljava/util/ArrayList :: return v2::DD,3919
+3929 :: ENTR :: entry :: null :: org.h2.test.synth.TestFuzzOptimizations.getRandomCondition(java.util.Random,java.util.ArrayList,java.lang.String[],java.lang.String[],java.lang.String[])::CE,3930:CD,3938:CD,3943:CD,3944:CD,3948:CD,4150:CD,4154:CD,4155:JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,4007:JM,3961:JM,4015:JM,4111
+3930 :: EXIT :: exit :: Ljava/lang/String :: org.h2.test.synth.TestFuzzOptimizations.getRandomCondition(java.util.Random,java.util.ArrayList,java.lang.String[],java.lang.String[],java.lang.String[])::JM,966
+3938 :: CALL :: call :: I :: v11 = p1 $null .nextInt(#(4))::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+3943 :: EXPR :: assign :: Ljava/lang/Object :: v12 = #(1) + v11::DD,3948:CF,3944
+3944 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::JM,4154
+3948 :: PRED :: IF :: Z :: if (v110 >= v12) goto 332::CD,3949:CD,3961:CD,3962:CD,3971:CD,3972:CD,3981:CD,3986:CD,3991:CD,3996:CD,4001:CD,4148:CD,4155:CD,4159:JM,4154
+3949 :: PRED :: IF :: Z :: if (v110 <= #(0)) goto 56::CD,3950:CD,3954:CD,3956:CD,4156:JM,4066:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,4015:JM,4111:CF,3961
+3950 :: CALL :: call :: Z :: v17 = p1 $null .nextBoolean()::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+3954 :: PRED :: IF :: Z :: if (v17 == #(0)) goto 49::CD,4156
+3956 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v13.append(v20)::
+3961 :: EXPR :: assign :: I :: v23 = p3 $null .length::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+3962 :: CALL :: call :: I :: v25 = p1 $null .nextInt(v23)::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+3967 :: EXPR :: reference :: Ljava/lang/Object :: v26 = p3 $null [v25]::
+3971 :: EXPR :: assign :: I :: v27 = p4 $null .length::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+3972 :: CALL :: call :: I :: v29 = p1 $null .nextInt(v27)::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+3977 :: EXPR :: reference :: Ljava/lang/Object :: v30 = p4 $null [v29]::JM,4001:JM,4065
+3981 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v13.append(v26)::
+3986 :: CALL :: call :: Ljava/lang/StringBuilder :: v35 = v32.append(#(32))::
+3991 :: CALL :: call :: Ljava/lang/StringBuilder :: v37 = v35.append(v30)::
+3996 :: CALL :: call :: Z :: v40 = v30.endsWith(#(in())::JM,4001
+4001 :: PRED :: IF :: Z :: if (v40 == #(0)) goto 207::CD,4002:CD,4007:CD,4008:CD,4054:CD,4060:CD,4065:CD,4157:CD,4158:CD,4159:JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,3961:JM,4015:JM,4111
+4002 :: CALL :: call :: I :: v55 = p1 $null .nextInt(#(3))::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4007 :: EXPR :: assign :: Ljava/lang/Object :: v56 = #(1) + v55::DD,4008:CF,4157
+4008 :: PRED :: IF :: Z :: if (v78 >= v56) goto 196::CD,4009:CD,4015:CD,4016:CD,4025:CD,4030:CD,4035:CD,4052:CD,4157:CD,4158
+4009 :: PRED :: IF :: Z :: if (v78 <= #(0)) goto 140::CD,4010:CF,4015
+4010 :: CALL :: call :: Ljava/lang/StringBuilder :: v59 = v13.append(#(, ))::
+4015 :: EXPR :: assign :: I :: v60 = p5 $null .length::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4016 :: CALL :: call :: I :: v62 = p1 $null .nextInt(v60)::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4021 :: EXPR :: reference :: Ljava/lang/Object :: v63 = p5 $null [v62]::JM,4035
+4025 :: CALL :: call :: Ljava/lang/StringBuilder :: v65 = v13.append(v63)::
+4030 :: CALL :: call :: Z :: v67 = #(?).equals(v63)::JM,4035
+4035 :: PRED :: IF :: Z :: if (v67 == #(0)) goto 186::CD,4036:CD,4037:CD,4038:CD,4047:CF,4052
+4036 :: EXPR :: assign :: I :: v68 = p5 $null .length::DD,4037
+4037 :: EXPR :: assign :: Ljava/lang/Object :: v70 = v68 - #(2)::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4038 :: CALL :: call :: I :: v72 = p1 $null .nextInt(v70)::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4043 :: EXPR :: reference :: Ljava/lang/Object :: v73 = p5 $null [v72]::JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,4015:JM,4111
+4047 :: CALL :: call :: Z :: v75 = p2 $null .add(v73)::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4052 :: EXPR :: assign :: Ljava/lang/Object :: v77 = v78 + #(1)::DD,4158
+4054 :: CALL :: call :: Ljava/lang/StringBuilder :: v81 = v13.append(#()))::
+4060 :: CALL :: call :: Z :: v43 = v30.endsWith(#((select))::JM,4065
+4065 :: PRED :: IF :: Z :: if (v43 == #(0)) goto 278::CD,4066:CD,4067:CD,4076:CD,4081:CD,4086:CD,4091:CD,4100:CD,4105:CD,4111:CD,4112:CD,4121:CD,4126:CD,4131:CD,4159
+4066 :: EXPR :: assign :: I :: v82 = p3 $null .length::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4067 :: CALL :: call :: I :: v84 = p1 $null .nextInt(v82)::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4072 :: EXPR :: reference :: Ljava/lang/Object :: v85 = p3 $null [v84]::
+4076 :: CALL :: call :: Ljava/lang/StringBuilder :: v88 = v13.append(#( ))::
+4081 :: CALL :: call :: Ljava/lang/StringBuilder :: v90 = v88.append(v85)::
+4086 :: CALL :: call :: Ljava/lang/StringBuilder :: v93 = v90.append(#( from test1 where ))::
+4091 :: CALL :: call :: Ljava/lang/String :: v95 = p0 $null .getRandomCondition(p1 $null , p2 $null , p3 $null , p4 $null , p5 $null )::CL,3929
+4100 :: CALL :: call :: Ljava/lang/StringBuilder :: v97 = v13.append(v95)::
+4105 :: CALL :: call :: Ljava/lang/StringBuilder :: v99 = v13.append(#()))::
+4111 :: EXPR :: assign :: I :: v44 = p5 $null .length::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4112 :: CALL :: call :: I :: v46 = p1 $null .nextInt(v44)::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4117 :: EXPR :: reference :: Ljava/lang/Object :: v47 = p5 $null [v46]::JM,4131
+4121 :: CALL :: call :: Ljava/lang/StringBuilder :: v49 = v13.append(v47)::
+4126 :: CALL :: call :: Z :: v52 = #(?).equals(v47)::JM,4131
+4131 :: PRED :: IF :: Z :: if (v52 == #(0)) goto 324::CF,4159:CD,4132:CD,4133:CD,4134:CD,4143
+4132 :: EXPR :: assign :: I :: v100 = p5 $null .length::DD,4133
+4133 :: EXPR :: assign :: Ljava/lang/Object :: v101 = v100 - #(2)::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4134 :: CALL :: call :: I :: v103 = p1 $null .nextInt(v101)::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4139 :: EXPR :: reference :: Ljava/lang/Object :: v104 = p5 $null [v103]::JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,4015:JM,4111
+4143 :: CALL :: call :: Z :: v106 = p2 $null .add(v104)::JM,4066:JM,3954:JM,3971:JM,4036:JM,4132:JM,3943:JM,4007:JM,3961:JM,4015:JM,4111
+4148 :: EXPR :: assign :: Ljava/lang/Object :: v109 = v112 + #(1)::DD,4155
+4150 :: CALL :: call :: Ljava/lang/String :: v114 = v13.toString()::JM,4154
+4154 :: NORM :: compound :: Ljava/lang/String :: return v114::DD,3930
+4155 :: EXPR :: assign :: null :: PHI v110 = v109, #(0)::DD,3948:DD,3949:DD,4157:DD,4159
+4156 :: EXPR :: assign :: null :: PHI v20 = #( and ), #( or )::
+4157 :: EXPR :: assign :: null :: PHI v111 = v111, v110::CF,4158:DD,4157:DD,4159
+4158 :: EXPR :: assign :: null :: PHI v78 = v77, #(0)::DD,4008:DD,4009:DD,4052
+4159 :: EXPR :: assign :: null :: PHI v112 = v111, v110, v110, v110::DD,4148
+4275 :: ENTR :: entry :: null :: org.h2.test.TestBase.assertEquals(java.lang.String,java.sql.ResultSet,java.sql.ResultSet)::CD,4282:CD,4286:CD,4298:CD,4303:CD,4307:CD,4343:CD,4352:JM,4317
+4282 :: CALL :: call :: Ljava/sql/ResultSetMetaData :: v7 = p2 $null .getMetaData()::JM,4307:JM,4282:JM,4317:JM,4286:JM,4303
+4286 :: CALL :: call :: I :: v9 = v7.getColumnCount()::JM,4307:JM,4317:JM,4286
+4298 :: CALL :: call :: V :: p0 $null .assertEquals(v9, v13)::CL,5163
+4303 :: CALL :: call :: Z :: v16 = p2 $null .next()::JM,4307:JM,4282:JM,4317:JM,4286:JM,4303
+4307 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 101::CD,4303:CD,4312:CD,4317:CD,4358
+4312 :: CALL :: call :: V :: p0 $null .assertTrue(p1 $null , v19)::CL,4505
+4317 :: PRED :: IF :: Z :: if (v30 >= v9) goto 95::CD,4330:CD,4336:CD,4358
+4330 :: CALL :: call :: V :: p0 $null .assertEquals(p1 $null , v24, v27)::CL,5211
+4336 :: EXPR :: assign :: Ljava/lang/Object :: v29 = v30 + #(1)::DD,4358
+4343 :: CALL :: call :: V :: p0 $null .assertFalse(p1 $null , v32)::CL,5517
+4352 :: CALL :: call :: V :: p0 $null .assertFalse(p1 $null , v35)::CL,5517
+4358 :: EXPR :: assign :: null :: PHI v30 = v29, #(0)::DD,4317:DD,4336
+4505 :: ENTR :: entry :: null :: org.h2.test.TestBase.assertTrue(java.lang.String,boolean)::CD,4511
+4511 :: PRED :: IF :: Z :: if (p2 $null  != #(0)) goto 9::CD,4512
+4512 :: CALL :: call :: V :: p0 $null .fail(p1 $null )::CL,5615
+4521 :: ENTR :: entry :: null :: org.h2.util.Utils.loadResource(java.lang.String)::CE,4522:CD,4525:CD,4526:CD,4531:CD,4644:CD,4653:CD,4658:CD,4667:JM,4538:JM,4590
+4522 :: EXIT :: exit :: [B :: org.h2.util.Utils.loadResource(java.lang.String)::JM,2628:JM,2638
+4525 :: EXPR :: assign :: Ljava/lang/Class :: v3 = metadata <Application,Lorg/h2/util/Utils>-><Primordial,Ljava/lang/Class>::JM,4531
+4526 :: CALL :: call :: Ljava/io/InputStream :: v6 = v3.getResourceAsStream(#(data.zip))::JM,4531
+4531 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 31::CF,4546:CF,4532:CD,4533:CD,4538:CD,4551:CD,4555
+4532 :: EXPR :: assign :: Ljava/lang/Class :: v63 = metadata <Application,Lorg/h2/util/Utils>-><Primordial,Ljava/lang/Class>::JM,4538
+4533 :: CALL :: call :: Ljava/io/InputStream :: v65 = v63.getResourceAsStream(p1 $null )::JM,4538:JM,4590
+4538 :: PRED :: IF :: Z :: if (v65 != #(null)) goto 27::CD,4539:CD,4540:CD,4545
+4539 :: NORM :: compound :: [B :: return #(null)::DD,4522
+4540 :: CALL :: call :: [B :: v67 = readBytesAndClose(v65, #(0))::JM,4545:CL,5669
+4545 :: NORM :: compound :: [B :: return v67::DD,4522
+4546 :: NORM :: declaration :: Ljava/util/zip/ZipInputStream :: v8 = new java.util.zip.ZipInputStream::JM,4566:JM,4555:JM,4668:DD,4607:DD,4626
+4551 :: CALL :: call :: Ljava/util/zip/ZipEntry :: v11 = v8.getNextEntry()::JM,4566:JM,4555:JM,4668
+4555 :: PRED :: IF :: Z :: if (v11 != #(null)) goto 58::CD,4557:CD,4561:CD,4566:CD,4585:CD,4590:CD,4626:CD,4661:CD,4668
+4557 :: CALL :: call :: Ljava/lang/String :: v13 = v11.getName()::JM,4566:JM,4668
+4561 :: CALL :: call :: Z :: v16 = v13.startsWith(#(/))::JM,4566:JM,4668
+4566 :: PRED :: IF :: Z :: if (v16 != #(0)) goto 98::CF,4668:CF,4567:CD,4571:CD,4576:CD,4581
+4567 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v18 = new java.lang.StringBuilder::JM,4668
+4571 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v18.append(#(/))::JM,4668
+4576 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v21.append(v13)::JM,4668:JM,4566
+4581 :: CALL :: call :: Ljava/lang/String :: v25 = v23.toString()::JM,4668
+4585 :: CALL :: call :: Z :: v28 = v26.equals(p1 $null )::JM,4590:JM,4538
+4590 :: PRED :: IF :: Z :: if (v28 == #(0)) goto 165::CF,4591:CD,4551:CD,4555:CD,4595:CD,4600:CD,4603:CD,4607:CD,4621:CD,4622
+4591 :: NORM :: declaration :: Ljava/io/ByteArrayOutputStream :: v30 = new java.io.ByteArrayOutputStream::JM,4621
+4595 :: CALL :: call :: J :: v33 = copy(v8, v30)::CL,5729
+4600 :: CALL :: call :: V :: v8.closeEntry()::
+4603 :: CALL :: call :: [B :: v36 = v30.toByteArray()::JM,4621
+4607 :: PRED :: IF :: Z :: if (v8 == #(null)) goto 163::CD,4608:CF,4621
+4608 :: PRED :: IF :: Z :: if (#(null) == #(null)) goto 158::CD,4609:CD,4618
+4609 :: CALL :: call :: V :: v8.close()::
+4618 :: CALL :: call :: V :: v8.close()::
+4621 :: NORM :: compound :: [B :: return v36::DD,4522
+4622 :: CALL :: call :: V :: v8.closeEntry()::
+4626 :: PRED :: IF :: Z :: if (v8 == #(null)) goto 247::CD,4627
+4627 :: PRED :: IF :: Z :: if (#(null) == #(null)) goto 198::CD,4628:CD,4637
+4628 :: CALL :: call :: V :: v8.close()::
+4637 :: CALL :: call :: V :: v8.close()::
+4644 :: CALL :: call :: V :: v8.close()::
+4653 :: CALL :: call :: V :: v8.close()::
+4658 :: CALL :: call :: V :: v52.printStackTrace()::
+4661 :: NORM :: compound :: [B :: return #(null)::DD,4522
+4667 :: EXPR :: assign :: Ljava/lang/Exception :: v52 = catch <exc>::
+4668 :: EXPR :: assign :: null :: PHI v26 = v13, v25::JM,4590
+4732 :: ENTR :: entry :: null :: org.h2.util.StringUtils.arraySplit(java.lang.String,char,boolean)::CE,4733:CD,4738:JM,4755:JM,4808:JM,4744:JM,4761:JM,4766:JM,4782:JM,4783
+4733 :: EXIT :: exit :: [Ljava/lang/String :: org.h2.util.StringUtils.arraySplit(java.lang.String,char,boolean)::JM,2665
+4738 :: PRED :: IF :: Z :: if (p1 $null  != #(null)) goto 7::CD,4739:CD,4740:CD,4744:JM,4738:JM,4755:JM,4808:JM,4761:JM,4766:JM,4782:JM,4783
+4739 :: NORM :: compound :: [Ljava/lang/String :: return #(null)::DD,4733
+4740 :: CALL :: call :: I :: v7 = p1 $null .length()::JM,4738:JM,4755:JM,4808:JM,4744:JM,4761:JM,4766:JM,4782:JM,4783
+4744 :: PRED :: IF :: Z :: if (v7 != #(0)) goto 20::CD,4745:CD,4746:CD,4747:CD,4750:CD,4755:CD,4804:CD,4808:CD,4814:CD,4819:CD,4823:CD,4824:CD,4829:CD,4830:CD,4833
+4745 :: NORM :: declaration :: [Ljava/lang/String :: v48 = new java.lang.String[]::CF,4746
+4746 :: NORM :: compound :: [Ljava/lang/String :: return v48::DD,4733
+4747 :: CALL :: call :: Ljava/util/ArrayList :: v10 = arrayList()::JM,4823:CL,3918
+4750 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v11 = new java.lang.StringBuilder::JM,4831:JM,4833
+4755 :: PRED :: IF :: Z :: if (v35 >= v7) goto 143::CD,4756:CD,4761:CD,4802:CD,4830:CD,4832:JM,4738:JM,4755:JM,4808:JM,4744:JM,4766:JM,4782:JM,4783:JM,4833
+4756 :: CALL :: call :: C :: v14 = p1 $null .charAt(v35)::JM,4738:JM,4755:JM,4808:JM,4744:JM,4761:JM,4766:JM,4782:JM,4783
+4761 :: PRED :: IF :: Z :: if (v14 != p2 $null ) goto 98::CD,4762:CD,4766:CD,4772:CD,4777:CD,4782:CD,4831:CD,4832
+4762 :: CALL :: call :: Ljava/lang/String :: v16 = v11.toString()::JM,4831
+4766 :: PRED :: IF :: Z :: if (p3 $null  == #(0)) goto 81::CD,4767:CD,4831
+4767 :: CALL :: call :: Ljava/lang/String :: v18 = v16.trim()::JM,4831
+4772 :: CALL :: call :: Z :: v21 = v10.add(v19)::JM,4823
+4777 :: CALL :: call :: V :: v11.setLength(#(0))::
+4782 :: PRED :: IF :: Z :: if (v14 != #(92)) goto 131::CD,4783:CD,4784:CD,4797:CD,4832
+4783 :: EXPR :: assign :: Ljava/lang/Object :: v25 = v7 - #(1)::CF,4784
+4784 :: PRED :: IF :: Z :: if (v35 >= v25) goto 131::CD,4785:CD,4786:CD,4791:CD,4797:CD,4832
+4785 :: EXPR :: assign :: Ljava/lang/Object :: v26 = v35 + #(1)::JM,4738:JM,4755:JM,4808:JM,4744:JM,4761:JM,4766:JM,4782:JM,4783:DD,4832
+4786 :: CALL :: call :: C :: v28 = p1 $null .charAt(v26)::JM,4738:JM,4755:JM,4808:JM,4744:JM,4761:JM,4766:JM,4782:JM,4783
+4791 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v11.append(v28)::
+4797 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v11.append(v14)::
+4802 :: EXPR :: assign :: Ljava/lang/Object :: v34 = v33 + #(1)::DD,4830
+4804 :: CALL :: call :: Ljava/lang/String :: v37 = v11.toString()::JM,4833
+4808 :: PRED :: IF :: Z :: if (p3 $null  == #(0)) goto 164::CD,4809:CD,4833
+4809 :: CALL :: call :: Ljava/lang/String :: v39 = v37.trim()::JM,4833
+4814 :: CALL :: call :: Z :: v42 = v10.add(v40)::JM,4823
+4819 :: CALL :: call :: I :: v44 = v10.size()::JM,4823
+4823 :: NORM :: declaration :: [Ljava/lang/String :: v45 = new java.lang.String[]::JM,4823:DD,4829
+4824 :: CALL :: call :: [Ljava/lang/Object :: v47 = v10.toArray(v45)::JM,4823
+4829 :: NORM :: compound :: [Ljava/lang/String :: return v45::DD,4733
+4830 :: EXPR :: assign :: null :: PHI v35 = v34, #(0)::DD,4755:JM,4738:JM,4808:JM,4744:JM,4761:JM,4766:JM,4782:JM,4783:DD,4784:DD,4785:DD,4832
+4831 :: EXPR :: assign :: null :: PHI v19 = v18, v16::JM,4823
+4832 :: EXPR :: assign :: null :: PHI v33 = v35, v26, v35::DD,4802
+4833 :: EXPR :: assign :: null :: PHI v40 = v39, v37::JM,4823
+4895 :: ENTR :: entry :: null :: org.h2.tools.DeleteDbFiles.execute(java.lang.String,java.lang.String,boolean)::CD,4905
+4905 :: CALL :: call :: V :: v5.process(p1 $null , p2 $null , p3 $null )::CL,5753
+4916 :: ENTR :: entry :: null :: org.h2.test.TestBase.addOption(java.lang.String,java.lang.String,java.lang.String)::CE,4917:CD,4922:CD,4926:CD,4931:CD,4936:CD,4941:CD,4945:CD,4950:CD,4984:CD,4985
+4917 :: EXIT :: exit :: Ljava/lang/String :: org.h2.test.TestBase.addOption(java.lang.String,java.lang.String,java.lang.String)::JM,3396:JM,3397:JM,3398:JM,3399:JM,3400:JM,3401:JM,3402:JM,3403:JM,3404
+4922 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v5 = new java.lang.StringBuilder::JM,4950
+4926 :: CALL :: call :: Ljava/lang/StringBuilder :: v9 = v5.append(#(;))::JM,4950
+4931 :: CALL :: call :: Ljava/lang/StringBuilder :: v11 = v9.append(p2 $null )::JM,4950:JM,4985:JM,4922
+4936 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v11.append(#(=))::JM,4950:JM,4985
+4941 :: CALL :: call :: Ljava/lang/String :: v16 = v14.toString()::JM,4950:JM,4985
+4945 :: CALL :: call :: I :: v18 = p1 $null .indexOf(v16)::JM,4950:JM,4985:JM,4922
+4950 :: PRED :: IF :: Z :: if (v18 >= #(0)) goto 65::CF,4985:CF,4951:CD,4955:CD,4960:CD,4965:CD,4970:CD,4975:CD,4980
+4951 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v20 = new java.lang.StringBuilder::JM,4985
+4955 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v20.append(p1 $null )::JM,4985:JM,4950:JM,4922
+4960 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v23.append(#(;))::JM,4985
+4965 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v25.append(p2 $null )::JM,4985:JM,4950:JM,4922
+4970 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v27.append(#(=))::JM,4985
+4975 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v29.append(p3 $null )::JM,4985:JM,4950:JM,4922
+4980 :: CALL :: call :: Ljava/lang/String :: v33 = v31.toString()::JM,4985
+4984 :: NORM :: compound :: Ljava/lang/String :: return v34::DD,4917
+4985 :: EXPR :: assign :: null :: PHI v34 = p1 $null , v33::CF,4984
+4999 :: ENTR :: entry :: null :: org.h2.test.TestBase.getPassword(java.lang.String)::CD,5007
+5004 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v4 = p0 $null .config::DD,5007
+5007 :: PRED :: IF :: Z :: if (v4 == #(null)) goto 18::CD,5014
+5008 :: EXPR :: reference :: Lorg/h2/test/TestAll :: v6 = p0 $null .config::
+5011 :: EXPR :: reference :: Ljava/lang/String :: v7 = v6.cipher::DD,5014
+5014 :: PRED :: IF :: Z :: if (v7 != #(null)) goto 21::CF,5016:CD,5020:CD,5024:CD,5029:CD,5034:CD,5039
+5016 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v8 = new java.lang.StringBuilder::
+5020 :: CALL :: call :: Ljava/lang/String :: v11 = p0 $null .getFilePassword()::CL,5848
+5024 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v8.append(v11)::
+5029 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v13.append(#( ))::
+5034 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v16.append(p1 $null )::
+5039 :: CALL :: call :: Ljava/lang/String :: v20 = v18.toString()::
+5054 :: ENTR :: entry :: null :: org.h2.test.db.Db.convert(java.lang.Exception)::CD,5058:CD,5059
+5058 :: NORM :: declaration :: Ljava/lang/RuntimeException :: v3 = new java.lang.RuntimeException::JM,5059
+5059 :: CALL :: call :: Ljava/lang/String :: v5 = p1 $null .toString()::JM,5059
+5087 :: ENTR :: entry :: null :: org.h2.test.TestBase.printlnWithTime(long,java.lang.String)::CD,5092:CD,5097:CD,5101:CD,5105:CD,5110:CD,5115:CD,5120:CD,5124:CD,5129:CD,5134:CD,5139:CD,5143:CD,5145
+5092 :: NORM :: declaration :: Ljava/text/SimpleDateFormat :: v4 = new java.text.SimpleDateFormat::JM,5105
+5097 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v7 = new java.lang.StringBuilder::
+5101 :: NORM :: declaration :: Ljava/util/Date :: v9 = new java.util.Date::JM,5105
+5105 :: CALL :: call :: Ljava/lang/String :: v12 = v4.format(v9)::JM,5105
+5110 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v7.append(v12)::
+5115 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v14.append(#( ))::
+5120 :: CALL :: call :: Ljava/lang/String :: v19 = formatTime(p1 $null )::CL,5854
+5124 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v17.append(v19)::
+5129 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v21.append(#( ))::
+5134 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v23.append(p2 $null )::
+5139 :: CALL :: call :: Ljava/lang/String :: v27 = v25.toString()::
+5143 :: EXPR :: reference :: Ljava/io/PrintStream :: v28 = java.lang.System.out::
+5145 :: CALL :: call :: V :: v28.println(v27)::
+5163 :: ENTR :: entry :: null :: org.h2.test.TestBase.assertEquals(int,int)::CD,5169
+5169 :: PRED :: IF :: Z :: if (p1 $null  == p2 $null ) goto 37::CD,5170:CD,5174:CD,5179:CD,5184:CD,5189:CD,5194:CD,5198
+5170 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v5 = new java.lang.StringBuilder::
+5174 :: CALL :: call :: Ljava/lang/StringBuilder :: v9 = v5.append(#(Expected: ))::
+5179 :: CALL :: call :: Ljava/lang/StringBuilder :: v11 = v9.append(p1 $null )::JM,5169
+5184 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v11.append(#( actual: ))::
+5189 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v14.append(p2 $null )::JM,5169
+5194 :: CALL :: call :: Ljava/lang/String :: v18 = v16.toString()::
+5198 :: CALL :: call :: V :: p0 $null .fail(v18)::CL,5615
+5211 :: ENTR :: entry :: null :: org.h2.test.TestBase.assertEquals(java.lang.String,java.lang.String,java.lang.String)::CD,5218:JM,5296:JM,5441:JM,5219:JM,5443:JM,5331:JM,5363:JM,5284:JM,5221:JM,5222:JM,5271:JM,5370
+5218 :: PRED :: IF :: Z :: if (p2 $null  != #(null)) goto 10::CD,5219:CD,5221
+5219 :: PRED :: IF :: Z :: if (p3 $null  != #(null)) goto 10::CD,5221
+5221 :: PRED :: IF :: Z :: if (p2 $null  == #(null)) goto 18::CD,5222:CD,5223:CD,5227:CD,5232:CD,5237:CD,5242:CD,5247:CD,5252:CD,5257:CD,5261
+5222 :: PRED :: IF :: Z :: if (p3 $null  != #(null)) goto 63::CD,5223:CD,5227:CD,5232:CD,5237:CD,5242:CD,5247:CD,5252:CD,5257:CD,5261:CD,5266:CD,5271:JM,5296:JM,5441:JM,5218:JM,5219:JM,5443:JM,5331:JM,5363:JM,5284:JM,5222:JM,5370
+5223 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v90 = new java.lang.StringBuilder::
+5227 :: CALL :: call :: Ljava/lang/StringBuilder :: v93 = v90.append(#(Expected: ))::
+5232 :: CALL :: call :: Ljava/lang/StringBuilder :: v95 = v93.append(p2 $null )::JM,5296:JM,5441:JM,5218:JM,5219:JM,5443:JM,5331:JM,5363:JM,5284:JM,5222:JM,5271:JM,5370
+5237 :: CALL :: call :: Ljava/lang/StringBuilder :: v98 = v95.append(#( Actual: ))::JM,5296:JM,5441:JM,5331:JM,5363:JM,5443:JM,5284:JM,5271:JM,5370
+5242 :: CALL :: call :: Ljava/lang/StringBuilder :: v100 = v98.append(p3 $null )::JM,5441:JM,5296:JM,5218:JM,5443:JM,5331:JM,5363:JM,5284:JM,5271:JM,5370
+5247 :: CALL :: call :: Ljava/lang/StringBuilder :: v102 = v100.append(#( ))::JM,5296:JM,5441:JM,5443:JM,5370
+5252 :: CALL :: call :: Ljava/lang/StringBuilder :: v104 = v102.append(p1 $null )::JM,5441:JM,5296:JM,5218:JM,5219:JM,5443:JM,5331:JM,5363:JM,5284:JM,5221:JM,5222:JM,5271:JM,5370
+5257 :: CALL :: call :: Ljava/lang/String :: v106 = v104.toString()::JM,5296:JM,5441:JM,5331:JM,5363:JM,5443:JM,5284:JM,5271:JM,5370
+5261 :: CALL :: call :: V :: p0 $null .fail(v106)::CL,5615
+5266 :: CALL :: call :: Z :: v8 = p2 $null .equals(p3 $null )::JM,5296:JM,5441:JM,5218:JM,5219:JM,5443:JM,5331:JM,5363:JM,5284:JM,5222:JM,5271:JM,5370
+5271 :: PRED :: IF :: Z :: if (v8 != #(0)) goto 287::CD,5272:CD,5276:CD,5280:CD,5284:CD,5363:CD,5370:CD,5377:CD,5381:CD,5386:CD,5391:CD,5396:CD,5401:CD,5406:CD,5411:CD,5416:CD,5421:CD,5426:CD,5431:CD,5435:CD,5440:CD,5441:CD,5442:CD,5443:JM,5296:JM,5218:JM,5219:JM,5331:JM,5222:JM,5271
+5272 :: CALL :: call :: I :: v11 = p2 $null .length()::JM,5296:JM,5441:JM,5218:JM,5219:JM,5443:JM,5331:JM,5363:JM,5284:JM,5222:JM,5271:JM,5370
+5276 :: CALL :: call :: I :: v13 = p3 $null .length()::JM,5296:JM,5441:JM,5218:JM,5443:JM,5331:JM,5363:JM,5284:JM,5271:JM,5370
+5280 :: CALL :: call :: I :: v15 = p2 $null .length()::JM,5296:JM,5441:JM,5218:JM,5219:JM,5443:JM,5331:JM,5363:JM,5284:JM,5222:JM,5271:JM,5370
+5284 :: PRED :: IF :: Z :: if (v22 >= v15) goto 197::CF,5441:CD,5285:CD,5291:CD,5296:JM,5218:JM,5219:JM,5443:JM,5331:JM,5363:JM,5284:JM,5222:JM,5271:JM,5370
+5285 :: CALL :: call :: Ljava/lang/String :: v17 = p2 $null .substring(#(0), v22)::JM,5296:JM,5441:JM,5218:JM,5219:JM,5443:JM,5331:JM,5363:JM,5284:JM,5222:JM,5271:JM,5370
+5291 :: CALL :: call :: Z :: v19 = p3 $null .startsWith(v17)::JM,5296:JM,5441:JM,5218:JM,5443:JM,5331:JM,5363:JM,5284:JM,5271:JM,5370
+5296 :: PRED :: IF :: Z :: if (v19 != #(0)) goto 186::CF,5297:CD,5280:CD,5284:CD,5301:CD,5307:CD,5312:CD,5317:CD,5322:CD,5327:CD,5331:CD,5361:CD,5440:CD,5441
+5297 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v23 = new java.lang.StringBuilder::JM,5441
+5301 :: CALL :: call :: Ljava/lang/String :: v26 = p2 $null .substring(#(0), v22)::JM,5296:JM,5441:JM,5218:JM,5219:JM,5443:JM,5331:JM,5363:JM,5284:JM,5222:JM,5271:JM,5370
+5307 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v23.append(v26)::JM,5441:JM,5296:JM,5443:JM,5370
+5312 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v28.append(#(<*>))::JM,5441
+5317 :: CALL :: call :: Ljava/lang/String :: v33 = p2 $null .substring(v22)::JM,5296:JM,5441:JM,5218:JM,5219:JM,5443:JM,5331:JM,5363:JM,5284:JM,5222:JM,5271:JM,5370
+5322 :: CALL :: call :: Ljava/lang/StringBuilder :: v35 = v31.append(v33)::JM,5441:JM,5296:JM,5443:JM,5370
+5327 :: CALL :: call :: Ljava/lang/String :: v37 = v35.toString()::JM,5441
+5331 :: PRED :: IF :: Z :: if (v11 <= #(20)) goto 197::CF,5441:CF,5332:CD,5336:CD,5341:CD,5346:CD,5351:CD,5356
+5332 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v39 = new java.lang.StringBuilder::JM,5441
+5336 :: CALL :: call :: Ljava/lang/StringBuilder :: v43 = v39.append(#(@))::JM,5441
+5341 :: CALL :: call :: Ljava/lang/StringBuilder :: v45 = v43.append(v22)::JM,5441
+5346 :: CALL :: call :: Ljava/lang/StringBuilder :: v48 = v45.append(#( ))::JM,5441
+5351 :: CALL :: call :: Ljava/lang/StringBuilder :: v50 = v48.append(v37)::JM,5441
+5356 :: CALL :: call :: Ljava/lang/String :: v52 = v50.toString()::JM,5441
+5361 :: EXPR :: assign :: Ljava/lang/Object :: v21 = v22 + #(1)::DD,5440
+5363 :: PRED :: IF :: Z :: if (v11 <= #(4000)) goto 214::CF,5442:CD,5364
+5364 :: CALL :: call :: Ljava/lang/String :: v56 = v53.substring(#(0), #(4000))::JM,5442
+5370 :: PRED :: IF :: Z :: if (v13 <= #(4000)) goto 227::CF,5443:CD,5371:JM,5296:JM,5441:JM,5218:JM,5331:JM,5363:JM,5284:JM,5271:JM,5370
+5371 :: CALL :: call :: Ljava/lang/String :: v59 = p3 $null .substring(#(0), #(4000))::JM,5296:JM,5441:JM,5218:JM,5443:JM,5331:JM,5363:JM,5284:JM,5271:JM,5370
+5377 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v61 = new java.lang.StringBuilder::
+5381 :: CALL :: call :: Ljava/lang/StringBuilder :: v65 = v61.append(#(Expected: ))::
+5386 :: CALL :: call :: Ljava/lang/StringBuilder :: v67 = v65.append(v57)::
+5391 :: CALL :: call :: Ljava/lang/StringBuilder :: v70 = v67.append(#( ())::
+5396 :: CALL :: call :: Ljava/lang/StringBuilder :: v72 = v70.append(v11)::JM,5296:JM,5441:JM,5443:JM,5284:JM,5370
+5401 :: CALL :: call :: Ljava/lang/StringBuilder :: v75 = v72.append(#() actual: ))::JM,5441
+5406 :: CALL :: call :: Ljava/lang/StringBuilder :: v77 = v75.append(v60)::JM,5441
+5411 :: CALL :: call :: Ljava/lang/StringBuilder :: v79 = v77.append(#( ())::JM,5441
+5416 :: CALL :: call :: Ljava/lang/StringBuilder :: v81 = v79.append(v13)::JM,5441:JM,5296:JM,5443
+5421 :: CALL :: call :: Ljava/lang/StringBuilder :: v84 = v81.append(#() ))::JM,5441
+5426 :: CALL :: call :: Ljava/lang/StringBuilder :: v86 = v84.append(p1 $null )::JM,5441:JM,5296:JM,5218:JM,5219:JM,5443:JM,5331:JM,5363:JM,5284:JM,5221:JM,5222:JM,5271:JM,5370
+5431 :: CALL :: call :: Ljava/lang/String :: v88 = v86.toString()::JM,5296:JM,5441:JM,5331:JM,5363:JM,5443:JM,5284:JM,5271:JM,5370
+5435 :: CALL :: call :: V :: p0 $null .fail(v88)::CL,5615
+5440 :: EXPR :: assign :: null :: PHI v22 = v21, #(0)::DD,5284:JM,5296:JM,5441:JM,5331:JM,5363:JM,5443:JM,5271:JM,5370:DD,5361:JM,5218:JM,5219:JM,5222
+5441 :: EXPR :: assign :: null :: PHI v53 = p2 $null , v37, v52::DD,5442:CF,5363
+5442 :: EXPR :: assign :: null :: PHI v57 = v53, v56::CF,5370
+5443 :: EXPR :: assign :: null :: PHI v60 = p3 $null , v59::CF,5377:JM,5441
+5517 :: ENTR :: entry :: null :: org.h2.test.TestBase.assertFalse(java.lang.String,boolean)::CD,5523
+5523 :: PRED :: IF :: Z :: if (p2 $null  == #(0)) goto 9::CD,5524
+5524 :: CALL :: call :: V :: p0 $null .fail(p1 $null )::CL,5615
+5615 :: ENTR :: entry :: null :: org.h2.test.TestBase.fail(java.lang.String)::CD,5627:CD,5639:CD,5640:CD,5641:CD,5646:CD,5649:CD,5654:CD,5658:CD,5664:CD,5665:CD,5666:CD,5667
+5627 :: CALL :: call :: [C :: v9 = p1 $null .toCharArray()::JM,5664:JM,5649:JM,5667
+5633 :: EXPR :: reference :: C :: v12 = v9[v25]::DD,5639
+5639 :: EXPR :: assign :: Ljava/lang/Object :: v17 = v12 && #(15)::DD,5640
+5640 :: EXPR :: assign :: Ljava/lang/Object :: v18 = #(97) + v17::DD,5641
+5641 :: EXPR :: assign :: C :: v19 = CONVERT I to C v18::DD,5642
+5642 :: EXPR :: modify :: C :: v9[v25] = v19::
+5646 :: EXPR :: assign :: Ljava/lang/Object :: v23 = v25 + #(1)::DD,5665
+5649 :: NORM :: declaration :: Ljava/lang/String :: v26 = new java.lang.String::JM,5649:DD,5667
+5654 :: CALL :: call :: V :: p0 $null .println(v28)::CL,3832
+5658 :: NORM :: declaration :: Ljava/lang/AssertionError :: v30 = new java.lang.AssertionError::
+5664 :: EXPR :: assign :: null :: PHI v24 = v21, p1 $null ::DD,5666:DD,5667
+5665 :: EXPR :: assign :: null :: PHI v25 = v23, #(0)::DD,5646
+5666 :: EXPR :: assign :: null :: PHI v21 = v24, #(null)::DD,5664
+5667 :: EXPR :: assign :: null :: PHI v28 = p1 $null , v24, v26::
+5669 :: ENTR :: entry :: null :: org.h2.util.IOUtils.readBytesAndClose(java.io.InputStream,int)::CE,5670:CD,5674:CD,5675:CD,5680:CD,5686:CD,5692:CD,5699:CD,5700:CD,5711
+5670 :: EXIT :: exit :: [B :: org.h2.util.IOUtils.readBytesAndClose(java.io.InputStream,int)::JM,4545
+5674 :: PRED :: IF :: Z :: if (p2 $null  > #(0)) goto 11::CF,5711
+5675 :: CALL :: call :: I :: v9 = min(#(4096), v6)::JM,5675
+5680 :: NORM :: declaration :: Ljava/io/ByteArrayOutputStream :: v10 = new java.io.ByteArrayOutputStream::JM,5699
+5686 :: CALL :: call :: J :: v14 = copy(p1 $null , v10, v12)::CL,5955
+5692 :: CALL :: call :: [B :: v16 = v10.toByteArray()::JM,5699
+5699 :: NORM :: compound :: [B :: return v16::DD,5670
+5700 :: CALL :: call :: Ljava/io/IOException :: v19 = convertToIOException(v17)::CL,6039
+5711 :: EXPR :: assign :: null :: PHI v6 = p2 $null , #(2147483647)::JM,5675
+5729 :: ENTR :: entry :: null :: org.h2.util.IOUtils.copy(java.io.InputStream,java.io.OutputStream)::CD,5734
+5734 :: CALL :: call :: J :: v6 = copy(p1 $null , p2 $null , #(9223372036854775807 l))::CL,5955
+5753 :: ENTR :: entry :: null :: org.h2.tools.DeleteDbFiles.process(java.lang.String,java.lang.String,boolean)::CD,5760:CD,5766:CD,5770:CD,5777:CD,5781:CD,5785:JM,5795:JM,5771
+5760 :: CALL :: call :: Ljava/util/ArrayList :: v8 = getDatabaseFiles(p1 $null , p2 $null , #(1))::JM,5785:JM,5770:JM,5790:CL,6101
+5766 :: CALL :: call :: I :: v10 = v8.size()::JM,5785:JM,5770:JM,5790
+5770 :: PRED :: IF :: Z :: if (v10 != #(0)) goto 28::CD,5771:JM,5785:JM,5770:JM,5790
+5771 :: PRED :: IF :: Z :: if (p3 $null  != #(0)) goto 28::CD,5772:JM,5785:JM,5770:JM,5790
+5772 :: CALL :: call :: V :: p0 $null .printNoDatabaseFilesFound(p1 $null , p2 $null )::CL,6336
+5777 :: CALL :: call :: Ljava/util/Iterator :: v14 = v8.iterator()::JM,5785:JM,5770:JM,5790
+5781 :: CALL :: call :: Z :: v16 = v14.hasNext()::JM,5785:JM,5790
+5785 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 95::CD,5781:CD,5786:CD,5790:CD,5791:CD,5795:JM,5785
+5786 :: CALL :: call :: Ljava/lang/Object :: v18 = v14.next()::JM,5785:JM,5790
+5790 :: EXPR :: assign :: Ljava/lang/Object :: v19 = CHECKCAST v18::
+5791 :: CALL :: call :: V :: process(v19, p3 $null )::CL,6425
+5795 :: PRED :: IF :: Z :: if (p3 $null  != #(0)) goto 92::CD,5799:CD,5803:CD,5808:CD,5813:CD,5817
+5796 :: EXPR :: reference :: Ljava/io/PrintStream :: v21 = p0 $null .out::
+5799 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v22 = new java.lang.StringBuilder::
+5803 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v22.append(#(Processed: ))::
+5808 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v26.append(v19)::
+5813 :: CALL :: call :: Ljava/lang/String :: v30 = v28.toString()::
+5817 :: CALL :: call :: V :: v21.println(v30)::
+5848 :: ENTR :: entry :: null :: org.h2.test.TestBase.getFilePassword()::CF,5849:CD,5852
+5849 :: EXIT :: exit :: Ljava/lang/String :: org.h2.test.TestBase.getFilePassword()::
+5852 :: NORM :: compound :: Ljava/lang/String :: return #(filePassword)::CF,5849
+5854 :: ENTR :: entry :: null :: org.h2.test.TestBase.formatTime(long)::CE,5855:CD,5858:CD,5862:CD,5876:CD,5880:CD,5885:CD,5890:CD,5894:CD,5899:CD,5900:CD,5901:CD,5906:CD,5910:CD,5915:CD,5920:CD,5924:CD,5929:CD,5935:CD,5936
+5855 :: EXIT :: exit :: Ljava/lang/String :: org.h2.test.TestBase.formatTime(long)::
+5858 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v3 = new java.lang.StringBuilder::JM,5936:JM,5929
+5862 :: NORM :: declaration :: Ljava/sql/Time :: v5 = new java.sql.Time::JM,5936:JM,5876:JM,5929
+5876 :: CALL :: call :: Ljava/lang/String :: v14 = v5.toString()::JM,5936:JM,5876:JM,5929
+5880 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v3.append(v14)::JM,5936:JM,5929
+5885 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v16.append(#(.))::JM,5936:JM,5929
+5890 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v20 = new java.lang.StringBuilder::JM,5936:JM,5929
+5894 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v20.append(#())::JM,5936:JM,5929
+5899 :: EXPR :: assign :: Ljava/lang/Object :: v26 = p1 $null  % #(1000 l)::CF,5900
+5900 :: EXPR :: assign :: Ljava/lang/Object :: v27 = #(1000 l) + v26::JM,5936:JM,5929
+5901 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v24.append(v27)::JM,5936:JM,5929
+5906 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::JM,5936:JM,5929
+5910 :: CALL :: call :: Ljava/lang/String :: v34 = v31.substring(#(1))::JM,5936:JM,5929
+5915 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v19.append(v34)::JM,5936:JM,5929
+5920 :: CALL :: call :: Ljava/lang/String :: v38 = v36.toString()::JM,5936:JM,5929
+5924 :: CALL :: call :: Z :: v41 = v38.startsWith(#(00:))::JM,5936:JM,5929
+5929 :: PRED :: IF :: Z :: if (v41 == #(0)) goto 89::CF,5936:CD,5930:JM,5929
+5930 :: CALL :: call :: Ljava/lang/String :: v45 = v38.substring(#(3))::JM,5936:JM,5929
+5935 :: NORM :: compound :: Ljava/lang/String :: return v46::DD,5855
+5936 :: EXPR :: assign :: null :: PHI v46 = v38, v45::CF,5935
+5955 :: ENTR :: entry :: null :: org.h2.util.IOUtils.copy(java.io.InputStream,java.io.OutputStream,long)::CD,5961:CD,5966:CD,5967:CD,5968:CD,5969:CD,5998:CD,6004:CD,6006:JM,5988:JM,5977:JM,5979
+5961 :: CALL :: call :: J :: v8 = min(p3 $null , #(4096 l))::JM,6004:JM,5988:JM,5977:JM,5961:JM,5966
+5966 :: EXPR :: assign :: I :: v9 = CONVERT J to I v8::DD,5967:DD,6006
+5967 :: NORM :: declaration :: [B :: v10 = new []::JM,5988:JM,5977:JM,5961:JM,5966:CF,6004
+5968 :: EXPR :: assign :: Z :: v11 = v24 == #(0 l)::DD,5969
+5969 :: PRED :: IF :: Z :: if (v11 <= #(0)) goto 86::CD,5970:CD,5977:JM,6004:JM,5988:JM,5961:JM,5979:JM,5966
+5970 :: CALL :: call :: I :: v14 = p1 $null .read(v10, #(0), v26)::JM,6004:JM,5988:JM,5977:JM,5961:JM,5979:JM,5966
+5977 :: PRED :: IF :: Z :: if (v14 >= #(0)) goto 45::CD,5968:CD,5969:CD,5979:CD,5988:CD,5989:CD,5990:CD,5995:CD,6004:CD,6006
+5979 :: PRED :: IF :: Z :: if (p2 $null  == #(null)) goto 61::CD,5980:JM,6004:JM,5988:JM,5977:JM,5961:JM,5966
+5980 :: CALL :: call :: V :: p2 $null .write(v10, #(0), v14)::JM,6004:JM,5988:JM,5977:JM,5961:JM,5966
+5988 :: EXPR :: assign :: J :: v19 = CONVERT I to J v14::CF,5989
+5989 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v24 - v19::JM,5990:JM,5995:DD,6004
+5990 :: CALL :: call :: J :: v22 = min(v20, #(4096 l))::JM,5990:JM,5995
+5995 :: EXPR :: assign :: I :: v23 = CONVERT J to I v22::DD,6006
+5998 :: CALL :: call :: Ljava/io/IOException :: v31 = convertToIOException(v27)::CL,6039
+6004 :: EXPR :: assign :: null :: PHI v24 = v20, p3 $null ::DD,5968:DD,5989
+6006 :: EXPR :: assign :: null :: PHI v26 = v23, v9::JM,5988:JM,5977:JM,5961:JM,5966:CF,5968
+6039 :: ENTR :: entry :: null :: org.h2.message.DbException.convertToIOException(java.lang.Throwable)::CD,6043:CD,6044:JM,6049:JM,6070:JM,6047
+6043 :: EXPR :: assign :: Z :: v3=p1 $null  INSTANCEOF java.io.IOException::DD,6044
+6044 :: PRED :: IF :: Z :: if (v3 == #(0)) goto 13::CD,6047:CD,6048:CD,6059:CD,6060:CD,6070
+6047 :: EXPR :: assign :: Z :: v5=p1 $null  INSTANCEOF org.h2.jdbc.JdbcSQLException::DD,6048
+6048 :: PRED :: IF :: Z :: if (v5 == #(0)) goto 36::CF,6070:CD,6049:CD,6050:CD,6054
+6049 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST p1 $null ::JM,6050:JM,6054:JM,6070:JM,6055
+6050 :: CALL :: call :: Ljava/lang/Throwable :: v8 = v6.getOriginalCause()::JM,6050:JM,6054
+6054 :: PRED :: IF :: Z :: if (v8 == #(null)) goto 36::CF,6070:CD,6055
+6055 :: CALL :: call :: Ljava/lang/Throwable :: v11 = v6.getOriginalCause()::JM,6070:JM,6055
+6059 :: NORM :: declaration :: Ljava/io/IOException :: v13 = new java.io.IOException::
+6060 :: CALL :: call :: Ljava/lang/String :: v15 = v12.toString()::
+6070 :: EXPR :: assign :: null :: PHI v12 = p1 $null , p1 $null , v11::CF,6059
+6101 :: ENTR :: entry :: null :: org.h2.store.FileLister.getDatabaseFiles(java.lang.String,java.lang.String,boolean)::CE,6102:CD,6107:CD,6110:CD,6157:CD,6161:CD,6165:CD,6169:CD,6256:CD,6257:JM,6243:JM,6221
+6102 :: EXIT :: exit :: Ljava/util/ArrayList :: org.h2.store.FileLister.getDatabaseFiles(java.lang.String,java.lang.String,boolean)::JM,5785:JM,5770:JM,5790
+6107 :: CALL :: call :: Ljava/util/ArrayList :: v6 = arrayList()::JM,6256:CL,3918
+6110 :: PRED :: IF :: Z :: if (p2 $null  != #(null)) goto 12::CF,6112:CD,6116:CD,6120:CD,6125:CD,6130:CD,6135:CD,6139:CD,6143:CD,6148:CD,6153:CD,6257
+6112 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v8 = new java.lang.StringBuilder::JM,6257
+6116 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::
+6120 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v10.append(p1 $null )::JM,6243:JM,6221:JM,6110
+6125 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v13.append(#(/))::
+6130 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v16.append(p2 $null )::JM,6243:JM,6221
+6135 :: CALL :: call :: Ljava/lang/String :: v20 = v18.toString()::
+6139 :: CALL :: call :: Ljava/lang/String :: v22 = toRealPath(v20)::JM,6257:CL,6477
+6143 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v8.append(v22)::JM,6257
+6148 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v24.append(#(.))::JM,6257
+6153 :: CALL :: call :: Ljava/lang/String :: v29 = v27.toString()::JM,6257
+6157 :: CALL :: call :: Ljava/util/List :: v32 = newDirectoryStream(p1 $null )::JM,6169:JM,6174:CL,6495
+6161 :: CALL :: call :: Ljava/util/Iterator :: v34 = v32.iterator()::JM,6169:JM,6174
+6165 :: CALL :: call :: Z :: v36 = v34.hasNext()::JM,6169:JM,6174
+6169 :: PRED :: IF :: Z :: if (v36 == #(0)) goto 268::CD,6165:CD,6170:CD,6174:CD,6175:CD,6180:CD,6242:CD,6258:JM,6169:CF,6256
+6170 :: CALL :: call :: Ljava/lang/Object :: v39 = v34.next()::JM,6169:JM,6174
+6174 :: EXPR :: assign :: Ljava/lang/Object :: v40 = CHECKCAST v39::JM,6180:JM,6187:JM,6205:JM,6212:JM,6219:JM,6227:JM,6234:JM,6241:JM,6249
+6175 :: CALL :: call :: Z :: v43 = v40.endsWith(#(.lobs.db))::JM,6180
+6180 :: PRED :: IF :: Z :: if (v43 == #(0)) goto 141::CD,6181:CD,6200:CD,6205
+6181 :: PRED :: IF :: Z :: if (v30 == #(null)) goto 124::CD,6182:CD,6187:CD,6188:CD,6194:CD,6258
+6182 :: CALL :: call :: Z :: v45 = v40.startsWith(v30)::JM,6187
+6187 :: PRED :: IF :: Z :: if (v45 == #(0)) goto 236::CF,6258:CD,6188:CD,6194
+6188 :: CALL :: call :: Ljava/util/ArrayList :: v65 = getDatabaseFiles(v40, #(null), p3 $null )::CL,6101
+6194 :: CALL :: call :: Z :: v67 = v6.addAll(v65)::JM,6256
+6200 :: CALL :: call :: Z :: v48 = v40.endsWith(#(.lob.db))::JM,6205
+6205 :: PRED :: IF :: Z :: if (v48 == #(0)) goto 157::CD,6207:CD,6212:CD,6258
+6207 :: CALL :: call :: Z :: v51 = v40.endsWith(#(.h2.db))::JM,6212
+6212 :: PRED :: IF :: Z :: if (v51 == #(0)) goto 173::CD,6214:CD,6219:CD,6258
+6214 :: CALL :: call :: Z :: v54 = v40.endsWith(#(.mv.db))::JM,6219
+6219 :: PRED :: IF :: Z :: if (v54 == #(0)) goto 186::CD,6221:CD,6258
+6221 :: PRED :: IF :: Z :: if (p3 $null  == #(0)) goto 236::CF,6258:CD,6222:CD,6227
+6222 :: CALL :: call :: Z :: v57 = v40.endsWith(#(.lock.db))::JM,6227
+6227 :: PRED :: IF :: Z :: if (v57 == #(0)) goto 209::CD,6229:CD,6234:CD,6258
+6229 :: CALL :: call :: Z :: v60 = v40.endsWith(#(.temp.db))::JM,6234
+6234 :: PRED :: IF :: Z :: if (v60 == #(0)) goto 225::CD,6236:CD,6241:CD,6258
+6236 :: CALL :: call :: Z :: v63 = v40.endsWith(#(.trace.db))::JM,6241
+6241 :: PRED :: IF :: Z :: if (v63 == #(0)) goto 236::CF,6258
+6242 :: PRED :: IF :: Z :: if (v69 == #(0)) goto 264::CD,6243
+6243 :: PRED :: IF :: Z :: if (p2 $null  == #(null)) goto 260::CD,6244:CD,6249:CD,6250:JM,6256
+6244 :: CALL :: call :: Z :: v71 = v40.startsWith(v30)::JM,6249
+6249 :: PRED :: IF :: Z :: if (v71 == #(0)) goto 264::CD,6250:JM,6256
+6250 :: CALL :: call :: Z :: v73 = v6.add(v40)::JM,6256
+6256 :: NORM :: compound :: Ljava/util/ArrayList :: return v6::DD,6102
+6257 :: EXPR :: assign :: null :: PHI v30 = #(null), v29::DD,6181:JM,6187:JM,6249
+6258 :: EXPR :: assign :: null :: PHI v69 = #(0), #(1), #(1), #(1), #(1), #(0), #(1), #(1), #(0), #(1)::DD,6242
+6336 :: ENTR :: entry :: null :: org.h2.util.Tool.printNoDatabaseFilesFound(java.lang.String,java.lang.String)::CD,6342:CD,6346:CD,6350:CD,6391:CD,6395:CD,6400:JM,6377
+6342 :: CALL :: call :: Ljava/lang/String :: v6 = getDir(p1 $null )::CL,6552
+6346 :: CALL :: call :: Z :: v8 = isDirectory(v6)::JM,6350:CL,6576
+6350 :: PRED :: IF :: Z :: if (v8 != #(0)) goto 31::CF,6362:CF,6351:CD,6356:CD,6367:CD,6372:CD,6377:CD,6400
+6351 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v24 = new java.lang.StringBuilder::DD,6400
+6356 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v24.append(v6)::
+6362 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::DD,6400
+6367 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v10.append(#( in directory ))::
+6372 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v15.append(v6)::
+6377 :: PRED :: IF :: Z :: if (p2 $null  == #(null)) goto 68::CF,6400:CD,6378:CD,6383
+6378 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v10.append(#( for the database ))::
+6383 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v21.append(p2 $null )::
+6388 :: EXPR :: reference :: Ljava/io/PrintStream :: v30 = p0 $null .out::
+6391 :: CALL :: call :: Ljava/lang/String :: v32 = v29.toString()::
+6395 :: CALL :: call :: V :: v30.println(v32)::
+6400 :: EXPR :: assign :: null :: PHI v29 = v24, v10, v10::
+6425 :: ENTR :: entry :: null :: org.h2.tools.DeleteDbFiles.process(java.lang.String,boolean)::CD,6430:CD,6434:JM,6452:JM,6440:JM,6446
+6430 :: CALL :: call :: Z :: v5 = isDirectory(p1 $null )::JM,6434:CL,6576
+6434 :: PRED :: IF :: Z :: if (v5 == #(0)) goto 16::CD,6435:CD,6440
+6435 :: CALL :: call :: Z :: v17 = tryDelete(p1 $null )::CL,6590
+6440 :: PRED :: IF :: Z :: if (p2 $null  != #(0)) goto 38::CD,6441:CD,6446:CD,6453:JM,6452:JM,6440
+6441 :: CALL :: call :: Z :: v9 = p1 $null .endsWith(#(.temp.db))::JM,6452:JM,6440:JM,6446
+6446 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 38::CD,6447:CD,6452:CD,6453:JM,6440:JM,6446
+6447 :: CALL :: call :: Z :: v12 = p1 $null .endsWith(#(.trace.db))::JM,6452:JM,6440:JM,6446
+6452 :: PRED :: IF :: Z :: if (v12 == #(0)) goto 46::CD,6453:CD,6458
+6453 :: CALL :: call :: Z :: v15 = tryDelete(p1 $null )::CL,6590
+6458 :: CALL :: call :: V :: delete(p1 $null )::CL,6606
+6477 :: ENTR :: entry :: null :: org.h2.store.fs.FileUtils.toRealPath(java.lang.String)::CE,6478:CD,6481:CD,6485:CD,6489:CD,6493
+6478 :: EXIT :: exit :: Ljava/lang/String :: org.h2.store.fs.FileUtils.toRealPath(java.lang.String)::JM,6257:JM,6568
+6481 :: CALL :: call :: Lorg/h2/store/fs/FilePath :: v4 = get(p1 $null )::JM,6485:JM,6489:JM,6493:CL,6619
+6485 :: CALL :: call :: Lorg/h2/store/fs/FilePath :: v6 = v4.toRealPath()::JM,6485:JM,6489:JM,6493
+6489 :: CALL :: call :: Ljava/lang/String :: v8 = v6.toString()::JM,6489:JM,6493
+6493 :: NORM :: compound :: Ljava/lang/String :: return v8::DD,6478
+6495 :: ENTR :: entry :: null :: org.h2.store.fs.FileUtils.newDirectoryStream(java.lang.String)::CE,6496:CD,6499:CD,6503:CD,6507:CD,6511:CD,6515:CD,6533:CD,6534
+6496 :: EXIT :: exit :: Ljava/util/List :: org.h2.store.fs.FileUtils.newDirectoryStream(java.lang.String)::JM,6169:JM,6174
+6499 :: CALL :: call :: Lorg/h2/store/fs/FilePath :: v4 = get(p1 $null )::JM,6515:JM,6516:JM,6503:JM,6521:JM,6507:CL,6619
+6503 :: CALL :: call :: Ljava/util/List :: v6 = v4.newDirectoryStream()::JM,6515:JM,6516:JM,6503:JM,6521:JM,6507
+6507 :: CALL :: call :: I :: v8 = v6.size()::JM,6515:JM,6516:JM,6521:JM,6507
+6511 :: CALL :: call :: Ljava/util/ArrayList :: v10 = arrayList(v8)::JM,6533:CL,6691
+6515 :: PRED :: IF :: Z :: if (v21 >= v8) goto 57::CD,6516:CD,6521:CD,6522:CD,6526:CD,6531:CD,6534:JM,6515:JM,6507:CF,6533
+6516 :: CALL :: call :: Ljava/lang/Object :: v13 = v6.get(v21)::JM,6515:JM,6516:JM,6521:JM,6507
+6521 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::JM,6522
+6522 :: CALL :: call :: Ljava/lang/String :: v16 = v14.toString()::JM,6522
+6526 :: CALL :: call :: Z :: v18 = v10.add(v16)::JM,6533
+6531 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v21 + #(1)::DD,6534
+6533 :: NORM :: compound :: Ljava/util/List :: return v10::DD,6496
+6534 :: EXPR :: assign :: null :: PHI v21 = v20, #(0)::DD,6515:JM,6516:JM,6521:DD,6531
+6552 :: ENTR :: entry :: null :: org.h2.store.FileLister.getDir(java.lang.String)::CE,6553:CD,6556:JM,6562
+6553 :: EXIT :: exit :: Ljava/lang/String :: org.h2.store.FileLister.getDir(java.lang.String)::
+6556 :: PRED :: IF :: Z :: if (p1 $null  == #(null)) goto 15::CD,6557:CD,6562:CD,6563:JM,6556
+6557 :: CALL :: call :: Z :: v6 = p1 $null .equals(#())::JM,6562:JM,6556
+6562 :: PRED :: IF :: Z :: if (v6 == #(0)) goto 17::CD,6563:CD,6564:CD,6568
+6563 :: NORM :: compound :: Ljava/lang/String :: return #(.)::DD,6553
+6564 :: CALL :: call :: Ljava/lang/String :: v9 = toRealPath(p1 $null )::JM,6568:CL,6477
+6568 :: NORM :: compound :: Ljava/lang/String :: return v9::DD,6553
+6576 :: ENTR :: entry :: null :: org.h2.store.fs.FileUtils.isDirectory(java.lang.String)::CE,6577:CD,6580:CD,6584:CD,6588
+6577 :: EXIT :: exit :: Z :: org.h2.store.fs.FileUtils.isDirectory(java.lang.String)::JM,6350:JM,6434
+6580 :: CALL :: call :: Lorg/h2/store/fs/FilePath :: v4 = get(p1 $null )::JM,6584:JM,6588:CL,6619
+6584 :: CALL :: call :: Z :: v6 = v4.isDirectory()::JM,6584:JM,6588
+6588 :: NORM :: compound :: Z :: return v6::DD,6577
+6590 :: ENTR :: entry :: null :: org.h2.store.fs.FileUtils.tryDelete(java.lang.String)::CD,6594
+6594 :: CALL :: call :: Lorg/h2/store/fs/FilePath :: v4 = get(p1 $null )::CL,6619
+6606 :: ENTR :: entry :: null :: org.h2.store.fs.FileUtils.delete(java.lang.String)::CD,6610
+6610 :: CALL :: call :: Lorg/h2/store/fs/FilePath :: v4 = get(p1 $null )::CL,6619
+6619 :: ENTR :: entry :: null :: org.h2.store.fs.FilePath.get(java.lang.String)::CE,6620:CD,6623:CD,6629:CD,6634:CD,6636:JM,6658:JM,6644:JM,6662:JM,6667:JM,6639
+6620 :: EXIT :: exit :: Lorg/h2/store/fs/FilePath :: org.h2.store.fs.FilePath.get(java.lang.String)::JM,6485:JM,6489:JM,6493:JM,6515:JM,6516:JM,6503:JM,6521:JM,6507:JM,6584:JM,6588
+6623 :: CALL :: call :: Ljava/lang/String :: v6 = p1 $null .replace(#(92), #(47))::JM,6658:JM,6644:JM,6662:JM,6667:JM,6636:JM,6639
+6629 :: CALL :: call :: I :: v9 = v6.indexOf(#(58))::JM,6658:JM,6644:JM,6662:JM,6667:JM,6636:JM,6639
+6634 :: CALL :: call :: V :: registerDefaultProviders()::CL,6703
+6636 :: PRED :: IF :: Z :: if (v9 >= #(2)) goto 35::CD,6637:CD,6639:CD,6644:CD,6645:CD,6651:CD,6653:CD,6658:CD,6659:CD,6662:CD,6667:CD,6668:JM,6636
+6637 :: EXPR :: reference :: Lorg/h2/store/fs/FilePath :: v24 = org.h2.store.fs.FilePath.defaultProvider::JM,6644:JM,6639
+6639 :: CALL :: call :: Lorg/h2/store/fs/FilePath :: v26 = v24.getPath(v6)::JM,6644:JM,6639:JM,6658:JM,6662:JM,6667:JM,6636
+6644 :: NORM :: compound :: Lorg/h2/store/fs/FilePath :: return v26::DD,6620
+6645 :: CALL :: call :: Ljava/lang/String :: v14 = v6.substring(#(0), v9)::JM,6658:JM,6644:JM,6662:JM,6667:JM,6636:JM,6639
+6651 :: EXPR :: reference :: Ljava/util/Map :: v15 = org.h2.store.fs.FilePath.providers::JM,6658
+6653 :: CALL :: call :: Ljava/lang/Object :: v17 = v15.get(v14)::JM,6658:JM,6667
+6658 :: EXPR :: assign :: Ljava/lang/Object :: v18 = CHECKCAST v17::DD,6659:DD,6668
+6659 :: PRED :: IF :: Z :: if (v18 != #(null)) goto 62::CF,6668:CD,6660
+6660 :: EXPR :: reference :: Lorg/h2/store/fs/FilePath :: v20 = org.h2.store.fs.FilePath.defaultProvider::DD,6668
+6662 :: CALL :: call :: Lorg/h2/store/fs/FilePath :: v23 = v21.getPath(v6)::JM,6662:JM,6667:JM,6658:JM,6644:JM,6636:JM,6639
+6667 :: NORM :: compound :: Lorg/h2/store/fs/FilePath :: return v23::DD,6620
+6668 :: EXPR :: assign :: null :: PHI v21 = v18, v20::JM,6662:JM,6667
+6691 :: ENTR :: entry :: null :: org.h2.util.New.arrayList(int)::CE,6692:CD,6695:CD,6700
+6692 :: EXIT :: exit :: Ljava/util/ArrayList :: org.h2.util.New.arrayList(int)::JM,6533
+6695 :: NORM :: declaration :: Ljava/util/ArrayList :: v3 = new java.util.ArrayList::DD,6700
+6700 :: NORM :: compound :: Ljava/util/ArrayList :: return v3::DD,6692
+6703 :: ENTR :: entry :: null :: org.h2.store.fs.FilePath.registerDefaultProviders()::CD,6706:CD,6708
+6706 :: EXPR :: reference :: Ljava/util/Map :: v2 = org.h2.store.fs.FilePath.providers::DD,6708
+6708 :: PRED :: IF :: Z :: if (v2 == #(null)) goto 12::CF,6712:CD,6709:CD,6711:CD,6715:CD,6719:CD,6760:CD,6761:CD,6793:CD,6797
+6709 :: EXPR :: reference :: Lorg/h2/store/fs/FilePath :: v4 = org.h2.store.fs.FilePath.defaultProvider::DD,6711
+6711 :: PRED :: IF :: Z :: if (v4 != #(null)) goto 147::CF,6712:CD,6715:CD,6719:CD,6760:CD,6761:CD,6793:CD,6797
+6712 :: CALL :: call :: Ljava/util/HashMap :: v6 = hashMap()::JM,6793:JM,6715:CL,2748
+6715 :: CALL :: call :: Ljava/util/Map :: v8 = synchronizedMap(v6)::JM,6793:JM,6715
+6719 :: NORM :: declaration :: [Ljava/lang/String :: v10 = new java.lang.String[]::DD,6760
+6720 :: EXPR :: modify :: Ljava/lang/Object :: v10[#(0)] = #(org.h2.store.fs.FileP...)::
+6724 :: EXPR :: modify :: Ljava/lang/Object :: v10[#(1)] = #(org.h2.store.fs.FileP...)::
+6728 :: EXPR :: modify :: Ljava/lang/Object :: v10[#(2)] = #(org.h2.store.fs.FileP...)::
+6732 :: EXPR :: modify :: Ljava/lang/Object :: v10[#(3)] = #(org.h2.store.fs.FileP...)::
+6736 :: EXPR :: modify :: Ljava/lang/Object :: v10[#(4)] = #(org.h2.store.fs.FileP...)::
+6740 :: EXPR :: modify :: Ljava/lang/Object :: v10[#(5)] = #(org.h2.store.fs.FileP...)::
+6744 :: EXPR :: modify :: Ljava/lang/Object :: v10[#(6)] = #(org.h2.store.fs.FileP...)::
+6748 :: EXPR :: modify :: Ljava/lang/Object :: v10[#(7)] = #(org.h2.store.fs.FileP...)::
+6752 :: EXPR :: modify :: Ljava/lang/Object :: v10[#(8)] = #(org.h2.store.fs.FileP...)::
+6756 :: EXPR :: modify :: Ljava/lang/Object :: v10[#(9)] = #(org.h2.store.fs.FileP...)::
+6760 :: EXPR :: assign :: I :: v31 = v10.length::DD,6761:CF,6797
+6761 :: PRED :: IF :: Z :: if (v48 >= v31) goto 144::CD,6766:CD,6770:CD,6774:CD,6775:CD,6779:CD,6785:CD,6787:CD,6791:CD,6797:CF,6793
+6762 :: EXPR :: reference :: Ljava/lang/Object :: v32 = v10[v48]::JM,6770:JM,6774:JM,6766
+6766 :: CALL :: call :: Ljava/lang/Class :: v34 = forName(v32)::JM,6770:JM,6774:JM,6766
+6770 :: CALL :: call :: Ljava/lang/Object :: v36 = v34.newInstance()::JM,6770:JM,6774
+6774 :: EXPR :: assign :: Ljava/lang/Object :: v37 = CHECKCAST v36::JM,6775:DD,6788
+6775 :: CALL :: call :: Ljava/lang/String :: v39 = v37.getScheme()::JM,6775
+6779 :: CALL :: call :: Ljava/lang/Object :: v41 = v8.put(v39, v37)::JM,6793
+6785 :: EXPR :: reference :: Lorg/h2/store/fs/FilePath :: v42 = org.h2.store.fs.FilePath.defaultProvider::DD,6787
+6787 :: PRED :: IF :: Z :: if (v42 != #(null)) goto 132::CD,6788
+6788 :: EXPR :: modify :: Lorg/h2/store/fs/FilePath :: org.h2.store.fs.FilePath.defaultProvider = v37::
+6791 :: EXPR :: assign :: Ljava/lang/Object :: v46 = v48 + #(1)::DD,6797
+6793 :: EXPR :: modify :: Ljava/util/Map :: org.h2.store.fs.FilePath.providers = v8::
+6797 :: EXPR :: assign :: null :: PHI v48 = v46, #(0)::DD,6761:DD,6791

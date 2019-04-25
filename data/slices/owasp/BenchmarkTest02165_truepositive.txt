@@ -1,0 +1,19 @@
+[56, 59]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest02165.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,21:CD,26:CD,30:CD,34:CD,39:CD,44:CD,49:CD,53:CD,56:CD,73:CD,74:JM,16:JM,20
+7 :: CALL :: call :: Ljava/util/Enumeration :: v7 = p1 $request .getHeaderNames()::JM,16:JM,20:JM,11:JM,15
+11 :: CALL :: call :: Z :: v9 = v7.hasMoreElements()::JM,16:JM,20:JM,11:JM,15
+15 :: PRED :: IF :: Z :: if (v9 == #(0)) goto 39::CF,73:CD,16:CD,20:JM,11:JM,15
+16 :: CALL :: call :: Ljava/lang/Object :: v12 = v7.nextElement()::JM,16:JM,20:JM,11:JM,15
+20 :: EXPR :: assign :: Ljava/lang/Object :: v13 = CHECKCAST v12::DD,73
+21 :: CALL :: call :: C :: v18 = #(ABC).charAt(#(2))::JM,26
+26 :: PRED :: IF :: null :: switch v18::CD,74
+30 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v21 = new java.lang.StringBuilder::JM,56
+34 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v21.append(#(SELECT * from USERS w...))::JM,56
+39 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v25.append(v20)::JM,56
+44 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v27.append(#('))::JM,56
+49 :: CALL :: call :: Ljava/lang/String :: v32 = v30.toString()::JM,56
+53 :: CALL :: call :: Ljava/sql/Statement :: v34 = getSqlStatement()::JM,56
+56 :: CALL :: call :: V :: v34.addBatch(v32)::JM,56
+73 :: EXPR :: assign :: null :: PHI v14 = #(), v13::DD,74:JM,26
+74 :: EXPR :: assign :: null :: PHI v20 = v14, #(bobs_your_uncle), v14, #(bobs_your_uncle)::CF,30:JM,56

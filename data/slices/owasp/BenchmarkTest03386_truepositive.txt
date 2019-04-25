@@ -1,0 +1,13 @@
+[50, 46]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest03386.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,15:CD,20:CD,24:CD,29:CD,34:CD,39:CD,43:CD,46
+7 :: CALL :: call :: Ljava/lang/String :: v7 = p1 $request .getParameter(#(foo))::JM,46:JM,15
+12 :: CALL :: call :: Lorg/owasp/esapi/Encoder :: v9 = encoder()::JM,46:JM,15
+15 :: CALL :: call :: Ljava/lang/String :: v11 = v9.encodeForHTML(v7)::JM,46:JM,15
+20 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::JM,46
+24 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v12.append(#({call verifyUserPassw...))::JM,46
+29 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v16.append(v11)::JM,46
+34 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v18.append(#(')}))::JM,46
+39 :: CALL :: call :: Ljava/lang/String :: v23 = v21.toString()::JM,46
+43 :: CALL :: call :: Ljava/sql/Connection :: v25 = getSqlConnection()::JM,46
+46 :: CALL :: call :: Ljava/sql/CallableStatement :: v27 = v25.prepareCall(v23)::JM,46

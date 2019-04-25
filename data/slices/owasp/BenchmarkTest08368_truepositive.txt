@@ -1,0 +1,15 @@
+[49, 55]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest08368.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,18:CD,23:CD,27:CD,32:CD,37:CD,42:CD,46:CD,49
+18 :: CALL :: call :: Ljava/lang/String :: v12 = v8.doSomething(v7)::JM,49:CL,153
+23 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::JM,49
+27 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v13.append(#({call verifyUserPassw...))::JM,49
+32 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v17.append(v12)::JM,49
+37 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v19.append(#(')}))::JM,49
+42 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::JM,49
+46 :: CALL :: call :: Ljava/sql/Connection :: v26 = getSqlConnection()::JM,49
+49 :: CALL :: call :: Ljava/sql/CallableStatement :: v30 = v26.prepareCall(v24, #(1003), #(1007))::JM,49
+153 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest08368.Test.doSomething(java.lang.String)::CF,154:CD,158:CD,162
+154 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest08368.Test.doSomething(java.lang.String)::JM,49
+158 :: CALL :: call :: Ljava/lang/String :: v5 = escapeHtml(p1 $param )::JM,162:JM,158
+162 :: NORM :: compound :: Ljava/lang/String :: return v5::CF,154

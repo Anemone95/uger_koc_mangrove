@@ -1,0 +1,20 @@
+[64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 78]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest06529.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,12:CD,16:CD,20:CD,24:CD,29:CD,38:CD,42:CD,47:CD,52:CD,57:CD,61:CD,64:CD,73
+7 :: CALL :: call :: Ljava/lang/String :: v6 = p1 $request .getQueryString()::JM,20:JM,24:JM,11:JM,29
+11 :: NORM :: declaration :: Ljava/lang/String :: v7 = new java.lang.String::JM,11:JM,73:CF,12
+12 :: NORM :: declaration :: Lsun/misc/BASE64Decoder :: v8 = new sun.misc.BASE64Decoder::JM,11:JM,29
+16 :: NORM :: declaration :: Lsun/misc/BASE64Encoder :: v10 = new sun.misc.BASE64Encoder::JM,24:JM,11:JM,29
+20 :: CALL :: call :: [B :: v13 = v6.getBytes()::JM,20:JM,24:JM,11:JM,29
+24 :: CALL :: call :: Ljava/lang/String :: v15 = v10.encode(v13)::JM,24:JM,11:JM,29
+29 :: CALL :: call :: [B :: v17 = v8.decodeBuffer(v15)::JM,11:JM,29
+38 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v19 = new java.lang.StringBuilder::JM,73
+42 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v19.append(#(SELECT * from USERS w...))::JM,73
+47 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v23.append(v7)::JM,73
+52 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v25.append(#('))::JM,73
+57 :: CALL :: call :: Ljava/lang/String :: v30 = v28.toString()::JM,73
+61 :: CALL :: call :: Ljava/sql/Statement :: v32 = getSqlStatement()::JM,73
+64 :: NORM :: declaration :: [I :: v34 = new []::JM,73
+65 :: EXPR :: modify :: I :: v34[#(0)] = #(1)::
+69 :: EXPR :: modify :: I :: v34[#(1)] = #(2)::
+73 :: CALL :: call :: Z :: v38 = v32.execute(v30, v34)::JM,73

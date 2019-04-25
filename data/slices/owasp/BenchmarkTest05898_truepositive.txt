@@ -1,0 +1,22 @@
+[82, 77]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest05898.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,13:CD,24:CD,25:CD,29:CD,33:CD,37:CD,42:CD,51:CD,55:CD,60:CD,65:CD,70:CD,74:CD,77:CD,92
+7 :: CALL :: call :: [Ljava/lang/String :: v7 = p1 $request .getParameterValues(#(foo))::JM,12
+12 :: EXPR :: assign :: I :: v8 = v7.length::DD,13
+13 :: PRED :: IF :: Z :: if (v8 == #(0)) goto 32::CD,14:CD,92:JM,12
+14 :: CALL :: call :: [Ljava/lang/String :: v12 = p1 $request .getParameterValues(#(foo))::JM,12
+19 :: EXPR :: reference :: Ljava/lang/Object :: v13 = v12[#(0)]::DD,92
+24 :: NORM :: declaration :: Ljava/lang/String :: v15 = new java.lang.String::JM,24:JM,77:CF,25
+25 :: NORM :: declaration :: Lsun/misc/BASE64Decoder :: v16 = new sun.misc.BASE64Decoder::JM,24:JM,42
+29 :: NORM :: declaration :: Lsun/misc/BASE64Encoder :: v18 = new sun.misc.BASE64Encoder::JM,37:JM,24:JM,42
+33 :: CALL :: call :: [B :: v21 = v14.getBytes()::JM,33:JM,37:JM,24:JM,42
+37 :: CALL :: call :: Ljava/lang/String :: v23 = v18.encode(v21)::JM,37:JM,24:JM,42
+42 :: CALL :: call :: [B :: v25 = v16.decodeBuffer(v23)::JM,24:JM,42
+51 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v27 = new java.lang.StringBuilder::JM,77
+55 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v27.append(#(SELECT * from USERS w...))::JM,77
+60 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v31.append(v15)::JM,77
+65 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v33.append(#('))::JM,77
+70 :: CALL :: call :: Ljava/lang/String :: v38 = v36.toString()::JM,77
+74 :: CALL :: call :: Ljava/sql/Statement :: v40 = getSqlStatement()::JM,77
+77 :: CALL :: call :: Z :: v43 = v40.execute(v38, #(1))::JM,77
+92 :: EXPR :: assign :: null :: PHI v14 = v13, #(null)::CF,24:JM,33:JM,37:JM,42

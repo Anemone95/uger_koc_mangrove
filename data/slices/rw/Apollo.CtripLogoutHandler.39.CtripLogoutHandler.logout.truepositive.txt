@@ -1,0 +1,20 @@
+[70, 74, 79, 84, 89, 93]
+1 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.portal.spi.ctrip.CtripLogoutHandler.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,16:CD,22:CD,26:CD,30:CD,34:CD,39:CD,44:CD,48:CD,59:CD,66:CD,70:CD,74:CD,79:CD,84:CD,89:CD,93
+16 :: NORM :: declaration :: Ljavax/servlet/http/Cookie :: v10 = new javax.servlet.http.Cookie::JM,22:JM,48
+22 :: CALL :: call :: V :: v10.setMaxAge(#(0))::JM,22
+26 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v14 = new java.lang.StringBuilder::JM,48
+30 :: CALL :: call :: Ljava/lang/String :: v17 = p1 $request .getContextPath()::JM,48
+34 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v14.append(v17)::JM,48
+39 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v19.append(#(/))::JM,48
+44 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::JM,48
+48 :: CALL :: call :: V :: v10.setPath(v24)::JM,48
+56 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/portal/component/config/PortalConfig :: v27 = p0 $this .portalConfig::JM,59
+59 :: CALL :: call :: Ljava/lang/String :: v29 = v27.casServerUrlPrefix()::JM,59
+63 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/portal/component/config/PortalConfig :: v30 = p0 $this .portalConfig::JM,66
+66 :: CALL :: call :: Ljava/lang/String :: v32 = v30.portalServerName()::JM,66
+70 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v33 = new java.lang.StringBuilder::
+74 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v33.append(v29)::
+79 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v36.append(#(/logout?service=))::
+84 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v39.append(v32)::
+89 :: CALL :: call :: Ljava/lang/String :: v43 = v41.toString()::
+93 :: CALL :: call :: V :: p2 $response .sendRedirect(v43)::JM,48

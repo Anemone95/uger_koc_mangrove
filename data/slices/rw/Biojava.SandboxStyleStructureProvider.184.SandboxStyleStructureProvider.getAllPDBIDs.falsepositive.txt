@@ -1,0 +1,101 @@
+[5, 6]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.SandboxStyleStructureProvider.getAllPDBIDs()::CD,5
+5 :: NORM :: declaration :: Ljava/io/File :: v3 = new java.io.File::
+6 :: EXPR :: reference :: Ljava/lang/String :: v4 = p0 $this .path::
+1103 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.UserConfiguration.initCacheFilePath()::CD,1107:CD,1111:CD,1372:CD,1374:CD,1379:CD,1401
+1107 :: CALL :: call :: Ljava/lang/String :: v6 = getProperty(#(PDB_CACHE_DIR))::JM,1107:JM,1111:JM,1401
+1111 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 138::CD,1120:CD,1125:CD,1129:CD,1198:CD,1201:CD,1206
+1120 :: NORM :: declaration :: Ljava/io/File :: v69 = new java.io.File::JM,1129:JM,1163
+1125 :: CALL :: call :: Z :: v72 = v69.isDirectory()::JM,1129
+1129 :: PRED :: IF :: Z :: if (v72 != #(0)) goto 87::CD,1154:CD,1159:CD,1163:CD,1401
+1154 :: CALL :: call :: Ljava/lang/String :: v92 = getProperty(#(java.io.tmpdir))::JM,1154:JM,1401
+1159 :: CALL :: call :: Z :: v74 = v69.canWrite()::JM,1163
+1163 :: PRED :: IF :: Z :: if (v74 != #(0)) goto 385::CF,1401:CD,1188:CD,1192
+1188 :: CALL :: call :: Ljava/lang/String :: v82 = getProperty(#(java.io.tmpdir))::JM,1188:JM,1401
+1192 :: CALL :: call :: Ljava/lang/String :: v84 = setProperty(#(PDB_CACHE_DIR), v82)::JM,1401
+1198 :: CALL :: call :: Ljava/util/Map :: v8 = getenv()::JM,1206:JM,1212
+1201 :: CALL :: call :: Z :: v10 = v8.containsKey(#(PDB_CACHE_DIR))::JM,1206:JM,1212
+1206 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 282::CF,1294:CD,1207:CD,1212:CD,1221:CD,1226:CD,1230:CD,1302:CD,1306:JM,1206
+1207 :: CALL :: call :: Ljava/lang/Object :: v39 = v8.get(#(PDB_CACHE_DIR))::JM,1206:JM,1212
+1212 :: EXPR :: assign :: Ljava/lang/Object :: v40 = CHECKCAST v39::DD,1401
+1221 :: NORM :: declaration :: Ljava/io/File :: v44 = new java.io.File::JM,1230:JM,1264
+1226 :: CALL :: call :: Z :: v47 = v44.isDirectory()::JM,1230
+1230 :: PRED :: IF :: Z :: if (v47 != #(0)) goto 237::CD,1255:CD,1260:CD,1264:CD,1401
+1255 :: CALL :: call :: Ljava/lang/String :: v65 = getProperty(#(java.io.tmpdir))::JM,1255:JM,1401
+1260 :: CALL :: call :: Z :: v49 = v44.canWrite()::JM,1264
+1264 :: PRED :: IF :: Z :: if (v49 != #(0)) goto 385::CF,1401:CD,1289
+1289 :: CALL :: call :: Ljava/lang/String :: v57 = getProperty(#(java.io.tmpdir))::JM,1289:JM,1401
+1294 :: NORM :: declaration :: Ljava/io/File :: v12 = new java.io.File::JM,1306
+1295 :: EXPR :: reference :: Ljava/lang/String :: v13 = p0 $this .pdbFilePath::
+1302 :: CALL :: call :: Z :: v16 = v12.canWrite()::JM,1306
+1306 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 341::CD,1330:CD,1336:CD,1367:CD,1401
+1307 :: EXPR :: reference :: Ljava/lang/String :: v31 = p0 $this .pdbFilePath::DD,1401
+1330 :: CALL :: call :: Ljava/lang/String :: v37 = setProperty(#(PDB_CACHE_DIR), v31)::
+307 :: CALL :: call :: V :: p0 $this .setPath(v9)::CL,627
+1336 :: CALL :: call :: Ljava/lang/String :: v19 = getProperty(#(java.io.tmpdir))::JM,1336:JM,1401
+1367 :: CALL :: call :: Ljava/lang/String :: v30 = setProperty(#(PDB_CACHE_DIR), v19)::JM,1401
+1372 :: EXPR :: reference :: Ljava/lang/String :: v95 = org.biojava.nbio.structure.align.util.UserConfiguration.lineSplit::JM,1379
+1374 :: CALL :: call :: Z :: v97 = v93.endsWith(v95)::JM,1379
+1379 :: PRED :: IF :: Z :: if (v97 != #(0)) goto 416::CF,1380:CD,1381:CD,1389:CD,1391:CD,1396
+1380 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v98 = new java.lang.StringBuilder::
+1381 :: CALL :: call :: Ljava/lang/String :: v100 = valueOf(v93)::
+363 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.LocalPDBDirectory.FetchBehavior.<clinit>()::
+1389 :: EXPR :: reference :: Ljava/lang/String :: v102 = org.biojava.nbio.structure.align.util.UserConfiguration.lineSplit::
+1391 :: CALL :: call :: Ljava/lang/StringBuilder :: v104 = v98.append(v102)::
+1396 :: CALL :: call :: Ljava/lang/String :: v106 = v104.toString()::
+1401 :: EXPR :: assign :: null :: PHI v93 = v92, v6, v82, v65, v40, v57, v31, v19::JM,1379
+482 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.LocalPDBDirectory.ObsoleteBehavior.<clinit>()::
+589 :: CALL :: call :: Ljava/lang/String :: v7 = p0 $this .initPdbFilePath()::CL,777
+596 :: CALL :: call :: Ljava/lang/String :: v9 = p0 $this .initCacheFilePath()::CL,1103
+627 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.SandboxStyleStructureProvider.setPath(java.lang.String)::CD,638:CD,640:CD,645:JM,632
+632 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .path = p1 $p ::
+635 :: EXPR :: reference :: Ljava/lang/String :: v4 = p0 $this .path::JM,645
+638 :: EXPR :: reference :: Ljava/lang/String :: v5 = org.biojava.nbio.structure.io.SandboxStyleStructureProvider.fileSeparator::JM,645
+640 :: CALL :: call :: Z :: v7 = v4.endsWith(v5)::JM,645
+645 :: PRED :: IF :: Z :: if (v7 != #(0)) goto 46::CD,649:CD,650:CD,658:CD,660:CD,665
+646 :: EXPR :: reference :: Ljava/lang/String :: v9 = p0 $this .path::
+649 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::JM,669
+650 :: CALL :: call :: Ljava/lang/String :: v12 = valueOf(v9)::
+658 :: EXPR :: reference :: Ljava/lang/String :: v14 = org.biojava.nbio.structure.io.SandboxStyleStructureProvider.fileSeparator::JM,669
+660 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v10.append(v14)::JM,669
+665 :: CALL :: call :: Ljava/lang/String :: v18 = v16.toString()::JM,669
+669 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .path = v18::
+777 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.UserConfiguration.initPdbFilePath()::CD,781:CD,785:CD,976:CD,978:CD,983:CD,1005
+781 :: CALL :: call :: Ljava/lang/String :: v6 = getProperty(#(PDB_DIR))::JM,785:JM,790:JM,794:JM,781:JM,1005
+785 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 118::CD,786:CD,790:CD,794:CD,856:CD,859:CD,864:JM,1005
+786 :: CALL :: call :: Ljava/lang/String :: v8 = v6.trim()::JM,790:JM,794:JM,1005
+790 :: CALL :: call :: Z :: v10 = v8.isEmpty()::JM,790:JM,794
+794 :: PRED :: IF :: Z :: if (v10 != #(0)) goto 118::CD,803:CD,808:CD,812:CD,856:CD,859:CD,864
+803 :: NORM :: declaration :: Ljava/io/File :: v61 = new java.io.File::JM,812:JM,846
+808 :: CALL :: call :: Z :: v64 = v61.isDirectory()::JM,812
+812 :: PRED :: IF :: Z :: if (v64 != #(0)) goto 97::CD,837:CD,842:CD,846:CD,1005
+837 :: CALL :: call :: Ljava/lang/String :: v77 = getProperty(#(java.io.tmpdir))::JM,837:JM,1005
+842 :: CALL :: call :: Z :: v66 = v61.canWrite()::JM,846
+846 :: PRED :: IF :: Z :: if (v66 != #(0)) goto 297::CF,1005
+856 :: CALL :: call :: Ljava/util/Map :: v13 = getenv()::JM,864:JM,885:JM,870
+859 :: CALL :: call :: Z :: v15 = v13.containsKey(#(PDB_DIR))::JM,864:JM,885:JM,870
+864 :: PRED :: IF :: Z :: if (v15 == #(0)) goto 260::CD,865:CD,870:CD,871:CD,875:CD,879:CD,947:CD,971:CD,1005:JM,864:JM,885
+865 :: CALL :: call :: Ljava/lang/Object :: v17 = v13.get(#(PDB_DIR))::JM,864:JM,885:JM,870
+870 :: EXPR :: assign :: Ljava/lang/Object :: v18 = CHECKCAST v17::JM,875:JM,879
+871 :: CALL :: call :: Ljava/lang/String :: v20 = v18.trim()::JM,875:JM,879
+875 :: CALL :: call :: Z :: v22 = v20.isEmpty()::JM,875:JM,879
+879 :: PRED :: IF :: Z :: if (v22 != #(0)) goto 260::CD,880:CD,885:CD,894:CD,899:CD,903:CD,947:CD,971:CD,1005:JM,864:JM,870
+880 :: CALL :: call :: Ljava/lang/Object :: v36 = v13.get(#(PDB_DIR))::JM,864:JM,885:JM,870
+885 :: EXPR :: assign :: Ljava/lang/Object :: v37 = CHECKCAST v36::DD,1005
+894 :: NORM :: declaration :: Ljava/io/File :: v41 = new java.io.File::JM,903:JM,937
+899 :: CALL :: call :: Z :: v44 = v41.isDirectory()::JM,903
+903 :: PRED :: IF :: Z :: if (v44 != #(0)) goto 237::CD,928:CD,933:CD,937:CD,1005
+928 :: CALL :: call :: Ljava/lang/String :: v57 = getProperty(#(java.io.tmpdir))::JM,928:JM,1005
+933 :: CALL :: call :: Z :: v46 = v41.canWrite()::JM,937
+937 :: PRED :: IF :: Z :: if (v46 != #(0)) goto 297::CF,1005
+947 :: CALL :: call :: Ljava/lang/String :: v25 = getProperty(#(java.io.tmpdir))::JM,947:JM,1005
+971 :: CALL :: call :: Ljava/lang/String :: v34 = setProperty(#(PDB_DIR), v25)::JM,1005
+976 :: EXPR :: reference :: Ljava/lang/String :: v80 = org.biojava.nbio.structure.align.util.UserConfiguration.lineSplit::JM,983
+978 :: CALL :: call :: Z :: v82 = v78.endsWith(v80)::JM,983
+983 :: PRED :: IF :: Z :: if (v82 != #(0)) goto 328::CF,984:CD,985:CD,993:CD,995:CD,1000
+984 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v83 = new java.lang.StringBuilder::
+985 :: CALL :: call :: Ljava/lang/String :: v85 = valueOf(v78)::
+993 :: EXPR :: reference :: Ljava/lang/String :: v87 = org.biojava.nbio.structure.align.util.UserConfiguration.lineSplit::
+995 :: CALL :: call :: Ljava/lang/StringBuilder :: v89 = v83.append(v87)::
+1000 :: CALL :: call :: Ljava/lang/String :: v91 = v89.toString()::
+1005 :: EXPR :: assign :: null :: PHI v78 = v77, v6, v6, v57, v37, v37, v25::JM,983

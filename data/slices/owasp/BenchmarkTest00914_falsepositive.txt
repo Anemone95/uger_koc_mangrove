@@ -1,0 +1,34 @@
+[97, 92]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest00914.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,36:CD,40:CD,45:CD,50:CD,55:CD,60:CD,65:CD,66:CD,70:CD,75:CD,80:CD,85:CD,89:CD,92:CD,112:JM,12
+7 :: CALL :: call :: [Ljavax/servlet/http/Cookie :: v6 = p1 $request .getCookies()::JM,11:JM,12
+11 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 87::CD,12:CD,13:CD,34:CD,107:CD,108:CD,109:CD,112
+12 :: EXPR :: assign :: I :: v10 = v6.length::DD,13:CF,107
+13 :: PRED :: IF :: Z :: if (v25 >= v10) goto 73::CD,18:CD,22:CD,27:CD,32:CD,107:CD,108:CD,109:CD,110:CD,111:CF,34
+14 :: EXPR :: reference :: Ljava/lang/Object :: v11 = v6[v25]::JM,18:JM,22:JM,27:JM,28:JM,110
+18 :: CALL :: call :: Ljava/lang/String :: v13 = v11.getName()::JM,18:JM,22:JM,27
+22 :: CALL :: call :: Z :: v16 = v13.equals(#(foo))::JM,22:JM,27
+27 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 65::CF,110:CD,28:CD,111
+28 :: CALL :: call :: Ljava/lang/String :: v18 = v11.getValue()::JM,28:JM,110
+32 :: EXPR :: assign :: Ljava/lang/Object :: v22 = v25 + #(1)::DD,109
+34 :: PRED :: IF :: Z :: if (v24 != #(0)) goto 87::CF,112
+36 :: NORM :: declaration :: Ljava/util/ArrayList :: v28 = new java.util.ArrayList::JM,65
+40 :: CALL :: call :: Z :: v32 = v28.add(#(safe))::
+45 :: CALL :: call :: Z :: v34 = v28.add(v26)::
+50 :: CALL :: call :: Z :: v37 = v28.add(#(moresafe))::
+55 :: CALL :: call :: Ljava/lang/Object :: v39 = v28.remove(#(0))::
+60 :: CALL :: call :: Ljava/lang/Object :: v41 = v28.get(#(1))::JM,65
+65 :: EXPR :: assign :: Ljava/lang/Object :: v42 = CHECKCAST v41::JM,92:CF,66
+66 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v43 = new java.lang.StringBuilder::JM,92
+70 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v43.append(#(UPDATE USERS SET PASS...))::JM,92
+75 :: CALL :: call :: Ljava/lang/StringBuilder :: v49 = v47.append(v42)::JM,92
+80 :: CALL :: call :: Ljava/lang/StringBuilder :: v52 = v49.append(#(' WHERE USERNAME='foo'))::JM,92
+85 :: CALL :: call :: Ljava/lang/String :: v54 = v52.toString()::JM,92
+89 :: CALL :: call :: Ljava/sql/Statement :: v56 = getSqlStatement()::JM,92
+92 :: CALL :: call :: I :: v58 = v56.executeUpdate(v54, #(1))::JM,92
+107 :: EXPR :: assign :: null :: PHI v23 = v20, #(null)::CF,108:DD,110:DD,112
+108 :: EXPR :: assign :: null :: PHI v24 = v21, #(0)::CF,109:DD,34:DD,111
+109 :: EXPR :: assign :: null :: PHI v25 = v22, #(0)::DD,13:DD,32
+110 :: EXPR :: assign :: null :: PHI v20 = v23, v18::CF,111:DD,107
+111 :: EXPR :: assign :: null :: PHI v21 = v24, #(1)::DD,108:CF,32
+112 :: EXPR :: assign :: null :: PHI v26 = v23, #(), #()::CF,36

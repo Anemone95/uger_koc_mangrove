@@ -1,0 +1,77 @@
+[874]
+1 :: ENTR :: entry :: null :: gov.nasa.jpf.jvm.ClassFilePrinter.main(java.lang.String[])::JM,1120:JM,1121:CD,9:JM,1216:JM,1154:JM,1220:JM,1158:JM,1159:JM,1288:JM,1160:JM,1225:JM,1292:JM,1229:JM,1297:JM,1234:JM,1301:JM,1238:JM,1306:JM,1243:JM,1310:JM,1247:JM,1184:JM,1185:JM,1315:JM,1189:JM,1256:JM,874:JM,1260:JM,1198:JM,1265:JM,1202:JM,1269:JM,1207:JM,1274:JM,1211:JM,1149:JM,1278
+9 :: NORM :: declaration :: Lgov/nasa/jpf/jvm/ClassFile :: v5 = new gov.nasa.jpf.jvm.ClassFile::JM,1216:JM,1154:JM,1220:JM,1158:JM,1159:JM,1288:JM,1160:JM,1225:JM,1292:JM,1229:JM,1297:JM,1234:JM,1301:JM,1238:JM,1306:JM,1243:JM,1310:JM,1247:JM,1184:JM,1185:JM,1315:JM,1189:JM,1256:JM,874:JM,1260:JM,1198:JM,1265:JM,1202:JM,1269:JM,1207:JM,1274:JM,1211:JM,1149:JM,1278
+10 :: EXPR :: reference :: Ljava/lang/Object :: v7 = p1 $args [#(0)]::JM,1216:JM,1154:JM,1220:JM,1158:JM,1159:JM,1288:JM,1160:JM,1225:JM,1292:JM,1229:JM,1297:JM,1234:JM,1301:JM,1238:JM,1306:JM,1243:JM,1310:JM,1247:JM,1184:JM,1185:JM,1315:JM,1189:JM,1256:JM,874:JM,1260:JM,1198:JM,1265:JM,1202:JM,1269:JM,1207:JM,1274:JM,1211:JM,1149:JM,1278
+1120 :: NORM :: declaration :: Ljava/io/PrintWriter :: v6 = new java.io.PrintWriter::
+1121 :: EXPR :: reference :: Ljava/io/PrintStream :: v7 = java.lang.System.out::
+1149 :: NORM :: declaration :: Ljava/io/FileInputStream :: v6 = new java.io.FileInputStream::JM,1184:JM,1158:JM,1160
+1154 :: CALL :: call :: J :: v36 = p1 $file .length()::JM,1184:JM,1158:JM,1160
+1158 :: EXPR :: assign :: Z :: v38 = v36 == #(2147483647 l)::DD,1159
+1159 :: PRED :: IF :: Z :: if (v38 > #(0)) goto 35::CD,1160:CD,1161:CD,1162:CD,1166:CD,1171:CD,1176:CD,1180
+1160 :: EXPR :: assign :: Z :: v41 = v36 == #(0 l)::DD,1161
+1161 :: PRED :: IF :: Z :: if (v41 > #(0)) goto 59::CD,1162:CD,1166:CD,1171:CD,1176:CD,1180:CF,1184
+1162 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v42 = new java.lang.StringBuilder::
+1166 :: CALL :: call :: Ljava/lang/StringBuilder :: v46 = v42.append(#(cannot read file of s...))::
+1171 :: CALL :: call :: Ljava/lang/StringBuilder :: v48 = v46.append(v36)::JM,1184
+1176 :: CALL :: call :: Ljava/lang/String :: v50 = v48.toString()::
+1180 :: CALL :: call :: V :: p0 $this .error(v50)::CL,1432
+1184 :: EXPR :: assign :: I :: v52 = CONVERT J to I v36::CF,1185
+1185 :: NORM :: declaration :: [B :: v53 = new []::DD,1186
+1186 :: EXPR :: modify :: [B :: p0 $this .data = v53::
+1189 :: CALL :: call :: V :: p0 $this .readData(v6)::CL,2769
+1198 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v72 = new java.lang.StringBuilder::JM,1184:JM,1158:JM,1160
+1202 :: CALL :: call :: Ljava/lang/StringBuilder :: v75 = v72.append(#(failed to close file: ))::
+1207 :: CALL :: call :: Ljava/lang/String :: v77 = p1 $file .getPath()::JM,1184:JM,1158:JM,1160
+1211 :: CALL :: call :: Ljava/lang/StringBuilder :: v79 = v75.append(v77)::
+1216 :: CALL :: call :: Ljava/lang/String :: v81 = v79.toString()::
+1220 :: CALL :: call :: V :: p0 $this .error(v81)::CL,1432
+1225 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v9 = new java.lang.StringBuilder::JM,1184:JM,1158:JM,1160
+1229 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v9.append(#(classfile not found: ))::
+1234 :: CALL :: call :: Ljava/lang/String :: v15 = p1 $file .getPath()::JM,1184:JM,1158:JM,1160
+1238 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v13.append(v15)::
+1243 :: CALL :: call :: Ljava/lang/String :: v19 = v17.toString()::
+1247 :: CALL :: call :: V :: p0 $this .error(v19)::CL,1432
+1256 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v23 = new java.lang.StringBuilder::JM,1184:JM,1158:JM,1160
+1260 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v23.append(#(failed to close file: ))::
+1265 :: CALL :: call :: Ljava/lang/String :: v29 = p1 $file .getPath()::JM,1184:JM,1158:JM,1160
+1269 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v27.append(v29)::
+1274 :: CALL :: call :: Ljava/lang/String :: v33 = v31.toString()::
+1278 :: CALL :: call :: V :: p0 $this .error(v33)::CL,1432
+1288 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v59 = new java.lang.StringBuilder::JM,1184:JM,1158:JM,1160
+1292 :: CALL :: call :: Ljava/lang/StringBuilder :: v62 = v59.append(#(failed to close file: ))::
+1297 :: CALL :: call :: Ljava/lang/String :: v64 = p1 $file .getPath()::JM,1184:JM,1158:JM,1160
+1301 :: CALL :: call :: Ljava/lang/StringBuilder :: v66 = v62.append(v64)::
+1306 :: CALL :: call :: Ljava/lang/String :: v68 = v66.toString()::
+1310 :: CALL :: call :: V :: p0 $this .error(v68)::CL,1432
+1315 :: CALL :: call :: Lgov/nasa/jpf/util/BinaryClassSource$ByteReader :: v87 = p0 $this .initializeByteReader()::JM,1319:CL,2861
+1319 :: EXPR :: modify :: Lgov/nasa/jpf/util/BinaryClassSource$ByteReader :: p0 $this .byteReader = v87::
+407 :: ENTR :: entry :: null :: gov.nasa.jpf.jvm.ClassFile.CpInfo.<clinit>()::
+1432 :: ENTR :: entry :: null :: gov.nasa.jpf.util.BinaryClassSource.error(java.lang.String)::
+2769 :: ENTR :: entry :: null :: gov.nasa.jpf.util.BinaryClassSource.readData(java.io.InputStream)::CD,2777:CD,2778:CD,2834:CD,2840:JM,2787:JM,2794:JM,2831
+2774 :: EXPR :: reference :: [B :: v5 = p0 $this .data::DD,2777
+2777 :: EXPR :: assign :: I :: v6 = v5.length::CF,2778
+2778 :: PRED :: IF :: Z :: if (v31 >= v6) goto 75::CD,2777:CD,2785:CD,2786:CD,2787:CD,2794:CD,2831:CD,2840
+2779 :: EXPR :: reference :: [B :: v7 = p0 $this .data::JM,2787:JM,2794:JM,2831
+2782 :: EXPR :: reference :: [B :: v8 = p0 $this .data::DD,2785
+2785 :: EXPR :: assign :: I :: v9 = v8.length::DD,2786
+2786 :: EXPR :: assign :: Ljava/lang/Object :: v10 = v9 - v31::JM,2787:JM,2840:JM,2794:JM,2831
+2787 :: CALL :: call :: I :: v12 = p1 $is .read(v7, v31, v10)::JM,2787:JM,2840:JM,2794:JM,2831
+2794 :: PRED :: IF :: Z :: if (v12 >= #(0)) goto 70::CD,2795:CD,2799:CD,2807:CD,2808:CD,2813:CD,2818:CD,2823:CD,2827:CF,2831
+2795 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::
+2799 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v13.append(#(premature end of dex ...))::
+2804 :: EXPR :: reference :: [B :: v18 = p0 $this .data::DD,2807
+2807 :: EXPR :: assign :: I :: v19 = v18.length::
+2808 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v17.append(v19)::
+2813 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v21.append(#(47))::
+2818 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v24.append(v31)::
+2823 :: CALL :: call :: Ljava/lang/String :: v28 = v26.toString()::
+3850 :: EXPR :: modify :: Lgov/nasa/jpf/util/BinaryClassSource :: p0 $this .this$0 = p1 $this$0 ::
+2827 :: CALL :: call :: V :: p0 $this .error(v28)::CL,1432
+2831 :: EXPR :: assign :: Ljava/lang/Object :: v30 = v31 + v12::DD,2840
+2834 :: CALL :: call :: V :: p0 $this .error(#(failed to read dex file))::CL,1432
+2840 :: EXPR :: assign :: null :: PHI v31 = v30, #(0)::DD,2778:DD,2786:JM,2787:JM,2794:DD,2831
+2861 :: ENTR :: entry :: null :: gov.nasa.jpf.util.BinaryClassSource.initializeByteReader()::CE,2862:CD,2865:JM,3850:CD,2870
+2862 :: EXIT :: exit :: Lgov/nasa/jpf/util/BinaryClassSource$ByteReader :: gov.nasa.jpf.util.BinaryClassSource.initializeByteReader()::JM,1319
+2865 :: NORM :: declaration :: Lgov/nasa/jpf/util/BinaryClassSource$BigEndianReader :: v3 = new gov.nasa.jpf.util.BinaryClassSource$BigEndianReader::DD,2870
+2870 :: NORM :: compound :: Lgov/nasa/jpf/util/BinaryClassSource$ByteReader :: return v3::DD,2862
+874 :: NORM :: declaration :: Ljava/io/File :: v4 = new java.io.File::JM,1216:JM,1154:JM,1220:JM,1158:JM,1159:JM,1288:JM,1160:JM,1225:JM,1292:JM,1229:JM,1297:JM,1234:JM,1301:JM,1238:JM,1306:JM,1243:JM,1310:JM,1247:JM,1184:JM,1185:JM,1315:JM,1189:JM,1256:JM,1260:JM,1198:JM,1265:JM,1202:JM,1269:JM,1207:JM,1274:JM,1211:JM,1149:JM,1278

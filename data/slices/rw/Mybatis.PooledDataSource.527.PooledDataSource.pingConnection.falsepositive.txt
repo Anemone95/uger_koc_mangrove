@@ -1,0 +1,32 @@
+[128, 125]
+128 :: CALL :: call :: Ljava/sql/ResultSet :: v65 = v62.executeQuery(v63)::JM,128
+1 :: ENTR :: entry :: null :: org.apache.ibatis.datasource.pooled.PooledDataSource.pingConnection(org.apache.ibatis.datasource.pooled.PooledConnection)::CD,6:CD,10:CD,14:CD,62:CD,278:CD,279
+6 :: CALL :: call :: Ljava/sql/Connection :: v6 = p1 $conn .getRealConnection()::JM,10:JM,14:CL,751
+10 :: CALL :: call :: Z :: v8 = v6.isClosed()::JM,10:JM,14
+14 :: PRED :: IF :: Z :: if (v8 == #(0)) goto 20::CD,278
+782 :: ENTR :: entry :: null :: org.apache.ibatis.datasource.pooled.PooledConnection.getTimeElapsedSinceLastUse()::CE,783:CD,786:CD,792:CD,793
+783 :: EXIT :: exit :: J :: org.apache.ibatis.datasource.pooled.PooledConnection.getTimeElapsedSinceLastUse()::JM,79
+786 :: CALL :: call :: J :: v4 = currentTimeMillis()::JM,792
+789 :: EXPR :: reference :: J :: v5 = p0 $this .lastUsedTimestamp::DD,792
+278 :: EXPR :: assign :: null :: PHI v32 = #(0), #(1)::DD,279
+279 :: EXPR :: assign :: null :: PHI v34 = v32, #(0)::DD,62
+792 :: EXPR :: assign :: Ljava/lang/Object :: v6 = v4 - v5::CF,793
+793 :: NORM :: compound :: J :: return v6::CF,783
+62 :: PRED :: IF :: Z :: if (v34 == #(0)) goto 370::CD,66
+63 :: EXPR :: reference :: Z :: v35 = p0 $this .poolPingEnabled::DD,66
+66 :: PRED :: IF :: Z :: if (v35 == #(0)) goto 370::CD,70
+67 :: EXPR :: reference :: I :: v36 = p0 $this .poolPingConnectionsNotUsedFor::DD,70
+70 :: PRED :: IF :: Z :: if (v36 < #(0)) goto 370::CD,71:CD,78:CD,79:CD,80
+71 :: CALL :: call :: J :: v38 = p1 $conn .getTimeElapsedSinceLastUse()::JM,79:CL,782
+75 :: EXPR :: reference :: I :: v39 = p0 $this .poolPingConnectionsNotUsedFor::DD,78
+78 :: EXPR :: assign :: J :: v40 = CONVERT I to J v39::CF,79
+79 :: EXPR :: assign :: Z :: v41 = v38 == v40::DD,80
+80 :: PRED :: IF :: Z :: if (v41 <= #(0)) goto 370::CD,117:CD,121:CD,128
+484 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .poolPingQuery = #(NO PING QUERY SET)::
+751 :: ENTR :: entry :: null :: org.apache.ibatis.datasource.pooled.PooledConnection.getRealConnection()::CE,752:CD,758
+752 :: EXIT :: exit :: Ljava/sql/Connection :: org.apache.ibatis.datasource.pooled.PooledConnection.getRealConnection()::JM,10:JM,14:JM,128:JM,121
+755 :: EXPR :: reference :: Ljava/sql/Connection :: v3 = p0 $this .realConnection::DD,758
+117 :: CALL :: call :: Ljava/sql/Connection :: v60 = p1 $conn .getRealConnection()::JM,128:JM,121:CL,751
+758 :: NORM :: compound :: Ljava/sql/Connection :: return v3::CF,752
+121 :: CALL :: call :: Ljava/sql/Statement :: v62 = v60.createStatement()::JM,128:JM,121
+125 :: EXPR :: reference :: Ljava/lang/String :: v63 = p0 $this .poolPingQuery::JM,128

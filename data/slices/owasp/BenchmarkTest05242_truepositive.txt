@@ -1,0 +1,19 @@
+[52, 59]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest05242.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,17:CD,22:CD,26:CD,30:CD,35:CD,40:CD,45:CD,49:CD,52:CD,73
+12 :: CALL :: call :: Ljava/lang/String :: v9 = v5.getTheParameter(#(foo))::JM,73:CL,173
+17 :: CALL :: call :: C :: v13 = #(ABC).charAt(#(2))::JM,22
+22 :: PRED :: IF :: null :: switch v13::CD,73
+26 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v16 = new java.lang.StringBuilder::JM,52
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v16.append(#({call verifyUserPassw...))::JM,52
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v20.append(v15)::JM,52
+40 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v22.append(#(')}))::JM,52
+45 :: CALL :: call :: Ljava/lang/String :: v27 = v25.toString()::JM,52
+49 :: CALL :: call :: Ljava/sql/Connection :: v29 = getSqlConnection()::JM,52
+52 :: CALL :: call :: Ljava/sql/CallableStatement :: v33 = v29.prepareCall(v27, #(1003), #(1007), #(2))::JM,52
+73 :: EXPR :: assign :: null :: PHI v15 = v9, #(bobs_your_uncle), v9, #(bobs_your_uncle)::CF,26:JM,52
+173 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::CE,174:CD,181:CD,186
+174 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::JM,73
+178 :: EXPR :: reference :: Ljavax/servlet/http/HttpServletRequest :: v4 = p0 $this .request::JM,186
+181 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getParameter(p1 $p )::JM,186
+186 :: NORM :: compound :: Ljava/lang/String :: return v6::CF,174

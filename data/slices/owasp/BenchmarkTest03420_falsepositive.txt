@@ -1,0 +1,17 @@
+[47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 61]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest03420.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,17:CD,21:CD,25:CD,30:CD,35:CD,40:CD,44:CD,47:CD,56:CD,80
+7 :: CALL :: call :: Ljava/lang/String :: v7 = p1 $request .getParameter(#(foo))::JM,80
+12 :: CALL :: call :: C :: v11 = #(ABC).charAt(#(1))::JM,17
+17 :: PRED :: IF :: null :: switch v11::CD,80
+21 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v15 = new java.lang.StringBuilder::JM,56
+25 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v15.append(#(SELECT * from USERS w...))::JM,56
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v19.append(v14)::JM,56
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v21.append(#('))::JM,56
+40 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::JM,56
+44 :: CALL :: call :: Ljava/sql/Connection :: v28 = getSqlConnection()::JM,56
+47 :: NORM :: declaration :: [Ljava/lang/String :: v30 = new java.lang.String[]::JM,56
+48 :: EXPR :: modify :: Ljava/lang/Object :: v30[#(0)] = #(Column1)::
+52 :: EXPR :: modify :: Ljava/lang/Object :: v30[#(1)] = #(Column2)::
+56 :: CALL :: call :: Ljava/sql/PreparedStatement :: v35 = v28.prepareStatement(v26, v30)::JM,56
+80 :: EXPR :: assign :: null :: PHI v14 = v7, #(bob), v7, #(bob's your uncle)::CF,21:JM,56

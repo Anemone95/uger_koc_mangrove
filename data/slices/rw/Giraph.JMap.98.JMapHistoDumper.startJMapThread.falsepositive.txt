@@ -1,0 +1,334 @@
+[8850, 8853, 8858, 8863, 8866, 8871, 8875]
+1 :: ENTR :: entry :: null :: org.apache.giraph.utils.JMapHistoDumper.startJMapThread()::CD,13
+13 :: CALL :: call :: Ljava/lang/Thread :: v8 = startThread(v4, #(jmap-dumper))::JM,6670:CL,6665
+203 :: ENTR :: entry :: null :: org.apache.giraph.utils.ThreadUtils.<clinit>()::CF,206:CD,207:CD,211
+206 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lorg/apache/giraph/utils/ThreadUtils>-><Primordial,Ljava/lang/Class>::JM,211:JM,207
+207 :: CALL :: call :: Lorg/apache/log4j/Logger :: v4 = getLogger(v2)::JM,211:JM,207
+211 :: EXPR :: modify :: Lorg/apache/log4j/Logger :: org.apache.giraph.utils.ThreadUtils.LOG = v4::
+224 :: ENTR :: entry :: null :: org.apache.giraph.utils.JMap.<clinit>()::CD,227
+227 :: EXPR :: modify :: Ljava/lang/String :: org.apache.giraph.utils.JMap.LIVE_HISTO_OPTION = #( -histo:live )::
+6665 :: ENTR :: entry :: null :: org.apache.giraph.utils.ThreadUtils.startThread(java.lang.Runnable,java.lang.String)::CD,6670:CD,6676:CD,6680
+6670 :: NORM :: declaration :: Ljava/lang/Thread :: v4 = new java.lang.Thread::
+6676 :: CALL :: call :: V :: v4.setDaemon(#(1))::
+6680 :: CALL :: call :: V :: v4.start()::
+7136 :: ENTR :: entry :: null :: org.apache.giraph.utils.JMapHistoDumper.1.run()::CD,7174:CD,7178
+7144 :: CALL :: call :: I :: v9 = access$1(v7)::JM,8960:JM,8903:JM,8846:CL,8167
+7151 :: CALL :: call :: Z :: v12 = access$2(v10)::JM,8903:JM,8846:CL,8176
+7155 :: CALL :: call :: V :: heapHistogramDump(v9, v12)::JM,8960:JM,8903:JM,8846:CL,8185
+7174 :: CALL :: call :: Z :: v5 = access$0(v3)::JM,7178:CL,8236
+7178 :: PRED :: IF :: Z :: if (v5 == #(0)) goto 4::CD,7144:CD,7151:CD,7155:CD,7174
+7578 :: EXIT :: exit :: Ljava/lang/Object :: java.nio.charset.Charset.3.run()::
+7607 :: NORM :: compound :: Ljava/lang/Object :: return #(null)::DD,7578
+7759 :: EXIT :: exit :: Ljava/lang/Object :: java.nio.charset.Charset.2.run()::
+7762 :: CALL :: call :: Ljava/util/Iterator :: v4 = access$1()::JM,7785:JM,7770
+7766 :: CALL :: call :: Ljava/lang/Object :: v9 = v4.next()::JM,7785:JM,7770
+7770 :: EXPR :: assign :: Ljava/lang/Object :: v10 = CHECKCAST v9::JM,7779:JM,7780:JM,7774
+7771 :: EXPR :: reference :: Ljava/lang/String :: v11 = p0 $this .val$charsetName::JM,7779:JM,7780:JM,7774
+7774 :: CALL :: call :: Ljava/nio/charset/Charset :: v13 = v10.charsetForName(v11)::JM,7779:JM,7780:JM,7774
+7779 :: PRED :: IF :: Z :: if (v13 == #(null)) goto 33::CD,7780:CD,7781:CD,7785:JM,7770
+7780 :: NORM :: compound :: Ljava/lang/Object :: return v13::DD,7759
+7781 :: CALL :: call :: Z :: v6 = v4.hasNext()::JM,7785:JM,7770
+7785 :: PRED :: IF :: Z :: if (v6 != #(0)) goto 8::CD,7766:CD,7770:CD,7774:CD,7779:CD,7786:JM,7785
+7786 :: NORM :: compound :: Ljava/lang/Object :: return #(null)::DD,7759
+8167 :: ENTR :: entry :: null :: org.apache.giraph.utils.JMapHistoDumper.access$1(org.apache.giraph.utils.JMapHistoDumper)::CE,8168:CD,8174
+8168 :: EXIT :: exit :: I :: org.apache.giraph.utils.JMapHistoDumper.access$1(org.apache.giraph.utils.JMapHistoDumper)::JM,8960:JM,8903:JM,8846
+8171 :: EXPR :: reference :: I :: v3 = p1 $null .linesToPrint::DD,8174
+8174 :: NORM :: compound :: I :: return v3::CF,8168
+8176 :: ENTR :: entry :: null :: org.apache.giraph.utils.JMapHistoDumper.access$2(org.apache.giraph.utils.JMapHistoDumper)::CE,8177:CD,8183
+8177 :: EXIT :: exit :: Z :: org.apache.giraph.utils.JMapHistoDumper.access$2(org.apache.giraph.utils.JMapHistoDumper)::JM,8903:JM,8846
+8180 :: EXPR :: reference :: Z :: v3 = p1 $null .liveObjectsOnly::DD,8183
+8183 :: NORM :: compound :: Z :: return v3::CF,8177
+8185 :: ENTR :: entry :: null :: org.apache.giraph.utils.JMap.heapHistogramDump(int,boolean)::CD,8192:JM,8960:JM,8903:JM,8846
+8192 :: CALL :: call :: V :: heapHistogramDump(p1 $numLines , p2 $liveObjectsOnly , v4)::JM,8960:JM,8903:JM,8846:CL,8840
+8236 :: ENTR :: entry :: null :: org.apache.giraph.utils.JMapHistoDumper.access$0(org.apache.giraph.utils.JMapHistoDumper)::CE,8237:CD,8243
+8237 :: EXIT :: exit :: Z :: org.apache.giraph.utils.JMapHistoDumper.access$0(org.apache.giraph.utils.JMapHistoDumper)::JM,7178
+8240 :: EXPR :: reference :: Z :: v3 = p1 $null .stop::DD,8243
+8243 :: NORM :: compound :: Z :: return v3::CF,8237
+8716 :: EXIT :: exit :: Ljava/util/Iterator :: java.nio.charset.Charset.access$1()::JM,7785:JM,7770
+8718 :: CALL :: call :: Ljava/util/Iterator :: v3 = providers()::JM,8721
+8721 :: NORM :: compound :: Ljava/util/Iterator :: return v3::DD,8716
+8840 :: ENTR :: entry :: null :: org.apache.giraph.utils.JMap.heapHistogramDump(int,boolean,java.io.PrintStream)::CD,8846:CD,8850:CD,8853:CD,8858:CD,8863:CD,8866:CD,8871:CD,8875:CD,8880:CD,8881:CD,8882:CD,8886:CD,8898:CD,8903:CD,8905:CD,8910:CD,8915:CD,8919:CD,8924:CD,8928:CD,8932:CD,8960:CD,8962:CD,8966:CD,8971:CD,8972:CD,8973:CD,8974
+8846 :: PRED :: IF :: Z :: if (p2 $liveObjectsOnly  == #(0)) goto 13::CD,8847:CD,8971
+8847 :: EXPR :: reference :: Ljava/lang/String :: v7 = org.apache.giraph.utils.JMap.LIVE_HISTO_OPTION::DD,8971
+8850 :: CALL :: call :: Ljava/lang/Runtime :: v10 = getRuntime()::
+8853 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v11 = new java.lang.StringBuilder::
+8858 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v11.append(v8)::
+8863 :: CALL :: call :: I :: v17 = getProcessId()::CL,9566
+8866 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v15.append(v17)::
+8871 :: CALL :: call :: Ljava/lang/String :: v21 = v19.toString()::
+8875 :: CALL :: call :: Ljava/lang/Process :: v23 = v10.exec(v21)::
+8880 :: NORM :: declaration :: Ljava/io/BufferedReader :: v24 = new java.io.BufferedReader::JM,8973:CF,8881
+8881 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v25 = new java.io.InputStreamReader::
+8882 :: CALL :: call :: Ljava/io/InputStream :: v27 = v23.getInputStream()::
+8886 :: CALL :: call :: Ljava/nio/charset/Charset :: v29 = defaultCharset()::
+8898 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v32 = new java.lang.StringBuilder::
+8903 :: PRED :: IF :: Z :: if (p2 $liveObjectsOnly  == #(0)) goto 88::CD,8972
+8905 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v32.append(v37)::
+8910 :: CALL :: call :: Ljava/lang/StringBuilder :: v42 = v39.append(#( dump at ))::
+8915 :: NORM :: declaration :: Ljava/util/Date :: v43 = new java.util.Date::
+8919 :: CALL :: call :: Ljava/lang/StringBuilder :: v46 = v42.append(v43)::
+8924 :: CALL :: call :: Ljava/lang/String :: v48 = v46.toString()::
+8928 :: CALL :: call :: V :: p3 $printStream .println(v48)::
+8932 :: CALL :: call :: Ljava/lang/String :: v51 = v24.readLine()::JM,8973
+8937 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v53 = new java.lang.StringBuilder::
+8942 :: CALL :: call :: Ljava/lang/StringBuilder :: v57 = v53.append(v65)::
+8947 :: CALL :: call :: Ljava/lang/String :: v59 = v57.toString()::
+8951 :: CALL :: call :: V :: p3 $printStream .println(v59)::
+8955 :: CALL :: call :: Ljava/lang/String :: v62 = v24.readLine()::JM,8973
+8959 :: EXPR :: assign :: Ljava/lang/Object :: v64 = v66 + #(1)::DD,8974:CF,8973
+8960 :: PRED :: IF :: Z :: if (v66 >= p1 $numLines ) goto 169::CD,8961
+8961 :: PRED :: IF :: Z :: if (v65 != #(null)) goto 126::CD,8937:CD,8942:CD,8947:CD,8951:CD,8955:CD,8959:CD,8960:CD,8973:CD,8974
+8962 :: CALL :: call :: V :: v24.close()::
+8966 :: CALL :: call :: V :: v68.printStackTrace()::
+8971 :: EXPR :: assign :: null :: PHI v8 = v7, #( -histo )::CF,8850
+8972 :: EXPR :: assign :: null :: PHI v37 = #(histo:live), #(histo)::
+8973 :: EXPR :: assign :: null :: PHI v65 = v51, v62::CF,8974:DD,8961
+8974 :: EXPR :: assign :: null :: PHI v66 = #(0), v64::DD,8959:DD,8960
+9500 :: EXIT :: exit :: Ljava/util/Iterator :: java.nio.charset.Charset.providers()::JM,8721
+9502 :: NORM :: declaration :: Ljava/nio/charset/Charset$1 :: v2 = new java.nio.charset.Charset$1::DD,9506
+9506 :: NORM :: compound :: Ljava/util/Iterator :: return v2::DD,9500
+9566 :: ENTR :: entry :: null :: org.apache.giraph.utils.JMap.getProcessId()::CF,9569:CF,9567:CD,9572:CD,9576:CD,9581:CD,9593:CD,9597:CD,9598
+9567 :: EXIT :: exit :: I :: org.apache.giraph.utils.JMap.getProcessId()::
+9569 :: CALL :: call :: Ljava/lang/management/RuntimeMXBean :: v3 = getRuntimeMXBean()::JM,9587:JM,9572:JM,9576:JM,9581:JM,9598:JM,9582
+9572 :: CALL :: call :: Ljava/lang/String :: v5 = v3.getName()::JM,9587:JM,9572:JM,9576:JM,9581:JM,9598:JM,9582
+9576 :: CALL :: call :: Z :: v8 = v5.contains(#(@))::JM,9587:JM,9576:JM,9581:JM,9598:JM,9582
+9581 :: PRED :: IF :: Z :: if (v8 == #(0)) goto 31::CF,9598:CD,9582:CD,9587:JM,9576:JM,9581
+9582 :: CALL :: call :: I :: v11 = v5.indexOf(#(@))::JM,9587:JM,9576:JM,9581:JM,9598:JM,9582
+9587 :: CALL :: call :: Ljava/lang/String :: v13 = v5.substring(#(0), v11)::JM,9587:JM,9576:JM,9581:JM,9598:JM,9582
+9593 :: CALL :: call :: I :: v16 = parseInt(v14)::JM,9597
+9597 :: NORM :: compound :: I :: return v16::CF,9567
+9598 :: EXPR :: assign :: null :: PHI v14 = v5, v13::JM,9597
+9626 :: EXIT :: exit :: Ljava/nio/charset/Charset :: java.nio.charset.Charset.defaultCharset()::
+9630 :: EXPR :: reference :: Ljava/nio/charset/Charset :: v3 = java.nio.charset.Charset.defaultCharset::DD,9632
+9632 :: PRED :: IF :: Z :: if (v3 != #(null)) goto 50::CF,9633:CD,9638:CD,9642:CD,9643:CD,9647:CD,9656:CD,9659
+9633 :: NORM :: declaration :: Lsun/security/action/GetPropertyAction :: v6 = new sun.security.action.GetPropertyAction::
+9638 :: CALL :: call :: Ljava/lang/Object :: v10 = doPrivileged(v6)::JM,9642
+9642 :: EXPR :: assign :: Ljava/lang/Object :: v11 = CHECKCAST v10::JM,10544:JM,11218:JM,11193:JM,11209:JM,11178:JM,11198
+9643 :: CALL :: call :: Ljava/nio/charset/Charset :: v13 = lookup(v11)::JM,10544:JM,11218:JM,11193:JM,11209:JM,11178:JM,11198:JM,9649:JM,9647
+9647 :: PRED :: IF :: Z :: if (v13 == #(null)) goto 44::CD,9649:CD,9650:CD,9655:JM,10544:JM,11218:JM,11193:JM,11209:JM,11178:JM,11198
+9649 :: NORM :: compound :: Ljava/nio/charset/Charset :: return v13::DD,9626
+9650 :: CALL :: call :: Ljava/nio/charset/Charset :: v16 = forName(#(UTF-8))::JM,10544:JM,11218:JM,11193:JM,11209:JM,11178:JM,11198:JM,9655
+9655 :: NORM :: compound :: Ljava/nio/charset/Charset :: return v16::DD,9626
+9656 :: EXPR :: reference :: Ljava/nio/charset/Charset :: v5 = java.nio.charset.Charset.defaultCharset::DD,9659
+9659 :: NORM :: compound :: Ljava/nio/charset/Charset :: return v5::DD,9626
+10417 :: CALL :: call :: Ljava/lang/ClassLoader :: v6 = getSystemClassLoader()::
+10522 :: EXIT :: exit :: Ljava/nio/charset/Charset :: java.nio.charset.Charset.lookup(java.lang.String)::JM,9649:JM,9647:JM,10578
+10532 :: EXPR :: reference :: [Ljava/lang/Object :: v4 = java.nio.charset.Charset.cache1::DD,10534
+10534 :: PRED :: IF :: Z :: if (v4 == #(null)) goto 40::CD,10539:CD,10544:CD,10551:CD,10555:JM,11218:JM,11193:JM,11209:JM,11178:JM,11198
+10535 :: EXPR :: reference :: Ljava/lang/Object :: v6 = v4[#(0)]::JM,10544:JM,11218:JM,11193:JM,11209:JM,11178:JM,11198
+10539 :: CALL :: call :: Z :: v8 = p1 $charsetName .equals(v6)::JM,10544:JM,11218:JM,11193:JM,11209:JM,11178:JM,11198
+10544 :: PRED :: IF :: Z :: if (v8 == #(0)) goto 40::CD,10549:CD,10550:CD,10551:CD,10555:JM,10544:JM,11218:JM,11193:JM,11209:JM,11178:JM,11198
+10545 :: EXPR :: reference :: Ljava/lang/Object :: v12 = v4[#(1)]::DD,10549
+10549 :: EXPR :: assign :: Ljava/lang/Object :: v13 = CHECKCAST v12::CF,10550
+10550 :: NORM :: compound :: Ljava/nio/charset/Charset :: return v13::DD,10522
+10551 :: CALL :: call :: Ljava/nio/charset/Charset :: v10 = lookup2(p1 $charsetName )::JM,10544:JM,11218:JM,11193:JM,11209:JM,11178:JM,11198:JM,10555
+10555 :: NORM :: compound :: Ljava/nio/charset/Charset :: return v10::DD,10522
+10570 :: EXIT :: exit :: Ljava/nio/charset/Charset :: java.nio.charset.Charset.forName(java.lang.String)::JM,9655
+10573 :: CALL :: call :: Ljava/nio/charset/Charset :: v4 = lookup(p1 $charsetName )::JM,10544:JM,11218:JM,11193:JM,11209:JM,11178:JM,11198:JM,10578
+10578 :: NORM :: compound :: Ljava/nio/charset/Charset :: return v4::DD,10570
+11163 :: EXIT :: exit :: Ljava/nio/charset/Charset :: java.nio.charset.Charset.lookup2(java.lang.String)::JM,10555
+11166 :: EXPR :: reference :: [Ljava/lang/Object :: v3 = java.nio.charset.Charset.cache2::DD,11168:DD,11183
+11168 :: PRED :: IF :: Z :: if (v3 == #(null)) goto 35::CD,11173:CD,11178:CD,11191:CD,11193:CD,11198:CD,11218
+11169 :: EXPR :: reference :: Ljava/lang/Object :: v6 = v3[#(0)]::JM,11218:JM,11193:JM,11209:JM,11178:JM,11198
+11173 :: CALL :: call :: Z :: v8 = p1 $charsetName .equals(v6)::JM,10544:JM,11218:JM,11193:JM,11209:JM,11178:JM,11198
+11178 :: PRED :: IF :: Z :: if (v8 == #(0)) goto 35::CD,11179:CD,11181:CD,11183:CD,11189:CD,11190:CD,11191:CD,11193:CD,11198:CD,11218
+11179 :: EXPR :: reference :: [Ljava/lang/Object :: v19 = java.nio.charset.Charset.cache1::CF,11181
+11181 :: EXPR :: modify :: [Ljava/lang/Object :: java.nio.charset.Charset.cache2 = v19::
+11183 :: EXPR :: modify :: [Ljava/lang/Object :: java.nio.charset.Charset.cache1 = v3::
+11185 :: EXPR :: reference :: Ljava/lang/Object :: v21 = v3[#(1)]::DD,11189
+11189 :: EXPR :: assign :: Ljava/lang/Object :: v22 = CHECKCAST v21::CF,11190
+11190 :: NORM :: compound :: Ljava/nio/charset/Charset :: return v22::DD,11163
+11191 :: EXPR :: reference :: Ljava/nio/charset/spi/CharsetProvider :: v9 = java.nio.charset.Charset.standardProvider::JM,11218:JM,11193:JM,11198
+11193 :: CALL :: call :: Ljava/nio/charset/Charset :: v11 = v9.charsetForName(p1 $charsetName )::JM,11218:JM,11193:JM,11198:JM,10544:JM,11209:JM,11178
+11198 :: PRED :: IF :: Z :: if (v11 != #(null)) goto 67::CF,11218:CD,11199:CD,11203:CD,11209:CD,11213
+11199 :: CALL :: call :: Ljava/nio/charset/Charset :: v13 = lookupExtendedCharset(p1 $charsetName )::JM,11218:JM,11203
+11203 :: PRED :: IF :: Z :: if (v13 != #(null)) goto 67::CF,11218:CD,11204:CD,11208:CD,11209:CD,11213
+11204 :: CALL :: call :: Ljava/nio/charset/Charset :: v15 = lookupViaProviders(p1 $charsetName )::JM,11218:JM,11208
+11208 :: PRED :: IF :: Z :: if (v15 == #(null)) goto 73::CF,11218:CD,11209:CD,11213:CD,11214:CD,11217
+11209 :: CALL :: call :: V :: cache(p1 $charsetName , v17)::JM,10544:JM,11218:JM,11193:JM,11209:JM,11178:JM,11198
+11213 :: NORM :: compound :: Ljava/nio/charset/Charset :: return v17::DD,11163
+11214 :: CALL :: call :: V :: checkName(p1 $charsetName )::
+11217 :: NORM :: compound :: Ljava/nio/charset/Charset :: return #(null)::DD,11163
+11218 :: EXPR :: assign :: null :: PHI v17 = v11, v13, v15::JM,11218:JM,11209:JM,11178:JM,11198:DD,11213:JM,10544:JM,11193
+11255 :: CALL :: call :: Ljava/lang/String :: v5 = valueOf(p1 $charsetName )::
+11540 :: PRED :: IF :: Z :: if (p3 $handler  == #(null)) goto 50::CF,11541:CD,11544:JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11541 :: CALL :: call :: Ljava/lang/SecurityManager :: v11 = getSecurityManager()::JM,11544
+11544 :: PRED :: IF :: Z :: if (v11 == #(null)) goto 50::CD,11545:JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11545 :: CALL :: call :: V :: p0 $this .checkSpecifyHandler(v11)::
+11549 :: CALL :: call :: I :: v14 = p2 $spec .length()::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11554 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v21 + #(-1)::DD,11813
+11555 :: PRED :: IF :: Z :: if (v21 <= #(0)) goto 89::CF,11814:CD,11556:CD,11557:CD,11562
+11556 :: EXPR :: assign :: Ljava/lang/Object :: v16 = v21 - #(1)::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11557 :: CALL :: call :: C :: v18 = p2 $spec .charAt(v16)::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11562 :: PRED :: IF :: Z :: if (v18 <= #(32)) goto 58::CD,11554:CD,11555:CD,11813:CD,11814
+11564 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v25 + #(1)::DD,11814
+11565 :: PRED :: IF :: Z :: if (v25 >= v21) goto 111::CD,11566:CD,11571:JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11566 :: CALL :: call :: C :: v23 = p2 $spec .charAt(v25)::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11571 :: PRED :: IF :: Z :: if (v23 <= #(32)) goto 82::CD,11564:CD,11565:CD,11814:JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11572 :: CALL :: call :: Z :: v29 = p2 $spec .regionMatches(#(1), v25, #(url:), #(0), #(4))::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11581 :: PRED :: IF :: Z :: if (v29 == #(0)) goto 123::CF,11815:CD,11582
+11582 :: EXPR :: assign :: Ljava/lang/Object :: v30 = v25 + #(4)::DD,11815
+11583 :: CALL :: call :: I :: v33 = p2 $spec .length()::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11587 :: PRED :: IF :: Z :: if (v31 >= v33) goto 147::CF,11816:CD,11588:CD,11593:JM,11587:JM,11813:JM,11622:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11588 :: CALL :: call :: C :: v35 = p2 $spec .charAt(v31)::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11593 :: PRED :: IF :: Z :: if (v35 != #(35)) goto 147::CF,11816
+11595 :: PRED :: IF :: Z :: if (v39 != #(58)) goto 192::CD,11596:CD,11602:CD,11606:CD,11611:CD,11614:CD,11615:CD,11817:CD,11818:CD,11819:JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11581
+11596 :: CALL :: call :: Ljava/lang/String :: v45 = p2 $spec .substring(v31, v43)::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11602 :: CALL :: call :: Ljava/lang/String :: v47 = v45.toLowerCase()::JM,11819:JM,11611
+11606 :: CALL :: call :: Z :: v49 = p0 $this .isValidProtocol(v47)::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581:JM,11819
+11611 :: PRED :: IF :: Z :: if (v49 == #(0)) goto 224::CF,11818:CD,11612:CD,11819
+11612 :: EXPR :: assign :: Ljava/lang/Object :: v50 = v43 + #(1)::DD,11818
+11614 :: EXPR :: assign :: Ljava/lang/Object :: v42 = v43 + #(1)::DD,11817
+11615 :: PRED :: IF :: Z :: if (v37 != #(0)) goto 224::CF,11818:CD,11616:CD,11819
+11616 :: PRED :: IF :: Z :: if (v43 >= v21) goto 224::CF,11818:CD,11617:CD,11622:CD,11819:JM,11587:JM,11813:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11617 :: CALL :: call :: C :: v39 = p2 $spec .charAt(v43)::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11622 :: PRED :: IF :: Z :: if (v39 != #(47)) goto 154::CF,11818:CD,11595
+11623 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .protocol = v52::
+11626 :: PRED :: IF :: Z :: if (p1 $context  == #(null)) goto 344::CF,11822:CD,11627
+11627 :: PRED :: IF :: Z :: if (v52 == #(null)) goto 249::CD,11631:CD,11636:CD,11637:CD,11644:CD,11654:CD,11820:CD,11821:CD,11822
+11628 :: EXPR :: reference :: Ljava/lang/String :: v53 = p1 $context .protocol::JM,11636
+11631 :: CALL :: call :: Z :: v55 = v52.equalsIgnoreCase(v53)::JM,11636
+11636 :: PRED :: IF :: Z :: if (v55 == #(0)) goto 344::CF,11822:CD,11637:CD,11644:CD,11654:CD,11820:CD,11821
+11637 :: PRED :: IF :: Z :: if (p3 $handler  != #(null)) goto 258::CF,11820
+11638 :: EXPR :: reference :: Ljava/net/URLStreamHandler :: v56 = p1 $context .handler::DD,11820
+11641 :: EXPR :: reference :: Ljava/lang/String :: v58 = p1 $context .path::DD,11644
+11644 :: PRED :: IF :: Z :: if (v58 == #(null)) goto 281::CF,11821:CD,11648:CD,11653
+11645 :: EXPR :: reference :: Ljava/lang/String :: v59 = p1 $context .path::JM,11648:JM,11653
+11648 :: CALL :: call :: Z :: v62 = v59.startsWith(#(/))::JM,11648:JM,11653
+11653 :: PRED :: IF :: Z :: if (v62 == #(0)) goto 281::CF,11821
+11654 :: PRED :: IF :: Z :: if (v63 != #(null)) goto 344::CF,11822
+11655 :: EXPR :: reference :: Ljava/lang/String :: v64 = p1 $context .protocol::DD,11658
+11658 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .protocol = v64::
+11702 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v100 = new java.lang.StringBuilder::
+11707 :: CALL :: call :: Ljava/lang/StringBuilder :: v104 = v100.append(p2 $spec )::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11712 :: CALL :: call :: Ljava/lang/String :: v106 = v104.toString()::JM,11762:JM,11763
+11721 :: PRED :: IF :: Z :: if (v71 != #(null)) goto 420::CD,11725
+11722 :: EXPR :: reference :: Ljava/lang/String :: v75 = p0 $this .protocol::JM,12864:JM,12897:JM,12723:JM,12900:JM,12903:JM,12730:JM,12874:JM,12827
+11725 :: CALL :: call :: Ljava/net/URLStreamHandler :: v77 = getURLStreamHandler(v75)::JM,12864:JM,12897:JM,12723:JM,12900:JM,12903:JM,12730:JM,12874:JM,12827
+11731 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v90 = new java.lang.StringBuilder::
+11736 :: EXPR :: reference :: Ljava/lang/String :: v93 = p0 $this .protocol::
+11739 :: CALL :: call :: Ljava/lang/StringBuilder :: v95 = v90.append(v93)::
+11744 :: CALL :: call :: Ljava/lang/String :: v97 = v95.toString()::
+11756 :: CALL :: call :: I :: v80 = p2 $spec .indexOf(#(35), v51)::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11762 :: PRED :: IF :: Z :: if (v80 < #(0)) goto 458::CD,11763:CD,11764
+11763 :: EXPR :: assign :: Ljava/lang/Object :: v81 = v80 + #(1)::JM,11762:JM,11571:JM,11587:JM,11763:JM,11813:JM,11622:JM,11593:JM,11562:JM,11611:JM,11595:JM,11581:JM,11626:JM,11820:JM,11822:JM,11540:JM,11637
+11764 :: CALL :: call :: Ljava/lang/String :: v83 = p2 $spec .substring(v81, v21)::JM,11587:JM,11813:JM,11622:JM,11593:JM,11626:JM,11562:JM,11595:JM,11820:JM,11822:JM,11762:JM,11571:JM,11763:JM,11540:JM,11637:JM,11611:JM,11581
+11813 :: EXPR :: assign :: null :: PHI v21 = v14, v20::DD,11554:DD,11555:DD,11556:DD,11565:DD,11616:JM,11762:JM,11571:JM,11587:JM,11763:JM,11813:JM,11622:JM,11593:JM,11562:JM,11611:JM,11595:JM,11581
+11814 :: EXPR :: assign :: null :: PHI v25 = #(0), #(0), v24::DD,11564:DD,11565:JM,11762:JM,11571:JM,11587:JM,11763:JM,11813:JM,11622:JM,11593:JM,11562:JM,11611:JM,11595:JM,11581:DD,11582:DD,11815
+11815 :: EXPR :: assign :: null :: PHI v31 = v25, v30::DD,11587:JM,11762:JM,11571:JM,11763:JM,11813:JM,11622:JM,11593:JM,11562:JM,11611:JM,11595:JM,11581:DD,11817:DD,11818:JM,11626:JM,11820:JM,11822:JM,11540:JM,11637
+11816 :: EXPR :: assign :: null :: PHI v37 = #(0), #(0), #(1)::DD,11615
+11817 :: EXPR :: assign :: null :: PHI v43 = v31, v42::JM,11762:JM,11571:JM,11587:JM,11763:JM,11813:JM,11622:JM,11593:JM,11562:JM,11611:JM,11595:JM,11581:DD,11612:DD,11614:DD,11616:CF,11615
+11818 :: EXPR :: assign :: null :: PHI v51 = v31, v50, v31, v31, v31::CF,11819:JM,11762:JM,11571:JM,11587:JM,11763:JM,11813:JM,11622:JM,11593:JM,11562:JM,11611:JM,11595:JM,11581
+11819 :: EXPR :: assign :: null :: PHI v52 = #(null), v47, #(null), #(null), #(null)::DD,11623:DD,11627:JM,11636:DD,11821
+11820 :: EXPR :: assign :: null :: PHI v57 = p3 $handler , v56::DD,11822
+11821 :: EXPR :: assign :: null :: PHI v63 = v52, v52, #(null)::DD,11654
+11822 :: EXPR :: assign :: null :: PHI v71 = p3 $handler , p3 $handler , v57, v57::DD,11721
+12170 :: EXIT :: exit :: Ljava/nio/charset/Charset :: java.nio.charset.Charset.lookupExtendedCharset(java.lang.String)::JM,11218:JM,11203
+12176 :: EXPR :: reference :: Z :: v5 = java.nio.charset.Charset.extendedProviderProbed::DD,12178
+12178 :: PRED :: IF :: Z :: if (v5 != #(0)) goto 21::CD,12179:CD,12181
+12179 :: CALL :: call :: V :: probeExtendedProvider()::
+12181 :: EXPR :: modify :: Z :: java.nio.charset.Charset.extendedProviderProbed = #(1)::
+12183 :: EXPR :: reference :: Ljava/nio/charset/spi/CharsetProvider :: v9 = java.nio.charset.Charset.extendedProvider::DD,12189:JM,12198:JM,12190
+12189 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 46::CD,12190:CD,12198
+12190 :: CALL :: call :: Ljava/nio/charset/Charset :: v13 = v9.charsetForName(p1 $charsetName )::JM,12198:JM,12190
+12196 :: NORM :: compound :: Ljava/nio/charset/Charset :: return v14::DD,12170
+12198 :: EXPR :: assign :: null :: PHI v14 = v13, #(null)::CF,12196
+12217 :: EXIT :: exit :: Ljava/nio/charset/Charset :: java.nio.charset.Charset.lookupViaProviders(java.lang.String)::JM,11218:JM,11208
+12220 :: CALL :: call :: Z :: v4 = isBooted()::JM,12223
+12223 :: PRED :: IF :: Z :: if (v4 != #(0)) goto 8::CD,12224:CD,12225:CD,12227:CD,12231
+12224 :: NORM :: compound :: Ljava/nio/charset/Charset :: return #(null)::DD,12217
+12225 :: EXPR :: reference :: Ljava/lang/ThreadLocal :: v6 = java.nio.charset.Charset.gate::JM,12231
+12227 :: CALL :: call :: Ljava/lang/Object :: v8 = v6.get()::JM,12231
+12231 :: PRED :: IF :: Z :: if (v8 == #(null)) goto 19::CD,12232:CD,12233:CD,12235:CD,12237:CD,12241:CD,12246:CD,12250:CD,12251:CD,12253:CD,12257
+12232 :: NORM :: compound :: Ljava/nio/charset/Charset :: return #(null)::DD,12217
+12233 :: EXPR :: reference :: Ljava/lang/ThreadLocal :: v10 = java.nio.charset.Charset.gate::
+12235 :: EXPR :: reference :: Ljava/lang/ThreadLocal :: v11 = java.nio.charset.Charset.gate::
+12237 :: CALL :: call :: V :: v10.set(v11)::
+12241 :: NORM :: declaration :: Ljava/nio/charset/Charset$2 :: v13 = new java.nio.charset.Charset$2::
+12246 :: CALL :: call :: Ljava/lang/Object :: v16 = doPrivileged(v13)::JM,12250
+12250 :: EXPR :: assign :: Ljava/lang/Object :: v17 = CHECKCAST v16::DD,12257
+12251 :: EXPR :: reference :: Ljava/lang/ThreadLocal :: v21 = java.nio.charset.Charset.gate::
+12253 :: CALL :: call :: V :: v21.set(#(null))::
+12257 :: NORM :: compound :: Ljava/nio/charset/Charset :: return v17::DD,12217
+12258 :: EXPR :: reference :: Ljava/lang/ThreadLocal :: v19 = java.nio.charset.Charset.gate::
+12260 :: CALL :: call :: V :: v19.set(#(null))::
+12280 :: CALL :: call :: I :: v4 = p1 $s .length()::JM,12326
+12284 :: CALL :: call :: Z :: v7 = atBugLevel(#(1.4))::
+12297 :: CALL :: call :: C :: v10 = p1 $s .charAt(v23)::JM,12326
+12325 :: EXPR :: assign :: Ljava/lang/Object :: v22 = v23 + #(1)::DD,12328
+12326 :: PRED :: IF :: Z :: if (v23 < v4) goto 33::CD,12297:CD,12325:CD,12328:JM,12326
+12328 :: EXPR :: assign :: null :: PHI v23 = #(0), v22::DD,12325:DD,12326
+12702 :: CALL :: call :: V :: p1 $sm .checkPermission(v4)::
+12716 :: EXPR :: reference :: Ljava/util/Hashtable :: v3 = java.net.URL.handlers::JM,12723
+12718 :: CALL :: call :: Ljava/lang/Object :: v5 = v3.get(p1 $protocol )::JM,12723:JM,12864:JM,12897:JM,12900:JM,12903:JM,12730:JM,12874:JM,12827
+12723 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST v5::DD,12724:DD,12897
+12724 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 315::CD,12725:CD,12727:CD,12735:CD,12857:CD,12859:CD,12864:CD,12865:CD,12897:CD,12898:CD,12902
+12725 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v9 = java.net.URL.factory::DD,12727
+12727 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 36::CF,12897:CD,12728:CD,12730:CD,12898
+12728 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v10 = java.net.URL.factory::JM,12897:JM,12730
+12730 :: CALL :: call :: Ljava/net/URLStreamHandler :: v12 = v10.createURLStreamHandler(p1 $protocol )::JM,12897:JM,12730:JM,12864:JM,12723:JM,12900:JM,12903:JM,12874:JM,12827
+12735 :: PRED :: IF :: Z :: if (v14 != #(null)) goto 233::CF,12902:CD,12736:CD,12742:CD,12746:CD,12747:CD,12766:CD,12767:CD,12775:CD,12780:CD,12784:CD,12848:CD,12901
+12736 :: NORM :: declaration :: Lsun/security/action/GetPropertyAction :: v16 = new sun.security.action.GetPropertyAction::
+12742 :: CALL :: call :: Ljava/lang/Object :: v21 = doPrivileged(v16)::JM,12746
+12746 :: EXPR :: assign :: Ljava/lang/Object :: v22 = CHECKCAST v21::DD,12747
+12747 :: PRED :: IF :: Z :: if (v22 == #()) goto 88::CF,12748:CD,12749:CD,12757:CD,12762
+12748 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v23 = new java.lang.StringBuilder::
+12749 :: CALL :: call :: Ljava/lang/String :: v25 = valueOf(v22)::
+12757 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v23.append(#(|))::
+12762 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::
+12766 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v33 = new java.lang.StringBuilder::
+12767 :: CALL :: call :: Ljava/lang/String :: v35 = valueOf(v32)::
+12775 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v33.append(#(sun.net.www.protocol))::
+12780 :: CALL :: call :: Ljava/lang/String :: v41 = v39.toString()::
+12784 :: NORM :: declaration :: Ljava/util/StringTokenizer :: v42 = new java.util.StringTokenizer::JM,12853
+12791 :: CALL :: call :: Ljava/lang/String :: v47 = v42.nextToken()::
+12795 :: CALL :: call :: Ljava/lang/String :: v49 = v47.trim()::
+12799 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v50 = new java.lang.StringBuilder::JM,12900:JM,12827
+12800 :: CALL :: call :: Ljava/lang/String :: v52 = valueOf(v49)::
+12808 :: CALL :: call :: Ljava/lang/StringBuilder :: v56 = v50.append(#(.))::JM,12900:JM,12827
+12813 :: CALL :: call :: Ljava/lang/StringBuilder :: v58 = v56.append(p1 $protocol )::JM,12900:JM,12827:JM,12864:JM,12897:JM,12723:JM,12903:JM,12730:JM,12874
+12818 :: CALL :: call :: Ljava/lang/StringBuilder :: v61 = v58.append(#(.Handler))::JM,12864:JM,12900:JM,12903:JM,12827
+12823 :: CALL :: call :: Ljava/lang/String :: v63 = v61.toString()::JM,12900:JM,12827
+12827 :: CALL :: call :: Ljava/lang/Class :: v65 = forName(v63)::JM,12900:JM,12827
+12832 :: CALL :: call :: Ljava/lang/ClassLoader :: v68 = getSystemClassLoader()::JM,12900
+12836 :: CALL :: call :: Ljava/lang/Class :: v70 = v68.loadClass(v63)::JM,12900:JM,12827
+12841 :: PRED :: IF :: Z :: if (v72 == #(null)) goto 222::CF,12901:CD,12842:CD,12846
+12842 :: CALL :: call :: Ljava/lang/Object :: v75 = v72.newInstance()::JM,12842:JM,12846
+12846 :: EXPR :: assign :: Ljava/lang/Object :: v76 = CHECKCAST v75::DD,12901
+12848 :: PRED :: IF :: Z :: if (v77 != #(null)) goto 233::CF,12902:CD,12849:CD,12853
+12849 :: CALL :: call :: Z :: v45 = v42.hasMoreTokens()::JM,12853
+12853 :: PRED :: IF :: Z :: if (v45 != #(0)) goto 127::CF,12902:CD,12791:CD,12795:CD,12799:CD,12800:CD,12808:CD,12813:CD,12818:CD,12823:CD,12827:CD,12841:CD,12848:CD,12900:CD,12901
+12857 :: EXPR :: reference :: Ljava/util/Hashtable :: v82 = java.net.URL.handlers::JM,12864
+12859 :: CALL :: call :: Ljava/lang/Object :: v84 = v82.get(p1 $protocol )::JM,12864:JM,12897:JM,12723:JM,12900:JM,12903:JM,12730:JM,12874:JM,12827
+12864 :: EXPR :: assign :: Ljava/lang/Object :: v85 = CHECKCAST v84::DD,12865:DD,12903
+12865 :: PRED :: IF :: Z :: if (v85 == #(null)) goto 265::CD,12868:CD,12879:CD,12880:CD,12903:CD,12904
+12868 :: PRED :: IF :: Z :: if (v15 != #(0)) goto 287::CF,12903:CD,12869:CD,12871
+12869 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v86 = java.net.URL.factory::DD,12871
+12871 :: PRED :: IF :: Z :: if (v86 == #(null)) goto 287::CF,12903:CD,12872:CD,12874
+12872 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v87 = java.net.URL.factory::JM,12903:JM,12874
+12874 :: CALL :: call :: Ljava/net/URLStreamHandler :: v89 = v87.createURLStreamHandler(p1 $protocol )::JM,12903:JM,12874:JM,12864:JM,12897:JM,12723:JM,12900:JM,12730:JM,12827
+12879 :: PRED :: IF :: Z :: if (v90 == #(null)) goto 294::CF,12904
+12880 :: PRED :: IF :: Z :: if (v91 == #(null)) goto 307::CD,12881:CD,12883
+12881 :: EXPR :: reference :: Ljava/util/Hashtable :: v92 = java.net.URL.handlers::
+12883 :: CALL :: call :: Ljava/lang/Object :: v94 = v92.put(p1 $protocol , v91)::JM,12864:JM,12897:JM,12723:JM,12900:JM,12903:JM,12730:JM,12874:JM,12827
+12897 :: EXPR :: assign :: null :: PHI v14 = v6, v12::CF,12898:DD,12735:DD,12901:DD,12902
+12898 :: EXPR :: assign :: null :: PHI v15 = #(0), #(1)::DD,12868:CF,12735
+12900 :: EXPR :: assign :: null :: PHI v72 = v65, #(null), v70::DD,12841:JM,12842:JM,12846
+12901 :: EXPR :: assign :: null :: PHI v77 = v14, v77, v76, v77::DD,12848:DD,12901:DD,12902
+12902 :: EXPR :: assign :: null :: PHI v80 = v14, v77, v77::DD,12904
+12903 :: EXPR :: assign :: null :: PHI v90 = v85, v85, v89::DD,12879:DD,12904
+12904 :: EXPR :: assign :: null :: PHI v91 = v80, v90::DD,12880:JM,12864:JM,12897:JM,12723:JM,12900:JM,12903:JM,12827
+13217 :: NORM :: declaration :: Ljava/nio/charset/Charset$3 :: v2 = new java.nio.charset.Charset$3::
+13221 :: CALL :: call :: Ljava/lang/Object :: v5 = doPrivileged(v2)::
+13232 :: EXPR :: reference :: Ljava/lang/String :: v3 = java.nio.charset.Charset.bugLevel::DD,13234
+13234 :: PRED :: IF :: Z :: if (v3 != #(null)) goto 45::CF,13235:CD,13238
+13235 :: CALL :: call :: Z :: v6 = isBooted()::JM,13238
+13238 :: PRED :: IF :: Z :: if (v6 != #(0)) goto 14::CF,13240:CD,13245:CD,13249:CD,13250:CD,13252:CD,13254
+13240 :: NORM :: declaration :: Lsun/security/action/GetPropertyAction :: v8 = new sun.security.action.GetPropertyAction::
+13245 :: CALL :: call :: Ljava/lang/Object :: v12 = doPrivileged(v8)::JM,13249
+13249 :: EXPR :: assign :: Ljava/lang/Object :: v13 = CHECKCAST v12::CF,13250
+13250 :: EXPR :: modify :: Ljava/lang/String :: java.nio.charset.Charset.bugLevel = v13::
+13252 :: EXPR :: reference :: Ljava/lang/String :: v14 = java.nio.charset.Charset.bugLevel::DD,13254
+13254 :: PRED :: IF :: Z :: if (v14 != #(null)) goto 45::CD,13255
+13255 :: EXPR :: modify :: Ljava/lang/String :: java.nio.charset.Charset.bugLevel = #()::
+13291 :: CALL :: call :: Ljava/lang/String :: v5 = valueOf(p1 $charsetName )::

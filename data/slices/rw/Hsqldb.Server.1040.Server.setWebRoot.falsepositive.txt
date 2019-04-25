@@ -1,0 +1,28 @@
+[10, 15]
+1 :: ENTR :: entry :: null :: org.hsqldb.server.Server.setWebRoot(java.lang.String)::CD,6:CD,10:CD,15
+11777 :: EXPR :: reference :: Ljava/lang/String :: v9 = p0 $this .serverId::
+11780 :: CALL :: call :: Ljava/lang/StringBuilder :: v11 = v6.append(v9)::
+6 :: CALL :: call :: V :: p0 $this .checkRunning(#(0))::CL,10231
+11785 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v11.append(#(]: ))::
+10 :: NORM :: declaration :: Ljava/io/File :: v6 = new java.io.File::JM,15
+11790 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v14.append(p1 $msg )::
+15 :: CALL :: call :: Ljava/lang/String :: v9 = v6.getAbsolutePath()::JM,15
+10255 :: CALL :: call :: V :: p0 $this .printWithThread(v13)::CL,10346
+11795 :: CALL :: call :: Ljava/lang/String :: v18 = v16.toString()::
+11799 :: CALL :: call :: V :: v4.println(v18)::
+11803 :: CALL :: call :: V :: v4.flush()::
+10315 :: CALL :: call :: V :: p0 $this .printWithThread(v29)::CL,10346
+10346 :: ENTR :: entry :: null :: org.hsqldb.server.Server.printWithThread(java.lang.String)::CD,10351:CD,10355
+10351 :: CALL :: call :: Z :: v5 = p0 $this .isSilent()::JM,10355:CL,11737
+10355 :: PRED :: IF :: Z :: if (v5 != #(0)) goto 40::CD,10364:CD,10383
+10364 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v7.append(v11)::
+10383 :: CALL :: call :: V :: p0 $this .print(v20)::CL,11763
+11737 :: ENTR :: entry :: null :: org.hsqldb.server.Server.isSilent()::CE,11738:CD,11744
+11738 :: EXIT :: exit :: Z :: org.hsqldb.server.Server.isSilent()::JM,10355
+11741 :: EXPR :: reference :: Z :: v3 = p0 $this .isSilent::DD,11744
+11744 :: NORM :: compound :: Z :: return v3::CF,11738
+11763 :: ENTR :: entry :: null :: org.hsqldb.server.Server.print(java.lang.String)::CD,11771
+10231 :: ENTR :: entry :: null :: org.hsqldb.server.Server.checkRunning(boolean)::CD,10255:CD,10315
+11768 :: EXPR :: reference :: Ljava/io/PrintWriter :: v4 = p0 $this .logWriter::DD,11771
+11771 :: PRED :: IF :: Z :: if (v4 == #(null)) goto 47::CD,11772:CD,11780:CD,11785:CD,11790:CD,11795:CD,11799:CD,11803
+11772 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v6 = new java.lang.StringBuilder::

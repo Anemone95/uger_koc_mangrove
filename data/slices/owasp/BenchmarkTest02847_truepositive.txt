@@ -1,0 +1,25 @@
+[64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 78]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest02847.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,16:CD,22:CD,26:CD,38:CD,42:CD,47:CD,52:CD,57:CD,61:CD,64:CD,73:CD,88:CD,89:JM,17:JM,21
+7 :: CALL :: call :: Ljava/util/Enumeration :: v8 = p1 $request .getHeaders(#(foo))::JM,16:JM,17:JM,21:JM,12
+12 :: CALL :: call :: Z :: v10 = v8.hasMoreElements()::JM,16:JM,17:JM,21:JM,12
+16 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 38::CF,88:CD,17:CD,21:JM,16:JM,12
+17 :: CALL :: call :: Ljava/lang/Object :: v13 = v8.nextElement()::JM,16:JM,17:JM,21:JM,12
+21 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::DD,88
+22 :: CALL :: call :: I :: v17 = v15.length()::JM,26
+26 :: PRED :: IF :: Z :: if (v17 <= #(1)) goto 58::CF,89:CD,27:CD,31:CD,32
+27 :: CALL :: call :: I :: v20 = v15.length()::JM,31
+31 :: EXPR :: assign :: Ljava/lang/Object :: v21 = v20 - #(1)::JM,89
+32 :: CALL :: call :: Ljava/lang/String :: v23 = v15.substring(#(0), v21)::JM,89
+38 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v25 = new java.lang.StringBuilder::JM,73
+42 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v25.append(#(UPDATE USERS SET PASS...))::JM,73
+47 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v29.append(v24)::JM,73
+52 :: CALL :: call :: Ljava/lang/StringBuilder :: v34 = v31.append(#(' WHERE USERNAME='foo'))::JM,73
+57 :: CALL :: call :: Ljava/lang/String :: v36 = v34.toString()::JM,73
+61 :: CALL :: call :: Ljava/sql/Statement :: v38 = getSqlStatement()::JM,73
+64 :: NORM :: declaration :: [Ljava/lang/String :: v40 = new java.lang.String[]::JM,73
+65 :: EXPR :: modify :: Ljava/lang/Object :: v40[#(0)] = #(user)::
+69 :: EXPR :: modify :: Ljava/lang/Object :: v40[#(1)] = #(password)::
+73 :: CALL :: call :: I :: v44 = v38.executeUpdate(v36, v40)::JM,73
+88 :: EXPR :: assign :: null :: PHI v15 = #(), v14::JM,26:JM,31:DD,89
+89 :: EXPR :: assign :: null :: PHI v24 = v15, v23::CF,38:JM,73

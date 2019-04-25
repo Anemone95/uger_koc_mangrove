@@ -1,0 +1,22 @@
+[67, 63]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest04701.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,21:CD,25:CD,37:CD,41:CD,46:CD,51:CD,56:CD,60:CD,63:CD,77:CD,78:JM,16:JM,20
+7 :: CALL :: call :: Ljava/util/Enumeration :: v7 = p1 $request .getParameterNames()::JM,16:JM,20:JM,11:JM,15
+11 :: CALL :: call :: Z :: v9 = v7.hasMoreElements()::JM,16:JM,20:JM,11:JM,15
+15 :: PRED :: IF :: Z :: if (v9 == #(0)) goto 36::CF,77:CD,16:CD,20:JM,11:JM,15
+16 :: CALL :: call :: Ljava/lang/Object :: v12 = v7.nextElement()::JM,16:JM,20:JM,11:JM,15
+20 :: EXPR :: assign :: Ljava/lang/Object :: v13 = CHECKCAST v12::DD,77
+21 :: CALL :: call :: I :: v16 = v14.length()::JM,25
+25 :: PRED :: IF :: Z :: if (v16 <= #(1)) goto 56::CF,78:CD,26:CD,30:CD,31
+26 :: CALL :: call :: I :: v19 = v14.length()::JM,30
+30 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v19 - #(1)::JM,78
+31 :: CALL :: call :: Ljava/lang/String :: v22 = v14.substring(#(0), v20)::JM,78
+37 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v24 = new java.lang.StringBuilder::JM,63
+41 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v24.append(#(SELECT * from USERS w...))::JM,63
+46 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v28.append(v23)::JM,63
+51 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v30.append(#('))::JM,63
+56 :: CALL :: call :: Ljava/lang/String :: v35 = v33.toString()::JM,63
+60 :: CALL :: call :: Ljava/sql/Statement :: v37 = getSqlStatement()::JM,63
+63 :: CALL :: call :: Ljava/sql/ResultSet :: v39 = v37.executeQuery(v35)::JM,63
+77 :: EXPR :: assign :: null :: PHI v14 = #(), v13::JM,25:JM,30:DD,78
+78 :: EXPR :: assign :: null :: PHI v23 = v14, v22::CF,37:JM,63

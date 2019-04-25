@@ -1,0 +1,30 @@
+[548]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.quaternary.io.RemoteBioUnitDataProvider.getBioUnitTransformationList(java.lang.String,int)::CD,78:CD,87
+770 :: NORM :: compound :: Ljava/io/InputStream :: return v22::DD,730
+771 :: EXPR :: assign :: null :: PHI v22 = v17, v17, v20::CF,770
+520 :: ENTR :: entry :: null :: org.biojava.nbio.structure.quaternary.BiologicalAssemblyTransformation.fromMultiXML(java.lang.String)::CD,528:CD,531:CD,535:CD,548
+397 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,int)::CE,398:CD,402:CD,408
+398 :: EXIT :: exit :: Ljava/io/InputStream :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,int)::JM,87
+528 :: CALL :: call :: Ljavax/xml/parsers/DocumentBuilderFactory :: v6 = newInstance()::JM,531:JM,548
+402 :: CALL :: call :: Ljava/io/InputStream :: v6 = getInputStream(p1 $url , #(1), p2 $timeout )::JM,408:CL,729
+531 :: CALL :: call :: Ljavax/xml/parsers/DocumentBuilder :: v8 = v6.newDocumentBuilder()::JM,531:JM,548
+535 :: NORM :: declaration :: Lorg/xml/sax/InputSource :: v9 = new org.xml.sax.InputSource::JM,548
+408 :: NORM :: compound :: Ljava/io/InputStream :: return v6::DD,398
+548 :: CALL :: call :: Lorg/w3c/dom/Document :: v15 = v8.parse(v9)::JM,548
+78 :: CALL :: call :: Ljava/io/InputStream :: v38 = getInputStream(v25, v36)::JM,87:CL,397
+87 :: PRED :: IF :: Z :: if (v38 == #(null)) goto 181::CD,94
+729 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,boolean,int)::CE,730:CD,735:CD,750:CD,754:CD,758:CD,770:CD,771
+730 :: EXIT :: exit :: Ljava/io/InputStream :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,boolean,int)::JM,408
+94 :: CALL :: call :: Ljava/util/List :: v45 = fromMultiXML(v41)::CL,520
+735 :: CALL :: call :: Ljava/net/HttpURLConnection :: v7 = openHttpURLConnection(p1 $url , p3 $timeout )::JM,754:JM,771:JM,758:JM,759:JM,764:JM,750:CL,1136
+1253 :: NORM :: compound :: Ljava/net/HttpURLConnection :: return v7::DD,1137
+750 :: CALL :: call :: Ljava/lang/String :: v15 = v7.getContentEncoding()::JM,754:JM,771:JM,758:JM,759:JM,764:JM,750
+1136 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::CE,1137:CD,1141:CD,1145:CD,1253
+1137 :: EXIT :: exit :: Ljava/net/HttpURLConnection :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::JM,754:JM,771:JM,758:JM,759:JM,764:JM,750
+754 :: CALL :: call :: Ljava/io/InputStream :: v17 = v7.getInputStream()::JM,754:JM,771:JM,758:JM,759:JM,764:JM,750
+1141 :: CALL :: call :: Ljava/net/URLConnection :: v6 = p1 $url .openConnection()::JM,1145
+758 :: PRED :: IF :: Z :: if (v15 == #(null)) goto 67::CF,771:CD,759:CD,764
+759 :: CALL :: call :: Z :: v19 = v15.contains(#(gzip))::JM,771:JM,759:JM,764
+1145 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST v6::DD,1253
+764 :: PRED :: IF :: Z :: if (v19 == #(0)) goto 67::CF,771:CF,765
+765 :: NORM :: declaration :: Ljava/util/zip/GZIPInputStream :: v20 = new java.util.zip.GZIPInputStream::DD,771

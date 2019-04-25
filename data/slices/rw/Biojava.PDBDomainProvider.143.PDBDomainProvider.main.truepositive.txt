@@ -1,0 +1,16 @@
+[437]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.domain.PDBDomainProvider.main(java.lang.String[])::CD,9:CD,60
+328 :: CALL :: call :: Ljava/util/SortedSet :: v17 = p0 $this .requestRepresentativeDomains(v15)::CL,362
+9 :: CALL :: call :: Ljava/util/SortedSet :: v7 = v3.getDomainNames(#(2CDG))::CL,229
+273 :: CALL :: call :: Ljava/util/SortedSet :: v20 = p0 $this .requestRepresentativeDomains(v18)::CL,362
+411 :: ENTR :: entry :: null :: org.biojava.nbio.structure.domain.PDBDomainProvider.handleRestRequest(java.lang.String,org.xml.sax.helpers.DefaultHandler)::CD,425:CD,430:CD,433:CD,437
+229 :: ENTR :: entry :: null :: org.biojava.nbio.structure.domain.PDBDomainProvider.getDomainNames(java.lang.String)::CD,273
+295 :: ENTR :: entry :: null :: org.biojava.nbio.structure.domain.PDBDomainProvider.getRepresentativeDomains()::CD,328
+425 :: NORM :: declaration :: Lorg/xml/sax/InputSource :: v8 = new org.xml.sax.InputSource::JM,437
+362 :: ENTR :: entry :: null :: org.biojava.nbio.structure.domain.PDBDomainProvider.requestRepresentativeDomains(java.lang.String)::CD,371:CD,377
+430 :: CALL :: call :: Ljavax/xml/parsers/SAXParserFactory :: v11 = newInstance()::JM,433:JM,437
+433 :: CALL :: call :: Ljavax/xml/parsers/SAXParser :: v13 = v11.newSAXParser()::JM,433:JM,437
+371 :: NORM :: declaration :: Lorg/biojava/nbio/structure/domain/PDBDomainProvider$1 :: v6 = new org.biojava.nbio.structure.domain.PDBDomainProvider$1::JM,437
+437 :: CALL :: call :: V :: v13.parse(v8, p2 $handler )::JM,437
+377 :: CALL :: call :: V :: handleRestRequest(p1 $url , v6)::JM,437:CL,411
+60 :: CALL :: call :: Ljava/util/SortedSet :: v31 = v3.getRepresentativeDomains()::CL,295

@@ -1,0 +1,26 @@
+[16998, 17001, 17071]
+16771 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.isIgnored()::CF,16772:CD,16775
+16772 :: EXIT :: exit :: Z :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.isIgnored()::JM,500
+16775 :: NORM :: compound :: Z :: return #(0)::CF,16772
+19213 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.DataSourceLoginModule.getConnection()::CE,19214:CD,19220:CD,19224
+19214 :: EXIT :: exit :: Ljava/sql/Connection :: org.eclipse.jetty.jaas.spi.DataSourceLoginModule.getConnection()::JM,17001
+19217 :: EXPR :: reference :: Ljavax/sql/DataSource :: v3 = p0 $this .dataSource::JM,19220:JM,19224
+19220 :: CALL :: call :: Ljava/sql/Connection :: v5 = v3.getConnection()::JM,19220:JM,19224
+19224 :: NORM :: compound :: Ljava/sql/Connection :: return v5::CF,19214
+19226 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.JDBCLoginModule.getConnection()::CE,19227:CD,19315:CD,19321
+19227 :: EXIT :: exit :: Ljava/sql/Connection :: org.eclipse.jetty.jaas.spi.JDBCLoginModule.getConnection()::JM,17001
+17071 :: NORM :: compound :: Ljava/lang/Exception :: throw v31::
+562 :: CALL :: call :: Lorg/eclipse/jetty/jaas/spi/UserInfo :: v28 = p0 $this .getUserInfo(v15)::CL,16989
+16989 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule.getUserInfo(java.lang.String)::CD,16994:CD,17001:CD,17071:CD,17150
+16994 :: CALL :: call :: Ljava/sql/Connection :: v5 = p0 $this .getConnection()::JM,17001:CL,19213:CL,19226
+16998 :: EXPR :: reference :: Ljava/lang/String :: v7 = p0 $this .userQuery::JM,17001
+17001 :: CALL :: call :: Ljava/sql/PreparedStatement :: v9 = v5.prepareStatement(v7)::JM,17001
+19306 :: EXPR :: reference :: Ljava/lang/String :: v35 = p0 $this .dbUrl::JM,19315:JM,19321
+492 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.login()::CD,496:CD,500
+19309 :: EXPR :: reference :: Ljava/lang/String :: v36 = p0 $this .dbUserName::JM,19315:JM,19321
+496 :: CALL :: call :: Z :: v4 = p0 $this .isIgnored()::JM,500:CL,16771
+19312 :: EXPR :: reference :: Ljava/lang/String :: v37 = p0 $this .dbPassword::JM,19315:JM,19321
+19315 :: CALL :: call :: Ljava/sql/Connection :: v39 = getConnection(v35, v36, v37)::JM,19315:JM,19321
+500 :: PRED :: IF :: Z :: if (v4 == #(0)) goto 10::CD,562
+19321 :: NORM :: compound :: Ljava/sql/Connection :: return v39::DD,19227
+17150 :: EXPR :: assign :: Ljava/lang/Exception :: v31 = catch <exc>::DD,17071

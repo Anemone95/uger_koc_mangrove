@@ -1,0 +1,33 @@
+[27, 28, 32, 35, 40, 45]
+1 :: ENTR :: entry :: null :: okhttp3.sample.SampleServer.dispatch(okhttp3.mockwebserver.RecordedRequest)::CD,6:CD,27:CD,28:CD,35:CD,40:CD,45
+6 :: CALL :: call :: Ljava/lang/String :: v5 = p1 $request .getPath()::CL,809
+27 :: NORM :: declaration :: Ljava/io/File :: v13 = new java.io.File::CF,28
+28 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v14 = new java.lang.StringBuilder::
+32 :: EXPR :: reference :: Ljava/lang/String :: v16 = p0 $this .root::
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v14.append(v16)::
+40 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v18.append(v5)::
+45 :: CALL :: call :: Ljava/lang/String :: v22 = v20.toString()::
+1248 :: ENTR :: entry :: null :: okhttp3.ResponseBody.create(okhttp3.MediaType,[])::CD,1264
+1264 :: CALL :: call :: Lokhttp3/ResponseBody :: v11 = create(p1 $contentType , v9, v7)::CL,1641
+1277 :: ENTR :: entry :: null :: okhttp3.RequestBody.create(okhttp3.MediaType,[])::CD,1283
+1283 :: CALL :: call :: Lokhttp3/RequestBody :: v7 = create(p1 $contentType , p2 $content , #(0), v5)::CL,1668
+336 :: ENTR :: entry :: null :: okhttp3.mockwebserver.SocketPolicy.<clinit>()::
+1641 :: ENTR :: entry :: null :: okhttp3.ResponseBody.create(okhttp3.MediaType,long,okio.BufferedSource)::CF,1648
+1648 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v8 = new java.lang.NullPointerException::
+1668 :: ENTR :: entry :: null :: okhttp3.RequestBody.create(okhttp3.MediaType,[],int,int)::CF,1676
+1676 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v14 = new java.lang.NullPointerException::
+660 :: ENTR :: entry :: null :: okhttp3.internal.Util.<clinit>()::CD,671:CD,680:CD,717:CD,723:CD,729:CD,735:CD,741:CD,747:CD,753:CD,765
+671 :: CALL :: call :: Lokhttp3/ResponseBody :: v8 = create(#(null), v6)::CL,1248
+680 :: CALL :: call :: Lokhttp3/RequestBody :: v11 = create(#(null), v9)::CL,1277
+717 :: CALL :: call :: Ljava/nio/charset/Charset :: v29 = forName(#(UTF-8))::
+723 :: CALL :: call :: Ljava/nio/charset/Charset :: v32 = forName(#(ISO-8859-1))::
+729 :: CALL :: call :: Ljava/nio/charset/Charset :: v35 = forName(#(UTF-16BE))::
+735 :: CALL :: call :: Ljava/nio/charset/Charset :: v38 = forName(#(UTF-16LE))::
+741 :: CALL :: call :: Ljava/nio/charset/Charset :: v41 = forName(#(UTF-32BE))::
+747 :: CALL :: call :: Ljava/nio/charset/Charset :: v44 = forName(#(UTF-32LE))::
+753 :: CALL :: call :: Ljava/util/TimeZone :: v47 = getTimeZone(#(GMT))::
+765 :: CALL :: call :: Ljava/util/regex/Pattern :: v52 = compile(#(([0-9a-fA-F]*:[0-9a-f...))::
+809 :: ENTR :: entry :: null :: okhttp3.mockwebserver.RecordedRequest.getPath()::CE,810:CD,816
+810 :: EXIT :: exit :: Ljava/lang/String :: okhttp3.mockwebserver.RecordedRequest.getPath()::
+813 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .path::DD,816
+816 :: NORM :: compound :: Ljava/lang/String :: return v3::CF,810

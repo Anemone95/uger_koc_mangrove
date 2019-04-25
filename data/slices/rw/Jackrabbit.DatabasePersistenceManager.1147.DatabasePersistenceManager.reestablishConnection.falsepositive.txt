@@ -1,0 +1,30 @@
+[527, 530, 533, 536]
+1 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.persistence.db.DatabasePersistenceManager.reestablishConnection()::CD,44:CD,47
+520 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.persistence.db.DatabasePersistenceManager.initPreparedStatements()::CD,536
+527 :: EXPR :: reference :: Ljava/lang/String :: v4 = p0 $this .nodeStateInsertSQL::
+530 :: EXPR :: reference :: Ljava/sql/Connection :: v5 = p0 $this .con::JM,536
+533 :: EXPR :: reference :: Ljava/lang/String :: v6 = p0 $this .nodeStateInsertSQL::JM,536
+536 :: CALL :: call :: Ljava/sql/PreparedStatement :: v8 = v5.prepareStatement(v6)::JM,536
+44 :: CALL :: call :: V :: p0 $this .initConnection()::CL,487
+47 :: CALL :: call :: V :: p0 $this .initPreparedStatements()::CL,520
+1100 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.persistence.db.JNDIDatabasePersistenceManager.getConnection()::CE,1101:CD,1104:CD,1111:CD,1116:CD,1117:CD,1121
+1101 :: EXIT :: exit :: Ljava/sql/Connection :: org.apache.jackrabbit.core.persistence.db.JNDIDatabasePersistenceManager.getConnection()::JM,495
+1104 :: NORM :: declaration :: Ljavax/naming/InitialContext :: v3 = new javax.naming.InitialContext::JM,1111:JM,1116
+1108 :: EXPR :: reference :: Ljava/lang/String :: v5 = p0 $this .dataSourceLocation::JM,1111:JM,1116
+1111 :: CALL :: call :: Ljava/lang/Object :: v7 = v3.lookup(v5)::JM,1111:JM,1116
+1116 :: EXPR :: assign :: Ljava/lang/Object :: v8 = CHECKCAST v7::JM,1121:JM,1117
+1117 :: CALL :: call :: Ljava/sql/Connection :: v10 = v8.getConnection()::JM,1121:JM,1117
+1121 :: NORM :: compound :: Ljava/sql/Connection :: return v10::CF,1101
+1128 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.persistence.db.SimpleDbPersistenceManager.getConnection()::CE,1129:CD,1147:CD,1155:CD,1159
+1129 :: EXIT :: exit :: Ljava/sql/Connection :: org.apache.jackrabbit.core.persistence.db.SimpleDbPersistenceManager.getConnection()::JM,495
+1132 :: EXPR :: reference :: Lorg/apache/jackrabbit/core/util/db/ConnectionFactory :: v3 = p0 $this .connectionFactory::JM,1155:JM,1159:JM,1147
+1135 :: EXPR :: reference :: Ljava/lang/String :: v4 = p0 $this .driver::JM,1155:JM,1159:JM,1147
+1138 :: EXPR :: reference :: Ljava/lang/String :: v5 = p0 $this .url::JM,1155:JM,1159:JM,1147
+1141 :: EXPR :: reference :: Ljava/lang/String :: v6 = p0 $this .user::JM,1155:JM,1159:JM,1147
+1144 :: EXPR :: reference :: Ljava/lang/String :: v7 = p0 $this .password::JM,1155:JM,1159:JM,1147
+1147 :: CALL :: call :: Ljavax/sql/DataSource :: v9 = v3.getDataSource(v4, v5, v6, v7)::JM,1155:JM,1159:JM,1147
+1155 :: CALL :: call :: Ljava/sql/Connection :: v11 = v9.getConnection()::JM,1155:JM,1159:JM,1147
+1159 :: NORM :: compound :: Ljava/sql/Connection :: return v11::CF,1129
+487 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.persistence.db.DatabasePersistenceManager.initConnection()::CD,491
+491 :: CALL :: call :: Ljava/sql/Connection :: v4 = p0 $this .getConnection()::JM,495:CL,1100:CL,1128
+495 :: EXPR :: modify :: Ljava/sql/Connection :: p0 $this .con = v4::

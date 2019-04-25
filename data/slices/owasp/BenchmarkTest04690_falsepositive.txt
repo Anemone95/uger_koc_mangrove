@@ -1,0 +1,26 @@
+[99, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest04690.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,21:CD,25:CD,31:CD,35:CD,41:CD,53:CD,58:CD,59:CD,63:CD,68:CD,73:CD,78:CD,82:CD,85:CD,94:CD,109:JM,16:JM,20
+7 :: CALL :: call :: Ljava/util/Enumeration :: v7 = p1 $request .getParameterNames()::JM,16:JM,20:JM,11:JM,15
+11 :: CALL :: call :: Z :: v9 = v7.hasMoreElements()::JM,16:JM,20:JM,11:JM,15
+15 :: PRED :: IF :: Z :: if (v9 == #(0)) goto 36::CF,109:CD,16:CD,20:JM,11:JM,15
+16 :: CALL :: call :: Ljava/lang/Object :: v12 = v7.nextElement()::JM,16:JM,20:JM,11:JM,15
+20 :: EXPR :: assign :: Ljava/lang/Object :: v13 = CHECKCAST v12::DD,109
+21 :: NORM :: declaration :: Ljava/util/HashMap :: v16 = new java.util.HashMap::JM,58
+25 :: CALL :: call :: Ljava/lang/Object :: v21 = v16.put(#(keyA-31980), #(a_Value))::
+31 :: CALL :: call :: Ljava/lang/String :: v24 = v14.toString()::JM,31
+35 :: CALL :: call :: Ljava/lang/Object :: v26 = v16.put(#(keyB-31980), v24)::
+41 :: CALL :: call :: Ljava/lang/Object :: v30 = v16.put(#(keyC), #(another_Value))::
+53 :: CALL :: call :: Ljava/lang/Object :: v35 = v16.get(#(keyA-31980))::JM,58
+58 :: EXPR :: assign :: Ljava/lang/Object :: v36 = CHECKCAST v35::JM,94:CF,59
+59 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v37 = new java.lang.StringBuilder::JM,94
+63 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v37.append(#(SELECT * from USERS w...))::JM,94
+68 :: CALL :: call :: Ljava/lang/StringBuilder :: v43 = v41.append(v36)::JM,94
+73 :: CALL :: call :: Ljava/lang/StringBuilder :: v46 = v43.append(#('))::JM,94
+78 :: CALL :: call :: Ljava/lang/String :: v48 = v46.toString()::JM,94
+82 :: CALL :: call :: Ljava/sql/Statement :: v50 = getSqlStatement()::JM,94
+85 :: NORM :: declaration :: [Ljava/lang/String :: v52 = new java.lang.String[]::JM,94
+86 :: EXPR :: modify :: Ljava/lang/Object :: v52[#(0)] = #(username)::
+90 :: EXPR :: modify :: Ljava/lang/Object :: v52[#(1)] = #(password)::
+94 :: CALL :: call :: Z :: v57 = v50.execute(v48, v52)::JM,94
+109 :: EXPR :: assign :: null :: PHI v14 = #(), v13::JM,31:CF,21

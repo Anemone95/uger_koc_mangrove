@@ -1,0 +1,36 @@
+[82, 86, 91, 96, 100]
+1 :: ENTR :: entry :: null :: org.h2.test.synth.sql.DbConnection.reset()::CD,12:CD,19:CD,23:CD,26:CD,31:CD,39:CD,43:CD,66:CD,70
+257 :: ENTR :: entry :: null :: org.h2.util.New.arrayList()::CE,258:CD,260:CD,265
+258 :: EXIT :: exit :: Ljava/util/ArrayList :: org.h2.util.New.arrayList()::JM,81:JM,70:JM,75
+260 :: NORM :: declaration :: Ljava/util/ArrayList :: v2 = new java.util.ArrayList::DD,265
+9 :: EXPR :: reference :: Ljava/sql/Connection :: v5 = p0 $null .conn::JM,54:JM,39:JM,55:JM,43:JM,12:JM,44:JM,31
+265 :: NORM :: compound :: Ljava/util/ArrayList :: return v2::DD,258
+12 :: CALL :: call :: Ljava/sql/DatabaseMetaData :: v7 = v5.getMetaData()::JM,54:JM,39:JM,55:JM,43:JM,12:JM,44:JM,31
+16 :: EXPR :: reference :: Ljava/sql/Connection :: v8 = p0 $null .conn::JM,19:JM,100
+19 :: CALL :: call :: Ljava/sql/Statement :: v10 = v8.createStatement()::JM,19:JM,100
+23 :: CALL :: call :: Ljava/util/ArrayList :: v12 = arrayList()::JM,81:JM,70:JM,75:CL,257
+26 :: NORM :: declaration :: [Ljava/lang/String :: v15 = new java.lang.String[]::JM,54:JM,39:JM,55:JM,43:JM,44:JM,31
+31 :: CALL :: call :: Ljava/sql/ResultSet :: v19 = v7.getTables(#(null), #(null), #(null), v15)::JM,54:JM,39:JM,55:JM,43:JM,44:JM,31
+39 :: CALL :: call :: Z :: v21 = v19.next()::JM,54:JM,39:JM,55:JM,43:JM,44:JM,31
+43 :: PRED :: IF :: Z :: if (v21 == #(0)) goto 99::CD,39:CD,44:CD,49:CD,54:JM,55:JM,43:JM,31:JM,81:JM,70:JM,75
+44 :: CALL :: call :: Ljava/lang/String :: v24 = v19.getString(#(TABLE_SCHEM))::JM,54:JM,39:JM,55:JM,43:JM,44:JM,31
+49 :: CALL :: call :: Z :: v27 = #(INFORMATION_SCHEMA).equals(v24)::JM,54
+54 :: PRED :: IF :: Z :: if (v27 != #(0)) goto 95::CD,55:CD,60:JM,54:JM,39:JM,43:JM,44:JM,31
+55 :: CALL :: call :: Ljava/lang/String :: v30 = v19.getString(#(TABLE_NAME))::JM,54:JM,39:JM,55:JM,43:JM,44:JM,31
+60 :: CALL :: call :: Z :: v32 = v12.add(v30)::JM,81:JM,70:JM,75:JM,54
+66 :: CALL :: call :: I :: v34 = v12.size()::JM,81:JM,70:JM,75
+70 :: PRED :: IF :: Z :: if (v34 <= #(0)) goto 224::CD,66:CD,71:CD,75:CD,149
+71 :: CALL :: call :: I :: v36 = v12.size()::JM,81:JM,70:JM,75
+75 :: PRED :: IF :: Z :: if (v65 >= v36) goto 184::CD,71:CD,76:CD,81:CD,82:CD,86:CD,91:CD,96:CD,100:CD,106:CD,111:CD,113:CD,149:CD,152:JM,70:JM,75
+76 :: CALL :: call :: Ljava/lang/Object :: v38 = v12.get(v65)::JM,81:JM,70:JM,75
+81 :: EXPR :: assign :: Ljava/lang/Object :: v39 = CHECKCAST v38::JM,100:CF,82
+82 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v40 = new java.lang.StringBuilder::JM,100
+86 :: CALL :: call :: Ljava/lang/StringBuilder :: v44 = v40.append(#(DROP TABLE ))::JM,100
+91 :: CALL :: call :: Ljava/lang/StringBuilder :: v46 = v44.append(v39)::JM,100
+96 :: CALL :: call :: Ljava/lang/String :: v48 = v46.toString()::JM,100
+100 :: CALL :: call :: Z :: v50 = v10.execute(v48)::JM,100
+106 :: CALL :: call :: Ljava/lang/Object :: v53 = v12.remove(v65)::JM,81:JM,70:JM,75
+111 :: EXPR :: assign :: Ljava/lang/Object :: v55 = v65 + #(-1)::DD,152
+113 :: EXPR :: assign :: Ljava/lang/Object :: v62 = v60 + #(1)::DD,149
+149 :: EXPR :: assign :: null :: PHI v65 = v62, #(0)::DD,75:JM,81:JM,70:DD,111:DD,152
+152 :: EXPR :: assign :: null :: PHI v60 = v55, v65::DD,113

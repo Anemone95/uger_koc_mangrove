@@ -1,0 +1,454 @@
+[13406, 13408, 13409, 13417, 13422, 13427, 13431]
+1 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.SlowQueryHandler.doInit()::CD,19:CD,27
+19 :: CALL :: call :: Lorg/apache/jackrabbit/core/id/NodeId :: v12 = randomId()::CL,8472
+27 :: CALL :: call :: V :: p0 $this .doInit()::CL,8505
+33000 :: PRED :: IF :: Z :: if (p3 $handler  == #(null)) goto 50::CF,33001:CD,33004:JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33001 :: CALL :: call :: Ljava/lang/SecurityManager :: v11 = getSecurityManager()::JM,33004
+33004 :: PRED :: IF :: Z :: if (v11 == #(null)) goto 50::CD,33005:JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33005 :: CALL :: call :: V :: p0 $this .checkSpecifyHandler(v11)::
+33009 :: CALL :: call :: I :: v14 = p2 $spec .length()::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33014 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v21 + #(-1)::DD,33273
+33015 :: PRED :: IF :: Z :: if (v21 <= #(0)) goto 89::CF,33274:CD,33016:CD,33017:CD,33022
+33016 :: EXPR :: assign :: Ljava/lang/Object :: v16 = v21 - #(1)::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33017 :: CALL :: call :: C :: v18 = p2 $spec .charAt(v16)::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33022 :: PRED :: IF :: Z :: if (v18 <= #(32)) goto 58::CD,33014:CD,33015:CD,33273:CD,33274
+33024 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v25 + #(1)::DD,33274
+33025 :: PRED :: IF :: Z :: if (v25 >= v21) goto 111::CD,33026:CD,33031:JM,33280:JM,33282:JM,33222:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33026 :: CALL :: call :: C :: v23 = p2 $spec .charAt(v25)::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33031 :: PRED :: IF :: Z :: if (v23 <= #(32)) goto 82::CD,33024:CD,33025:CD,33274:JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33032 :: CALL :: call :: Z :: v29 = p2 $spec .regionMatches(#(1), v25, #(url:), #(0), #(4))::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33041 :: PRED :: IF :: Z :: if (v29 == #(0)) goto 123::CF,33275:CD,33042
+33042 :: EXPR :: assign :: Ljava/lang/Object :: v30 = v25 + #(4)::DD,33275
+33043 :: CALL :: call :: I :: v33 = p2 $spec .length()::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+278 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.SearchIndex.<clinit>()::CF,404:CF,403:CF,420:CD,281:CD,347:CD,351
+33047 :: PRED :: IF :: Z :: if (v31 >= v33) goto 147::CF,33276:CD,33048:CD,33053:JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33022:JM,33055
+33048 :: CALL :: call :: C :: v35 = p2 $spec .charAt(v31)::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+281 :: NORM :: declaration :: [Lorg/apache/jackrabbit/spi/Name :: v3 = new org.apache.jackrabbit.spi.Name[]::JM,347:JM,351
+33053 :: PRED :: IF :: Z :: if (v35 != #(35)) goto 147::CF,33276
+33055 :: PRED :: IF :: Z :: if (v39 != #(58)) goto 192::CD,33056:CD,33062:CD,33066:CD,33071:CD,33074:CD,33075:CD,33277:CD,33278:CD,33279:JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33056 :: CALL :: call :: Ljava/lang/String :: v45 = p2 $spec .substring(v31, v43)::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33062 :: CALL :: call :: Ljava/lang/String :: v47 = v45.toLowerCase()::JM,33279:JM,33071
+33066 :: CALL :: call :: Z :: v49 = p0 $this .isValidProtocol(v47)::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33086:JM,33022:JM,33055:JM,33279
+33071 :: PRED :: IF :: Z :: if (v49 == #(0)) goto 224::CF,33278:CD,33072:CD,33279
+33072 :: EXPR :: assign :: Ljava/lang/Object :: v50 = v43 + #(1)::DD,33278
+33074 :: EXPR :: assign :: Ljava/lang/Object :: v42 = v43 + #(1)::DD,33277
+33075 :: PRED :: IF :: Z :: if (v37 != #(0)) goto 224::CF,33278:CD,33076:CD,33279
+33076 :: PRED :: IF :: Z :: if (v43 >= v21) goto 224::CF,33278:CD,33077:CD,33082:CD,33279:JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33053:JM,33022:JM,33055
+33077 :: CALL :: call :: C :: v39 = p2 $spec .charAt(v43)::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33082 :: PRED :: IF :: Z :: if (v39 != #(47)) goto 154::CF,33278:CD,33055
+33086 :: PRED :: IF :: Z :: if (p1 $context  == #(null)) goto 344::CF,33282:CD,33087
+33087 :: PRED :: IF :: Z :: if (v52 == #(null)) goto 249::CD,33091:CD,33096:CD,33097:CD,33104:CD,33114:CD,33280:CD,33281:CD,33282
+33088 :: EXPR :: reference :: Ljava/lang/String :: v53 = p1 $context .protocol::JM,33096
+33091 :: CALL :: call :: Z :: v55 = v52.equalsIgnoreCase(v53)::JM,33096
+33096 :: PRED :: IF :: Z :: if (v55 == #(0)) goto 344::CF,33282:CD,33097:CD,33104:CD,33114:CD,33280:CD,33281
+33097 :: PRED :: IF :: Z :: if (p3 $handler  != #(null)) goto 258::CF,33280
+33098 :: EXPR :: reference :: Ljava/net/URLStreamHandler :: v56 = p1 $context .handler::DD,33280
+33101 :: EXPR :: reference :: Ljava/lang/String :: v58 = p1 $context .path::DD,33104
+33104 :: PRED :: IF :: Z :: if (v58 == #(null)) goto 281::CF,33281:CD,33108:CD,33113
+33105 :: EXPR :: reference :: Ljava/lang/String :: v59 = p1 $context .path::JM,33108:JM,33113
+33108 :: CALL :: call :: Z :: v62 = v59.startsWith(#(/))::JM,33108:JM,33113
+33113 :: PRED :: IF :: Z :: if (v62 == #(0)) goto 281::CF,33281
+33114 :: PRED :: IF :: Z :: if (v63 != #(null)) goto 344::CF,33282
+347 :: CALL :: call :: Ljava/util/List :: v31 = asList(v3)::JM,347:JM,351
+351 :: CALL :: call :: Ljava/util/Collection :: v33 = unmodifiableCollection(v31)::JM,351
+33162 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v100 = new java.lang.StringBuilder::
+33167 :: CALL :: call :: Ljava/lang/StringBuilder :: v104 = v100.append(p2 $spec )::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+403 :: NORM :: declaration :: Ljava/lang/InternalError :: v52 = new java.lang.InternalError::
+404 :: CALL :: call :: Ljava/lang/String :: v54 = v51.getMessage()::
+33172 :: CALL :: call :: Ljava/lang/String :: v106 = v104.toString()::JM,33222:JM,33223
+33181 :: PRED :: IF :: Z :: if (v71 != #(null)) goto 420::CD,33185
+33185 :: CALL :: call :: Ljava/net/URLStreamHandler :: v77 = getURLStreamHandler(v75)::
+420 :: EXPR :: assign :: Ljava/lang/Exception :: v51 = catch <exc>::
+33191 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v90 = new java.lang.StringBuilder::
+33196 :: EXPR :: reference :: Ljava/lang/String :: v93 = p0 $this .protocol::
+33199 :: CALL :: call :: Ljava/lang/StringBuilder :: v95 = v90.append(v93)::
+33204 :: CALL :: call :: Ljava/lang/String :: v97 = v95.toString()::
+33216 :: CALL :: call :: I :: v80 = p2 $spec .indexOf(#(35), v51)::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33222 :: PRED :: IF :: Z :: if (v80 < #(0)) goto 458::CD,33223:CD,33224
+33223 :: EXPR :: assign :: Ljava/lang/Object :: v81 = v80 + #(1)::JM,33041:JM,33222:JM,33031:JM,33047:JM,33223:JM,33273:JM,33082:JM,33053:JM,33022:JM,33071:JM,33055:JM,33280:JM,33282:JM,33000:JM,33097
+33224 :: CALL :: call :: Ljava/lang/String :: v83 = p2 $spec .substring(v81, v21)::JM,33280:JM,33282:JM,33222:JM,33031:JM,33223:JM,33000:JM,33097:JM,33071:JM,33041:JM,33047:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+485 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.IndexingConfigurationImpl.<clinit>()::CD,500:CD,503
+500 :: CALL :: call :: Ljava/util/List :: v8 = emptyList()::
+503 :: CALL :: call :: Ljava/util/Iterator :: v10 = v8.iterator()::
+33273 :: EXPR :: assign :: null :: PHI v21 = v14, v20::DD,33014:DD,33015:DD,33016:DD,33025:DD,33076:JM,33041:JM,33222:JM,33031:JM,33047:JM,33223:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33274 :: EXPR :: assign :: null :: PHI v25 = #(0), #(0), v24::DD,33024:DD,33025:JM,33041:JM,33222:JM,33031:JM,33047:JM,33223:JM,33273:JM,33082:JM,33053:JM,33022:JM,33071:JM,33055:DD,33042:DD,33275
+33275 :: EXPR :: assign :: null :: PHI v31 = v25, v30::DD,33047:JM,33041:JM,33222:JM,33031:JM,33223:JM,33273:JM,33082:JM,33053:JM,33022:JM,33071:JM,33055:DD,33277:DD,33278:JM,33280:JM,33282:JM,33000:JM,33097
+33276 :: EXPR :: assign :: null :: PHI v37 = #(0), #(0), #(1)::DD,33075
+33277 :: EXPR :: assign :: null :: PHI v43 = v31, v42::JM,33041:JM,33222:JM,33031:JM,33047:JM,33223:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055:DD,33072:DD,33074:DD,33076:JM,33071:CF,33075
+33278 :: EXPR :: assign :: null :: PHI v51 = v31, v50, v31, v31, v31::CF,33279:JM,33041:JM,33222:JM,33031:JM,33047:JM,33223:JM,33273:JM,33082:JM,33053:JM,33022:JM,33055
+33279 :: EXPR :: assign :: null :: PHI v52 = #(null), v47, #(null), #(null), #(null)::DD,33087:JM,33096:DD,33281
+33280 :: EXPR :: assign :: null :: PHI v57 = p3 $handler , v56::DD,33282
+33281 :: EXPR :: assign :: null :: PHI v63 = v52, v52, #(null)::DD,33114
+33282 :: EXPR :: assign :: null :: PHI v71 = p3 $handler , p3 $handler , v57, v57::DD,33181
+618 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.FileBasedNamespaceMappings.<clinit>()::CF,621:CD,622:CD,626
+621 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lorg/apache/jackrabbit/core/query/lucene/FileBasedNamespaceMappings>-><Primordial,Ljava/lang/Class>::JM,626:JM,622
+622 :: CALL :: call :: Lorg/slf4j/Logger :: v4 = getLogger(v2)::JM,626:JM,622
+626 :: EXPR :: modify :: Lorg/slf4j/Logger :: org.apache.jackrabbit.core.query.lucene.FileBasedNamespaceMappings.log = v4::
+773 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.OnWorkspaceInconsistency.<clinit>()::JM,11964:CD,797:CD,812:CD,827
+797 :: NORM :: declaration :: Ljava/util/HashMap :: v11 = new java.util.HashMap::
+812 :: CALL :: call :: Ljava/lang/Object :: v18 = v13.put(v15, v16)::
+827 :: CALL :: call :: Ljava/lang/Object :: v24 = v19.put(v21, v22)::
+932 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.AbstractIndex.<clinit>()::JM,9262
+952 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.IndexFormatVersion.<clinit>()::JM,9282
+1040 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.IndexingConfigurationEntityResolver.<clinit>()::CD,1043:CD,1047:CD,1053:CD,1059:CD,1065
+1043 :: NORM :: declaration :: Ljava/util/HashMap :: v2 = new java.util.HashMap::JM,1065
+1047 :: CALL :: call :: Ljava/lang/Object :: v7 = v2.put(#(http://jackrabbit.apa...), #(indexing-configuratio...))::
+1053 :: CALL :: call :: Ljava/lang/Object :: v11 = v2.put(#(http://jackrabbit.apa...), #(indexing-configuratio...))::
+1059 :: CALL :: call :: Ljava/lang/Object :: v15 = v2.put(#(http://jackrabbit.apa...), #(indexing-configuratio...))::
+1065 :: CALL :: call :: Ljava/util/Map :: v17 = unmodifiableMap(v2)::JM,1065
+1092 :: CALL :: call :: Z :: v4 = v2.desiredAssertionStatus()::
+1153 :: CALL :: call :: J :: v35 = lowMask(#(-_.!~*'()))::
+1159 :: CALL :: call :: J :: v37 = highMask(#(-_.!~*'()))::
+1179 :: CALL :: call :: J :: v46 = lowMask(#(;/?:@&=+$,[]))::
+1185 :: CALL :: call :: J :: v48 = highMask(#(;/?:@&=+$,[]))::
+1209 :: CALL :: call :: J :: v61 = lowMask(#(:@&=+$,))::
+1218 :: CALL :: call :: J :: v65 = highMask(#(:@&=+$,))::
+1227 :: CALL :: call :: J :: v70 = lowMask(#(;/))::
+1236 :: CALL :: call :: J :: v74 = highMask(#(;/))::
+1243 :: CALL :: call :: J :: v78 = lowMask(#(-))::
+1249 :: CALL :: call :: J :: v80 = highMask(#(-))::
+1255 :: CALL :: call :: J :: v83 = lowMask(#(.))::
+1261 :: CALL :: call :: J :: v85 = highMask(#(.))::
+1270 :: CALL :: call :: J :: v90 = lowMask(#(;:&=+$,))::
+1279 :: CALL :: call :: J :: v94 = highMask(#(;:&=+$,))::
+1289 :: CALL :: call :: J :: v100 = lowMask(#($,;:@&=+))::
+1298 :: CALL :: call :: J :: v104 = highMask(#($,;:@&=+))::
+1313 :: CALL :: call :: J :: v113 = lowMask(#(.:@[]))::
+1328 :: CALL :: call :: J :: v121 = highMask(#(.:@[]))::
+1337 :: CALL :: call :: J :: v126 = lowMask(#(%))::
+1346 :: CALL :: call :: J :: v130 = highMask(#(%))::
+1353 :: CALL :: call :: J :: v134 = lowMask(#([))::
+1359 :: CALL :: call :: J :: v136 = highMask(#([))::
+1367 :: CALL :: call :: J :: v140 = lowMask(#(+-.))::
+1376 :: CALL :: call :: J :: v144 = highMask(#(+-.))::
+1386 :: CALL :: call :: J :: v150 = lowMask(#(;?:@&=+$,))::
+1395 :: CALL :: call :: J :: v154 = highMask(#(;?:@&=+$,))::
+1402 :: NORM :: declaration :: [C :: v157 = new []::
+1403 :: EXPR :: modify :: C :: v157[#(0)] = #(48)::
+1407 :: EXPR :: modify :: C :: v157[#(1)] = #(49)::
+1411 :: EXPR :: modify :: C :: v157[#(2)] = #(50)::
+1415 :: EXPR :: modify :: C :: v157[#(3)] = #(51)::
+1419 :: EXPR :: modify :: C :: v157[#(4)] = #(52)::
+1423 :: EXPR :: modify :: C :: v157[#(5)] = #(53)::
+1427 :: EXPR :: modify :: C :: v157[#(6)] = #(54)::
+1431 :: EXPR :: modify :: C :: v157[#(7)] = #(55)::
+1435 :: EXPR :: modify :: C :: v157[#(8)] = #(56)::
+1439 :: EXPR :: modify :: C :: v157[#(9)] = #(57)::
+1443 :: EXPR :: modify :: C :: v157[#(10)] = #(65)::
+1447 :: EXPR :: modify :: C :: v157[#(11)] = #(66)::
+1451 :: EXPR :: modify :: C :: v157[#(12)] = #(67)::
+1455 :: EXPR :: modify :: C :: v157[#(13)] = #(68)::
+1459 :: EXPR :: modify :: C :: v157[#(14)] = #(69)::
+1463 :: EXPR :: modify :: C :: v157[#(15)] = #(70)::
+1672 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.FieldSelectors.<clinit>()::
+2557 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.state.ChangeLog.<clinit>()::CD,2561
+2561 :: CALL :: call :: Z :: v4 = v2.desiredAssertionStatus()::
+39704 :: CALL :: call :: V :: p1 $sm .checkPermission(v4)::
+39720 :: CALL :: call :: Ljava/lang/Object :: v5 = v3.get(p1 $protocol )::JM,39725
+39725 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST v5::DD,39726:DD,39899
+39726 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 315::CD,39727:CD,39729:CD,39737:CD,39861:CD,39866:CD,39867:CD,39899:CD,39900:CD,39904
+39727 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v9 = java.net.URL.factory::DD,39729
+39729 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 36::CF,39899:CD,39730:CD,39732:CD,39900
+39730 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v10 = java.net.URL.factory::JM,39732:JM,39899
+39732 :: CALL :: call :: Ljava/net/URLStreamHandler :: v12 = v10.createURLStreamHandler(p1 $protocol )::JM,39732:JM,39899:JM,39905:JM,39876:JM,39829:JM,39902
+39737 :: PRED :: IF :: Z :: if (v14 != #(null)) goto 233::CF,39904:CD,39744:CD,39748:CD,39749:CD,39768:CD,39769:CD,39777:CD,39782:CD,39786:CD,39850:CD,39903
+39744 :: CALL :: call :: Ljava/lang/Object :: v21 = doPrivileged(v16)::JM,39748
+39748 :: EXPR :: assign :: Ljava/lang/Object :: v22 = CHECKCAST v21::DD,39749
+39749 :: PRED :: IF :: Z :: if (v22 == #()) goto 88::CF,39750:CD,39751:CD,39759:CD,39764
+39750 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v23 = new java.lang.StringBuilder::
+39751 :: CALL :: call :: Ljava/lang/String :: v25 = valueOf(v22)::
+39759 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v23.append(#(|))::
+39764 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::
+39768 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v33 = new java.lang.StringBuilder::
+39769 :: CALL :: call :: Ljava/lang/String :: v35 = valueOf(v32)::
+39777 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v33.append(#(sun.net.www.protocol))::
+39782 :: CALL :: call :: Ljava/lang/String :: v41 = v39.toString()::
+39786 :: NORM :: declaration :: Ljava/util/StringTokenizer :: v42 = new java.util.StringTokenizer::JM,39855
+39793 :: CALL :: call :: Ljava/lang/String :: v47 = v42.nextToken()::
+39797 :: CALL :: call :: Ljava/lang/String :: v49 = v47.trim()::
+39801 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v50 = new java.lang.StringBuilder::JM,39829:JM,39902
+39802 :: CALL :: call :: Ljava/lang/String :: v52 = valueOf(v49)::
+39810 :: CALL :: call :: Ljava/lang/StringBuilder :: v56 = v50.append(#(.))::JM,39829:JM,39902
+39815 :: CALL :: call :: Ljava/lang/StringBuilder :: v58 = v56.append(p1 $protocol )::JM,39829:JM,39902:JM,39905:JM,39732:JM,39876:JM,39899
+39820 :: CALL :: call :: Ljava/lang/StringBuilder :: v61 = v58.append(#(.Handler))::JM,39905:JM,39829:JM,39902
+39825 :: CALL :: call :: Ljava/lang/String :: v63 = v61.toString()::JM,39829:JM,39902
+39829 :: CALL :: call :: Ljava/lang/Class :: v65 = forName(v63)::JM,39829:JM,39902
+39834 :: CALL :: call :: Ljava/lang/ClassLoader :: v68 = getSystemClassLoader()::JM,39902
+39838 :: CALL :: call :: Ljava/lang/Class :: v70 = v68.loadClass(v63)::JM,39902:JM,39829
+39843 :: PRED :: IF :: Z :: if (v72 == #(null)) goto 222::CF,39903:CD,39844:CD,39848
+39844 :: CALL :: call :: Ljava/lang/Object :: v75 = v72.newInstance()::JM,39844:JM,39848
+39848 :: EXPR :: assign :: Ljava/lang/Object :: v76 = CHECKCAST v75::DD,39903
+39850 :: PRED :: IF :: Z :: if (v77 != #(null)) goto 233::CF,39904:CD,39851:CD,39855
+39851 :: CALL :: call :: Z :: v45 = v42.hasMoreTokens()::JM,39855
+39855 :: PRED :: IF :: Z :: if (v45 != #(0)) goto 127::CF,39904:CD,39793:CD,39797:CD,39801:CD,39802:CD,39810:CD,39815:CD,39820:CD,39825:CD,39829:CD,39843:CD,39850:CD,39902:CD,39903
+39861 :: CALL :: call :: Ljava/lang/Object :: v84 = v82.get(p1 $protocol )::JM,39866
+39866 :: EXPR :: assign :: Ljava/lang/Object :: v85 = CHECKCAST v84::DD,39867:DD,39905
+39867 :: PRED :: IF :: Z :: if (v85 == #(null)) goto 265::CD,39870:CD,39881:CD,39882:CD,39905:CD,39906
+39870 :: PRED :: IF :: Z :: if (v15 != #(0)) goto 287::CF,39905:CD,39871:CD,39873
+39871 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v86 = java.net.URL.factory::DD,39873
+39873 :: PRED :: IF :: Z :: if (v86 == #(null)) goto 287::CF,39905:CD,39874:CD,39876
+39874 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v87 = java.net.URL.factory::JM,39905:JM,39876
+39876 :: CALL :: call :: Ljava/net/URLStreamHandler :: v89 = v87.createURLStreamHandler(p1 $protocol )::JM,39905:JM,39876:JM,39732:JM,39829:JM,39899:JM,39902
+39881 :: PRED :: IF :: Z :: if (v90 == #(null)) goto 294::CF,39906
+39882 :: PRED :: IF :: Z :: if (v91 == #(null)) goto 307::CD,39885
+39885 :: CALL :: call :: Ljava/lang/Object :: v94 = v92.put(p1 $protocol , v91)::
+39899 :: EXPR :: assign :: null :: PHI v14 = v6, v12::CF,39900:DD,39737:DD,39903:DD,39904
+39900 :: EXPR :: assign :: null :: PHI v15 = #(0), #(1)::DD,39870:CF,39737
+39902 :: EXPR :: assign :: null :: PHI v72 = v65, #(null), v70::DD,39843:JM,39844:JM,39848
+39903 :: EXPR :: assign :: null :: PHI v77 = v14, v77, v76, v77::DD,39850:DD,39903:DD,39904
+39904 :: EXPR :: assign :: null :: PHI v80 = v14, v77, v77::DD,39906
+39905 :: EXPR :: assign :: null :: PHI v90 = v85, v85, v89::DD,39881:DD,39906
+39906 :: EXPR :: assign :: null :: PHI v91 = v80, v90::DD,39882
+40069 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.directory.IndexInputStream.read([],int,int)::CE,40070:CD,40082:CD,40083:JM,40085
+40070 :: EXIT :: exit :: I :: org.apache.jackrabbit.core.query.lucene.directory.IndexInputStream.read([],int,int)::
+40076 :: EXPR :: reference :: J :: v6 = p0 $this .pos::DD,40082
+40079 :: EXPR :: reference :: J :: v7 = p0 $this .len::DD,40082
+40082 :: EXPR :: assign :: Z :: v8 = v6 == v7::DD,40083
+40083 :: PRED :: IF :: Z :: if (v8 < #(0)) goto 16::CD,40084:CD,40085:CD,40086:CD,40093:CD,40094:CD,40099:CD,40117
+40084 :: NORM :: compound :: I :: return #(-1)::DD,40070
+40085 :: EXPR :: assign :: Ljava/lang/Object :: v10 = p3 $len  - p2 $off ::CF,40086
+40086 :: EXPR :: assign :: J :: v11 = CONVERT I to J v10::JM,40099:JM,40094
+40087 :: EXPR :: reference :: J :: v12 = p0 $this .len::DD,40093
+40090 :: EXPR :: reference :: J :: v13 = p0 $this .pos::DD,40093
+40093 :: EXPR :: assign :: Ljava/lang/Object :: v14 = v12 - v13::JM,40099:JM,40094
+40094 :: CALL :: call :: J :: v16 = min(v11, v14)::JM,40099:JM,40094
+40099 :: EXPR :: assign :: I :: v17 = CONVERT J to I v16::DD,40117
+40117 :: NORM :: compound :: I :: return v17::DD,40070
+40464 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.observation.EventState.equals(java.lang.Object)::CE,40465:CD,40469:JM,40471:JM,40473
+40465 :: EXIT :: exit :: Z :: org.apache.jackrabbit.core.observation.EventState.equals(java.lang.Object)::
+40469 :: PRED :: IF :: Z :: if (p1 $obj  != p0 $this ) goto 8::CD,40470:CD,40471:CD,40472
+40470 :: NORM :: compound :: Z :: return #(1)::DD,40465
+40471 :: EXPR :: assign :: Z :: v4=p1 $obj  INSTANCEOF org.apache.jackrabbit.core.observation.EventState::DD,40472
+40472 :: PRED :: IF :: Z :: if (v4 == #(0)) goto 93::CD,40473:CD,40480:CD,40531
+40473 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST p1 $obj ::
+40474 :: EXPR :: reference :: I :: v7 = p0 $this .type::DD,40480
+40477 :: EXPR :: reference :: I :: v8 = v6.type::DD,40480
+40480 :: PRED :: IF :: Z :: if (v7 != v8) goto 91::CD,40487:CD,40492:CD,40530
+40481 :: EXPR :: reference :: Lorg/apache/jackrabbit/core/id/NodeId :: v9 = p0 $this .parentId::JM,40487:JM,40492
+40484 :: EXPR :: reference :: Lorg/apache/jackrabbit/core/id/NodeId :: v10 = v6.parentId::JM,40487:JM,40492
+40487 :: CALL :: call :: Z :: v12 = v9.equals(v10)::JM,40487:JM,40492
+40492 :: PRED :: IF :: Z :: if (v12 == #(0)) goto 91::CD,40499:CD,40504:CD,40530
+40493 :: EXPR :: reference :: Lorg/apache/jackrabbit/spi/Path :: v13 = p0 $this .childRelPath::JM,40499:JM,40504
+40496 :: EXPR :: reference :: Lorg/apache/jackrabbit/spi/Path :: v14 = v6.childRelPath::JM,40499:JM,40504
+40499 :: CALL :: call :: Z :: v16 = v13.equals(v14)::JM,40499:JM,40504
+40504 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 91::CD,40511:CD,40516:CD,40530
+40511 :: CALL :: call :: Z :: v20 = v17.equals(v18)::JM,40516:CL,44253
+40516 :: PRED :: IF :: Z :: if (v20 == #(0)) goto 91::CD,40523:CD,40528:CD,40530
+40523 :: CALL :: call :: Z :: v24 = v21.equals(v22)::JM,40528
+40528 :: PRED :: IF :: Z :: if (v24 == #(0)) goto 91::CD,40529:CD,40530
+40529 :: NORM :: compound :: Z :: return #(1)::DD,40465
+40530 :: NORM :: compound :: Z :: return #(0)::DD,40465
+40531 :: NORM :: compound :: Z :: return #(0)::DD,40465
+7979 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.DateField.<clinit>()::CD,7982:CD,7987:CD,7991:CD,7993:CD,7999:CD,8001:CD,8002:CD,8013:CD,8015:CD,8016:CD,8024
+7982 :: CALL :: call :: Ljava/lang/String :: v5 = toString(#(94608000000000 l), #(36))::JM,7991
+7987 :: CALL :: call :: I :: v7 = v5.length()::JM,7991
+7991 :: EXPR :: modify :: I :: org.apache.jackrabbit.core.query.lucene.DateField.DATE_LEN = v7::
+7993 :: CALL :: call :: Ljava/lang/String :: v10 = timeToString(#(-63072000000000 l))::CL,9659
+7999 :: EXPR :: reference :: I :: v11 = org.apache.jackrabbit.core.query.lucene.DateField.DATE_LEN::CF,8001
+8001 :: NORM :: declaration :: [C :: v12 = new []::JM,8016:JM,8002:JM,8008
+8002 :: CALL :: call :: C :: v15 = forDigit(#(35), #(36))::JM,8002:JM,8008
+8008 :: EXPR :: modify :: C :: v12[v20] = v15::
+8012 :: EXPR :: assign :: Ljava/lang/Object :: v19 = v20 + #(1)::DD,8024
+8013 :: EXPR :: reference :: I :: v17 = org.apache.jackrabbit.core.query.lucene.DateField.DATE_LEN::CF,8015
+8015 :: PRED :: IF :: Z :: if (v20 < v17) goto 45::CF,8016:CD,8012:CD,8013:CD,8024
+8016 :: NORM :: declaration :: Ljava/lang/String :: v21 = new java.lang.String::JM,8016
+8024 :: EXPR :: assign :: null :: PHI v20 = #(0), v19::DD,8012:DD,8015
+8086 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.state.NameSet.<clinit>()::JM,12928
+8463 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.AbstractQueryHandler.getContext()::CE,8464:CD,8470
+8464 :: EXIT :: exit :: Lorg/apache/jackrabbit/core/query/QueryHandlerContext :: org.apache.jackrabbit.core.query.AbstractQueryHandler.getContext()::JM,8562:JM,8531:JM,8566:JM,8527
+8467 :: EXPR :: reference :: Lorg/apache/jackrabbit/core/query/QueryHandlerContext :: v3 = p0 $this .context::DD,8470
+8470 :: NORM :: compound :: Lorg/apache/jackrabbit/core/query/QueryHandlerContext :: return v3::CF,8464
+8472 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.id.NodeId.randomId()::CD,8475:JM,9370:JM,9373
+8475 :: CALL :: call :: Ljava/util/Random :: v3 = getInstance()::CL,9779
+8505 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.SearchIndex.doInit()::CD,8509:CD,8523:CD,8527:CD,8531:CD,8541:CD,8548:CD,8555:CD,8562:CD,8566:CD,8567
+8509 :: CALL :: call :: Lorg/apache/jackrabbit/core/query/QueryHandlerContext :: v4 = p0 $this .getContext()::JM,8562:JM,8531:JM,8566:JM,8527:CL,8463
+8523 :: NORM :: declaration :: Ljava/util/HashSet :: v7 = new java.util.HashSet::
+8527 :: CALL :: call :: Lorg/apache/jackrabbit/core/id/NodeId :: v10 = v4.getExcludedNodeId()::JM,8562:JM,8531:JM,8566:JM,8527
+8531 :: PRED :: IF :: Z :: if (v10 == #(null)) goto 51::CD,8536
+8536 :: CALL :: call :: Z :: v14 = v7.add(v12)::
+8541 :: CALL :: call :: Lorg/apache/jackrabbit/core/query/lucene/SynonymProvider :: v16 = p0 $this .createSynonymProvider()::CL,9837
+8548 :: CALL :: call :: Lorg/apache/jackrabbit/core/query/lucene/directory/DirectoryManager :: v18 = p0 $this .createDirectoryManager()::CL,9898
+8555 :: CALL :: call :: Lorg/apache/jackrabbit/core/query/lucene/RedoLogFactory :: v20 = p0 $this .createRedoLogFactory()::CL,9975
+8562 :: CALL :: call :: Lorg/apache/jackrabbit/core/query/QueryHandler :: v22 = v4.getParentHandler()::JM,8562:JM,8531:JM,8566:JM,8527
+8566 :: EXPR :: assign :: Z :: v23=v22 INSTANCEOF org.apache.jackrabbit.core.query.lucene.SearchIndex::DD,8567
+8567 :: PRED :: IF :: Z :: if (v23 == #(0)) goto 102::CF,8581:CD,8582:CD,8595:CD,8599
+8581 :: NORM :: declaration :: Ljava/io/File :: v25 = new java.io.File::CF,8582
+8582 :: NORM :: declaration :: Ljava/io/File :: v26 = new java.io.File::
+8583 :: EXPR :: reference :: Ljava/lang/String :: v27 = p0 $this .path::
+8595 :: CALL :: call :: Z :: v32 = v25.exists()::JM,8599
+8599 :: PRED :: IF :: Z :: if (v32 == #(0)) goto 146::JM,10087:JM,10104:JM,10094
+9262 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v6 = new java.lang.StringBuffer::DD,9266
+9266 :: EXPR :: modify :: Ljava/lang/StringBuffer :: p0 $this .buffer = v6::
+9282 :: EXPR :: modify :: I :: p0 $this .version = p1 $version ::
+9370 :: EXPR :: modify :: J :: p0 $this .msb = p1 $msb ::
+9373 :: EXPR :: modify :: J :: p0 $this .lsb = p2 $null ::
+9659 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.DateField.timeToString(long)::CD,9663:CD,9666:CD,9672:CD,9684:CD,9690:CD,9694:CD,9696
+9663 :: EXPR :: assign :: Ljava/lang/Object :: v4 = p1 $time  + #(63072000000000 l)::JM,9696
+9666 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v30 = new java.lang.IllegalArgumentException::
+9672 :: CALL :: call :: Ljava/lang/String :: v10 = toString(v4, #(36))::JM,9696
+9684 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v27 = new java.lang.IllegalArgumentException::
+9690 :: CALL :: call :: I :: v15 = v10.length()::JM,9696
+9694 :: EXPR :: reference :: I :: v16 = org.apache.jackrabbit.core.query.lucene.DateField.DATE_LEN::CF,9696
+9696 :: PRED :: IF :: Z :: if (v15 >= v16) goto 94::CF,9697:CD,9709:CD,9713:CD,9715:CD,9716
+9697 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v17 = new java.lang.StringBuffer::JM,9715
+9703 :: CALL :: call :: Ljava/lang/StringBuffer :: v23 = v17.insert(#(0), #(0))::
+9709 :: CALL :: call :: I :: v20 = v17.length()::JM,9715
+9713 :: EXPR :: reference :: I :: v21 = org.apache.jackrabbit.core.query.lucene.DateField.DATE_LEN::CF,9715
+9715 :: PRED :: IF :: Z :: if (v20 < v21) goto 74::CD,9703:CD,9709:CD,9713
+9716 :: CALL :: call :: Ljava/lang/String :: v25 = v17.toString()::
+9779 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.id.SeededSecureRandom.getInstance()::CD,9782:CD,9784
+9782 :: EXPR :: reference :: Ljava/util/Random :: v2 = org.apache.jackrabbit.core.id.SeededSecureRandom.instance::DD,9784
+9784 :: PRED :: IF :: Z :: if (v2 != #(null)) goto 35::CD,9787:CD,9789
+9787 :: EXPR :: reference :: Ljava/util/Random :: v5 = org.apache.jackrabbit.core.id.SeededSecureRandom.instance::DD,9789
+9789 :: PRED :: IF :: Z :: if (v5 != #(null)) goto 28::JM,12967:JM,12952
+9837 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.SearchIndex.createSynonymProvider()::CD,9844:CD,9864:CD,9872:CD,9877
+9841 :: EXPR :: reference :: Ljava/lang/Class :: v4 = p0 $this .synonymProviderClass::DD,9844
+9844 :: PRED :: IF :: Z :: if (v4 == #(null)) goto 66::CD,9853
+9853 :: CALL :: call :: Lorg/apache/jackrabbit/core/fs/FileSystemResource :: v10 = p0 $this .createSynonymProviderConfigResource()::CL,13102
+9864 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v15 = new java.lang.StringBuilder::
+9872 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v15.append(v18)::
+9877 :: CALL :: call :: Ljava/lang/String :: v22 = v20.toString()::
+9898 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.SearchIndex.createDirectoryManager()::CD,9916:CD,9917:CD,9921:CD,9929:CD,9934:CD,9954:CD,9958:CD,9965
+9916 :: NORM :: declaration :: Ljava/io/IOException :: v14 = new java.io.IOException::
+9917 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v15 = new java.lang.StringBuilder::
+9921 :: CALL :: call :: Ljava/lang/String :: v18 = valueOf(v16)::
+9929 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v15.append(#( is not a DirectoryMa...))::
+9934 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::
+9954 :: NORM :: declaration :: Ljava/io/IOException :: v27 = new java.io.IOException::
+9958 :: CALL :: call :: Ljava/lang/Throwable :: v30 = v27.initCause(v26)::
+9965 :: EXPR :: assign :: Ljava/lang/Exception :: v26 = catch <exc>::
+9975 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.SearchIndex.createRedoLogFactory()::CD,9993:CD,9994:CD,9998:CD,10006:CD,10011:CD,10026:CD,10030:CD,10036
+9993 :: NORM :: declaration :: Ljava/io/IOException :: v13 = new java.io.IOException::
+9994 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v14 = new java.lang.StringBuilder::
+9998 :: CALL :: call :: Ljava/lang/String :: v17 = valueOf(v15)::
+10006 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v14.append(#( is not a RedoLogFact...))::
+10011 :: CALL :: call :: Ljava/lang/String :: v23 = v21.toString()::
+10026 :: NORM :: declaration :: Ljava/io/IOException :: v26 = new java.io.IOException::
+10030 :: CALL :: call :: Ljava/lang/Throwable :: v29 = v26.initCause(v25)::
+10036 :: EXPR :: assign :: Ljava/lang/Exception :: v25 = catch <exc>::
+10087 :: NORM :: declaration :: Ljava/util/HashMap :: v5 = new java.util.HashMap::
+10094 :: NORM :: declaration :: Ljava/util/HashMap :: v7 = new java.util.HashMap::
+10104 :: CALL :: call :: V :: p0 $this .load()::CL,13353
+44253 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.cluster.ClusterSession.equals(java.lang.Object)::CE,44254:CD,44258:CD,44259
+44254 :: EXIT :: exit :: Z :: org.apache.jackrabbit.core.cluster.ClusterSession.equals(java.lang.Object)::JM,40516
+44258 :: EXPR :: assign :: Z :: v4=p1 $obj  INSTANCEOF org.apache.jackrabbit.core.cluster.ClusterSession::DD,44259
+44259 :: PRED :: IF :: Z :: if (v4 == #(0)) goto 22::CD,44264:CD,44269:CD,44270
+44264 :: CALL :: call :: Z :: v9 = p0 $this .isUserId(v7)::JM,44269:CL,46042
+44269 :: NORM :: compound :: Z :: return v9::CF,44254
+44270 :: NORM :: compound :: Z :: return #(0)::CF,44254
+11964 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .name = p1 $name ::
+12069 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.id.NodeId.hashCode()::CE,12070:CD,12076:CD,12080:CD,12084:CD,12085:CD,12089:CD,12090:CD,12091
+12070 :: EXIT :: exit :: I :: org.apache.jackrabbit.core.id.NodeId.hashCode()::
+12073 :: EXPR :: reference :: J :: v3 = p0 $this .msb::DD,12076
+12076 :: EXPR :: assign :: Ljava/lang/Object :: v5 = v3 ? #(32)::DD,12080
+12077 :: EXPR :: reference :: J :: v6 = p0 $this .msb::DD,12080
+12080 :: EXPR :: assign :: Ljava/lang/Object :: v7 = v5 ^ v6::DD,12085
+12081 :: EXPR :: reference :: J :: v8 = p0 $this .lsb::DD,12084
+12084 :: EXPR :: assign :: Ljava/lang/Object :: v9 = v8 ? #(32)::CF,12085
+12085 :: EXPR :: assign :: Ljava/lang/Object :: v10 = v7 ^ v9::DD,12089
+12086 :: EXPR :: reference :: J :: v11 = p0 $this .lsb::DD,12089
+12089 :: EXPR :: assign :: Ljava/lang/Object :: v12 = v10 ^ v11::CF,12090
+12090 :: EXPR :: assign :: I :: v13 = CONVERT J to I v12::CF,12091
+12091 :: NORM :: compound :: I :: return v13::CF,12070
+12098 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.id.NodeId.equals(java.lang.Object)::CE,12099:CD,12103:CD,12104:JM,12117:JM,12108
+12099 :: EXIT :: exit :: Z :: org.apache.jackrabbit.core.id.NodeId.equals(java.lang.Object)::
+12103 :: EXPR :: assign :: Z :: v4=p1 $that  INSTANCEOF org.apache.jackrabbit.core.id.NodeId::DD,12104
+12104 :: PRED :: IF :: Z :: if (v4 == #(0)) goto 40::CD,12108:CD,12112:CD,12113:CD,12124
+12105 :: EXPR :: reference :: J :: v6 = p0 $this .msb::DD,12112
+12108 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST p1 $that ::
+12109 :: EXPR :: reference :: J :: v8 = v7.msb::DD,12112
+12112 :: EXPR :: assign :: Z :: v9 = v6 == v8::DD,12113
+12113 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 40::CD,12117:CD,12121:CD,12122:CD,12124
+12114 :: EXPR :: reference :: J :: v10 = p0 $this .lsb::DD,12121
+12117 :: EXPR :: assign :: Ljava/lang/Object :: v11 = CHECKCAST p1 $that ::
+12118 :: EXPR :: reference :: J :: v12 = v11.lsb::DD,12121
+12121 :: EXPR :: assign :: Z :: v13 = v10 == v12::DD,12122
+12122 :: PRED :: IF :: Z :: if (v13 != #(0)) goto 40::CD,12123:CD,12124
+12123 :: NORM :: compound :: Z :: return #(1)::CF,12099
+12124 :: NORM :: compound :: Z :: return #(0)::CF,12099
+12928 :: NORM :: declaration :: [Ljava/util/HashSet :: v5 = new java.util.HashSet[]::DD,12929
+12929 :: EXPR :: modify :: [Ljava/util/HashSet :: p0 $this .array = v5::
+12943 :: EXPR :: modify :: Z :: p0 $this .seeded = #(0)::
+12952 :: CALL :: call :: V :: v5.setDaemon(#(1))::
+12964 :: EXPR :: reference :: Z :: v15 = p0 $this .seeded::DD,12967
+12967 :: PRED :: IF :: Z :: if (v15 != #(0)) goto 162::CD,12968:CD,12971:CD,12975:CD,12978:CD,12982:CD,12986:CD,12990:CD,12991:CD,12995:CD,12998:CD,13002:CD,13006:CD,13010:CD,13014:CD,13018:CD,13022:CD,13025:CD,13029:CD,13033:CD,13034:CD,13055:CD,13060
+12968 :: CALL :: call :: J :: v17 = currentTimeMillis()::
+12971 :: CALL :: call :: V :: p0 $this .setSeed(v17)::
+12975 :: CALL :: call :: J :: v20 = nanoTime()::
+12978 :: CALL :: call :: V :: p0 $this .setSeed(v20)::
+12982 :: NORM :: declaration :: Ljava/lang/Object :: v22 = new java.lang.Object::JM,12982:JM,12986:JM,12990
+12986 :: CALL :: call :: I :: v25 = v22.hashCode()::JM,12986:JM,12990
+12990 :: EXPR :: assign :: J :: v26 = CONVERT I to J v25::
+12991 :: CALL :: call :: V :: p0 $this .setSeed(v26)::
+12995 :: CALL :: call :: Ljava/lang/Runtime :: v29 = getRuntime()::JM,12998:JM,13014:JM,13006
+12998 :: CALL :: call :: J :: v31 = v29.freeMemory()::JM,12998:JM,13014:JM,13006
+13002 :: CALL :: call :: V :: p0 $this .setSeed(v31)::
+13006 :: CALL :: call :: J :: v34 = v29.maxMemory()::JM,12998:JM,13014:JM,13006
+13010 :: CALL :: call :: V :: p0 $this .setSeed(v34)::
+13014 :: CALL :: call :: J :: v37 = v29.totalMemory()::JM,12998:JM,13014:JM,13006
+13018 :: CALL :: call :: V :: p0 $this .setSeed(v37)::
+13022 :: CALL :: call :: Ljava/util/Properties :: v40 = getProperties()::JM,13025:JM,13029:JM,13033
+13025 :: CALL :: call :: Ljava/lang/String :: v42 = v40.toString()::JM,13025:JM,13029:JM,13033
+13029 :: CALL :: call :: I :: v44 = v42.hashCode()::JM,13029:JM,13033
+13033 :: EXPR :: assign :: J :: v45 = CONVERT I to J v44::
+13034 :: CALL :: call :: V :: p0 $this .setSeed(v45)::
+13039 :: CALL :: call :: J :: v49 = currentTimeMillis()::JM,13047
+13043 :: EXPR :: assign :: Ljava/lang/Object :: v53 = v54 + #(1)::DD,13059:CF,13058
+13044 :: CALL :: call :: J :: v51 = currentTimeMillis()::JM,13047
+13047 :: EXPR :: assign :: Z :: v52 = v49 == v51::DD,13048
+13048 :: PRED :: IF :: Z :: if (v52 == #(0)) goto 134::CD,13043:CD,13044:CD,13047:CD,13058:CD,13059:CF,13049
+13049 :: EXPR :: assign :: J :: v55 = CONVERT I to J v54::
+13050 :: CALL :: call :: V :: p0 $this .setSeed(v55)::
+13054 :: EXPR :: assign :: Ljava/lang/Object :: v57 = v59 + #(1)::DD,13060
+13055 :: PRED :: IF :: Z :: if (v58 < #(16)) goto 126::CD,13039:CD,13044:CD,13047:CD,13048:CD,13049:CD,13050:CD,13054:CD,13058:CD,13059:CD,13060
+13058 :: EXPR :: assign :: null :: PHI v59 = v58, v59::CF,13059:DD,13054:DD,13058
+13059 :: EXPR :: assign :: null :: PHI v54 = #(0), v53::CF,13044:DD,13043:DD,13049
+13060 :: EXPR :: assign :: null :: PHI v58 = #(0), v57::DD,13055:DD,13058
+13102 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.SearchIndex.createSynonymProviderConfigResource()::CD,13109:CD,13120:CD,13128:CD,13133
+13106 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .synonymProviderConfigPath::DD,13109
+13109 :: PRED :: IF :: Z :: if (v3 == #(null)) goto 219::CD,13145
+13120 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v57 = new java.lang.StringBuilder::
+13125 :: EXPR :: reference :: Ljava/lang/String :: v60 = p0 $this .synonymProviderConfigPath::
+13128 :: CALL :: call :: Ljava/lang/StringBuilder :: v62 = v57.append(v60)::
+13133 :: CALL :: call :: Ljava/lang/String :: v64 = v62.toString()::
+13142 :: EXPR :: reference :: Lorg/apache/jackrabbit/core/fs/FileSystem :: v10 = p0 $this .fs::DD,13145
+13145 :: PRED :: IF :: Z :: if (v10 != #(null)) goto 200::CD,13156:CD,13161
+13153 :: EXPR :: reference :: Ljava/lang/String :: v17 = p0 $this .synonymProviderConfigPath::JM,13169:JM,13156:JM,13161
+13156 :: CALL :: call :: I :: v20 = v17.lastIndexOf(#(47))::JM,13169:JM,13156:JM,13161
+13161 :: PRED :: IF :: Z :: if (v20 == #(-1)) goto 151::CF,13162:CD,13169:CD,13184
+13162 :: NORM :: declaration :: Ljava/io/File :: v32 = new java.io.File::JM,13184
+13163 :: EXPR :: reference :: Ljava/lang/String :: v33 = p0 $this .path::
+13166 :: EXPR :: reference :: Ljava/lang/String :: v34 = p0 $this .synonymProviderConfigPath::JM,13169
+13169 :: CALL :: call :: Ljava/lang/String :: v36 = v34.substring(#(0), v20)::JM,13169
+13184 :: CALL :: call :: Ljava/io/File :: v41 = v32.getCanonicalFile()::JM,13184
+46042 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.cluster.ClusterSession.isUserId(java.lang.String)::CE,46043:CD,46047:JM,46057:JM,46062
+46043 :: EXIT :: exit :: Z :: org.apache.jackrabbit.core.cluster.ClusterSession.isUserId(java.lang.String)::JM,44269
+46047 :: PRED :: IF :: Z :: if (p1 $userId  != #(null)) goto 17::CD,46051:CD,46057:CD,46062
+46048 :: EXPR :: reference :: Ljava/lang/String :: v8 = p0 $this .userId::DD,46051
+46051 :: PRED :: IF :: Z :: if (v8 != #(null)) goto 14::CD,46052:CD,46053
+46052 :: NORM :: compound :: Z :: return #(1)::CF,46043
+46053 :: NORM :: compound :: Z :: return #(0)::CF,46043
+46054 :: EXPR :: reference :: Ljava/lang/String :: v5 = p0 $this .userId::JM,46057:JM,46062
+46057 :: CALL :: call :: Z :: v7 = p1 $userId .equals(v5)::JM,46057:JM,46062:JM,46047
+46062 :: NORM :: compound :: Z :: return v7::CF,46043
+13353 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.query.lucene.FileBasedNamespaceMappings.load()::CD,13360:CD,13364
+13360 :: CALL :: call :: Z :: v5 = v3.exists()::JM,13364
+13364 :: PRED :: IF :: Z :: if (v5 == #(0)) goto 186::CD,13373:CD,13383:CD,13387:CD,13391:CD,13453:CD,13457
+13373 :: NORM :: declaration :: Ljava/util/Properties :: v10 = new java.util.Properties::JM,13457:JM,13400
+13383 :: CALL :: call :: V :: v10.load(v7)::
+13387 :: CALL :: call :: Ljava/util/Set :: v17 = v10.keySet()::JM,13457:JM,13400
+13391 :: CALL :: call :: Ljava/util/Iterator :: v19 = v17.iterator()::JM,13457:JM,13400
+13396 :: CALL :: call :: Ljava/lang/Object :: v23 = v19.next()::JM,13457:JM,13400
+13400 :: EXPR :: assign :: Ljava/lang/Object :: v24 = CHECKCAST v23::
+13401 :: CALL :: call :: Ljava/lang/String :: v26 = v10.getProperty(v24)::JM,13431
+13406 :: EXPR :: reference :: Lorg/slf4j/Logger :: v27 = org.apache.jackrabbit.core.query.lucene.FileBasedNamespaceMappings.log::CF,13408:JM,13431
+13408 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v28 = new java.lang.StringBuilder::JM,13431
+13409 :: CALL :: call :: Ljava/lang/String :: v30 = valueOf(v24)::
+13417 :: CALL :: call :: Ljava/lang/StringBuilder :: v34 = v28.append(#( -> ))::JM,13431
+13422 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v34.append(v26)::JM,13431
+13427 :: CALL :: call :: Ljava/lang/String :: v38 = v36.toString()::JM,13431
+13431 :: CALL :: call :: V :: v27.debug(v38)::JM,13431
+13438 :: CALL :: call :: Ljava/lang/Object :: v42 = v40.put(v24, v26)::
+13447 :: CALL :: call :: Ljava/lang/Object :: v45 = v43.put(v26, v24)::
+13453 :: CALL :: call :: Z :: v21 = v19.hasNext()::JM,13457:JM,13400
+13457 :: PRED :: IF :: Z :: if (v21 != #(0)) goto 61::CD,13396:CD,13400:CD,13401:CD,13406:CD,13408:CD,13409:CD,13417:CD,13422:CD,13427:CD,13431:CD,13438:CD,13447:CD,13453:JM,13457

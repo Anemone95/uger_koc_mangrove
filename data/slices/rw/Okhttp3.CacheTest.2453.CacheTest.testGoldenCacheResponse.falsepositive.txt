@@ -1,0 +1,832 @@
+[3340, 3343, 3349, 3354]
+1 :: ENTR :: entry :: null :: okhttp3.CacheTest.testGoldenCacheResponse()::CD,8:JM,3152:JM,3140:JM,3156:JM,4741:JM,3147:CD,18:CD,22:CD,34:CD,39:CD,43:CD,47:CD,52:CD,57:CD,62:CD,67:CD,72:CD,77:CD,82:CD,87:CD,92:CD,97:CD,102:CD,105:CD,110:CD,115:CD,120:CD,125:CD,128:CD,133:CD,138:CD,143:CD,148:CD,153:CD,158:CD,163:CD,168:CD,173:CD,178:CD,183:CD,188:CD,193:CD,197:CD,202:CD,207:CD,212:CD,216:CD,221:CD,226:CD,230:CD,235:CD,240:CD,247:CD,251:CD,252:CD,260:CD,265:CD,269:CD,278:CD,282:CD,283:CD,291:CD,296:CD,300:CD,309:CD,313
+8 :: CALL :: call :: V :: v3.close()::CL,3079
+18 :: CALL :: call :: Lokhttp3/mockwebserver/MockResponse :: v9 = v6.clearHeaders()::CL,3192
+22 :: CALL :: call :: Lokhttp3/mockwebserver/MockResponse :: v12 = v9.setResponseCode(#(304))::CL,3207
+31 :: EXPR :: reference :: Lokhttp3/mockwebserver/MockWebServer :: v14 = p0 $this .server::JM,34
+34 :: CALL :: call :: Lokhttp3/HttpUrl :: v17 = v14.url(#(/))::JM,34
+39 :: CALL :: call :: Ljava/lang/String :: v19 = key(v17)::CL,3298
+43 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v20 = new java.lang.StringBuilder::
+47 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v20.append(v17)::
+52 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v23.append(#())::
+57 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v26.append(#(GET))::
+62 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v29.append(#(0))::
+67 :: CALL :: call :: Ljava/lang/StringBuilder :: v35 = v32.append(#(HTTP/1.1 200 OK))::
+72 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v35.append(#(7))::
+77 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v38.append(#(:status: 200 OK))::
+82 :: CALL :: call :: Ljava/lang/StringBuilder :: v44 = v41.append(#(:version: HTTP/1.1))::
+87 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v44.append(#(etag: foo))::
+92 :: CALL :: call :: Ljava/lang/StringBuilder :: v50 = v47.append(#(content-length: 3))::
+97 :: CALL :: call :: Ljava/lang/StringBuilder :: v53 = v50.append(#(OkHttp-Received-Millis: ))::
+102 :: CALL :: call :: J :: v55 = currentTimeMillis()::
+105 :: CALL :: call :: Ljava/lang/StringBuilder :: v57 = v53.append(v55)::
+110 :: CALL :: call :: Ljava/lang/StringBuilder :: v59 = v57.append(#())::
+115 :: CALL :: call :: Ljava/lang/StringBuilder :: v62 = v59.append(#(X-Android-Response-So...))::
+120 :: CALL :: call :: Ljava/lang/StringBuilder :: v65 = v62.append(#(OkHttp-Sent-Millis: ))::
+125 :: CALL :: call :: J :: v67 = currentTimeMillis()::
+128 :: CALL :: call :: Ljava/lang/StringBuilder :: v69 = v65.append(v67)::
+133 :: CALL :: call :: Ljava/lang/StringBuilder :: v71 = v69.append(#())::
+138 :: CALL :: call :: Ljava/lang/StringBuilder :: v73 = v71.append(#())::
+143 :: CALL :: call :: Ljava/lang/StringBuilder :: v76 = v73.append(#(TLS_ECDHE_RSA_WITH_AE...))::
+148 :: CALL :: call :: Ljava/lang/StringBuilder :: v79 = v76.append(#(1))::
+153 :: CALL :: call :: Ljava/lang/StringBuilder :: v82 = v79.append(#(MIIBpDCCAQ2gAwIBAgIBA...))::
+158 :: CALL :: call :: Ljava/lang/StringBuilder :: v85 = v82.append(#(OTA1MDE1OVoXDTEzMDgzM...))::
+163 :: CALL :: call :: Ljava/lang/StringBuilder :: v88 = v85.append(#(AAOBjQAwgYkCgYEAlFW+r...))::
+168 :: CALL :: call :: Ljava/lang/StringBuilder :: v91 = v88.append(#(ltF3HGNsCyjQI/+Lf40x7...))::
+173 :: CALL :: call :: Ljava/lang/StringBuilder :: v94 = v91.append(#(v6L0xwXnI0ECAwEAATANB...))::
+178 :: CALL :: call :: Ljava/lang/StringBuilder :: v97 = v94.append(#(7S6J21FBFeRR8/XNjVOp4...))::
+183 :: CALL :: call :: Ljava/lang/StringBuilder :: v100 = v97.append(#(yFfXKHu2PkTo7QFdpOJFv...))::
+188 :: CALL :: call :: Ljava/lang/StringBuilder :: v103 = v100.append(#(-1))::
+193 :: CALL :: call :: Ljava/lang/String :: v105 = v103.toString()::
+197 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v107 = new java.lang.StringBuilder::
+202 :: CALL :: call :: Ljava/lang/StringBuilder :: v111 = v107.append(v19)::
+207 :: CALL :: call :: Ljava/lang/StringBuilder :: v114 = v111.append(#( ))::
+212 :: CALL :: call :: I :: v116 = v105.length()::
+216 :: CALL :: call :: Ljava/lang/StringBuilder :: v118 = v114.append(v116)::
+221 :: CALL :: call :: Ljava/lang/StringBuilder :: v120 = v118.append(#( ))::
+226 :: CALL :: call :: I :: v122 = #(abc).length()::
+230 :: CALL :: call :: Ljava/lang/StringBuilder :: v124 = v120.append(v122)::
+235 :: CALL :: call :: Ljava/lang/StringBuilder :: v126 = v124.append(#())::
+240 :: CALL :: call :: Ljava/lang/String :: v128 = v126.toString()::
+247 :: CALL :: call :: Ljava/io/File :: v131 = v129.directory()::CL,3320
+251 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v132 = new java.lang.StringBuilder::
+252 :: CALL :: call :: Ljava/lang/String :: v134 = valueOf(v19)::
+260 :: CALL :: call :: Ljava/lang/StringBuilder :: v138 = v132.append(#(.0))::
+265 :: CALL :: call :: Ljava/lang/String :: v140 = v138.toString()::
+269 :: CALL :: call :: V :: p0 $this .writeFile(v131, v140, v105)::CL,3333
+278 :: CALL :: call :: Ljava/io/File :: v144 = v142.directory()::CL,3320
+282 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v145 = new java.lang.StringBuilder::
+283 :: CALL :: call :: Ljava/lang/String :: v147 = valueOf(v19)::
+291 :: CALL :: call :: Ljava/lang/StringBuilder :: v151 = v145.append(#(.1))::
+296 :: CALL :: call :: Ljava/lang/String :: v153 = v151.toString()::
+300 :: CALL :: call :: V :: p0 $this .writeFile(v144, v153, #(abc))::CL,3333
+309 :: CALL :: call :: Ljava/io/File :: v157 = v155.directory()::CL,3320
+313 :: CALL :: call :: V :: p0 $this .writeFile(v157, #(journal), v128)::CL,3333
+692 :: NORM :: declaration :: Lokhttp3/mockwebserver/MockWebServer :: v4 = new okhttp3.mockwebserver.MockWebServer::DD,696
+696 :: EXPR :: modify :: Lokhttp3/mockwebserver/MockWebServer :: p0 $this .server = v4::
+706 :: NORM :: declaration :: Lokhttp3/internal/io/InMemoryFileSystem :: v8 = new okhttp3.internal.io.InMemoryFileSystem::DD,710
+710 :: EXPR :: modify :: Lokhttp3/internal/io/InMemoryFileSystem :: p0 $this .fileSystem = v8::
+713 :: CALL :: call :: Lokhttp3/mockwebserver/internal/tls/SslClient :: v11 = localhost()::CL,2990
+737 :: ENTR :: entry :: null :: okhttp3.CacheTest.<clinit>()::
+763 :: ENTR :: entry :: null :: okhttp3.mockwebserver.SocketPolicy.<clinit>()::CD,766:CD,772:CD,774:CD,780:CD,782:CD,788:CD,790:CD,796:CD,798:CD,804:CD,806:CD,812:CD,814:CD,820:CD,822:CD,828:CD,830:CD,836:CD,838:CD,844:CD,846:CD,852:CD,854:CD,860:CD,862:CD,868:CD,870:CD,876:CD,878:CD,884:CD,886:CD,887:CD,893:CD,899:CD,905:CD,911:CD,917:CD,923:CD,929:CD,935:CD,941:CD,947:CD,953:CD,959:CD,965:CD,971
+766 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v2 = new okhttp3.mockwebserver.SocketPolicy::DD,772
+772 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.KEEP_OPEN = v2::
+774 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v6 = new okhttp3.mockwebserver.SocketPolicy::DD,780
+780 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.DISCONNECT_AT_END = v6::
+782 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v10 = new okhttp3.mockwebserver.SocketPolicy::DD,788
+788 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.UPGRADE_TO_SSL_AT_END = v10::
+790 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v14 = new okhttp3.mockwebserver.SocketPolicy::DD,796
+796 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.DISCONNECT_AT_START = v14::
+798 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v18 = new okhttp3.mockwebserver.SocketPolicy::DD,804
+804 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.DISCONNECT_AFTER_REQUEST = v18::
+806 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v22 = new okhttp3.mockwebserver.SocketPolicy::DD,812
+812 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.DISCONNECT_DURING_REQUEST_BODY = v22::
+814 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v26 = new okhttp3.mockwebserver.SocketPolicy::DD,820
+820 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.DISCONNECT_DURING_RESPONSE_BODY = v26::
+822 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v30 = new okhttp3.mockwebserver.SocketPolicy::DD,828
+828 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.FAIL_HANDSHAKE = v30::
+830 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v34 = new okhttp3.mockwebserver.SocketPolicy::DD,836
+836 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.SHUTDOWN_INPUT_AT_END = v34::
+838 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v38 = new okhttp3.mockwebserver.SocketPolicy::DD,844
+844 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.SHUTDOWN_OUTPUT_AT_END = v38::
+846 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v42 = new okhttp3.mockwebserver.SocketPolicy::DD,852
+852 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.STALL_SOCKET_AT_START = v42::
+854 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v46 = new okhttp3.mockwebserver.SocketPolicy::DD,860
+860 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.NO_RESPONSE = v46::
+862 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v50 = new okhttp3.mockwebserver.SocketPolicy::DD,868
+868 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.RESET_STREAM_AT_START = v50::
+870 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v54 = new okhttp3.mockwebserver.SocketPolicy::DD,876
+876 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.EXPECT_CONTINUE = v54::
+878 :: NORM :: declaration :: Lokhttp3/mockwebserver/SocketPolicy :: v58 = new okhttp3.mockwebserver.SocketPolicy::DD,884
+884 :: EXPR :: modify :: Lokhttp3/mockwebserver/SocketPolicy :: okhttp3.mockwebserver.SocketPolicy.CONTINUE_ALWAYS = v58::
+886 :: NORM :: declaration :: [Lokhttp3/mockwebserver/SocketPolicy :: v63 = new okhttp3.mockwebserver.SocketPolicy[]::
+887 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v64 = okhttp3.mockwebserver.SocketPolicy.KEEP_OPEN::DD,889
+889 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(0)] = v64::
+893 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v65 = okhttp3.mockwebserver.SocketPolicy.DISCONNECT_AT_END::DD,895
+895 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(1)] = v65::
+899 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v66 = okhttp3.mockwebserver.SocketPolicy.UPGRADE_TO_SSL_AT_END::DD,901
+901 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(2)] = v66::
+905 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v67 = okhttp3.mockwebserver.SocketPolicy.DISCONNECT_AT_START::DD,907
+907 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(3)] = v67::
+911 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v68 = okhttp3.mockwebserver.SocketPolicy.DISCONNECT_AFTER_REQUEST::DD,913
+913 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(4)] = v68::
+917 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v69 = okhttp3.mockwebserver.SocketPolicy.DISCONNECT_DURING_REQUEST_BODY::DD,919
+919 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(5)] = v69::
+923 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v70 = okhttp3.mockwebserver.SocketPolicy.DISCONNECT_DURING_RESPONSE_BODY::DD,925
+925 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(6)] = v70::
+929 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v71 = okhttp3.mockwebserver.SocketPolicy.FAIL_HANDSHAKE::DD,931
+931 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(7)] = v71::
+935 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v72 = okhttp3.mockwebserver.SocketPolicy.SHUTDOWN_INPUT_AT_END::DD,937
+937 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(8)] = v72::
+941 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v73 = okhttp3.mockwebserver.SocketPolicy.SHUTDOWN_OUTPUT_AT_END::DD,943
+943 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(9)] = v73::
+947 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v74 = okhttp3.mockwebserver.SocketPolicy.STALL_SOCKET_AT_START::DD,949
+949 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(10)] = v74::
+953 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v75 = okhttp3.mockwebserver.SocketPolicy.NO_RESPONSE::DD,955
+955 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(11)] = v75::
+959 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v76 = okhttp3.mockwebserver.SocketPolicy.RESET_STREAM_AT_START::DD,961
+961 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(12)] = v76::
+965 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v77 = okhttp3.mockwebserver.SocketPolicy.EXPECT_CONTINUE::DD,967
+967 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(13)] = v77::
+971 :: EXPR :: reference :: Lokhttp3/mockwebserver/SocketPolicy :: v78 = okhttp3.mockwebserver.SocketPolicy.CONTINUE_ALWAYS::DD,973
+973 :: EXPR :: modify :: Ljava/lang/Object :: v63[#(14)] = v78::
+1087 :: ENTR :: entry :: null :: okhttp3.internal.cache.DiskLruCache.<clinit>()::CD,1090:CD,1091:CD,1099
+1090 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lokhttp3/internal/cache/DiskLruCache>-><Primordial,Ljava/lang/Class>::
+1091 :: CALL :: call :: Z :: v4 = v2.desiredAssertionStatus()::
+1099 :: CALL :: call :: Ljava/util/regex/Pattern :: v10 = compile(#([a-z0-9_-]{1,120}))::
+1113 :: ENTR :: entry :: null :: okhttp3.internal.Util.<clinit>()::CD,1124:CD,1133:CD,1170:CD,1176:CD,1182:CD,1188:CD,1194:CD,1200:CD,1206:CD,1218
+1124 :: CALL :: call :: Lokhttp3/ResponseBody :: v8 = create(#(null), v6)::CL,3476
+1133 :: CALL :: call :: Lokhttp3/RequestBody :: v11 = create(#(null), v9)::CL,3505
+1170 :: CALL :: call :: Ljava/nio/charset/Charset :: v29 = forName(#(UTF-8))::
+1176 :: CALL :: call :: Ljava/nio/charset/Charset :: v32 = forName(#(ISO-8859-1))::
+1182 :: CALL :: call :: Ljava/nio/charset/Charset :: v35 = forName(#(UTF-16BE))::
+1188 :: CALL :: call :: Ljava/nio/charset/Charset :: v38 = forName(#(UTF-16LE))::
+1194 :: CALL :: call :: Ljava/nio/charset/Charset :: v41 = forName(#(UTF-32BE))::
+1200 :: CALL :: call :: Ljava/nio/charset/Charset :: v44 = forName(#(UTF-32LE))::
+1206 :: CALL :: call :: Ljava/util/TimeZone :: v47 = getTimeZone(#(GMT))::
+1218 :: CALL :: call :: Ljava/util/regex/Pattern :: v52 = compile(#(([0-9a-fA-F]*:[0-9a-f...))::
+1262 :: ENTR :: entry :: null :: okhttp3.internal.platform.Platform.<clinit>()::CD,1265:CD,1270:CD,1271:CD,1275
+1265 :: CALL :: call :: Lokhttp3/internal/platform/Platform :: v3 = findPlatform()::CL,3532
+1270 :: EXPR :: assign :: Ljava/lang/Class :: v4 = metadata <Application,Lokhttp3/OkHttpClient>-><Primordial,Ljava/lang/Class>::JM,1271
+1271 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getName()::JM,1271
+1275 :: CALL :: call :: Ljava/util/logging/Logger :: v8 = getLogger(v6)::
+1284 :: ENTR :: entry :: null :: okhttp3.OkHttpClient.<clinit>()::CD,1300:CD,1319
+1300 :: CALL :: call :: Ljava/util/List :: v9 = immutableList(v3)::CL,3582
+1319 :: CALL :: call :: Ljava/util/List :: v14 = immutableList(v10)::CL,3582
+1350 :: ENTR :: entry :: null :: okhttp3.Protocol.<clinit>()::CD,1353:JM,3622:CD,1360:CD,1362:CD,1369:CD,1371:CD,1378:CD,1380:CD,1387:CD,1389:CD,1396:CD,1398:CD,1399:CD,1405:CD,1411:CD,1417:CD,1423
+1353 :: NORM :: declaration :: Lokhttp3/Protocol :: v2 = new okhttp3.Protocol::DD,1360
+1360 :: EXPR :: modify :: Lokhttp3/Protocol :: okhttp3.Protocol.HTTP_1_0 = v2::
+1362 :: NORM :: declaration :: Lokhttp3/Protocol :: v7 = new okhttp3.Protocol::DD,1369
+1369 :: EXPR :: modify :: Lokhttp3/Protocol :: okhttp3.Protocol.HTTP_1_1 = v7::
+1371 :: NORM :: declaration :: Lokhttp3/Protocol :: v12 = new okhttp3.Protocol::DD,1378
+1378 :: EXPR :: modify :: Lokhttp3/Protocol :: okhttp3.Protocol.SPDY_3 = v12::
+1380 :: NORM :: declaration :: Lokhttp3/Protocol :: v17 = new okhttp3.Protocol::DD,1387
+1387 :: EXPR :: modify :: Lokhttp3/Protocol :: okhttp3.Protocol.HTTP_2 = v17::
+1389 :: NORM :: declaration :: Lokhttp3/Protocol :: v22 = new okhttp3.Protocol::DD,1396
+1396 :: EXPR :: modify :: Lokhttp3/Protocol :: okhttp3.Protocol.QUIC = v22::
+1398 :: NORM :: declaration :: [Lokhttp3/Protocol :: v28 = new okhttp3.Protocol[]::
+1399 :: EXPR :: reference :: Lokhttp3/Protocol :: v29 = okhttp3.Protocol.HTTP_1_0::DD,1401
+1401 :: EXPR :: modify :: Ljava/lang/Object :: v28[#(0)] = v29::
+1405 :: EXPR :: reference :: Lokhttp3/Protocol :: v30 = okhttp3.Protocol.HTTP_1_1::DD,1407
+1407 :: EXPR :: modify :: Ljava/lang/Object :: v28[#(1)] = v30::
+1411 :: EXPR :: reference :: Lokhttp3/Protocol :: v31 = okhttp3.Protocol.SPDY_3::DD,1413
+1413 :: EXPR :: modify :: Ljava/lang/Object :: v28[#(2)] = v31::
+1417 :: EXPR :: reference :: Lokhttp3/Protocol :: v32 = okhttp3.Protocol.HTTP_2::DD,1419
+1419 :: EXPR :: modify :: Ljava/lang/Object :: v28[#(3)] = v32::
+1423 :: EXPR :: reference :: Lokhttp3/Protocol :: v33 = okhttp3.Protocol.QUIC::DD,1425
+1425 :: EXPR :: modify :: Ljava/lang/Object :: v28[#(4)] = v33::
+1474 :: ENTR :: entry :: null :: okhttp3.ConnectionSpec.<clinit>()::CD,1477:CD,1478:CD,1484:CD,1490:CD,1496:CD,1502:CD,1508:CD,1514:CD,1520:CD,1526:CD,1532:CD,1538:CD,1544:CD,1550:CD,1565:CD,1595:CD,1600:CD,1605:CD,1625:CD,1630:CD,1635:CD,1646
+1477 :: NORM :: declaration :: [Lokhttp3/CipherSuite :: v3 = new okhttp3.CipherSuite[]::
+1478 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v5 = okhttp3.CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256::DD,1480
+1480 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(0)] = v5::
+1484 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v7 = okhttp3.CipherSuite.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256::DD,1486
+1486 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(1)] = v7::
+1490 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v9 = okhttp3.CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384::DD,1492
+1492 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(2)] = v9::
+1496 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v11 = okhttp3.CipherSuite.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384::DD,1498
+1498 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(3)] = v11::
+1502 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v13 = okhttp3.CipherSuite.TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256::DD,1504
+1504 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(4)] = v13::
+1508 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v15 = okhttp3.CipherSuite.TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256::DD,1510
+1510 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(5)] = v15::
+1514 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v17 = okhttp3.CipherSuite.TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA::DD,1516
+1516 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(6)] = v17::
+1520 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v19 = okhttp3.CipherSuite.TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA::DD,1522
+1522 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(7)] = v19::
+1526 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v21 = okhttp3.CipherSuite.TLS_RSA_WITH_AES_128_GCM_SHA256::DD,1528
+1528 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(8)] = v21::
+1532 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v23 = okhttp3.CipherSuite.TLS_RSA_WITH_AES_256_GCM_SHA384::DD,1534
+1534 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(9)] = v23::
+1538 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v25 = okhttp3.CipherSuite.TLS_RSA_WITH_AES_128_CBC_SHA::DD,1540
+1540 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(10)] = v25::
+1544 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v27 = okhttp3.CipherSuite.TLS_RSA_WITH_AES_256_CBC_SHA::DD,1546
+1546 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(11)] = v27::
+1550 :: EXPR :: reference :: Lokhttp3/CipherSuite :: v29 = okhttp3.CipherSuite.TLS_RSA_WITH_3DES_EDE_CBC_SHA::DD,1552
+1552 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(12)] = v29::
+1565 :: CALL :: call :: Lokhttp3/ConnectionSpec$Builder :: v34 = v30.cipherSuites(v32)::CL,3646
+1595 :: CALL :: call :: Lokhttp3/ConnectionSpec$Builder :: v41 = v34.tlsVersions(v35)::CL,3701
+1600 :: CALL :: call :: Lokhttp3/ConnectionSpec$Builder :: v43 = v41.supportsTlsExtensions(#(1))::CL,3756
+1605 :: CALL :: call :: Lokhttp3/ConnectionSpec :: v45 = v43.build()::CL,3780
+1625 :: CALL :: call :: Lokhttp3/ConnectionSpec$Builder :: v52 = v46.tlsVersions(v49)::CL,3701
+1630 :: CALL :: call :: Lokhttp3/ConnectionSpec$Builder :: v54 = v52.supportsTlsExtensions(#(1))::CL,3756
+1635 :: CALL :: call :: Lokhttp3/ConnectionSpec :: v56 = v54.build()::CL,3780
+1646 :: CALL :: call :: Lokhttp3/ConnectionSpec :: v60 = v57.build()::CL,3780
+1722 :: ENTR :: entry :: null :: okhttp3.CipherSuite.<clinit>()::CD,1725:CD,1729:CD,1731:CD,1732:CD,1740:CD,1747:CD,1754:CD,1761:CD,1768:CD,1775:CD,1782:CD,1789:CD,1796:CD,1803:CD,1810:CD,1817:CD,1824:CD,1831:CD,1838:CD,1845:CD,1852:CD,1859:CD,1866:CD,1873:CD,1880:CD,1887:CD,1894:CD,1901:CD,1908:CD,1915:CD,1922:CD,1929:CD,1936:CD,1943:CD,1950:CD,1957:CD,1964:CD,1971:CD,1978:CD,1985:CD,1992:CD,1999:CD,2006:CD,2013:CD,2020:CD,2027:CD,2034:CD,2041:CD,2048:CD,2055:CD,2062:CD,2069:CD,2076:CD,2083:CD,2090:CD,2097:CD,2104:CD,2111:CD,2118:CD,2125:CD,2132:CD,2139:CD,2146:CD,2153:CD,2160:CD,2167:CD,2174:CD,2181:CD,2188:CD,2195:CD,2202:CD,2209:CD,2216:CD,2223:CD,2230:CD,2237:CD,2244:CD,2251:CD,2258:CD,2265:CD,2272:CD,2279:CD,2286:CD,2293:CD,2300:CD,2307:CD,2314:CD,2321:CD,2328:CD,2335:CD,2342:CD,2349:CD,2356:CD,2363:CD,2370:CD,2377:CD,2384:CD,2391:CD,2398:CD,2405:CD,2412:CD,2419:CD,2426:CD,2433:CD,2440:CD,2447:CD,2454:CD,2461:CD,2468:CD,2475:CD,2482:CD,2489:CD,2496:CD,2503:CD,2510:CD,2517
+1725 :: NORM :: declaration :: Lokhttp3/CipherSuite$1 :: v2 = new okhttp3.CipherSuite$1::DD,1729
+1729 :: EXPR :: modify :: Ljava/util/Comparator :: okhttp3.CipherSuite.ORDER_BY_NAME = v2::
+1731 :: NORM :: declaration :: Ljava/util/TreeMap :: v4 = new java.util.TreeMap::
+1732 :: EXPR :: reference :: Ljava/util/Comparator :: v5 = okhttp3.CipherSuite.ORDER_BY_NAME::
+1740 :: CALL :: call :: Lokhttp3/CipherSuite :: v10 = of(#(SSL_RSA_WITH_NULL_MD5), #(1))::CL,3843
+1747 :: CALL :: call :: Lokhttp3/CipherSuite :: v14 = of(#(SSL_RSA_WITH_NULL_SHA), #(2))::CL,3843
+1754 :: CALL :: call :: Lokhttp3/CipherSuite :: v18 = of(#(SSL_RSA_EXPORT_WITH_R...), #(3))::CL,3843
+1761 :: CALL :: call :: Lokhttp3/CipherSuite :: v22 = of(#(SSL_RSA_WITH_RC4_128_MD5), #(4))::CL,3843
+1768 :: CALL :: call :: Lokhttp3/CipherSuite :: v26 = of(#(SSL_RSA_WITH_RC4_128_SHA), #(5))::CL,3843
+1775 :: CALL :: call :: Lokhttp3/CipherSuite :: v30 = of(#(SSL_RSA_EXPORT_WITH_D...), #(8))::CL,3843
+1782 :: CALL :: call :: Lokhttp3/CipherSuite :: v34 = of(#(SSL_RSA_WITH_DES_CBC_SHA), #(9))::CL,3843
+1789 :: CALL :: call :: Lokhttp3/CipherSuite :: v38 = of(#(SSL_RSA_WITH_3DES_EDE...), #(10))::CL,3843
+1796 :: CALL :: call :: Lokhttp3/CipherSuite :: v42 = of(#(SSL_DHE_DSS_EXPORT_WI...), #(17))::CL,3843
+1803 :: CALL :: call :: Lokhttp3/CipherSuite :: v46 = of(#(SSL_DHE_DSS_WITH_DES_...), #(18))::CL,3843
+1810 :: CALL :: call :: Lokhttp3/CipherSuite :: v50 = of(#(SSL_DHE_DSS_WITH_3DES...), #(19))::CL,3843
+1817 :: CALL :: call :: Lokhttp3/CipherSuite :: v54 = of(#(SSL_DHE_RSA_EXPORT_WI...), #(20))::CL,3843
+1824 :: CALL :: call :: Lokhttp3/CipherSuite :: v58 = of(#(SSL_DHE_RSA_WITH_DES_...), #(21))::CL,3843
+1831 :: CALL :: call :: Lokhttp3/CipherSuite :: v62 = of(#(SSL_DHE_RSA_WITH_3DES...), #(22))::CL,3843
+1838 :: CALL :: call :: Lokhttp3/CipherSuite :: v66 = of(#(SSL_DH_anon_EXPORT_WI...), #(23))::CL,3843
+1845 :: CALL :: call :: Lokhttp3/CipherSuite :: v70 = of(#(SSL_DH_anon_WITH_RC4_...), #(24))::CL,3843
+1852 :: CALL :: call :: Lokhttp3/CipherSuite :: v74 = of(#(SSL_DH_anon_EXPORT_WI...), #(25))::CL,3843
+1859 :: CALL :: call :: Lokhttp3/CipherSuite :: v78 = of(#(SSL_DH_anon_WITH_DES_...), #(26))::CL,3843
+1866 :: CALL :: call :: Lokhttp3/CipherSuite :: v82 = of(#(SSL_DH_anon_WITH_3DES...), #(27))::CL,3843
+1873 :: CALL :: call :: Lokhttp3/CipherSuite :: v86 = of(#(TLS_KRB5_WITH_DES_CBC_SHA), #(30))::CL,3843
+1880 :: CALL :: call :: Lokhttp3/CipherSuite :: v90 = of(#(TLS_KRB5_WITH_3DES_ED...), #(31))::CL,3843
+1887 :: CALL :: call :: Lokhttp3/CipherSuite :: v94 = of(#(TLS_KRB5_WITH_RC4_128_SHA), #(32))::CL,3843
+1894 :: CALL :: call :: Lokhttp3/CipherSuite :: v98 = of(#(TLS_KRB5_WITH_DES_CBC_MD5), #(34))::CL,3843
+1901 :: CALL :: call :: Lokhttp3/CipherSuite :: v102 = of(#(TLS_KRB5_WITH_3DES_ED...), #(35))::CL,3843
+1908 :: CALL :: call :: Lokhttp3/CipherSuite :: v106 = of(#(TLS_KRB5_WITH_RC4_128_MD5), #(36))::CL,3843
+1915 :: CALL :: call :: Lokhttp3/CipherSuite :: v110 = of(#(TLS_KRB5_EXPORT_WITH_...), #(38))::CL,3843
+1922 :: CALL :: call :: Lokhttp3/CipherSuite :: v114 = of(#(TLS_KRB5_EXPORT_WITH_...), #(40))::CL,3843
+1929 :: CALL :: call :: Lokhttp3/CipherSuite :: v118 = of(#(TLS_KRB5_EXPORT_WITH_...), #(41))::CL,3843
+1936 :: CALL :: call :: Lokhttp3/CipherSuite :: v122 = of(#(TLS_KRB5_EXPORT_WITH_...), #(43))::CL,3843
+1943 :: CALL :: call :: Lokhttp3/CipherSuite :: v126 = of(#(TLS_RSA_WITH_AES_128_...), #(47))::CL,3843
+1950 :: CALL :: call :: Lokhttp3/CipherSuite :: v130 = of(#(TLS_DHE_DSS_WITH_AES_...), #(50))::CL,3843
+1957 :: CALL :: call :: Lokhttp3/CipherSuite :: v134 = of(#(TLS_DHE_RSA_WITH_AES_...), #(51))::CL,3843
+1964 :: CALL :: call :: Lokhttp3/CipherSuite :: v138 = of(#(TLS_DH_anon_WITH_AES_...), #(52))::CL,3843
+1971 :: CALL :: call :: Lokhttp3/CipherSuite :: v142 = of(#(TLS_RSA_WITH_AES_256_...), #(53))::CL,3843
+1978 :: CALL :: call :: Lokhttp3/CipherSuite :: v146 = of(#(TLS_DHE_DSS_WITH_AES_...), #(56))::CL,3843
+1985 :: CALL :: call :: Lokhttp3/CipherSuite :: v150 = of(#(TLS_DHE_RSA_WITH_AES_...), #(57))::CL,3843
+1992 :: CALL :: call :: Lokhttp3/CipherSuite :: v154 = of(#(TLS_DH_anon_WITH_AES_...), #(58))::CL,3843
+1999 :: CALL :: call :: Lokhttp3/CipherSuite :: v158 = of(#(TLS_RSA_WITH_NULL_SHA256), #(59))::CL,3843
+2006 :: CALL :: call :: Lokhttp3/CipherSuite :: v162 = of(#(TLS_RSA_WITH_AES_128_...), #(60))::CL,3843
+2013 :: CALL :: call :: Lokhttp3/CipherSuite :: v166 = of(#(TLS_RSA_WITH_AES_256_...), #(61))::CL,3843
+2020 :: CALL :: call :: Lokhttp3/CipherSuite :: v170 = of(#(TLS_DHE_DSS_WITH_AES_...), #(64))::CL,3843
+2027 :: CALL :: call :: Lokhttp3/CipherSuite :: v174 = of(#(TLS_RSA_WITH_CAMELLIA...), #(65))::CL,3843
+2034 :: CALL :: call :: Lokhttp3/CipherSuite :: v178 = of(#(TLS_DHE_DSS_WITH_CAME...), #(68))::CL,3843
+2041 :: CALL :: call :: Lokhttp3/CipherSuite :: v182 = of(#(TLS_DHE_RSA_WITH_CAME...), #(69))::CL,3843
+2048 :: CALL :: call :: Lokhttp3/CipherSuite :: v186 = of(#(TLS_DHE_RSA_WITH_AES_...), #(103))::CL,3843
+2055 :: CALL :: call :: Lokhttp3/CipherSuite :: v190 = of(#(TLS_DHE_DSS_WITH_AES_...), #(106))::CL,3843
+2062 :: CALL :: call :: Lokhttp3/CipherSuite :: v194 = of(#(TLS_DHE_RSA_WITH_AES_...), #(107))::CL,3843
+2069 :: CALL :: call :: Lokhttp3/CipherSuite :: v198 = of(#(TLS_DH_anon_WITH_AES_...), #(108))::CL,3843
+2076 :: CALL :: call :: Lokhttp3/CipherSuite :: v202 = of(#(TLS_DH_anon_WITH_AES_...), #(109))::CL,3843
+2083 :: CALL :: call :: Lokhttp3/CipherSuite :: v206 = of(#(TLS_RSA_WITH_CAMELLIA...), #(132))::CL,3843
+2090 :: CALL :: call :: Lokhttp3/CipherSuite :: v210 = of(#(TLS_DHE_DSS_WITH_CAME...), #(135))::CL,3843
+2097 :: CALL :: call :: Lokhttp3/CipherSuite :: v214 = of(#(TLS_DHE_RSA_WITH_CAME...), #(136))::CL,3843
+2104 :: CALL :: call :: Lokhttp3/CipherSuite :: v218 = of(#(TLS_PSK_WITH_RC4_128_SHA), #(138))::CL,3843
+2111 :: CALL :: call :: Lokhttp3/CipherSuite :: v222 = of(#(TLS_PSK_WITH_3DES_EDE...), #(139))::CL,3843
+2118 :: CALL :: call :: Lokhttp3/CipherSuite :: v226 = of(#(TLS_PSK_WITH_AES_128_...), #(140))::CL,3843
+2125 :: CALL :: call :: Lokhttp3/CipherSuite :: v230 = of(#(TLS_PSK_WITH_AES_256_...), #(141))::CL,3843
+2132 :: CALL :: call :: Lokhttp3/CipherSuite :: v234 = of(#(TLS_RSA_WITH_SEED_CBC_SHA), #(150))::CL,3843
+2139 :: CALL :: call :: Lokhttp3/CipherSuite :: v238 = of(#(TLS_RSA_WITH_AES_128_...), #(156))::CL,3843
+2146 :: CALL :: call :: Lokhttp3/CipherSuite :: v242 = of(#(TLS_RSA_WITH_AES_256_...), #(157))::CL,3843
+2153 :: CALL :: call :: Lokhttp3/CipherSuite :: v246 = of(#(TLS_DHE_RSA_WITH_AES_...), #(158))::CL,3843
+2160 :: CALL :: call :: Lokhttp3/CipherSuite :: v250 = of(#(TLS_DHE_RSA_WITH_AES_...), #(159))::CL,3843
+2167 :: CALL :: call :: Lokhttp3/CipherSuite :: v254 = of(#(TLS_DHE_DSS_WITH_AES_...), #(162))::CL,3843
+2174 :: CALL :: call :: Lokhttp3/CipherSuite :: v258 = of(#(TLS_DHE_DSS_WITH_AES_...), #(163))::CL,3843
+2181 :: CALL :: call :: Lokhttp3/CipherSuite :: v262 = of(#(TLS_DH_anon_WITH_AES_...), #(166))::CL,3843
+2188 :: CALL :: call :: Lokhttp3/CipherSuite :: v266 = of(#(TLS_DH_anon_WITH_AES_...), #(167))::CL,3843
+2195 :: CALL :: call :: Lokhttp3/CipherSuite :: v270 = of(#(TLS_EMPTY_RENEGOTIATI...), #(255))::CL,3843
+2202 :: CALL :: call :: Lokhttp3/CipherSuite :: v274 = of(#(TLS_FALLBACK_SCSV), #(22016))::CL,3843
+2209 :: CALL :: call :: Lokhttp3/CipherSuite :: v278 = of(#(TLS_ECDH_ECDSA_WITH_N...), #(49153))::CL,3843
+2216 :: CALL :: call :: Lokhttp3/CipherSuite :: v282 = of(#(TLS_ECDH_ECDSA_WITH_R...), #(49154))::CL,3843
+2223 :: CALL :: call :: Lokhttp3/CipherSuite :: v286 = of(#(TLS_ECDH_ECDSA_WITH_3...), #(49155))::CL,3843
+2230 :: CALL :: call :: Lokhttp3/CipherSuite :: v290 = of(#(TLS_ECDH_ECDSA_WITH_A...), #(49156))::CL,3843
+2237 :: CALL :: call :: Lokhttp3/CipherSuite :: v294 = of(#(TLS_ECDH_ECDSA_WITH_A...), #(49157))::CL,3843
+2244 :: CALL :: call :: Lokhttp3/CipherSuite :: v298 = of(#(TLS_ECDHE_ECDSA_WITH_...), #(49158))::CL,3843
+2251 :: CALL :: call :: Lokhttp3/CipherSuite :: v302 = of(#(TLS_ECDHE_ECDSA_WITH_...), #(49159))::CL,3843
+2258 :: CALL :: call :: Lokhttp3/CipherSuite :: v306 = of(#(TLS_ECDHE_ECDSA_WITH_...), #(49160))::CL,3843
+2265 :: CALL :: call :: Lokhttp3/CipherSuite :: v310 = of(#(TLS_ECDHE_ECDSA_WITH_...), #(49161))::CL,3843
+2272 :: CALL :: call :: Lokhttp3/CipherSuite :: v314 = of(#(TLS_ECDHE_ECDSA_WITH_...), #(49162))::CL,3843
+2279 :: CALL :: call :: Lokhttp3/CipherSuite :: v318 = of(#(TLS_ECDH_RSA_WITH_NUL...), #(49163))::CL,3843
+2286 :: CALL :: call :: Lokhttp3/CipherSuite :: v322 = of(#(TLS_ECDH_RSA_WITH_RC4...), #(49164))::CL,3843
+2293 :: CALL :: call :: Lokhttp3/CipherSuite :: v326 = of(#(TLS_ECDH_RSA_WITH_3DE...), #(49165))::CL,3843
+2300 :: CALL :: call :: Lokhttp3/CipherSuite :: v330 = of(#(TLS_ECDH_RSA_WITH_AES...), #(49166))::CL,3843
+2307 :: CALL :: call :: Lokhttp3/CipherSuite :: v334 = of(#(TLS_ECDH_RSA_WITH_AES...), #(49167))::CL,3843
+2314 :: CALL :: call :: Lokhttp3/CipherSuite :: v338 = of(#(TLS_ECDHE_RSA_WITH_NU...), #(49168))::CL,3843
+2321 :: CALL :: call :: Lokhttp3/CipherSuite :: v342 = of(#(TLS_ECDHE_RSA_WITH_RC...), #(49169))::CL,3843
+2328 :: CALL :: call :: Lokhttp3/CipherSuite :: v346 = of(#(TLS_ECDHE_RSA_WITH_3D...), #(49170))::CL,3843
+2335 :: CALL :: call :: Lokhttp3/CipherSuite :: v350 = of(#(TLS_ECDHE_RSA_WITH_AE...), #(49171))::CL,3843
+2342 :: CALL :: call :: Lokhttp3/CipherSuite :: v354 = of(#(TLS_ECDHE_RSA_WITH_AE...), #(49172))::CL,3843
+2349 :: CALL :: call :: Lokhttp3/CipherSuite :: v358 = of(#(TLS_ECDH_anon_WITH_NU...), #(49173))::CL,3843
+2356 :: CALL :: call :: Lokhttp3/CipherSuite :: v362 = of(#(TLS_ECDH_anon_WITH_RC...), #(49174))::CL,3843
+2363 :: CALL :: call :: Lokhttp3/CipherSuite :: v366 = of(#(TLS_ECDH_anon_WITH_3D...), #(49175))::CL,3843
+2370 :: CALL :: call :: Lokhttp3/CipherSuite :: v370 = of(#(TLS_ECDH_anon_WITH_AE...), #(49176))::CL,3843
+2377 :: CALL :: call :: Lokhttp3/CipherSuite :: v374 = of(#(TLS_ECDH_anon_WITH_AE...), #(49177))::CL,3843
+2384 :: CALL :: call :: Lokhttp3/CipherSuite :: v378 = of(#(TLS_ECDHE_ECDSA_WITH_...), #(49187))::CL,3843
+2391 :: CALL :: call :: Lokhttp3/CipherSuite :: v382 = of(#(TLS_ECDHE_ECDSA_WITH_...), #(49188))::CL,3843
+2398 :: CALL :: call :: Lokhttp3/CipherSuite :: v386 = of(#(TLS_ECDH_ECDSA_WITH_A...), #(49189))::CL,3843
+2405 :: CALL :: call :: Lokhttp3/CipherSuite :: v390 = of(#(TLS_ECDH_ECDSA_WITH_A...), #(49190))::CL,3843
+2412 :: CALL :: call :: Lokhttp3/CipherSuite :: v394 = of(#(TLS_ECDHE_RSA_WITH_AE...), #(49191))::CL,3843
+2419 :: CALL :: call :: Lokhttp3/CipherSuite :: v398 = of(#(TLS_ECDHE_RSA_WITH_AE...), #(49192))::CL,3843
+2426 :: CALL :: call :: Lokhttp3/CipherSuite :: v402 = of(#(TLS_ECDH_RSA_WITH_AES...), #(49193))::CL,3843
+2433 :: CALL :: call :: Lokhttp3/CipherSuite :: v406 = of(#(TLS_ECDH_RSA_WITH_AES...), #(49194))::CL,3843
+2440 :: CALL :: call :: Lokhttp3/CipherSuite :: v410 = of(#(TLS_ECDHE_ECDSA_WITH_...), #(49195))::CL,3843
+2447 :: CALL :: call :: Lokhttp3/CipherSuite :: v414 = of(#(TLS_ECDHE_ECDSA_WITH_...), #(49196))::CL,3843
+2454 :: CALL :: call :: Lokhttp3/CipherSuite :: v418 = of(#(TLS_ECDH_ECDSA_WITH_A...), #(49197))::CL,3843
+2461 :: CALL :: call :: Lokhttp3/CipherSuite :: v422 = of(#(TLS_ECDH_ECDSA_WITH_A...), #(49198))::CL,3843
+2468 :: CALL :: call :: Lokhttp3/CipherSuite :: v426 = of(#(TLS_ECDHE_RSA_WITH_AE...), #(49199))::CL,3843
+2475 :: CALL :: call :: Lokhttp3/CipherSuite :: v430 = of(#(TLS_ECDHE_RSA_WITH_AE...), #(49200))::CL,3843
+2482 :: CALL :: call :: Lokhttp3/CipherSuite :: v434 = of(#(TLS_ECDH_RSA_WITH_AES...), #(49201))::CL,3843
+2489 :: CALL :: call :: Lokhttp3/CipherSuite :: v438 = of(#(TLS_ECDH_RSA_WITH_AES...), #(49202))::CL,3843
+2496 :: CALL :: call :: Lokhttp3/CipherSuite :: v442 = of(#(TLS_ECDHE_PSK_WITH_AE...), #(49205))::CL,3843
+2503 :: CALL :: call :: Lokhttp3/CipherSuite :: v446 = of(#(TLS_ECDHE_PSK_WITH_AE...), #(49206))::CL,3843
+2510 :: CALL :: call :: Lokhttp3/CipherSuite :: v450 = of(#(TLS_ECDHE_RSA_WITH_CH...), #(52392))::CL,3843
+2517 :: CALL :: call :: Lokhttp3/CipherSuite :: v454 = of(#(TLS_ECDHE_ECDSA_WITH_...), #(52393))::CL,3843
+2866 :: ENTR :: entry :: null :: okhttp3.TlsVersion.<clinit>()::CD,2869:JM,3866:CD,2876:CD,2878:CD,2885:CD,2887:CD,2894:CD,2896:CD,2903:CD,2905:CD,2912:CD,2914:CD,2915:CD,2921:CD,2927:CD,2933:CD,2939
+2869 :: NORM :: declaration :: Lokhttp3/TlsVersion :: v2 = new okhttp3.TlsVersion::DD,2876
+2876 :: EXPR :: modify :: Lokhttp3/TlsVersion :: okhttp3.TlsVersion.TLS_1_3 = v2::
+2878 :: NORM :: declaration :: Lokhttp3/TlsVersion :: v7 = new okhttp3.TlsVersion::DD,2885
+2885 :: EXPR :: modify :: Lokhttp3/TlsVersion :: okhttp3.TlsVersion.TLS_1_2 = v7::
+2887 :: NORM :: declaration :: Lokhttp3/TlsVersion :: v12 = new okhttp3.TlsVersion::DD,2894
+2894 :: EXPR :: modify :: Lokhttp3/TlsVersion :: okhttp3.TlsVersion.TLS_1_1 = v12::
+2896 :: NORM :: declaration :: Lokhttp3/TlsVersion :: v17 = new okhttp3.TlsVersion::DD,2903
+2903 :: EXPR :: modify :: Lokhttp3/TlsVersion :: okhttp3.TlsVersion.TLS_1_0 = v17::
+2905 :: NORM :: declaration :: Lokhttp3/TlsVersion :: v22 = new okhttp3.TlsVersion::DD,2912
+2912 :: EXPR :: modify :: Lokhttp3/TlsVersion :: okhttp3.TlsVersion.SSL_3_0 = v22::
+2914 :: NORM :: declaration :: [Lokhttp3/TlsVersion :: v28 = new okhttp3.TlsVersion[]::
+2915 :: EXPR :: reference :: Lokhttp3/TlsVersion :: v29 = okhttp3.TlsVersion.TLS_1_3::DD,2917
+2917 :: EXPR :: modify :: Ljava/lang/Object :: v28[#(0)] = v29::
+2921 :: EXPR :: reference :: Lokhttp3/TlsVersion :: v30 = okhttp3.TlsVersion.TLS_1_2::DD,2923
+2923 :: EXPR :: modify :: Ljava/lang/Object :: v28[#(1)] = v30::
+2927 :: EXPR :: reference :: Lokhttp3/TlsVersion :: v31 = okhttp3.TlsVersion.TLS_1_1::DD,2929
+2929 :: EXPR :: modify :: Ljava/lang/Object :: v28[#(2)] = v31::
+2933 :: EXPR :: reference :: Lokhttp3/TlsVersion :: v32 = okhttp3.TlsVersion.TLS_1_0::DD,2935
+2935 :: EXPR :: modify :: Ljava/lang/Object :: v28[#(3)] = v32::
+2939 :: EXPR :: reference :: Lokhttp3/TlsVersion :: v33 = okhttp3.TlsVersion.SSL_3_0::DD,2941
+2941 :: EXPR :: modify :: Ljava/lang/Object :: v28[#(4)] = v33::
+2990 :: ENTR :: entry :: null :: okhttp3.mockwebserver.internal.tls.SslClient.localhost()::CD,2993:CD,2995:CD,3060:CD,3066
+2993 :: EXPR :: reference :: Lokhttp3/mockwebserver/internal/tls/SslClient :: v2 = okhttp3.mockwebserver.internal.tls.SslClient.localhost::DD,2995
+2995 :: PRED :: IF :: Z :: if (v2 == #(null)) goto 10::JM,3885:CD,3008:CD,3012:CD,3021:JM,4276:JM,4283:CD,3036:CD,3046:CD,3051
+3008 :: CALL :: call :: Ljava/net/InetAddress :: v11 = getByName(#(localhost))::
+3012 :: CALL :: call :: Ljava/lang/String :: v13 = v11.getCanonicalHostName()::
+3021 :: CALL :: call :: Lokhttp3/mockwebserver/internal/tls/HeldCertificate :: v17 = v15.build()::CL,3927
+3036 :: CALL :: call :: Lokhttp3/mockwebserver/internal/tls/SslClient$Builder :: v28 = v21.certificateChain(v23, v24, v26)::CL,4303
+3046 :: CALL :: call :: Lokhttp3/mockwebserver/internal/tls/SslClient$Builder :: v31 = v28.addTrustedCertificate(v29)::CL,4358
+3051 :: CALL :: call :: Lokhttp3/mockwebserver/internal/tls/SslClient :: v33 = v31.build()::CL,4376
+3060 :: NORM :: declaration :: Ljava/lang/RuntimeException :: v19 = new java.lang.RuntimeException::
+3066 :: EXPR :: assign :: Ljava/lang/Exception :: v18 = catch <exc>::
+3079 :: ENTR :: entry :: null :: okhttp3.Cache.close()::CD,3086
+3086 :: CALL :: call :: V :: v3.close()::CL,4633
+3140 :: NORM :: declaration :: Ljava/util/ArrayList :: v14 = new java.util.ArrayList::JM,4741
+3147 :: CALL :: call :: Lokhttp3/mockwebserver/MockResponse :: v18 = p0 $this .setResponseCode(#(200))::CL,3207
+3152 :: CALL :: call :: Ljava/lang/Integer :: v22 = valueOf(#(0))::
+3156 :: CALL :: call :: Lokhttp3/mockwebserver/MockResponse :: v24 = p0 $this .setHeader(#(Content-Length), v22)::CL,4754
+3192 :: ENTR :: entry :: null :: okhttp3.mockwebserver.MockResponse.clearHeaders()::JM,4741
+3207 :: ENTR :: entry :: null :: okhttp3.mockwebserver.MockResponse.setResponseCode(int)::CD,3212:CD,3226:CD,3230:CD,3235:CD,3240:CD,3245:CD,3250:CD,3260:JM,3216:JM,3218:JM,3219:JM,3221:JM,3222:JM,3224:JM,3225:JM,3213:JM,3215
+3212 :: PRED :: IF :: Z :: if (p1 $code  < #(100)) goto 26::CD,3213:CD,3215
+3213 :: PRED :: IF :: Z :: if (p1 $code  >= #(200)) goto 26::CD,3215:CD,3260
+3215 :: PRED :: IF :: Z :: if (p1 $code  < #(200)) goto 46::CD,3216:CD,3218
+3216 :: PRED :: IF :: Z :: if (p1 $code  >= #(300)) goto 46::CD,3218:CD,3260
+3218 :: PRED :: IF :: Z :: if (p1 $code  < #(300)) goto 66::CD,3219:CD,3221
+3219 :: PRED :: IF :: Z :: if (p1 $code  >= #(400)) goto 66::CD,3221:CD,3260
+3221 :: PRED :: IF :: Z :: if (p1 $code  < #(400)) goto 86::CD,3222:CD,3224:CD,3260
+3222 :: PRED :: IF :: Z :: if (p1 $code  >= #(500)) goto 86::CD,3224:CD,3260
+3224 :: PRED :: IF :: Z :: if (p1 $code  < #(500)) goto 100::CF,3260:CD,3225
+3225 :: PRED :: IF :: Z :: if (p1 $code  >= #(600)) goto 100::CF,3260
+3226 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v17 = new java.lang.StringBuilder::
+3230 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v17.append(#(HTTP/1.1 ))::
+3235 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v21.append(p1 $code )::JM,3212
+3240 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v23.append(#( ))::
+3245 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v26.append(v16)::
+3250 :: CALL :: call :: Ljava/lang/String :: v30 = v28.toString()::
+3260 :: EXPR :: assign :: null :: PHI v16 = #(Informational), #(OK), #(Redirection), #(Client Error), #(Mock Response), #(Mock Response), #(Server Error)::CF,3226
+3298 :: ENTR :: entry :: null :: okhttp3.Cache.key(okhttp3.HttpUrl)::CF,3299:CD,3302:CD,3306:CD,3310:CD,3314:CD,3318
+3299 :: EXIT :: exit :: Ljava/lang/String :: okhttp3.Cache.key(okhttp3.HttpUrl)::
+3302 :: CALL :: call :: Ljava/lang/String :: v4 = p1 $url .toString()::JM,3314:JM,3302:JM,3318:JM,3306:JM,3310
+3306 :: CALL :: call :: Lokio/ByteString :: v6 = encodeUtf8(v4)::JM,3314:JM,3318:JM,3306:JM,3310
+3310 :: CALL :: call :: Lokio/ByteString :: v8 = v6.md5()::JM,3314:JM,3318:JM,3310
+3314 :: CALL :: call :: Ljava/lang/String :: v10 = v8.hex()::JM,3314:JM,3318
+3318 :: NORM :: compound :: Ljava/lang/String :: return v10::CF,3299
+3320 :: ENTR :: entry :: null :: okhttp3.Cache.directory()::CE,3321:CD,3327:CD,3331
+3321 :: EXIT :: exit :: Ljava/io/File :: okhttp3.Cache.directory()::
+3327 :: CALL :: call :: Ljava/io/File :: v5 = v3.getDirectory()::JM,3331:CL,4790
+3331 :: NORM :: compound :: Ljava/io/File :: return v5::CF,3321
+3333 :: ENTR :: entry :: null :: okhttp3.CacheTest.writeFile(java.io.File,java.lang.String,java.lang.String)::CD,3343:CD,3349:CD,3354
+3340 :: EXPR :: reference :: Lokhttp3/internal/io/InMemoryFileSystem :: v6 = p0 $this .fileSystem::JM,3349:JM,3354
+3343 :: NORM :: declaration :: Ljava/io/File :: v7 = new java.io.File::JM,3349:JM,3354
+3349 :: CALL :: call :: Lokio/Sink :: v10 = v6.sink(v7)::JM,3349:JM,3354
+3354 :: CALL :: call :: Lokio/BufferedSink :: v12 = buffer(v10)::JM,3354
+3476 :: ENTR :: entry :: null :: okhttp3.ResponseBody.create(okhttp3.MediaType,[])::CD,3492
+3492 :: CALL :: call :: Lokhttp3/ResponseBody :: v11 = create(p1 $contentType , v9, v7)::CL,4958
+3505 :: ENTR :: entry :: null :: okhttp3.RequestBody.create(okhttp3.MediaType,[])::CD,3511
+3511 :: CALL :: call :: Lokhttp3/RequestBody :: v7 = create(p1 $contentType , p2 $content , #(0), v5)::CL,4985
+3532 :: ENTR :: entry :: null :: okhttp3.internal.platform.Platform.findPlatform()::CD,3535:CD,3538
+3535 :: CALL :: call :: Lokhttp3/internal/platform/Platform :: v3 = buildIfSupported()::JM,3538:CL,5027
+3538 :: PRED :: IF :: Z :: if (v3 == #(null)) goto 10::CF,3540:CD,3543
+3540 :: CALL :: call :: Z :: v6 = isConscryptPreferred()::JM,3543:CL,5147
+3543 :: PRED :: IF :: Z :: if (v6 == #(0)) goto 26::CF,3544:CD,3547:CD,3549:CD,3552
+3544 :: CALL :: call :: Lokhttp3/internal/platform/Platform :: v9 = buildIfSupported()::JM,3547:CL,5186
+3547 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 26::CD,3549:CD,3552
+3549 :: CALL :: call :: Lokhttp3/internal/platform/Jdk9Platform :: v11 = buildIfSupported()::JM,3552:CL,5214
+3552 :: PRED :: IF :: Z :: if (v11 == #(null)) goto 36::CD,3554:CD,3557
+3554 :: CALL :: call :: Lokhttp3/internal/platform/Platform :: v13 = buildIfSupported()::JM,3557:CL,5258
+3557 :: PRED :: IF :: Z :: if (v13 == #(null)) goto 46::
+3582 :: ENTR :: entry :: null :: okhttp3.internal.Util.immutableList(java.lang.Object[])::CD,3586:CD,3590:CD,3591:CD,3595
+3586 :: CALL :: call :: Ljava/lang/Object :: v4 = p1 $elements .clone()::JM,3586:JM,3590
+3590 :: EXPR :: assign :: Ljava/lang/Object :: v5 = CHECKCAST v4::JM,3591:JM,3595
+3591 :: CALL :: call :: Ljava/util/List :: v7 = asList(v5)::JM,3591:JM,3595
+3595 :: CALL :: call :: Ljava/util/List :: v9 = unmodifiableList(v7)::JM,3595
+3622 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .protocol = p3 $protocol ::
+3646 :: ENTR :: entry :: null :: okhttp3.ConnectionSpec.Builder.cipherSuites(okhttp3.CipherSuite[])::CD,3655:CD,3678
+3655 :: NORM :: declaration :: Ljava/lang/IllegalStateException :: v16 = new java.lang.IllegalStateException::
+3678 :: CALL :: call :: Lokhttp3/ConnectionSpec$Builder :: v15 = p0 $this .cipherSuites(v7)::CL,5444
+3701 :: ENTR :: entry :: null :: okhttp3.ConnectionSpec.Builder.tlsVersions(okhttp3.TlsVersion[])::CD,3710:CD,3733
+3710 :: NORM :: declaration :: Ljava/lang/IllegalStateException :: v16 = new java.lang.IllegalStateException::
+3733 :: CALL :: call :: Lokhttp3/ConnectionSpec$Builder :: v15 = p0 $this .tlsVersions(v7)::CL,5483
+3756 :: ENTR :: entry :: null :: okhttp3.ConnectionSpec.Builder.supportsTlsExtensions(boolean)::CD,3765
+3765 :: NORM :: declaration :: Ljava/lang/IllegalStateException :: v6 = new java.lang.IllegalStateException::
+3780 :: ENTR :: entry :: null :: okhttp3.ConnectionSpec.Builder.build()::
+3843 :: ENTR :: entry :: null :: okhttp3.CipherSuite.of(java.lang.String,int)::CD,3848
+3848 :: CALL :: call :: Lokhttp3/CipherSuite :: v5 = forJavaName(p1 $javaName )::CL,5564
+3866 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .javaName = p3 $javaName ::
+3885 :: NORM :: declaration :: Ljava/util/ArrayList :: v5 = new java.util.ArrayList::
+3927 :: ENTR :: entry :: null :: okhttp3.mockwebserver.internal.tls.HeldCertificate.Builder.build()::CD,3934:CD,3946:CD,4021:CD,4028:CD,4044:CD,4053:CD,4054:CD,4101:CD,4105
+3931 :: EXPR :: reference :: Ljava/security/KeyPair :: v3 = p0 $this .keyPair::DD,3934
+3934 :: PRED :: IF :: Z :: if (v3 == #(null)) goto 15::CD,3939
+3939 :: CALL :: call :: Ljava/security/KeyPair :: v6 = p0 $this .generateKeyPair()::CL,5603
+3943 :: EXPR :: reference :: Ljava/lang/String :: v9 = p0 $this .hostname::DD,3946
+3946 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 58::CF,3974:CF,3947:CD,3948:CD,3952:CD,3960:CD,3965:CD,3975:CD,3979:CD,3984:CD,3987:CD,3992
+3947 :: NORM :: declaration :: Ljavax/security/auth/x500/X500Principal :: v23 = new javax.security.auth.x500.X500Principal::CF,3948
+3948 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v24 = new java.lang.StringBuilder::
+3952 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v24.append(#(CN=))::
+3957 :: EXPR :: reference :: Ljava/lang/String :: v28 = p0 $this .hostname::
+3960 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v27.append(v28)::
+3965 :: CALL :: call :: Ljava/lang/String :: v32 = v30.toString()::
+3974 :: NORM :: declaration :: Ljavax/security/auth/x500/X500Principal :: v10 = new javax.security.auth.x500.X500Principal::CF,3975
+3975 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v11 = new java.lang.StringBuilder::
+3979 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v11.append(#(CN=))::
+3984 :: CALL :: call :: Ljava/util/UUID :: v17 = randomUUID()::
+3987 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v15.append(v17)::
+3992 :: CALL :: call :: Ljava/lang/String :: v21 = v19.toString()::
+4021 :: CALL :: call :: J :: v45 = currentTimeMillis()::JM,4054
+4028 :: NORM :: declaration :: Ljava/math/BigInteger :: v48 = new java.math.BigInteger::
+4029 :: EXPR :: reference :: Ljava/lang/String :: v49 = p0 $this .serialNumber::
+4044 :: NORM :: declaration :: Ljava/util/Date :: v53 = new java.util.Date::
+4053 :: NORM :: declaration :: Ljava/util/Date :: v56 = new java.util.Date::CF,4054
+4054 :: EXPR :: assign :: Ljava/lang/Object :: v58 = v45 + #(86400000 l)::
+4098 :: EXPR :: reference :: Ljava/util/List :: v75 = p0 $this .altNames::JM,4105
+4101 :: CALL :: call :: Z :: v77 = v75.isEmpty()::JM,4105
+4105 :: PRED :: IF :: Z :: if (v77 != #(0)) goto 362::CD,4117:CD,4121:CD,4182
+4114 :: EXPR :: reference :: Ljava/util/List :: v82 = p0 $this .altNames::JM,4121
+4117 :: CALL :: call :: I :: v84 = v82.size()::JM,4121
+4121 :: PRED :: IF :: Z :: if (v97 >= v84) goto 343::CD,4125:CD,4131:CD,4147:CD,4182
+4122 :: EXPR :: reference :: Ljava/util/List :: v85 = p0 $this .altNames::
+4125 :: CALL :: call :: Ljava/lang/Object :: v87 = v85.get(v97)::
+4131 :: CALL :: call :: Z :: v90 = verifyAsIpAddress(v88)::CL,5633
+4147 :: EXPR :: assign :: Ljava/lang/Object :: v96 = v97 + #(1)::DD,4182
+4182 :: EXPR :: assign :: null :: PHI v97 = v96, #(0)::DD,4121:DD,4147
+4276 :: NORM :: declaration :: Ljava/util/ArrayList :: v4 = new java.util.ArrayList::
+4283 :: NORM :: declaration :: Ljava/util/ArrayList :: v6 = new java.util.ArrayList::
+4303 :: ENTR :: entry :: null :: okhttp3.mockwebserver.internal.tls.SslClient.Builder.certificateChain(java.security.KeyPair,java.security.cert.X509Certificate,java.security.cert.X509Certificate[])::CD,4316:CD,4324:CD,4328:CD,4336:CD,4340
+4313 :: EXPR :: reference :: Ljava/util/List :: v6 = p0 $this .chainCertificates::
+4316 :: CALL :: call :: Z :: v8 = v6.add(p2 $keyCert )::JM,4336:JM,4324
+4321 :: EXPR :: reference :: Ljava/util/List :: v9 = p0 $this .chainCertificates::
+4324 :: CALL :: call :: Ljava/util/List :: v11 = asList(p3 $certificates )::JM,4336:JM,4324
+4328 :: CALL :: call :: Z :: v13 = v9.addAll(v11)::
+4333 :: EXPR :: reference :: Ljava/util/List :: v14 = p0 $this .certificates::
+4336 :: CALL :: call :: Ljava/util/List :: v16 = asList(p3 $certificates )::JM,4336:JM,4324
+4340 :: CALL :: call :: Z :: v18 = v14.addAll(v16)::
+4358 :: ENTR :: entry :: null :: okhttp3.mockwebserver.internal.tls.SslClient.Builder.addTrustedCertificate(java.security.cert.X509Certificate)::CD,4366
+4363 :: EXPR :: reference :: Ljava/util/List :: v4 = p0 $this .certificates::
+4366 :: CALL :: call :: Z :: v6 = v4.add(p1 $certificate )::
+4376 :: ENTR :: entry :: null :: okhttp3.mockwebserver.internal.tls.SslClient.Builder.build()::CD,4380:CD,4384:CD,4392:CD,4427:CD,4431:CD,4478:CD,4481:CD,4489:CD,4501:CD,4502:CD,4506:CD,4511:CD,4515:CD,4520:CD,4532:CD,4548:CD,4571:CD,4577:CD,4578
+4380 :: CALL :: call :: [C :: v5 = #(password).toCharArray()::
+4384 :: CALL :: call :: Ljava/security/KeyStore :: v7 = p0 $this .newEmptyKeyStore(v5)::CL,5672
+4389 :: EXPR :: reference :: Ljava/security/KeyPair :: v8 = p0 $this .keyPair::DD,4392
+4392 :: PRED :: IF :: Z :: if (v8 == #(null)) goto 63::CD,4399:CD,4403:CD,4404:CF,4578
+4393 :: EXPR :: reference :: Ljava/util/List :: v10 = p0 $this .chainCertificates::
+4396 :: EXPR :: reference :: Ljava/util/List :: v11 = p0 $this .chainCertificates::JM,4403
+4399 :: CALL :: call :: I :: v13 = v11.size()::JM,4403
+4403 :: NORM :: declaration :: [Ljava/security/cert/Certificate :: v14 = new java.security.cert.Certificate[]::
+4404 :: CALL :: call :: [Ljava/lang/Object :: v16 = v10.toArray(v14)::
+4424 :: EXPR :: reference :: Ljava/util/List :: v24 = p0 $this .certificates::JM,4431
+4427 :: CALL :: call :: I :: v26 = v24.size()::JM,4431
+4431 :: PRED :: IF :: Z :: if (v43 >= v26) goto 116::CD,4427:CD,4432:CD,4436:CD,4441:CD,4446:CD,4453:CD,4464:CD,4578
+4432 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v27 = new java.lang.StringBuilder::
+4436 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v27.append(#(cert_))::
+4441 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v31.append(v43)::
+4446 :: CALL :: call :: Ljava/lang/String :: v35 = v33.toString()::
+4450 :: EXPR :: reference :: Ljava/util/List :: v36 = p0 $this .certificates::
+4453 :: CALL :: call :: Ljava/lang/Object :: v38 = v36.get(v43)::
+4464 :: EXPR :: assign :: Ljava/lang/Object :: v42 = v43 + #(1)::DD,4578
+4478 :: CALL :: call :: Ljava/lang/String :: v50 = getDefaultAlgorithm()::JM,4481:JM,4489
+4481 :: CALL :: call :: Ljavax/net/ssl/TrustManagerFactory :: v52 = getInstance(v50)::JM,4481:JM,4489
+4489 :: CALL :: call :: [Ljavax/net/ssl/TrustManager :: v55 = v52.getTrustManagers()::JM,4489
+4501 :: NORM :: declaration :: Ljava/lang/IllegalStateException :: v75 = new java.lang.IllegalStateException::
+4502 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v76 = new java.lang.StringBuilder::
+4506 :: CALL :: call :: Ljava/lang/StringBuilder :: v80 = v76.append(#(Unexpected default tr...))::
+4511 :: CALL :: call :: Ljava/lang/String :: v82 = toString(v55)::
+4515 :: CALL :: call :: Ljava/lang/StringBuilder :: v84 = v80.append(v82)::
+4520 :: CALL :: call :: Ljava/lang/String :: v86 = v84.toString()::
+4529 :: EXPR :: reference :: Ljavax/net/ssl/SSLContext :: v59 = p0 $this .sslContext::DD,4532
+4532 :: PRED :: IF :: Z :: if (v59 == #(null)) goto 212::CD,4540
+4540 :: CALL :: call :: Ljavax/net/ssl/SSLContext :: v63 = v61.getSSLContext()::CL,5712:CL,5730
+4548 :: NORM :: declaration :: Ljava/security/SecureRandom :: v68 = new java.security.SecureRandom::
+4571 :: NORM :: declaration :: Ljava/lang/AssertionError :: v89 = new java.lang.AssertionError::
+4577 :: EXPR :: assign :: Ljava/lang/Exception :: v88 = catch <exc>::
+4578 :: EXPR :: assign :: null :: PHI v43 = v42, #(0)::DD,4431:DD,4464
+4633 :: ENTR :: entry :: null :: okhttp3.internal.cache.DiskLruCache.close()::CD,4640
+4637 :: EXPR :: reference :: Z :: v3 = p0 $this .initialized::DD,4640
+4640 :: PRED :: IF :: Z :: if (v3 == #(0)) goto 16::CD,4644
+4641 :: EXPR :: reference :: Z :: v5 = p0 $this .closed::DD,4644
+4644 :: PRED :: IF :: Z :: if (v5 == #(0)) goto 21::CD,4652:CD,4659:CD,4663:CD,4664:CD,4688
+4649 :: EXPR :: reference :: Ljava/util/LinkedHashMap :: v6 = p0 $this .lruEntries::
+4652 :: CALL :: call :: Ljava/util/Collection :: v8 = v6.values()::
+4656 :: EXPR :: reference :: Ljava/util/LinkedHashMap :: v9 = p0 $this .lruEntries::JM,4663
+4659 :: CALL :: call :: I :: v11 = v9.size()::JM,4663
+4663 :: NORM :: declaration :: [Lokhttp3/internal/cache/DiskLruCache$Entry :: v12 = new okhttp3.internal.cache.DiskLruCache$Entry[]::
+4664 :: CALL :: call :: [Ljava/lang/Object :: v14 = v8.toArray(v12)::
+4688 :: CALL :: call :: V :: p0 $this .trimToSize()::CL,5770
+4741 :: NORM :: declaration :: Ljava/util/ArrayList :: v4 = new java.util.ArrayList::
+4754 :: ENTR :: entry :: null :: okhttp3.mockwebserver.MockResponse.setHeader(java.lang.String,java.lang.Object)::CD,4760:CD,4765
+4760 :: CALL :: call :: Lokhttp3/mockwebserver/MockResponse :: v6 = p0 $this .removeHeader(p1 $name )::CL,5818
+4765 :: CALL :: call :: Lokhttp3/mockwebserver/MockResponse :: v8 = p0 $this .addHeader(p1 $name , p2 $value )::CL,5836
+4790 :: ENTR :: entry :: null :: okhttp3.internal.cache.DiskLruCache.getDirectory()::CE,4791:CD,4797
+4791 :: EXIT :: exit :: Ljava/io/File :: okhttp3.internal.cache.DiskLruCache.getDirectory()::JM,3331
+4794 :: EXPR :: reference :: Ljava/io/File :: v3 = p0 $this .directory::DD,4797
+4797 :: NORM :: compound :: Ljava/io/File :: return v3::CF,4791
+4958 :: ENTR :: entry :: null :: okhttp3.ResponseBody.create(okhttp3.MediaType,long,okio.BufferedSource)::CF,4965:JM,6066:JM,6069:JM,6072
+4965 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v8 = new java.lang.NullPointerException::
+4985 :: ENTR :: entry :: null :: okhttp3.RequestBody.create(okhttp3.MediaType,[],int,int)::CF,4993:JM,6128:JM,6131:JM,6134:JM,6125
+4993 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v14 = new java.lang.NullPointerException::
+5027 :: ENTR :: entry :: null :: okhttp3.internal.platform.AndroidPlatform.buildIfSupported()::CE,5028:CD,5040:CD,5041:JM,6160:JM,6163:JM,6166:CD,5054:CD,5055:CD,5066:CD,5069:CD,5092:JM,6226:JM,6211:JM,6229:JM,6217:JM,6220:JM,6223:CD,5101:CD,5102
+5028 :: EXIT :: exit :: Lokhttp3/internal/platform/Platform :: okhttp3.internal.platform.AndroidPlatform.buildIfSupported()::JM,3538
+5040 :: NORM :: declaration :: [Ljava/lang/Class :: v15 = new java.lang.Class[]::
+5041 :: EXPR :: reference :: Ljava/lang/Class :: v17 = java.lang.Boolean.TYPE::DD,5043
+5043 :: EXPR :: modify :: Ljava/lang/Object :: v15[#(0)] = v17::
+5054 :: NORM :: declaration :: [Ljava/lang/Class :: v21 = new java.lang.Class[]::CF,5055
+5055 :: EXPR :: assign :: Ljava/lang/Class :: v22 = metadata <Application,Ljava/lang/String>-><Primordial,Ljava/lang/Class>::DD,5056
+5056 :: EXPR :: modify :: Ljava/lang/Object :: v21[#(0)] = v22::
+5066 :: CALL :: call :: Z :: v25 = supportsAlpn()::JM,5069:CL,6177
+5069 :: PRED :: IF :: Z :: if (v25 == #(0)) goto 105::JM,6160:JM,6163:JM,6166:CD,5080:CD,5081
+5080 :: NORM :: declaration :: [Ljava/lang/Class :: v33 = new java.lang.Class[]::CF,5081
+5081 :: EXPR :: assign :: Ljava/lang/Class :: v34 = metadata <Primordial,[B>-><Primordial,Ljava/lang/Class>::DD,5082
+5082 :: EXPR :: modify :: Ljava/lang/Object :: v33[#(0)] = v34::
+5092 :: NORM :: declaration :: Lokhttp3/internal/platform/AndroidPlatform :: v40 = new okhttp3.internal.platform.AndroidPlatform::DD,5101
+5101 :: NORM :: compound :: Lokhttp3/internal/platform/Platform :: return v40::DD,5028
+5102 :: NORM :: compound :: Lokhttp3/internal/platform/Platform :: return #(null)::DD,5028
+5147 :: ENTR :: entry :: null :: okhttp3.internal.platform.Platform.isConscryptPreferred()::CF,5148:CD,5150:CD,5154:CD,5159
+5148 :: EXIT :: exit :: Z :: okhttp3.internal.platform.Platform.isConscryptPreferred()::JM,3543
+5150 :: CALL :: call :: Ljava/lang/String :: v5 = getProperty(#(okhttp.platform))::JM,5159:JM,5150
+5154 :: CALL :: call :: Z :: v7 = #(conscrypt).equals(v5)::JM,5159
+5159 :: PRED :: IF :: Z :: if (v7 == #(0)) goto 15::CF,5161:CD,5160:CD,5168:CD,5172:CD,5177
+5160 :: NORM :: compound :: Z :: return #(1)::CF,5148
+5161 :: CALL :: call :: [Ljava/security/Provider :: v10 = getProviders()::
+5164 :: EXPR :: reference :: Ljava/lang/Object :: v11 = v10[#(0)]::JM,5168:JM,5177
+5168 :: CALL :: call :: Ljava/lang/String :: v13 = v11.getName()::JM,5168:JM,5177
+5172 :: CALL :: call :: Z :: v16 = #(Conscrypt).equals(v13)::JM,5177
+5177 :: NORM :: compound :: Z :: return v16::CF,5148
+5186 :: ENTR :: entry :: null :: okhttp3.internal.platform.ConscryptPlatform.buildIfSupported()::CF,5206:CE,5187:CD,5193:CD,5196
+5187 :: EXIT :: exit :: Lokhttp3/internal/platform/Platform :: okhttp3.internal.platform.ConscryptPlatform.buildIfSupported()::JM,3547
+5193 :: CALL :: call :: Z :: v6 = isAvailable()::JM,5196
+5196 :: PRED :: IF :: Z :: if (v6 != #(0)) goto 15::CD,5197:CD,5201:CD,5205
+5197 :: NORM :: compound :: Lokhttp3/internal/platform/Platform :: return #(null)::DD,5187
+5201 :: NORM :: declaration :: Lokhttp3/internal/platform/ConscryptPlatform :: v12 = new okhttp3.internal.platform.ConscryptPlatform::DD,5205
+5205 :: NORM :: compound :: Lokhttp3/internal/platform/Platform :: return v12::DD,5187
+5206 :: NORM :: compound :: Lokhttp3/internal/platform/Platform :: return #(null)::DD,5187
+5214 :: ENTR :: entry :: null :: okhttp3.internal.platform.Jdk9Platform.buildIfSupported()::CE,5215:CD,5217:CD,5218:CD,5219:CD,5224:CD,5230:CD,5231:CD,5232:CD,5238:JM,6263:JM,6266:CD,5244:CD,5245
+5215 :: EXIT :: exit :: Lokhttp3/internal/platform/Jdk9Platform :: okhttp3.internal.platform.Jdk9Platform.buildIfSupported()::JM,3552
+5217 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Ljavax/net/ssl/SSLParameters>-><Primordial,Ljava/lang/Class>::CF,5218
+5218 :: NORM :: declaration :: [Ljava/lang/Class :: v5 = new java.lang.Class[]::CF,5219
+5219 :: EXPR :: assign :: Ljava/lang/Class :: v7 = metadata <Application,[Ljava/lang/String>-><Primordial,Ljava/lang/Class>::DD,5220
+5220 :: EXPR :: modify :: Ljava/lang/Object :: v5[#(0)] = v7::
+5224 :: CALL :: call :: Ljava/lang/reflect/Method :: v9 = v2.getMethod(#(setApplicationProtocols), v5)::
+5230 :: EXPR :: assign :: Ljava/lang/Class :: v10 = metadata <Application,Ljavax/net/ssl/SSLSocket>-><Primordial,Ljava/lang/Class>::CF,5231
+5231 :: NORM :: declaration :: [Ljava/lang/Class :: v12 = new java.lang.Class[]::
+5232 :: CALL :: call :: Ljava/lang/reflect/Method :: v14 = v10.getMethod(#(getApplicationProtocol), v12)::
+5238 :: NORM :: declaration :: Lokhttp3/internal/platform/Jdk9Platform :: v17 = new okhttp3.internal.platform.Jdk9Platform::DD,5244
+5244 :: NORM :: compound :: Lokhttp3/internal/platform/Jdk9Platform :: return v17::DD,5215
+5245 :: NORM :: compound :: Lokhttp3/internal/platform/Jdk9Platform :: return #(null)::DD,5215
+5258 :: ENTR :: entry :: null :: okhttp3.internal.platform.JdkWithJettyBootPlatform.buildIfSupported()::CE,5259:CD,5261:CD,5265:CD,5269:CD,5274:CD,5279:CD,5283:CD,5287:CD,5291:CD,5296:CD,5301:CD,5309:CD,5313:CD,5318:CD,5323:CD,5331:CD,5332:CD,5341:CD,5347:CD,5348:CD,5353:CD,5359:CD,5360:CD,5365:CD,5371:JM,6290:JM,6293:JM,6296:JM,6299:JM,6287:CD,5380:CD,5381
+5259 :: EXIT :: exit :: Lokhttp3/internal/platform/Platform :: okhttp3.internal.platform.JdkWithJettyBootPlatform.buildIfSupported()::JM,3557
+5261 :: CALL :: call :: Ljava/lang/Class :: v4 = forName(#(org.eclipse.jetty.alp...))::JM,5261
+5265 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v5 = new java.lang.StringBuilder::JM,5283:JM,5337
+5269 :: CALL :: call :: Ljava/lang/StringBuilder :: v8 = v5.append(#(org.eclipse.jetty.alp...))::JM,5283:JM,5337
+5274 :: CALL :: call :: Ljava/lang/StringBuilder :: v11 = v8.append(#($Provider))::JM,5283:JM,5337
+5279 :: CALL :: call :: Ljava/lang/String :: v13 = v11.toString()::JM,5283:JM,5337
+5283 :: CALL :: call :: Ljava/lang/Class :: v15 = forName(v13)::JM,5283:JM,5337
+5287 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v16 = new java.lang.StringBuilder::
+5291 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v16.append(#(org.eclipse.jetty.alp...))::
+5296 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v19.append(#($ClientProvider))::
+5301 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::
+5309 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v27 = new java.lang.StringBuilder::
+5313 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v27.append(#(org.eclipse.jetty.alp...))::
+5318 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v30.append(#($ServerProvider))::
+5323 :: CALL :: call :: Ljava/lang/String :: v35 = v33.toString()::
+5331 :: NORM :: declaration :: [Ljava/lang/Class :: v40 = new java.lang.Class[]::CF,5332
+5332 :: EXPR :: assign :: Ljava/lang/Class :: v42 = metadata <Application,Ljavax/net/ssl/SSLSocket>-><Primordial,Ljava/lang/Class>::DD,5333
+5333 :: EXPR :: modify :: Ljava/lang/Object :: v40[#(0)] = v42::
+5337 :: EXPR :: modify :: Ljava/lang/Object :: v40[#(1)] = v15::
+5341 :: CALL :: call :: Ljava/lang/reflect/Method :: v45 = v4.getMethod(#(put), v40)::
+5347 :: NORM :: declaration :: [Ljava/lang/Class :: v47 = new java.lang.Class[]::CF,5348
+5348 :: EXPR :: assign :: Ljava/lang/Class :: v48 = metadata <Application,Ljavax/net/ssl/SSLSocket>-><Primordial,Ljava/lang/Class>::DD,5349
+5349 :: EXPR :: modify :: Ljava/lang/Object :: v47[#(0)] = v48::
+5353 :: CALL :: call :: Ljava/lang/reflect/Method :: v50 = v4.getMethod(#(get), v47)::
+5359 :: NORM :: declaration :: [Ljava/lang/Class :: v52 = new java.lang.Class[]::CF,5360
+5360 :: EXPR :: assign :: Ljava/lang/Class :: v53 = metadata <Application,Ljavax/net/ssl/SSLSocket>-><Primordial,Ljava/lang/Class>::DD,5361
+5361 :: EXPR :: modify :: Ljava/lang/Object :: v52[#(0)] = v53::
+5365 :: CALL :: call :: Ljava/lang/reflect/Method :: v55 = v4.getMethod(#(remove), v52)::
+5371 :: NORM :: declaration :: Lokhttp3/internal/platform/JdkWithJettyBootPlatform :: v58 = new okhttp3.internal.platform.JdkWithJettyBootPlatform::DD,5380
+5380 :: NORM :: compound :: Lokhttp3/internal/platform/Platform :: return v58::DD,5259
+5381 :: NORM :: compound :: Lokhttp3/internal/platform/Platform :: return #(null)::DD,5259
+5444 :: ENTR :: entry :: null :: okhttp3.ConnectionSpec.Builder.cipherSuites(java.lang.String[])::CD,5453:CD,5461
+5453 :: NORM :: declaration :: Ljava/lang/IllegalStateException :: v13 = new java.lang.IllegalStateException::
+5461 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v10 = new java.lang.IllegalArgumentException::
+5483 :: ENTR :: entry :: null :: okhttp3.ConnectionSpec.Builder.tlsVersions(java.lang.String[])::CD,5492:CD,5500
+5492 :: NORM :: declaration :: Ljava/lang/IllegalStateException :: v13 = new java.lang.IllegalStateException::
+5500 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v10 = new java.lang.IllegalArgumentException::
+5530 :: EXPR :: reference :: Z :: v5 = p1 $builder .tls::DD,5533
+5533 :: EXPR :: modify :: Z :: p0 $this .tls = v5::
+5536 :: EXPR :: reference :: [Ljava/lang/String :: v6 = p1 $builder .cipherSuites::DD,5539
+5539 :: EXPR :: modify :: [Ljava/lang/String :: p0 $this .cipherSuites = v6::
+5542 :: EXPR :: reference :: [Ljava/lang/String :: v7 = p1 $builder .tlsVersions::DD,5545
+5545 :: EXPR :: modify :: [Ljava/lang/String :: p0 $this .tlsVersions = v7::
+5548 :: EXPR :: reference :: Z :: v8 = p1 $builder .supportsTlsExtensions::DD,5551
+5551 :: EXPR :: modify :: Z :: p0 $this .supportsTlsExtensions = v8::
+5564 :: ENTR :: entry :: null :: okhttp3.CipherSuite.forJavaName(java.lang.String)::CD,5570:CD,5575:CD,5576
+5570 :: CALL :: call :: Ljava/lang/Object :: v5 = v3.get(p1 $javaName )::JM,5575
+5575 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST v5::DD,5576
+5576 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 38::JM,6352:JM,6347:CD,5584
+5584 :: CALL :: call :: Ljava/lang/Object :: v12 = v10.put(p1 $javaName , v8)::
+5603 :: ENTR :: entry :: null :: okhttp3.mockwebserver.internal.tls.HeldCertificate.Builder.generateKeyPair()::CD,5612
+5612 :: NORM :: declaration :: Ljava/security/SecureRandom :: v8 = new java.security.SecureRandom::
+5633 :: ENTR :: entry :: null :: okhttp3.internal.Util.verifyAsIpAddress(java.lang.String)::CD,5637:CD,5639:CD,5644
+5637 :: EXPR :: reference :: Ljava/util/regex/Pattern :: v3 = okhttp3.internal.Util.VERIFY_AS_IP_ADDRESS::
+5639 :: CALL :: call :: Ljava/util/regex/Matcher :: v5 = v3.matcher(p1 $host )::
+5644 :: CALL :: call :: Z :: v7 = v5.matches()::
+5672 :: ENTR :: entry :: null :: okhttp3.mockwebserver.internal.tls.SslClient.Builder.newEmptyKeyStore([])::CD,5690:CD,5696
+5690 :: NORM :: declaration :: Ljava/lang/AssertionError :: v10 = new java.lang.AssertionError::
+5696 :: EXPR :: assign :: Ljava/lang/Exception :: v9 = catch <exc>::
+5712 :: ENTR :: entry :: null :: okhttp3.internal.platform.Platform.getSSLContext()::CF,5721:CF,5728
+5721 :: NORM :: declaration :: Ljava/lang/IllegalStateException :: v7 = new java.lang.IllegalStateException::
+5728 :: EXPR :: assign :: Ljava/lang/Exception :: v6 = catch <exc>::
+5730 :: ENTR :: entry :: null :: okhttp3.internal.platform.ConscryptPlatform.getSSLContext()::CF,5744:CF,5751
+5744 :: NORM :: declaration :: Ljava/lang/IllegalStateException :: v9 = new java.lang.IllegalStateException::
+5751 :: EXPR :: assign :: Ljava/lang/Exception :: v8 = catch <exc>::
+5770 :: ENTR :: entry :: null :: okhttp3.internal.cache.DiskLruCache.trimToSize()::CD,5780:CD,5781
+5774 :: EXPR :: reference :: J :: v3 = p0 $this .size::DD,5780
+5777 :: EXPR :: reference :: J :: v4 = p0 $this .maxSize::DD,5780
+5780 :: EXPR :: assign :: Z :: v5 = v3 == v4::DD,5781
+5781 :: PRED :: IF :: Z :: if (v5 <= #(0)) goto 44::CD,5780:CD,5785:CD,5789:CD,5793:CD,5798
+5782 :: EXPR :: reference :: Ljava/util/LinkedHashMap :: v7 = p0 $this .lruEntries::
+5785 :: CALL :: call :: Ljava/util/Collection :: v9 = v7.values()::
+5789 :: CALL :: call :: Ljava/util/Iterator :: v11 = v9.iterator()::
+5793 :: CALL :: call :: Ljava/lang/Object :: v13 = v11.next()::
+5798 :: CALL :: call :: Z :: v16 = p0 $this .removeEntry(v14)::CL,6547
+5818 :: ENTR :: entry :: null :: okhttp3.mockwebserver.MockResponse.removeHeader(java.lang.String)::CD,5826
+5826 :: CALL :: call :: Lokhttp3/Headers$Builder :: v6 = v4.removeAll(p1 $name )::CL,6700
+5836 :: ENTR :: entry :: null :: okhttp3.mockwebserver.MockResponse.addHeader(java.lang.String,java.lang.Object)::CD,5845:CD,5849
+5845 :: CALL :: call :: Ljava/lang/String :: v7 = valueOf(p2 $value )::
+5849 :: CALL :: call :: Lokhttp3/Headers$Builder :: v9 = v5.add(p1 $name , v7)::CL,6769
+6066 :: EXPR :: modify :: Lokhttp3/MediaType :: p0 $this .val$contentType = p1 $null ::
+6069 :: EXPR :: modify :: J :: p0 $this .val$contentLength = p2 $null ::
+6072 :: EXPR :: modify :: Lokio/BufferedSource :: p0 $this .val$content = p3 $null ::
+6125 :: EXPR :: modify :: Lokhttp3/MediaType :: p0 $this .val$contentType = p1 $null ::
+6128 :: EXPR :: modify :: I :: p0 $this .val$byteCount = p2 $null ::
+6131 :: EXPR :: modify :: [B :: p0 $this .val$content = p3 $null ::
+6134 :: EXPR :: modify :: I :: p0 $this .val$offset = p4 $null ::
+6160 :: EXPR :: modify :: Ljava/lang/Class :: p0 $this .returnType = p1 $returnType ::
+6163 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .methodName = p2 $methodName ::
+6166 :: EXPR :: modify :: [Ljava/lang/Class :: p0 $this .methodParams = p3 $methodParams ::
+6177 :: ENTR :: entry :: null :: okhttp3.internal.platform.AndroidPlatform.supportsAlpn()::CF,6178:CF,6191:CD,6180:CD,6184
+6178 :: EXIT :: exit :: Z :: okhttp3.internal.platform.AndroidPlatform.supportsAlpn()::JM,5069
+6180 :: CALL :: call :: Ljava/security/Provider :: v4 = getProvider(#(GMSCore_OpenSSL))::JM,6180:JM,6184
+6184 :: PRED :: IF :: Z :: if (v4 == #(null)) goto 12::CD,6185:CD,6190
+6185 :: NORM :: compound :: Z :: return #(1)::CF,6178
+6190 :: NORM :: compound :: Z :: return #(1)::CF,6178
+6191 :: NORM :: compound :: Z :: return #(0)::CF,6178
+6211 :: CALL :: call :: Lokhttp3/internal/platform/AndroidPlatform$CloseGuard :: v10 = get()::JM,6214:CL,6859
+6214 :: EXPR :: modify :: Lokhttp3/internal/platform/AndroidPlatform$CloseGuard :: p0 $this .closeGuard = v10::
+6217 :: EXPR :: modify :: Ljava/lang/Class :: p0 $this .sslParametersClass = p1 $sslParametersClass ::
+6220 :: EXPR :: modify :: Lokhttp3/internal/platform/OptionalMethod :: p0 $this .setUseSessionTickets = p2 $setUseSessionTickets ::
+6223 :: EXPR :: modify :: Lokhttp3/internal/platform/OptionalMethod :: p0 $this .setHostname = p3 $setHostname ::
+6226 :: EXPR :: modify :: Lokhttp3/internal/platform/OptionalMethod :: p0 $this .getAlpnSelectedProtocol = p4 $getAlpnSelectedProtocol ::
+6229 :: EXPR :: modify :: Lokhttp3/internal/platform/OptionalMethod :: p0 $this .setAlpnProtocols = p5 $setAlpnProtocols ::
+6263 :: EXPR :: modify :: Ljava/lang/reflect/Method :: p0 $this .setProtocolMethod = p1 $setProtocolMethod ::
+6266 :: EXPR :: modify :: Ljava/lang/reflect/Method :: p0 $this .getProtocolMethod = p2 $getProtocolMethod ::
+6287 :: EXPR :: modify :: Ljava/lang/reflect/Method :: p0 $this .putMethod = p1 $putMethod ::
+6290 :: EXPR :: modify :: Ljava/lang/reflect/Method :: p0 $this .getMethod = p2 $getMethod ::
+6293 :: EXPR :: modify :: Ljava/lang/reflect/Method :: p0 $this .removeMethod = p3 $removeMethod ::
+6296 :: EXPR :: modify :: Ljava/lang/Class :: p0 $this .clientProviderClass = p4 $clientProviderClass ::
+6299 :: EXPR :: modify :: Ljava/lang/Class :: p0 $this .serverProviderClass = p5 $serverProviderClass ::
+6347 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v6 = new java.lang.NullPointerException::JM,6352:JM,6347
+6352 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .javaName = p1 $javaName ::
+6547 :: ENTR :: entry :: null :: okhttp3.internal.cache.DiskLruCache.removeEntry(okhttp3.internal.cache.DiskLruCache.Entry)::CD,6565:CD,6642:CD,6663
+6562 :: EXPR :: reference :: I :: v9 = p0 $this .valueCount::DD,6565
+6565 :: PRED :: IF :: Z :: if (v22 >= v9) goto 69::CD,6590:CD,6601:CD,6663
+6580 :: EXPR :: reference :: J :: v14 = p0 $this .size::DD,6590
+6583 :: EXPR :: reference :: [J :: v15 = p1 $entry .lengths::
+6586 :: EXPR :: reference :: J :: v16 = v15[v22]::DD,6590
+6590 :: EXPR :: assign :: Ljava/lang/Object :: v17 = v14 - v16::DD,6591
+6591 :: EXPR :: modify :: J :: p0 $this .size = v17::
+6594 :: EXPR :: reference :: [J :: v18 = p1 $entry .lengths::
+6597 :: EXPR :: modify :: J :: v18[v22] = #(0 l)::
+6601 :: EXPR :: assign :: Ljava/lang/Object :: v21 = v22 + #(1)::DD,6663
+6636 :: EXPR :: reference :: Ljava/util/LinkedHashMap :: v38 = p0 $this .lruEntries::
+6639 :: EXPR :: reference :: Ljava/lang/String :: v39 = p1 $entry .key::
+6642 :: CALL :: call :: Ljava/lang/Object :: v41 = v38.remove(v39)::
+6663 :: EXPR :: assign :: null :: PHI v22 = v21, #(0)::DD,6565:DD,6601
+6700 :: ENTR :: entry :: null :: okhttp3.Headers.Builder.removeAll(java.lang.String)::CD,6708:CD,6712:CD,6748:JM,6727
+6705 :: EXPR :: reference :: Ljava/util/List :: v5 = p0 $this .namesAndValues::JM,6712
+6708 :: CALL :: call :: I :: v7 = v5.size()::JM,6712
+6712 :: PRED :: IF :: Z :: if (v25 >= v7) goto 67::CD,6708:CD,6716:CD,6721:CD,6722:CD,6727:CD,6745:CD,6748:CD,6749
+6713 :: EXPR :: reference :: Ljava/util/List :: v8 = p0 $this .namesAndValues::JM,6721
+6716 :: CALL :: call :: Ljava/lang/Object :: v10 = v8.get(v25)::JM,6721
+6721 :: EXPR :: assign :: Ljava/lang/Object :: v11 = CHECKCAST v10::JM,6727:JM,6748
+6722 :: CALL :: call :: Z :: v13 = p1 $name .equalsIgnoreCase(v11)::JM,6727:JM,6748
+6727 :: PRED :: IF :: Z :: if (v13 == #(0)) goto 60::CF,6749:CD,6731:CD,6739:CD,6744
+6728 :: EXPR :: reference :: Ljava/util/List :: v14 = p0 $this .namesAndValues::
+6731 :: CALL :: call :: Ljava/lang/Object :: v16 = v14.remove(v25)::
+6736 :: EXPR :: reference :: Ljava/util/List :: v17 = p0 $this .namesAndValues::
+6739 :: CALL :: call :: Ljava/lang/Object :: v19 = v17.remove(v25)::
+6744 :: EXPR :: assign :: Ljava/lang/Object :: v21 = v25 + #(-2)::DD,6749
+6745 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v22 + #(2)::DD,6748
+6748 :: EXPR :: assign :: null :: PHI v25 = v24, #(0)::DD,6712:JM,6721:DD,6744:DD,6749
+6749 :: EXPR :: assign :: null :: PHI v22 = v25, v21::DD,6745
+6769 :: ENTR :: entry :: null :: okhttp3.Headers.Builder.add(java.lang.String,java.lang.String)::CD,6775:CD,6780
+6775 :: CALL :: call :: V :: p0 $this .checkNameAndValue(p1 $name , p2 $value )::CL,7040
+6780 :: CALL :: call :: Lokhttp3/Headers$Builder :: v7 = p0 $this .addLenient(p1 $name , p2 $value )::CL,7232
+6859 :: ENTR :: entry :: null :: okhttp3.internal.platform.AndroidPlatform.CloseGuard.get()::CE,6860:CD,6862:CD,6866:CD,6867:CD,6873:CD,6874:CD,6879:CD,6885:CD,6886:CD,6893:JM,7312:JM,7315:JM,7309:CD,6900
+6860 :: EXIT :: exit :: Lokhttp3/internal/platform/AndroidPlatform$CloseGuard :: okhttp3.internal.platform.AndroidPlatform.CloseGuard.get()::JM,6214
+6862 :: CALL :: call :: Ljava/lang/Class :: v4 = forName(#(dalvik.system.CloseGuard))::JM,6862
+6866 :: NORM :: declaration :: [Ljava/lang/Class :: v7 = new java.lang.Class[]::
+6867 :: CALL :: call :: Ljava/lang/reflect/Method :: v9 = v4.getMethod(#(get), v7)::
+6873 :: NORM :: declaration :: [Ljava/lang/Class :: v12 = new java.lang.Class[]::CF,6874
+6874 :: EXPR :: assign :: Ljava/lang/Class :: v13 = metadata <Application,Ljava/lang/String>-><Primordial,Ljava/lang/Class>::DD,6875
+6875 :: EXPR :: modify :: Ljava/lang/Object :: v12[#(0)] = v13::
+6879 :: CALL :: call :: Ljava/lang/reflect/Method :: v15 = v4.getMethod(#(open), v12)::
+6885 :: NORM :: declaration :: [Ljava/lang/Class :: v17 = new java.lang.Class[]::
+6886 :: CALL :: call :: Ljava/lang/reflect/Method :: v19 = v4.getMethod(#(warnIfOpen), v17)::
+6893 :: NORM :: declaration :: Lokhttp3/internal/platform/AndroidPlatform$CloseGuard :: v27 = new okhttp3.internal.platform.AndroidPlatform$CloseGuard::DD,6900
+6900 :: NORM :: compound :: Lokhttp3/internal/platform/AndroidPlatform$CloseGuard :: return v27::DD,6860
+7040 :: ENTR :: entry :: null :: okhttp3.Headers.Builder.checkNameAndValue(java.lang.String,java.lang.String)::CD,7047:CD,7058:CD,7064:CD,7068:CD,7076:CD,7077:CD,7078:CD,7086:CD,7098:CD,7111:CD,7112:CD,7116:CD,7121:CD,7126:CD,7131:CD,7140:CD,7144:CD,7153:CD,7154:CD,7155:CD,7163:CD,7179:CD,7192:CD,7193:JM,7171:JM,7094:JM,7175:JM,7159:JM,7082
+7047 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v67 = new java.lang.NullPointerException::
+7058 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v64 = new java.lang.IllegalArgumentException::
+7064 :: CALL :: call :: I :: v10 = p1 $name .length()::JM,7171:JM,7094:JM,7175:JM,7159:JM,7144:JM,7082:JM,7068
+7068 :: PRED :: IF :: Z :: if (v17 >= v10) goto 109::CD,7069:CD,7108:CD,7192:JM,7171:JM,7094:JM,7175:JM,7159:JM,7144:JM,7082:JM,7068
+7069 :: CALL :: call :: C :: v12 = p1 $name .charAt(v17)::JM,7171:JM,7094:JM,7175:JM,7159:JM,7144:JM,7082:JM,7068
+7076 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v54 = new java.lang.IllegalArgumentException::
+7077 :: NORM :: declaration :: [Ljava/lang/Object :: v56 = new java.lang.Object[]::
+7078 :: CALL :: call :: Ljava/lang/Integer :: v58 = valueOf(v12)::JM,7159:JM,7144:JM,7082
+7082 :: EXPR :: modify :: Ljava/lang/Object :: v56[#(0)] = v58::
+7086 :: CALL :: call :: Ljava/lang/Integer :: v60 = valueOf(v17)::JM,7090
+7090 :: EXPR :: modify :: Ljava/lang/Object :: v56[#(1)] = v60::
+7094 :: EXPR :: modify :: Ljava/lang/Object :: v56[#(2)] = p1 $name ::
+7098 :: CALL :: call :: Ljava/lang/String :: v62 = format(#(Unexpected char %#04x...), v56)::CL,7344
+7108 :: EXPR :: assign :: Ljava/lang/Object :: v16 = v17 + #(1)::DD,7192
+7111 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v40 = new java.lang.NullPointerException::
+7112 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v41 = new java.lang.StringBuilder::
+7116 :: CALL :: call :: Ljava/lang/StringBuilder :: v45 = v41.append(#(value for name ))::
+7121 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v45.append(p1 $name )::JM,7171:JM,7175:JM,7159:JM,7144:JM,7082:JM,7068
+7126 :: CALL :: call :: Ljava/lang/StringBuilder :: v50 = v47.append(#( == null))::JM,7159:JM,7144:JM,7082
+7131 :: CALL :: call :: Ljava/lang/String :: v52 = v50.toString()::JM,7159
+7140 :: CALL :: call :: I :: v19 = p2 $value .length()::JM,7175:JM,7159:JM,7144:JM,7082:JM,7068
+7144 :: PRED :: IF :: Z :: if (v25 >= v19) goto 232::CD,7145:CD,7189:CD,7193:JM,7175:JM,7159:JM,7144:JM,7082:JM,7068
+7145 :: CALL :: call :: C :: v21 = p2 $value .charAt(v25)::JM,7175:JM,7159:JM,7144:JM,7082:JM,7068
+7153 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v27 = new java.lang.IllegalArgumentException::
+7154 :: NORM :: declaration :: [Ljava/lang/Object :: v30 = new java.lang.Object[]::
+7155 :: CALL :: call :: Ljava/lang/Integer :: v32 = valueOf(v21)::JM,7159:JM,7082
+7159 :: EXPR :: modify :: Ljava/lang/Object :: v30[#(0)] = v32::
+7163 :: CALL :: call :: Ljava/lang/Integer :: v34 = valueOf(v25)::JM,7167
+7167 :: EXPR :: modify :: Ljava/lang/Object :: v30[#(1)] = v34::
+7171 :: EXPR :: modify :: Ljava/lang/Object :: v30[#(2)] = p1 $name ::
+7175 :: EXPR :: modify :: Ljava/lang/Object :: v30[#(3)] = p2 $value ::
+7179 :: CALL :: call :: Ljava/lang/String :: v38 = format(#(Unexpected char %#04x...), v30)::CL,7344
+7189 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v25 + #(1)::DD,7193
+7192 :: EXPR :: assign :: null :: PHI v17 = v16, #(0)::DD,7068:JM,7159:JM,7144:JM,7082:JM,7090:DD,7108
+7193 :: EXPR :: assign :: null :: PHI v25 = v24, #(0)::DD,7144:JM,7159:JM,7082:JM,7068:JM,7167:DD,7189
+7232 :: ENTR :: entry :: null :: okhttp3.Headers.Builder.addLenient(java.lang.String,java.lang.String)::CD,7241:CD,7249:CD,7253
+7238 :: EXPR :: reference :: Ljava/util/List :: v5 = p0 $this .namesAndValues::
+7241 :: CALL :: call :: Z :: v7 = v5.add(p1 $name )::
+7246 :: EXPR :: reference :: Ljava/util/List :: v8 = p0 $this .namesAndValues::
+7249 :: CALL :: call :: Ljava/lang/String :: v10 = p2 $value .trim()::
+7253 :: CALL :: call :: Z :: v12 = v8.add(v10)::
+7309 :: EXPR :: modify :: Ljava/lang/reflect/Method :: p0 $this .getMethod = p1 $getMethod ::
+7312 :: EXPR :: modify :: Ljava/lang/reflect/Method :: p0 $this .openMethod = p2 $openMethod ::
+7315 :: EXPR :: modify :: Ljava/lang/reflect/Method :: p0 $this .warnIfOpenMethod = p3 $warnIfOpenMethod ::
+7326 :: ENTR :: entry :: null :: okhttp3.CipherSuite.1.compare(java.lang.Object,java.lang.Object)::CE,7327:CD,7334:CD,7340
+7327 :: EXIT :: exit :: I :: okhttp3.CipherSuite.1.compare(java.lang.Object,java.lang.Object)::
+7334 :: CALL :: call :: I :: v8 = p0 $this .compare(v5, v6)::JM,7340:CL,7361
+7340 :: NORM :: compound :: I :: return v8::DD,7327
+7344 :: ENTR :: entry :: null :: okhttp3.internal.Util.format(java.lang.String,java.lang.Object[])::CE,7345:CD,7349:CD,7351:CD,7357
+7345 :: EXIT :: exit :: Ljava/lang/String :: okhttp3.internal.Util.format(java.lang.String,java.lang.Object[])::
+7349 :: EXPR :: reference :: Ljava/util/Locale :: v4 = java.util.Locale.US::JM,7357
+7351 :: CALL :: call :: Ljava/lang/String :: v6 = format(v4, p1 $format , p2 $args )::JM,7357
+7357 :: NORM :: compound :: Ljava/lang/String :: return v6::DD,7345
+7361 :: ENTR :: entry :: null :: okhttp3.CipherSuite.1.compare(java.lang.String,java.lang.String)::CE,7362:CD,7367:CD,7371:CD,7375:CD,7380:CD,7410:JM,7392:JM,7405:JM,7406:JM,7391
+7362 :: EXIT :: exit :: I :: okhttp3.CipherSuite.1.compare(java.lang.String,java.lang.String)::JM,7340
+7367 :: CALL :: call :: I :: v7 = p1 $a .length()::JM,7392:JM,7380:JM,7405:JM,7406:JM,7391:JM,7375
+7371 :: CALL :: call :: I :: v9 = p2 $b .length()::JM,7392:JM,7380:JM,7405:JM,7406:JM,7391:JM,7375
+7375 :: CALL :: call :: I :: v11 = min(v7, v9)::JM,7392:JM,7380:JM,7405:JM,7406:JM,7375:JM,7391
+7380 :: PRED :: IF :: Z :: if (v18 >= v11) goto 62::CD,7381:CD,7386:CD,7391:CD,7397:CD,7401:CD,7405:JM,7392:JM,7380:JM,7406:JM,7375
+7381 :: CALL :: call :: C :: v13 = p1 $a .charAt(v18)::JM,7392:JM,7380:JM,7405:JM,7406:JM,7391:JM,7375
+7386 :: CALL :: call :: C :: v15 = p2 $b .charAt(v18)::JM,7392:JM,7380:JM,7405:JM,7406:JM,7391:JM,7375
+7391 :: PRED :: IF :: Z :: if (v13 == v15) goto 55::CD,7380:CD,7392:CD,7394:CD,7395:CD,7410:CD,7411
+7392 :: PRED :: IF :: Z :: if (v13 >= v15) goto 54::CD,7411
+7394 :: NORM :: compound :: I :: return v26::DD,7362
+7395 :: EXPR :: assign :: Ljava/lang/Object :: v17 = v18 + #(1)::DD,7410
+7397 :: CALL :: call :: I :: v20 = p1 $a .length()::JM,7392:JM,7380:JM,7405:JM,7406:JM,7391:JM,7375
+7401 :: CALL :: call :: I :: v22 = p2 $b .length()::JM,7392:JM,7380:JM,7405:JM,7406:JM,7391:JM,7375
+7405 :: PRED :: IF :: Z :: if (v20 == v22) goto 91::CD,7406:CD,7408:CD,7409:CD,7412
+7406 :: PRED :: IF :: Z :: if (v20 >= v22) goto 89::CD,7412
+7408 :: NORM :: compound :: I :: return v25::DD,7362
+7409 :: NORM :: compound :: I :: return #(0)::DD,7362
+7410 :: EXPR :: assign :: null :: PHI v18 = v17, #(4)::DD,7380:JM,7392:JM,7405:JM,7406:JM,7391:JM,7375:DD,7395
+7411 :: EXPR :: assign :: null :: PHI v26 = #(-1), #(1)::CF,7394
+7412 :: EXPR :: assign :: null :: PHI v25 = #(-1), #(1)::CF,7408

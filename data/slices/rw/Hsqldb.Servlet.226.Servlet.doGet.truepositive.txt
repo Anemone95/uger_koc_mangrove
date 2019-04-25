@@ -1,0 +1,16 @@
+[96, 93]
+1 :: ENTR :: entry :: null :: org.hsqldb.server.Servlet.doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:JM,16:JM,12
+7 :: CALL :: call :: Ljava/lang/String :: v6 = p1 $request .getQueryString()::JM,16:JM,11:JM,12
+11 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 21::CD,12:CD,16:CD,26:CD,30:CD,34:CD,38:CD,45
+12 :: CALL :: call :: I :: v9 = v6.length()::JM,16:JM,12
+16 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 148::CD,26:CD,30:CD,34:CD,38:CD,45
+26 :: CALL :: call :: Ljava/io/PrintWriter :: v17 = p2 $response .getWriter()::JM,16:JM,11:JM,12
+30 :: CALL :: call :: V :: v17.println(#(<html><head><title>HS...))::JM,16:JM,12
+34 :: CALL :: call :: V :: v17.println(#(</head><body><h1>HSQL...))::JM,16:JM,12
+38 :: CALL :: call :: V :: v17.println(#(The servlet is runnin...))::JM,16:JM,12
+42 :: EXPR :: reference :: Ljava/lang/String :: v24 = p0 $this .initError::DD,45
+45 :: PRED :: IF :: Z :: if (v24 != #(null)) goto 122::CD,85:CD,89:CD,96:JM,16:JM,12
+85 :: CALL :: call :: V :: v17.println(#(<h2>The database is n...))::JM,16:JM,12
+89 :: CALL :: call :: V :: v17.println(#(The error message is:<p>))::JM,16:JM,12
+93 :: EXPR :: reference :: Ljava/lang/String :: v29 = p0 $this .initError::JM,16
+96 :: CALL :: call :: V :: v17.println(v29)::JM,16:JM,12

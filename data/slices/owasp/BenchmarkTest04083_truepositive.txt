@@ -1,0 +1,27 @@
+[96, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest04083.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,26:CD,30:CD,35:CD,40:CD,45:CD,50:CD,55:CD,56:CD,60:CD,65:CD,70:CD,75:CD,79:CD,82:CD,91:CD,106:JM,16:JM,21
+7 :: CALL :: call :: Ljava/util/Map :: v6 = p1 $request .getParameterMap()::JM,16:JM,21:JM,11:JM,15
+11 :: CALL :: call :: Z :: v9 = v6.isEmpty()::JM,16:JM,21:JM,11:JM,15
+15 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 35::CF,106:CD,16:CD,21:JM,11:JM,15
+16 :: CALL :: call :: Ljava/lang/Object :: v13 = v6.get(#(foo))::JM,16:JM,21:JM,11:JM,15
+21 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::
+22 :: EXPR :: reference :: Ljava/lang/Object :: v15 = v14[#(0)]::DD,106
+26 :: NORM :: declaration :: Ljava/util/ArrayList :: v17 = new java.util.ArrayList::JM,55
+30 :: CALL :: call :: Z :: v21 = v17.add(#(safe))::
+35 :: CALL :: call :: Z :: v23 = v17.add(v16)::
+40 :: CALL :: call :: Z :: v26 = v17.add(#(moresafe))::
+45 :: CALL :: call :: Ljava/lang/Object :: v28 = v17.remove(#(0))::
+50 :: CALL :: call :: Ljava/lang/Object :: v30 = v17.get(#(0))::JM,55
+55 :: EXPR :: assign :: Ljava/lang/Object :: v31 = CHECKCAST v30::JM,91:CF,56
+56 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v32 = new java.lang.StringBuilder::JM,91
+60 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v32.append(#(SELECT * from USERS w...))::JM,91
+65 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v36.append(v31)::JM,91
+70 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v38.append(#('))::JM,91
+75 :: CALL :: call :: Ljava/lang/String :: v43 = v41.toString()::JM,91
+79 :: CALL :: call :: Ljava/sql/Statement :: v45 = getSqlStatement()::JM,91
+82 :: NORM :: declaration :: [I :: v47 = new []::JM,91
+83 :: EXPR :: modify :: I :: v47[#(0)] = #(1)::
+87 :: EXPR :: modify :: I :: v47[#(1)] = #(2)::
+91 :: CALL :: call :: Z :: v50 = v45.execute(v43, v47)::JM,91
+106 :: EXPR :: assign :: null :: PHI v16 = #(), v15::CF,26

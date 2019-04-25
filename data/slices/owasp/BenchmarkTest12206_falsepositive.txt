@@ -1,0 +1,17 @@
+[54, 59]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest12206.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,23:CD,28:CD,32:CD,37:CD,42:CD,47:CD,51:CD,54
+23 :: CALL :: call :: Ljava/lang/String :: v14 = v10.doSomething(v9)::JM,54:CL,184
+28 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v15 = new java.lang.StringBuilder::JM,54
+32 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v15.append(#(SELECT * from USERS w...))::JM,54
+37 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v19.append(v14)::JM,54
+42 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v21.append(#('))::JM,54
+47 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::JM,54
+51 :: CALL :: call :: Ljava/sql/Statement :: v28 = getSqlStatement()::JM,54
+54 :: CALL :: call :: Z :: v31 = v28.execute(v26, #(1))::JM,54
+184 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest12206.Test.doSomething(java.lang.String)::CE,185:CD,189:CD,194:CD,198:CD,199
+185 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest12206.Test.doSomething(java.lang.String)::JM,54
+189 :: CALL :: call :: C :: v7 = #(ABC).charAt(#(1))::JM,194
+194 :: PRED :: IF :: null :: switch v7::CD,199
+198 :: NORM :: compound :: Ljava/lang/String :: return v10::DD,185
+199 :: EXPR :: assign :: null :: PHI v10 = p1 $param , #(bob), p1 $param , #(bob's your uncle)::CF,198

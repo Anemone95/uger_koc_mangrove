@@ -1,0 +1,21 @@
+[67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 81]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest06537.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,20:CD,25:CD,30:CD,35:CD,40:CD,41:CD,45:CD,50:CD,55:CD,60:CD,64:CD,67:CD,76
+7 :: CALL :: call :: Ljava/lang/String :: v6 = p1 $request .getQueryString()::
+11 :: NORM :: declaration :: Ljava/util/ArrayList :: v7 = new java.util.ArrayList::JM,40
+15 :: CALL :: call :: Z :: v11 = v7.add(#(safe))::
+20 :: CALL :: call :: Z :: v13 = v7.add(v6)::
+25 :: CALL :: call :: Z :: v16 = v7.add(#(moresafe))::
+30 :: CALL :: call :: Ljava/lang/Object :: v19 = v7.remove(#(0))::
+35 :: CALL :: call :: Ljava/lang/Object :: v22 = v7.get(#(1))::JM,40
+40 :: EXPR :: assign :: Ljava/lang/Object :: v23 = CHECKCAST v22::JM,76:CF,41
+41 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v24 = new java.lang.StringBuilder::JM,76
+45 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v24.append(#(SELECT * from USERS w...))::JM,76
+50 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v28.append(v23)::JM,76
+55 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v30.append(#('))::JM,76
+60 :: CALL :: call :: Ljava/lang/String :: v35 = v33.toString()::JM,76
+64 :: CALL :: call :: Ljava/sql/Statement :: v37 = getSqlStatement()::JM,76
+67 :: NORM :: declaration :: [Ljava/lang/String :: v39 = new java.lang.String[]::JM,76
+68 :: EXPR :: modify :: Ljava/lang/Object :: v39[#(0)] = #(username)::
+72 :: EXPR :: modify :: Ljava/lang/Object :: v39[#(1)] = #(password)::
+76 :: CALL :: call :: Z :: v43 = v37.execute(v35, v39)::JM,76

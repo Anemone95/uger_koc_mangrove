@@ -1,0 +1,71 @@
+[68, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest12192.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,23:CD,28:CD,32:CD,37:CD,42:CD,47:CD,51:CD,54:CD,63
+23 :: CALL :: call :: Ljava/lang/String :: v14 = v10.doSomething(v9)::JM,63:CL,213
+28 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v15 = new java.lang.StringBuilder::JM,63
+32 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v15.append(#(SELECT * from USERS w...))::JM,63
+37 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v19.append(v14)::JM,63
+42 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v21.append(#('))::JM,63
+47 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::JM,63
+51 :: CALL :: call :: Ljava/sql/Connection :: v28 = getSqlConnection()::JM,63
+54 :: NORM :: declaration :: [I :: v30 = new []::JM,63
+55 :: EXPR :: modify :: I :: v30[#(0)] = #(1)::
+59 :: EXPR :: modify :: I :: v30[#(1)] = #(2)::
+63 :: CALL :: call :: Ljava/sql/PreparedStatement :: v34 = v28.prepareStatement(v26, v30)::JM,63
+213 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest12192.Test.doSomething(java.lang.String)::CE,214:CD,218:CD,223:CD,228:CD,232:CD,236:CD,237:CD,241:CD,248:CD,252:CD,256:CD,262:CD,267:CD,268:CD,272:CD,273:CD,279:CD,280:CD,284:CD,288:CD,292:CD,297:CD,306:CD,315:CD,318:CD,323
+214 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest12192.Test.doSomething(java.lang.String)::JM,63
+218 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v4 = new java.lang.StringBuilder::JM,236
+223 :: CALL :: call :: Ljava/lang/StringBuilder :: v8 = v4.append(#( SafeStuff))::
+228 :: CALL :: call :: I :: v10 = v4.length()::JM,236
+232 :: CALL :: call :: I :: v13 = #(Chars).length()::JM,236
+236 :: EXPR :: assign :: Ljava/lang/Object :: v14 = v10 - v13::
+237 :: CALL :: call :: I :: v16 = v4.length()::
+241 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v4.replace(v14, v16, #(Chars))::
+248 :: NORM :: declaration :: Ljava/util/HashMap :: v19 = new java.util.HashMap::JM,267
+252 :: CALL :: call :: Ljava/lang/String :: v23 = v4.toString()::
+256 :: CALL :: call :: Ljava/lang/Object :: v25 = v19.put(#(key84965), v23)::
+262 :: CALL :: call :: Ljava/lang/Object :: v27 = v19.get(#(key84965))::JM,267
+267 :: EXPR :: assign :: Ljava/lang/Object :: v28 = CHECKCAST v27::JM,272:JM,292:JM,279:JM,297
+268 :: CALL :: call :: I :: v31 = v28.length()::JM,272
+272 :: EXPR :: assign :: Ljava/lang/Object :: v33 = v31 - #(1)::JM,292:JM,279:JM,297
+273 :: CALL :: call :: Ljava/lang/String :: v35 = v28.substring(#(0), v33)::JM,292:JM,279:JM,297
+279 :: NORM :: declaration :: Ljava/lang/String :: v36 = new java.lang.String::JM,279:CF,280
+280 :: NORM :: declaration :: Lsun/misc/BASE64Decoder :: v37 = new sun.misc.BASE64Decoder::JM,279:JM,297
+284 :: NORM :: declaration :: Lsun/misc/BASE64Encoder :: v39 = new sun.misc.BASE64Encoder::JM,292:JM,279:JM,297
+288 :: CALL :: call :: [B :: v42 = v35.getBytes()::JM,292:JM,279:JM,297
+292 :: CALL :: call :: Ljava/lang/String :: v44 = v39.encode(v42)::JM,292:JM,279:JM,297
+297 :: CALL :: call :: [B :: v46 = v37.decodeBuffer(v44)::JM,279:JM,297
+306 :: CALL :: call :: [Ljava/lang/String :: v50 = v36.split(#( ))::
+315 :: CALL :: call :: Lorg/owasp/benchmark/helpers/ThingInterface :: v53 = createThing()::CL,383
+318 :: CALL :: call :: Ljava/lang/String :: v56 = v53.doSomething(#(barbarians_at_the_gate))::JM,323:CL,497:CL,520
+323 :: NORM :: compound :: Ljava/lang/String :: return v56::DD,214
+383 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.ThingFactory.createThing()::CD,386:CD,390:CD,391:CD,395:CD,400:CD,457:CD,459:CD,463:CD,471
+386 :: NORM :: declaration :: Ljava/util/Properties :: v2 = new java.util.Properties::JM,439
+390 :: EXPR :: assign :: Ljava/lang/Class :: v4 = metadata <Application,Lorg/owasp/benchmark/helpers/ThingFactory>-><Primordial,Ljava/lang/Class>::JM,400
+391 :: CALL :: call :: Ljava/lang/ClassLoader :: v6 = v4.getClassLoader()::JM,400
+395 :: CALL :: call :: Ljava/io/InputStream :: v9 = v6.getResourceAsStream(#(thing.properties))::JM,400
+400 :: PRED :: IF :: Z :: if (v9 != #(null)) goto 41::CD,401:CD,403:CD,412:CD,416:CD,420:CD,425:CD,430:CD,435:CD,439:CD,443:CD,444
+401 :: EXPR :: reference :: Ljava/io/PrintStream :: v34 = java.lang.System.out::
+403 :: CALL :: call :: V :: v34.println(#(Can't find thing.prop...))::
+412 :: CALL :: call :: V :: v2.load(v9)::
+416 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::JM,439
+420 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v12.append(#(org.owasp.benchmark.h...))::JM,439
+425 :: CALL :: call :: Ljava/lang/String :: v19 = v2.getProperty(#(thing))::JM,439
+430 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v16.append(v19)::JM,439
+435 :: CALL :: call :: Ljava/lang/String :: v23 = v21.toString()::JM,439
+439 :: CALL :: call :: Ljava/lang/Class :: v25 = forName(v23)::JM,439
+443 :: NORM :: declaration :: [Ljava/lang/Class :: v27 = new java.lang.Class[]::
+444 :: CALL :: call :: Ljava/lang/reflect/Constructor :: v29 = v25.getConstructor(v27)::
+457 :: EXPR :: reference :: Ljava/io/PrintStream :: v40 = java.lang.System.out::
+459 :: CALL :: call :: V :: v40.println(#(Error constructing Thing.))::
+463 :: CALL :: call :: V :: v39.printStackTrace()::
+471 :: EXPR :: assign :: Ljava/lang/Exception :: v39 = catch <exc>::
+497 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.Thing2.doSomething(java.lang.String)::CE,498:CD,502:CD,507:CD,511:CD,515
+498 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.Thing2.doSomething(java.lang.String)::JM,323
+502 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v4 = new java.lang.StringBuilder::JM,515
+507 :: CALL :: call :: Ljava/lang/StringBuilder :: v7 = v4.reverse()::JM,515
+511 :: CALL :: call :: Ljava/lang/String :: v9 = v7.toString()::JM,515
+515 :: NORM :: compound :: Ljava/lang/String :: return v9::DD,498
+520 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.Thing1.doSomething(java.lang.String)::CF,521:CD,525
+521 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.Thing1.doSomething(java.lang.String)::JM,323
+525 :: NORM :: compound :: Ljava/lang/String :: return p1 $i ::CF,521

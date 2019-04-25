@@ -1,0 +1,13 @@
+[2305, 2308]
+2305 :: EXPR :: reference :: Ljava/sql/Connection :: v7 = p0 $this .connection::JM,2308
+1 :: ENTR :: entry :: null :: org.apache.ibatis.jdbc.SqlRunnerTest.shouldInsert()::CD,17:JM,2258:CD,22:CD,45
+2308 :: CALL :: call :: Ljava/sql/PreparedStatement :: v9 = v7.prepareStatement(p1 $sql )::JM,2308
+17 :: NORM :: declaration :: Lorg/apache/ibatis/jdbc/SqlRunner :: v10 = new org.apache.ibatis.jdbc.SqlRunner::JM,2308
+22 :: CALL :: call :: V :: v10.setUseGeneratedKeySupport(#(1))::CL,2274
+45 :: CALL :: call :: I :: v25 = v10.insert(#(INSERT INTO author (u...), v16)::JM,2308:CL,2285
+2258 :: EXPR :: modify :: Ljava/sql/Connection :: p0 $this .connection = p1 $connection ::
+2274 :: ENTR :: entry :: null :: org.apache.ibatis.jdbc.SqlRunner.setUseGeneratedKeySupport(boolean)::JM,2279
+2279 :: EXPR :: modify :: Z :: p0 $this .useGeneratedKeySupport = p1 $useGeneratedKeySupport ::
+2285 :: ENTR :: entry :: null :: org.apache.ibatis.jdbc.SqlRunner.insert(java.lang.String,java.lang.Object[])::CD,2294:JM,2308
+2291 :: EXPR :: reference :: Z :: v5 = p0 $this .useGeneratedKeySupport::DD,2294
+2294 :: PRED :: IF :: Z :: if (v5 == #(0)) goto 23::CD,2308

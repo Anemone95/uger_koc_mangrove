@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.2-dev-20160306-90c514b" sequence="1" timestamp="1518452628684" analysisTimestamp="1518452610369" release="">
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.datasource.pooled.PooledDataSource">
+      <SourceLine classname="org.apache.ibatis.datasource.pooled.PooledDataSource" sourcefile="PooledDataSource.java" sourcepath="org/apache/ibatis/datasource/pooled/PooledDataSource.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.datasource.pooled.PooledDataSource" name="pingConnection" signature="(Lorg/apache/ibatis/datasource/pooled/PooledConnection;)Z" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.datasource.pooled.PooledDataSource" start="507" end="552" startBytecode="0" endBytecode="701" sourcefile="PooledDataSource.java" sourcepath="org/apache/ibatis/datasource/pooled/PooledDataSource.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.datasource.pooled.PooledDataSource" start="527" end="527" startBytecode="173" endBytecode="173" sourcefile="PooledDataSource.java" sourcepath="org/apache/ibatis/datasource/pooled/PooledDataSource.java"/>
+    <String value="Statement.executeQuery(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.datasource.pooled.PooledDataSource" start="527" end="527" startBytecode="170" endBytecode="170" sourcefile="PooledDataSource.java" sourcepath="org/apache/ibatis/datasource/pooled/PooledDataSource.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.executor.statement.CallableStatementHandler">
+      <SourceLine classname="org.apache.ibatis.executor.statement.CallableStatementHandler" sourcefile="CallableStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/CallableStatementHandler.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.executor.statement.CallableStatementHandler" name="instantiateStatement" signature="(Ljava/sql/Connection;)Ljava/sql/Statement;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.executor.statement.CallableStatementHandler" start="84" end="88" startBytecode="0" endBytecode="134" sourcefile="CallableStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/CallableStatementHandler.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.executor.statement.CallableStatementHandler" start="86" end="86" startBytecode="33" endBytecode="33" sourcefile="CallableStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/CallableStatementHandler.java"/>
+    <String value="Connection.prepareCall(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.executor.statement.CallableStatementHandler" start="84" end="84" startBytecode="4" endBytecode="4" sourcefile="CallableStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/CallableStatementHandler.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.executor.statement.CallableStatementHandler">
+      <SourceLine classname="org.apache.ibatis.executor.statement.CallableStatementHandler" sourcefile="CallableStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/CallableStatementHandler.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.executor.statement.CallableStatementHandler" name="instantiateStatement" signature="(Ljava/sql/Connection;)Ljava/sql/Statement;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.executor.statement.CallableStatementHandler" start="84" end="88" startBytecode="0" endBytecode="134" sourcefile="CallableStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/CallableStatementHandler.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.executor.statement.CallableStatementHandler" start="88" end="88" startBytecode="41" endBytecode="41" sourcefile="CallableStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/CallableStatementHandler.java"/>
+    <String value="Connection.prepareCall(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.executor.statement.CallableStatementHandler" start="84" end="84" startBytecode="4" endBytecode="4" sourcefile="CallableStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/CallableStatementHandler.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.executor.statement.PreparedStatementHandler">
+      <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" name="instantiateStatement" signature="(Ljava/sql/Connection;)Ljava/sql/Statement;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" start="76" end="87" startBytecode="0" endBytecode="214" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" start="80" end="80" startBytecode="36" endBytecode="36" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" start="76" end="76" startBytecode="4" endBytecode="4" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.executor.statement.PreparedStatementHandler">
+      <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" name="instantiateStatement" signature="(Ljava/sql/Connection;)Ljava/sql/Statement;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" start="76" end="87" startBytecode="0" endBytecode="214" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" start="82" end="82" startBytecode="45" endBytecode="45" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" start="76" end="76" startBytecode="4" endBytecode="4" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.executor.statement.PreparedStatementHandler">
+      <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" name="instantiateStatement" signature="(Ljava/sql/Connection;)Ljava/sql/Statement;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" start="76" end="87" startBytecode="0" endBytecode="214" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" start="85" end="85" startBytecode="76" endBytecode="76" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" start="76" end="76" startBytecode="4" endBytecode="4" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.executor.statement.PreparedStatementHandler">
+      <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" name="instantiateStatement" signature="(Ljava/sql/Connection;)Ljava/sql/Statement;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" start="76" end="87" startBytecode="0" endBytecode="214" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" start="87" end="87" startBytecode="84" endBytecode="84" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.executor.statement.PreparedStatementHandler" start="76" end="76" startBytecode="4" endBytecode="4" sourcefile="PreparedStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/PreparedStatementHandler.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.executor.statement.SimpleStatementHandler">
+      <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" name="batch" signature="(Ljava/sql/Statement;)V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="66" end="68" startBytecode="0" endBytecode="85" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="67" end="67" startBytecode="10" endBytecode="10" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    <String value="Statement.addBatch(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="66" end="66" startBytecode="4" endBytecode="4" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.executor.statement.SimpleStatementHandler">
+      <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" name="query" signature="(Ljava/sql/Statement;Lorg/apache/ibatis/session/ResultHandler;)Ljava/util/List;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="72" end="74" startBytecode="0" endBytecode="106" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="73" end="73" startBytecode="10" endBytecode="10" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="72" end="72" startBytecode="4" endBytecode="4" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.executor.statement.SimpleStatementHandler">
+      <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" name="queryCursor" signature="(Ljava/sql/Statement;)Lorg/apache/ibatis/cursor/Cursor;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="79" end="81" startBytecode="0" endBytecode="96" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="80" end="80" startBytecode="10" endBytecode="10" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="79" end="79" startBytecode="4" endBytecode="4" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.executor.statement.SimpleStatementHandler">
+      <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" name="update" signature="(Ljava/sql/Statement;)I" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="45" end="61" startBytecode="0" endBytecode="325" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="50" end="50" startBytecode="36" endBytecode="36" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="45" end="45" startBytecode="4" endBytecode="4" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.executor.statement.SimpleStatementHandler">
+      <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" name="update" signature="(Ljava/sql/Statement;)I" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="45" end="61" startBytecode="0" endBytecode="325" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="54" end="54" startBytecode="80" endBytecode="80" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="45" end="45" startBytecode="4" endBytecode="4" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.executor.statement.SimpleStatementHandler">
+      <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" name="update" signature="(Ljava/sql/Statement;)I" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="45" end="61" startBytecode="0" endBytecode="325" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="58" end="58" startBytecode="116" endBytecode="116" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.executor.statement.SimpleStatementHandler" start="45" end="45" startBytecode="4" endBytecode="4" sourcefile="SimpleStatementHandler.java" sourcepath="org/apache/ibatis/executor/statement/SimpleStatementHandler.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="1" rank="5" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.io.DefaultVFS">
+      <SourceLine classname="org.apache.ibatis.io.DefaultVFS" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.io.DefaultVFS" name="findJarForResource" signature="(Ljava/net/URL;)Ljava/net/URL;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="221" end="293" startBytecode="0" endBytecode="834" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="265" end="265" startBytecode="277" endBytecode="277" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <String value="with tainted arguments detected" role="Method usage"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="61" end="61" startBytecode="13" endBytecode="13" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="100" end="100" startBytecode="350" endBytecode="350" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="104" end="104" startBytecode="297" endBytecode="297" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="115" end="115" startBytecode="408" endBytecode="408" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="149" end="149" startBytecode="594" endBytecode="594" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="152" end="152" startBytecode="658" endBytecode="658" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="153" end="153" startBytecode="676" endBytecode="676" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="228" end="228" startBytecode="43" endBytecode="43" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="238" end="238" startBytecode="91" endBytecode="91" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="255" end="255" startBytecode="201" endBytecode="201" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="264" end="264" startBytecode="265" endBytecode="265" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="265" end="265" startBytecode="274" endBytecode="274" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="1" rank="5" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.io.DefaultVFS">
+      <SourceLine classname="org.apache.ibatis.io.DefaultVFS" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.io.DefaultVFS" name="findJarForResource" signature="(Ljava/net/URL;)Ljava/net/URL;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="221" end="293" startBytecode="0" endBytecode="834" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="270" end="270" startBytecode="304" endBytecode="304" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <String value="with tainted arguments detected" role="Method usage"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="61" end="61" startBytecode="13" endBytecode="13" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="100" end="100" startBytecode="350" endBytecode="350" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="104" end="104" startBytecode="297" endBytecode="297" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="115" end="115" startBytecode="408" endBytecode="408" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="149" end="149" startBytecode="594" endBytecode="594" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="152" end="152" startBytecode="658" endBytecode="658" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="153" end="153" startBytecode="676" endBytecode="676" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="228" end="228" startBytecode="43" endBytecode="43" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="238" end="238" startBytecode="91" endBytecode="91" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="255" end="255" startBytecode="201" endBytecode="201" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="264" end="264" startBytecode="265" endBytecode="265" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="270" end="270" startBytecode="301" endBytecode="301" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="1" rank="5" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.io.DefaultVFS">
+      <SourceLine classname="org.apache.ibatis.io.DefaultVFS" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.io.DefaultVFS" name="list" signature="(Ljava/net/URL;Ljava/lang/String;)Ljava/util/List;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="55" end="166" startBytecode="0" endBytecode="1567" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="125" end="125" startBytecode="439" endBytecode="439" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <String value="with tainted arguments detected" role="Method usage"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="100" end="100" startBytecode="350" endBytecode="350" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="104" end="104" startBytecode="297" endBytecode="297" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="115" end="115" startBytecode="408" endBytecode="408" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="125" end="125" startBytecode="436" endBytecode="436" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="149" end="149" startBytecode="594" endBytecode="594" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="152" end="152" startBytecode="658" endBytecode="658" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+    <SourceLine classname="org.apache.ibatis.io.DefaultVFS" start="153" end="153" startBytecode="676" endBytecode="676" sourcefile="DefaultVFS.java" sourcepath="org/apache/ibatis/io/DefaultVFS.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.io.ExternalResources">
+      <SourceLine classname="org.apache.ibatis.io.ExternalResources" sourcefile="ExternalResources.java" sourcepath="org/apache/ibatis/io/ExternalResources.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.io.ExternalResources" name="getConfiguredTemplate" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.io.ExternalResources" start="71" end="83" startBytecode="0" endBytecode="227" sourcefile="ExternalResources.java" sourcepath="org/apache/ibatis/io/ExternalResources.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.io.ExternalResources" start="75" end="75" startBytecode="17" endBytecode="17" sourcefile="ExternalResources.java" sourcepath="org/apache/ibatis/io/ExternalResources.java"/>
+    <String value="FileInputStream(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.io.ExternalResourcesTest" start="90" end="90" startBytecode="39" endBytecode="39" sourcefile="ExternalResourcesTest.java" sourcepath="org/apache/ibatis/io/ExternalResourcesTest.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="5" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.jdbc.ScriptRunner">
+      <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.jdbc.ScriptRunner" name="executeStatement" signature="(Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="227" end="258" startBytecode="0" endBytecode="381" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="235" end="235" startBytecode="54" endBytecode="54" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <String value="with tainted arguments detected" role="Method usage"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="119" end="119" startBytecode="36" endBytecode="36" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="120" end="120" startBytecode="23" endBytecode="23" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="121" end="121" startBytecode="31" endBytecode="31" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="123" end="123" startBytecode="46" endBytecode="46" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="125" end="125" startBytecode="60" endBytecode="60" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="139" end="139" startBytecode="29" endBytecode="29" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="140" end="140" startBytecode="24" endBytecode="24" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="205" end="205" startBytecode="85" endBytecode="85" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="206" end="206" startBytecode="96" endBytecode="96" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="207" end="207" startBytecode="102" endBytecode="102" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="208" end="208" startBytecode="110" endBytecode="110" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="232" end="232" startBytecode="39" endBytecode="39" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="5" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.jdbc.ScriptRunner">
+      <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.jdbc.ScriptRunner" name="executeStatement" signature="(Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="227" end="258" startBytecode="0" endBytecode="381" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="246" end="246" startBytecode="86" endBytecode="86" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <String value="with tainted arguments detected" role="Method usage"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="119" end="119" startBytecode="36" endBytecode="36" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="120" end="120" startBytecode="23" endBytecode="23" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="121" end="121" startBytecode="31" endBytecode="31" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="123" end="123" startBytecode="46" endBytecode="46" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="125" end="125" startBytecode="60" endBytecode="60" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="139" end="139" startBytecode="29" endBytecode="29" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="140" end="140" startBytecode="24" endBytecode="24" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="205" end="205" startBytecode="85" endBytecode="85" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="206" end="206" startBytecode="96" endBytecode="96" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="207" end="207" startBytecode="102" endBytecode="102" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="208" end="208" startBytecode="110" endBytecode="110" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+    <SourceLine classname="org.apache.ibatis.jdbc.ScriptRunner" start="232" end="232" startBytecode="39" endBytecode="39" sourcefile="ScriptRunner.java" sourcepath="org/apache/ibatis/jdbc/ScriptRunner.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.logging.jdbc.PreparedStatementLoggerTest">
+      <SourceLine classname="org.apache.ibatis.logging.jdbc.PreparedStatementLoggerTest" sourcefile="PreparedStatementLoggerTest.java" sourcepath="org/apache/ibatis/logging/jdbc/PreparedStatementLoggerTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.logging.jdbc.PreparedStatementLoggerTest" name="setUp" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.logging.jdbc.PreparedStatementLoggerTest" start="46" end="51" startBytecode="0" endBytecode="152" sourcefile="PreparedStatementLoggerTest.java" sourcepath="org/apache/ibatis/logging/jdbc/PreparedStatementLoggerTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.logging.jdbc.PreparedStatementLoggerTest" start="48" end="48" startBytecode="32" endBytecode="32" sourcefile="PreparedStatementLoggerTest.java" sourcepath="org/apache/ibatis/logging/jdbc/PreparedStatementLoggerTest.java"/>
+    <String value="PreparedStatement.executeQuery(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.logging.jdbc.PreparedStatementLoggerTest" start="48" end="48" startBytecode="29" endBytecode="29" sourcefile="PreparedStatementLoggerTest.java" sourcepath="org/apache/ibatis/logging/jdbc/PreparedStatementLoggerTest.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.logging.jdbc.PreparedStatementLoggerTest">
+      <SourceLine classname="org.apache.ibatis.logging.jdbc.PreparedStatementLoggerTest" sourcefile="PreparedStatementLoggerTest.java" sourcepath="org/apache/ibatis/logging/jdbc/PreparedStatementLoggerTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.logging.jdbc.PreparedStatementLoggerTest" name="setUp" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.logging.jdbc.PreparedStatementLoggerTest" start="46" end="51" startBytecode="0" endBytecode="152" sourcefile="PreparedStatementLoggerTest.java" sourcepath="org/apache/ibatis/logging/jdbc/PreparedStatementLoggerTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.logging.jdbc.PreparedStatementLoggerTest" start="49" end="49" startBytecode="57" endBytecode="57" sourcefile="PreparedStatementLoggerTest.java" sourcepath="org/apache/ibatis/logging/jdbc/PreparedStatementLoggerTest.java"/>
+    <String value="PreparedStatement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.logging.jdbc.PreparedStatementLoggerTest" start="49" end="49" startBytecode="54" endBytecode="54" sourcefile="PreparedStatementLoggerTest.java" sourcepath="org/apache/ibatis/logging/jdbc/PreparedStatementLoggerTest.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.logging.jdbc.StatementLoggerTest">
+      <SourceLine classname="org.apache.ibatis.logging.jdbc.StatementLoggerTest" sourcefile="StatementLoggerTest.java" sourcepath="org/apache/ibatis/logging/jdbc/StatementLoggerTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.logging.jdbc.StatementLoggerTest" name="setUp" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.logging.jdbc.StatementLoggerTest" start="48" end="51" startBytecode="0" endBytecode="123" sourcefile="StatementLoggerTest.java" sourcepath="org/apache/ibatis/logging/jdbc/StatementLoggerTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.logging.jdbc.StatementLoggerTest" start="49" end="49" startBytecode="32" endBytecode="32" sourcefile="StatementLoggerTest.java" sourcepath="org/apache/ibatis/logging/jdbc/StatementLoggerTest.java"/>
+    <String value="Statement.execute(...)" role="Sink method"/>
+    <SourceLine classname="org.apache.ibatis.logging.jdbc.StatementLoggerTest" start="49" end="49" startBytecode="29" endBytecode="29" sourcefile="StatementLoggerTest.java" sourcepath="org/apache/ibatis/logging/jdbc/StatementLoggerTest.java"/>
+  </BugInstance>
+  <BugInstance type="XXE_DOCUMENT" priority="2" rank="7" abbrev="SECXXEDOC" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.parsing.XPathParser">
+      <SourceLine classname="org.apache.ibatis.parsing.XPathParser" sourcefile="XPathParser.java" sourcepath="org/apache/ibatis/parsing/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.parsing.XPathParser" name="createDocument" signature="(Lorg/xml/sax/InputSource;)Lorg/w3c/dom/Document;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.parsing.XPathParser" start="231" end="259" startBytecode="0" endBytecode="246" sourcefile="XPathParser.java" sourcepath="org/apache/ibatis/parsing/XPathParser.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.parsing.XPathParser" start="257" end="257" startBytecode="64" endBytecode="64" sourcefile="XPathParser.java" sourcepath="org/apache/ibatis/parsing/XPathParser.java"/>
+    <String value="DocumentBuilder.parse(...)"/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.association_nested.FolderMapperTest">
+      <SourceLine classname="org.apache.ibatis.submitted.association_nested.FolderMapperTest" sourcefile="FolderMapperTest.java" sourcepath="org/apache/ibatis/submitted/association_nested/FolderMapperTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.association_nested.FolderMapperTest" name="testFindWithChildren" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.association_nested.FolderMapperTest" start="38" end="73" startBytecode="0" endBytecode="382" sourcefile="FolderMapperTest.java" sourcepath="org/apache/ibatis/submitted/association_nested/FolderMapperTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.association_nested.FolderMapperTest" start="38" end="38" startBytecode="6" endBytecode="6" sourcefile="FolderMapperTest.java" sourcepath="org/apache/ibatis/submitted/association_nested/FolderMapperTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.awful_table.AwfulTableTest">
+      <SourceLine classname="org.apache.ibatis.submitted.awful_table.AwfulTableTest" sourcefile="AwfulTableTest.java" sourcepath="org/apache/ibatis/submitted/awful_table/AwfulTableTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.awful_table.AwfulTableTest" name="setUp" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.awful_table.AwfulTableTest" start="37" end="53" startBytecode="0" endBytecode="211" sourcefile="AwfulTableTest.java" sourcepath="org/apache/ibatis/submitted/awful_table/AwfulTableTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.awful_table.AwfulTableTest" start="38" end="38" startBytecode="12" endBytecode="12" sourcefile="AwfulTableTest.java" sourcepath="org/apache/ibatis/submitted/awful_table/AwfulTableTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.batch_keys.BatchKeysTest">
+      <SourceLine classname="org.apache.ibatis.submitted.batch_keys.BatchKeysTest" sourcefile="BatchKeysTest.java" sourcepath="org/apache/ibatis/submitted/batch_keys/BatchKeysTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.batch_keys.BatchKeysTest" name="setUp" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.batch_keys.BatchKeysTest" start="47" end="70" startBytecode="0" endBytecode="332" sourcefile="BatchKeysTest.java" sourcepath="org/apache/ibatis/submitted/batch_keys/BatchKeysTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.batch_keys.BatchKeysTest" start="51" end="51" startBytecode="14" endBytecode="14" sourcefile="BatchKeysTest.java" sourcepath="org/apache/ibatis/submitted/batch_keys/BatchKeysTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.blobtest.BlobTest">
+      <SourceLine classname="org.apache.ibatis.submitted.blobtest.BlobTest" sourcefile="BlobTest.java" sourcepath="org/apache/ibatis/submitted/blobtest/BlobTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.blobtest.BlobTest" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.blobtest.BlobTest" start="39" end="63" startBytecode="0" endBytecode="309" sourcefile="BlobTest.java" sourcepath="org/apache/ibatis/submitted/blobtest/BlobTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.blobtest.BlobTest" start="43" end="43" startBytecode="14" endBytecode="14" sourcefile="BlobTest.java" sourcepath="org/apache/ibatis/submitted/blobtest/BlobTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.camelcase.CamelCaseMappingTest">
+      <SourceLine classname="org.apache.ibatis.submitted.camelcase.CamelCaseMappingTest" sourcefile="CamelCaseMappingTest.java" sourcepath="org/apache/ibatis/submitted/camelcase/CamelCaseMappingTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.camelcase.CamelCaseMappingTest" name="setUp" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.camelcase.CamelCaseMappingTest" start="39" end="61" startBytecode="0" endBytecode="301" sourcefile="CamelCaseMappingTest.java" sourcepath="org/apache/ibatis/submitted/camelcase/CamelCaseMappingTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.camelcase.CamelCaseMappingTest" start="43" end="43" startBytecode="14" endBytecode="14" sourcefile="CamelCaseMappingTest.java" sourcepath="org/apache/ibatis/submitted/camelcase/CamelCaseMappingTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.cglib_lazy_error.CglibNPELazyTest">
+      <SourceLine classname="org.apache.ibatis.submitted.cglib_lazy_error.CglibNPELazyTest" sourcefile="CglibNPELazyTest.java" sourcepath="org/apache/ibatis/submitted/cglib_lazy_error/CglibNPELazyTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.cglib_lazy_error.CglibNPELazyTest" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.cglib_lazy_error.CglibNPELazyTest" start="37" end="63" startBytecode="0" endBytecode="341" sourcefile="CglibNPELazyTest.java" sourcepath="org/apache/ibatis/submitted/cglib_lazy_error/CglibNPELazyTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.cglib_lazy_error.CglibNPELazyTest" start="41" end="41" startBytecode="14" endBytecode="14" sourcefile="CglibNPELazyTest.java" sourcepath="org/apache/ibatis/submitted/cglib_lazy_error/CglibNPELazyTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.cglib_lazy_error.CglibNPETest">
+      <SourceLine classname="org.apache.ibatis.submitted.cglib_lazy_error.CglibNPETest" sourcefile="CglibNPETest.java" sourcepath="org/apache/ibatis/submitted/cglib_lazy_error/CglibNPETest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.cglib_lazy_error.CglibNPETest" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.cglib_lazy_error.CglibNPETest" start="37" end="61" startBytecode="0" endBytecode="309" sourcefile="CglibNPETest.java" sourcepath="org/apache/ibatis/submitted/cglib_lazy_error/CglibNPETest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.cglib_lazy_error.CglibNPETest" start="41" end="41" startBytecode="14" endBytecode="14" sourcefile="CglibNPETest.java" sourcepath="org/apache/ibatis/submitted/cglib_lazy_error/CglibNPETest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.column_prefix.ColumnPrefixTest">
+      <SourceLine classname="org.apache.ibatis.submitted.column_prefix.ColumnPrefixTest" sourcefile="ColumnPrefixTest.java" sourcepath="org/apache/ibatis/submitted/column_prefix/ColumnPrefixTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.column_prefix.ColumnPrefixTest" name="setUp" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.column_prefix.ColumnPrefixTest" start="39" end="61" startBytecode="0" endBytecode="325" sourcefile="ColumnPrefixTest.java" sourcepath="org/apache/ibatis/submitted/column_prefix/ColumnPrefixTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.column_prefix.ColumnPrefixTest" start="43" end="43" startBytecode="14" endBytecode="14" sourcefile="ColumnPrefixTest.java" sourcepath="org/apache/ibatis/submitted/column_prefix/ColumnPrefixTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.complex_column.ComplexColumnTest">
+      <SourceLine classname="org.apache.ibatis.submitted.complex_column.ComplexColumnTest" sourcefile="ComplexColumnTest.java" sourcepath="org/apache/ibatis/submitted/complex_column/ComplexColumnTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.complex_column.ComplexColumnTest" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.complex_column.ComplexColumnTest" start="37" end="61" startBytecode="0" endBytecode="309" sourcefile="ComplexColumnTest.java" sourcepath="org/apache/ibatis/submitted/complex_column/ComplexColumnTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.complex_column.ComplexColumnTest" start="41" end="41" startBytecode="14" endBytecode="14" sourcefile="ComplexColumnTest.java" sourcepath="org/apache/ibatis/submitted/complex_column/ComplexColumnTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.count.CountTest">
+      <SourceLine classname="org.apache.ibatis.submitted.count.CountTest" sourcefile="CountTest.java" sourcepath="org/apache/ibatis/submitted/count/CountTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.count.CountTest" name="setUp" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.count.CountTest" start="38" end="62" startBytecode="0" endBytecode="309" sourcefile="CountTest.java" sourcepath="org/apache/ibatis/submitted/count/CountTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.count.CountTest" start="42" end="42" startBytecode="14" endBytecode="14" sourcefile="CountTest.java" sourcepath="org/apache/ibatis/submitted/count/CountTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.criterion.CriterionTest">
+      <SourceLine classname="org.apache.ibatis.submitted.criterion.CriterionTest" sourcefile="CriterionTest.java" sourcepath="org/apache/ibatis/submitted/criterion/CriterionTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.criterion.CriterionTest" name="setUp" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.criterion.CriterionTest" start="40" end="64" startBytecode="0" endBytecode="309" sourcefile="CriterionTest.java" sourcepath="org/apache/ibatis/submitted/criterion/CriterionTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.criterion.CriterionTest" start="44" end="44" startBytecode="14" endBytecode="14" sourcefile="CriterionTest.java" sourcepath="org/apache/ibatis/submitted/criterion/CriterionTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.deferload_common_property.CommonPropertyDeferLoadError">
+      <SourceLine classname="org.apache.ibatis.submitted.deferload_common_property.CommonPropertyDeferLoadError" sourcefile="CommonPropertyDeferLoadError.java" sourcepath="org/apache/ibatis/submitted/deferload_common_property/CommonPropertyDeferLoadError.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.deferload_common_property.CommonPropertyDeferLoadError" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.deferload_common_property.CommonPropertyDeferLoadError" start="43" end="69" startBytecode="0" endBytecode="337" sourcefile="CommonPropertyDeferLoadError.java" sourcepath="org/apache/ibatis/submitted/deferload_common_property/CommonPropertyDeferLoadError.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.deferload_common_property.CommonPropertyDeferLoadError" start="47" end="47" startBytecode="14" endBytecode="14" sourcefile="CommonPropertyDeferLoadError.java" sourcepath="org/apache/ibatis/submitted/deferload_common_property/CommonPropertyDeferLoadError.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.dynsql2.DynSqlTest">
+      <SourceLine classname="org.apache.ibatis.submitted.dynsql2.DynSqlTest" sourcefile="DynSqlTest.java" sourcepath="org/apache/ibatis/submitted/dynsql2/DynSqlTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.dynsql2.DynSqlTest" name="setUp" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.dynsql2.DynSqlTest" start="43" end="67" startBytecode="0" endBytecode="309" sourcefile="DynSqlTest.java" sourcepath="org/apache/ibatis/submitted/dynsql2/DynSqlTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.dynsql2.DynSqlTest" start="47" end="47" startBytecode="14" endBytecode="14" sourcefile="DynSqlTest.java" sourcepath="org/apache/ibatis/submitted/dynsql2/DynSqlTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.encoding.EncodingTest">
+      <SourceLine classname="org.apache.ibatis.submitted.encoding.EncodingTest" sourcefile="EncodingTest.java" sourcepath="org/apache/ibatis/submitted/encoding/EncodingTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.encoding.EncodingTest" name="setUp" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.encoding.EncodingTest" start="39" end="71" startBytecode="0" endBytecode="358" sourcefile="EncodingTest.java" sourcepath="org/apache/ibatis/submitted/encoding/EncodingTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.encoding.EncodingTest" start="46" end="46" startBytecode="18" endBytecode="18" sourcefile="EncodingTest.java" sourcepath="org/apache/ibatis/submitted/encoding/EncodingTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.enumtypehandler_on_annotation.EnumTypeHandlerUsingAnnotationTest">
+      <SourceLine classname="org.apache.ibatis.submitted.enumtypehandler_on_annotation.EnumTypeHandlerUsingAnnotationTest" sourcefile="EnumTypeHandlerUsingAnnotationTest.java" sourcepath="org/apache/ibatis/submitted/enumtypehandler_on_annotation/EnumTypeHandlerUsingAnnotationTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.enumtypehandler_on_annotation.EnumTypeHandlerUsingAnnotationTest" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.enumtypehandler_on_annotation.EnumTypeHandlerUsingAnnotationTest" start="52" end="76" startBytecode="0" endBytecode="321" sourcefile="EnumTypeHandlerUsingAnnotationTest.java" sourcepath="org/apache/ibatis/submitted/enumtypehandler_on_annotation/EnumTypeHandlerUsingAnnotationTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.enumtypehandler_on_annotation.EnumTypeHandlerUsingAnnotationTest" start="56" end="56" startBytecode="14" endBytecode="14" sourcefile="EnumTypeHandlerUsingAnnotationTest.java" sourcepath="org/apache/ibatis/submitted/enumtypehandler_on_annotation/EnumTypeHandlerUsingAnnotationTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.enumtypehandler_on_map.EnumTypeHandlerTest">
+      <SourceLine classname="org.apache.ibatis.submitted.enumtypehandler_on_map.EnumTypeHandlerTest" sourcefile="EnumTypeHandlerTest.java" sourcepath="org/apache/ibatis/submitted/enumtypehandler_on_map/EnumTypeHandlerTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.enumtypehandler_on_map.EnumTypeHandlerTest" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.enumtypehandler_on_map.EnumTypeHandlerTest" start="40" end="64" startBytecode="0" endBytecode="309" sourcefile="EnumTypeHandlerTest.java" sourcepath="org/apache/ibatis/submitted/enumtypehandler_on_map/EnumTypeHandlerTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.enumtypehandler_on_map.EnumTypeHandlerTest" start="44" end="44" startBytecode="14" endBytecode="14" sourcefile="EnumTypeHandlerTest.java" sourcepath="org/apache/ibatis/submitted/enumtypehandler_on_map/EnumTypeHandlerTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.extend.ExtendTest">
+      <SourceLine classname="org.apache.ibatis.submitted.extend.ExtendTest" sourcefile="ExtendTest.java" sourcepath="org/apache/ibatis/submitted/extend/ExtendTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.extend.ExtendTest" name="setUp" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.extend.ExtendTest" start="38" end="61" startBytecode="0" endBytecode="301" sourcefile="ExtendTest.java" sourcepath="org/apache/ibatis/submitted/extend/ExtendTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.extend.ExtendTest" start="42" end="42" startBytecode="14" endBytecode="14" sourcefile="ExtendTest.java" sourcepath="org/apache/ibatis/submitted/extend/ExtendTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.extends_with_constructor.NpeExtendsTest">
+      <SourceLine classname="org.apache.ibatis.submitted.extends_with_constructor.NpeExtendsTest" sourcefile="NpeExtendsTest.java" sourcepath="org/apache/ibatis/submitted/extends_with_constructor/NpeExtendsTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.extends_with_constructor.NpeExtendsTest" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.extends_with_constructor.NpeExtendsTest" start="46" end="66" startBytecode="0" endBytecode="273" sourcefile="NpeExtendsTest.java" sourcepath="org/apache/ibatis/submitted/extends_with_constructor/NpeExtendsTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.extends_with_constructor.NpeExtendsTest" start="50" end="50" startBytecode="14" endBytecode="14" sourcefile="NpeExtendsTest.java" sourcepath="org/apache/ibatis/submitted/extends_with_constructor/NpeExtendsTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.flush_statement_npe.FlushStatementNpeTest">
+      <SourceLine classname="org.apache.ibatis.submitted.flush_statement_npe.FlushStatementNpeTest" sourcefile="FlushStatementNpeTest.java" sourcepath="org/apache/ibatis/submitted/flush_statement_npe/FlushStatementNpeTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.flush_statement_npe.FlushStatementNpeTest" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.flush_statement_npe.FlushStatementNpeTest" start="37" end="61" startBytecode="0" endBytecode="309" sourcefile="FlushStatementNpeTest.java" sourcepath="org/apache/ibatis/submitted/flush_statement_npe/FlushStatementNpeTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.flush_statement_npe.FlushStatementNpeTest" start="41" end="41" startBytecode="14" endBytecode="14" sourcefile="FlushStatementNpeTest.java" sourcepath="org/apache/ibatis/submitted/flush_statement_npe/FlushStatementNpeTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.force_flush_on_select.ForceFlushOnSelectTest">
+      <SourceLine classname="org.apache.ibatis.submitted.force_flush_on_select.ForceFlushOnSelectTest" sourcefile="ForceFlushOnSelectTest.java" sourcepath="org/apache/ibatis/submitted/force_flush_on_select/ForceFlushOnSelectTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.force_flush_on_select.ForceFlushOnSelectTest" name="initDatabase" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.force_flush_on_select.ForceFlushOnSelectTest" start="43" end="65" startBytecode="0" endBytecode="322" sourcefile="ForceFlushOnSelectTest.java" sourcepath="org/apache/ibatis/submitted/force_flush_on_select/ForceFlushOnSelectTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.force_flush_on_select.ForceFlushOnSelectTest" start="47" end="47" startBytecode="14" endBytecode="14" sourcefile="ForceFlushOnSelectTest.java" sourcepath="org/apache/ibatis/submitted/force_flush_on_select/ForceFlushOnSelectTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.generictypes.GenericTypesTest">
+      <SourceLine classname="org.apache.ibatis.submitted.generictypes.GenericTypesTest" sourcefile="GenericTypesTest.java" sourcepath="org/apache/ibatis/submitted/generictypes/GenericTypesTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.generictypes.GenericTypesTest" name="setUp" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.generictypes.GenericTypesTest" start="39" end="62" startBytecode="0" endBytecode="332" sourcefile="GenericTypesTest.java" sourcepath="org/apache/ibatis/submitted/generictypes/GenericTypesTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.generictypes.GenericTypesTest" start="43" end="43" startBytecode="14" endBytecode="14" sourcefile="GenericTypesTest.java" sourcepath="org/apache/ibatis/submitted/generictypes/GenericTypesTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.heavy_initial_load.HeavyInitialLoadTest">
+      <SourceLine classname="org.apache.ibatis.submitted.heavy_initial_load.HeavyInitialLoadTest" sourcefile="HeavyInitialLoadTest.java" sourcepath="org/apache/ibatis/submitted/heavy_initial_load/HeavyInitialLoadTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.heavy_initial_load.HeavyInitialLoadTest" name="initSqlSessionFactory" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.heavy_initial_load.HeavyInitialLoadTest" start="39" end="53" startBytecode="0" endBytecode="222" sourcefile="HeavyInitialLoadTest.java" sourcepath="org/apache/ibatis/submitted/heavy_initial_load/HeavyInitialLoadTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.heavy_initial_load.HeavyInitialLoadTest" start="43" end="43" startBytecode="14" endBytecode="14" sourcefile="HeavyInitialLoadTest.java" sourcepath="org/apache/ibatis/submitted/heavy_initial_load/HeavyInitialLoadTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.immutable_constructor.ImmutablePOJOTest">
+      <SourceLine classname="org.apache.ibatis.submitted.immutable_constructor.ImmutablePOJOTest" sourcefile="ImmutablePOJOTest.java" sourcepath="org/apache/ibatis/submitted/immutable_constructor/ImmutablePOJOTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.immutable_constructor.ImmutablePOJOTest" name="setupClass" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.immutable_constructor.ImmutablePOJOTest" start="44" end="67" startBytecode="0" endBytecode="310" sourcefile="ImmutablePOJOTest.java" sourcepath="org/apache/ibatis/submitted/immutable_constructor/ImmutablePOJOTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.immutable_constructor.ImmutablePOJOTest" start="48" end="48" startBytecode="14" endBytecode="14" sourcefile="ImmutablePOJOTest.java" sourcepath="org/apache/ibatis/submitted/immutable_constructor/ImmutablePOJOTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.language.LanguageTest">
+      <SourceLine classname="org.apache.ibatis.submitted.language.LanguageTest" sourcefile="LanguageTest.java" sourcepath="org/apache/ibatis/submitted/language/LanguageTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.language.LanguageTest" name="setUp" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.language.LanguageTest" start="43" end="66" startBytecode="0" endBytecode="301" sourcefile="LanguageTest.java" sourcepath="org/apache/ibatis/submitted/language/LanguageTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.language.LanguageTest" start="47" end="47" startBytecode="14" endBytecode="14" sourcefile="LanguageTest.java" sourcepath="org/apache/ibatis/submitted/language/LanguageTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.lazy_deserialize.LazyDeserializeTest">
+      <SourceLine classname="org.apache.ibatis.submitted.lazy_deserialize.LazyDeserializeTest" sourcefile="LazyDeserializeTest.java" sourcepath="org/apache/ibatis/submitted/lazy_deserialize/LazyDeserializeTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.lazy_deserialize.LazyDeserializeTest" name="setupClass" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.lazy_deserialize.LazyDeserializeTest" start="57" end="82" startBytecode="0" endBytecode="339" sourcefile="LazyDeserializeTest.java" sourcepath="org/apache/ibatis/submitted/lazy_deserialize/LazyDeserializeTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.lazy_deserialize.LazyDeserializeTest" start="61" end="61" startBytecode="14" endBytecode="14" sourcefile="LazyDeserializeTest.java" sourcepath="org/apache/ibatis/submitted/lazy_deserialize/LazyDeserializeTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.lazy_immutable.ImmutablePOJOTest">
+      <SourceLine classname="org.apache.ibatis.submitted.lazy_immutable.ImmutablePOJOTest" sourcefile="ImmutablePOJOTest.java" sourcepath="org/apache/ibatis/submitted/lazy_immutable/ImmutablePOJOTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.lazy_immutable.ImmutablePOJOTest" name="setupClass" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.lazy_immutable.ImmutablePOJOTest" start="41" end="64" startBytecode="0" endBytecode="310" sourcefile="ImmutablePOJOTest.java" sourcepath="org/apache/ibatis/submitted/lazy_immutable/ImmutablePOJOTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.lazy_immutable.ImmutablePOJOTest" start="45" end="45" startBytecode="14" endBytecode="14" sourcefile="ImmutablePOJOTest.java" sourcepath="org/apache/ibatis/submitted/lazy_immutable/ImmutablePOJOTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.lazyload_common_property.CommonPropertyLazyLoadError">
+      <SourceLine classname="org.apache.ibatis.submitted.lazyload_common_property.CommonPropertyLazyLoadError" sourcefile="CommonPropertyLazyLoadError.java" sourcepath="org/apache/ibatis/submitted/lazyload_common_property/CommonPropertyLazyLoadError.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.lazyload_common_property.CommonPropertyLazyLoadError" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.lazyload_common_property.CommonPropertyLazyLoadError" start="36" end="60" startBytecode="0" endBytecode="309" sourcefile="CommonPropertyLazyLoadError.java" sourcepath="org/apache/ibatis/submitted/lazyload_common_property/CommonPropertyLazyLoadError.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.lazyload_common_property.CommonPropertyLazyLoadError" start="40" end="40" startBytecode="14" endBytecode="14" sourcefile="CommonPropertyLazyLoadError.java" sourcepath="org/apache/ibatis/submitted/lazyload_common_property/CommonPropertyLazyLoadError.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.multidb.MultiDbTest">
+      <SourceLine classname="org.apache.ibatis.submitted.multidb.MultiDbTest" sourcefile="MultiDbTest.java" sourcepath="org/apache/ibatis/submitted/multidb/MultiDbTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.multidb.MultiDbTest" name="setUp" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.multidb.MultiDbTest" start="39" end="62" startBytecode="0" endBytecode="301" sourcefile="MultiDbTest.java" sourcepath="org/apache/ibatis/submitted/multidb/MultiDbTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.multidb.MultiDbTest" start="43" end="43" startBytecode="14" endBytecode="14" sourcefile="MultiDbTest.java" sourcepath="org/apache/ibatis/submitted/multidb/MultiDbTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.multiple_discriminator.MultipleDiscriminatorTest">
+      <SourceLine classname="org.apache.ibatis.submitted.multiple_discriminator.MultipleDiscriminatorTest" sourcefile="MultipleDiscriminatorTest.java" sourcepath="org/apache/ibatis/submitted/multiple_discriminator/MultipleDiscriminatorTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.multiple_discriminator.MultipleDiscriminatorTest" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.multiple_discriminator.MultipleDiscriminatorTest" start="37" end="61" startBytecode="0" endBytecode="309" sourcefile="MultipleDiscriminatorTest.java" sourcepath="org/apache/ibatis/submitted/multiple_discriminator/MultipleDiscriminatorTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.multiple_discriminator.MultipleDiscriminatorTest" start="41" end="41" startBytecode="14" endBytecode="14" sourcefile="MultipleDiscriminatorTest.java" sourcepath="org/apache/ibatis/submitted/multiple_discriminator/MultipleDiscriminatorTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.nested.NestedForEachTest">
+      <SourceLine classname="org.apache.ibatis.submitted.nested.NestedForEachTest" sourcefile="NestedForEachTest.java" sourcepath="org/apache/ibatis/submitted/nested/NestedForEachTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.nested.NestedForEachTest" name="setUp" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.nested.NestedForEachTest" start="41" end="65" startBytecode="0" endBytecode="309" sourcefile="NestedForEachTest.java" sourcepath="org/apache/ibatis/submitted/nested/NestedForEachTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.nested.NestedForEachTest" start="45" end="45" startBytecode="14" endBytecode="14" sourcefile="NestedForEachTest.java" sourcepath="org/apache/ibatis/submitted/nested/NestedForEachTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.nonexistentvariables.NonExistentVariablesTest">
+      <SourceLine classname="org.apache.ibatis.submitted.nonexistentvariables.NonExistentVariablesTest" sourcefile="NonExistentVariablesTest.java" sourcepath="org/apache/ibatis/submitted/nonexistentvariables/NonExistentVariablesTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.nonexistentvariables.NonExistentVariablesTest" name="setUp" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.nonexistentvariables.NonExistentVariablesTest" start="39" end="63" startBytecode="0" endBytecode="301" sourcefile="NonExistentVariablesTest.java" sourcepath="org/apache/ibatis/submitted/nonexistentvariables/NonExistentVariablesTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.nonexistentvariables.NonExistentVariablesTest" start="43" end="43" startBytecode="14" endBytecode="14" sourcefile="NonExistentVariablesTest.java" sourcepath="org/apache/ibatis/submitted/nonexistentvariables/NonExistentVariablesTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.not_null_column.NotNullColumnTest">
+      <SourceLine classname="org.apache.ibatis.submitted.not_null_column.NotNullColumnTest" sourcefile="NotNullColumnTest.java" sourcepath="org/apache/ibatis/submitted/not_null_column/NotNullColumnTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.not_null_column.NotNullColumnTest" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.not_null_column.NotNullColumnTest" start="38" end="62" startBytecode="0" endBytecode="309" sourcefile="NotNullColumnTest.java" sourcepath="org/apache/ibatis/submitted/not_null_column/NotNullColumnTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.not_null_column.NotNullColumnTest" start="42" end="42" startBytecode="14" endBytecode="14" sourcefile="NotNullColumnTest.java" sourcepath="org/apache/ibatis/submitted/not_null_column/NotNullColumnTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.ognl_enum.EnumWithOgnlTest">
+      <SourceLine classname="org.apache.ibatis.submitted.ognl_enum.EnumWithOgnlTest" sourcefile="EnumWithOgnlTest.java" sourcepath="org/apache/ibatis/submitted/ognl_enum/EnumWithOgnlTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.ognl_enum.EnumWithOgnlTest" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.ognl_enum.EnumWithOgnlTest" start="40" end="64" startBytecode="0" endBytecode="309" sourcefile="EnumWithOgnlTest.java" sourcepath="org/apache/ibatis/submitted/ognl_enum/EnumWithOgnlTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.ognl_enum.EnumWithOgnlTest" start="44" end="44" startBytecode="14" endBytecode="14" sourcefile="EnumWithOgnlTest.java" sourcepath="org/apache/ibatis/submitted/ognl_enum/EnumWithOgnlTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.order_prefix_removed.OrderPrefixRemoved">
+      <SourceLine classname="org.apache.ibatis.submitted.order_prefix_removed.OrderPrefixRemoved" sourcefile="OrderPrefixRemoved.java" sourcepath="org/apache/ibatis/submitted/order_prefix_removed/OrderPrefixRemoved.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.order_prefix_removed.OrderPrefixRemoved" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.order_prefix_removed.OrderPrefixRemoved" start="39" end="62" startBytecode="0" endBytecode="301" sourcefile="OrderPrefixRemoved.java" sourcepath="org/apache/ibatis/submitted/order_prefix_removed/OrderPrefixRemoved.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.order_prefix_removed.OrderPrefixRemoved" start="43" end="43" startBytecode="14" endBytecode="14" sourcefile="OrderPrefixRemoved.java" sourcepath="org/apache/ibatis/submitted/order_prefix_removed/OrderPrefixRemoved.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.parametrizedlist.ParametrizedListTest">
+      <SourceLine classname="org.apache.ibatis.submitted.parametrizedlist.ParametrizedListTest" sourcefile="ParametrizedListTest.java" sourcepath="org/apache/ibatis/submitted/parametrizedlist/ParametrizedListTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.parametrizedlist.ParametrizedListTest" name="setUp" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.parametrizedlist.ParametrizedListTest" start="41" end="64" startBytecode="0" endBytecode="332" sourcefile="ParametrizedListTest.java" sourcepath="org/apache/ibatis/submitted/parametrizedlist/ParametrizedListTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.parametrizedlist.ParametrizedListTest" start="45" end="45" startBytecode="14" endBytecode="14" sourcefile="ParametrizedListTest.java" sourcepath="org/apache/ibatis/submitted/parametrizedlist/ParametrizedListTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.parent_reference_3level.BlogTest">
+      <SourceLine classname="org.apache.ibatis.submitted.parent_reference_3level.BlogTest" sourcefile="BlogTest.java" sourcepath="org/apache/ibatis/submitted/parent_reference_3level/BlogTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.parent_reference_3level.BlogTest" name="setUp" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.parent_reference_3level.BlogTest" start="43" end="65" startBytecode="0" endBytecode="325" sourcefile="BlogTest.java" sourcepath="org/apache/ibatis/submitted/parent_reference_3level/BlogTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.parent_reference_3level.BlogTest" start="47" end="47" startBytecode="14" endBytecode="14" sourcefile="BlogTest.java" sourcepath="org/apache/ibatis/submitted/parent_reference_3level/BlogTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.quotedcolumnnames.QuotedColumnNamesTest">
+      <SourceLine classname="org.apache.ibatis.submitted.quotedcolumnnames.QuotedColumnNamesTest" sourcefile="QuotedColumnNamesTest.java" sourcepath="org/apache/ibatis/submitted/quotedcolumnnames/QuotedColumnNamesTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.quotedcolumnnames.QuotedColumnNamesTest" name="setUp" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.quotedcolumnnames.QuotedColumnNamesTest" start="39" end="61" startBytecode="0" endBytecode="301" sourcefile="QuotedColumnNamesTest.java" sourcepath="org/apache/ibatis/submitted/quotedcolumnnames/QuotedColumnNamesTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.quotedcolumnnames.QuotedColumnNamesTest" start="43" end="43" startBytecode="14" endBytecode="14" sourcefile="QuotedColumnNamesTest.java" sourcepath="org/apache/ibatis/submitted/quotedcolumnnames/QuotedColumnNamesTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.selectkey.SelectKeyTest">
+      <SourceLine classname="org.apache.ibatis.submitted.selectkey.SelectKeyTest" sourcefile="SelectKeyTest.java" sourcepath="org/apache/ibatis/submitted/selectkey/SelectKeyTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.selectkey.SelectKeyTest" name="setUp" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.selectkey.SelectKeyTest" start="43" end="68" startBytecode="0" endBytecode="347" sourcefile="SelectKeyTest.java" sourcepath="org/apache/ibatis/submitted/selectkey/SelectKeyTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.selectkey.SelectKeyTest" start="47" end="47" startBytecode="14" endBytecode="14" sourcefile="SelectKeyTest.java" sourcepath="org/apache/ibatis/submitted/selectkey/SelectKeyTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.sptests.SPTest">
+      <SourceLine classname="org.apache.ibatis.submitted.sptests.SPTest" sourcefile="SPTest.java" sourcepath="org/apache/ibatis/submitted/sptests/SPTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.sptests.SPTest" name="initDatabase" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.sptests.SPTest" start="45" end="69" startBytecode="0" endBytecode="311" sourcefile="SPTest.java" sourcepath="org/apache/ibatis/submitted/sptests/SPTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.sptests.SPTest" start="49" end="49" startBytecode="14" endBytecode="14" sourcefile="SPTest.java" sourcepath="org/apache/ibatis/submitted/sptests/SPTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.substitution_in_annots.SubstitutionInAnnotsTest">
+      <SourceLine classname="org.apache.ibatis.submitted.substitution_in_annots.SubstitutionInAnnotsTest" sourcefile="SubstitutionInAnnotsTest.java" sourcepath="org/apache/ibatis/submitted/substitution_in_annots/SubstitutionInAnnotsTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.substitution_in_annots.SubstitutionInAnnotsTest" name="setUp" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.ibatis.submitted.substitution_in_annots.SubstitutionInAnnotsTest" start="43" end="61" startBytecode="0" endBytecode="268" sourcefile="SubstitutionInAnnotsTest.java" sourcepath="org/apache/ibatis/submitted/substitution_in_annots/SubstitutionInAnnotsTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.substitution_in_annots.SubstitutionInAnnotsTest" start="44" end="44" startBytecode="12" endBytecode="12" sourcefile="SubstitutionInAnnotsTest.java" sourcepath="org/apache/ibatis/submitted/substitution_in_annots/SubstitutionInAnnotsTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.xml_external_ref.MultipleCrossIncludeTest">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.MultipleCrossIncludeTest" sourcefile="MultipleCrossIncludeTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/MultipleCrossIncludeTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.xml_external_ref.MultipleCrossIncludeTest" name="getSqlSessionFactoryJavaConfig" signature="()Lorg/apache/ibatis/session/SqlSessionFactory;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.MultipleCrossIncludeTest" start="103" end="116" startBytecode="0" endBytecode="207" sourcefile="MultipleCrossIncludeTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/MultipleCrossIncludeTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.MultipleCrossIncludeTest" start="104" end="104" startBytecode="12" endBytecode="12" sourcefile="MultipleCrossIncludeTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/MultipleCrossIncludeTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.xml_external_ref.MultipleIncludeTest">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.MultipleIncludeTest" sourcefile="MultipleIncludeTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/MultipleIncludeTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.xml_external_ref.MultipleIncludeTest" name="getSqlSessionFactoryJavaConfig" signature="()Lorg/apache/ibatis/session/SqlSessionFactory;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.MultipleIncludeTest" start="76" end="88" startBytecode="0" endBytecode="197" sourcefile="MultipleIncludeTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/MultipleIncludeTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.MultipleIncludeTest" start="77" end="77" startBytecode="12" endBytecode="12" sourcefile="MultipleIncludeTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/MultipleIncludeTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.xml_external_ref.MultipleReverseIncludeTest">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.MultipleReverseIncludeTest" sourcefile="MultipleReverseIncludeTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/MultipleReverseIncludeTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.xml_external_ref.MultipleReverseIncludeTest" name="getSqlSessionFactoryJavaConfig" signature="()Lorg/apache/ibatis/session/SqlSessionFactory;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.MultipleReverseIncludeTest" start="76" end="88" startBytecode="0" endBytecode="197" sourcefile="MultipleReverseIncludeTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/MultipleReverseIncludeTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.MultipleReverseIncludeTest" start="77" end="77" startBytecode="12" endBytecode="12" sourcefile="MultipleReverseIncludeTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/MultipleReverseIncludeTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.xml_external_ref.ParameterMapReferenceTest">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.ParameterMapReferenceTest" sourcefile="ParameterMapReferenceTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/ParameterMapReferenceTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.xml_external_ref.ParameterMapReferenceTest" name="getSqlSessionFactoryJavaConfig" signature="()Lorg/apache/ibatis/session/SqlSessionFactory;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.ParameterMapReferenceTest" start="77" end="90" startBytecode="0" endBytecode="207" sourcefile="ParameterMapReferenceTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/ParameterMapReferenceTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.ParameterMapReferenceTest" start="78" end="78" startBytecode="12" endBytecode="12" sourcefile="ParameterMapReferenceTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/ParameterMapReferenceTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.xml_external_ref.ResultMapExtendsTest">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.ResultMapExtendsTest" sourcefile="ResultMapExtendsTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/ResultMapExtendsTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.xml_external_ref.ResultMapExtendsTest" name="getSqlSessionFactoryJavaConfig" signature="()Lorg/apache/ibatis/session/SqlSessionFactory;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.ResultMapExtendsTest" start="76" end="89" startBytecode="0" endBytecode="207" sourcefile="ResultMapExtendsTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/ResultMapExtendsTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.ResultMapExtendsTest" start="77" end="77" startBytecode="12" endBytecode="12" sourcefile="ResultMapExtendsTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/ResultMapExtendsTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.xml_external_ref.ResultMapReferenceTest">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.ResultMapReferenceTest" sourcefile="ResultMapReferenceTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/ResultMapReferenceTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.xml_external_ref.ResultMapReferenceTest" name="getSqlSessionFactoryJavaConfig" signature="()Lorg/apache/ibatis/session/SqlSessionFactory;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.ResultMapReferenceTest" start="76" end="89" startBytecode="0" endBytecode="207" sourcefile="ResultMapReferenceTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/ResultMapReferenceTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.ResultMapReferenceTest" start="77" end="77" startBytecode="12" endBytecode="12" sourcefile="ResultMapReferenceTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/ResultMapReferenceTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.xml_external_ref.ReverseIncludeTest">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.ReverseIncludeTest" sourcefile="ReverseIncludeTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/ReverseIncludeTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.xml_external_ref.ReverseIncludeTest" name="getSqlSessionFactoryJavaConfig" signature="()Lorg/apache/ibatis/session/SqlSessionFactory;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.ReverseIncludeTest" start="76" end="88" startBytecode="0" endBytecode="197" sourcefile="ReverseIncludeTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/ReverseIncludeTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.ReverseIncludeTest" start="77" end="77" startBytecode="12" endBytecode="12" sourcefile="ReverseIncludeTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/ReverseIncludeTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.xml_external_ref.SameIdTest">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.SameIdTest" sourcefile="SameIdTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/SameIdTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.xml_external_ref.SameIdTest" name="getSqlSessionFactoryJavaConfig" signature="()Lorg/apache/ibatis/session/SqlSessionFactory;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.SameIdTest" start="84" end="97" startBytecode="0" endBytecode="207" sourcefile="SameIdTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/SameIdTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.SameIdTest" start="85" end="85" startBytecode="12" endBytecode="12" sourcefile="SameIdTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/SameIdTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  <BugInstance type="HARD_CODE_PASSWORD" priority="1" rank="5" abbrev="SECHCP" category="SECURITY" first="1">
+    <Class classname="org.apache.ibatis.submitted.xml_external_ref.XmlExternalRefTest">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.XmlExternalRefTest" sourcefile="XmlExternalRefTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/XmlExternalRefTest.java"/>
+    </Class>
+    <Method classname="org.apache.ibatis.submitted.xml_external_ref.XmlExternalRefTest" name="getSqlSessionFactoryJavaConfig" signature="()Lorg/apache/ibatis/session/SqlSessionFactory;" isStatic="false">
+      <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.XmlExternalRefTest" start="127" end="140" startBytecode="0" endBytecode="207" sourcefile="XmlExternalRefTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/XmlExternalRefTest.java"/>
+    </Method>
+    <SourceLine classname="org.apache.ibatis.submitted.xml_external_ref.XmlExternalRefTest" start="128" end="128" startBytecode="12" endBytecode="12" sourcefile="XmlExternalRefTest.java" sourcepath="org/apache/ibatis/submitted/xml_external_ref/XmlExternalRefTest.java"/>
+    <Method classname="java.sql.DriverManager" name="getConnection" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.sql.DriverManager" start="238" end="247" startBytecode="0" endBytecode="99" sourcefile="DriverManager.java" sourcepath="java/sql/DriverManager.java"/>
+    </Method>
+    <Int value="1" role="Hard coded parameter number (in reverse order) is"/>
+    <String value=""/>
+  </BugInstance>
+  </BugCollection>

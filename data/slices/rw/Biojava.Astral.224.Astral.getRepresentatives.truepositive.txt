@@ -1,0 +1,71 @@
+[845, 847, 849, 854, 859, 863]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.Astral.getRepresentatives(java.lang.String)::CD,5:CD,9
+5 :: CALL :: call :: Lorg/biojava/nbio/structure/scop/Astral$AstralSet :: v4 = parse(p1 $id )::JM,721:JM,595:JM,598:JM,586:JM,607:CL,514
+9 :: CALL :: call :: Ljava/util/Set :: v6 = getRepresentatives(v4)::JM,721:JM,595:JM,598:JM,586:JM,607:CL,580
+181 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.Astral.<clinit>()::CD,184:CD,188:CD,190:CD,191:CD,195:CD,199
+184 :: NORM :: declaration :: Ljava/util/HashMap :: v2 = new java.util.HashMap::DD,188
+188 :: EXPR :: modify :: Ljava/util/Map :: org.biojava.nbio.structure.scop.Astral.instances = v2::
+190 :: EXPR :: assign :: Ljava/lang/Class :: v4 = metadata <Application,Lorg/biojava/nbio/structure/scop/Astral>-><Primordial,Ljava/lang/Class>::JM,199:JM,191
+191 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getName()::JM,199:JM,191
+195 :: CALL :: call :: Ljava/util/logging/Logger :: v8 = getLogger(v6)::JM,199
+199 :: EXPR :: modify :: Ljava/util/logging/Logger :: org.biojava.nbio.structure.scop.Astral.logger = v8::
+205 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.Astral.AstralSet.<clinit>()::
+514 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.Astral.AstralSet.parse(java.lang.String)::CE,515:CD,518:CD,519:CD,523:CD,530:CD,534:CD,539:CD,540:CD,543:CD,544:CD,549:CD,554:CD,563
+515 :: EXIT :: exit :: Lorg/biojava/nbio/structure/scop/Astral$AstralSet :: org.biojava.nbio.structure.scop.Astral.AstralSet.parse(java.lang.String)::JM,721:JM,595:JM,598:JM,586:JM,607
+518 :: EXPR :: assign :: Ljava/lang/Class :: v3 = metadata <Application,Lorg/biojava/nbio/structure/scop/Astral$AstralSet>-><Primordial,Ljava/lang/Class>::JM,523
+519 :: CALL :: call :: [Ljava/lang/Object :: v5 = v3.getEnumConstants()::JM,523
+523 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST v5::
+526 :: EXPR :: reference :: Ljava/lang/Object :: v9 = v6[v16]::JM,530:JM,534:JM,539:DD,540
+530 :: CALL :: call :: Ljava/lang/String :: v11 = v9.getId()::JM,530:JM,534:JM,539
+534 :: CALL :: call :: Z :: v13 = v11.equals(p1 $str )::JM,534:JM,539
+539 :: PRED :: IF :: Z :: if (v13 == #(0)) goto 36::CD,530:CD,534:CD,541:CD,563:CF,540
+540 :: NORM :: compound :: Lorg/biojava/nbio/structure/scop/Astral$AstralSet :: return v9::DD,515
+541 :: EXPR :: assign :: Ljava/lang/Object :: v15 = v16 + #(1)::DD,563
+543 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v17 = new java.lang.IllegalArgumentException::
+544 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v18 = new java.lang.StringBuilder::
+549 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v18.append(p1 $str )::JM,534:JM,539
+554 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::
+563 :: EXPR :: assign :: null :: PHI v16 = #(0), v15::DD,541
+580 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.Astral.getRepresentatives(org.biojava.nbio.structure.scop.Astral.AstralSet)::CD,584:CD,586:CD,590:CD,595:JM,721:JM,598:JM,607
+584 :: EXPR :: reference :: Ljava/util/Map :: v3 = org.biojava.nbio.structure.scop.Astral.instances::JM,595:JM,721:JM,598:JM,586:JM,607
+586 :: CALL :: call :: Ljava/lang/String :: v5 = p1 $cutoff .getId()::JM,721:JM,595:JM,598:JM,586:JM,607
+590 :: CALL :: call :: Z :: v7 = v3.containsKey(v5)::JM,595:JM,721:JM,607
+595 :: PRED :: IF :: Z :: if (v7 == #(0)) goto 61::CF,635:CD,596:CD,598:CD,602:CD,607:CD,608:CD,612:JM,720:JM,768:JM,721:JM,737:JM,738
+596 :: EXPR :: reference :: Ljava/util/Map :: v9 = org.biojava.nbio.structure.scop.Astral.instances::JM,607:JM,721:JM,595:JM,598:JM,586
+598 :: CALL :: call :: Ljava/lang/String :: v11 = p1 $cutoff .getId()::JM,721:JM,595:JM,598:JM,586:JM,607
+602 :: CALL :: call :: Ljava/lang/Object :: v13 = v9.get(v11)::JM,607:JM,721:JM,595
+607 :: EXPR :: assign :: Ljava/lang/Object :: v14 = CHECKCAST v13::JM,612
+608 :: CALL :: call :: Ljava/lang/Object :: v16 = v14.get()::JM,612
+612 :: PRED :: IF :: Z :: if (v16 == #(null)) goto 61::CF,635:JM,720:JM,768:JM,721:JM,737:JM,738
+635 :: NORM :: declaration :: Lorg/biojava/nbio/structure/scop/Astral :: v18 = new org.biojava.nbio.structure.scop.Astral::JM,720:JM,768:JM,721:JM,737:JM,738
+720 :: NORM :: declaration :: Ljava/net/URL :: v5 = new java.net.URL::JM,721:JM,595:JM,607
+721 :: CALL :: call :: Ljava/lang/String :: v7 = p1 $cutoff .getUrl()::JM,721:JM,595:JM,607
+737 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v13 = new java.io.InputStreamReader::JM,721
+738 :: CALL :: call :: Ljava/io/InputStream :: v15 = v5.openStream()::
+768 :: CALL :: call :: V :: p0 $this .init(v13)::JM,721:CL,784
+784 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.Astral.init(java.io.Reader)::CD,789:CD,796:CD,803:CD,808:CD,810:CD,907:CD,911:CD,960:JM,721
+789 :: NORM :: declaration :: Ljava/util/TreeSet :: v4 = new java.util.TreeSet::DD,793
+793 :: EXPR :: modify :: Ljava/util/Set :: p0 $this .names = v4::
+796 :: NORM :: declaration :: Ljava/util/LinkedHashMap :: v6 = new java.util.LinkedHashMap::
+803 :: NORM :: declaration :: Ljava/io/BufferedReader :: v9 = new java.io.BufferedReader::JM,820:JM,911
+808 :: EXPR :: reference :: Ljava/util/logging/Logger :: v11 = org.biojava.nbio.structure.scop.Astral.logger::
+810 :: CALL :: call :: V :: v11.info(#(Reading ASTRAL file...))::
+815 :: CALL :: call :: Z :: v20 = v17.startsWith(#(>))::JM,820:JM,911
+820 :: PRED :: IF :: Z :: if (v20 == #(0)) goto 170::CF,960:CD,821:CD,830:CD,838:CD,843:CD,844:CD,868:JM,820:JM,911
+821 :: CALL :: call :: [Ljava/lang/String :: v24 = v17.split(#(\s))::JM,820:JM,911
+826 :: EXPR :: reference :: Ljava/lang/Object :: v25 = v24[#(0)]::
+830 :: CALL :: call :: Ljava/lang/String :: v28 = v25.substring(#(1))::
+835 :: EXPR :: reference :: Ljava/util/Set :: v29 = p0 $this .names::
+838 :: CALL :: call :: Z :: v31 = v29.add(v28)::
+843 :: EXPR :: assign :: Ljava/lang/Object :: v33 = v45 % #(1000)::DD,844
+844 :: PRED :: IF :: Z :: if (v33 != #(0)) goto 120::CD,845:CD,847:CD,849:CD,854:CD,859:CD,863:CF,868
+845 :: EXPR :: reference :: Ljava/util/logging/Logger :: v34 = org.biojava.nbio.structure.scop.Astral.logger::
+847 :: EXPR :: reference :: Ljava/util/logging/Level :: v35 = java.util.logging.Level.FINE::CF,849
+849 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v36 = new java.lang.StringBuilder::
+854 :: CALL :: call :: Ljava/lang/StringBuilder :: v40 = v36.append(v28)::
+859 :: CALL :: call :: Ljava/lang/String :: v42 = v40.toString()::
+863 :: CALL :: call :: V :: v34.log(v35, v42)::
+868 :: EXPR :: assign :: Ljava/lang/Object :: v44 = v45 + #(1)::DD,960
+907 :: CALL :: call :: Ljava/lang/String :: v17 = v9.readLine()::JM,820:JM,911
+911 :: PRED :: IF :: Z :: if (v17 != #(null)) goto 53::CD,815:CD,820:CD,907:CD,960:JM,911
+960 :: EXPR :: assign :: null :: PHI v45 = #(0), v45, v44, v45::JM,820:JM,911:DD,843:DD,868:DD,960

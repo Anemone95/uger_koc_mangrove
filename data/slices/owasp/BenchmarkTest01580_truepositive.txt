@@ -1,0 +1,24 @@
+[72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 86]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest01580.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,16:CD,46:CD,50:CD,55:CD,60:CD,65:CD,69:CD,72:CD,81:CD,96:JM,22:JM,30:JM,31
+7 :: CALL :: call :: Ljava/lang/String :: v7 = p1 $request .getHeader(#(foo))::JM,96:JM,16:JM,22:JM,12:JM,30:JM,31
+12 :: CALL :: call :: I :: v9 = v7.length()::JM,96:JM,16:JM,22:JM,12:JM,30:JM,31
+16 :: PRED :: IF :: Z :: if (v9 <= #(1)) goto 56::CF,96:CF,17:CD,22:CD,26:CD,30:CD,31:CD,35:CD,42
+17 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v11 = new java.lang.StringBuilder::JM,96
+22 :: CALL :: call :: I :: v14 = v7.length()::JM,96:JM,16:JM,22:JM,12:JM,30:JM,31
+26 :: CALL :: call :: I :: v17 = #(Z).length()::JM,30
+30 :: EXPR :: assign :: Ljava/lang/Object :: v18 = v14 - v17::JM,96:JM,16:JM,22:JM,12:JM,30:JM,31
+31 :: CALL :: call :: I :: v20 = v7.length()::JM,96:JM,16:JM,22:JM,12:JM,30:JM,31
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v11.replace(v18, v20, #(Z))::JM,96
+42 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::JM,96
+46 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v26 = new java.lang.StringBuilder::JM,81
+50 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v26.append(#(UPDATE USERS SET PASS...))::JM,81
+55 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v30.append(v25)::JM,81
+60 :: CALL :: call :: Ljava/lang/StringBuilder :: v35 = v32.append(#(' WHERE USERNAME='foo'))::JM,81
+65 :: CALL :: call :: Ljava/lang/String :: v37 = v35.toString()::JM,81
+69 :: CALL :: call :: Ljava/sql/Statement :: v39 = getSqlStatement()::JM,81
+72 :: NORM :: declaration :: [Ljava/lang/String :: v41 = new java.lang.String[]::JM,81
+73 :: EXPR :: modify :: Ljava/lang/Object :: v41[#(0)] = #(user)::
+77 :: EXPR :: modify :: Ljava/lang/Object :: v41[#(1)] = #(password)::
+81 :: CALL :: call :: I :: v46 = v39.executeUpdate(v37, v41)::JM,81
+96 :: EXPR :: assign :: null :: PHI v25 = v7, v24::CF,46:JM,81

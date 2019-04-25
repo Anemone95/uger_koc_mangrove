@@ -1,0 +1,210 @@
+[2161, 2162]
+25773 :: ENTR :: entry :: null :: ai.susi.server.RemoteAccess.getPostMap(javax.servlet.http.HttpServletRequest)::CD,25777:CD,25781:CD,25785:JM,25795:JM,25800:JM,25834:JM,25804:JM,25901:JM,25838:JM,25841:JM,25905:JM,25845:JM,25786:JM,25850:JM,25790:JM,25854:JM,25791
+25777 :: NORM :: declaration :: Ljava/util/HashMap :: v3 = new java.util.HashMap::
+25781 :: CALL :: call :: Ljava/util/Map :: v6 = p1 $request .getParameterMap()::JM,25795:JM,25800:JM,25834:JM,25804:JM,25901:JM,25838:JM,25841:JM,25905:JM,25845:JM,25785:JM,25786:JM,25850:JM,25790:JM,25854:JM,25791
+25785 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 119::CD,25786:CD,25790:CD,25840:CD,25841:CD,25845:CD,25901:CD,25905:JM,25795:JM,25800:JM,25834:JM,25804:JM,25838:JM,25850:JM,25854:JM,25791
+25786 :: CALL :: call :: I :: v9 = v6.size()::JM,25795:JM,25800:JM,25834:JM,25804:JM,25901:JM,25838:JM,25905:JM,25845:JM,25786:JM,25850:JM,25790:JM,25854:JM,25791
+25790 :: PRED :: IF :: Z :: if (v9 <= #(0)) goto 119::CD,25791:CD,25795:CD,25834:CD,25838:CD,25840:CD,25841:CD,25845:CD,25901:CD,25905:JM,25800:JM,25804:JM,25786:JM,25850:JM,25790:JM,25854
+25791 :: CALL :: call :: Ljava/util/Set :: v42 = v6.entrySet()::JM,25795:JM,25800:JM,25834:JM,25804:JM,25901:JM,25838:JM,25905:JM,25845:JM,25786:JM,25850:JM,25790:JM,25854:JM,25791
+25795 :: CALL :: call :: Ljava/util/Iterator :: v44 = v42.iterator()::JM,25905:JM,25795:JM,25800:JM,25850:JM,25834:JM,25804:JM,25901:JM,25854:JM,25838
+25800 :: CALL :: call :: Ljava/lang/Object :: v48 = v44.next()::JM,25905:JM,25800:JM,25834:JM,25804:JM,25854:JM,25838
+25804 :: EXPR :: assign :: Ljava/lang/Object :: v49 = CHECKCAST v48::JM,25809:JM,25805
+25805 :: CALL :: call :: Ljava/lang/Object :: v51 = v49.getValue()::JM,25809:JM,25805
+25809 :: EXPR :: assign :: Ljava/lang/Object :: v52 = CHECKCAST v51::DD,25810:DD,25811
+25810 :: PRED :: IF :: Z :: if (v52 == #(null)) goto 105::CD,25811:CD,25812:JM,25905:JM,25800:JM,25834:JM,25804:JM,25854:JM,25838
+25811 :: EXPR :: assign :: I :: v53 = v52.length::DD,25812
+25812 :: PRED :: IF :: Z :: if (v53 <= #(0)) goto 105::CD,25828:JM,25905:JM,25800:JM,25834:JM,25804:JM,25854:JM,25838
+25828 :: CALL :: call :: Ljava/lang/Object :: v62 = v3.put(v56, v60)::
+25834 :: CALL :: call :: Z :: v46 = v44.hasNext()::JM,25905:JM,25800:JM,25834:JM,25804:JM,25854:JM,25838
+25838 :: PRED :: IF :: Z :: if (v46 != #(0)) goto 46::CD,25800:CD,25804:CD,25805:CD,25809:CD,25810:CD,25834:JM,25905:JM,25854:JM,25838
+25840 :: NORM :: declaration :: [B :: v12 = new []::DD,25874:JM,25875:JM,25882:JM,25795:JM,25800:JM,25834:JM,25804:JM,25901:JM,25838:JM,25841:JM,25905:JM,25845:JM,25785:JM,25786:JM,25850:JM,25790:JM,25854:JM,25791
+25841 :: CALL :: call :: Ljava/util/Collection :: v14 = p1 $request .getParts()::JM,25795:JM,25800:JM,25834:JM,25804:JM,25901:JM,25838:JM,25841:JM,25905:JM,25845:JM,25785:JM,25786:JM,25850:JM,25790:JM,25854:JM,25791
+25845 :: CALL :: call :: Ljava/util/Iterator :: v16 = v14.iterator()::JM,25795:JM,25800:JM,25834:JM,25804:JM,25901:JM,25838:JM,25905:JM,25845:JM,25786:JM,25850:JM,25790:JM,25854:JM,25791
+25850 :: CALL :: call :: Ljava/lang/Object :: v20 = v16.next()::JM,25905:JM,25795:JM,25800:JM,25850:JM,25834:JM,25804:JM,25901:JM,25854:JM,25838
+25854 :: EXPR :: assign :: Ljava/lang/Object :: v21 = CHECKCAST v20::JM,25859:JM,25875:JM,25882
+25859 :: CALL :: call :: Ljava/io/InputStream :: v25 = v21.getInputStream()::JM,25859:JM,25875:JM,25882
+25863 :: NORM :: declaration :: Ljava/io/ByteArrayOutputStream :: v26 = new java.io.ByteArrayOutputStream::
+25868 :: CALL :: call :: V :: v26.write(v12, #(0), v30)::JM,25875:JM,25882
+25874 :: EXPR :: assign :: I :: v28 = v12.length::JM,25875:JM,25882
+25875 :: CALL :: call :: I :: v30 = v25.read(v12, #(0), v28)::JM,25875:JM,25882
+25882 :: PRED :: IF :: Z :: if (v30 > #(0)) goto 186::CD,25868:CD,25874:CD,25875
+25891 :: CALL :: call :: [B :: v34 = v26.toByteArray()::
+25895 :: CALL :: call :: Ljava/lang/Object :: v36 = v3.put(v23, v34)::
+25901 :: CALL :: call :: Z :: v18 = v16.hasNext()::JM,25905:JM,25795:JM,25800:JM,25850:JM,25834:JM,25804:JM,25901:JM,25854:JM,25838
+25905 :: PRED :: IF :: Z :: if (v18 != #(0)) goto 140::CD,25850:CD,25854:CD,25859:CD,25863:CD,25874:CD,25875:CD,25882:CD,25891:CD,25895:CD,25901:JM,25905:JM,25795:JM,25800:JM,25834:JM,25804:JM,25838
+25968 :: ENTR :: entry :: null :: ai.susi.server.Query.initPOST(java.util.Map)::CD,25976
+25973 :: EXPR :: reference :: Ljava/util/Map :: v4 = p0 $this .qm::DD,25976
+25976 :: PRED :: IF :: Z :: if (v4 != #(null)) goto 16::CD,25984
+25984 :: CALL :: call :: V :: v6.putAll(p1 $map )::
+2115 :: ENTR :: entry :: null :: ai.susi.server.api.cms.ModifySkillService.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,2125:CD,2129:CD,2136:CD,2149:CD,2154:JM,2160:JM,3682
+2125 :: CALL :: call :: Ljava/util/Map :: v8 = getPostMap(p1 $call )::CL,25773
+2129 :: CALL :: call :: V :: v6.initPOST(v8)::CL,25968
+2136 :: CALL :: call :: V :: p0 $this .logClient(v11, v6, #(null), #(0), #(init post))::CL,27681
+26721 :: ENTR :: entry :: null :: org.json.JSONObject.put(java.lang.String,java.lang.Object)::CD,26728:CD,26734
+2149 :: CALL :: call :: Ljava/lang/String :: v21 = p1 $call .getParameter(#(access_token))::JM,2160:JM,3682:JM,2154
+26728 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v12 = new java.lang.NullPointerException::
+2154 :: PRED :: IF :: Z :: if (v21 == #(null)) goto 2408::CD,2155:CD,2160:CD,2161:CD,2162:CD,3682:JM,2154
+2155 :: CALL :: call :: Ljava/lang/String :: v42 = p1 $call .getParameter(#(OldModel))::JM,2160:JM,3682:JM,2154
+26734 :: PRED :: IF :: Z :: if (p2 $value  == #(null)) goto 40::CD,26735:CD,26741:CD,26748
+26735 :: CALL :: call :: V :: testValidity(p2 $value )::CL,52271
+2160 :: PRED :: IF :: Z :: if (v42 != #(null)) goto 68::CF,3682
+2161 :: NORM :: declaration :: Ljava/io/File :: v45 = new java.io.File::
+2162 :: EXPR :: reference :: Ljava/io/File :: v46 = ai.susi.DAO.model_watch_dir::
+26741 :: CALL :: call :: Ljava/lang/Object :: v11 = v9.put(p1 $key , p2 $value )::
+26748 :: CALL :: call :: Ljava/lang/Object :: v7 = p0 $this .remove(p1 $key )::CL,51948
+27107 :: ENTR :: entry :: null :: ai.susi.server.Client.getName()::CD,27117:CD,27118
+27111 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .id::
+27114 :: EXPR :: reference :: I :: v4 = p0 $this .separatorPos::DD,27117
+27117 :: EXPR :: assign :: Ljava/lang/Object :: v6 = v4 + #(1)::
+27118 :: CALL :: call :: Ljava/lang/String :: v8 = v3.substring(v6)::
+51870 :: ENTR :: entry :: null :: org.json.JSONObject.has(java.lang.String)::CE,51871:CD,51878:CD,51883
+51871 :: EXIT :: exit :: Z :: org.json.JSONObject.has(java.lang.String)::JM,73045
+51878 :: CALL :: call :: Z :: v6 = v4.containsKey(p1 $key )::JM,51883
+51883 :: NORM :: compound :: Z :: return v6::DD,51871
+51948 :: ENTR :: entry :: null :: org.json.JSONObject.remove(java.lang.String)::CD,51956
+51956 :: CALL :: call :: Ljava/lang/Object :: v6 = v4.remove(p1 $key )::
+27681 :: ENTR :: entry :: null :: ai.susi.server.AbstractAPIHandler.logClient(long,ai.susi.server.Query,ai.susi.server.ClientIdentity,int,java.lang.String)::CD,27690:CD,27700:CD,27704:CD,27708:CD,27741:CD,27745:CD,27769:CD,27773:CD,27799:CD,27866
+27690 :: PRED :: IF :: Z :: if (p3 $query  != #(null)) goto 13::CD,27692
+27692 :: CALL :: call :: Ljava/lang/String :: v10 = p3 $query .getName()::CL,27107
+52271 :: ENTR :: entry :: null :: org.json.JSONObject.testValidity(java.lang.Object)::
+27700 :: CALL :: call :: Ljava/lang/String :: v16 = p2 $null .toString()::JM,27866:JM,27708:CL,55501
+27704 :: CALL :: call :: I :: v18 = v16.length()::JM,27866:JM,27708
+27708 :: PRED :: IF :: Z :: if (v18 <= #(512)) goto 71::CF,27866:CF,27709:CD,27710:CD,27716:CD,27724:CD,27729
+27709 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v20 = new java.lang.StringBuilder::JM,27866:JM,27708
+27710 :: CALL :: call :: Ljava/lang/String :: v23 = v16.substring(#(0), #(512))::JM,27866:JM,27708
+27716 :: CALL :: call :: Ljava/lang/String :: v25 = valueOf(v23)::
+27724 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v20.append(#(...))::JM,27866
+27729 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::JM,27866
+27741 :: CALL :: call :: I :: v39 = v32.length()::JM,27745
+27745 :: PRED :: IF :: Z :: if (v39 <= #(0)) goto 122::CF,27746:CD,27747:CD,27755:CD,27760:CD,27765
+27746 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v40 = new java.lang.StringBuilder::
+27747 :: CALL :: call :: Ljava/lang/String :: v42 = valueOf(v37)::
+76901 :: ENTR :: entry :: null :: org.json.JSONObject.opt(java.lang.String)::CE,76902:CD,76906:CD,76916:CD,76917
+76902 :: EXIT :: exit :: Ljava/lang/Object :: org.json.JSONObject.opt(java.lang.String)::JM,62428
+27755 :: CALL :: call :: Ljava/lang/StringBuilder :: v46 = v40.append(#(?))::
+76906 :: PRED :: IF :: Z :: if (p1 $key  != #(null)) goto 9::CD,76911:CD,76917
+76911 :: CALL :: call :: Ljava/lang/Object :: v7 = v5.get(p1 $key )::JM,76917
+27760 :: CALL :: call :: Ljava/lang/StringBuilder :: v48 = v46.append(v32)::
+76917 :: EXPR :: assign :: null :: PHI v8 = #(null), v7::CF,76916
+27765 :: CALL :: call :: Ljava/lang/String :: v50 = v48.toString()::
+76916 :: NORM :: compound :: Ljava/lang/Object :: return v8::DD,76902
+27769 :: CALL :: call :: I :: v53 = p5 $httpResponseCode .length()::JM,27690:JM,27773
+27773 :: PRED :: IF :: Z :: if (v53 <= #(512)) goto 161::CD,27781
+27781 :: CALL :: call :: Ljava/lang/String :: v58 = valueOf(v56)::
+27799 :: CALL :: call :: Ljava/lang/String :: v67 = valueOf(v14)::
+27866 :: EXPR :: assign :: null :: PHI v32 = v16, v31::JM,27745
+3682 :: EXPR :: assign :: null :: PHI v44 = v42, #(general)::CF,2161
+69723 :: ENTR :: entry :: null :: org.json.JSONObject.quote(java.lang.String)::CE,69724:CD,69727:CD,69736:CD,69741:CD,69746:CD,69748
+69724 :: EXIT :: exit :: Ljava/lang/String :: org.json.JSONObject.quote(java.lang.String)::
+69727 :: NORM :: declaration :: Ljava/io/StringWriter :: v3 = new java.io.StringWriter::
+69736 :: CALL :: call :: Ljava/io/Writer :: v8 = quote(p1 $string , v3)::JM,69746:CL,80043
+69741 :: CALL :: call :: Ljava/lang/String :: v12 = v8.toString()::JM,69746
+69746 :: NORM :: compound :: Ljava/lang/String :: return v12::DD,69724
+69748 :: NORM :: compound :: Ljava/lang/String :: return #()::DD,69724
+61951 :: NORM :: declaration :: Ljava/util/ArrayList :: v4 = new java.util.ArrayList::
+62176 :: ENTR :: entry :: null :: org.json.JSONObject.getJSONArray(java.lang.String)::CE,62177:CD,62181:CD,62188:CD,62189:CD,62191:CD,62196:CD,62200:CD,62205:CD,62210
+62177 :: EXIT :: exit :: Lorg/json/JSONArray :: org.json.JSONObject.getJSONArray(java.lang.String)::JM,73054
+62181 :: CALL :: call :: Ljava/lang/Object :: v5 = p0 $this .get(p1 $key )::JM,62188:CL,62381
+62188 :: EXPR :: assign :: Ljava/lang/Object :: v22 = CHECKCAST v5::CF,62189
+62189 :: NORM :: compound :: Lorg/json/JSONArray :: return v22::DD,62177
+62191 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v9 = new java.lang.StringBuilder::
+62196 :: CALL :: call :: Ljava/lang/String :: v13 = quote(p1 $key )::CL,69723
+62200 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v9.append(v13)::
+62205 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v15.append(#(] is not a JSONArray.))::
+62210 :: CALL :: call :: Ljava/lang/String :: v20 = v18.toString()::
+62381 :: ENTR :: entry :: null :: org.json.JSONObject.get(java.lang.String)::CE,62382:CD,62393:CD,62400:CD,62405:CD,62409:CD,62414:CD,62419:CD,62428
+62382 :: EXIT :: exit :: Ljava/lang/Object :: org.json.JSONObject.get(java.lang.String)::JM,62188
+62393 :: CALL :: call :: Ljava/lang/Object :: v6 = p0 $this .opt(p1 $key )::JM,62428:CL,76901
+62400 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v8 = new java.lang.StringBuilder::
+62405 :: CALL :: call :: Ljava/lang/String :: v12 = quote(p1 $key )::CL,69723
+62409 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v8.append(v12)::
+62414 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v14.append(#(] not found.))::
+62419 :: CALL :: call :: Ljava/lang/String :: v19 = v17.toString()::
+62428 :: NORM :: compound :: Ljava/lang/Object :: return v6::DD,62382
+80043 :: ENTR :: entry :: null :: org.json.JSONObject.quote(java.lang.String,java.io.Writer)::CE,80044:CD,80048:JM,80135:JM,80073:JM,80053:JM,80119:JM,80118:JM,80121:JM,80152:JM,80120:JM,80058:JM,80122:JM,80157:JM,80158
+80044 :: EXIT :: exit :: Ljava/io/Writer :: org.json.JSONObject.quote(java.lang.String,java.io.Writer)::JM,69746
+80049 :: CALL :: call :: I :: v6 = p1 $string .length()::JM,80135:JM,80073:JM,80048:JM,80053:JM,80119:JM,80118:JM,80121:JM,80152:JM,80120:JM,80058:JM,80122:JM,80157:JM,80158
+80048 :: PRED :: IF :: Z :: if (p1 $string  == #(null)) goto 15::CD,80049:CD,80053:CD,80054:CD,80058:JM,80135:JM,80073:JM,80048:JM,80119:JM,80118:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+80053 :: PRED :: IF :: Z :: if (v6 != #(0)) goto 23::CD,80054:CD,80058:CD,80059:CD,80063:CD,80152:CD,80153:CD,80157:CD,80158:CD,80159:JM,80135:JM,80073:JM,80048:JM,80053:JM,80119:JM,80118:JM,80121:JM,80120:JM,80122
+80054 :: CALL :: call :: V :: p2 $w .write(#(''))::JM,80135:JM,80073:JM,80048:JM,80053:JM,80119:JM,80118:JM,80121:JM,80152:JM,80120:JM,80058:JM,80122:JM,80157:JM,80158
+80059 :: CALL :: call :: I :: v9 = p1 $string .length()::JM,80135:JM,80073:JM,80048:JM,80053:JM,80119:JM,80118:JM,80121:JM,80152:JM,80120:JM,80058:JM,80122:JM,80157:JM,80158
+80058 :: NORM :: compound :: Ljava/io/Writer :: return p2 $w ::DD,80044
+80063 :: CALL :: call :: V :: p2 $w .write(#(34))::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+80068 :: CALL :: call :: C :: v13 = p1 $string .charAt(v50)::JM,80135:JM,80073:JM,80048:JM,80053:JM,80119:JM,80118:JM,80121:JM,80152:JM,80120:JM,80058:JM,80122:JM,80157:JM,80158
+80073 :: PRED :: IF :: null :: switch v13::CD,80074:CD,80078:CD,80083:CD,80088:CD,80093:CD,80098:CD,80103:CD,80108:CD,80113:CD,80118:JM,80048:JM,80053:JM,80119:JM,80135:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+80074 :: CALL :: call :: V :: p2 $w .write(#(92))::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+55501 :: ENTR :: entry :: null :: ai.susi.server.Query.toString()::CE,55502:CD,55508
+55502 :: EXIT :: exit :: Ljava/lang/String :: ai.susi.server.Query.toString()::JM,27866:JM,27708
+80078 :: CALL :: call :: V :: p2 $w .write(v13)::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+55505 :: EXPR :: reference :: Ljava/util/Map :: v3 = p0 $this .qm::DD,55508
+80083 :: PRED :: IF :: Z :: if (v49 != #(60)) goto 152::CD,80084:JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+55508 :: PRED :: IF :: Z :: if (v3 != #(null)) goto 11::CF,55510:CD,55509:CD,55517:CD,55549:CD,55553:CD,55559:CD,55565:CD,55571:CD,55577
+55509 :: NORM :: compound :: Ljava/lang/String :: return #()::DD,55502
+80084 :: CALL :: call :: V :: p2 $w .write(#(92))::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+55510 :: NORM :: declaration :: Ljava/util/LinkedHashMap :: v5 = new java.util.LinkedHashMap::
+80088 :: CALL :: call :: V :: p2 $w .write(v13)::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+55514 :: EXPR :: reference :: Ljava/util/Map :: v7 = p0 $this .qm::
+80093 :: CALL :: call :: V :: p2 $w .write(#(\b))::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+55517 :: CALL :: call :: Ljava/util/Set :: v9 = v7.entrySet()::
+80098 :: CALL :: call :: V :: p2 $w .write(#(\t))::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+80103 :: CALL :: call :: V :: p2 $w .write(#(\n))::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+80108 :: CALL :: call :: V :: p2 $w .write(#(\f))::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+80113 :: CALL :: call :: V :: p2 $w .write(#(\r))::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+80119 :: PRED :: IF :: Z :: if (v13 < #(128)) goto 232::CD,80120:CD,80121
+80118 :: PRED :: IF :: Z :: if (v13 < #(32)) goto 246::CD,80119:CD,80123:CD,80127:CD,80131:CD,80135:CD,80136:CD,80142:JM,80048:JM,80053:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+80121 :: PRED :: IF :: Z :: if (v13 < #(8192)) goto 281::CD,80122:CD,80147:JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80157:JM,80158
+80120 :: PRED :: IF :: Z :: if (v13 < #(160)) goto 246::CD,80121:CD,80123:CD,80127:CD,80131:CD,80135:CD,80136:CD,80142:JM,80048:JM,80053:JM,80119:JM,80118:JM,80073:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+80123 :: CALL :: call :: V :: p2 $w .write(#(\u))::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+80122 :: PRED :: IF :: Z :: if (v13 >= #(8448)) goto 281::CD,80123:CD,80127:CD,80131:CD,80135:CD,80136:CD,80142:CD,80147:JM,80048:JM,80053:JM,80119:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+55549 :: CALL :: call :: Ljava/lang/String :: v24 = v5.toString()::
+80127 :: CALL :: call :: Ljava/lang/String :: v38 = toHexString(v13)::JM,80135:JM,80158
+55553 :: CALL :: call :: Ljava/lang/String :: v28 = v24.replaceAll(#(, ), #(&))::
+80131 :: CALL :: call :: I :: v42 = v38.length()::JM,80135
+80135 :: EXPR :: assign :: Ljava/lang/Object :: v43 = #(4) - v42::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+55559 :: CALL :: call :: Ljava/lang/String :: v32 = v28.replaceFirst(#(\{), #())::
+80136 :: CALL :: call :: V :: p2 $w .write(#(0000), #(0), v43)::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+55565 :: CALL :: call :: Ljava/lang/String :: v35 = v32.replaceAll(#(\}), #())::
+80142 :: CALL :: call :: V :: p2 $w .write(v38)::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+80147 :: CALL :: call :: V :: p2 $w .write(v13)::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+55571 :: CALL :: call :: Ljava/lang/String :: v39 = v35.replaceAll(#( ), #(%20))::JM,55577
+80151 :: EXPR :: assign :: Ljava/lang/Object :: v48 = v50 + #(1)::DD,80159:CF,80158
+80153 :: CALL :: call :: V :: p2 $w .write(#(34))::JM,80048:JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80152:JM,80120:JM,80122:JM,80157:JM,80158
+55577 :: NORM :: compound :: Ljava/lang/String :: return v39::DD,55502
+80152 :: PRED :: IF :: Z :: if (v50 < v9) goto 45::CD,80068:CD,80073:CD,80151:CD,80158:CD,80159:JM,80135:JM,80048:JM,80053:JM,80119:JM,80118:JM,80121:JM,80152:JM,80120:JM,80058:JM,80122:JM,80157
+80157 :: NORM :: compound :: Ljava/io/Writer :: return p2 $w ::DD,80044
+80159 :: EXPR :: assign :: null :: PHI v50 = #(0), v48::JM,80053:JM,80119:JM,80135:JM,80118:JM,80073:JM,80121:JM,80120:JM,80122:JM,80158:DD,80151:DD,80152
+80158 :: EXPR :: assign :: null :: PHI v49 = #(0), v13::CF,80159:DD,80083
+80231 :: ENTR :: entry :: null :: ai.susi.mind.SusiSkill.ID.compareTo(java.lang.Object)::CE,80232:CD,80237:CD,80242
+80232 :: EXIT :: exit :: I :: ai.susi.mind.SusiSkill.ID.compareTo(java.lang.Object)::
+80237 :: CALL :: call :: I :: v6 = p0 $null .compareTo(v4)::JM,80242:CL,88842
+80242 :: NORM :: compound :: I :: return v6::CF,80232
+88843 :: EXIT :: exit :: I :: ai.susi.mind.SusiSkill.ID.compareTo(ai.susi.mind.SusiSkill.ID)::JM,80242
+88842 :: ENTR :: entry :: null :: ai.susi.mind.SusiSkill.ID.compareTo(ai.susi.mind.SusiSkill.ID)::CE,88843:CD,88853:CD,88858
+88847 :: EXPR :: reference :: Ljava/lang/String :: v4 = p0 $this .skillpath::JM,88853:JM,88858
+88850 :: EXPR :: reference :: Ljava/lang/String :: v5 = p1 $o .skillpath::JM,88853:JM,88858
+88853 :: CALL :: call :: I :: v7 = v4.compareTo(v5)::JM,88853:JM,88858
+88858 :: NORM :: compound :: I :: return v7::CF,88843
+73033 :: ENTR :: entry :: null :: ai.susi.mind.SusiThought.getData()::CE,73034:CD,73040:CD,73045
+73034 :: EXIT :: exit :: Lorg/json/JSONArray :: ai.susi.mind.SusiThought.getData()::JM,56916:JM,56911
+73040 :: CALL :: call :: Z :: v5 = p0 $this .has(v3)::JM,73045:CL,51870
+73045 :: PRED :: IF :: Z :: if (v5 == #(0)) goto 20::CF,73055:CD,73049:CD,73054:JM,61951:CD,73062:CD,73068
+73049 :: CALL :: call :: Lorg/json/JSONArray :: v14 = p0 $this .getJSONArray(v12)::JM,73054:CL,62176
+73055 :: NORM :: declaration :: Lorg/json/JSONArray :: v7 = new org.json.JSONArray::DD,73068
+73054 :: NORM :: compound :: Lorg/json/JSONArray :: return v14::DD,73034
+73062 :: CALL :: call :: Lorg/json/JSONObject :: v11 = p0 $this .put(v9, v7)::CL,26721
+73068 :: NORM :: compound :: Lorg/json/JSONArray :: return v7::DD,73034
+56894 :: ENTR :: entry :: null :: ai.susi.mind.SusiThought.equals(java.lang.Object)::CE,56895:CD,56899:CD,56900
+56895 :: EXIT :: exit :: Z :: ai.susi.mind.SusiThought.equals(java.lang.Object)::
+56899 :: EXPR :: assign :: Z :: v4=p1 $o  INSTANCEOF ai.susi.mind.SusiThought::DD,56900
+56900 :: PRED :: IF :: Z :: if (v4 != #(0)) goto 10::CD,56901:CD,56903:CD,56907:CD,56911:CD,56916
+56901 :: NORM :: compound :: Z :: return #(0)::DD,56895
+56903 :: CALL :: call :: Lorg/json/JSONArray :: v8 = p0 $this .getData()::JM,56916:JM,56911:CL,73033
+56907 :: CALL :: call :: Lorg/json/JSONArray :: v10 = v6.getData()::JM,56916:JM,56911:CL,73033
+56911 :: CALL :: call :: Z :: v12 = v8.equals(v10)::JM,56916:JM,56911
+56916 :: NORM :: compound :: Z :: return v12::DD,56895
+56940 :: ENTR :: entry :: null :: org.json.JSONObject.Null.equals(java.lang.Object)::JM,56946:CF,56941:CD,56945
+56941 :: EXIT :: exit :: Z :: org.json.JSONObject.Null.equals(java.lang.Object)::
+56945 :: PRED :: IF :: Z :: if (p1 $object  == #(null)) goto 12::CD,56946:CD,56948
+56946 :: PRED :: IF :: Z :: if (p1 $object  == p0 $this ) goto 12::CD,56947:CD,56948
+56947 :: NORM :: compound :: Z :: return #(0)::CF,56941
+56948 :: NORM :: compound :: Z :: return #(1)::CF,56941

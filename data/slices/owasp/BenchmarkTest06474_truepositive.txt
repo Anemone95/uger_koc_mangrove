@@ -1,0 +1,11 @@
+[37, 44]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest06474.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,20:CD,25:CD,30:CD,34:CD,37
+7 :: CALL :: call :: Ljava/lang/String :: v6 = p1 $request .getQueryString()::JM,37
+11 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v7 = new java.lang.StringBuilder::JM,37
+15 :: CALL :: call :: Ljava/lang/StringBuilder :: v11 = v7.append(#(SELECT * from USERS w...))::JM,37
+20 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v11.append(v6)::JM,37
+25 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v13.append(#('))::JM,37
+30 :: CALL :: call :: Ljava/lang/String :: v18 = v16.toString()::JM,37
+34 :: CALL :: call :: Ljava/sql/Connection :: v20 = getSqlConnection()::JM,37
+37 :: CALL :: call :: Ljava/sql/PreparedStatement :: v25 = v20.prepareStatement(v18, #(1003), #(1007), #(2))::JM,37

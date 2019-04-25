@@ -1,0 +1,105 @@
+[898, 872, 875, 879, 884, 889, 894]
+1 :: ENTR :: entry :: null :: org.h2.samples.SQLInjection.main(java.lang.String[])::CD,5:CD,9
+5 :: NORM :: declaration :: Lorg/h2/samples/SQLInjection :: v3 = new org.h2.samples.SQLInjection::
+9 :: CALL :: call :: V :: v3.run(#(org.h2.Driver), #(jdbc:h2:test), #(sa), #(sa))::JM,80:JM,74:JM,142:CL,62
+62 :: ENTR :: entry :: null :: org.h2.samples.SQLInjection.run(java.lang.String,java.lang.String,java.lang.String,java.lang.String)::CD,74:CD,134:CD,137:CD,142:CD,149:CD,182:JM,80
+74 :: CALL :: call :: Ljava/sql/Connection :: v10 = getConnection(p2 $null , p3 $null , p4 $null )::JM,80:JM,74:JM,142
+80 :: EXPR :: modify :: Ljava/sql/Connection :: p0 $null .conn = v10::
+134 :: CALL :: call :: V :: p0 $null .loginByNameInsecure()::CL,406
+137 :: CALL :: call :: Z :: v39 = p2 $null .startsWith(#(jdbc:h2:))::JM,80:JM,74:JM,142
+142 :: PRED :: IF :: Z :: if (v39 == #(0)) goto 116::CD,143:CD,146
+143 :: CALL :: call :: V :: p0 $null .loginStoredProcedureInsecure()::CL,506
+146 :: CALL :: call :: V :: p0 $null .limitRowAccess()::CL,628
+149 :: CALL :: call :: V :: p0 $null .loginByNameSecure()::CL,760
+182 :: CALL :: call :: V :: p0 $null .loginByIdInsecure()::CL,852
+406 :: ENTR :: entry :: null :: org.h2.samples.SQLInjection.loginByNameInsecure()::CD,410:CD,412:CD,416:CD,421:CD,429:CD,433:CD,438:CD,443:CD,448:CD,453:CD,458:CD,462:CD,467:CD,471
+410 :: EXPR :: reference :: Ljava/io/PrintStream :: v3 = java.lang.System.out::
+412 :: CALL :: call :: V :: v3.println(#(Insecure Systems Inc....))::
+416 :: CALL :: call :: Ljava/lang/String :: v8 = p0 $null .input(#(Name?))::JM,467:JM,471:JM,462:CL,1854
+421 :: CALL :: call :: Ljava/lang/String :: v11 = p0 $null .input(#(Password?))::JM,467:JM,471:JM,462:CL,1854
+426 :: EXPR :: reference :: Ljava/sql/Statement :: v12 = p0 $null .stat::JM,467:JM,471:JM,462
+429 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::JM,467:JM,471:JM,462
+433 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v13.append(#(SELECT * FROM USERS W...))::JM,467:JM,471:JM,462
+438 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v17.append(v8)::JM,467:JM,471:JM,462
+443 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v19.append(#(' AND PASSWORD='))::JM,467:JM,471:JM,462
+448 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v22.append(v11)::JM,467:JM,471:JM,462
+453 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v24.append(#('))::JM,467:JM,471:JM,462
+458 :: CALL :: call :: Ljava/lang/String :: v29 = v27.toString()::JM,467:JM,471:JM,462
+462 :: CALL :: call :: Ljava/sql/ResultSet :: v31 = v12.executeQuery(v29)::JM,467:JM,471:JM,462
+467 :: CALL :: call :: Z :: v33 = v31.next()::JM,467:JM,471
+471 :: PRED :: IF :: Z :: if (v33 == #(0)) goto 85::CD,472:CD,474:CD,479:CD,481
+472 :: EXPR :: reference :: Ljava/io/PrintStream :: v38 = java.lang.System.out::
+474 :: CALL :: call :: V :: v38.println(#(Welcome!))::
+479 :: EXPR :: reference :: Ljava/io/PrintStream :: v35 = java.lang.System.out::
+481 :: CALL :: call :: V :: v35.println(#(Access denied!))::
+506 :: ENTR :: entry :: null :: org.h2.samples.SQLInjection.loginStoredProcedureInsecure()::CD,510:CD,512:CD,532:CD,537:CD,545:CD,549:CD,554:CD,559:CD,564:CD,569:CD,574:CD,578:CD,583:CD,587
+510 :: EXPR :: reference :: Ljava/io/PrintStream :: v3 = java.lang.System.out::
+512 :: CALL :: call :: V :: v3.println(#(Insecure Systems Inc....))::
+532 :: CALL :: call :: Ljava/lang/String :: v16 = p0 $null .input(#(Name?))::JM,578:JM,583:JM,587:CL,1854
+537 :: CALL :: call :: Ljava/lang/String :: v19 = p0 $null .input(#(Password?))::JM,578:JM,583:JM,587:CL,1854
+542 :: EXPR :: reference :: Ljava/sql/Statement :: v20 = p0 $null .stat::JM,578:JM,583:JM,587
+545 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v21 = new java.lang.StringBuilder::JM,578:JM,583:JM,587
+549 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v21.append(#(CALL GET_USER('))::JM,578:JM,583:JM,587
+554 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v25.append(v16)::JM,578:JM,583:JM,587
+559 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v27.append(#(', '))::JM,578:JM,583:JM,587
+564 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v30.append(v19)::JM,578:JM,583:JM,587
+569 :: CALL :: call :: Ljava/lang/StringBuilder :: v35 = v32.append(#(')))::JM,578:JM,583:JM,587
+574 :: CALL :: call :: Ljava/lang/String :: v37 = v35.toString()::JM,578:JM,583:JM,587
+578 :: CALL :: call :: Ljava/sql/ResultSet :: v39 = v20.executeQuery(v37)::JM,578:JM,583:JM,587
+583 :: CALL :: call :: Z :: v41 = v39.next()::JM,583:JM,587
+587 :: PRED :: IF :: Z :: if (v41 == #(0)) goto 109::CD,588:CD,590:CD,595:CD,597
+588 :: EXPR :: reference :: Ljava/io/PrintStream :: v46 = java.lang.System.out::
+590 :: CALL :: call :: V :: v46.println(#(Welcome!))::
+595 :: EXPR :: reference :: Ljava/io/PrintStream :: v43 = java.lang.System.out::
+597 :: CALL :: call :: V :: v43.println(#(Access denied!))::
+628 :: ENTR :: entry :: null :: org.h2.samples.SQLInjection.limitRowAccess()::CD,632:CD,634:CD,681:CD,686:CD,690
+632 :: EXPR :: reference :: Ljava/io/PrintStream :: v3 = java.lang.System.out::
+634 :: CALL :: call :: V :: v3.println(#(Secure Systems Inc. -...))::
+678 :: EXPR :: reference :: Ljava/sql/Statement :: v26 = p0 $null .stat::JM,690:JM,712:JM,681:JM,697:JM,686
+681 :: CALL :: call :: Ljava/sql/ResultSet :: v29 = v26.executeQuery(#(SELECT ID, NAME FROM ...))::JM,690:JM,712:JM,681:JM,697:JM,686
+686 :: CALL :: call :: Z :: v31 = v29.next()::JM,690:JM,712:JM,697:JM,686
+690 :: PRED :: IF :: Z :: if (v31 == #(0)) goto 133::CD,686:CD,691:CD,693:CD,697:CD,702:CD,707:CD,712:CD,717:CD,722:CD,726
+691 :: EXPR :: reference :: Ljava/io/PrintStream :: v33 = java.lang.System.out::CF,693
+693 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v34 = new java.lang.StringBuilder::
+697 :: CALL :: call :: Ljava/lang/String :: v38 = v29.getString(#(1))::JM,690:JM,712:JM,697:JM,686
+702 :: CALL :: call :: Ljava/lang/StringBuilder :: v40 = v34.append(v38)::
+707 :: CALL :: call :: Ljava/lang/StringBuilder :: v43 = v40.append(#(: ))::
+712 :: CALL :: call :: Ljava/lang/String :: v46 = v29.getString(#(2))::JM,690:JM,712:JM,697:JM,686
+717 :: CALL :: call :: Ljava/lang/StringBuilder :: v48 = v43.append(v46)::
+722 :: CALL :: call :: Ljava/lang/String :: v50 = v48.toString()::
+726 :: CALL :: call :: V :: v33.println(v50)::
+760 :: ENTR :: entry :: null :: org.h2.samples.SQLInjection.loginByNameSecure()::CD,764:CD,766:CD,770:CD,775:CD,783:CD,798:CD,802:CD,806
+764 :: EXPR :: reference :: Ljava/io/PrintStream :: v3 = java.lang.System.out::
+766 :: CALL :: call :: V :: v3.println(#(Secure Systems Inc. -...))::
+770 :: CALL :: call :: Ljava/lang/String :: v8 = p0 $null .input(#(Name?))::CL,1854
+775 :: CALL :: call :: Ljava/lang/String :: v11 = p0 $null .input(#(Password?))::CL,1854
+780 :: EXPR :: reference :: Ljava/sql/Connection :: v12 = p0 $null .conn::JM,802:JM,806:JM,798:JM,783
+783 :: CALL :: call :: Ljava/sql/PreparedStatement :: v15 = v12.prepareStatement(#(SELECT * FROM USERS W...))::JM,802:JM,806:JM,798:JM,783
+798 :: CALL :: call :: Ljava/sql/ResultSet :: v21 = v15.executeQuery()::JM,802:JM,806:JM,798
+802 :: CALL :: call :: Z :: v23 = v21.next()::JM,802:JM,806
+806 :: PRED :: IF :: Z :: if (v23 == #(0)) goto 79::CD,807:CD,809:CD,814:CD,816
+807 :: EXPR :: reference :: Ljava/io/PrintStream :: v28 = java.lang.System.out::
+809 :: CALL :: call :: V :: v28.println(#(Welcome!))::
+814 :: EXPR :: reference :: Ljava/io/PrintStream :: v25 = java.lang.System.out::
+816 :: CALL :: call :: V :: v25.println(#(Access denied!))::
+1854 :: ENTR :: entry :: null :: org.h2.samples.SQLInjection.input(java.lang.String)::CE,1855:CD,1859:CD,1861:CD,1865:CD,1866:CD,1867:CD,1877:CD,1881
+1855 :: EXIT :: exit :: Ljava/lang/String :: org.h2.samples.SQLInjection.input(java.lang.String)::JM,467:JM,471:JM,462:JM,578:JM,583:JM,587:JM,898
+1859 :: EXPR :: reference :: Ljava/io/PrintStream :: v4 = java.lang.System.out::
+1861 :: CALL :: call :: V :: v4.print(p1 $null )::
+1865 :: NORM :: declaration :: Ljava/io/BufferedReader :: v6 = new java.io.BufferedReader::JM,1881:CF,1866
+1866 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v7 = new java.io.InputStreamReader::
+1867 :: EXPR :: reference :: Ljava/io/InputStream :: v8 = java.lang.System.in::
+852 :: ENTR :: entry :: null :: org.h2.samples.SQLInjection.loginByIdInsecure()::CD,856:CD,858:CD,862:CD,867:CD,875:CD,879:CD,884:CD,889:CD,894:CD,898
+1877 :: CALL :: call :: Ljava/lang/String :: v12 = v6.readLine()::JM,1881
+856 :: EXPR :: reference :: Ljava/io/PrintStream :: v3 = java.lang.System.out::
+1881 :: NORM :: compound :: Ljava/lang/String :: return v12::DD,1855
+858 :: CALL :: call :: V :: v3.println(#(Half Secure Systems I...))::
+862 :: CALL :: call :: Ljava/lang/String :: v8 = p0 $null .input(#(User ID?))::JM,898:CL,1854
+867 :: CALL :: call :: Ljava/lang/String :: v11 = p0 $null .input(#(Password?))::CL,1854
+872 :: EXPR :: reference :: Ljava/sql/Connection :: v12 = p0 $null .conn::JM,898
+875 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::JM,898
+879 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v13.append(#(SELECT * FROM USERS W...))::JM,898
+884 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v17.append(v8)::JM,898
+889 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v19.append(#( AND PASSWORD=?))::JM,898
+894 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::JM,898
+898 :: CALL :: call :: Ljava/sql/PreparedStatement :: v26 = v12.prepareStatement(v24)::JM,898

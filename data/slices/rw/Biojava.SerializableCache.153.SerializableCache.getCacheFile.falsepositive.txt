@@ -1,0 +1,344 @@
+[13, 14, 15, 23, 27, 32, 35, 40]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.domain.SerializableCache.getCacheFile()::CE,2:JM,2753:JM,2821:JM,1544:JM,2749:JM,1551:CD,9:CD,13:CD,14:CD,15:CD,23:CD,27:CD,35:CD,40:CD,58
+2 :: EXIT :: exit :: Ljava/io/File :: org.biojava.nbio.structure.domain.SerializableCache.getCacheFile()::JM,1202:JM,1166
+9 :: CALL :: call :: Ljava/lang/String :: v6 = v3.getCachePath()::CL,1096
+13 :: NORM :: declaration :: Ljava/io/File :: v7 = new java.io.File::DD,58:CF,14
+14 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v8 = new java.lang.StringBuilder::
+15 :: CALL :: call :: Ljava/lang/String :: v10 = valueOf(v6)::
+23 :: CALL :: call :: Ljava/lang/String :: v14 = getProperty(#(file.separator))::JM,23
+27 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v8.append(v14)::
+32 :: EXPR :: reference :: Ljava/lang/String :: v17 = p0 $this .cacheFileName::
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v16.append(v17)::
+40 :: CALL :: call :: Ljava/lang/String :: v21 = v19.toString()::
+58 :: NORM :: compound :: Ljava/io/File :: return v7::DD,2
+279 :: EXPR :: reference :: Ljava/lang/String :: v3 = org.biojava.nbio.structure.domain.RemoteDomainProvider.CACHE_FILE_NAME::JM,947:JM,950:JM,317
+291 :: CALL :: call :: Lorg/biojava/nbio/structure/scop/ScopDatabase :: v8 = getSCOP()::CL,973
+297 :: NORM :: declaration :: Lorg/biojava/nbio/structure/domain/RemotePDPProvider :: v9 = new org.biojava.nbio.structure.domain.RemotePDPProvider::JM,947:JM,950:JM,317
+317 :: EXPR :: reference :: Ljava/lang/String :: v3 = org.biojava.nbio.structure.domain.RemotePDPProvider.CACHE_FILE_NAME::
+358 :: ENTR :: entry :: null :: org.biojava.nbio.structure.domain.RemoteDomainProvider.<clinit>()::CD,368
+368 :: EXPR :: modify :: Ljava/lang/String :: org.biojava.nbio.structure.domain.RemoteDomainProvider.CACHE_FILE_NAME = #(remotedomaincache.ser)::
+374 :: ENTR :: entry :: null :: org.biojava.nbio.structure.domain.RemotePDPProvider.<clinit>()::CD,384
+384 :: EXPR :: modify :: Ljava/lang/String :: org.biojava.nbio.structure.domain.RemotePDPProvider.CACHE_FILE_NAME = #(remotepdpdomaindefs.ser)::
+402 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.ScopFactory.<clinit>()::CD,412
+412 :: NORM :: declaration :: Ljava/util/HashMap :: v5 = new java.util.HashMap::
+466 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.<clinit>()::CD,476:CD,492
+476 :: CALL :: call :: Lorg/biojava/nbio/structure/align/util/ResourceManager :: v7 = getResourceManager(#(jfatcat))::CL,1105
+492 :: NORM :: declaration :: Ljava/util/Random :: v13 = new java.util.Random::
+554 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.LocalPDBDirectory.FetchBehavior.<clinit>()::
+673 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.LocalPDBDirectory.ObsoleteBehavior.<clinit>()::
+750 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.BerkeleyScopInstallation.<clinit>()::CD,753:CD,757:CD,759:CD,761:CD,766:CD,772:CD,774:CD,779:CD,785:CD,787:CD,792
+753 :: NORM :: declaration :: Ljava/util/HashMap :: v2 = new java.util.HashMap::DD,757
+757 :: EXPR :: modify :: Ljava/util/Map :: org.biojava.nbio.structure.scop.BerkeleyScopInstallation.EQUIVALENT_VERSIONS = v2::
+759 :: EXPR :: reference :: Ljava/util/Map :: v4 = org.biojava.nbio.structure.scop.BerkeleyScopInstallation.EQUIVALENT_VERSIONS::CF,761
+761 :: NORM :: declaration :: [Ljava/lang/String :: v7 = new java.lang.String[]::
+766 :: CALL :: call :: Ljava/lang/Object :: v11 = v4.put(#(2.01), v7)::
+772 :: EXPR :: reference :: Ljava/util/Map :: v12 = org.biojava.nbio.structure.scop.BerkeleyScopInstallation.EQUIVALENT_VERSIONS::CF,774
+774 :: NORM :: declaration :: [Ljava/lang/String :: v14 = new java.lang.String[]::
+779 :: CALL :: call :: Ljava/lang/Object :: v17 = v12.put(#(2.02), v14)::
+785 :: EXPR :: reference :: Ljava/util/Map :: v18 = org.biojava.nbio.structure.scop.BerkeleyScopInstallation.EQUIVALENT_VERSIONS::CF,787
+787 :: NORM :: declaration :: [Ljava/lang/String :: v20 = new java.lang.String[]::
+792 :: CALL :: call :: Ljava/lang/Object :: v23 = v18.put(#(2.03), v20)::
+947 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .cacheFileName = p1 $cacheFileName ::
+950 :: PRED :: IF :: Z :: if (p1 $cacheFileName  == #(null)) goto 18::CD,951:JM,947:JM,950
+951 :: CALL :: call :: Ljava/util/Map :: v7 = p0 $this .reloadFromFile()::JM,947:JM,950:CL,1147
+973 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.ScopFactory.getSCOP()::CD,978
+978 :: CALL :: call :: Lorg/biojava/nbio/structure/scop/ScopDatabase :: v4 = getSCOP(v2)::CL,1343
+1000 :: NORM :: declaration :: Lorg/biojava/nbio/structure/domain/SerializableCache :: v8 = new org.biojava.nbio.structure.domain.SerializableCache::JM,1008:JM,947:JM,1012:JM,950
+1008 :: PRED :: IF :: Z :: if (p1 $useCache  != #(0)) goto 82::CD,1012:CD,1016:CD,1020:CD,1054:CD,1058
+1012 :: CALL :: call :: Ljava/lang/Class :: v20 = p0 $this .getClass()::JM,1008:JM,947:JM,1012:JM,950
+1016 :: CALL :: call :: Ljava/lang/String :: v22 = v20.getSimpleName()::
+1020 :: CALL :: call :: Ljava/lang/String :: v24 = valueOf(v22)::
+1051 :: EXPR :: reference :: Ljava/util/Map :: v12 = p0 $this .serializedCache::JM,1058
+1054 :: CALL :: call :: I :: v14 = v12.size()::JM,1058
+1058 :: PRED :: IF :: Z :: if (v14 >= #(8000)) goto 100::CD,1059
+1059 :: CALL :: call :: V :: p0 $this .loadRepresentativeDomains()::CL,1374
+1096 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.AtomCache.getCachePath()::CE,1097:CD,1103
+1097 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.util.AtomCache.getCachePath()::
+1100 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .cachePath::DD,1103
+1103 :: NORM :: compound :: Ljava/lang/String :: return v3::CF,1097
+1105 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.ResourceManager.getResourceManager(java.lang.String)::JM,1648:JM,1636:JM,1644
+1147 :: ENTR :: entry :: null :: org.biojava.nbio.structure.domain.SerializableCache.reloadFromFile()::CD,1151:CD,1155:CD,1162:CD,1166
+1151 :: CALL :: call :: Ljava/io/File :: v4 = p0 $this .getCacheFile()::JM,1202:JM,1166:CL,1
+1155 :: NORM :: declaration :: Ljava/util/HashMap :: v5 = new java.util.HashMap::DD,1159
+1159 :: EXPR :: modify :: Ljava/util/Map :: p0 $this .serializedCache = v5::
+1162 :: CALL :: call :: Z :: v8 = v4.exists()::JM,1202:JM,1166
+1166 :: PRED :: IF :: Z :: if (v8 != #(0)) goto 55::CD,1197:CD,1202:CD,1206:CD,1211:CD,1219:CD,1224:CD,1229:CD,1233:CD,1237:CD,1259:CD,1264:CD,1268:CD,1273:CD,1281
+1197 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v11 = new java.lang.StringBuilder::
+1202 :: CALL :: call :: Ljava/lang/String :: v15 = v4.getAbsolutePath()::JM,1202:JM,1166
+1206 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v11.append(v15)::
+1211 :: CALL :: call :: Ljava/lang/String :: v19 = v17.toString()::
+1219 :: NORM :: declaration :: Ljava/io/FileInputStream :: v21 = new java.io.FileInputStream::
+1224 :: NORM :: declaration :: Ljava/io/ObjectInputStream :: v23 = new java.io.ObjectInputStream::JM,1233
+1229 :: CALL :: call :: Ljava/lang/Object :: v26 = v23.readObject()::JM,1233
+1233 :: EXPR :: assign :: Ljava/lang/Object :: v32 = CHECKCAST v26::DD,1234
+1234 :: EXPR :: modify :: Ljava/util/Map :: p0 $this .serializedCache = v32::
+1237 :: CALL :: call :: V :: v23.close()::
+1259 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v38 = new java.lang.StringBuilder::
+1264 :: CALL :: call :: Ljava/lang/String :: v42 = v4.getName()::JM,1202:JM,1166
+1268 :: CALL :: call :: Ljava/lang/StringBuilder :: v44 = v38.append(v42)::
+1273 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v44.append(#( size: ))::
+1278 :: EXPR :: reference :: Ljava/util/Map :: v48 = p0 $this .serializedCache::
+1281 :: CALL :: call :: Ljava/util/Set :: v50 = v48.keySet()::
+1343 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.ScopFactory.getSCOP(java.lang.String)::CD,1347
+1347 :: CALL :: call :: Lorg/biojava/nbio/structure/scop/ScopDatabase :: v5 = getSCOP(p1 $version , #(0))::CL,1652
+1374 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.CachedRemoteScopInstallation.loadRepresentativeDomains()::CD,1378:CD,1384:CD,1393:CD,1398:CD,1403:CD,1408:CD,1416:CD,1420:CD,1424:CD,1430:CD,1435:CD,1439:CD,1443:CD,1448:CD,1453:CD,1461:CD,1465:CD,1488:CD,1492:CD,1494
+1378 :: NORM :: declaration :: Ljava/net/URL :: v4 = new java.net.URL::
+1384 :: NORM :: declaration :: Ljava/io/IOException :: v8 = new java.io.IOException::
+1393 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::
+1398 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v12.append(v4)::
+1403 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v16.append(#( to download represen...))::
+1408 :: CALL :: call :: Ljava/lang/String :: v21 = v19.toString()::
+1416 :: CALL :: call :: Ljava/io/InputStream :: v24 = getInputStream(v4)::CL,1772
+1420 :: CALL :: call :: Ljava/lang/String :: v26 = convertStreamToString(v24)::CL,1786
+1424 :: CALL :: call :: Lorg/biojava/nbio/structure/scop/server/ScopDomains :: v28 = fromXML(v26)::JM,1488:JM,1474:JM,1492:JM,1461:JM,1465:JM,1435:JM,1470:JM,1439:CL,1894
+1430 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v30 = new java.lang.StringBuilder::
+1435 :: CALL :: call :: Ljava/util/List :: v34 = v28.getScopDomain()::JM,1488:JM,1474:JM,1492:JM,1461:JM,1465:JM,1435:JM,1470:JM,1439
+1439 :: CALL :: call :: I :: v36 = v34.size()::JM,1488:JM,1474:JM,1492:JM,1465:JM,1470:JM,1439
+1443 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v30.append(v36)::JM,1488:JM,1474:JM,1492:JM,1470
+1448 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v38.append(#( domain ranges for Sc...))::JM,1474:JM,1492
+1453 :: CALL :: call :: Ljava/lang/String :: v43 = v41.toString()::
+1461 :: CALL :: call :: Ljava/util/List :: v46 = v28.getScopDomain()::JM,1488:JM,1474:JM,1492:JM,1461:JM,1465:JM,1435:JM,1470:JM,1439
+1465 :: CALL :: call :: Ljava/util/Iterator :: v48 = v46.iterator()::JM,1488:JM,1474:JM,1492:JM,1465:JM,1470:JM,1439
+1470 :: CALL :: call :: Ljava/lang/Object :: v53 = v48.next()::JM,1488:JM,1474:JM,1492:JM,1470
+1474 :: EXPR :: assign :: Ljava/lang/Object :: v54 = CHECKCAST v53::JM,1475
+1475 :: CALL :: call :: Ljava/lang/String :: v56 = v54.getScopId()::JM,1475
+1479 :: EXPR :: reference :: Ljava/util/Map :: v57 = p0 $this .serializedCache::
+1482 :: CALL :: call :: Ljava/lang/Object :: v59 = v57.put(v56, v54)::
+1488 :: CALL :: call :: Z :: v50 = v48.hasNext()::JM,1488:JM,1474:JM,1492:JM,1470
+1492 :: PRED :: IF :: Z :: if (v50 != #(0)) goto 127::CD,1470:CD,1474:CD,1475:CD,1482:CD,1488:JM,1492
+1494 :: EXPR :: assign :: Ljava/lang/Exception :: v7 = catch <exc>::
+1544 :: CALL :: call :: Ljava/lang/String :: v7 = p0 $this .initPdbFilePath()::CL,1960
+1551 :: CALL :: call :: Ljava/lang/String :: v9 = p0 $this .initCacheFilePath()::CL,2286
+1636 :: CALL :: call :: Ljava/util/ResourceBundle :: v6 = getBundle(p1 $bundleName )::
+1644 :: CALL :: call :: V :: v7.printStackTrace()::
+1648 :: EXPR :: assign :: Ljava/lang/Exception :: v7 = catch <exc>::
+1652 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.ScopFactory.getSCOP(java.lang.String,boolean)::CD,1657:CD,1660:CD,1662:CD,1667:CD,1668:CD,1734
+1657 :: PRED :: IF :: Z :: if (p1 $version  != #(null)) goto 8::CF,1734:CD,1658
+1658 :: EXPR :: reference :: Ljava/lang/String :: v5 = org.biojava.nbio.structure.scop.ScopFactory.defaultVersion::DD,1734
+1660 :: EXPR :: reference :: Ljava/util/Map :: v7 = org.biojava.nbio.structure.scop.ScopFactory.versionedScopDBs::JM,1667
+1662 :: CALL :: call :: Ljava/lang/Object :: v9 = v7.get(v6)::JM,1667
+1667 :: EXPR :: assign :: Ljava/lang/Object :: v10 = CHECKCAST v9::DD,1669:DD,1670:DD,1703:CF,1668
+1668 :: PRED :: IF :: Z :: if (p2 $forceLocalData  == #(0)) goto 81::CD,1669:CD,1703
+1669 :: PRED :: IF :: Z :: if (v10 == #(null)) goto 36::CD,1670:CD,1671:CD,1674:CD,1675:CD,1685:JM,3520:JM,3524:JM,3780:JM,3717:JM,3718:JM,3591:JM,1544:JM,3785:JM,3534:JM,3598:JM,3726:JM,1551:JM,3538:JM,3731:JM,3605:JM,3735:JM,3736:JM,2908:JM,3548:JM,3552:JM,3744:JM,3749:JM,2920:JM,3753:JM,3562:JM,3754:JM,3566:JM,2928:JM,3762:JM,3767:JM,3576:JM,3771:JM,3772:JM,3583:CD,1689:CD,1693:CD,1695
+1670 :: EXPR :: assign :: Z :: v25=v10 INSTANCEOF org.biojava.nbio.structure.scop.LocalScopDatabase::DD,1671
+1671 :: PRED :: IF :: Z :: if (v25 != #(0)) goto 79::CD,1674:CD,1675:CD,1685:JM,3520:JM,3524:JM,3780:JM,3717:JM,3718:JM,3591:JM,1544:JM,3785:JM,3534:JM,3598:JM,3726:JM,1551:JM,3538:JM,3731:JM,3605:JM,3735:JM,3736:JM,2908:JM,3548:JM,3552:JM,3744:JM,3749:JM,2920:JM,3753:JM,3562:JM,3754:JM,3566:JM,2928:JM,3762:JM,3767:JM,3576:JM,3771:JM,3772:JM,3583:CD,1689:CD,1693:CD,1695
+1674 :: EXPR :: assign :: Ljava/lang/Class :: v27 = metadata <Application,Lorg/biojava/nbio/structure/scop/BerkeleyScopInstallation>-><Primordial,Ljava/lang/Class>::
+1675 :: CALL :: call :: Ljava/lang/String :: v29 = v27.getSimpleName()::
+1685 :: NORM :: declaration :: Lorg/biojava/nbio/structure/scop/BerkeleyScopInstallation :: v31 = new org.biojava.nbio.structure.scop.BerkeleyScopInstallation::
+1689 :: CALL :: call :: V :: v31.setScopVersion(v6)::CL,2945
+1693 :: EXPR :: reference :: Ljava/util/Map :: v34 = org.biojava.nbio.structure.scop.ScopFactory.versionedScopDBs::
+1695 :: CALL :: call :: Ljava/lang/Object :: v36 = v34.put(v6, v31)::
+1703 :: PRED :: IF :: Z :: if (v10 != #(null)) goto 127::CD,1706:CD,1707:CD,1717:CD,1725:CD,1727
+1706 :: EXPR :: assign :: Ljava/lang/Class :: v14 = metadata <Application,Lorg/biojava/nbio/structure/scop/RemoteScopInstallation>-><Primordial,Ljava/lang/Class>::
+1707 :: CALL :: call :: Ljava/lang/String :: v16 = v14.getSimpleName()::
+1717 :: NORM :: declaration :: Lorg/biojava/nbio/structure/scop/RemoteScopInstallation :: v18 = new org.biojava.nbio.structure.scop.RemoteScopInstallation::
+1725 :: EXPR :: reference :: Ljava/util/Map :: v21 = org.biojava.nbio.structure.scop.ScopFactory.versionedScopDBs::
+1727 :: CALL :: call :: Ljava/lang/Object :: v23 = v21.put(v6, v18)::
+1734 :: EXPR :: assign :: null :: PHI v6 = p1 $version , v5::JM,1667
+1772 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL)::CD,1776
+1776 :: CALL :: call :: Ljava/io/InputStream :: v6 = getInputStream(p1 $url , #(1), #(15000))::CL,3025
+1786 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.convertStreamToString(java.io.InputStream)::CD,1790:CD,1791:CD,1800:CD,1817:CD,1821:CD,1865
+1790 :: NORM :: declaration :: Ljava/io/BufferedReader :: v3 = new java.io.BufferedReader::JM,1821:CF,1791
+1791 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v4 = new java.io.InputStreamReader::
+1800 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v7 = new java.lang.StringBuilder::
+1805 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v7.append(v11)::JM,1821
+1810 :: EXPR :: reference :: Ljava/lang/String :: v14 = org.biojava.nbio.structure.align.client.JFatCatClient.newline::
+1812 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v13.append(v14)::
+1817 :: CALL :: call :: Ljava/lang/String :: v11 = v3.readLine()::JM,1821
+1821 :: PRED :: IF :: Z :: if (v11 != #(null)) goto 31::CD,1805:CD,1810:CD,1812:CD,1817
+1865 :: CALL :: call :: Ljava/lang/String :: v33 = v7.toString()::
+1894 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.server.ScopDomains.fromXML(java.lang.String)::CE,1895:CD,1898:CD,1900:CD,1904:CD,1905:CD,1913:CD,1918:CD,1920:CD,1921:CD,1926:CD,1927:CD,1932:CD,1937:CD,1947:CD,1948
+1895 :: EXIT :: exit :: Lorg/biojava/nbio/structure/scop/server/ScopDomains :: org.biojava.nbio.structure.scop.server.ScopDomains.fromXML(java.lang.String)::JM,1488:JM,1474:JM,1492:JM,1461:JM,1465:JM,1435:JM,1470:JM,1439
+1898 :: EXPR :: reference :: Ljavax/xml/bind/JAXBContext :: v4 = org.biojava.nbio.structure.scop.server.ScopDomains.jaxbContext::JM,1913:JM,1900:JM,1918
+1900 :: CALL :: call :: Ljavax/xml/bind/Unmarshaller :: v6 = v4.createUnmarshaller()::JM,1913:JM,1900:JM,1918
+1904 :: NORM :: declaration :: Ljava/io/ByteArrayInputStream :: v7 = new java.io.ByteArrayInputStream::JM,1913:JM,1918
+1905 :: CALL :: call :: [B :: v9 = p1 $xml .getBytes()::
+1913 :: CALL :: call :: Ljava/lang/Object :: v12 = v6.unmarshal(v7)::JM,1913:JM,1918
+1918 :: EXPR :: assign :: Ljava/lang/Object :: v13 = CHECKCAST v12::DD,1947
+1920 :: NORM :: declaration :: Ljava/lang/RuntimeException :: v15 = new java.lang.RuntimeException::
+1921 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v16 = new java.lang.StringBuilder::
+1926 :: EXPR :: assign :: Ljava/lang/Class :: v19 = metadata <Application,Lorg/biojava/nbio/structure/scop/server/ScopDomains>-><Primordial,Ljava/lang/Class>::
+1927 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v16.append(v19)::
+1932 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v21.append(#( from XML))::
+1937 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::
+1947 :: NORM :: compound :: Lorg/biojava/nbio/structure/scop/server/ScopDomains :: return v13::DD,1895
+1948 :: EXPR :: assign :: Ljava/lang/Exception :: v14 = catch <exc>::
+1960 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.UserConfiguration.initPdbFilePath()::CD,1964:CD,1968:CD,2159:CD,2161:CD,2166:CD,2188
+1964 :: CALL :: call :: Ljava/lang/String :: v6 = getProperty(#(PDB_DIR))::JM,1968:JM,1973:JM,1977:JM,1964:JM,2188
+1968 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 118::CD,1969:CD,1973:CD,1977:CD,2039:CD,2042:CD,2047:JM,2188
+1969 :: CALL :: call :: Ljava/lang/String :: v8 = v6.trim()::JM,1973:JM,1977:JM,2188
+1973 :: CALL :: call :: Z :: v10 = v8.isEmpty()::JM,1973:JM,1977
+1977 :: PRED :: IF :: Z :: if (v10 != #(0)) goto 118::CD,1986:CD,1991:CD,1995:CD,2039:CD,2042:CD,2047
+1986 :: NORM :: declaration :: Ljava/io/File :: v61 = new java.io.File::JM,1995:JM,2029
+1991 :: CALL :: call :: Z :: v64 = v61.isDirectory()::JM,1995
+1995 :: PRED :: IF :: Z :: if (v64 != #(0)) goto 97::CD,2020:CD,2025:CD,2029:CD,2188
+2020 :: CALL :: call :: Ljava/lang/String :: v77 = getProperty(#(java.io.tmpdir))::JM,2020:JM,2188
+2025 :: CALL :: call :: Z :: v66 = v61.canWrite()::JM,2029
+2029 :: PRED :: IF :: Z :: if (v66 != #(0)) goto 297::CF,2188
+2039 :: CALL :: call :: Ljava/util/Map :: v13 = getenv()::JM,2068:JM,2053:JM,2047
+2042 :: CALL :: call :: Z :: v15 = v13.containsKey(#(PDB_DIR))::JM,2068:JM,2053:JM,2047
+2047 :: PRED :: IF :: Z :: if (v15 == #(0)) goto 260::CD,2048:CD,2053:CD,2054:CD,2058:CD,2062:CD,2130:CD,2154:CD,2188:JM,2068:JM,2047
+2048 :: CALL :: call :: Ljava/lang/Object :: v17 = v13.get(#(PDB_DIR))::JM,2068:JM,2053:JM,2047
+2053 :: EXPR :: assign :: Ljava/lang/Object :: v18 = CHECKCAST v17::JM,2058:JM,2062
+2054 :: CALL :: call :: Ljava/lang/String :: v20 = v18.trim()::JM,2058:JM,2062
+2058 :: CALL :: call :: Z :: v22 = v20.isEmpty()::JM,2058:JM,2062
+2062 :: PRED :: IF :: Z :: if (v22 != #(0)) goto 260::CD,2063:CD,2068:CD,2077:CD,2082:CD,2086:CD,2130:CD,2154:CD,2188:JM,2053:JM,2047
+2063 :: CALL :: call :: Ljava/lang/Object :: v36 = v13.get(#(PDB_DIR))::JM,2068:JM,2053:JM,2047
+2068 :: EXPR :: assign :: Ljava/lang/Object :: v37 = CHECKCAST v36::DD,2188
+2077 :: NORM :: declaration :: Ljava/io/File :: v41 = new java.io.File::JM,2086:JM,2120
+2082 :: CALL :: call :: Z :: v44 = v41.isDirectory()::JM,2086
+2086 :: PRED :: IF :: Z :: if (v44 != #(0)) goto 237::CD,2111:CD,2116:CD,2120:CD,2188
+2111 :: CALL :: call :: Ljava/lang/String :: v57 = getProperty(#(java.io.tmpdir))::JM,2188:JM,2111
+2116 :: CALL :: call :: Z :: v46 = v41.canWrite()::JM,2120
+2120 :: PRED :: IF :: Z :: if (v46 != #(0)) goto 297::CF,2188
+2130 :: CALL :: call :: Ljava/lang/String :: v25 = getProperty(#(java.io.tmpdir))::JM,2130:JM,2188
+2154 :: CALL :: call :: Ljava/lang/String :: v34 = setProperty(#(PDB_DIR), v25)::JM,2188
+2159 :: EXPR :: reference :: Ljava/lang/String :: v80 = org.biojava.nbio.structure.align.util.UserConfiguration.lineSplit::JM,2166
+2161 :: CALL :: call :: Z :: v82 = v78.endsWith(v80)::JM,2166
+2166 :: PRED :: IF :: Z :: if (v82 != #(0)) goto 328::CF,2167:CD,2168:CD,2176:CD,2178:CD,2183
+2167 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v83 = new java.lang.StringBuilder::
+2168 :: CALL :: call :: Ljava/lang/String :: v85 = valueOf(v78)::
+2176 :: EXPR :: reference :: Ljava/lang/String :: v87 = org.biojava.nbio.structure.align.util.UserConfiguration.lineSplit::
+2178 :: CALL :: call :: Ljava/lang/StringBuilder :: v89 = v83.append(v87)::
+2183 :: CALL :: call :: Ljava/lang/String :: v91 = v89.toString()::
+2188 :: EXPR :: assign :: null :: PHI v78 = v77, v6, v6, v57, v37, v37, v25::JM,2166
+2286 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.UserConfiguration.initCacheFilePath()::CD,2290:CD,2294:CD,2555:CD,2557:CD,2562:CD,2584
+2290 :: CALL :: call :: Ljava/lang/String :: v6 = getProperty(#(PDB_CACHE_DIR))::JM,2290:JM,2294:JM,2584
+2294 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 138::CD,2303:CD,2308:CD,2312:CD,2381:CD,2384:CD,2389
+2303 :: NORM :: declaration :: Ljava/io/File :: v69 = new java.io.File::JM,2312:JM,2346
+2308 :: CALL :: call :: Z :: v72 = v69.isDirectory()::JM,2312
+2312 :: PRED :: IF :: Z :: if (v72 != #(0)) goto 87::CD,2337:CD,2342:CD,2346:CD,2584
+2337 :: CALL :: call :: Ljava/lang/String :: v92 = getProperty(#(java.io.tmpdir))::JM,2337:JM,2584
+2342 :: CALL :: call :: Z :: v74 = v69.canWrite()::JM,2346
+2346 :: PRED :: IF :: Z :: if (v74 != #(0)) goto 385::CF,2584:CD,2371:CD,2375
+2371 :: CALL :: call :: Ljava/lang/String :: v82 = getProperty(#(java.io.tmpdir))::JM,2371:JM,2584
+2375 :: CALL :: call :: Ljava/lang/String :: v84 = setProperty(#(PDB_CACHE_DIR), v82)::JM,2584
+2381 :: CALL :: call :: Ljava/util/Map :: v8 = getenv()::JM,2389:JM,2395
+2384 :: CALL :: call :: Z :: v10 = v8.containsKey(#(PDB_CACHE_DIR))::JM,2389:JM,2395
+2389 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 282::CF,2477:CD,2390:CD,2395:CD,2404:CD,2409:CD,2413:CD,2485:CD,2489:JM,2389
+2390 :: CALL :: call :: Ljava/lang/Object :: v39 = v8.get(#(PDB_CACHE_DIR))::JM,2389:JM,2395
+2395 :: EXPR :: assign :: Ljava/lang/Object :: v40 = CHECKCAST v39::DD,2584
+2404 :: NORM :: declaration :: Ljava/io/File :: v44 = new java.io.File::JM,2413:JM,2447
+2409 :: CALL :: call :: Z :: v47 = v44.isDirectory()::JM,2413
+2413 :: PRED :: IF :: Z :: if (v47 != #(0)) goto 237::CD,2438:CD,2443:CD,2447:CD,2584
+2438 :: CALL :: call :: Ljava/lang/String :: v65 = getProperty(#(java.io.tmpdir))::JM,2438:JM,2584
+2443 :: CALL :: call :: Z :: v49 = v44.canWrite()::JM,2447
+2447 :: PRED :: IF :: Z :: if (v49 != #(0)) goto 385::CF,2584:CD,2472
+2472 :: CALL :: call :: Ljava/lang/String :: v57 = getProperty(#(java.io.tmpdir))::JM,2472:JM,2584
+2477 :: NORM :: declaration :: Ljava/io/File :: v12 = new java.io.File::JM,2489
+2478 :: EXPR :: reference :: Ljava/lang/String :: v13 = p0 $this .pdbFilePath::
+2485 :: CALL :: call :: Z :: v16 = v12.canWrite()::JM,2489
+2489 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 341::CD,2513:CD,2519:CD,2550:CD,2584
+2490 :: EXPR :: reference :: Ljava/lang/String :: v31 = p0 $this .pdbFilePath::DD,2584
+2513 :: CALL :: call :: Ljava/lang/String :: v37 = setProperty(#(PDB_CACHE_DIR), v31)::
+2519 :: CALL :: call :: Ljava/lang/String :: v19 = getProperty(#(java.io.tmpdir))::JM,2519:JM,2584
+2550 :: CALL :: call :: Ljava/lang/String :: v30 = setProperty(#(PDB_CACHE_DIR), v19)::JM,2584
+2555 :: EXPR :: reference :: Ljava/lang/String :: v95 = org.biojava.nbio.structure.align.util.UserConfiguration.lineSplit::JM,2562
+2557 :: CALL :: call :: Z :: v97 = v93.endsWith(v95)::JM,2562
+2562 :: PRED :: IF :: Z :: if (v97 != #(0)) goto 416::CF,2563:CD,2564:CD,2572:CD,2574:CD,2579
+2563 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v98 = new java.lang.StringBuilder::
+2564 :: CALL :: call :: Ljava/lang/String :: v100 = valueOf(v93)::
+2572 :: EXPR :: reference :: Ljava/lang/String :: v102 = org.biojava.nbio.structure.align.util.UserConfiguration.lineSplit::
+2574 :: CALL :: call :: Ljava/lang/StringBuilder :: v104 = v98.append(v102)::
+2579 :: CALL :: call :: Ljava/lang/String :: v106 = v104.toString()::
+2584 :: EXPR :: assign :: null :: PHI v93 = v92, v6, v82, v65, v40, v57, v31, v19::JM,2562
+2749 :: NORM :: declaration :: Ljava/util/TreeSet :: v6 = new java.util.TreeSet::JM,2753:JM,2757
+2753 :: CALL :: call :: Ljava/util/Collection :: v9 = synchronizedCollection(v6)::JM,2753:JM,2757
+2757 :: EXPR :: modify :: Ljava/util/Collection :: p0 $this .currentlyLoading = v9::
+2818 :: EXPR :: reference :: Ljava/util/Collection :: v34 = p0 $this .currentlyLoading::
+2821 :: CALL :: call :: V :: v34.clear()::
+2908 :: CALL :: call :: V :: p0 $this .setScopVersion(v6)::CL,2945
+2920 :: CALL :: call :: V :: p0 $this .addMirror(v8)::CL,3179
+2928 :: CALL :: call :: V :: p0 $this .addMirror(v12)::CL,3179
+2945 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.ScopInstallation.setScopVersion(java.lang.String)::CD,2951:CD,2960:CD,2965
+2951 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v17 = new java.lang.NullPointerException::
+2957 :: EXPR :: reference :: Ljava/lang/String :: v5 = p0 $this .scopVersion::JM,2965
+2960 :: CALL :: call :: Z :: v7 = v5.equals(p1 $scopVersion )::JM,2965
+2965 :: PRED :: IF :: Z :: if (v7 == #(0)) goto 29::CD,2973:CD,2980:CD,2987:CD,2994
+2970 :: EXPR :: reference :: Ljava/util/concurrent/atomic/AtomicBoolean :: v9 = p0 $this .installedCla::JM,2973
+2973 :: CALL :: call :: V :: v9.set(#(0))::JM,2973
+2977 :: EXPR :: reference :: Ljava/util/concurrent/atomic/AtomicBoolean :: v11 = p0 $this .installedDes::JM,2980
+2980 :: CALL :: call :: V :: v11.set(#(0))::JM,2980
+2984 :: EXPR :: reference :: Ljava/util/concurrent/atomic/AtomicBoolean :: v13 = p0 $this .installedHie::JM,2987
+2987 :: CALL :: call :: V :: v13.set(#(0))::JM,2987
+2991 :: EXPR :: reference :: Ljava/util/concurrent/atomic/AtomicBoolean :: v15 = p0 $this .installedCom::JM,2994
+2994 :: CALL :: call :: V :: v15.set(#(0))::JM,2994
+3025 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,boolean,int)::CD,3031
+3031 :: CALL :: call :: Ljava/net/HttpURLConnection :: v7 = openHttpURLConnection(p1 $url , p3 $timeout )::CL,3207
+3179 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.ScopInstallation.addMirror(org.biojava.nbio.structure.scop.ScopMirror)::CD,3187
+3184 :: EXPR :: reference :: Ljava/util/List :: v4 = p0 $this .mirrors::
+3187 :: CALL :: call :: Z :: v6 = v4.add(p1 $scopURLs )::
+3207 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::CD,3212:CD,3216:CD,3222:CD,3226:CD,3231:CD,3235:CD,3240:CD,3244:CD,3249:CD,3253:CD,3258:CD,3262:CD,3263:CD,3269:CD,3275:CD,3276:CD,3285:CD,3291:CD,3292:CD,3298:CD,3304:CD,3305:CD,3314:CD,3321:CD,3325
+3212 :: CALL :: call :: Ljava/net/URLConnection :: v6 = p1 $url .openConnection()::JM,3216:JM,3305:JM,3276
+3216 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST v6::
+3222 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::
+3226 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v12.append(p2 $timeout )::JM,3216:JM,3305:JM,3276
+3231 :: CALL :: call :: Ljava/lang/String :: v17 = v15.toString()::JM,3305:JM,3276
+3235 :: CALL :: call :: Ljava/lang/String :: v19 = setProperty(#(sun.net.client.defaul...), v17)::
+3240 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v21 = new java.lang.StringBuilder::
+3244 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v21.append(p2 $timeout )::JM,3216:JM,3305:JM,3276
+3249 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::JM,3305:JM,3276
+3253 :: CALL :: call :: Ljava/lang/String :: v28 = setProperty(#(sun.net.client.defaul...), v26)::
+3258 :: CALL :: call :: Ljava/lang/Class :: v31 = forName(#(java.net.HttpURLConne...))::JM,3258
+3262 :: NORM :: declaration :: [Ljava/lang/Class :: v34 = new java.lang.Class[]::
+3263 :: EXPR :: reference :: Ljava/lang/Class :: v36 = java.lang.Integer.TYPE::DD,3265
+3265 :: EXPR :: modify :: Ljava/lang/Object :: v34[#(0)] = v36::
+3269 :: CALL :: call :: Ljava/lang/reflect/Method :: v38 = v31.getMethod(#(setConnectTimeout), v34)::
+3275 :: NORM :: declaration :: [Ljava/lang/Object :: v39 = new java.lang.Object[]::CF,3276
+3276 :: NORM :: declaration :: Ljava/lang/Integer :: v40 = new java.lang.Integer::JM,3216:JM,3305:JM,3276
+3285 :: CALL :: call :: Ljava/lang/Object :: v43 = v38.invoke(v7, v39)::
+3291 :: NORM :: declaration :: [Ljava/lang/Class :: v45 = new java.lang.Class[]::
+3292 :: EXPR :: reference :: Ljava/lang/Class :: v46 = java.lang.Integer.TYPE::DD,3294
+3294 :: EXPR :: modify :: Ljava/lang/Object :: v45[#(0)] = v46::
+3298 :: CALL :: call :: Ljava/lang/reflect/Method :: v48 = v31.getMethod(#(setReadTimeout), v45)::
+3304 :: NORM :: declaration :: [Ljava/lang/Object :: v49 = new java.lang.Object[]::CF,3305
+3305 :: NORM :: declaration :: Ljava/lang/Integer :: v50 = new java.lang.Integer::JM,3216:JM,3305:JM,3276
+3314 :: CALL :: call :: Ljava/lang/Object :: v53 = v48.invoke(v7, v49)::
+3321 :: CALL :: call :: V :: v54.printStackTrace()::
+3325 :: EXPR :: assign :: Ljava/lang/Exception :: v54 = catch <exc>::
+3520 :: CALL :: call :: V :: p0 $this .setCacheLocation(p1 $cacheLocation )::CL,3663
+3524 :: NORM :: declaration :: Ljava/util/concurrent/atomic/AtomicBoolean :: v6 = new java.util.concurrent.atomic.AtomicBoolean::JM,3744:JM,3780:JM,3717:JM,3749:JM,3718:JM,3753:JM,3785:JM,3754:JM,3726:JM,3762:JM,3731:JM,3735:JM,3767:JM,3736:JM,3771:JM,3772:DD,3528
+3528 :: EXPR :: modify :: Ljava/util/concurrent/atomic/AtomicBoolean :: p0 $this .installedCla = v6::
+3531 :: EXPR :: reference :: Ljava/util/concurrent/atomic/AtomicBoolean :: v8 = p0 $this .installedCla::JM,3534
+3534 :: CALL :: call :: V :: v8.set(#(0))::JM,3534
+3538 :: NORM :: declaration :: Ljava/util/concurrent/atomic/AtomicBoolean :: v11 = new java.util.concurrent.atomic.AtomicBoolean::JM,3744:JM,3780:JM,3717:JM,3749:JM,3718:JM,3753:JM,3785:JM,3754:JM,3726:JM,3762:JM,3731:JM,3735:JM,3767:JM,3736:JM,3771:JM,3772:DD,3542
+3542 :: EXPR :: modify :: Ljava/util/concurrent/atomic/AtomicBoolean :: p0 $this .installedDes = v11::
+3545 :: EXPR :: reference :: Ljava/util/concurrent/atomic/AtomicBoolean :: v13 = p0 $this .installedDes::JM,3548
+3548 :: CALL :: call :: V :: v13.set(#(0))::JM,3548
+3552 :: NORM :: declaration :: Ljava/util/concurrent/atomic/AtomicBoolean :: v15 = new java.util.concurrent.atomic.AtomicBoolean::JM,3744:JM,3780:JM,3717:JM,3749:JM,3718:JM,3753:JM,3785:JM,3754:JM,3726:JM,3762:JM,3731:JM,3735:JM,3767:JM,3736:JM,3771:JM,3772:DD,3556
+3556 :: EXPR :: modify :: Ljava/util/concurrent/atomic/AtomicBoolean :: p0 $this .installedHie = v15::
+3559 :: EXPR :: reference :: Ljava/util/concurrent/atomic/AtomicBoolean :: v17 = p0 $this .installedHie::JM,3562
+3562 :: CALL :: call :: V :: v17.set(#(0))::JM,3562
+3566 :: NORM :: declaration :: Ljava/util/concurrent/atomic/AtomicBoolean :: v19 = new java.util.concurrent.atomic.AtomicBoolean::JM,3744:JM,3780:JM,3717:JM,3749:JM,3718:JM,3753:JM,3785:JM,3754:JM,3726:JM,3762:JM,3731:JM,3735:JM,3767:JM,3736:JM,3771:JM,3772:DD,3570
+3570 :: EXPR :: modify :: Ljava/util/concurrent/atomic/AtomicBoolean :: p0 $this .installedCom = v19::
+3573 :: EXPR :: reference :: Ljava/util/concurrent/atomic/AtomicBoolean :: v21 = p0 $this .installedCom::JM,3576
+3576 :: CALL :: call :: V :: v21.set(#(0))::JM,3576
+3583 :: NORM :: declaration :: Ljava/util/ArrayList :: v24 = new java.util.ArrayList::JM,3744:JM,3780:JM,3717:JM,3749:JM,3718:JM,3753:JM,3785:JM,3754:JM,3726:JM,3762:JM,3731:JM,3735:JM,3767:JM,3736:JM,3771:JM,3772
+3591 :: NORM :: declaration :: Ljava/util/HashMap :: v27 = new java.util.HashMap::JM,3744:JM,3780:JM,3717:JM,3749:JM,3718:JM,3753:JM,3785:JM,3754:JM,3726:JM,3762:JM,3731:JM,3735:JM,3767:JM,3736:JM,3771:JM,3772
+3598 :: NORM :: declaration :: Ljava/util/HashMap :: v29 = new java.util.HashMap::JM,3744:JM,3780:JM,3717:JM,3749:JM,3718:JM,3753:JM,3785:JM,3754:JM,3726:JM,3762:JM,3731:JM,3735:JM,3767:JM,3736:JM,3771:JM,3772
+3605 :: NORM :: declaration :: Ljava/util/TreeMap :: v31 = new java.util.TreeMap::JM,3744:JM,3780:JM,3717:JM,3749:JM,3718:JM,3753:JM,3785:JM,3754:JM,3726:JM,3762:JM,3731:JM,3735:JM,3767:JM,3736:JM,3771:JM,3772
+3663 :: ENTR :: entry :: null :: org.biojava.nbio.structure.scop.ScopInstallation.setCacheLocation(java.lang.String)::CD,3668:CD,3670:CD,3675
+3668 :: EXPR :: reference :: Ljava/lang/String :: v4 = org.biojava.nbio.structure.scop.ScopInstallation.FILESPLIT::JM,3675
+3670 :: CALL :: call :: Z :: v6 = p1 $cacheLocation .endsWith(v4)::JM,3675
+3675 :: PRED :: IF :: Z :: if (v6 != #(0)) goto 33::CF,3676:CD,3677:CD,3685:CD,3687:CD,3692
+3676 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v8 = new java.lang.StringBuilder::JM,3675
+3677 :: CALL :: call :: Ljava/lang/String :: v10 = valueOf(p1 $cacheLocation )::JM,3675
+3685 :: EXPR :: reference :: Ljava/lang/String :: v12 = org.biojava.nbio.structure.scop.ScopInstallation.FILESPLIT::
+3687 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v8.append(v12)::
+3692 :: CALL :: call :: Ljava/lang/String :: v16 = v14.toString()::
+3717 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v8 = new java.lang.StringBuilder::JM,3717
+3718 :: CALL :: call :: Ljava/lang/String :: v10 = valueOf(p1 $url )::JM,3717
+3726 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v8.append(p2 $claURL )::JM,3717
+3731 :: CALL :: call :: Ljava/lang/String :: v15 = v13.toString()::
+3735 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v16 = new java.lang.StringBuilder::JM,3717
+3736 :: CALL :: call :: Ljava/lang/String :: v18 = valueOf(p1 $url )::JM,3717
+3744 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v16.append(p3 $desURL )::JM,3717
+3749 :: CALL :: call :: Ljava/lang/String :: v23 = v21.toString()::
+3753 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v24 = new java.lang.StringBuilder::JM,3717
+3754 :: CALL :: call :: Ljava/lang/String :: v26 = valueOf(p1 $url )::JM,3717
+3762 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v24.append(p4 $hieURL )::JM,3717
+3767 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::
+3771 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v32 = new java.lang.StringBuilder::JM,3717
+3772 :: CALL :: call :: Ljava/lang/String :: v34 = valueOf(p1 $url )::JM,3717
+3780 :: CALL :: call :: Ljava/lang/StringBuilder :: v37 = v32.append(p5 $comURL )::JM,3717
+3785 :: CALL :: call :: Ljava/lang/String :: v39 = v37.toString()::

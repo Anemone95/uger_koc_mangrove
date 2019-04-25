@@ -1,0 +1,24 @@
+[47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 61]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest20940.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,17:CD,21:CD,25:CD,30:CD,35:CD,40:CD,44:CD,47:CD,56
+17 :: CALL :: call :: Ljava/lang/String :: v11 = doSomething(v9)::JM,56:CL,181
+21 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::JM,56
+25 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v12.append(#(SELECT * from USERS w...))::JM,56
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v16.append(v11)::JM,56
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v18.append(#('))::JM,56
+40 :: CALL :: call :: Ljava/lang/String :: v23 = v21.toString()::JM,56
+44 :: CALL :: call :: Ljava/sql/Connection :: v25 = getSqlConnection()::JM,56
+47 :: NORM :: declaration :: [I :: v27 = new []::JM,56
+48 :: EXPR :: modify :: I :: v27[#(0)] = #(1)::
+52 :: EXPR :: modify :: I :: v27[#(1)] = #(2)::
+56 :: CALL :: call :: Ljava/sql/PreparedStatement :: v31 = v25.prepareStatement(v23, v27)::JM,56
+181 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest20940.doSomething(java.lang.String)::CE,182:CD,185:CD,189:CD,195:CD,199:CD,205:CD,211:CD,216:CD,217
+182 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest20940.doSomething(java.lang.String)::JM,56
+185 :: NORM :: declaration :: Ljava/util/HashMap :: v4 = new java.util.HashMap::JM,216
+189 :: CALL :: call :: Ljava/lang/Object :: v9 = v4.put(#(keyA-1386), #(a Value))::
+195 :: CALL :: call :: Ljava/lang/String :: v12 = p1 $param .toString()::JM,195:JM,185
+199 :: CALL :: call :: Ljava/lang/Object :: v14 = v4.put(#(keyB-1386), v12)::
+205 :: CALL :: call :: Ljava/lang/Object :: v18 = v4.put(#(keyC), #(another Value))::
+211 :: CALL :: call :: Ljava/lang/Object :: v20 = v4.get(#(keyB-1386))::JM,216
+216 :: EXPR :: assign :: Ljava/lang/Object :: v21 = CHECKCAST v20::DD,217
+217 :: NORM :: compound :: Ljava/lang/String :: return v21::DD,182

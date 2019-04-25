@@ -1,0 +1,24 @@
+[49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 63]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest10249.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,18:CD,23:CD,27:CD,32:CD,37:CD,42:CD,46:CD,49:CD,58
+18 :: CALL :: call :: Ljava/lang/String :: v12 = v8.doSomething(v7)::JM,58:CL,174
+23 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::JM,58
+27 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v13.append(#(SELECT * from USERS w...))::JM,58
+32 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v17.append(v12)::JM,58
+37 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v19.append(#('))::JM,58
+42 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::JM,58
+46 :: CALL :: call :: Ljava/sql/Connection :: v26 = getSqlConnection()::JM,58
+49 :: NORM :: declaration :: [I :: v28 = new []::JM,58
+50 :: EXPR :: modify :: I :: v28[#(0)] = #(1)::
+54 :: EXPR :: modify :: I :: v28[#(1)] = #(2)::
+58 :: CALL :: call :: Ljava/sql/PreparedStatement :: v32 = v26.prepareStatement(v24, v28)::JM,58
+174 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest10249.Test.doSomething(java.lang.String)::CE,175:CD,179:CD,183:CD,189:CD,193:CD,199:CD,211:CD,216:CD,217
+175 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest10249.Test.doSomething(java.lang.String)::JM,58
+179 :: NORM :: declaration :: Ljava/util/HashMap :: v5 = new java.util.HashMap::JM,216
+183 :: CALL :: call :: Ljava/lang/Object :: v10 = v5.put(#(keyA-87042), #(a_Value))::
+189 :: CALL :: call :: Ljava/lang/String :: v13 = p1 $param .toString()::JM,179:JM,189
+193 :: CALL :: call :: Ljava/lang/Object :: v15 = v5.put(#(keyB-87042), v13)::
+199 :: CALL :: call :: Ljava/lang/Object :: v19 = v5.put(#(keyC), #(another_Value))::
+211 :: CALL :: call :: Ljava/lang/Object :: v24 = v5.get(#(keyA-87042))::JM,216
+216 :: EXPR :: assign :: Ljava/lang/Object :: v25 = CHECKCAST v24::DD,217
+217 :: NORM :: compound :: Ljava/lang/String :: return v25::DD,175

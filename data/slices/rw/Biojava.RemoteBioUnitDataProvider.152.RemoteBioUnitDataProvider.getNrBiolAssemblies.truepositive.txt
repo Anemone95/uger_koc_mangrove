@@ -1,0 +1,30 @@
+[523]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.quaternary.io.RemoteBioUnitDataProvider.getNrBiolAssemblies(java.lang.String)::CD,65:CD,70
+387 :: NORM :: compound :: Ljava/io/InputStream :: return v6::DD,377
+649 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,boolean,int)::CE,650:CD,655:CD,670:CD,674:CD,678:CD,690:CD,691
+650 :: EXIT :: exit :: Ljava/io/InputStream :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,boolean,int)::JM,387
+523 :: CALL :: call :: Lorg/w3c/dom/Document :: v14 = v7.parse(v8)::JM,523
+655 :: CALL :: call :: Ljava/net/HttpURLConnection :: v7 = openHttpURLConnection(p1 $url , p3 $timeout )::JM,674:JM,691:JM,678:JM,679:JM,684:JM,670:CL,740
+670 :: CALL :: call :: Ljava/lang/String :: v15 = v7.getContentEncoding()::JM,674:JM,691:JM,678:JM,679:JM,684:JM,670
+674 :: CALL :: call :: Ljava/io/InputStream :: v17 = v7.getInputStream()::JM,674:JM,691:JM,678:JM,679:JM,684:JM,670
+678 :: PRED :: IF :: Z :: if (v15 == #(null)) goto 67::CF,691:CD,679:CD,684
+679 :: CALL :: call :: Z :: v19 = v15.contains(#(gzip))::JM,691:JM,679:JM,684
+684 :: PRED :: IF :: Z :: if (v19 == #(0)) goto 67::CF,691:CF,685
+685 :: NORM :: declaration :: Ljava/util/zip/GZIPInputStream :: v20 = new java.util.zip.GZIPInputStream::DD,691
+690 :: NORM :: compound :: Ljava/io/InputStream :: return v22::DD,650
+691 :: EXPR :: assign :: null :: PHI v22 = v17, v17, v20::CF,690
+65 :: CALL :: call :: Ljava/io/InputStream :: v33 = getInputStream(v20, v31)::JM,70:CL,376
+70 :: PRED :: IF :: Z :: if (v33 == #(null)) goto 146::CD,95
+857 :: NORM :: compound :: Ljava/net/HttpURLConnection :: return v7::DD,741
+95 :: CALL :: call :: I :: v51 = extractNrBiolAssemblies(v40)::CL,499
+740 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::CE,741:CD,745:CD,749:CD,857
+741 :: EXIT :: exit :: Ljava/net/HttpURLConnection :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::JM,674:JM,691:JM,678:JM,679:JM,684:JM,670
+745 :: CALL :: call :: Ljava/net/URLConnection :: v6 = p1 $url .openConnection()::JM,749
+749 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST v6::DD,857
+499 :: ENTR :: entry :: null :: org.biojava.nbio.structure.quaternary.io.RemoteBioUnitDataProvider.extractNrBiolAssemblies(java.lang.String)::CD,503:CD,506:CD,510:CD,523
+503 :: CALL :: call :: Ljavax/xml/parsers/DocumentBuilderFactory :: v5 = newInstance()::JM,506:JM,523
+376 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,int)::CE,377:CD,381:CD,387
+377 :: EXIT :: exit :: Ljava/io/InputStream :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,int)::JM,70
+506 :: CALL :: call :: Ljavax/xml/parsers/DocumentBuilder :: v7 = v5.newDocumentBuilder()::JM,506:JM,523
+381 :: CALL :: call :: Ljava/io/InputStream :: v6 = getInputStream(p1 $url , #(1), p2 $timeout )::JM,387:CL,649
+510 :: NORM :: declaration :: Lorg/xml/sax/InputSource :: v8 = new org.xml.sax.InputSource::JM,523

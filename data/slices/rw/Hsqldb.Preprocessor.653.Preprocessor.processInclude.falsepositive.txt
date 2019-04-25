@@ -1,0 +1,387 @@
+[6895]
+1 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Preprocessor.processInclude(int,org.hsqldb.util.preprocessor.Line)::CE,2:CD,11:CD,16:CD,20:CD,53:CD,57:CD,70:CD,119:CD,120:CD,126
+2 :: EXIT :: exit :: I :: org.hsqldb.util.preprocessor.Preprocessor.processInclude(int,org.hsqldb.util.preprocessor.Line)::JM,7452
+11 :: CALL :: call :: Ljava/lang/String :: v8 = p0 $this .resolvePath(v6)::CL,6092
+16 :: CALL :: call :: Z :: v10 = p0 $this .isHidingLines()::JM,70:CL,6140
+20 :: EXPR :: assign :: Ljava/lang/Object :: v12 = p1 $lineCount  + #(1)::DD,57:DD,124:DD,126
+30 :: CALL :: call :: Lorg/hsqldb/util/preprocessor/Line :: v20 = p0 $this .resolveLine(v18)::CL,6170
+35 :: CALL :: call :: Z :: v23 = v20.isType(#(7))::JM,40:CL,6192
+40 :: PRED :: IF :: Z :: if (v23 == #(0)) goto 47::CD,53:CD,57
+53 :: CALL :: call :: I :: v15 = v13.size()::JM,57:CL,6223
+57 :: PRED :: IF :: Z :: if (v12 < v15) goto 23::CD,30:CD,35:CD,40
+70 :: PRED :: IF :: Z :: if (v10 != #(0)) goto 176::CF,126:CD,71:CD,82:CD,86:CD,118:CD,124:CD,125
+71 :: CALL :: call :: Lorg/hsqldb/util/preprocessor/Document :: v33 = p0 $this .loadInclude(v8)::CL,6248
+82 :: CALL :: call :: Z :: v37 = v34.preprocess()::CL,6420
+86 :: CALL :: call :: I :: v39 = v33.size()::JM,118:CL,6223
+96 :: CALL :: call :: Lorg/hsqldb/util/preprocessor/Line :: v43 = p0 $this .resolveLine(v41)::CL,6170
+101 :: CALL :: call :: Z :: v46 = v43.isType(#(14))::JM,106:CL,6192
+106 :: PRED :: IF :: Z :: if (v46 == #(0)) goto 166::CF,123:CD,110
+110 :: EXPR :: assign :: Ljava/lang/Object :: v48 = v53 + #(1)::DD,123
+117 :: EXPR :: assign :: Ljava/lang/Object :: v52 = v54 + #(1)::DD,125:CF,124
+118 :: PRED :: IF :: Z :: if (v54 < v39) goto 133::CF,126:CD,96:CD,101:CD,106:CD,117:CD,123:CD,124:CD,125
+119 :: EXPR :: assign :: Ljava/lang/Object :: v56 = v55 + #(1)::DD,120
+120 :: NORM :: compound :: I :: return v56::DD,2
+123 :: EXPR :: assign :: null :: PHI v51 = v53, v48::DD,124:CF,117
+124 :: EXPR :: assign :: null :: PHI v53 = v12, v51::CF,125:DD,110:DD,123:DD,126
+125 :: EXPR :: assign :: null :: PHI v54 = #(0), v52::DD,117:DD,118
+126 :: EXPR :: assign :: null :: PHI v55 = v12, v53::DD,119
+305 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Preprocessor.<clinit>()::CD,308:CD,309:CD,318:CD,327:CD,336
+308 :: NORM :: declaration :: [Ljava/lang/Integer :: v3 = new java.lang.Integer[]::CF,309
+309 :: NORM :: declaration :: Ljava/lang/Integer :: v5 = new java.lang.Integer::JM,309:DD,314
+314 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(0)] = v5::
+318 :: NORM :: declaration :: Ljava/lang/Integer :: v8 = new java.lang.Integer::JM,318:DD,323
+323 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(1)] = v8::
+327 :: NORM :: declaration :: Ljava/lang/Integer :: v11 = new java.lang.Integer::JM,327:DD,332
+332 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(2)] = v11::
+336 :: NORM :: declaration :: Ljava/lang/Integer :: v14 = new java.lang.Integer::JM,336:DD,341
+341 :: EXPR :: modify :: Ljava/lang/Object :: v3[#(3)] = v14::
+6092 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Preprocessor.resolvePath(java.lang.String)::CE,6093:CD,6107:CD,6115:CD,6120:CD,6124:CD,6125:CD,6129
+6093 :: EXIT :: exit :: Ljava/lang/String :: org.hsqldb.util.preprocessor.Preprocessor.resolvePath(java.lang.String)::
+6104 :: EXPR :: reference :: Lorg/hsqldb/util/preprocessor/IResolver :: v5 = p0 $this .resolver::JM,6129:JM,6115:JM,6120:JM,6107:JM,6124
+6107 :: CALL :: call :: Ljava/lang/String :: v7 = v5.resolveProperties(p1 $path )::JM,6129:JM,6115:JM,6120:JM,6107:JM,6124
+6112 :: EXPR :: reference :: Lorg/hsqldb/util/preprocessor/IResolver :: v8 = p0 $this .resolver::JM,6129:JM,6115:JM,6120:JM,6124
+6115 :: CALL :: call :: Ljava/io/File :: v10 = v8.resolveFile(v7)::JM,6129:JM,6115:JM,6120:JM,6124
+6120 :: CALL :: call :: Ljava/lang/String :: v12 = v10.getCanonicalPath()::JM,6129:JM,6120:JM,6124
+6124 :: NORM :: compound :: Ljava/lang/String :: return v12::DD,6093
+6125 :: CALL :: call :: Ljava/lang/String :: v15 = v10.getAbsolutePath()::JM,6129:JM,6120:JM,6124
+6129 :: NORM :: compound :: Ljava/lang/String :: return v15::DD,6093
+6140 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Preprocessor.isHidingLines()::CE,6141:CD,6147
+6141 :: EXIT :: exit :: Z :: org.hsqldb.util.preprocessor.Preprocessor.isHidingLines()::JM,70:JM,8705
+6144 :: EXPR :: reference :: I :: v3 = p0 $this .state::DD,6147
+6147 :: PRED :: IF :: null :: switch v3::CD,6148:CD,6149
+6148 :: NORM :: compound :: Z :: return #(1)::CF,6141
+6149 :: NORM :: compound :: Z :: return #(0)::CF,6141
+6170 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Preprocessor.resolveLine(java.lang.String)::JM,6864
+6192 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Line.isType(int)::CE,6193:CD,6200
+6193 :: EXIT :: exit :: Z :: org.hsqldb.util.preprocessor.Line.isType(int)::JM,40:JM,106
+6197 :: EXPR :: reference :: I :: v4 = p0 $this .type::DD,6200
+6200 :: PRED :: IF :: Z :: if (v4 != p1 $lineType ) goto 11::CD,6201:CD,6202
+6201 :: NORM :: compound :: Z :: return #(1)::CF,6193
+6202 :: NORM :: compound :: Z :: return #(0)::CF,6193
+6223 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Document.size()::CE,6224:CD,6230:CD,6234
+6224 :: EXIT :: exit :: I :: org.hsqldb.util.preprocessor.Document.size()::JM,57:JM,118:JM,6479:JM,7448
+6227 :: EXPR :: reference :: Ljava/util/Vector :: v3 = p0 $this .lines::JM,6234
+6230 :: CALL :: call :: I :: v5 = v3.size()::JM,6234
+6234 :: NORM :: compound :: I :: return v5::CF,6224
+6248 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Preprocessor.loadInclude(java.lang.String)::CD,6257:CD,6265:CD,6291:CD,6316:CD,6326
+6257 :: CALL :: call :: Ljava/io/File :: v7 = p0 $this .toCanonicalOrAbsoluteFile(p1 $path )::CL,6890
+6265 :: CALL :: call :: Lorg/hsqldb/util/preprocessor/Document :: v10 = v4.load(v7, v8)::CL,6973
+6291 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v36.append(v7)::
+6316 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v13.append(v7)::
+6326 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v20.append(v11)::
+6420 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Preprocessor.preprocess()::CD,6436:CD,6441
+6436 :: CALL :: call :: Z :: v9 = v6.contains(#(//#))::JM,6441:CL,7229
+6441 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 26::CD,6451:CD,6467:CD,6471:CD,6513
+6451 :: CALL :: call :: V :: p0 $this .preprocessImpl()::CL,7302
+6467 :: CALL :: call :: Z :: v17 = isFilter(v15)::JM,6471:CL,7488
+6471 :: PRED :: IF :: Z :: if (v17 == #(0)) goto 121::CD,6475:CD,6479:CD,6509:CD,6521
+6475 :: CALL :: call :: I :: v20 = v18.size()::JM,6479:CL,6223
+6479 :: EXPR :: assign :: Ljava/lang/Object :: v22 = v20 - #(1)::DD,6521
+6489 :: CALL :: call :: Lorg/hsqldb/util/preprocessor/Line :: v27 = p0 $this .resolveLine(v25)::CL,6170
+6508 :: EXPR :: assign :: Ljava/lang/Object :: v35 = v36 + #(-1)::DD,6521
+6509 :: PRED :: IF :: Z :: if (v36 >= #(0)) goto 84::CD,6489:CD,6508:CD,6521
+6513 :: CALL :: call :: Z :: v39 = v37.equals(v10)::CL,7501
+6521 :: EXPR :: assign :: null :: PHI v36 = v22, v35::DD,6508:DD,6509
+6864 :: CALL :: call :: V :: p0 $this .setSourceText(p1 $line )::CL,8236
+6890 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Preprocessor.toCanonicalOrAbsoluteFile(java.lang.String)::CD,6895:CD,6900:CD,6904
+6895 :: NORM :: declaration :: Ljava/io/File :: v4 = new java.io.File::JM,6900:JM,6904
+6900 :: CALL :: call :: Z :: v7 = v4.isAbsolute()::JM,6900:JM,6904
+6904 :: PRED :: IF :: Z :: if (v7 != #(0)) goto 64::CD,6918
+6918 :: CALL :: call :: Ljava/lang/String :: v16 = valueOf(v14)::
+6973 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Document.load(java.lang.Object,java.lang.String)::CD,6979:CD,6980:CD,7086:CD,7112:CD,7116:CD,7119:CD,7124:CD,7136:CD,7137:JM,7074:JM,6981:JM,7067:JM,7036:JM,7005:JM,7069
+6979 :: EXPR :: assign :: Z :: v7=p1 $source  INSTANCEOF java.io.InputStream::DD,6980
+6980 :: PRED :: IF :: Z :: if (v7 == #(0)) goto 63::CD,6981:CD,6982:CD,6986:CD,6999:CD,7005:CD,7006:CD,7133:CD,7136:CD,7137
+6981 :: EXPR :: assign :: Ljava/lang/Object :: v50 = CHECKCAST p1 $source ::
+6982 :: CALL :: call :: Z :: v52 = isEncoding(p2 $encoding )::JM,6986:CL,8485
+6986 :: PRED :: IF :: Z :: if (v52 == #(0)) goto 38::CF,6994:CF,6987:CD,7133
+6987 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v55 = new java.io.InputStreamReader::DD,7133
+6994 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v53 = new java.io.InputStreamReader::DD,7133
+6999 :: NORM :: declaration :: Ljava/io/BufferedReader :: v58 = new java.io.BufferedReader::DD,7136
+7005 :: EXPR :: assign :: Z :: v8=p1 $source  INSTANCEOF java.io.File::DD,7006
+7006 :: PRED :: IF :: Z :: if (v8 == #(0)) goto 130::CF,7007:CD,7013:CD,7017:CD,7030:CD,7036:CD,7037:CD,7134:CD,7136:CD,7137
+7007 :: NORM :: declaration :: Ljava/io/FileInputStream :: v38 = new java.io.FileInputStream::
+7013 :: CALL :: call :: Z :: v42 = isEncoding(p2 $encoding )::JM,7017:CL,8485
+7017 :: PRED :: IF :: Z :: if (v42 == #(0)) goto 102::CF,7025:CF,7018:CD,7134
+7018 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v45 = new java.io.InputStreamReader::DD,7134
+7025 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v43 = new java.io.InputStreamReader::DD,7134
+7030 :: NORM :: declaration :: Ljava/io/BufferedReader :: v48 = new java.io.BufferedReader::DD,7136
+7036 :: EXPR :: assign :: Z :: v9=p1 $source  INSTANCEOF java.lang.String::DD,7037
+7037 :: PRED :: IF :: Z :: if (v9 == #(0)) goto 197::CF,7038:CD,7044:CD,7048:CD,7061:CD,7067:CD,7068:CD,7135:CD,7136:CD,7137
+7038 :: NORM :: declaration :: Ljava/io/FileInputStream :: v25 = new java.io.FileInputStream::
+7044 :: CALL :: call :: Z :: v29 = isEncoding(p2 $encoding )::JM,7048:CL,8485
+7048 :: PRED :: IF :: Z :: if (v29 == #(0)) goto 169::CF,7056:CF,7049:CD,7135
+7049 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v32 = new java.io.InputStreamReader::DD,7135
+7056 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v30 = new java.io.InputStreamReader::DD,7135
+7061 :: NORM :: declaration :: Ljava/io/BufferedReader :: v36 = new java.io.BufferedReader::DD,7136
+7067 :: EXPR :: assign :: Z :: v10=p1 $source  INSTANCEOF java.io.BufferedReader::DD,7068
+7068 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 212::CD,7069:CD,7073:CD,7074:CD,7136:CD,7137
+7069 :: EXPR :: assign :: Ljava/lang/Object :: v24 = CHECKCAST p1 $source ::DD,7136
+7073 :: NORM :: declaration :: Ljava/io/BufferedReader :: v21 = new java.io.BufferedReader::DD,7136:CF,7074
+7074 :: EXPR :: assign :: Ljava/lang/Object :: v22 = CHECKCAST p1 $source ::
+7086 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v13.append(p1 $source )::
+7112 :: CALL :: call :: Ljava/lang/String :: v68 = v60.readLine()::JM,7116
+7116 :: PRED :: IF :: Z :: if (v68 != #(null)) goto 275::CD,7112
+7119 :: CALL :: call :: V :: v60.close()::
+7124 :: PRED :: IF :: Z :: if (v61 == #(0)) goto 325::CD,7125
+7125 :: CALL :: call :: V :: v60.close()::
+7133 :: EXPR :: assign :: null :: PHI v57 = v55, v53::CF,6999
+7134 :: EXPR :: assign :: null :: PHI v47 = v45, v43::CF,7030
+7135 :: EXPR :: assign :: null :: PHI v34 = v32, v30::CF,7061
+7136 :: EXPR :: assign :: null :: PHI v60 = v58, v48, v36, v24, v21::CF,7137:JM,7116
+7137 :: EXPR :: assign :: null :: PHI v61 = #(0), #(1), #(1), #(0), #(0)::DD,7124
+7229 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Document.contains(java.lang.String)::CE,7230:CD,7237:CD,7256:CD,7258:JM,7253
+7230 :: EXIT :: exit :: Z :: org.hsqldb.util.preprocessor.Document.contains(java.lang.String)::JM,6441
+7234 :: EXPR :: reference :: Ljava/util/Vector :: v4 = p0 $this .lines::JM,7256:JM,7247
+7237 :: CALL :: call :: I :: v6 = v4.size()::JM,7256
+7242 :: CALL :: call :: Ljava/lang/Object :: v9 = v4.elementAt(v15)::JM,7247
+7247 :: EXPR :: assign :: Ljava/lang/Object :: v10 = CHECKCAST v9::JM,7253
+7248 :: CALL :: call :: I :: v12 = v10.indexOf(p1 $pattern )::JM,7253
+7253 :: PRED :: IF :: Z :: if (v12 < #(0)) goto 34::CD,7254:CD,7255:CD,7256:CD,7258
+7254 :: NORM :: compound :: Z :: return #(1)::DD,7230
+7255 :: EXPR :: assign :: Ljava/lang/Object :: v14 = v15 + #(1)::DD,7258
+7256 :: PRED :: IF :: Z :: if (v15 < v6) goto 19::CD,7242:CD,7247:CD,7248:CD,7253:CD,7257
+7257 :: NORM :: compound :: Z :: return #(0)::DD,7230
+7258 :: EXPR :: assign :: null :: PHI v15 = #(0), v14::JM,7247:DD,7255:DD,7256
+7302 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Preprocessor.preprocessImpl()::CD,7395:CD,7444:CD,7448:CD,7452
+7315 :: CALL :: call :: Lorg/hsqldb/util/preprocessor/Line :: v11 = p0 $this .resolveLine(v9)::CL,6170
+7320 :: CALL :: call :: I :: v13 = v11.getType()::JM,7324:CL,8687
+7324 :: PRED :: IF :: null :: switch v13::CD,7325:CD,7335:CD,7349:CD,7353:CD,7381:CD,7383:CD,7387:CD,7452
+7325 :: CALL :: call :: I :: v15 = p0 $this .processInclude(v16, v11)::JM,20:JM,7452:CL,1
+7335 :: CALL :: call :: Ljava/lang/String :: v19 = p0 $this .toSourceLine(v11)::CL,8696
+7349 :: CALL :: call :: Z :: v24 = isVerbose(v22)::JM,7353:CL,8839
+7353 :: PRED :: IF :: Z :: if (v24 == #(0)) goto 138::CD,7361:CD,7369:CD,7378:CF,7381
+7361 :: CALL :: call :: Ljava/lang/String :: v32 = valueOf(v30)::
+7369 :: CALL :: call :: Ljava/lang/StringBuilder :: v35 = v25.append(v11)::
+7378 :: CALL :: call :: V :: log(v37)::CL,8852
+7381 :: EXPR :: assign :: Ljava/lang/Object :: v40 = v16 + #(1)::DD,7452
+7383 :: CALL :: call :: V :: p0 $this .processDirective(v11)::CL,8865
+7387 :: EXPR :: assign :: Ljava/lang/Object :: v42 = v16 + #(1)::DD,7452
+7395 :: CALL :: call :: Ljava/lang/String :: v49 = valueOf(v47)::
+7444 :: CALL :: call :: I :: v6 = v4.size()::JM,7448:CL,6223
+7448 :: PRED :: IF :: Z :: if (v16 < v6) goto 9::CD,7315:CD,7320:CD,7324:CD,7444:CD,7452
+7452 :: EXPR :: assign :: null :: PHI v16 = #(0), v15, v40, v42::JM,20:DD,7381:DD,7387:DD,7448
+7488 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Option.isFilter(int)::CF,7489:CD,7492:CD,7493
+7489 :: EXIT :: exit :: Z :: org.hsqldb.util.preprocessor.Option.isFilter(int)::JM,6471
+7492 :: EXPR :: assign :: Ljava/lang/Object :: v4 = p1 $options  && #(2)::DD,7493
+7493 :: PRED :: IF :: Z :: if (v4 == #(0)) goto 9::CD,7494:CD,7495
+7494 :: NORM :: compound :: Z :: return #(1)::CF,7489
+7495 :: NORM :: compound :: Z :: return #(0)::CF,7489
+7501 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Document.equals(java.lang.Object)::CD,7506:JM,7508:JM,7510
+7506 :: PRED :: IF :: Z :: if (p0 $this  != p1 $o ) goto 8::CD,7508:CD,7509
+7508 :: EXPR :: assign :: Z :: v4=p1 $o  INSTANCEOF org.hsqldb.util.preprocessor.Document::DD,7509
+7509 :: PRED :: IF :: Z :: if (v4 == #(0)) goto 90::CD,7510:CD,7517:CD,7521:CD,7525
+7510 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST p1 $o ::
+7511 :: EXPR :: reference :: Ljava/util/Vector :: v7 = p0 $this .lines::JM,7525:JM,7531:JM,7548
+7514 :: EXPR :: reference :: Ljava/util/Vector :: v8 = v6.lines::JM,7525:JM,7548
+7517 :: CALL :: call :: I :: v10 = v7.size()::JM,7525
+7521 :: CALL :: call :: I :: v12 = v8.size()::JM,7525
+7525 :: PRED :: IF :: Z :: if (v10 == v12) goto 45::CD,7527:CD,7531:CD,7552:CD,7555
+7527 :: CALL :: call :: I :: v14 = v7.size()::JM,7531
+7531 :: EXPR :: assign :: Ljava/lang/Object :: v16 = v14 - #(1)::DD,7555
+7533 :: CALL :: call :: Ljava/lang/Object :: v18 = v7.elementAt(v25)::JM,7548
+7538 :: CALL :: call :: Ljava/lang/Object :: v20 = v8.elementAt(v25)::JM,7548
+7543 :: CALL :: call :: Z :: v22 = v18.equals(v20)::JM,7548
+7548 :: PRED :: IF :: Z :: if (v22 == #(0)) goto 78::CD,7551:CD,7552:CD,7555
+7551 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v25 + #(-1)::DD,7555
+7552 :: PRED :: IF :: Z :: if (v25 >= #(0)) goto 58::CD,7533:CD,7538:CD,7543:CD,7548
+7555 :: EXPR :: assign :: null :: PHI v25 = v16, v24::JM,7548:DD,7551:DD,7552
+8236 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Line.setSourceText(java.lang.String)::CD,8244:CD,8257:CD,8262:CD,8267:JM,8307:JM,8278:JM,8297:JM,8284
+8244 :: CALL :: call :: I :: v5 = indexOfNonTabOrSpace(p1 $line )::JM,8257:JM,8307:JM,8278:JM,8262:JM,8297:JM,8267:JM,8284:CL,9623
+8257 :: CALL :: call :: Ljava/lang/String :: v10 = p1 $line .substring(v5)::JM,8257:JM,8307:JM,8278:JM,8262:JM,8297:JM,8267:JM,8284
+8262 :: CALL :: call :: Z :: v13 = v10.startsWith(#(//#))::JM,8307:JM,8278:JM,8262:JM,8297:JM,8267:JM,8284
+8267 :: PRED :: IF :: Z :: if (v13 != #(0)) goto 55::CD,8278:CD,8282:CD,8284:JM,8307:JM,8262:JM,8297:JM,8267
+8278 :: CALL :: call :: I :: v15 = v10.length()::JM,8307:JM,8278:JM,8262:JM,8297:JM,8267:JM,8284
+8282 :: EXPR :: reference :: I :: v16 = org.hsqldb.util.preprocessor.Line.DIRECTIVE_PREFIX_LENGTH::CF,8284
+8284 :: PRED :: IF :: Z :: if (v15 != v16) goto 87::CD,8295:CD,8297:CD,8302:CD,8307
+8295 :: EXPR :: reference :: I :: v18 = org.hsqldb.util.preprocessor.Line.DIRECTIVE_PREFIX_LENGTH::JM,8307:JM,8278:JM,8262:JM,8297:JM,8267:JM,8284
+8297 :: CALL :: call :: C :: v20 = v10.charAt(v18)::JM,8307:JM,8278:JM,8262:JM,8297:JM,8267:JM,8284
+8302 :: CALL :: call :: I :: v22 = #( 	).indexOf(v20)::JM,8307
+8307 :: PRED :: IF :: Z :: if (v22 == #(-1)) goto 126::CD,8362
+8362 :: CALL :: call :: Ljava/util/Hashtable :: v37 = directives()::CL,9698
+8485 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Document.isEncoding(java.lang.String)::JM,8498:JM,8490:JM,8494:CF,8486:CD,8489
+8486 :: EXIT :: exit :: Z :: org.hsqldb.util.preprocessor.Document.isEncoding(java.lang.String)::JM,6986:JM,7017:JM,7048
+8489 :: PRED :: IF :: Z :: if (p1 $enc  == #(null)) goto 17::CD,8490:CD,8494:CD,8498:CD,8500:JM,8489
+8490 :: CALL :: call :: Ljava/lang/String :: v5 = p1 $enc .trim()::JM,8498:JM,8489:JM,8490:JM,8494
+8494 :: CALL :: call :: I :: v7 = v5.length()::JM,8498:JM,8494
+8498 :: PRED :: IF :: Z :: if (v7 <= #(0)) goto 17::CD,8499:CD,8500
+8499 :: NORM :: compound :: Z :: return #(1)::CF,8486
+8500 :: NORM :: compound :: Z :: return #(0)::CF,8486
+8687 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Line.getType()::CE,8688:CD,8694
+8688 :: EXIT :: exit :: I :: org.hsqldb.util.preprocessor.Line.getType()::JM,7324
+8691 :: EXPR :: reference :: I :: v3 = p0 $this .type::DD,8694
+8694 :: NORM :: compound :: I :: return v3::CF,8688
+8696 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Preprocessor.toSourceLine(org.hsqldb.util.preprocessor.Line)::CD,8701:CD,8705
+8701 :: CALL :: call :: Z :: v5 = p0 $this .isHidingLines()::JM,8705:CL,6140
+8705 :: PRED :: IF :: Z :: if (v5 == #(0)) goto 80::CD,8709:CD,8713:CD,8774
+8709 :: CALL :: call :: Z :: v19 = isIndent(v17)::JM,8713:CL,9731
+8713 :: PRED :: IF :: Z :: if (v19 == #(0)) goto 50::CD,8718
+8718 :: CALL :: call :: Ljava/lang/String :: v34 = valueOf(v32)::
+8774 :: CALL :: call :: Ljava/lang/String :: v10 = valueOf(v8)::
+8839 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Option.isVerbose(int)::CF,8840:CD,8843:CD,8844
+8840 :: EXIT :: exit :: Z :: org.hsqldb.util.preprocessor.Option.isVerbose(int)::JM,7353
+8843 :: EXPR :: assign :: Ljava/lang/Object :: v4 = p1 $options  && #(16)::DD,8844
+8844 :: PRED :: IF :: Z :: if (v4 == #(0)) goto 10::CD,8845:CD,8846
+8845 :: NORM :: compound :: Z :: return #(1)::CF,8840
+8846 :: NORM :: compound :: Z :: return #(0)::CF,8840
+8852 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Preprocessor.log(java.lang.Object)::CD,8858
+8858 :: CALL :: call :: V :: v3.println(p1 $toLog )::
+8865 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Preprocessor.processDirective(org.hsqldb.util.preprocessor.Line)::CD,9029
+9029 :: CALL :: call :: Ljava/lang/StringBuilder :: v11 = v7.append(p1 $line )::
+9623 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Line.indexOfNonTabOrSpace(java.lang.String)::JM,9632:JM,9637:JM,9638:CF,9624:CD,9627:CD,9640:CD,9641:CD,9642
+9624 :: EXIT :: exit :: I :: org.hsqldb.util.preprocessor.Line.indexOfNonTabOrSpace(java.lang.String)::JM,8257:JM,8307:JM,8278:JM,8262:JM,8297:JM,8267:JM,8284
+9627 :: CALL :: call :: I :: v5 = p1 $line .length()::JM,9632:JM,9637:JM,9638:JM,9640:JM,9627
+9632 :: CALL :: call :: C :: v7 = p1 $line .charAt(v12)::JM,9632:JM,9637:JM,9638:JM,9640:JM,9627
+9637 :: PRED :: IF :: Z :: if (v7 == #(32)) goto 28::CD,9638:CD,9639:CD,9640:CD,9642
+9638 :: PRED :: IF :: Z :: if (v7 != #(9)) goto 37::CD,9639:CD,9640:CD,9642:CF,9641
+9639 :: EXPR :: assign :: Ljava/lang/Object :: v11 = v12 + #(1)::DD,9642
+9640 :: PRED :: IF :: Z :: if (v12 < v5) goto 12::CD,9632:CD,9637:JM,9638:JM,9640:JM,9627:CF,9641
+9641 :: NORM :: compound :: I :: return v12::CF,9624
+9642 :: EXPR :: assign :: null :: PHI v12 = #(0), v11::JM,9632:JM,9637:JM,9638:DD,9639:DD,9640:DD,9641
+9698 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.LineType.directives()::CD,9701:CD,9703
+9701 :: EXPR :: reference :: Ljava/util/Hashtable :: v2 = org.hsqldb.util.preprocessor.LineType.directives::DD,9703
+9703 :: PRED :: IF :: Z :: if (v2 != #(null)) goto 9::CD,9704
+9704 :: CALL :: call :: V :: init()::CL,10404
+9731 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.Option.isIndent(int)::CF,9732:CD,9735:CD,9736
+9732 :: EXIT :: exit :: Z :: org.hsqldb.util.preprocessor.Option.isIndent(int)::JM,8713
+9735 :: EXPR :: assign :: Ljava/lang/Object :: v4 = p1 $options  && #(4)::DD,9736
+9736 :: PRED :: IF :: Z :: if (v4 == #(0)) goto 9::CD,9737:CD,9738
+9737 :: NORM :: compound :: Z :: return #(1)::CF,9732
+9738 :: NORM :: compound :: Z :: return #(0)::CF,9732
+10404 :: ENTR :: entry :: null :: org.hsqldb.util.preprocessor.LineType.init()::CD,10407:CD,10411:CD,10413:CD,10414:CD,10417:CD,10492:CD,10493:CD,10497
+10407 :: NORM :: declaration :: Ljava/util/Hashtable :: v2 = new java.util.Hashtable::DD,10411
+10411 :: EXPR :: modify :: Ljava/util/Hashtable :: org.hsqldb.util.preprocessor.LineType.directives = v2::
+10413 :: NORM :: declaration :: [Ljava/lang/String :: v5 = new java.lang.String[]::CF,10414
+10414 :: EXPR :: modify :: [Ljava/lang/String :: org.hsqldb.util.preprocessor.LineType.labels = v5::
+10417 :: CALL :: call :: [Ljava/lang/reflect/Field :: v8 = v6.getDeclaredFields()::JM,10492
+10422 :: EXPR :: reference :: Ljava/lang/Object :: v11 = v8[v44]::JM,10432:JM,10437:JM,10426:JM,10449:JM,10438:JM,10462:JM,10453:JM,10442:JM,10478
+10426 :: CALL :: call :: Ljava/lang/Class :: v13 = v11.getType()::JM,10432:JM,10437:JM,10426
+10430 :: EXPR :: reference :: Ljava/lang/Class :: v14 = java.lang.Integer.TYPE::JM,10432:JM,10437
+10432 :: CALL :: call :: Z :: v16 = v13.equals(v14)::JM,10432:JM,10437
+10437 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 152::CD,10438:CD,10442:CD,10447:CD,10453:JM,10449:JM,10462:CF,10491
+10438 :: CALL :: call :: Ljava/lang/String :: v18 = v11.getName()::JM,10449:JM,10438:JM,10462
+10442 :: CALL :: call :: I :: v21 = v11.getInt(#(null))::JM,10453:JM,10442:JM,10478
+10447 :: EXPR :: reference :: [Ljava/lang/String :: v22 = org.hsqldb.util.preprocessor.LineType.labels::
+10449 :: EXPR :: modify :: Ljava/lang/Object :: v22[v21] = v18::
+10453 :: PRED :: IF :: null :: switch v21::CF,10455:CD,10460:CD,10462:CD,10467:CD,10472:CD,10476:CD,10478:CD,10483
+10455 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v23 = new java.lang.StringBuilder::
+10460 :: EXPR :: reference :: Ljava/util/Locale :: v26 = java.util.Locale.ENGLISH::JM,10462
+10462 :: CALL :: call :: Ljava/lang/String :: v28 = v18.toLowerCase(v26)::JM,10462
+10467 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v23.append(v28)::
+10472 :: CALL :: call :: Ljava/lang/String :: v32 = v30.toString()::
+10476 :: EXPR :: reference :: Ljava/util/Hashtable :: v33 = org.hsqldb.util.preprocessor.LineType.directives::CF,10478
+10478 :: NORM :: declaration :: Ljava/lang/Integer :: v34 = new java.lang.Integer::JM,10478
+10483 :: CALL :: call :: Ljava/lang/Object :: v37 = v33.put(v32, v34)::
+10491 :: EXPR :: assign :: Ljava/lang/Object :: v42 = v44 + #(1)::DD,10497
+10492 :: EXPR :: assign :: I :: v10 = v8.length::CF,10493
+10493 :: PRED :: IF :: Z :: if (v44 < v10) goto 33::CD,10426:CD,10430:CD,10432:CD,10437:CD,10491:CD,10492:CD,10497
+10497 :: EXPR :: assign :: null :: PHI v44 = #(0), v42::DD,10491:DD,10493:CF,10492
+12268 :: PRED :: IF :: Z :: if (p3 $handler  == #(null)) goto 50::CF,12269:CD,12272:JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12269 :: CALL :: call :: Ljava/lang/SecurityManager :: v11 = getSecurityManager()::JM,12272
+12272 :: PRED :: IF :: Z :: if (v11 == #(null)) goto 50::CD,12273:JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12273 :: CALL :: call :: V :: p0 $this .checkSpecifyHandler(v11)::
+12277 :: CALL :: call :: I :: v14 = p2 $spec .length()::JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12282 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v21 + #(-1)::DD,12541
+12283 :: PRED :: IF :: Z :: if (v21 <= #(0)) goto 89::CF,12542:CD,12284:CD,12285:CD,12290
+12284 :: EXPR :: assign :: Ljava/lang/Object :: v16 = v21 - #(1)::JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12285 :: CALL :: call :: C :: v18 = p2 $spec .charAt(v16)::JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12290 :: PRED :: IF :: Z :: if (v18 <= #(32)) goto 58::CD,12282:CD,12283:CD,12541:CD,12542
+12292 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v25 + #(1)::DD,12542
+12293 :: PRED :: IF :: Z :: if (v25 >= v21) goto 111::CD,12294:CD,12299:JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12294 :: CALL :: call :: C :: v23 = p2 $spec .charAt(v25)::JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12299 :: PRED :: IF :: Z :: if (v23 <= #(32)) goto 82::CD,12292:CD,12293:CD,12542:JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12300 :: CALL :: call :: Z :: v29 = p2 $spec .regionMatches(#(1), v25, #(url:), #(0), #(4))::JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12309 :: PRED :: IF :: Z :: if (v29 == #(0)) goto 123::CF,12543:CD,12310
+12310 :: EXPR :: assign :: Ljava/lang/Object :: v30 = v25 + #(4)::DD,12543
+12311 :: CALL :: call :: I :: v33 = p2 $spec .length()::JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12315 :: PRED :: IF :: Z :: if (v31 >= v33) goto 147::CF,12544:CD,12316:CD,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12316 :: CALL :: call :: C :: v35 = p2 $spec .charAt(v31)::JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12321 :: PRED :: IF :: Z :: if (v35 != #(35)) goto 147::CF,12544
+12323 :: PRED :: IF :: Z :: if (v39 != #(58)) goto 192::CD,12324:CD,12330:CD,12334:CD,12339:CD,12342:CD,12343:CD,12545:CD,12546:CD,12547:JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12309:JM,12315:JM,12541:JM,12350
+12324 :: CALL :: call :: Ljava/lang/String :: v45 = p2 $spec .substring(v31, v43)::JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12330 :: CALL :: call :: Ljava/lang/String :: v47 = v45.toLowerCase()::JM,12547:JM,12339
+12334 :: CALL :: call :: Z :: v49 = p0 $this .isValidProtocol(v47)::JM,12321:JM,12354:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350:JM,12547
+12339 :: PRED :: IF :: Z :: if (v49 == #(0)) goto 224::CF,12546:CD,12340:CD,12547
+12340 :: EXPR :: assign :: Ljava/lang/Object :: v50 = v43 + #(1)::DD,12546
+12342 :: EXPR :: assign :: Ljava/lang/Object :: v42 = v43 + #(1)::DD,12545
+12343 :: PRED :: IF :: Z :: if (v37 != #(0)) goto 224::CF,12546:CD,12344:CD,12547
+12344 :: PRED :: IF :: Z :: if (v43 >= v21) goto 224::CF,12546:CD,12345:CD,12350:CD,12547:JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541
+12345 :: CALL :: call :: C :: v39 = p2 $spec .charAt(v43)::JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12350 :: PRED :: IF :: Z :: if (v39 != #(47)) goto 154::CF,12546:CD,12323
+12354 :: PRED :: IF :: Z :: if (p1 $context  == #(null)) goto 344::CF,12550:CD,12355
+12355 :: PRED :: IF :: Z :: if (v52 == #(null)) goto 249::CD,12359:CD,12364:CD,12365:CD,12372:CD,12382:CD,12548:CD,12549:CD,12550
+12356 :: EXPR :: reference :: Ljava/lang/String :: v53 = p1 $context .protocol::JM,12364
+12359 :: CALL :: call :: Z :: v55 = v52.equalsIgnoreCase(v53)::JM,12364
+12364 :: PRED :: IF :: Z :: if (v55 == #(0)) goto 344::CF,12550:CD,12365:CD,12372:CD,12382:CD,12548:CD,12549
+12365 :: PRED :: IF :: Z :: if (p3 $handler  != #(null)) goto 258::CF,12548
+12366 :: EXPR :: reference :: Ljava/net/URLStreamHandler :: v56 = p1 $context .handler::DD,12548
+12369 :: EXPR :: reference :: Ljava/lang/String :: v58 = p1 $context .path::DD,12372
+12372 :: PRED :: IF :: Z :: if (v58 == #(null)) goto 281::CF,12549:CD,12376:CD,12381
+12373 :: EXPR :: reference :: Ljava/lang/String :: v59 = p1 $context .path::JM,12376:JM,12381
+12376 :: CALL :: call :: Z :: v62 = v59.startsWith(#(/))::JM,12376:JM,12381
+12381 :: PRED :: IF :: Z :: if (v62 == #(0)) goto 281::CF,12549
+12382 :: PRED :: IF :: Z :: if (v63 != #(null)) goto 344::CF,12550
+12430 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v100 = new java.lang.StringBuilder::
+12435 :: CALL :: call :: Ljava/lang/StringBuilder :: v104 = v100.append(p2 $spec )::JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12440 :: CALL :: call :: Ljava/lang/String :: v106 = v104.toString()::JM,12490:JM,12491
+12449 :: PRED :: IF :: Z :: if (v71 != #(null)) goto 420::CD,12453
+12453 :: CALL :: call :: Ljava/net/URLStreamHandler :: v77 = getURLStreamHandler(v75)::
+12459 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v90 = new java.lang.StringBuilder::
+12464 :: EXPR :: reference :: Ljava/lang/String :: v93 = p0 $this .protocol::
+12467 :: CALL :: call :: Ljava/lang/StringBuilder :: v95 = v90.append(v93)::
+12472 :: CALL :: call :: Ljava/lang/String :: v97 = v95.toString()::
+12484 :: CALL :: call :: I :: v80 = p2 $spec .indexOf(#(35), v51)::JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12490 :: PRED :: IF :: Z :: if (v80 < #(0)) goto 458::CD,12491:CD,12492
+12491 :: EXPR :: assign :: Ljava/lang/Object :: v81 = v80 + #(1)::JM,12321:JM,12290:JM,12339:JM,12323:JM,12309:JM,12490:JM,12299:JM,12315:JM,12491:JM,12541:JM,12350:JM,12548:JM,12550:JM,12268:JM,12365
+12492 :: CALL :: call :: Ljava/lang/String :: v83 = p2 $spec .substring(v81, v21)::JM,12321:JM,12290:JM,12323:JM,12548:JM,12550:JM,12490:JM,12299:JM,12491:JM,12268:JM,12365:JM,12339:JM,12309:JM,12315:JM,12541:JM,12350
+12541 :: EXPR :: assign :: null :: PHI v21 = v14, v20::DD,12282:DD,12283:DD,12284:DD,12293:DD,12344:JM,12321:JM,12290:JM,12323:JM,12309:JM,12490:JM,12299:JM,12315:JM,12491:JM,12541:JM,12350
+12542 :: EXPR :: assign :: null :: PHI v25 = #(0), #(0), v24::DD,12292:DD,12293:JM,12321:JM,12290:JM,12339:JM,12323:JM,12309:JM,12490:JM,12299:JM,12315:JM,12491:JM,12541:JM,12350:DD,12310:DD,12543
+12543 :: EXPR :: assign :: null :: PHI v31 = v25, v30::DD,12315:JM,12321:JM,12290:JM,12339:JM,12323:JM,12309:JM,12490:JM,12299:JM,12491:JM,12541:JM,12350:DD,12545:DD,12546:JM,12548:JM,12550:JM,12268:JM,12365
+12544 :: EXPR :: assign :: null :: PHI v37 = #(0), #(0), #(1)::DD,12343
+12545 :: EXPR :: assign :: null :: PHI v43 = v31, v42::JM,12321:JM,12290:JM,12323:JM,12309:JM,12490:JM,12299:JM,12315:JM,12491:JM,12541:JM,12350:DD,12340:DD,12342:DD,12344:JM,12339:CF,12343
+12546 :: EXPR :: assign :: null :: PHI v51 = v31, v50, v31, v31, v31::CF,12547:JM,12321:JM,12290:JM,12323:JM,12309:JM,12490:JM,12299:JM,12315:JM,12491:JM,12541:JM,12350
+12547 :: EXPR :: assign :: null :: PHI v52 = #(null), v47, #(null), #(null), #(null)::DD,12355:JM,12364:DD,12549
+12548 :: EXPR :: assign :: null :: PHI v57 = p3 $handler , v56::DD,12550
+12549 :: EXPR :: assign :: null :: PHI v63 = v52, v52, #(null)::DD,12382
+12550 :: EXPR :: assign :: null :: PHI v71 = p3 $handler , p3 $handler , v57, v57::DD,12449
+12805 :: CALL :: call :: V :: p1 $sm .checkPermission(v4)::
+12819 :: EXPR :: reference :: Ljava/util/Hashtable :: v3 = java.net.URL.handlers::JM,12826
+12821 :: CALL :: call :: Ljava/lang/Object :: v5 = v3.get(p1 $protocol )::JM,12826:JM,12833:JM,12930:JM,13000:JM,13003
+12826 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST v5::DD,12827:DD,13000
+12827 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 315::CD,12828:CD,12830:CD,12838:CD,13000
+12828 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v9 = java.net.URL.factory::DD,12830
+12830 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 36::CF,13000:CD,12831:CD,12833
+12831 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v10 = java.net.URL.factory::JM,12833:JM,13000
+12833 :: CALL :: call :: Ljava/net/URLStreamHandler :: v12 = v10.createURLStreamHandler(p1 $protocol )::JM,12833:JM,13000:JM,12930:JM,12826:JM,13003
+12838 :: PRED :: IF :: Z :: if (v14 != #(null)) goto 233::CD,12845:CD,12849:CD,12850:CD,12869:CD,12870:CD,12878:CD,12883:CD,12887:CD,12951:CD,13004
+12845 :: CALL :: call :: Ljava/lang/Object :: v21 = doPrivileged(v16)::JM,12849
+12849 :: EXPR :: assign :: Ljava/lang/Object :: v22 = CHECKCAST v21::DD,12850
+12850 :: PRED :: IF :: Z :: if (v22 == #()) goto 88::CF,12851:CD,12852:CD,12860:CD,12865
+12851 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v23 = new java.lang.StringBuilder::
+12852 :: CALL :: call :: Ljava/lang/String :: v25 = valueOf(v22)::
+12860 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v23.append(#(|))::
+12865 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::
+12869 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v33 = new java.lang.StringBuilder::
+12870 :: CALL :: call :: Ljava/lang/String :: v35 = valueOf(v32)::
+12878 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v33.append(#(sun.net.www.protocol))::
+12883 :: CALL :: call :: Ljava/lang/String :: v41 = v39.toString()::
+12887 :: NORM :: declaration :: Ljava/util/StringTokenizer :: v42 = new java.util.StringTokenizer::JM,12956
+12894 :: CALL :: call :: Ljava/lang/String :: v47 = v42.nextToken()::
+12898 :: CALL :: call :: Ljava/lang/String :: v49 = v47.trim()::
+12902 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v50 = new java.lang.StringBuilder::JM,12930:JM,13003
+12903 :: CALL :: call :: Ljava/lang/String :: v52 = valueOf(v49)::
+12911 :: CALL :: call :: Ljava/lang/StringBuilder :: v56 = v50.append(#(.))::JM,12930:JM,13003
+12916 :: CALL :: call :: Ljava/lang/StringBuilder :: v58 = v56.append(p1 $protocol )::JM,12930:JM,13003:JM,12833:JM,13000:JM,12826
+12921 :: CALL :: call :: Ljava/lang/StringBuilder :: v61 = v58.append(#(.Handler))::JM,12930:JM,13003
+12926 :: CALL :: call :: Ljava/lang/String :: v63 = v61.toString()::JM,12930:JM,13003
+12930 :: CALL :: call :: Ljava/lang/Class :: v65 = forName(v63)::JM,12930:JM,13003
+12935 :: CALL :: call :: Ljava/lang/ClassLoader :: v68 = getSystemClassLoader()::JM,13003
+12939 :: CALL :: call :: Ljava/lang/Class :: v70 = v68.loadClass(v63)::JM,13003:JM,12930
+12944 :: PRED :: IF :: Z :: if (v72 == #(null)) goto 222::CF,13004:CD,12945:CD,12949
+12945 :: CALL :: call :: Ljava/lang/Object :: v75 = v72.newInstance()::JM,12945:JM,12949
+12949 :: EXPR :: assign :: Ljava/lang/Object :: v76 = CHECKCAST v75::DD,13004
+12951 :: PRED :: IF :: Z :: if (v77 != #(null)) goto 233::CD,12952:CD,12956
+12952 :: CALL :: call :: Z :: v45 = v42.hasMoreTokens()::JM,12956
+12956 :: PRED :: IF :: Z :: if (v45 != #(0)) goto 127::CD,12894:CD,12898:CD,12902:CD,12903:CD,12911:CD,12916:CD,12921:CD,12926:CD,12930:CD,12944:CD,12951:CD,13003:CD,13004
+13000 :: EXPR :: assign :: null :: PHI v14 = v6, v12::DD,12838:DD,13004
+13003 :: EXPR :: assign :: null :: PHI v72 = v65, #(null), v70::DD,12944:JM,12945:JM,12949
+13004 :: EXPR :: assign :: null :: PHI v77 = v14, v77, v76, v77::DD,12951:DD,13004

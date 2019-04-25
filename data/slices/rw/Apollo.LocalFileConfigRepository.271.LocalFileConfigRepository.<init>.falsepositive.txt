@@ -1,0 +1,177 @@
+[2274, 2268]
+2049 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.RemoteConfigRepository.transformApolloConfigToProperties(com.ctrip.framework.apollo.core.dto.ApolloConfig)::CE,2050:CD,2054:CD,2066
+2050 :: EXIT :: exit :: Ljava/util/Properties :: com.ctrip.framework.apollo.internals.RemoteConfigRepository.transformApolloConfigToProperties(com.ctrip.framework.apollo.core.dto.ApolloConfig)::JM,1680
+2054 :: NORM :: declaration :: Ljava/util/Properties :: v4 = new java.util.Properties::DD,2066
+14 :: CALL :: call :: Ljava/lang/Object :: v8 = getInstance(v6)::JM,18:CL,562
+18 :: EXPR :: assign :: Ljava/lang/Object :: v9 = CHECKCAST v8::DD,19
+2066 :: NORM :: compound :: Ljava/util/Properties :: return v4::DD,2050
+19 :: EXPR :: modify :: Lcom/ctrip/framework/apollo/util/ConfigUtil :: p0 $this .m_configUtil = v9::
+22 :: CALL :: call :: Ljava/io/File :: v11 = p0 $this .findLocalCacheDir()::JM,689:JM,699:CL,601
+2072 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.persistLocalCacheFile(java.io.File,java.lang.String)::CD,2078:CD,2127:CD,2136:CD,2146:JM,1730
+26 :: CALL :: call :: V :: p0 $this .setLocalCacheDir(v11, #(0))::JM,689:JM,1730:JM,1732:JM,731:JM,699:JM,718:JM,2078:CL,683
+2078 :: PRED :: IF :: Z :: if (p1 $baseDir  != #(null)) goto 8::CD,2080:CD,2086:CD,2100:CD,2108:JM,1730:JM,2078
+31 :: CALL :: call :: V :: p0 $this .setUpstreamRepository(p2 $upstream )::JM,689:JM,1730:JM,1732:JM,731:JM,699:JM,718:JM,2078:CL,713
+2080 :: CALL :: call :: Ljava/io/File :: v7 = p0 $this .assembleLocalCacheFile(p1 $baseDir , p2 $namespace )::JM,1730:JM,2078:CL,2222
+35 :: CALL :: call :: Z :: v16 = p0 $this .trySync()::JM,689:JM,1730:JM,1732:JM,731:JM,699:JM,718:JM,2078:CL,755
+2086 :: CALL :: call :: Lcom/ctrip/framework/apollo/tracer/spi/Transaction :: v11 = newTransaction(#(Apollo.ConfigService), #(persistLocalConfigFile))::CL,1575
+2100 :: NORM :: declaration :: Ljava/io/FileOutputStream :: v16 = new java.io.FileOutputStream::
+2105 :: EXPR :: reference :: Ljava/util/Properties :: v18 = p0 $this .m_fileProperties::
+2108 :: CALL :: call :: V :: v18.store(v16, #(Persisted by DefaultC...))::
+2127 :: NORM :: declaration :: [Ljava/lang/Object :: v26 = new java.lang.Object[]::
+2136 :: CALL :: call :: Ljava/lang/String :: v31 = format(#(Persist local cache f...), v26)::
+2146 :: CALL :: call :: V :: logError(v23)::CL,937
+2222 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.assembleLocalCacheFile(java.io.File,java.lang.String)::CE,2223:CD,2228:CD,2229:CD,2236:CD,2243:CD,2247:CD,2252:CD,2263:CD,2268:CD,2274:JM,1730:JM,1732:JM,2078
+2223 :: EXIT :: exit :: Ljava/io/File :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.assembleLocalCacheFile(java.io.File,java.lang.String)::JM,1849:JM,1821
+2228 :: NORM :: declaration :: [Ljava/lang/Object :: v7 = new java.lang.Object[]::JM,2259:JM,2229:JM,2252
+2229 :: CALL :: call :: Lcom/google/common/base/Joiner :: v11 = on(#(+))::JM,2259:JM,2229:JM,2252
+2233 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/util/ConfigUtil :: v12 = p0 $this .m_configUtil::JM,2259:JM,2236:JM,2252
+2236 :: CALL :: call :: Ljava/lang/String :: v14 = v12.getAppId()::JM,2259:JM,2236:JM,2252
+2240 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/util/ConfigUtil :: v15 = p0 $this .m_configUtil::JM,2243:JM,2259:JM,2252
+2243 :: CALL :: call :: Ljava/lang/String :: v17 = v15.getCluster()::JM,2243:JM,2259:JM,2252
+2247 :: NORM :: declaration :: [Ljava/lang/Object :: v18 = new java.lang.Object[]::JM,2259:JM,2252
+2252 :: CALL :: call :: Ljava/lang/String :: v20 = v11.join(v14, v17, v18)::JM,2259:JM,2252
+2259 :: EXPR :: modify :: Ljava/lang/Object :: v7[#(0)] = v20::
+2263 :: CALL :: call :: Ljava/lang/String :: v22 = format(#(%s.properties), v7)::
+2268 :: NORM :: declaration :: Ljava/io/File :: v23 = new java.io.File::DD,2274
+2274 :: NORM :: compound :: Ljava/io/File :: return v23::DD,2223
+343 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.core.utils.ApolloThreadFactory.<clinit>()::CD,353
+353 :: NORM :: declaration :: Ljava/lang/ThreadGroup :: v5 = new java.lang.ThreadGroup::
+377 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.build.ApolloInjector.<clinit>()::CF,380
+380 :: NORM :: declaration :: Ljava/lang/Object :: v2 = new java.lang.Object::JM,380
+389 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.Tracer.<clinit>()::CD,405:CD,411
+405 :: NORM :: declaration :: Ljava/lang/Object :: v7 = new java.lang.Object::JM,405
+411 :: CALL :: call :: Lcom/ctrip/framework/apollo/tracer/spi/MessageProducer :: v10 = getProducer()::CL,816
+421 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.core.utils.ClassLoaderUtil.<clinit>()::CD,431:CD,434:CD,438:CD,442:CD,444
+431 :: CALL :: call :: Ljava/lang/Thread :: v6 = currentThread()::JM,438
+434 :: CALL :: call :: Ljava/lang/ClassLoader :: v8 = v6.getContextClassLoader()::JM,438
+438 :: EXPR :: modify :: Ljava/lang/ClassLoader :: com.ctrip.framework.apollo.core.utils.ClassLoaderUtil.loader = v8::
+442 :: EXPR :: reference :: Ljava/lang/ClassLoader :: v10 = com.ctrip.framework.apollo.core.utils.ClassLoaderUtil.loader::DD,444
+444 :: PRED :: IF :: Z :: if (v10 != #(null)) goto 44::CD,451
+451 :: CALL :: call :: Ljava/lang/ClassLoader :: v16 = getSystemClassLoader()::
+538 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.internals.NullMessageProducerManager.<clinit>()::
+550 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.internals.NullMessageProducer.<clinit>()::
+562 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.build.ApolloInjector.getInstance(java.lang.Class)::CE,563:CD,566:CD,569:CD,574:CD,575:CD,579:CD,580:CD,588:JM,584
+563 :: EXIT :: exit :: Ljava/lang/Object :: com.ctrip.framework.apollo.build.ApolloInjector.getInstance(java.lang.Class)::JM,18
+566 :: CALL :: call :: Lcom/ctrip/framework/apollo/internals/Injector :: v4 = getInjector()::JM,569:JM,574:CL,889
+569 :: CALL :: call :: Ljava/lang/Object :: v6 = v4.getInstance(p1 $clazz )::JM,569:JM,574:JM,584
+574 :: NORM :: compound :: Ljava/lang/Object :: return v6::DD,563
+575 :: CALL :: call :: V :: logError(v7)::CL,937
+579 :: NORM :: declaration :: [Ljava/lang/Object :: v12 = new java.lang.Object[]::
+580 :: CALL :: call :: Ljava/lang/String :: v15 = p1 $clazz .getName()::JM,584:JM,569:JM,574
+584 :: EXPR :: modify :: Ljava/lang/Object :: v12[#(0)] = v15::
+588 :: CALL :: call :: Ljava/lang/String :: v17 = format(#(Unable to load instan...), v12)::
+601 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.findLocalCacheDir()::CE,602:CD,608:CD,612:CD,613:CD,631:CD,632:CD,637
+602 :: EXIT :: exit :: Ljava/io/File :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.findLocalCacheDir()::JM,689:JM,699
+605 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/util/ConfigUtil :: v3 = p0 $this .m_configUtil::JM,608:JM,642:JM,613:JM,632:JM,637:JM,638
+608 :: CALL :: call :: Ljava/lang/String :: v5 = v3.getDefaultLocalCacheDir()::JM,608:JM,642:JM,613:JM,632:JM,637:JM,638
+612 :: NORM :: declaration :: [Ljava/lang/String :: v7 = new java.lang.String[]::JM,642:JM,613:JM,632:JM,637:JM,638
+613 :: CALL :: call :: Ljava/nio/file/Path :: v9 = get(v5, v7)::JM,642:JM,613:JM,632:JM,637:JM,638
+631 :: NORM :: declaration :: [Ljava/nio/file/LinkOption :: v16 = new java.nio.file.LinkOption[]::JM,642:JM,632:JM,637:JM,638
+632 :: CALL :: call :: Z :: v18 = exists(v9, v16)::JM,642:JM,632:JM,637:JM,638
+637 :: PRED :: IF :: Z :: if (v18 == #(0)) goto 66::CD,638:CD,642:CD,651:CD,652:CD,660:JM,632:JM,637
+638 :: CALL :: call :: Z :: v20 = isWritable(v9)::JM,642:JM,632:JM,637:JM,638
+642 :: PRED :: IF :: Z :: if (v20 == #(0)) goto 66::CF,643:CD,649:CD,651:CD,652:CD,660
+643 :: NORM :: declaration :: Ljava/io/File :: v21 = new java.io.File::DD,649
+649 :: NORM :: compound :: Ljava/io/File :: return v21::DD,602
+651 :: NORM :: declaration :: Ljava/io/File :: v27 = new java.io.File::DD,660
+652 :: CALL :: call :: Ljava/lang/String :: v29 = getClassPath()::CL,976
+660 :: NORM :: compound :: Ljava/io/File :: return v27::DD,602
+683 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.setLocalCacheDir(java.io.File,boolean)::CD,699:JM,689:JM,1730:JM,1732:JM,731:JM,718:JM,2078
+689 :: EXPR :: modify :: Ljava/io/File :: p0 $this .m_baseDir = p1 $baseDir ::
+699 :: PRED :: IF :: Z :: if (p2 $syncImmediately  == #(0)) goto 22::CD,700:JM,689:JM,1730:JM,1732:JM,731:JM,699:JM,718:JM,2078
+700 :: CALL :: call :: Z :: v9 = p0 $this .trySync()::JM,689:JM,1730:JM,1732:JM,731:JM,699:JM,718:JM,2078:CL,755
+713 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.setUpstreamRepository(com.ctrip.framework.apollo.internals.ConfigRepository)::CD,718:JM,689:JM,1730:JM,1732:JM,731:JM,699:JM,2078
+718 :: PRED :: IF :: Z :: if (p1 $upstreamConfigRepository  != #(null)) goto 6::CD,734
+731 :: EXPR :: modify :: Lcom/ctrip/framework/apollo/internals/ConfigRepository :: p0 $this .m_upstream = p1 $upstreamConfigRepository ::
+734 :: CALL :: call :: Z :: v9 = p0 $this .trySyncFromUpstream()::JM,689:JM,1730:JM,1732:JM,731:JM,699:JM,718:JM,2078:CL,1112
+755 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.AbstractConfigRepository.trySync()::CD,759:CD,767:JM,689:JM,1730:JM,1732:JM,731:JM,699:JM,718:JM,2078
+759 :: CALL :: call :: V :: p0 $this .sync()::JM,689:JM,1730:JM,1732:JM,731:JM,699:JM,718:JM,2078:CL,1195
+767 :: CALL :: call :: V :: logEvent(#(ApolloConfigException), v7)::CL,1447
+816 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.Tracer.getProducer()::
+889 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.build.ApolloInjector.getInjector()::CE,890:CD,892:CD,894:CD,916:CD,924:CD,926
+890 :: EXIT :: exit :: Lcom/ctrip/framework/apollo/internals/Injector :: com.ctrip.framework.apollo.build.ApolloInjector.getInjector()::JM,569:JM,574
+892 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/internals/Injector :: v2 = com.ctrip.framework.apollo.build.ApolloInjector.s_injector::DD,894
+894 :: PRED :: IF :: Z :: if (v2 != #(null)) goto 60::CD,898:CD,900
+898 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/internals/Injector :: v5 = com.ctrip.framework.apollo.build.ApolloInjector.s_injector::DD,900
+900 :: PRED :: IF :: Z :: if (v5 != #(null)) goto 51::CD,902:CD,906:CD,907
+902 :: CALL :: call :: Ljava/lang/Object :: v8 = loadFirst(v6)::JM,906:CL,1518
+906 :: EXPR :: assign :: Ljava/lang/Object :: v9 = CHECKCAST v8::CF,907
+907 :: EXPR :: modify :: Lcom/ctrip/framework/apollo/internals/Injector :: com.ctrip.framework.apollo.build.ApolloInjector.s_injector = v9::
+916 :: CALL :: call :: V :: logError(v11)::CL,937
+924 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/internals/Injector :: v16 = com.ctrip.framework.apollo.build.ApolloInjector.s_injector::CF,926
+926 :: NORM :: compound :: Lcom/ctrip/framework/apollo/internals/Injector :: return v16::DD,890
+937 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.Tracer.logError(java.lang.Throwable)::CD,941
+941 :: CALL :: call :: Lcom/ctrip/framework/apollo/tracer/spi/MessageProducer :: v4 = getProducer()::CL,816
+976 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.core.utils.ClassLoaderUtil.getClassPath()::CF,977:CD,979:CD,981
+977 :: EXIT :: exit :: Ljava/lang/String :: com.ctrip.framework.apollo.core.utils.ClassLoaderUtil.getClassPath()::
+979 :: EXPR :: reference :: Ljava/lang/String :: v2 = com.ctrip.framework.apollo.core.utils.ClassLoaderUtil.classPath::CF,981
+981 :: NORM :: compound :: Ljava/lang/String :: return v2::CF,977
+1112 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.trySyncFromUpstream()::CE,1113:CD,1119:CD,1133:CD,1155:JM,1730:JM,1732:JM,699:JM,2078
+1113 :: EXIT :: exit :: Z :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.trySyncFromUpstream()::JM,1203
+1116 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/internals/ConfigRepository :: v3 = p0 $this .m_upstream::DD,1119
+1119 :: PRED :: IF :: Z :: if (v3 != #(null)) goto 10::CD,1120:CD,1124:CD,1128:CD,1132
+1120 :: NORM :: compound :: Z :: return #(0)::DD,1113
+1121 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/internals/ConfigRepository :: v5 = p0 $this .m_upstream::JM,1730:JM,1732:JM,2078
+1124 :: CALL :: call :: Ljava/util/Properties :: v7 = v5.getConfig()::JM,1730:JM,1732:JM,2078:CL,1652:CL,1686
+1128 :: CALL :: call :: V :: p0 $this .updateFileProperties(v7)::JM,1730:JM,1732:JM,2078:CL,1717
+1132 :: NORM :: compound :: Z :: return #(1)::DD,1113
+1133 :: CALL :: call :: V :: logError(v9)::CL,937
+1155 :: NORM :: compound :: Z :: return #(0)::DD,1113
+1195 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.sync()::CD,1199:CD,1203:CD,1249:JM,1730:JM,1732:JM,699:JM,2078
+1199 :: CALL :: call :: Z :: v4 = p0 $this .trySyncFromUpstream()::JM,1730:JM,1732:JM,2078:JM,1203:CL,1112
+1203 :: PRED :: IF :: Z :: if (v4 == #(0)) goto 14::CD,1205:CD,1228
+1205 :: CALL :: call :: Lcom/ctrip/framework/apollo/tracer/spi/Transaction :: v9 = newTransaction(#(Apollo.ConfigService), #(syncLocalConfig))::CL,1575
+1222 :: EXPR :: reference :: Ljava/io/File :: v16 = p0 $this .m_baseDir::JM,1730:JM,1732:JM,2078
+1228 :: CALL :: call :: Ljava/util/Properties :: v19 = p0 $this .loadFromLocalCacheFile(v16, v17)::JM,1730:JM,1732:JM,2078:JM,1234:CL,1755
+1234 :: EXPR :: modify :: Ljava/util/Properties :: p0 $this .m_fileProperties = v19::
+1249 :: CALL :: call :: V :: logEvent(#(ApolloConfigException), v25)::CL,1447
+1447 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.Tracer.logEvent(java.lang.String,java.lang.String)::CD,1452
+1452 :: CALL :: call :: Lcom/ctrip/framework/apollo/tracer/spi/MessageProducer :: v5 = getProducer()::CL,816
+1518 :: ENTR :: entry :: null :: com.ctrip.framework.foundation.internals.ServiceBootstrap.loadFirst(java.lang.Class)::CF,1519:CD,1522:CD,1551:CD,1555
+1519 :: EXIT :: exit :: Ljava/lang/Object :: com.ctrip.framework.foundation.internals.ServiceBootstrap.loadFirst(java.lang.Class)::JM,906
+1522 :: CALL :: call :: Ljava/util/Iterator :: v4 = loadAll(p1 $clazz )::JM,1555:JM,1551:CL,1906
+1551 :: CALL :: call :: Ljava/lang/Object :: v9 = v4.next()::JM,1555:JM,1551
+1555 :: NORM :: compound :: Ljava/lang/Object :: return v9::CF,1519
+1575 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.Tracer.newTransaction(java.lang.String,java.lang.String)::CD,1580
+1580 :: CALL :: call :: Lcom/ctrip/framework/apollo/tracer/spi/MessageProducer :: v5 = getProducer()::CL,816
+1652 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.RemoteConfigRepository.getConfig()::CE,1653:CD,1675:CD,1680
+1653 :: EXIT :: exit :: Ljava/util/Properties :: com.ctrip.framework.apollo.internals.RemoteConfigRepository.getConfig()::JM,1730:JM,1732
+1675 :: CALL :: call :: Ljava/util/Properties :: v13 = p0 $this .transformApolloConfigToProperties(v11)::JM,1680:CL,2049
+1680 :: NORM :: compound :: Ljava/util/Properties :: return v13::DD,1653
+1686 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.getConfig()::CE,1687:CD,1693:CD,1697:CD,1708:JM,1730:JM,1732:JM,2078
+1687 :: EXIT :: exit :: Ljava/util/Properties :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.getConfig()::JM,1730:JM,1732
+1690 :: EXPR :: reference :: Ljava/util/Properties :: v3 = p0 $this .m_fileProperties::DD,1693
+1693 :: PRED :: IF :: Z :: if (v3 != #(null)) goto 11::CF,1697:CD,1694:JM,1730:JM,1732:JM,2078
+1694 :: CALL :: call :: V :: p0 $this .sync()::JM,1730:JM,1732:JM,2078:CL,1195
+1697 :: NORM :: declaration :: Ljava/util/Properties :: v6 = new java.util.Properties::DD,1708
+1708 :: NORM :: compound :: Ljava/util/Properties :: return v6::DD,1687
+1717 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.updateFileProperties(java.util.Properties)::CD,1725:CD,1730:JM,1732:JM,2078
+1722 :: EXPR :: reference :: Ljava/util/Properties :: v4 = p0 $this .m_fileProperties::JM,1730:JM,2078
+1725 :: CALL :: call :: Z :: v6 = p1 $newProperties .equals(v4)::JM,1730:JM,1732:JM,2078
+1730 :: PRED :: IF :: Z :: if (v6 == #(0)) goto 14::CD,1741
+1732 :: EXPR :: modify :: Ljava/util/Properties :: p0 $this .m_fileProperties = p1 $newProperties ::
+1735 :: EXPR :: reference :: Ljava/io/File :: v8 = p0 $this .m_baseDir::JM,1730:JM,2078
+1741 :: CALL :: call :: V :: p0 $this .persistLocalCacheFile(v8, v9)::JM,1730:JM,1732:JM,2078:CL,2072
+1755 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.loadFromLocalCacheFile(java.io.File,java.lang.String)::CE,1756:CD,1766:CD,1772:CD,1777:CD,1782:CD,1787:CD,1791:CD,1812:CD,1816:CD,1817:CD,1825:CD,1844:CD,1845:CD,1853:CD,1863:JM,1730:JM,1732:JM,2078
+1756 :: EXIT :: exit :: Ljava/util/Properties :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.loadFromLocalCacheFile(java.io.File,java.lang.String)::JM,1234
+1766 :: CALL :: call :: Ljava/io/File :: v9 = p0 $this .assembleLocalCacheFile(p1 $baseDir , p2 $namespace )::JM,1730:JM,1732:JM,2078:JM,1849:JM,1821:CL,2222
+1772 :: CALL :: call :: Z :: v12 = v9.isFile()::JM,1849:JM,1821
+1777 :: CALL :: call :: Z :: v15 = v9.canRead()::JM,1849:JM,1821
+1782 :: NORM :: declaration :: Ljava/io/FileInputStream :: v25 = new java.io.FileInputStream::
+1787 :: NORM :: declaration :: Ljava/util/Properties :: v27 = new java.util.Properties::DD,1863
+1791 :: CALL :: call :: V :: v27.load(v25)::
+1812 :: CALL :: call :: V :: logError(v35)::CL,937
+1816 :: NORM :: declaration :: [Ljava/lang/Object :: v41 = new java.lang.Object[]::
+1817 :: CALL :: call :: Ljava/lang/String :: v43 = v9.getAbsolutePath()::JM,1849:JM,1821
+1821 :: EXPR :: modify :: Ljava/lang/Object :: v41[#(0)] = v43::
+1825 :: CALL :: call :: Ljava/lang/String :: v45 = format(#(Loading config from l...), v41)::
+1844 :: NORM :: declaration :: [Ljava/lang/Object :: v19 = new java.lang.Object[]::
+1845 :: CALL :: call :: Ljava/lang/String :: v21 = v9.getAbsolutePath()::JM,1849:JM,1821
+1849 :: EXPR :: modify :: Ljava/lang/Object :: v19[#(0)] = v21::
+1853 :: CALL :: call :: Ljava/lang/String :: v23 = format(#(Cannot read from loca...), v19)::
+1863 :: NORM :: compound :: Ljava/util/Properties :: return v27::DD,1756
+1906 :: ENTR :: entry :: null :: com.ctrip.framework.foundation.internals.ServiceBootstrap.loadAll(java.lang.Class)::CF,1907:CD,1910:CD,1914:CD,1918
+1907 :: EXIT :: exit :: Ljava/util/Iterator :: com.ctrip.framework.foundation.internals.ServiceBootstrap.loadAll(java.lang.Class)::JM,1555:JM,1551
+1910 :: CALL :: call :: Ljava/util/ServiceLoader :: v4 = load(p1 $clazz )::JM,1910:JM,1914:JM,1918
+1914 :: CALL :: call :: Ljava/util/Iterator :: v6 = v4.iterator()::JM,1914:JM,1918
+1918 :: NORM :: compound :: Ljava/util/Iterator :: return v6::CF,1907

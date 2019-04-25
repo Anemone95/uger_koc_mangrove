@@ -1,0 +1,32 @@
+[550]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.hasPrecalculatedResult(java.lang.String,java.lang.String,java.lang.String,java.lang.String)::CD,8
+772 :: PRED :: IF :: Z :: if (v19 == #(0)) goto 67::CF,779:CF,773
+773 :: NORM :: declaration :: Ljava/util/zip/GZIPInputStream :: v20 = new java.util.zip.GZIPInputStream::DD,779
+8 :: CALL :: call :: Z :: v8 = hasPrecalculatedResult(p1 $serverLocation , p2 $method , p3 $name1 , p4 $name2 , #(5000))::CL,237
+393 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,int)::CE,394:CD,398:CD,404
+394 :: EXIT :: exit :: Ljava/io/InputStream :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,int)::JM,296
+778 :: NORM :: compound :: Ljava/io/InputStream :: return v22::DD,738
+779 :: EXPR :: assign :: null :: PHI v22 = v17, v17, v20::CF,778
+525 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.xml.HasResultXMLConverter.fromXML(java.lang.String)::CD,530:CD,533:CD,537:CD,550
+398 :: CALL :: call :: Ljava/io/InputStream :: v6 = getInputStream(p1 $url , #(1), p2 $timeout )::JM,404:CL,737
+530 :: CALL :: call :: Ljavax/xml/parsers/DocumentBuilderFactory :: v6 = newInstance()::JM,533:JM,550
+404 :: NORM :: compound :: Ljava/io/InputStream :: return v6::DD,394
+533 :: CALL :: call :: Ljavax/xml/parsers/DocumentBuilder :: v8 = v6.newDocumentBuilder()::JM,533:JM,550
+537 :: NORM :: declaration :: Lorg/xml/sax/InputSource :: v9 = new org.xml.sax.InputSource::JM,550
+291 :: CALL :: call :: Ljava/io/InputStream :: v29 = getInputStream(v26, p5 $timeout )::JM,296:CL,393
+550 :: CALL :: call :: Lorg/w3c/dom/Document :: v15 = v8.parse(v9)::JM,550
+296 :: PRED :: IF :: Z :: if (v29 == #(null)) goto 149::CD,325
+325 :: CALL :: call :: Z :: v49 = v46.fromXML(v32)::CL,525
+967 :: NORM :: compound :: Ljava/net/HttpURLConnection :: return v7::DD,851
+850 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::CE,851:CD,855:CD,859:CD,967
+851 :: EXIT :: exit :: Ljava/net/HttpURLConnection :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::JM,772:JM,758:JM,762:JM,779:JM,766:JM,767
+855 :: CALL :: call :: Ljava/net/URLConnection :: v6 = p1 $url .openConnection()::JM,859
+859 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST v6::DD,967
+737 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,boolean,int)::CE,738:CD,743:CD,758:CD,762:CD,766:CD,778:CD,779
+738 :: EXIT :: exit :: Ljava/io/InputStream :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,boolean,int)::JM,404
+743 :: CALL :: call :: Ljava/net/HttpURLConnection :: v7 = openHttpURLConnection(p1 $url , p3 $timeout )::JM,772:JM,758:JM,762:JM,779:JM,766:JM,767:CL,850
+237 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.hasPrecalculatedResult(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int)::CD,291:CD,296
+758 :: CALL :: call :: Ljava/lang/String :: v15 = v7.getContentEncoding()::JM,772:JM,758:JM,762:JM,779:JM,766:JM,767
+762 :: CALL :: call :: Ljava/io/InputStream :: v17 = v7.getInputStream()::JM,772:JM,758:JM,762:JM,779:JM,766:JM,767
+766 :: PRED :: IF :: Z :: if (v15 == #(null)) goto 67::CF,779:CD,767:CD,772
+767 :: CALL :: call :: Z :: v19 = v15.contains(#(gzip))::JM,772:JM,779:JM,767

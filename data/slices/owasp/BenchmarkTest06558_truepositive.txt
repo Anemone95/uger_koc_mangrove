@@ -1,0 +1,15 @@
+[41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 55]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest06558.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,19:CD,24:CD,29:CD,34:CD,38:CD,41:CD,50
+7 :: CALL :: call :: Ljava/lang/String :: v6 = p1 $request .getQueryString()::JM,50:JM,11
+11 :: CALL :: call :: Ljava/lang/String :: v8 = htmlEscape(v6)::JM,50:JM,11
+15 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v9 = new java.lang.StringBuilder::JM,50
+19 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v9.append(#(UPDATE USERS SET PASS...))::JM,50
+24 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v13.append(v8)::JM,50
+29 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v15.append(#(' WHERE USERNAME='foo'))::JM,50
+34 :: CALL :: call :: Ljava/lang/String :: v20 = v18.toString()::JM,50
+38 :: CALL :: call :: Ljava/sql/Statement :: v22 = getSqlStatement()::JM,50
+41 :: NORM :: declaration :: [I :: v24 = new []::JM,50
+42 :: EXPR :: modify :: I :: v24[#(0)] = #(1)::
+46 :: EXPR :: modify :: I :: v24[#(1)] = #(2)::
+50 :: CALL :: call :: I :: v28 = v22.executeUpdate(v20, v24)::JM,50

@@ -1,0 +1,36 @@
+[78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 92]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest00899.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,36:CD,40:CD,52:CD,56:CD,61:CD,66:CD,71:CD,75:CD,78:CD,87:CD,107:CD,108:JM,12
+7 :: CALL :: call :: [Ljavax/servlet/http/Cookie :: v6 = p1 $request .getCookies()::JM,11:JM,12
+11 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 93::CD,12:CD,13:CD,34:CD,102:CD,103:CD,104:CD,107
+12 :: EXPR :: assign :: I :: v10 = v6.length::DD,13:CF,102
+13 :: PRED :: IF :: Z :: if (v25 >= v10) goto 73::CD,18:CD,22:CD,27:CD,32:CD,102:CD,103:CD,104:CD,105:CD,106:CF,34
+14 :: EXPR :: reference :: Ljava/lang/Object :: v11 = v6[v25]::JM,18:JM,22:JM,27:JM,105:JM,28
+18 :: CALL :: call :: Ljava/lang/String :: v13 = v11.getName()::JM,18:JM,22:JM,27
+22 :: CALL :: call :: Z :: v16 = v13.equals(#(foo))::JM,22:JM,27
+27 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 65::CF,105:CD,28:CD,106
+28 :: CALL :: call :: Ljava/lang/String :: v18 = v11.getValue()::JM,105:JM,28
+32 :: EXPR :: assign :: Ljava/lang/Object :: v22 = v25 + #(1)::DD,104
+34 :: PRED :: IF :: Z :: if (v24 != #(0)) goto 93::CF,107
+36 :: CALL :: call :: I :: v29 = v26.length()::JM,40
+40 :: PRED :: IF :: Z :: if (v29 <= #(1)) goto 115::CF,108:CD,41:CD,45:CD,46
+41 :: CALL :: call :: I :: v31 = v26.length()::JM,45
+45 :: EXPR :: assign :: Ljava/lang/Object :: v32 = v31 - #(1)::JM,108
+46 :: CALL :: call :: Ljava/lang/String :: v34 = v26.substring(#(0), v32)::JM,108
+52 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v36 = new java.lang.StringBuilder::JM,87
+56 :: CALL :: call :: Ljava/lang/StringBuilder :: v40 = v36.append(#(SELECT * from USERS w...))::JM,87
+61 :: CALL :: call :: Ljava/lang/StringBuilder :: v42 = v40.append(v35)::JM,87
+66 :: CALL :: call :: Ljava/lang/StringBuilder :: v45 = v42.append(#('))::JM,87
+71 :: CALL :: call :: Ljava/lang/String :: v47 = v45.toString()::JM,87
+75 :: CALL :: call :: Ljava/sql/Statement :: v49 = getSqlStatement()::JM,87
+78 :: NORM :: declaration :: [I :: v51 = new []::JM,87
+79 :: EXPR :: modify :: I :: v51[#(0)] = #(1)::
+83 :: EXPR :: modify :: I :: v51[#(1)] = #(2)::
+87 :: CALL :: call :: Z :: v53 = v49.execute(v47, v51)::JM,87
+102 :: EXPR :: assign :: null :: PHI v23 = v20, #(null)::CF,103:DD,105:DD,107
+103 :: EXPR :: assign :: null :: PHI v24 = v21, #(0)::CF,104:DD,34:DD,106
+104 :: EXPR :: assign :: null :: PHI v25 = v22, #(0)::DD,13:DD,32
+105 :: EXPR :: assign :: null :: PHI v20 = v23, v18::CF,106:DD,102
+106 :: EXPR :: assign :: null :: PHI v21 = v24, #(1)::DD,103:CF,32
+107 :: EXPR :: assign :: null :: PHI v26 = v23, #(), #()::JM,40:JM,45:DD,108
+108 :: EXPR :: assign :: null :: PHI v35 = v26, v34::CF,52:JM,87

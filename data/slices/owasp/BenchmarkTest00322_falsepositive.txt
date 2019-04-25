@@ -1,0 +1,14 @@
+[49, 43]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest00322.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,17:CD,21:CD,26:CD,31:CD,36:CD,40:CD,43
+12 :: CALL :: call :: Ljava/lang/String :: v9 = v5.getTheValue(#(foo))::JM,43:CL,155
+17 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::JM,43
+21 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v10.append(#(SELECT * from USERS w...))::JM,43
+26 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v14.append(v9)::JM,43
+31 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v16.append(#('))::JM,43
+36 :: CALL :: call :: Ljava/lang/String :: v21 = v19.toString()::JM,43
+40 :: CALL :: call :: Ljava/sql/Connection :: v23 = getSqlConnection()::JM,43
+43 :: CALL :: call :: Ljava/sql/PreparedStatement :: v27 = v23.prepareStatement(v21, #(1003), #(1007))::JM,43
+155 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheValue(java.lang.String)::CF,156:CD,160
+156 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheValue(java.lang.String)::JM,43
+160 :: NORM :: compound :: Ljava/lang/String :: return #(bar)::CF,156

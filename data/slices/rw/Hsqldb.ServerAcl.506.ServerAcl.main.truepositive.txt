@@ -1,0 +1,349 @@
+[93]
+1 :: ENTR :: entry :: null :: org.hsqldb.server.ServerAcl.main(java.lang.String[])::CD,37:CD,38:CD,89:CD,90:CD,91:CD,176
+37 :: EXPR :: assign :: I :: v5 = p1 $sa .length::DD,38
+38 :: PRED :: IF :: Z :: if (v5 <= #(0)) goto 104::CD,43:CD,48
+39 :: EXPR :: reference :: Ljava/lang/Object :: v7 = p1 $sa [#(0)]::JM,48
+43 :: CALL :: call :: Z :: v10 = v7.equals(#(--help))::JM,48
+48 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 104::CD,51:CD,56:CD,57:CD,61:CD,66:CD,71:CD,75:CD,81
+51 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::
+56 :: EXPR :: assign :: Ljava/lang/Class :: v15 = metadata <Application,Lorg/hsqldb/server/ServerAcl>-><Primordial,Ljava/lang/Class>::JM,57
+57 :: CALL :: call :: Ljava/lang/String :: v17 = v15.getName()::JM,57
+61 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v12.append(v17)::
+66 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v19.append(#( [filepath.txt]))::
+71 :: CALL :: call :: Ljava/lang/String :: v24 = v22.toString()::
+75 :: CALL :: call :: V :: v11.println(v24)::
+81 :: CALL :: call :: V :: v26.println(#(ACL file path default...))::
+89 :: NORM :: declaration :: Ljava/io/File :: v31 = new java.io.File::CF,90
+90 :: EXPR :: assign :: I :: v32 = p1 $sa .length::DD,91
+91 :: PRED :: IF :: Z :: if (v32 != #(0)) goto 125::CD,176
+93 :: EXPR :: reference :: Ljava/lang/Object :: v33 = p1 $sa [#(0)]::DD,176
+176 :: EXPR :: assign :: null :: PHI v35 = #(acl.txt), v33::
+8464 :: EXIT :: exit :: [Ljava/net/InetAddress :: java.net.InetAddress.getAllByName(java.lang.String)::
+8467 :: CALL :: call :: [Ljava/net/InetAddress :: v5 = getAllByName(p1 $host , #(null))::JM,8472
+8472 :: NORM :: compound :: [Ljava/net/InetAddress :: return v5::DD,8464
+8475 :: ENTR :: entry :: null :: org.hsqldb.map.BitMap.leftShift([],int)::CE,8476:CD,8480:CD,8481:CD,8482:CD,8483:CD,8484:JM,8530:JM,8499:JM,8486
+8476 :: EXIT :: exit :: [B :: org.hsqldb.map.BitMap.leftShift([],int)::JM,7317
+8480 :: EXPR :: assign :: I :: v4 = p1 $map .length::CF,8481
+8481 :: NORM :: declaration :: [B :: v5 = new []::DD,8485:DD,8532:CF,8482
+8482 :: EXPR :: assign :: Ljava/lang/Object :: v7 = p2 $shiftBits  / #(8)::DD,8484:DD,8534:DD,8536:CF,8483
+8483 :: EXPR :: assign :: I :: v8 = p1 $map .length::CF,8484
+8484 :: PRED :: IF :: Z :: if (v7 < v8) goto 21::CD,8485:CD,8486:CD,8487:CD,8532
+8485 :: NORM :: compound :: [B :: return v5::DD,8476
+8486 :: EXPR :: assign :: Ljava/lang/Object :: v9 = p2 $shiftBits  % #(8)::DD,8487:DD,8508
+8487 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 66::CD,8499:CD,8500:CD,8530:CD,8531:CD,8533:CD,8534:CD,8535:CD,8536
+8489 :: EXPR :: reference :: B :: v29 = p1 $map [v33]::DD,8493
+8493 :: EXPR :: modify :: B :: v5[v32] = v29::
+8497 :: EXPR :: assign :: Ljava/lang/Object :: v30 = v32 + #(1)::DD,8533:CF,8498
+8498 :: EXPR :: assign :: Ljava/lang/Object :: v31 = v33 + #(1)::DD,8534:CF,8533
+8499 :: EXPR :: assign :: I :: v28 = p1 $map .length::CF,8500
+8500 :: PRED :: IF :: Z :: if (v33 < v28) goto 42::CD,8497:CD,8498:CD,8499:CD,8533:CD,8534
+8503 :: EXPR :: reference :: B :: v12 = p1 $map [v27]::DD,8507
+8507 :: EXPR :: assign :: Ljava/lang/Object :: v14 = v12 && #(255)::DD,8508
+8508 :: EXPR :: assign :: Ljava/lang/Object :: v15 = v14 ? v9::DD,8509:DD,8520
+8509 :: EXPR :: assign :: B :: v16 = CONVERT I to B v15::DD,8510
+8510 :: EXPR :: modify :: B :: v5[v26] = v16::
+8514 :: PRED :: IF :: Z :: if (v26 <= #(0)) goto 109::CD,8515:CD,8520:CD,8521:CD,8522:CD,8523:CF,8528
+8515 :: EXPR :: assign :: Ljava/lang/Object :: v18 = v26 - #(1)::
+8516 :: EXPR :: reference :: B :: v19 = v5[v18]::DD,8522
+8520 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v15 ? #(8)::CF,8521
+8521 :: EXPR :: assign :: B :: v21 = CONVERT I to B v20::CF,8522
+8522 :: EXPR :: assign :: Ljava/lang/Object :: v22 = v19 || v21::CF,8523
+8523 :: EXPR :: assign :: B :: v23 = CONVERT I to B v22::DD,8524
+8524 :: EXPR :: modify :: B :: v5[v18] = v23::
+8528 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v26 + #(1)::DD,8535:CF,8529
+8529 :: EXPR :: assign :: Ljava/lang/Object :: v25 = v27 + #(1)::DD,8536:CF,8535
+8530 :: EXPR :: assign :: I :: v11 = p1 $map .length::CF,8531
+8531 :: PRED :: IF :: Z :: if (v27 < v11) goto 72::CD,8507:CD,8508:CD,8509:CD,8514:CD,8528:CD,8529:CD,8530:CD,8535:CD,8536:CF,8532
+8532 :: NORM :: compound :: [B :: return v5::DD,8476
+8533 :: EXPR :: assign :: null :: PHI v32 = #(0), v30::CF,8534:DD,8497
+8534 :: EXPR :: assign :: null :: PHI v33 = v7, v31::DD,8498:DD,8500:CF,8499
+8535 :: EXPR :: assign :: null :: PHI v26 = #(0), v24::CF,8536:DD,8514:DD,8515:DD,8528
+344 :: ENTR :: entry :: null :: org.hsqldb.server.ServerAcl.<clinit>()::CD,347:CD,366:CD,434:CD,438:JM,7312:JM,7366:JM,7303:JM,7306:CD,451:CD,455
+8536 :: EXPR :: assign :: null :: PHI v27 = v7, v25::DD,8529:DD,8531:CF,8530
+347 :: NORM :: declaration :: [B :: v3 = new []::
+348 :: EXPR :: modify :: B :: v3[#(0)] = #(-1)::
+352 :: EXPR :: modify :: B :: v3[#(1)] = #(-1)::
+356 :: EXPR :: modify :: B :: v3[#(2)] = #(-1)::
+360 :: EXPR :: modify :: B :: v3[#(3)] = #(-1)::
+366 :: NORM :: declaration :: [B :: v10 = new []::
+367 :: EXPR :: modify :: B :: v10[#(0)] = #(-1)::
+371 :: EXPR :: modify :: B :: v10[#(1)] = #(-1)::
+375 :: EXPR :: modify :: B :: v10[#(2)] = #(-1)::
+379 :: EXPR :: modify :: B :: v10[#(3)] = #(-1)::
+383 :: EXPR :: modify :: B :: v10[#(4)] = #(-1)::
+387 :: EXPR :: modify :: B :: v10[#(5)] = #(-1)::
+391 :: EXPR :: modify :: B :: v10[#(6)] = #(-1)::
+395 :: EXPR :: modify :: B :: v10[#(7)] = #(-1)::
+399 :: EXPR :: modify :: B :: v10[#(8)] = #(-1)::
+403 :: EXPR :: modify :: B :: v10[#(9)] = #(-1)::
+407 :: EXPR :: modify :: B :: v10[#(10)] = #(-1)::
+411 :: EXPR :: modify :: B :: v10[#(11)] = #(-1)::
+415 :: EXPR :: modify :: B :: v10[#(12)] = #(-1)::
+419 :: EXPR :: modify :: B :: v10[#(13)] = #(-1)::
+423 :: EXPR :: modify :: B :: v10[#(14)] = #(-1)::
+427 :: EXPR :: modify :: B :: v10[#(15)] = #(-1)::
+434 :: CALL :: call :: Ljava/net/InetAddress :: v25 = getByName(#(0.0.0.0))::
+438 :: CALL :: call :: [B :: v27 = v25.getAddress()::
+451 :: CALL :: call :: Ljava/net/InetAddress :: v32 = getByName(#(:))::
+455 :: CALL :: call :: [B :: v38 = v32.getAddress()::
+668 :: EXPR :: modify :: Lsun/net/spi/nameservice/NameService :: java.net.InetAddress.nameService = #(null)::
+697 :: NORM :: declaration :: Ljava/net/InetAddress$Cache :: v23 = new java.net.InetAddress$Cache::CF,698
+698 :: CALL :: call :: I :: v25 = get()::
+707 :: NORM :: declaration :: Ljava/net/InetAddress$Cache :: v27 = new java.net.InetAddress$Cache::CF,708
+708 :: CALL :: call :: I :: v29 = getNegative()::
+719 :: NORM :: declaration :: Ljava/util/HashMap :: v31 = new java.util.HashMap::
+725 :: NORM :: declaration :: Ljava/net/InetAddressImplFactory :: v33 = new java.net.InetAddressImplFactory::
+729 :: CALL :: call :: Ljava/net/InetAddressImpl :: v36 = create()::
+8927 :: CALL :: call :: V :: v23.println(v38)::
+736 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v40 = new java.lang.StringBuilder::
+737 :: CALL :: call :: Ljava/lang/String :: v42 = valueOf(#(sun.net.spi.nameservi...))::
+745 :: CALL :: call :: Ljava/lang/StringBuilder :: v45 = v40.append(v61)::
+750 :: CALL :: call :: Ljava/lang/String :: v47 = v45.toString()::
+759 :: CALL :: call :: Ljava/lang/Object :: v51 = doPrivileged(v39)::JM,763
+763 :: EXPR :: assign :: Ljava/lang/Object :: v52 = CHECKCAST v51::JM,770:CF,764
+764 :: EXPR :: assign :: Ljava/lang/Object :: v53 = v61 + #(1)::DD,794:JM,770
+765 :: CALL :: call :: Z :: v55 = v52.equals(#(default))::JM,770
+770 :: PRED :: IF :: Z :: if (v55 == #(0)) goto 184::CD,778:CD,783:CD,788:CD,790:CD,794
+8963 :: CALL :: call :: V :: v59.println(v72)::
+778 :: NORM :: declaration :: Ljava/net/InetAddress$2 :: v56 = new java.net.InetAddress$2::
+783 :: CALL :: call :: Ljava/lang/Object :: v59 = doPrivileged(v56)::
+788 :: EXPR :: reference :: Lsun/net/spi/nameservice/NameService :: v38 = java.net.InetAddress.nameService::DD,790
+790 :: PRED :: IF :: Z :: if (v38 == #(null)) goto 123::CD,736:CD,737:CD,745:CD,750:CD,759:CD,763:CD,764:CD,765:CD,770
+794 :: EXPR :: assign :: null :: PHI v61 = #(1), v53, v53::DD,764
+8999 :: CALL :: call :: V :: v43.println(v56)::
+9104 :: CALL :: call :: V :: v33.printStackTrace()::
+9136 :: CALL :: call :: V :: v35.println(v48)::
+9753 :: EXIT :: exit :: [Ljava/net/InetAddress :: java.net.InetAddress.getAllByName(java.lang.String,java.net.InetAddress)::JM,8472
+9757 :: PRED :: IF :: Z :: if (p1 $host  == #(null)) goto 12::CD,9758:CD,9762:CD,9763:CD,9764:CD,9766:CD,9774:JM,9780:JM,9959:JM,9801:JM,9790
+9758 :: CALL :: call :: I :: v6 = p1 $host .length()::JM,9762:JM,9780:JM,9959:JM,9801:JM,9790
+9762 :: PRED :: IF :: Z :: if (v6 != #(0)) goto 33::CD,9763:CD,9764:CD,9766:CD,9774:CD,9775:CD,9780:CD,9815:CD,9820:CD,9825:CD,9959:JM,9762:JM,9801:JM,9790
+9763 :: NORM :: declaration :: [Ljava/net/InetAddress :: v90 = new java.net.InetAddress[]::DD,9774
+9764 :: EXPR :: reference :: Ljava/net/InetAddressImpl :: v91 = java.net.InetAddress.impl::JM,9766:JM,9770
+9766 :: CALL :: call :: Ljava/net/InetAddress :: v93 = v91.loopbackAddress()::JM,9766:JM,9770
+9770 :: EXPR :: modify :: Ljava/lang/Object :: v90[#(0)] = v93::
+9774 :: NORM :: compound :: [Ljava/net/InetAddress :: return v90::DD,9753
+9775 :: CALL :: call :: C :: v9 = p1 $host .charAt(#(0))::JM,9762:JM,9780:JM,9959:JM,9801:JM,9790
+9780 :: PRED :: IF :: Z :: if (v9 != #(91)) goto 92::CF,9959:CD,9786:CD,9790:CD,9791:CD,9797:CD,9801:CD,9802
+9786 :: CALL :: call :: I :: v15 = p1 $host .length()::JM,9762:JM,9780:JM,9959:JM,9801:JM,9790
+9790 :: EXPR :: assign :: Ljava/lang/Object :: v17 = v15 - #(1)::JM,9762:JM,9780:JM,9959:JM,9801:JM,9790
+9791 :: CALL :: call :: C :: v19 = p1 $host .charAt(v17)::JM,9762:JM,9780:JM,9959:JM,9801:JM,9790
+9797 :: CALL :: call :: I :: v24 = p1 $host .length()::JM,9762:JM,9780:JM,9959:JM,9801:JM,9790
+9801 :: EXPR :: assign :: Ljava/lang/Object :: v25 = v24 - #(1)::JM,9762:JM,9780:JM,9959:JM,9801:JM,9790
+9802 :: CALL :: call :: Ljava/lang/String :: v27 = p1 $host .substring(#(1), v25)::JM,9762:JM,9780:JM,9959:JM,9801:JM,9790
+9815 :: CALL :: call :: C :: v31 = v28.charAt(#(0))::JM,9825
+9820 :: CALL :: call :: I :: v34 = digit(v31, #(16))::JM,9825
+9825 :: PRED :: IF :: Z :: if (v34 != #(-1)) goto 115::CD,9826:CD,9831:CD,9833:CD,9837:CD,9886:CD,9887:CD,9963:CD,9964:CD,9965
+9826 :: CALL :: call :: C :: v37 = v28.charAt(#(0))::JM,9831
+9831 :: PRED :: IF :: Z :: if (v37 != #(58)) goto 287::CD,9833:CD,9837:CD,9886:CD,9887:CD,9952:CD,9958:CD,9963:CD,9964:CD,9965
+9833 :: CALL :: call :: [B :: v53 = textToNumericFormatV4(v28)::JM,9833:JM,9963:JM,9837
+9837 :: PRED :: IF :: Z :: if (v53 != #(null)) goto 179::CD,9838:CD,9843:CD,9855:CD,9961:CD,9962:CD,9963:CD,9964:CD,9965:JM,9849
+9838 :: CALL :: call :: I :: v66 = v28.indexOf(#(%))::JM,9843:JM,9849
+9843 :: PRED :: IF :: Z :: if (v66 == #(-1)) goto 171::CF,9961:CD,9844:CD,9848:CD,9962
+9844 :: CALL :: call :: I :: v68 = checkNumericZone(v28)::JM,9848:JM,9961
+9848 :: PRED :: IF :: Z :: if (v68 != #(-1)) goto 171::CF,9961:CD,9849:CD,9850:CD,9962
+9849 :: EXPR :: assign :: Ljava/lang/Object :: v69 = v66 + #(1)::JM,9962
+9850 :: CALL :: call :: Ljava/lang/String :: v71 = v28.substring(v69)::JM,9962
+9855 :: CALL :: call :: [B :: v75 = textToNumericFormatV6(v28)::JM,9963:JM,9855
+9886 :: NORM :: declaration :: [Ljava/net/InetAddress :: v79 = new java.net.InetAddress[]::DD,9925:CF,9887
+9887 :: PRED :: IF :: Z :: if (v76 == #(null)) goto 324::CD,9888:CD,9889:CD,9925:CD,9952:CD,9958
+9888 :: EXPR :: assign :: I :: v82 = v76.length::DD,9889
+9889 :: PRED :: IF :: Z :: if (v82 != #(4)) goto 247::CD,9890:CD,9901
+9890 :: NORM :: declaration :: Ljava/net/Inet4Address :: v88 = new java.net.Inet4Address::DD,9896
+9896 :: EXPR :: modify :: Ljava/lang/Object :: v79[#(0)] = v88::
+9901 :: PRED :: IF :: Z :: if (v78 == #(null)) goto 271::CD,9902:CD,9914
+9902 :: NORM :: declaration :: Ljava/net/Inet6Address :: v86 = new java.net.Inet6Address::DD,9909
+9909 :: EXPR :: modify :: Ljava/lang/Object :: v79[#(0)] = v86::
+9914 :: NORM :: declaration :: Ljava/net/Inet6Address :: v84 = new java.net.Inet6Address::DD,9921
+9921 :: EXPR :: modify :: Ljava/lang/Object :: v79[#(0)] = v84::
+9925 :: NORM :: compound :: [Ljava/net/InetAddress :: return v79::DD,9753
+9952 :: CALL :: call :: [Ljava/net/InetAddress :: v81 = getAllByName0(v28, p2 $reqAddr , #(1))::JM,9958
+9958 :: NORM :: compound :: [Ljava/net/InetAddress :: return v81::DD,9753
+9959 :: EXPR :: assign :: null :: PHI v28 = p1 $host , v27::JM,9825:JM,9831:JM,9833:JM,9963:JM,9837:JM,9843:JM,9849:JM,9848:JM,9961:JM,9962:JM,9855
+9961 :: EXPR :: assign :: null :: PHI v72 = #(-1), v68, v68::CF,9962:DD,9964
+9962 :: EXPR :: assign :: null :: PHI v73 = #(null), #(null), v71::JM,9963:JM,9855:DD,9965
+9963 :: EXPR :: assign :: null :: PHI v76 = v75, v53::CF,9964:DD,9887:DD,9888
+9964 :: EXPR :: assign :: null :: PHI v77 = v72, #(-1)::CF,9965
+9965 :: EXPR :: assign :: null :: PHI v78 = v73, #(null)::CF,9886:DD,9901
+10662 :: CALL :: call :: V :: p0 $this .initstr(p1 $hostName , p2 $addr , p3 $ifname )::
+10685 :: EXIT :: exit :: [Ljava/net/InetAddress :: java.net.InetAddress.getAllByName0(java.lang.String,java.net.InetAddress,boolean)::JM,9958
+10690 :: PRED :: IF :: Z :: if (p3 $check  == #(0)) goto 27::CF,10691:CD,10694
+10691 :: CALL :: call :: Ljava/lang/SecurityManager :: v8 = getSecurityManager()::JM,10694
+10694 :: PRED :: IF :: Z :: if (v8 == #(null)) goto 27::CD,10695
+10695 :: CALL :: call :: V :: v8.checkConnect(p1 $host , #(-1))::
+10700 :: CALL :: call :: Ljava/lang/Object :: v12 = getCachedAddress(p1 $host )::JM,10704:JM,10761
+10704 :: PRED :: IF :: Z :: if (v12 != #(null)) goto 83::CF,10761:CD,10705
+10705 :: CALL :: call :: Ljava/lang/Object :: v14 = getAddressFromNameService(p1 $host , p2 $reqAddr )::JM,10761
+10753 :: EXPR :: assign :: Ljava/lang/Object :: v33 = CHECKCAST v31::JM,10754:JM,10758
+10754 :: CALL :: call :: Ljava/lang/Object :: v35 = v33.clone()::JM,10754:JM,10758
+10758 :: EXPR :: assign :: Ljava/lang/Object :: v36 = CHECKCAST v35::CF,10759
+10759 :: NORM :: compound :: [Ljava/net/InetAddress :: return v36::DD,10685
+10761 :: EXPR :: assign :: null :: PHI v31 = v12, v14::DD,10753
+11163 :: CALL :: call :: V :: p0 $this .initif(p1 $hostName , p2 $addr , v7)::
+11317 :: EXIT :: exit :: Ljava/lang/Object :: java.net.InetAddress.getCachedAddress(java.lang.String)::JM,10704:JM,10761:JM,12690:JM,12706
+11320 :: CALL :: call :: Ljava/lang/String :: v4 = p1 $hostname .toLowerCase()::JM,11336:JM,11356
+11327 :: CALL :: call :: V :: cacheInitIfNeeded()::
+11329 :: EXPR :: reference :: Ljava/net/InetAddress$Cache :: v7 = java.net.InetAddress.addressCache::JM,11336:JM,11356
+11331 :: CALL :: call :: Ljava/net/InetAddress$CacheEntry :: v9 = v7.get(v4)::JM,11336:JM,11356
+11336 :: PRED :: IF :: Z :: if (v9 != #(null)) goto 35::CF,11356:CD,11337:CD,11339
+11337 :: EXPR :: reference :: Ljava/net/InetAddress$Cache :: v11 = java.net.InetAddress.negativeCache::JM,11356
+11339 :: CALL :: call :: Ljava/net/InetAddress$CacheEntry :: v13 = v11.get(v4)::JM,11356:JM,11336
+11344 :: PRED :: IF :: Z :: if (v14 == #(null)) goto 46::CD,11349:CD,11354
+11345 :: EXPR :: reference :: Ljava/lang/Object :: v15 = v14.address::DD,11349
+11349 :: NORM :: compound :: Ljava/lang/Object :: return v15::DD,11317
+11354 :: NORM :: compound :: Ljava/lang/Object :: return #(null)::DD,11317
+11356 :: EXPR :: assign :: null :: PHI v14 = v9, v13::DD,11344
+11375 :: EXIT :: exit :: Ljava/lang/Object :: java.net.InetAddress.getAddressFromNameService(java.lang.String,java.net.InetAddress)::JM,10761
+11379 :: CALL :: call :: Ljava/lang/Object :: v7 = checkLookupTable(p1 $host )::JM,11542:JM,11383:JM,11549
+11383 :: PRED :: IF :: Z :: if (v7 != #(null)) goto 364::CF,11549:CD,11384:CD,11386:CD,11391:CD,11392:CD,11423:CD,11424:CD,11484:CD,11485:CD,11535:CD,11541
+11384 :: EXPR :: reference :: Lsun/net/spi/nameservice/NameService :: v8 = java.net.InetAddress.nameService::JM,11386:JM,11391:JM,11423
+11386 :: CALL :: call :: [[B :: v10 = v8.lookupAllHostAddr(p1 $host )::JM,11386:JM,11391:JM,11423:JM,11508:JM,11544:JM,11497:JM,11547:JM,11485
+11391 :: EXPR :: assign :: I :: v13 = v10.length::CF,11392
+11392 :: NORM :: declaration :: [Ljava/net/InetAddress :: v14 = new java.net.InetAddress[]::DD,11484:DD,11549
+11394 :: EXPR :: reference :: Ljava/lang/Object :: v16 = v10[v26]::DD,11398:JM,11508:JM,11497:JM,11391:JM,11423
+11398 :: EXPR :: assign :: I :: v17 = v16.length::DD,11399
+11399 :: PRED :: IF :: Z :: if (v17 != #(4)) goto 72::CD,11400:CD,11411
+11400 :: NORM :: declaration :: Ljava/net/Inet4Address :: v19 = new java.net.Inet4Address::DD,11406
+11406 :: EXPR :: modify :: Ljava/lang/Object :: v14[v26] = v19::
+11411 :: NORM :: declaration :: Ljava/net/Inet6Address :: v21 = new java.net.Inet6Address::DD,11418
+11418 :: EXPR :: modify :: Ljava/lang/Object :: v14[v26] = v21::
+11422 :: EXPR :: assign :: Ljava/lang/Object :: v25 = v26 + #(1)::DD,11541
+11423 :: EXPR :: assign :: I :: v15 = v10.length::CF,11424
+11424 :: PRED :: IF :: Z :: if (v26 < v15) goto 40::CD,11398:CD,11399:CD,11422:CD,11423:CD,11541
+11426 :: EXPR :: reference :: [Ljava/net/InetAddress :: v12 = java.net.InetAddress.unknown_array::DD,11542
+11429 :: EXPR :: assign :: Ljava/lang/Object :: v49 = CHECKCAST v48::
+11455 :: EXPR :: assign :: Ljava/lang/Object :: v58 = v59 + #(1)::DD,11543
+11461 :: EXPR :: reference :: Ljava/lang/Object :: v61 = v49[v64]::DD,11544
+11465 :: EXPR :: modify :: Ljava/lang/Object :: v49[v64] = v63::
+11469 :: EXPR :: assign :: Ljava/lang/Object :: v62 = v64 + #(1)::DD,11545
+11471 :: EXPR :: modify :: Ljava/lang/Object :: v49[v59] = v63::
+11480 :: CALL :: call :: V :: updateLookupTable(p1 $host )::JM,11508:JM,11544:JM,11497:JM,11386:JM,11547:JM,11485:JM,11391:JM,11423
+11484 :: EXPR :: assign :: Ljava/lang/Object :: v27 = CHECKCAST v14::DD,11486:DD,11511:DD,11513:CF,11485
+11485 :: PRED :: IF :: Z :: if (p2 $reqAddr  == #(null)) goto 356::CD,11486:CD,11487
+11486 :: EXPR :: assign :: I :: v28 = v27.length::DD,11487
+11487 :: PRED :: IF :: Z :: if (v28 <= #(1)) goto 356::CD,11492:CD,11497
+11488 :: EXPR :: reference :: Ljava/lang/Object :: v29 = v27[#(0)]::JM,11497
+11492 :: CALL :: call :: Z :: v31 = v29.equals(p2 $reqAddr )::JM,11497:JM,11508:JM,11544:JM,11386:JM,11547:JM,11391:JM,11423
+11497 :: PRED :: IF :: Z :: if (v31 != #(0)) goto 356::CD,11511:CD,11512:CD,11513:CD,11514:CD,11546
+11499 :: EXPR :: reference :: Ljava/lang/Object :: v33 = v27[v37]::JM,11508
+11503 :: CALL :: call :: Z :: v35 = v33.equals(p2 $reqAddr )::JM,11508:JM,11544:JM,11497:JM,11386:JM,11547:JM,11391:JM,11423
+11508 :: PRED :: IF :: Z :: if (v35 == #(0)) goto 290::CD,11510:CD,11511:CD,11512:CD,11546
+11510 :: EXPR :: assign :: Ljava/lang/Object :: v36 = v37 + #(1)::DD,11546
+11511 :: EXPR :: assign :: I :: v32 = v27.length::CF,11512
+11512 :: PRED :: IF :: Z :: if (v37 < v32) goto 279::CD,11503:CD,11508:CF,11513
+11513 :: EXPR :: assign :: I :: v38 = v27.length::CF,11514
+11514 :: PRED :: IF :: Z :: if (v37 >= v38) goto 356::CD,11525:CD,11547:CD,11548
+11516 :: EXPR :: reference :: Ljava/lang/Object :: v39 = v27[v42]::DD,11547
+11520 :: EXPR :: modify :: Ljava/lang/Object :: v27[v42] = v41::
+11524 :: EXPR :: assign :: Ljava/lang/Object :: v40 = v42 + #(1)::DD,11548:CF,11547
+11525 :: PRED :: IF :: Z :: if (v42 < v37) goto 322::CD,11524:CD,11547:CD,11548
+11526 :: EXPR :: modify :: Ljava/lang/Object :: v27[v37] = v41::
+11535 :: CALL :: call :: V :: updateLookupTable(p1 $host )::JM,11508:JM,11544:JM,11497:JM,11386:JM,11547:JM,11485:JM,11391:JM,11423
+11538 :: NORM :: compound :: Ljava/lang/Object :: return v45::DD,11375
+11541 :: EXPR :: assign :: null :: PHI v26 = #(0), v25::DD,11422:DD,11424:CF,11423
+11542 :: EXPR :: assign :: null :: PHI v48 = v7, v7, v7, v7, v7, v7, v7, v7, v7, v7, v7, v7, v12::DD,11429
+11543 :: EXPR :: assign :: null :: PHI v59 = #(1), v58::DD,11455
+11544 :: EXPR :: assign :: null :: PHI v63 = p2 $reqAddr , v61::DD,11465:DD,11471
+11545 :: EXPR :: assign :: null :: PHI v64 = #(0), v62::DD,11469
+11546 :: EXPR :: assign :: null :: PHI v37 = #(1), v36::DD,11510:DD,11512:DD,11514:DD,11525:CF,11511
+11547 :: EXPR :: assign :: null :: PHI v41 = p2 $reqAddr , v39::CF,11548:DD,11520:DD,11526
+11548 :: EXPR :: assign :: null :: PHI v42 = #(0), v40::DD,11524:DD,11525
+11549 :: EXPR :: assign :: null :: PHI v45 = v7, v14::CF,11538
+12487 :: EXPR :: assign :: I :: v6 = p2 $addr .length::DD,12488
+12488 :: PRED :: IF :: Z :: if (v6 != #(16)) goto 82::CD,12492:CD,12496:CD,12500:CD,12504:CF,12545
+12492 :: CALL :: call :: Ljava/lang/Object :: v10 = p2 $addr .clone()::JM,12496:JM,12545:JM,12492
+12496 :: EXPR :: assign :: Ljava/lang/Object :: v11 = CHECKCAST v10::DD,12497
+12497 :: EXPR :: modify :: [B :: p0 $this .ipaddress = v11::
+12500 :: CALL :: call :: Z :: v13 = p0 $this .isLinkLocalAddress()::JM,12504
+12504 :: PRED :: IF :: Z :: if (v13 == #(0)) goto 82::CF,12545
+12531 :: EXPR :: reference :: [B :: v25 = p0 $this .ipaddress::
+12534 :: EXPR :: modify :: B :: v25[#(2)] = #(0)::
+12538 :: EXPR :: reference :: [B :: v26 = p0 $this .ipaddress::
+12541 :: EXPR :: modify :: B :: v26[#(3)] = #(0)::
+12545 :: PRED :: IF :: Z :: if (p3 $nif  == #(null)) goto 109::CD,12552
+12552 :: CALL :: call :: I :: v29 = p0 $this .deriveNumericScope(p3 $nif )::
+12607 :: CALL :: call :: Ljava/lang/String :: v6 = getHost(p1 $host )::
+12626 :: CALL :: call :: V :: p0 $this .init(v10, v12)::
+12644 :: EXIT :: exit :: Ljava/lang/Object :: java.net.InetAddress.checkLookupTable(java.lang.String)::JM,11542:JM,11383:JM,11549
+12650 :: EXPR :: reference :: Ljava/util/HashMap :: v5 = java.net.InetAddress.lookupTable::JM,12657
+12652 :: CALL :: call :: Z :: v7 = v5.containsKey(p1 $host )::JM,12657
+12657 :: PRED :: IF :: Z :: if (v7 != #(0)) goto 41::CD,12658:CD,12660:CD,12667:CD,12686:CD,12690:CD,12706
+12658 :: EXPR :: reference :: Ljava/util/HashMap :: v24 = java.net.InetAddress.lookupTable::
+12660 :: CALL :: call :: Ljava/lang/Object :: v26 = v24.put(p1 $host , #(null))::JM,12657
+12667 :: NORM :: compound :: Ljava/lang/Object :: return #(null)::DD,12644
+12686 :: CALL :: call :: Ljava/lang/Object :: v17 = getCachedAddress(p1 $host )::JM,12690:JM,12706
+12690 :: PRED :: IF :: Z :: if (v17 != #(null)) goto 92::CD,12694:CD,12696:CF,12706
+12694 :: EXPR :: reference :: Ljava/util/HashMap :: v19 = java.net.InetAddress.lookupTable::
+12696 :: CALL :: call :: Ljava/lang/Object :: v21 = v19.put(p1 $host , #(null))::JM,12657
+12706 :: NORM :: compound :: Ljava/lang/Object :: return v17::DD,12644
+13125 :: CALL :: call :: Ljava/util/Enumeration :: v5 = p1 $ifc .getInetAddresses()::
+13193 :: CALL :: call :: C :: v12 = p1 $host .charAt(#(0))::JM,13232:JM,13406:JM,13198:JM,13246:JM,13407
+13198 :: PRED :: IF :: Z :: if (v12 != #(91)) goto 122::CD,13199:CD,13205:CD,13232:CD,13233:CD,13240:CD,13246:CD,13406:CD,13407:JM,13198
+13199 :: CALL :: call :: I :: v22 = p1 $host .indexOf(#(93))::JM,13232:JM,13406:JM,13198:JM,13246:JM,13407
+13205 :: CALL :: call :: Ljava/lang/String :: v33 = p1 $host .substring(#(1), v22)::JM,13232:JM,13406:JM,13198:JM,13246:JM,13407
+13232 :: EXPR :: assign :: Ljava/lang/Object :: v34 = v22 + #(1)::JM,13232:JM,13406:JM,13198:JM,13246:JM,13407
+13233 :: CALL :: call :: I :: v36 = p1 $host .indexOf(#(58), v34)::JM,13232:JM,13406:JM,13198:JM,13246:JM,13407
+13240 :: CALL :: call :: I :: v16 = p1 $host .indexOf(#(58), #(0))::JM,13232:JM,13406:JM,13198:JM,13246:JM,13407
+13246 :: PRED :: IF :: Z :: if (v16 == #(-1)) goto 149::CF,13406:CD,13247:CD,13407:JM,13232:JM,13198:JM,13246
+13247 :: CALL :: call :: Ljava/lang/String :: v18 = p1 $host .substring(#(0), v16)::JM,13232:JM,13406:JM,13198:JM,13246:JM,13407
+13253 :: PRED :: IF :: Z :: if (v41 == #(-1)) goto 205::CD,13254:CD,13255:CD,13260
+13254 :: EXPR :: assign :: Ljava/lang/Object :: v45 = v41 + #(1)::JM,13232:JM,13406:JM,13198:JM,13246:JM,13407
+13255 :: CALL :: call :: Ljava/lang/String :: v47 = p1 $host .substring(v45)::JM,13232:JM,13406:JM,13198:JM,13246:JM,13407
+13260 :: CALL :: call :: [I :: v49 = p0 $this .parsePort(v47)::JM,13232:JM,13406:JM,13198:JM,13246:JM,13407
+13312 :: CALL :: call :: Z :: v65 = v37.startsWith(#(*))::JM,13317
+13317 :: PRED :: IF :: Z :: if (v65 == #(0)) goto 307::CD,13357:CD,13361
+13357 :: CALL :: call :: I :: v67 = v37.length()::JM,13361
+13361 :: PRED :: IF :: Z :: if (v67 <= #(0)) goto 391::CD,13362:CD,13367:JM,13373
+13362 :: CALL :: call :: C :: v69 = v37.charAt(#(0))::JM,13367:JM,13373
+13367 :: PRED :: IF :: Z :: if (v69 == #(58)) goto 339::CD,13368:CD,13373:CD,13374:CD,13378:CD,13383:CD,13408
+13368 :: CALL :: call :: I :: v72 = digit(v69, #(16))::JM,13373
+13373 :: PRED :: IF :: Z :: if (v72 == #(-1)) goto 391::CD,13374:CD,13378:CD,13383:CD,13408
+13374 :: CALL :: call :: [B :: v74 = textToNumericFormatV4(v37)::JM,13408:JM,13378:JM,13374
+13378 :: PRED :: IF :: Z :: if (v74 != #(null)) goto 357::CF,13408:CD,13379
+13379 :: CALL :: call :: [B :: v77 = textToNumericFormatV6(v37)::JM,13408:JM,13379
+13383 :: PRED :: IF :: Z :: if (v78 == #(null)) goto 391::CD,13385
+13385 :: CALL :: call :: Ljava/net/InetAddress :: v81 = getByAddress(v78)::
+13406 :: EXPR :: assign :: null :: PHI v37 = v33, p1 $host , v18::CF,13407:JM,13317:JM,13361:JM,13367:JM,13373:JM,13408:JM,13378:JM,13374:JM,13379
+13407 :: EXPR :: assign :: null :: PHI v41 = v36, v16, v16::DD,13253:DD,13254
+13408 :: EXPR :: assign :: null :: PHI v78 = v74, v77::DD,13383
+13842 :: CALL :: call :: Ljava/net/InetAddress :: v5 = getByAddress(#(null), p1 $addr )::
+7210 :: EXIT :: exit :: Ljava/net/InetAddress :: java.net.InetAddress.getByName(java.lang.String)::
+7213 :: CALL :: call :: [Ljava/net/InetAddress :: v4 = getAllByName(p1 $host )::
+7217 :: EXPR :: reference :: Ljava/lang/Object :: v6 = v4[#(0)]::DD,7221
+7221 :: NORM :: compound :: Ljava/net/InetAddress :: return v6::DD,7210
+7303 :: EXPR :: modify :: I :: p0 $this .bitBlockSize = p2 $bitBlockSize ::
+7306 :: EXPR :: modify :: [B :: p0 $this .value = p1 $value ::
+7312 :: CALL :: call :: [B :: v29 = leftShift(v21, v27)::JM,7317:CL,8475
+7317 :: EXPR :: modify :: [B :: p0 $this .mask = v29::
+7366 :: EXPR :: modify :: Z :: p0 $this .allow = p3 $allow ::
+7464 :: CALL :: call :: Z :: v3 = isIPv6Supported()::JM,7467
+7467 :: PRED :: IF :: Z :: if (v3 == #(0)) goto 17::CD,7468:CD,7473
+7468 :: CALL :: call :: Ljava/lang/Object :: v10 = loadImpl(#(Inet6AddressImpl))::
+7473 :: CALL :: call :: Ljava/lang/Object :: v7 = loadImpl(#(Inet4AddressImpl))::
+16029 :: CALL :: call :: Ljava/lang/SecurityManager :: v11 = getSecurityManager()::JM,16033
+16033 :: PRED :: IF :: Z :: if (v11 == #(null)) goto 59::CD,16046
+16046 :: CALL :: call :: V :: v11.checkConnect(v20, #(-1))::
+16074 :: EXPR :: assign :: Ljava/lang/Object :: v32 = v34 + #(1)::DD,16083
+16075 :: CALL :: call :: [Ljava/net/InetAddress :: v13 = access$0(p1 $null )::JM,16079
+16079 :: EXPR :: assign :: I :: v14 = v13.length::CF,16080
+16080 :: PRED :: IF :: Z :: if (v34 < v14) goto 41::CD,16033:CD,16074:CD,16075:CD,16079:CD,16083
+16083 :: EXPR :: assign :: null :: PHI v34 = #(0), v32::DD,16074:DD,16080:JM,16079
+16118 :: PRED :: IF :: Z :: if (p1 $host  == #(null)) goto 49::CF,16189:CD,16119:CD,16123:JM,16129:JM,16130:JM,16164:JM,16134:JM,16135:JM,16168:JM,16140:JM,16141:JM,16145:JM,16146:JM,16118:JM,16153:JM,16124
+16119 :: CALL :: call :: I :: v6 = p1 $host .length()::JM,16129:JM,16130:JM,16164:JM,16134:JM,16135:JM,16168:JM,16140:JM,16141:JM,16145:JM,16146:JM,16118:JM,16119:JM,16153:JM,16123:JM,16124:JM,16189
+16123 :: PRED :: IF :: Z :: if (v6 <= #(0)) goto 49::CF,16189:CD,16124:CD,16129:JM,16130:JM,16164:JM,16134:JM,16135:JM,16168:JM,16140:JM,16141:JM,16145:JM,16146:JM,16118:JM,16119:JM,16153:JM,16123
+16124 :: CALL :: call :: C :: v9 = p1 $host .charAt(#(0))::JM,16129:JM,16130:JM,16164:JM,16134:JM,16135:JM,16168:JM,16140:JM,16141:JM,16145:JM,16146:JM,16118:JM,16119:JM,16153:JM,16123:JM,16124:JM,16189
+16129 :: PRED :: IF :: Z :: if (v9 != #(91)) goto 49::CF,16189:CD,16130:CD,16134:CD,16135:CD,16140:JM,16129:JM,16164:JM,16168:JM,16141:JM,16145:JM,16146:JM,16118:JM,16119:JM,16153:JM,16123:JM,16124
+16130 :: CALL :: call :: I :: v12 = p1 $host .length()::JM,16129:JM,16130:JM,16164:JM,16134:JM,16135:JM,16168:JM,16140:JM,16141:JM,16145:JM,16146:JM,16118:JM,16119:JM,16153:JM,16123:JM,16124:JM,16189
+16134 :: EXPR :: assign :: Ljava/lang/Object :: v14 = v12 - #(1)::JM,16129:JM,16130:JM,16164:JM,16134:JM,16135:JM,16168:JM,16140:JM,16141:JM,16145:JM,16146:JM,16118:JM,16119:JM,16153:JM,16123:JM,16124:JM,16189
+16135 :: CALL :: call :: C :: v16 = p1 $host .charAt(v14)::JM,16129:JM,16130:JM,16164:JM,16134:JM,16135:JM,16168:JM,16140:JM,16141:JM,16145:JM,16146:JM,16118:JM,16119:JM,16153:JM,16123:JM,16124:JM,16189
+16140 :: PRED :: IF :: Z :: if (v16 != #(93)) goto 49::CF,16189:CD,16141:CD,16145:CD,16146:JM,16129:JM,16130:JM,16164:JM,16134:JM,16135:JM,16168:JM,16140:JM,16118:JM,16119:JM,16153:JM,16123:JM,16124
+16141 :: CALL :: call :: I :: v19 = p1 $host .length()::JM,16129:JM,16130:JM,16164:JM,16134:JM,16135:JM,16168:JM,16140:JM,16141:JM,16145:JM,16146:JM,16118:JM,16119:JM,16153:JM,16123:JM,16124:JM,16189
+16145 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v19 - #(1)::JM,16129:JM,16130:JM,16164:JM,16134:JM,16135:JM,16168:JM,16140:JM,16141:JM,16145:JM,16146:JM,16118:JM,16119:JM,16153:JM,16123:JM,16124:JM,16189
+16146 :: CALL :: call :: Ljava/lang/String :: v22 = p1 $host .substring(#(1), v20)::JM,16129:JM,16130:JM,16164:JM,16134:JM,16135:JM,16168:JM,16140:JM,16141:JM,16145:JM,16146:JM,16118:JM,16119:JM,16153:JM,16123:JM,16124:JM,16189
+16153 :: EXPR :: assign :: I :: v24 = p2 $addr .length::DD,16154
+16154 :: PRED :: IF :: Z :: if (v24 != #(4)) goto 69::CF,16155:CD,16164:CD,16168
+16155 :: NORM :: declaration :: Ljava/net/Inet4Address :: v37 = new java.net.Inet4Address::
+16164 :: CALL :: call :: [B :: v32 = convertFromIPv4MappedAddress(p2 $addr )::JM,16129:JM,16130:JM,16164:JM,16134:JM,16135:JM,16168:JM,16140:JM,16141:JM,16145:JM,16146:JM,16118:JM,16119:JM,16123:JM,16124:JM,16189
+16168 :: PRED :: IF :: Z :: if (v32 == #(null)) goto 94::CF,16169
+16169 :: NORM :: declaration :: Ljava/net/Inet4Address :: v35 = new java.net.Inet4Address::
+16189 :: EXPR :: assign :: null :: PHI v23 = p1 $host , p1 $host , p1 $host , p1 $host , v22::
+16379 :: CALL :: call :: V :: p0 $this .initif(p1 $hostName , p2 $addr , #(null))::

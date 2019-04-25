@@ -1,0 +1,103 @@
+[65, 67, 72, 77, 81]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.sendMultiAFPChainToServer(java.lang.String,java.lang.String,java.lang.String,java.lang.String)::CD,8:CD,9:CD,17:CD,22:CD,26:CD,35:CD,40:CD,142:CD,161:CD,163:JM,27:JM,31
+8 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v6 = new java.lang.StringBuilder::
+9 :: CALL :: call :: Ljava/lang/String :: v8 = valueOf(p1 $serverLocation )::
+17 :: CALL :: call :: Ljava/lang/StringBuilder :: v12 = v6.append(#(jobSubmit?username=%s...))::
+22 :: CALL :: call :: Ljava/lang/String :: v14 = v12.toString()::
+26 :: NORM :: declaration :: [Ljava/lang/Object :: v17 = new java.lang.Object[]::
+27 :: EXPR :: modify :: Ljava/lang/Object :: v17[#(0)] = p3 $username ::
+31 :: EXPR :: modify :: Ljava/lang/Object :: v17[#(1)] = p4 $version ::
+35 :: CALL :: call :: Ljava/lang/String :: v21 = format(v14, v17)::
+40 :: CALL :: call :: I :: v23 = getTimeout()::CL,419
+44 :: NORM :: declaration :: Ljava/net/URL :: v24 = new java.net.URL::
+49 :: CALL :: call :: Ljava/io/InputStream :: v27 = doPOST(v24, p2 $multiXML , v23)::CL,452
+55 :: CALL :: call :: Ljava/lang/String :: v29 = convertStreamToString(v27)::JM,64:JM,81:JM,92:CL,500
+59 :: CALL :: call :: Z :: v32 = v29.contains(#(OK))::JM,64:JM,81:JM,92
+64 :: PRED :: IF :: Z :: if (v32 != #(0)) goto 126::CD,65:CD,67:CD,72:CD,77:CD,81
+65 :: EXPR :: reference :: Lorg/slf4j/Logger :: v33 = org.biojava.nbio.structure.align.client.JFatCatClient.logger::CF,67:JM,81
+67 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v34 = new java.lang.StringBuilder::JM,81
+72 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v34.append(v29)::JM,81:JM,64:JM,92
+77 :: CALL :: call :: Ljava/lang/String :: v40 = v38.toString()::JM,81:JM,92
+81 :: CALL :: call :: V :: v33.error(v40)::JM,81
+85 :: EXPR :: reference :: Ljava/lang/String :: v42 = org.biojava.nbio.structure.align.client.JFatCatClient.COME_BACK_LATER::JM,64:JM,81:JM,92
+87 :: CALL :: call :: Z :: v44 = v29.startsWith(v42)::JM,64:JM,81:JM,92
+92 :: PRED :: IF :: Z :: if (v44 == #(0)) goto 223::CD,163
+142 :: PRED :: IF :: Z :: if (v46 == #(0)) goto 56::CF,44:CD,49:CD,55:CD,59:CD,64:CD,85:CD,87:CD,92:CD,163
+161 :: EXPR :: assign :: null :: PHI v49 = v46, v46, v46, #(1), #(1), #(1), #(1), #(1), #(1)::DD,163
+163 :: EXPR :: assign :: null :: PHI v46 = #(0), #(1), #(0), v49, v49::DD,142:DD,161
+375 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.<clinit>()::CD,378:CD,379:CD,383:CD,385:CD,399:CD,401
+378 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lorg/biojava/nbio/structure/align/client/JFatCatClient>-><Primordial,Ljava/lang/Class>::JM,379:JM,383
+379 :: CALL :: call :: Lorg/slf4j/Logger :: v4 = getLogger(v2)::JM,379:JM,383
+383 :: EXPR :: modify :: Lorg/slf4j/Logger :: org.biojava.nbio.structure.align.client.JFatCatClient.logger = v4::
+385 :: CALL :: call :: Lorg/biojava/nbio/structure/align/util/ResourceManager :: v7 = getResourceManager(#(jfatcat))::CL,643
+399 :: EXPR :: modify :: Ljava/lang/String :: org.biojava.nbio.structure.align.client.JFatCatClient.COME_BACK_LATER = #(COME_BACK_LATER)::
+401 :: NORM :: declaration :: Ljava/util/Random :: v13 = new java.util.Random::
+419 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.getTimeout()::CD,424:CD,429
+424 :: CALL :: call :: Ljava/lang/String :: v5 = v2.getString(#(connection.timeout))::CL,655
+429 :: CALL :: call :: I :: v8 = parseInt(v5)::
+452 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.doPOST(java.net.URL,java.lang.String,int)::CD,458:CD,467:CD,468:CD,476
+458 :: CALL :: call :: Ljava/net/HttpURLConnection :: v6 = openHttpURLConnection(p1 $url , p3 $timeout )::JM,468:CL,707
+467 :: NORM :: declaration :: Ljava/io/OutputStreamWriter :: v9 = new java.io.OutputStreamWriter::JM,468
+468 :: CALL :: call :: Ljava/io/OutputStream :: v11 = v6.getOutputStream()::JM,468
+476 :: CALL :: call :: V :: v9.write(p2 $data )::
+500 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.convertStreamToString(java.io.InputStream)::CE,501:CD,504:CD,505:CD,514:CD,531:CD,535:CD,579:CD,583
+501 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.client.JFatCatClient.convertStreamToString(java.io.InputStream)::JM,64:JM,81:JM,92
+504 :: NORM :: declaration :: Ljava/io/BufferedReader :: v3 = new java.io.BufferedReader::JM,535:CF,505
+505 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v4 = new java.io.InputStreamReader::
+514 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v7 = new java.lang.StringBuilder::JM,583
+519 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v7.append(v11)::JM,535
+524 :: EXPR :: reference :: Ljava/lang/String :: v14 = org.biojava.nbio.structure.align.client.JFatCatClient.newline::
+526 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v13.append(v14)::
+531 :: CALL :: call :: Ljava/lang/String :: v11 = v3.readLine()::JM,535
+535 :: PRED :: IF :: Z :: if (v11 != #(null)) goto 31::CD,519:CD,524:CD,526:CD,531
+579 :: CALL :: call :: Ljava/lang/String :: v33 = v7.toString()::JM,583
+583 :: NORM :: compound :: Ljava/lang/String :: return v33::DD,501
+643 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.ResourceManager.getResourceManager(java.lang.String)::JM,881:JM,889:JM,893
+655 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.ResourceManager.getString(java.lang.String)::CE,656:CD,663:CD,668:CD,669:CD,671:CD,675:CD,679:CD,680:CD,688:CD,693:CD,698:CD,702:CD,703
+656 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.util.ResourceManager.getString(java.lang.String)::
+660 :: EXPR :: reference :: Ljava/util/ResourceBundle :: v4 = p0 $this .RESOURCE_BUNDLE::JM,668
+663 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getString(p1 $key )::JM,668:JM,702
+668 :: NORM :: compound :: Ljava/lang/String :: return v6::DD,656
+669 :: EXPR :: reference :: Ljava/io/PrintStream :: v8 = java.lang.System.err::
+671 :: CALL :: call :: Ljava/lang/String :: v10 = v7.getMessage()::
+675 :: CALL :: call :: V :: v8.println(v10)::
+679 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::JM,702
+680 :: CALL :: call :: Ljava/lang/String :: v15 = valueOf(#(33))::
+688 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v12.append(p1 $key )::JM,702:JM,668
+693 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v18.append(#(33))::JM,702
+698 :: CALL :: call :: Ljava/lang/String :: v22 = v20.toString()::JM,702
+702 :: NORM :: compound :: Ljava/lang/String :: return v22::DD,656
+703 :: EXPR :: assign :: Ljava/lang/Exception :: v7 = catch <exc>::
+707 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::CE,708:CD,712:CD,716:CD,722:CD,726:CD,731:CD,735:CD,740:CD,744:CD,749:CD,753:CD,758:CD,762:CD,763:CD,769:CD,775:CD,776:CD,785:CD,791:CD,792:CD,798:CD,804:CD,805:CD,814:CD,821:CD,824:CD,825
+708 :: EXIT :: exit :: Ljava/net/HttpURLConnection :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::JM,468
+712 :: CALL :: call :: Ljava/net/URLConnection :: v6 = p1 $url .openConnection()::JM,805:JM,776:JM,716
+716 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST v6::DD,824
+722 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::
+726 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v12.append(p2 $timeout )::JM,805:JM,776:JM,716
+731 :: CALL :: call :: Ljava/lang/String :: v17 = v15.toString()::JM,805:JM,776
+735 :: CALL :: call :: Ljava/lang/String :: v19 = setProperty(#(sun.net.client.defaul...), v17)::
+740 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v21 = new java.lang.StringBuilder::
+744 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v21.append(p2 $timeout )::JM,805:JM,776:JM,716
+749 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::JM,805:JM,776
+753 :: CALL :: call :: Ljava/lang/String :: v28 = setProperty(#(sun.net.client.defaul...), v26)::
+758 :: CALL :: call :: Ljava/lang/Class :: v31 = forName(#(java.net.HttpURLConne...))::JM,758
+762 :: NORM :: declaration :: [Ljava/lang/Class :: v34 = new java.lang.Class[]::
+763 :: EXPR :: reference :: Ljava/lang/Class :: v36 = java.lang.Integer.TYPE::DD,765
+765 :: EXPR :: modify :: Ljava/lang/Object :: v34[#(0)] = v36::
+769 :: CALL :: call :: Ljava/lang/reflect/Method :: v38 = v31.getMethod(#(setConnectTimeout), v34)::
+775 :: NORM :: declaration :: [Ljava/lang/Object :: v39 = new java.lang.Object[]::CF,776
+776 :: NORM :: declaration :: Ljava/lang/Integer :: v40 = new java.lang.Integer::JM,805:JM,776:JM,716
+785 :: CALL :: call :: Ljava/lang/Object :: v43 = v38.invoke(v7, v39)::
+791 :: NORM :: declaration :: [Ljava/lang/Class :: v45 = new java.lang.Class[]::
+792 :: EXPR :: reference :: Ljava/lang/Class :: v46 = java.lang.Integer.TYPE::DD,794
+794 :: EXPR :: modify :: Ljava/lang/Object :: v45[#(0)] = v46::
+798 :: CALL :: call :: Ljava/lang/reflect/Method :: v48 = v31.getMethod(#(setReadTimeout), v45)::
+804 :: NORM :: declaration :: [Ljava/lang/Object :: v49 = new java.lang.Object[]::CF,805
+805 :: NORM :: declaration :: Ljava/lang/Integer :: v50 = new java.lang.Integer::JM,805:JM,776:JM,716
+814 :: CALL :: call :: Ljava/lang/Object :: v53 = v48.invoke(v7, v49)::
+821 :: CALL :: call :: V :: v54.printStackTrace()::
+824 :: NORM :: compound :: Ljava/net/HttpURLConnection :: return v7::DD,708
+825 :: EXPR :: assign :: Ljava/lang/Exception :: v54 = catch <exc>::
+881 :: CALL :: call :: Ljava/util/ResourceBundle :: v6 = getBundle(p1 $bundleName )::
+889 :: CALL :: call :: V :: v7.printStackTrace()::
+893 :: EXPR :: assign :: Ljava/lang/Exception :: v7 = catch <exc>::

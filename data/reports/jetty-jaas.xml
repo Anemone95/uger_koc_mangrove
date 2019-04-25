@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.2-dev-20160306-90c514b" sequence="2" timestamp="1507870252926" analysisTimestamp="1507870252389" release="">
+  <Project projectName="jetty-jaas">
+    <Jar>/Users/ukoc/workspace-bench/jetty/jetty-jaas/target/classes</Jar>
+    <AuxClasspathEntry>/Users/ukoc/workspace-bench/jetty/jetty-jaas/target/classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/workspace-bench/jetty/jetty-jaas/target/test-classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/workspace-bench/jetty/jetty-security/target/classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/workspace-bench/jetty/jetty-security/target/test-classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/workspace-bench/jetty/jetty-server/target/classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/workspace-bench/jetty/jetty-server/target/test-classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/org/eclipse/jetty/jetty-http/9.4.8-SNAPSHOT/jetty-http-9.4.8-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/org/eclipse/jetty/jetty-util/9.4.8-SNAPSHOT/jetty-util-9.4.8-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/org/eclipse/jetty/jetty-io/9.4.8-SNAPSHOT/jetty-io-9.4.8-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/org/eclipse/jetty/jetty-xml/9.4.8-SNAPSHOT/jetty-xml-9.4.8-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/org/eclipse/jetty/jetty-jmx/9.4.8-SNAPSHOT/jetty-jmx-9.4.8-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/org/eclipse/jetty/toolchain/jetty-test-helper/4.2/jetty-test-helper-4.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/junit/junit/4.12/junit-4.12.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/org/eclipse/jetty/jetty-http/9.4.8-SNAPSHOT/jetty-http-9.4.8-SNAPSHOT-tests.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/rt.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.p2/pool/plugins/javax.servlet_3.1.0.v201410161800.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.p2/pool/plugins/org.eclipse.osgi_3.11.1.v20160708-1632.jar</AuxClasspathEntry>
+    <SrcDir>/Users/ukoc/workspace-bench/jetty/jetty-jaas/src/main/java</SrcDir>
+    <SrcDir>/jetty-jaas/src/test/java</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" name="getRoles" signature="(Ljava/lang/String;)Ljava/util/List;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="122" end="143" startBytecode="0" endBytecode="605" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="128" end="128" startBytecode="31" endBytecode="31" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="128" end="128" startBytecode="28" endBytecode="28" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" first="1">
+    <Class classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" name="getUserInfo" signature="(Ljava/lang/String;)Lorg/eclipse/jetty/jaas/spi/UserInfo;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="90" end="115" startBytecode="0" endBytecode="631" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="95" end="95" startBytecode="25" endBytecode="25" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+    <String value="Connection.prepareStatement(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" start="95" end="95" startBytecode="22" endBytecode="22" sourcefile="AbstractDatabaseLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule.java"/>
+  </BugInstance>
+  <BugInstance type="LDAP_INJECTION" priority="2" rank="7" abbrev="SECLDAPI" category="SECURITY" first="1">
+    <Class classname="org.eclipse.jetty.jaas.spi.LdapLoginModule">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" name="findUser" signature="(Ljava/lang/String;)Ljavax/naming/directory/SearchResult;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="535" end="560" startBytecode="0" endBytecode="421" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="550" end="550" startBytecode="132" endBytecode="132" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+    <String value="DirContext.search(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="550" end="550" startBytecode="125" endBytecode="125" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+  </BugInstance>
+  <BugInstance type="LDAP_INJECTION" priority="2" rank="7" abbrev="SECLDAPI" category="SECURITY" first="1">
+    <Class classname="org.eclipse.jetty.jaas.spi.LdapLoginModule">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+    </Class>
+    <Method classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" name="getUserRolesByDn" signature="(Ljavax/naming/directory/DirContext;Ljava/lang/String;)Ljava/util/List;" isStatic="false">
+      <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="346" end="389" startBytecode="0" endBytecode="640" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+    </Method>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="360" end="360" startBytecode="112" endBytecode="112" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+    <String value="DirContext.search(...)" role="Sink method"/>
+    <SourceLine classname="org.eclipse.jetty.jaas.spi.LdapLoginModule" start="360" end="360" startBytecode="103" endBytecode="103" sourcefile="LdapLoginModule.java" sourcepath="org/eclipse/jetty/jaas/spi/LdapLoginModule.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Thu, 12 Oct 2017 22:58:00 -0400" total_classes="26" referenced_classes="113" total_bugs="4" total_size="913" num_packages="3" java_version="1.8.0_101" vm_version="25.101-b13" cpu_seconds="43.38" clock_seconds="226.97" peak_mbytes="2003.38" alloc_mbytes="1024.00" gc_seconds="0.41" priority_2="4">
+    <PackageStats package="org.eclipse.jetty.jaas" total_bugs="0" total_types="10" total_size="236">
+      <ClassStats class="org.eclipse.jetty.jaas.JAASGroup" sourceFile="JAASGroup.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.JAASGroup$1MembersEnumeration" sourceFile="JAASGroup.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.JAASLoginService" sourceFile="JAASLoginService.java" interface="false" size="105" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.JAASLoginService$1" sourceFile="JAASLoginService.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.JAASPrincipal" sourceFile="JAASPrincipal.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.JAASRole" sourceFile="JAASRole.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.JAASUserPrincipal" sourceFile="JAASUserPrincipal.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.RoleCheckPolicy" sourceFile="RoleCheckPolicy.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.StrictRoleCheckPolicy" sourceFile="StrictRoleCheckPolicy.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.jaas.callback" total_bugs="0" total_types="5" total_size="73">
+      <ClassStats class="org.eclipse.jetty.jaas.callback.AbstractCallbackHandler" sourceFile="AbstractCallbackHandler.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.callback.DefaultCallbackHandler" sourceFile="DefaultCallbackHandler.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.callback.ObjectCallback" sourceFile="ObjectCallback.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.callback.RequestParameterCallback" sourceFile="RequestParameterCallback.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.callback.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.eclipse.jetty.jaas.spi" total_bugs="4" total_types="11" total_size="604" priority_2="4">
+      <ClassStats class="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule" sourceFile="AbstractDatabaseLoginModule.java" interface="false" size="55" bugs="2" priority_2="2"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule$JDBCUserInfo" sourceFile="AbstractDatabaseLoginModule.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.AbstractLoginModule" sourceFile="AbstractLoginModule.java" interface="false" size="96" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.AbstractLoginModule$JAASUserInfo" sourceFile="AbstractLoginModule.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.DataSourceLoginModule" sourceFile="DataSourceLoginModule.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.JDBCLoginModule" sourceFile="JDBCLoginModule.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.LdapLoginModule" sourceFile="LdapLoginModule.java" interface="false" size="259" bugs="2" priority_2="2"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.LdapLoginModule$LDAPUserInfo" sourceFile="LdapLoginModule.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.PropertyFileLoginModule" sourceFile="PropertyFileLoginModule.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.UserInfo" sourceFile="UserInfo.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.eclipse.jetty.jaas.spi.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="108" invocations="815" avgMicrosecondsPerInvocation="133" maxMicrosecondsPerInvocation="2710" standardDeviationMircosecondsPerInvocation="253"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="59" invocations="2" avgMicrosecondsPerInvocation="29546" maxMicrosecondsPerInvocation="49227" standardDeviationMircosecondsPerInvocation="19681"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="51" invocations="784" avgMicrosecondsPerInvocation="65" maxMicrosecondsPerInvocation="42412" standardDeviationMircosecondsPerInvocation="1513"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="34" invocations="113" avgMicrosecondsPerInvocation="300" maxMicrosecondsPerInvocation="5012" standardDeviationMircosecondsPerInvocation="652"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="30" invocations="820" avgMicrosecondsPerInvocation="37" maxMicrosecondsPerInvocation="231" standardDeviationMircosecondsPerInvocation="19"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="28" invocations="113" avgMicrosecondsPerInvocation="254" maxMicrosecondsPerInvocation="4219" standardDeviationMircosecondsPerInvocation="565"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="24" invocations="325" avgMicrosecondsPerInvocation="76" maxMicrosecondsPerInvocation="902" standardDeviationMircosecondsPerInvocation="91"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.taintanalysis.TaintDataflowEngine" totalMilliseconds="13" invocations="141" avgMicrosecondsPerInvocation="95" maxMicrosecondsPerInvocation="1252" standardDeviationMircosecondsPerInvocation="217"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1507870046595" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1507870046595" release="" codeSize="913" numClasses="26"/>
+  </History>
+</BugCollection>

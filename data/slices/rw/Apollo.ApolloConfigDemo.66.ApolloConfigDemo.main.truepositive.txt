@@ -1,0 +1,43 @@
+[744, 746, 747, 751, 755, 760]
+1 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.demo.api.ApolloConfigDemo.main(java.lang.String[])::CD,5:CD,24:CD,38:CD,49:CD,84
+5 :: NORM :: declaration :: Lcom/ctrip/framework/apollo/demo/api/ApolloConfigDemo :: v3 = new com.ctrip.framework.apollo.demo.api.ApolloConfigDemo::JM,738:JM,747:JM,731:JM,717:JM,765
+24 :: NORM :: declaration :: Ljava/io/BufferedReader :: v12 = new java.io.BufferedReader::JM,738:JM,747:JM,731:JM,717:JM,765
+38 :: CALL :: call :: Ljava/lang/String :: v19 = v12.readLine()::JM,738:JM,747:JM,731:JM,717:JM,765
+49 :: CALL :: call :: Ljava/lang/String :: v25 = v19.trim()::JM,738:JM,747:JM,731:JM,717:JM,765
+84 :: CALL :: call :: Ljava/lang/String :: v40 = v3.getConfig(v25)::JM,738:JM,747:JM,731:JM,717:JM,765:CL,706
+222 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.demo.api.ApolloConfigDemo.<clinit>()::CF,225:CD,226:CD,230
+225 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lcom/ctrip/framework/apollo/demo/api/ApolloConfigDemo>-><Primordial,Ljava/lang/Class>::JM,226:JM,230
+226 :: CALL :: call :: Lorg/slf4j/Logger :: v4 = getLogger(v2)::JM,226:JM,230
+230 :: EXPR :: modify :: Lorg/slf4j/Logger :: com.ctrip.framework.apollo.demo.api.ApolloConfigDemo.logger = v4::
+234 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.ConfigService.<clinit>()::
+246 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.core.enums.ConfigFileFormat.<clinit>()::
+370 :: ENTR :: entry :: null :: com.ctrip.framework.foundation.Foundation.<clinit>()::CD,380:CD,386
+380 :: NORM :: declaration :: Ljava/lang/Object :: v5 = new java.lang.Object::JM,380
+386 :: CALL :: call :: Lcom/ctrip/framework/foundation/spi/ProviderManager :: v8 = getManager()::CL,817
+394 :: ENTR :: entry :: null :: com.ctrip.framework.foundation.internals.NullProviderManager.<clinit>()::
+406 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.build.ApolloInjector.<clinit>()::CF,409
+409 :: NORM :: declaration :: Ljava/lang/Object :: v2 = new java.lang.Object::JM,409
+418 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.Tracer.<clinit>()::CD,434:CD,440
+434 :: NORM :: declaration :: Ljava/lang/Object :: v7 = new java.lang.Object::JM,434
+440 :: CALL :: call :: Lcom/ctrip/framework/apollo/tracer/spi/MessageProducer :: v10 = getProducer()::CL,889
+450 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.internals.NullMessageProducerManager.<clinit>()::
+462 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.internals.NullMessageProducer.<clinit>()::
+706 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.demo.api.ApolloConfigDemo.getConfig(java.lang.String)::CD,717:CD,726:CD,731:CD,744:CD,746:CD,755:CD,760:CD,765:JM,738:JM,747
+711 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/Config :: v4 = p0 $this .config::JM,731:JM,717:JM,765
+714 :: EXPR :: reference :: Ljava/lang/String :: v5 = p0 $this .DEFAULT_VALUE::JM,738:JM,731:JM,717:JM,765
+717 :: CALL :: call :: Ljava/lang/String :: v7 = v4.getProperty(p1 $key , v5)::JM,731:JM,717:JM,765:JM,738:JM,747
+723 :: EXPR :: reference :: Ljava/lang/String :: v8 = p0 $this .DEFAULT_VALUE::JM,731
+726 :: CALL :: call :: Z :: v10 = v8.equals(v7)::JM,731:JM,765
+731 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 41::CF,765:CD,738
+732 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/Config :: v12 = p0 $this .publicConfig::JM,738:JM,765
+735 :: EXPR :: reference :: Ljava/lang/String :: v13 = p0 $this .DEFAULT_VALUE::JM,738:JM,731:JM,717:JM,765
+738 :: CALL :: call :: Ljava/lang/String :: v15 = v12.getProperty(p1 $key , v13)::JM,738:JM,765:JM,747:JM,731:JM,717
+744 :: EXPR :: reference :: Lorg/slf4j/Logger :: v17 = com.ctrip.framework.apollo.demo.api.ApolloConfigDemo.logger::JM,760:CF,746
+746 :: NORM :: declaration :: [Ljava/lang/Object :: v20 = new java.lang.Object[]::JM,760
+747 :: EXPR :: modify :: Ljava/lang/Object :: v20[#(0)] = p1 $key ::
+751 :: EXPR :: modify :: Ljava/lang/Object :: v20[#(1)] = v16::
+755 :: CALL :: call :: Ljava/lang/String :: v23 = format(#(Loading key : %s with...), v20)::JM,760
+760 :: CALL :: call :: V :: v17.info(v23)::JM,760
+765 :: EXPR :: assign :: null :: PHI v16 = v7, v15::DD,751
+817 :: ENTR :: entry :: null :: com.ctrip.framework.foundation.Foundation.getManager()::
+889 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.Tracer.getProducer()::

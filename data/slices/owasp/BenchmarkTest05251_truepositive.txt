@@ -1,0 +1,23 @@
+[75, 79]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest05251.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,17:CD,21:CD,27:CD,31:CD,37:CD,43:CD,48:CD,49:CD,53:CD,58:CD,63:CD,68:CD,72:CD,75
+12 :: CALL :: call :: Ljava/lang/String :: v9 = v5.getTheParameter(#(foo))::JM,27:CL,194
+17 :: NORM :: declaration :: Ljava/util/HashMap :: v11 = new java.util.HashMap::JM,48
+21 :: CALL :: call :: Ljava/lang/Object :: v16 = v11.put(#(keyA-13647), #(a Value))::
+27 :: CALL :: call :: Ljava/lang/String :: v19 = v9.toString()::JM,27
+31 :: CALL :: call :: Ljava/lang/Object :: v21 = v11.put(#(keyB-13647), v19)::
+37 :: CALL :: call :: Ljava/lang/Object :: v25 = v11.put(#(keyC), #(another Value))::
+43 :: CALL :: call :: Ljava/lang/Object :: v27 = v11.get(#(keyB-13647))::JM,48
+48 :: EXPR :: assign :: Ljava/lang/Object :: v28 = CHECKCAST v27::JM,75:CF,49
+49 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v29 = new java.lang.StringBuilder::JM,75
+53 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v29.append(#({call verifyUserPassw...))::JM,75
+58 :: CALL :: call :: Ljava/lang/StringBuilder :: v35 = v33.append(v28)::JM,75
+63 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v35.append(#(')}))::JM,75
+68 :: CALL :: call :: Ljava/lang/String :: v40 = v38.toString()::JM,75
+72 :: CALL :: call :: Ljava/sql/Connection :: v42 = getSqlConnection()::JM,75
+75 :: CALL :: call :: Ljava/sql/CallableStatement :: v44 = v42.prepareCall(v40)::JM,75
+194 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::CE,195:CD,202:CD,207
+195 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::JM,27
+199 :: EXPR :: reference :: Ljavax/servlet/http/HttpServletRequest :: v4 = p0 $this .request::JM,207
+202 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getParameter(p1 $p )::JM,207
+207 :: NORM :: compound :: Ljava/lang/String :: return v6::CF,195

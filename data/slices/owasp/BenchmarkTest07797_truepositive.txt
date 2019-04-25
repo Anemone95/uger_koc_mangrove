@@ -1,0 +1,24 @@
+[73, 78]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest07797.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,42:CD,47:CD,51:CD,56:CD,61:CD,66:CD,70:CD,73
+42 :: CALL :: call :: Ljava/lang/String :: v31 = v28.doSomething(v26)::JM,73:CL,205
+47 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v32 = new java.lang.StringBuilder::JM,73
+51 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v32.append(#(UPDATE USERS SET PASS...))::JM,73
+56 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v36.append(v31)::JM,73
+61 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v38.append(#(' WHERE USERNAME='foo'))::JM,73
+66 :: CALL :: call :: Ljava/lang/String :: v43 = v41.toString()::JM,73
+70 :: CALL :: call :: Ljava/sql/Statement :: v45 = getSqlStatement()::JM,73
+73 :: CALL :: call :: I :: v47 = v45.executeUpdate(v43, #(1))::JM,73
+205 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest07797.Test.doSomething(java.lang.String)::CE,206:CD,210:CD,214:CD,244:CD,245:JM,228
+206 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest07797.Test.doSomething(java.lang.String)::JM,73
+210 :: CALL :: call :: I :: v5 = p1 $param .length()::JM,228:JM,245:JM,214
+214 :: PRED :: IF :: Z :: if (v5 <= #(1)) goto 44::CF,245:CF,215:CD,220:CD,224:CD,228:CD,229:CD,233:CD,240
+215 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v7 = new java.lang.StringBuilder::JM,245
+220 :: CALL :: call :: I :: v10 = p1 $param .length()::JM,228:JM,245:JM,214
+224 :: CALL :: call :: I :: v13 = #(Z).length()::JM,228
+228 :: EXPR :: assign :: Ljava/lang/Object :: v14 = v10 - v13::JM,245:JM,228:JM,214
+229 :: CALL :: call :: I :: v16 = p1 $param .length()::JM,228:JM,245:JM,214
+233 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v7.replace(v14, v16, #(Z))::JM,245
+240 :: CALL :: call :: Ljava/lang/String :: v20 = v18.toString()::JM,245
+244 :: NORM :: compound :: Ljava/lang/String :: return v21::DD,206
+245 :: EXPR :: assign :: null :: PHI v21 = p1 $param , v20::CF,244

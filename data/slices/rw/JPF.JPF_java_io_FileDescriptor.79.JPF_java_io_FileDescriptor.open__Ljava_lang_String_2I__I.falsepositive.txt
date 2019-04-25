@@ -1,0 +1,19 @@
+[6296]
+6272 :: PRED :: IF :: Z :: if (p1 $objRef  == #(0)) goto 16::CD,6273:CD,6278:CD,6282:CD,6283
+1 :: ENTR :: entry :: null :: gov.nasa.jpf.vm.JPF_java_io_FileDescriptor.open__Ljava_lang_String_2I__I(gov.nasa.jpf.vm.MJIEnv,int,int,int)::CD,9:CD,14
+6273 :: CALL :: call :: Lgov/nasa/jpf/vm/ElementInfo :: v7 = p0 $this .getElementInfo(p1 $objRef )::JM,6278:JM,6282:CL,6883
+6278 :: CALL :: call :: Ljava/lang/String :: v9 = v7.asString()::JM,6278:JM,6282
+9 :: CALL :: call :: Ljava/lang/String :: v8 = p1 $env .getStringObject(p3 $fnameRef )::CL,6267
+6282 :: NORM :: compound :: Ljava/lang/String :: return v9::CF,6268
+6283 :: NORM :: compound :: Ljava/lang/String :: return #(null)::CF,6268
+14 :: PRED :: IF :: Z :: if (p4 $mode  != #(0)) goto 22::CD,15
+15 :: CALL :: call :: I :: v26 = p0 $this .openRead(v8)::CL,6291
+6291 :: ENTR :: entry :: null :: gov.nasa.jpf.vm.JPF_java_io_FileDescriptor.openRead(java.lang.String)::CD,6296
+6296 :: NORM :: declaration :: Ljava/io/File :: v4 = new java.io.File::
+6883 :: ENTR :: entry :: null :: gov.nasa.jpf.vm.MJIEnv.getElementInfo(int)::CE,6884:CD,6891:CD,6896
+6884 :: EXIT :: exit :: Lgov/nasa/jpf/vm/ElementInfo :: gov.nasa.jpf.vm.MJIEnv.getElementInfo(int)::JM,6278:JM,6282
+6888 :: EXPR :: reference :: Lgov/nasa/jpf/vm/Heap :: v4 = p0 $this .heap::JM,6896:JM,6891
+6891 :: CALL :: call :: Lgov/nasa/jpf/vm/ElementInfo :: v6 = v4.get(p1 $objref )::JM,6896:JM,6891
+6896 :: NORM :: compound :: Lgov/nasa/jpf/vm/ElementInfo :: return v6::CF,6884
+6267 :: ENTR :: entry :: null :: gov.nasa.jpf.vm.MJIEnv.getStringObject(int)::CE,6268:CD,6272
+6268 :: EXIT :: exit :: Ljava/lang/String :: gov.nasa.jpf.vm.MJIEnv.getStringObject(int)::

@@ -1,0 +1,24 @@
+[64, 65, 70, 56, 57, 58, 59, 60, 61, 62, 63]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest17815.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,26:CD,30:CD,34:CD,39:CD,44:CD,49:CD,53:CD,56:CD,65
+26 :: CALL :: call :: Ljava/lang/String :: v18 = doSomething(v16)::JM,65:CL,172
+30 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v19 = new java.lang.StringBuilder::JM,65
+34 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v19.append(#(SELECT * from USERS w...))::JM,65
+39 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v23.append(v18)::JM,65
+44 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v25.append(#('))::JM,65
+49 :: CALL :: call :: Ljava/lang/String :: v30 = v28.toString()::JM,65
+53 :: CALL :: call :: Ljava/sql/Connection :: v32 = getSqlConnection()::JM,65
+56 :: NORM :: declaration :: [Ljava/lang/String :: v34 = new java.lang.String[]::JM,65
+57 :: EXPR :: modify :: Ljava/lang/Object :: v34[#(0)] = #(Column1)::
+61 :: EXPR :: modify :: Ljava/lang/Object :: v34[#(1)] = #(Column2)::
+65 :: CALL :: call :: Ljava/sql/PreparedStatement :: v39 = v32.prepareStatement(v30, v34)::JM,65
+172 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest17815.doSomething(java.lang.String)::CE,173:CD,176:CD,180:CD,185:CD,190:CD,195:CD,200:CD,205:CD,206
+173 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest17815.doSomething(java.lang.String)::JM,65
+176 :: NORM :: declaration :: Ljava/util/ArrayList :: v3 = new java.util.ArrayList::JM,205
+180 :: CALL :: call :: Z :: v7 = v3.add(#(safe))::
+185 :: CALL :: call :: Z :: v9 = v3.add(p1 $param )::
+190 :: CALL :: call :: Z :: v12 = v3.add(#(moresafe))::
+195 :: CALL :: call :: Ljava/lang/Object :: v15 = v3.remove(#(0))::
+200 :: CALL :: call :: Ljava/lang/Object :: v18 = v3.get(#(1))::JM,205
+205 :: EXPR :: assign :: Ljava/lang/Object :: v19 = CHECKCAST v18::DD,206
+206 :: NORM :: compound :: Ljava/lang/String :: return v19::DD,173

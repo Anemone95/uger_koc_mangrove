@@ -1,0 +1,19 @@
+[43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 57]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest05275.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,17:CD,21:CD,26:CD,31:CD,36:CD,40:CD,43:CD,52
+12 :: CALL :: call :: Ljava/lang/String :: v9 = v5.getTheParameter(#(foo))::JM,52:CL,170
+17 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::JM,52
+21 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v10.append(#(SELECT * from USERS w...))::JM,52
+26 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v14.append(v9)::JM,52
+31 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v16.append(#('))::JM,52
+36 :: CALL :: call :: Ljava/lang/String :: v21 = v19.toString()::JM,52
+40 :: CALL :: call :: Ljava/sql/Connection :: v23 = getSqlConnection()::JM,52
+43 :: NORM :: declaration :: [Ljava/lang/String :: v25 = new java.lang.String[]::JM,52
+44 :: EXPR :: modify :: Ljava/lang/Object :: v25[#(0)] = #(Column1)::
+48 :: EXPR :: modify :: Ljava/lang/Object :: v25[#(1)] = #(Column2)::
+52 :: CALL :: call :: Ljava/sql/PreparedStatement :: v31 = v23.prepareStatement(v21, v25)::JM,52
+170 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::CE,171:CD,178:CD,183
+171 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::JM,52
+175 :: EXPR :: reference :: Ljavax/servlet/http/HttpServletRequest :: v4 = p0 $this .request::JM,183
+178 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getParameter(p1 $p )::JM,183
+183 :: NORM :: compound :: Ljava/lang/String :: return v6::CF,171

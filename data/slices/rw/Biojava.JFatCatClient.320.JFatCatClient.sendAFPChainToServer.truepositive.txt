@@ -1,0 +1,594 @@
+[83, 85, 89]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.sendAFPChainToServer(java.lang.String,org.biojava.nbio.structure.align.model.AFPChain,org.biojava.nbio.structure.Atom[],org.biojava.nbio.structure.Atom[])::CD,8:CD,9:CD,17:CD,22:CD,28:CD,36:CD,40:CD,46:CD,47:CD,55:CD,67:CD,72:CD,77:CD,83:CD,85:CD,89
+4099 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.convertStreamToString(java.io.InputStream)::CE,4100:CD,4103:CD,4104:CD,4113:CD,4130:CD,4134:CD,4178:CD,4182
+4100 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.client.JFatCatClient.convertStreamToString(java.io.InputStream)::JM,89
+4103 :: NORM :: declaration :: Ljava/io/BufferedReader :: v3 = new java.io.BufferedReader::JM,4134:CF,4104
+8 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v6 = new java.lang.StringBuilder::
+4104 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v4 = new java.io.InputStreamReader::
+9 :: CALL :: call :: Ljava/lang/String :: v8 = valueOf(p1 $serverLocation )::
+17 :: CALL :: call :: Ljava/lang/StringBuilder :: v12 = v6.append(#(submit?name1=%s&name2...))::
+4113 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v7 = new java.lang.StringBuilder::JM,4182
+22 :: CALL :: call :: Ljava/lang/String :: v14 = v12.toString()::
+4118 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v7.append(v11)::JM,4134
+4123 :: EXPR :: reference :: Ljava/lang/String :: v14 = org.biojava.nbio.structure.align.client.JFatCatClient.newline::
+28 :: CALL :: call :: Ljava/lang/String :: v18 = v15.getString(#(jfatcat.version))::JM,63:CL,3899
+4125 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v13.append(v14)::
+4130 :: CALL :: call :: Ljava/lang/String :: v11 = v3.readLine()::JM,4134
+36 :: CALL :: call :: D :: v22 = p2 $afpChain .getSimilarity()::CL,3984
+4134 :: PRED :: IF :: Z :: if (v11 != #(null)) goto 31::CD,4118:CD,4123:CD,4125:CD,4130
+40 :: CALL :: call :: Ljava/lang/String :: v24 = toXML(p2 $afpChain , p3 $ca1 , p4 $ca2 )::CL,4005
+46 :: NORM :: declaration :: [Ljava/lang/Object :: v26 = new java.lang.Object[]::
+47 :: CALL :: call :: Ljava/lang/String :: v29 = p2 $afpChain .getName1()::JM,51:CL,4033
+51 :: EXPR :: modify :: Ljava/lang/Object :: v26[#(0)] = v29::
+55 :: CALL :: call :: Ljava/lang/String :: v32 = p2 $afpChain .getName2()::JM,59:CL,4042
+59 :: EXPR :: modify :: Ljava/lang/Object :: v26[#(1)] = v32::
+63 :: EXPR :: modify :: Ljava/lang/Object :: v26[#(2)] = v18::
+67 :: CALL :: call :: Ljava/lang/String :: v35 = format(v14, v26)::
+72 :: NORM :: declaration :: Ljava/net/URL :: v36 = new java.net.URL::
+77 :: CALL :: call :: Ljava/io/InputStream :: v39 = doPOST(v36, v24, v20)::CL,4051
+4178 :: CALL :: call :: Ljava/lang/String :: v33 = v7.toString()::JM,4182
+83 :: EXPR :: reference :: Lorg/slf4j/Logger :: v40 = org.biojava.nbio.structure.align.client.JFatCatClient.logger::JM,89
+85 :: CALL :: call :: Ljava/lang/String :: v43 = convertStreamToString(v39)::JM,89:CL,4099
+4182 :: NORM :: compound :: Ljava/lang/String :: return v33::DD,4100
+89 :: CALL :: call :: V :: v40.debug(#(got response: {}), v43)::JM,89
+4219 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.ResourceManager.getResourceManager(java.lang.String)::JM,4597:JM,4601:JM,4589
+4231 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.calcSimilarity()::CD,4244:CD,4250:CD,4255:CD,4256:CD,4263:CD,4268:CD,4269
+4244 :: CALL :: call :: Ljava/util/Map :: v7 = calcIdSimilarity(v3, v4, v5)::JM,4268:JM,4255:CL,4605
+4250 :: CALL :: call :: Ljava/lang/Object :: v10 = v7.get(#(similarity))::JM,4268:JM,4255
+4255 :: EXPR :: assign :: Ljava/lang/Object :: v11 = CHECKCAST v10::JM,4260
+4256 :: CALL :: call :: D :: v13 = v11.doubleValue()::JM,4260
+4260 :: EXPR :: modify :: D :: p0 $this .similarity = v13::
+4263 :: CALL :: call :: Ljava/lang/Object :: v16 = v7.get(#(identity))::JM,4268:JM,4255
+4268 :: EXPR :: assign :: Ljava/lang/Object :: v17 = CHECKCAST v16::JM,4273
+4269 :: CALL :: call :: D :: v19 = v17.doubleValue()::JM,4273
+4273 :: EXPR :: modify :: D :: p0 $this .identity = v19::
+4287 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.xml.AFPChainXMLConverter.toXML(org.biojava.nbio.structure.align.model.AFPChain,java.io.StringWriter,org.biojava.nbio.structure.Atom[],org.biojava.nbio.structure.Atom[])::CD,4294:CD,4308:CD,4312:CD,4361:CD,4366:CD,4371
+4294 :: NORM :: declaration :: Ljava/io/PrintWriter :: v6 = new java.io.PrintWriter::
+4308 :: CALL :: call :: V :: printXMLHeader(v8, p1 $afpChain )::CL,4820
+4312 :: CALL :: call :: I :: v14 = p1 $afpChain .getBlockNum()::JM,4361:CL,5530
+4321 :: CALL :: call :: V :: printXMLBlockHeader(v8, p1 $afpChain , v26)::CL,5539
+4351 :: CALL :: call :: V :: printXMLMatrixShift(v8, p1 $afpChain , v26)::CL,6113
+4360 :: EXPR :: assign :: Ljava/lang/Object :: v25 = v26 + #(1)::DD,4371
+4361 :: PRED :: IF :: Z :: if (v26 < v14) goto 50::CD,4321:CD,4351:CD,4360:CD,4371
+4366 :: CALL :: call :: V :: v6.close()::
+4371 :: EXPR :: assign :: null :: PHI v26 = #(0), v25::DD,4360:DD,4361
+4415 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::CE,4416:CD,4420:CD,4424:CD,4430:CD,4434:CD,4439:CD,4443:CD,4448:CD,4452:CD,4457:CD,4461:CD,4466:CD,4470:CD,4471:CD,4477:CD,4483:CD,4484:CD,4493:CD,4499:CD,4500:CD,4506:CD,4512:CD,4513:CD,4522:CD,4529:CD,4532:CD,4533
+4416 :: EXIT :: exit :: Ljava/net/HttpURLConnection :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::JM,4082:JM,4067:JM,4086
+4420 :: CALL :: call :: Ljava/net/URLConnection :: v6 = p1 $url .openConnection()::JM,4513:JM,4484:JM,4424
+4424 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST v6::DD,4532
+4430 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::
+4434 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v12.append(p2 $timeout )::JM,4513:JM,4484:JM,4424
+4439 :: CALL :: call :: Ljava/lang/String :: v17 = v15.toString()::JM,4513:JM,4484
+4443 :: CALL :: call :: Ljava/lang/String :: v19 = setProperty(#(sun.net.client.defaul...), v17)::
+4448 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v21 = new java.lang.StringBuilder::
+4452 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v21.append(p2 $timeout )::JM,4513:JM,4484:JM,4424
+359 :: CALL :: call :: V :: p0 $this .init()::CL,3627
+4457 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::JM,4513:JM,4484
+4461 :: CALL :: call :: Ljava/lang/String :: v28 = setProperty(#(sun.net.client.defaul...), v26)::
+4466 :: CALL :: call :: Ljava/lang/Class :: v31 = forName(#(java.net.HttpURLConne...))::JM,4466
+4470 :: NORM :: declaration :: [Ljava/lang/Class :: v34 = new java.lang.Class[]::
+4471 :: EXPR :: reference :: Ljava/lang/Class :: v36 = java.lang.Integer.TYPE::DD,4473
+4473 :: EXPR :: modify :: Ljava/lang/Object :: v34[#(0)] = v36::
+4477 :: CALL :: call :: Ljava/lang/reflect/Method :: v38 = v31.getMethod(#(setConnectTimeout), v34)::
+385 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.<clinit>()::CD,388:CD,389:CD,393:CD,395:CD,401:CD,405:CD,411
+4483 :: NORM :: declaration :: [Ljava/lang/Object :: v39 = new java.lang.Object[]::CF,4484
+4484 :: NORM :: declaration :: Ljava/lang/Integer :: v40 = new java.lang.Integer::JM,4513:JM,4484:JM,4424
+388 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lorg/biojava/nbio/structure/align/client/JFatCatClient>-><Primordial,Ljava/lang/Class>::JM,389:JM,393
+389 :: CALL :: call :: Lorg/slf4j/Logger :: v4 = getLogger(v2)::JM,389:JM,393
+393 :: EXPR :: modify :: Lorg/slf4j/Logger :: org.biojava.nbio.structure.align.client.JFatCatClient.logger = v4::
+395 :: CALL :: call :: Lorg/biojava/nbio/structure/align/util/ResourceManager :: v7 = getResourceManager(#(jfatcat))::CL,4219
+4493 :: CALL :: call :: Ljava/lang/Object :: v43 = v38.invoke(v7, v39)::
+401 :: CALL :: call :: Ljava/lang/String :: v10 = getProperty(#(line.separator))::JM,401:JM,405
+4499 :: NORM :: declaration :: [Ljava/lang/Class :: v45 = new java.lang.Class[]::
+4500 :: EXPR :: reference :: Ljava/lang/Class :: v46 = java.lang.Integer.TYPE::DD,4502
+405 :: EXPR :: modify :: Ljava/lang/String :: org.biojava.nbio.structure.align.client.JFatCatClient.newline = v10::
+4502 :: EXPR :: modify :: Ljava/lang/Object :: v45[#(0)] = v46::
+4506 :: CALL :: call :: Ljava/lang/reflect/Method :: v48 = v31.getMethod(#(setReadTimeout), v45)::
+411 :: NORM :: declaration :: Ljava/util/Random :: v13 = new java.util.Random::
+4512 :: NORM :: declaration :: [Ljava/lang/Object :: v49 = new java.lang.Object[]::CF,4513
+4513 :: NORM :: declaration :: Ljava/lang/Integer :: v50 = new java.lang.Integer::JM,4513:JM,4484:JM,4424
+4522 :: CALL :: call :: Ljava/lang/Object :: v53 = v48.invoke(v7, v49)::
+429 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.AFPAlignmentDisplay.<clinit>()::CD,2111:CD,2112:CD,2120:CD,2128:CD,2136:CD,2144:CD,2152:CD,2160:CD,2168:CD,2176:CD,2184:CD,2192:CD,2200:CD,2208:CD,2216:CD,2224:CD,2232:CD,2240:CD,2248:CD,2256:CD,2264:CD,2272:CD,2280:CD,2282:CD,2284
+4529 :: CALL :: call :: V :: v54.printStackTrace()::
+4532 :: NORM :: compound :: Ljava/net/HttpURLConnection :: return v7::DD,4416
+4533 :: EXPR :: assign :: Ljava/lang/Exception :: v54 = catch <exc>::
+4589 :: CALL :: call :: Ljava/util/ResourceBundle :: v6 = getBundle(p1 $bundleName )::
+4597 :: CALL :: call :: V :: v7.printStackTrace()::
+4601 :: EXPR :: assign :: Ljava/lang/Exception :: v7 = catch <exc>::
+4605 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.AFPAlignmentDisplay.calcIdSimilarity([],[],int)::CE,4606:CD,4611:JM,4705:JM,4707:JM,4612:JM,4702:JM,4703
+4606 :: EXIT :: exit :: Ljava/util/Map :: org.biojava.nbio.structure.align.util.AFPAlignmentDisplay.calcIdSimilarity([],[],int)::JM,4268:JM,4255
+4611 :: PRED :: IF :: Z :: if (p1 $seq1  == #(null)) goto 13::CD,4612:CD,4619:CD,4623:CD,4627:CD,4633:CD,4637:CD,4643
+4612 :: PRED :: IF :: Z :: if (p2 $seq2  != #(null)) goto 70::CD,4619:CD,4623:CD,4627:CD,4633:CD,4637:CD,4643:CD,4702:CD,4703:CD,4709:CD,4713:CD,4717:CD,4723:CD,4727:CD,4733:CD,4736:CD,4737:CD,4738:CD,4739:CD,4740
+4619 :: NORM :: declaration :: Ljava/util/HashMap :: v55 = new java.util.HashMap::DD,4643
+4623 :: CALL :: call :: Ljava/lang/Double :: v58 = valueOf(#(0.0 d))::JM,4623
+4627 :: CALL :: call :: Ljava/lang/Object :: v60 = v55.put(#(similarity), v58)::
+4633 :: CALL :: call :: Ljava/lang/Double :: v62 = valueOf(#(0.0 d))::JM,4633
+4637 :: CALL :: call :: Ljava/lang/Object :: v64 = v55.put(#(identity), v62)::
+4643 :: NORM :: compound :: Ljava/util/Map :: return v55::DD,4606
+4645 :: EXPR :: reference :: C :: v8 = p1 $seq1 [v32]::DD,4653
+4649 :: EXPR :: reference :: C :: v9 = p2 $seq2 [v32]::DD,4653
+4653 :: PRED :: IF :: Z :: if (v8 != v9) goto 94::CD,4654:CD,4660:CD,4734:CD,4735
+4654 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v30 + #(1.0 d)::DD,4734
+4656 :: EXPR :: reference :: C :: v10 = p1 $seq1 [v32]::DD,4660
+4660 :: PRED :: IF :: Z :: if (v10 == #(45)) goto 165::CF,4734:CD,4665:CD,4735
+4661 :: EXPR :: reference :: C :: v12 = p1 $seq1 [v32]::DD,4665
+4665 :: PRED :: IF :: Z :: if (v12 == #(42)) goto 165::CF,4734:CD,4670:CD,4735
+4666 :: EXPR :: reference :: C :: v14 = p1 $seq1 [v32]::DD,4670
+4670 :: PRED :: IF :: Z :: if (v14 == #(46)) goto 165::CF,4734:CD,4675:CD,4735
+4671 :: EXPR :: reference :: C :: v16 = p2 $seq2 [v32]::DD,4675
+4675 :: PRED :: IF :: Z :: if (v16 == #(45)) goto 165::CF,4734:CD,4680:CD,4735
+4676 :: EXPR :: reference :: C :: v17 = p2 $seq2 [v32]::DD,4680
+4680 :: PRED :: IF :: Z :: if (v17 == #(42)) goto 165::CF,4734:CD,4685:CD,4735
+4681 :: EXPR :: reference :: C :: v18 = p2 $seq2 [v32]::DD,4685
+4685 :: PRED :: IF :: Z :: if (v18 == #(46)) goto 165::CF,4734:CD,4694:CD,4699:CD,4735
+4694 :: CALL :: call :: I :: v22 = aaScore(v19, v20)::JM,4699:CL,6355
+4699 :: PRED :: IF :: Z :: if (v22 <= #(0)) goto 165::CF,4734:CD,4700:CD,4735
+4700 :: EXPR :: assign :: Ljava/lang/Object :: v25 = v31 + #(1.0 d)::DD,4735:CF,4734
+4701 :: EXPR :: assign :: Ljava/lang/Object :: v29 = v32 + #(1)::DD,4738:CF,4736
+4702 :: PRED :: IF :: Z :: if (v32 < p3 $alnLength ) goto 76::CD,4653:CD,4701:CD,4734:CD,4735:CD,4736:CD,4737:CD,4738:CF,4703
+4703 :: PRED :: IF :: Z :: if (p3 $alnLength  <= #(0)) goto 192::CF,4739:CD,4704:CD,4705:CD,4706:CD,4707:CD,4708:CD,4740
+4704 :: EXPR :: assign :: Ljava/lang/Object :: v33 = v30 + v31::DD,4706:CF,4705
+4705 :: EXPR :: assign :: D :: v34 = CONVERT I to D p3 $alnLength ::CF,4706
+4706 :: EXPR :: assign :: Ljava/lang/Object :: v35 = v33 / v34::DD,4740:CF,4707
+4707 :: EXPR :: assign :: D :: v36 = CONVERT I to D p3 $alnLength ::CF,4708
+4708 :: EXPR :: assign :: Ljava/lang/Object :: v37 = v30 / v36::DD,4739
+4709 :: NORM :: declaration :: Ljava/util/HashMap :: v40 = new java.util.HashMap::DD,4733
+4713 :: CALL :: call :: Ljava/lang/Double :: v44 = valueOf(v39)::JM,4713
+4717 :: CALL :: call :: Ljava/lang/Object :: v46 = v40.put(#(similarity), v44)::
+4723 :: CALL :: call :: Ljava/lang/Double :: v49 = valueOf(v38)::JM,4723
+4727 :: CALL :: call :: Ljava/lang/Object :: v51 = v40.put(#(identity), v49)::
+4733 :: NORM :: compound :: Ljava/util/Map :: return v40::DD,4606
+4734 :: EXPR :: assign :: null :: PHI v26 = v24, v30, v30, v30, v30, v30, v30, v30, v30::CF,4735:DD,4736
+4735 :: EXPR :: assign :: null :: PHI v27 = v31, v31, v31, v31, v31, v31, v31, v31, v25::DD,4737:CF,4701
+4736 :: EXPR :: assign :: null :: PHI v30 = #(0.0 d), v26::CF,4737:DD,4654:DD,4704:DD,4708:DD,4734:DD,4739
+4737 :: EXPR :: assign :: null :: PHI v31 = #(0.0 d), v27::CF,4738:DD,4700:DD,4704:DD,4735:DD,4740
+4738 :: EXPR :: assign :: null :: PHI v32 = #(0), v29::DD,4701:DD,4702
+4739 :: EXPR :: assign :: null :: PHI v38 = v30, v37::CF,4740:JM,4723
+4740 :: EXPR :: assign :: null :: PHI v39 = v31, v35::CF,4709:JM,4713
+4820 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.xml.AFPChainXMLConverter.printXMLHeader(org.biojava.nbio.core.util.PrettyXMLWriter,org.biojava.nbio.structure.align.model.AFPChain)::CD,4861:CD,4862:CD,4866:CD,4874:CD,4883:CD,4884:CD,4888:CD,4896:CD,4905:CD,4906:CD,4910:CD,4918:CD,4927:CD,4928:CD,4932:CD,4940:CD,4949:CD,4950:CD,4954:CD,4962:CD,4971:CD,4972:CD,4976:CD,4984:CD,4989:CD,4998:CD,4999:CD,5003:CD,5011:CD,5016:CD,5025:CD,5026:CD,5030:CD,5038:CD,5043:CD,5052:CD,5053:CD,5057:CD,5065:CD,5070:CD,5079:CD,5080:CD,5084:CD,5092:CD,5097:CD,5106:CD,5107:CD,5111:CD,5119:CD,5124:CD,5133:CD,5134:CD,5138:CD,5146:CD,5155:CD,5156:CD,5160:CD,5168:CD,5177:CD,5178:CD,5182:CD,5190:CD,5195:CD,5204:CD,5205:CD,5209:CD,5217:CD,5222:CD,5231:CD,5232:CD,5236:CD,5244:CD,5253:CD,5254:CD,5258:CD,5266:CD,5275:CD,5276:CD,5280:CD,5284:CD,5292:CD,5301:CD,5302:CD,5306:CD,5314:CD,5319:CD,5328:CD,5329:CD,5333:CD,5341:CD,5351:CD,5355:CD,5356
+4861 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v21 = new java.lang.StringBuilder::
+4862 :: CALL :: call :: I :: v23 = p2 $afpChain .getAlnLength()::CL,6497
+4866 :: CALL :: call :: Ljava/lang/String :: v25 = valueOf(v23)::
+4874 :: CALL :: call :: Ljava/lang/String :: v28 = v21.toString()::
+4883 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v31 = new java.lang.StringBuilder::
+4884 :: CALL :: call :: I :: v33 = p2 $afpChain .getBlockNum()::CL,5530
+4888 :: CALL :: call :: Ljava/lang/String :: v35 = valueOf(v33)::
+4896 :: CALL :: call :: Ljava/lang/String :: v38 = v31.toString()::
+4905 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v41 = new java.lang.StringBuilder::
+4906 :: CALL :: call :: I :: v43 = p2 $afpChain .getGapLen()::CL,6506
+4910 :: CALL :: call :: Ljava/lang/String :: v45 = valueOf(v43)::
+4918 :: CALL :: call :: Ljava/lang/String :: v48 = v41.toString()::
+4927 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v51 = new java.lang.StringBuilder::
+4928 :: CALL :: call :: I :: v53 = p2 $afpChain .getOptLength()::CL,6515
+4932 :: CALL :: call :: Ljava/lang/String :: v55 = valueOf(v53)::
+4940 :: CALL :: call :: Ljava/lang/String :: v58 = v51.toString()::
+4949 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v61 = new java.lang.StringBuilder::
+4950 :: CALL :: call :: I :: v63 = p2 $afpChain .getTotalLenIni()::CL,6524
+4954 :: CALL :: call :: Ljava/lang/String :: v65 = valueOf(v63)::
+4962 :: CALL :: call :: Ljava/lang/String :: v68 = v61.toString()::
+4971 :: NORM :: declaration :: [Ljava/lang/Object :: v73 = new java.lang.Object[]::
+4972 :: CALL :: call :: D :: v76 = p2 $afpChain .getAlignScore()::JM,4976:JM,4980:CL,6533
+4976 :: CALL :: call :: Ljava/lang/Double :: v78 = valueOf(v76)::JM,4976:JM,4980
+4980 :: EXPR :: modify :: Ljava/lang/Object :: v73[#(0)] = v78::
+4984 :: CALL :: call :: Ljava/lang/String :: v80 = format(#(%5.2f), v73)::
+4989 :: CALL :: call :: Ljava/lang/String :: v82 = v80.trim()::
+4998 :: NORM :: declaration :: [Ljava/lang/Object :: v85 = new java.lang.Object[]::
+4999 :: CALL :: call :: D :: v87 = p2 $afpChain .getChainRmsd()::JM,5003:JM,5007:CL,6542
+5003 :: CALL :: call :: Ljava/lang/Double :: v89 = valueOf(v87)::JM,5003:JM,5007
+5007 :: EXPR :: modify :: Ljava/lang/Object :: v85[#(0)] = v89::
+5011 :: CALL :: call :: Ljava/lang/String :: v91 = format(#(%5.2f), v85)::
+5016 :: CALL :: call :: Ljava/lang/String :: v93 = v91.trim()::
+5025 :: NORM :: declaration :: [Ljava/lang/Object :: v97 = new java.lang.Object[]::
+5026 :: CALL :: call :: D :: v99 = p2 $afpChain .getIdentity()::JM,5030:JM,5034:CL,6551
+5030 :: CALL :: call :: Ljava/lang/Double :: v101 = valueOf(v99)::JM,5030:JM,5034
+5034 :: EXPR :: modify :: Ljava/lang/Object :: v97[#(0)] = v101::
+5038 :: CALL :: call :: Ljava/lang/String :: v103 = format(#(%5.4f), v97)::
+5043 :: CALL :: call :: Ljava/lang/String :: v105 = v103.trim()::
+5052 :: NORM :: declaration :: [Ljava/lang/Object :: v108 = new java.lang.Object[]::
+5053 :: CALL :: call :: D :: v110 = p2 $afpChain .getNormAlignScore()::JM,5057:JM,5061:CL,6572
+5057 :: CALL :: call :: Ljava/lang/Double :: v112 = valueOf(v110)::JM,5057:JM,5061
+5061 :: EXPR :: modify :: Ljava/lang/Object :: v108[#(0)] = v112::
+5065 :: CALL :: call :: Ljava/lang/String :: v114 = format(#(%5.2f), v108)::
+5070 :: CALL :: call :: Ljava/lang/String :: v116 = v114.trim()::
+5079 :: NORM :: declaration :: [Ljava/lang/Object :: v120 = new java.lang.Object[]::
+5080 :: CALL :: call :: D :: v122 = p2 $afpChain .getProbability()::JM,5088:JM,5084:CL,6581
+5084 :: CALL :: call :: Ljava/lang/Double :: v124 = valueOf(v122)::JM,5088:JM,5084
+5088 :: EXPR :: modify :: Ljava/lang/Object :: v120[#(0)] = v124::
+5092 :: CALL :: call :: Ljava/lang/String :: v126 = format(#(%.2e), v120)::
+5097 :: CALL :: call :: Ljava/lang/String :: v128 = v126.trim()::
+5106 :: NORM :: declaration :: [Ljava/lang/Object :: v131 = new java.lang.Object[]::
+5107 :: CALL :: call :: D :: v133 = p2 $afpChain .getSimilarity()::JM,5111:JM,5115:CL,3984
+5111 :: CALL :: call :: Ljava/lang/Double :: v135 = valueOf(v133)::JM,5111:JM,5115
+5115 :: EXPR :: modify :: Ljava/lang/Object :: v131[#(0)] = v135::
+5119 :: CALL :: call :: Ljava/lang/String :: v137 = format(#(%5.4f), v131)::
+5124 :: CALL :: call :: Ljava/lang/String :: v139 = v137.trim()::
+5133 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v142 = new java.lang.StringBuilder::
+5134 :: CALL :: call :: I :: v144 = p2 $afpChain .getCoverage1()::CL,6590
+5138 :: CALL :: call :: Ljava/lang/String :: v146 = valueOf(v144)::
+5146 :: CALL :: call :: Ljava/lang/String :: v149 = v142.toString()::
+5155 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v152 = new java.lang.StringBuilder::
+5156 :: CALL :: call :: I :: v154 = p2 $afpChain .getCoverage2()::CL,6655
+5160 :: CALL :: call :: Ljava/lang/String :: v156 = valueOf(v154)::
+5168 :: CALL :: call :: Ljava/lang/String :: v159 = v152.toString()::
+5177 :: NORM :: declaration :: [Ljava/lang/Object :: v162 = new java.lang.Object[]::
+5178 :: CALL :: call :: D :: v164 = p2 $afpChain .getTotalRmsdIni()::JM,5186:JM,5182:CL,6720
+5182 :: CALL :: call :: Ljava/lang/Double :: v166 = valueOf(v164)::JM,5186:JM,5182
+5186 :: EXPR :: modify :: Ljava/lang/Object :: v162[#(0)] = v166::
+5190 :: CALL :: call :: Ljava/lang/String :: v168 = format(#(%5.2f), v162)::
+5195 :: CALL :: call :: Ljava/lang/String :: v170 = v168.trim()::
+5204 :: NORM :: declaration :: [Ljava/lang/Object :: v173 = new java.lang.Object[]::
+5205 :: CALL :: call :: D :: v175 = p2 $afpChain .getTotalRmsdOpt()::JM,5209:JM,5213:CL,6729
+5209 :: CALL :: call :: Ljava/lang/Double :: v177 = valueOf(v175)::JM,5209:JM,5213
+5213 :: EXPR :: modify :: Ljava/lang/Object :: v173[#(0)] = v177::
+5217 :: CALL :: call :: Ljava/lang/String :: v179 = format(#(%5.2f), v173)::
+5222 :: CALL :: call :: Ljava/lang/String :: v181 = v179.trim()::
+5231 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v184 = new java.lang.StringBuilder::
+5232 :: CALL :: call :: I :: v186 = p2 $afpChain .getCa1Length()::CL,6738
+5236 :: CALL :: call :: Ljava/lang/String :: v188 = valueOf(v186)::
+5244 :: CALL :: call :: Ljava/lang/String :: v191 = v184.toString()::
+5253 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v194 = new java.lang.StringBuilder::
+5254 :: CALL :: call :: I :: v196 = p2 $afpChain .getCa2Length()::CL,6747
+5258 :: CALL :: call :: Ljava/lang/String :: v198 = valueOf(v196)::
+5266 :: CALL :: call :: Ljava/lang/String :: v201 = v194.toString()::
+5275 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v204 = new java.lang.StringBuilder::
+5276 :: CALL :: call :: Ljava/util/List :: v206 = p2 $afpChain .getAfpSet()::CL,6756
+5280 :: CALL :: call :: I :: v208 = v206.size()::
+5284 :: CALL :: call :: Ljava/lang/String :: v210 = valueOf(v208)::
+5292 :: CALL :: call :: Ljava/lang/String :: v213 = v204.toString()::
+5301 :: NORM :: declaration :: [Ljava/lang/Object :: v216 = new java.lang.Object[]::
+5302 :: CALL :: call :: D :: v218 = p2 $afpChain .getAlignScoreUpdate()::JM,5306:JM,5310:CL,6765
+5306 :: CALL :: call :: Ljava/lang/Double :: v220 = valueOf(v218)::JM,5306:JM,5310
+5310 :: EXPR :: modify :: Ljava/lang/Object :: v216[#(0)] = v220::
+5314 :: CALL :: call :: Ljava/lang/String :: v222 = format(#(%5.2f), v216)::
+5319 :: CALL :: call :: Ljava/lang/String :: v224 = v222.trim()::
+5328 :: NORM :: declaration :: [Ljava/lang/Object :: v228 = new java.lang.Object[]::
+5329 :: CALL :: call :: J :: v230 = p2 $afpChain .getCalculationTime()::JM,5337:CL,6774
+5333 :: CALL :: call :: Ljava/lang/Long :: v232 = valueOf(v230)::JM,5337
+5337 :: EXPR :: modify :: Ljava/lang/Object :: v228[#(0)] = v232::
+5341 :: CALL :: call :: Ljava/lang/String :: v234 = format(#(%d), v228)::
+5351 :: CALL :: call :: D :: v237 = p2 $afpChain .getTMScore()::JM,5355:CL,6783
+5355 :: EXPR :: assign :: Z :: v239 = v237 < #(-1.0 d)::DD,5356
+5356 :: PRED :: IF :: Z :: if (v239 == #(0)) goto 620::CD,5357:CD,5358:CD,5362:CD,5370
+5357 :: NORM :: declaration :: [Ljava/lang/Object :: v242 = new java.lang.Object[]::
+5358 :: CALL :: call :: D :: v244 = p2 $afpChain .getTMScore()::JM,5362:JM,5366:CL,6783
+5362 :: CALL :: call :: Ljava/lang/Double :: v246 = valueOf(v244)::JM,5362:JM,5366
+5366 :: EXPR :: modify :: Ljava/lang/Object :: v242[#(0)] = v246::
+5370 :: CALL :: call :: Ljava/lang/String :: v248 = format(#(%.2f), v242)::
+5530 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getBlockNum()::CE,5531:CD,5537
+5531 :: EXIT :: exit :: I :: org.biojava.nbio.structure.align.model.AFPChain.getBlockNum()::JM,4361
+5534 :: EXPR :: reference :: I :: v3 = p0 $this .blockNum::DD,5537
+5537 :: NORM :: compound :: I :: return v3::CF,5531
+5539 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.xml.AFPChainXMLConverter.printXMLBlockHeader(org.biojava.nbio.core.util.PrettyXMLWriter,org.biojava.nbio.structure.align.model.AFPChain,int)::CD,5545:CD,5549:CD,5553:CD,5557:CD,5561:CD,5562:CD,5570:CD,5579:CD,5584:CD,5592:CD,5601:CD,5606:CD,5614:CD,5619:CD,5628:CD,5633:CD,5641:CD,5646:CD,5655:CD,5660:CD,5668
+5545 :: CALL :: call :: [I :: v6 = p2 $afpChain .getBlockSize()::CL,7112
+5549 :: CALL :: call :: [I :: v8 = p2 $afpChain .getBlockGap()::CL,7121
+5553 :: CALL :: call :: [D :: v10 = p2 $afpChain .getBlockScore()::CL,7130
+5557 :: CALL :: call :: [D :: v12 = p2 $afpChain .getBlockRmsd()::CL,7139
+5561 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v14 = new java.lang.StringBuilder::
+5562 :: CALL :: call :: Ljava/lang/String :: v16 = valueOf(p3 $blockNr )::
+5570 :: CALL :: call :: Ljava/lang/String :: v19 = v14.toString()::
+5579 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v22 = new java.lang.StringBuilder::
+5580 :: EXPR :: reference :: I :: v23 = v6[p3 $blockNr ]::
+5584 :: CALL :: call :: Ljava/lang/String :: v25 = valueOf(v23)::
+5592 :: CALL :: call :: Ljava/lang/String :: v28 = v22.toString()::
+5601 :: NORM :: declaration :: [Ljava/lang/Object :: v33 = new java.lang.Object[]::
+5602 :: EXPR :: reference :: D :: v35 = v10[p3 $blockNr ]::JM,5606:JM,5610
+5606 :: CALL :: call :: Ljava/lang/Double :: v37 = valueOf(v35)::JM,5606:JM,5610
+5610 :: EXPR :: modify :: Ljava/lang/Object :: v33[#(0)] = v37::
+5614 :: CALL :: call :: Ljava/lang/String :: v39 = format(#(%5.2f), v33)::
+5619 :: CALL :: call :: Ljava/lang/String :: v41 = v39.trim()::
+5628 :: NORM :: declaration :: [Ljava/lang/Object :: v44 = new java.lang.Object[]::
+5629 :: EXPR :: reference :: D :: v45 = v12[p3 $blockNr ]::JM,5633:JM,5637
+5633 :: CALL :: call :: Ljava/lang/Double :: v47 = valueOf(v45)::JM,5633:JM,5637
+5637 :: EXPR :: modify :: Ljava/lang/Object :: v44[#(0)] = v47::
+5641 :: CALL :: call :: Ljava/lang/String :: v49 = format(#(%5.2f), v44)::
+5646 :: CALL :: call :: Ljava/lang/String :: v51 = v49.trim()::
+5655 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v54 = new java.lang.StringBuilder::
+5656 :: EXPR :: reference :: I :: v55 = v8[p3 $blockNr ]::
+5660 :: CALL :: call :: Ljava/lang/String :: v57 = valueOf(v55)::
+5668 :: CALL :: call :: Ljava/lang/String :: v60 = v54.toString()::
+6113 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.xml.AFPChainXMLConverter.printXMLMatrixShift(org.biojava.nbio.core.util.PrettyXMLWriter,org.biojava.nbio.structure.align.model.AFPChain,int)::CD,6119:CD,6123
+6119 :: CALL :: call :: [Lorg/biojava/nbio/structure/jama/Matrix :: v6 = p2 $afpChain .getBlockRotationMatrix()::JM,6123:JM,6124:CL,7187
+6123 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 14::CD,6124:CD,6125
+6124 :: EXPR :: assign :: I :: v8 = v6.length::DD,6125
+6125 :: PRED :: IF :: Z :: if (v8 != #(0)) goto 17::CD,6131
+6127 :: EXPR :: reference :: Ljava/lang/Object :: v10 = v6[p3 $blockNr ]::DD,6131:JM,6161:JM,6167:JM,6171
+6131 :: PRED :: IF :: Z :: if (v10 != #(null)) goto 29::CD,6188:CD,6193:CD,6205:CD,6206:CD,6210:CD,6218:CD,6228:CD,6229:CD,6233:CD,6241:CD,6251:CD,6252:CD,6256:CD,6264:CD,6281
+6139 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v14 = new java.lang.StringBuilder::
+6144 :: EXPR :: assign :: Ljava/lang/Object :: v18 = v39 + #(1)::
+6145 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v14.append(v18)::
+6150 :: EXPR :: assign :: Ljava/lang/Object :: v21 = v36 + #(1)::
+6151 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v20.append(v21)::
+6156 :: CALL :: call :: Ljava/lang/String :: v25 = v23.toString()::
+6160 :: NORM :: declaration :: [Ljava/lang/Object :: v27 = new java.lang.Object[]::JM,6161:JM,6167:JM,6171
+6161 :: CALL :: call :: D :: v29 = v10.get(v39, v36)::JM,6161:JM,6167:JM,6171
+6167 :: CALL :: call :: Ljava/lang/Double :: v31 = valueOf(v29)::JM,6167:JM,6171
+6171 :: EXPR :: modify :: Ljava/lang/Object :: v27[#(0)] = v31::
+6175 :: CALL :: call :: Ljava/lang/String :: v33 = format(#(%.6f), v27)::
+6185 :: EXPR :: assign :: Ljava/lang/Object :: v35 = v36 + #(1)::DD,6280:CF,6279
+6186 :: PRED :: IF :: Z :: if (v36 < #(3)) goto 44::CF,6139:CD,6144:CD,6145:CD,6150:CD,6151:CD,6156:CD,6160:CD,6161:CD,6167:CD,6175:CD,6185:CD,6279:CD,6280:CF,6187
+6187 :: EXPR :: assign :: Ljava/lang/Object :: v37 = v39 + #(1)::DD,6281
+6188 :: PRED :: IF :: Z :: if (v38 < #(3)) goto 41::CD,6186:CD,6187:CD,6279:CD,6280:CD,6281
+6193 :: CALL :: call :: [Lorg/biojava/nbio/structure/Atom :: v42 = p2 $afpChain .getBlockShiftVector()::CL,7196
+6197 :: EXPR :: reference :: Ljava/lang/Object :: v43 = v42[p3 $blockNr ]::JM,6210:JM,6214:JM,6206:JM,6229:JM,6233:JM,6237:JM,6256:JM,6260:JM,6252
+6205 :: NORM :: declaration :: [Ljava/lang/Object :: v48 = new java.lang.Object[]::JM,6210:JM,6214:JM,6206
+6206 :: CALL :: call :: D :: v50 = v43.getX()::JM,6210:JM,6214:JM,6206
+2111 :: NORM :: declaration :: [Ljava/lang/Character :: v53 = new java.lang.Character[]::DD,2280
+2112 :: CALL :: call :: Ljava/lang/Character :: v56 = valueOf(#(71))::
+6210 :: CALL :: call :: Ljava/lang/Double :: v52 = valueOf(v50)::JM,6210:JM,6214
+6214 :: EXPR :: modify :: Ljava/lang/Object :: v48[#(0)] = v52::
+2120 :: CALL :: call :: Ljava/lang/Character :: v59 = valueOf(#(65))::
+6218 :: CALL :: call :: Ljava/lang/String :: v54 = format(#(%.3f), v48)::
+2128 :: CALL :: call :: Ljava/lang/Character :: v62 = valueOf(#(80))::
+6228 :: NORM :: declaration :: [Ljava/lang/Object :: v57 = new java.lang.Object[]::JM,6229:JM,6233:JM,6237
+6229 :: CALL :: call :: D :: v59 = v43.getY()::JM,6229:JM,6233:JM,6237
+2136 :: CALL :: call :: Ljava/lang/Character :: v65 = valueOf(#(67))::
+6233 :: CALL :: call :: Ljava/lang/Double :: v61 = valueOf(v59)::JM,6233:JM,6237
+6237 :: EXPR :: modify :: Ljava/lang/Object :: v57[#(0)] = v61::
+2144 :: CALL :: call :: Ljava/lang/Character :: v68 = valueOf(#(84))::
+6241 :: CALL :: call :: Ljava/lang/String :: v63 = format(#(%.3f), v57)::
+2152 :: CALL :: call :: Ljava/lang/Character :: v71 = valueOf(#(83))::
+6251 :: NORM :: declaration :: [Ljava/lang/Object :: v66 = new java.lang.Object[]::JM,6256:JM,6260:JM,6252
+6252 :: CALL :: call :: D :: v68 = v43.getZ()::JM,6256:JM,6260:JM,6252
+2160 :: CALL :: call :: Ljava/lang/Character :: v74 = valueOf(#(68))::
+6256 :: CALL :: call :: Ljava/lang/Double :: v70 = valueOf(v68)::JM,6256:JM,6260
+6260 :: EXPR :: modify :: Ljava/lang/Object :: v66[#(0)] = v70::
+2168 :: CALL :: call :: Ljava/lang/Character :: v77 = valueOf(#(78))::
+6264 :: CALL :: call :: Ljava/lang/String :: v72 = format(#(%.3f), v66)::
+2176 :: CALL :: call :: Ljava/lang/Character :: v80 = valueOf(#(69))::
+6279 :: EXPR :: assign :: null :: PHI v39 = v38, v39::CF,6280:DD,6144:JM,6161:JM,6167:JM,6171:DD,6187:DD,6279
+2184 :: CALL :: call :: Ljava/lang/Character :: v83 = valueOf(#(81))::
+6280 :: EXPR :: assign :: null :: PHI v36 = #(0), v35::DD,6150:JM,6161:JM,6167:JM,6171:DD,6185:DD,6186
+6281 :: EXPR :: assign :: null :: PHI v38 = #(0), v37::DD,6188:DD,6279
+2192 :: CALL :: call :: Ljava/lang/Character :: v86 = valueOf(#(75))::
+2200 :: CALL :: call :: Ljava/lang/Character :: v89 = valueOf(#(72))::
+2208 :: CALL :: call :: Ljava/lang/Character :: v92 = valueOf(#(82))::
+2216 :: CALL :: call :: Ljava/lang/Character :: v95 = valueOf(#(86))::
+2224 :: CALL :: call :: Ljava/lang/Character :: v98 = valueOf(#(73))::
+2232 :: CALL :: call :: Ljava/lang/Character :: v101 = valueOf(#(76))::
+2240 :: CALL :: call :: Ljava/lang/Character :: v104 = valueOf(#(77))::
+2248 :: CALL :: call :: Ljava/lang/Character :: v107 = valueOf(#(70))::
+2256 :: CALL :: call :: Ljava/lang/Character :: v110 = valueOf(#(89))::
+6355 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.AFPAlignmentDisplay.aaScore(char,char)::CE,6356:CD,6360:CD,6361:CD,6362:CD,6363:CD,6364:CD,6366:CD,6370:CD,6375:CD,6377:CD,6381:CD,6386:CD,6441:CD,6442:CD,6443:CD,6444
+6356 :: EXIT :: exit :: I :: org.biojava.nbio.structure.align.util.AFPAlignmentDisplay.aaScore(char,char)::JM,4699
+2264 :: CALL :: call :: Ljava/lang/Character :: v113 = valueOf(#(87))::
+6360 :: PRED :: IF :: Z :: if (p1 $a  != #(120)) goto 12::CF,6441
+6361 :: PRED :: IF :: Z :: if (p2 $b  != #(120)) goto 21::CF,6442
+6362 :: PRED :: IF :: Z :: if (v6 != #(88)) goto 30::CF,6443
+6363 :: PRED :: IF :: Z :: if (v7 != #(88)) goto 36::CF,6444
+6364 :: EXPR :: reference :: Ljava/util/List :: v11 = org.biojava.nbio.structure.align.util.AFPAlignmentDisplay.aa1List::JM,6386
+6366 :: CALL :: call :: Ljava/lang/Character :: v13 = valueOf(v9)::JM,6386
+2272 :: CALL :: call :: Ljava/lang/Character :: v116 = valueOf(#(45))::
+6370 :: CALL :: call :: I :: v15 = v11.indexOf(v13)::JM,6386
+6375 :: EXPR :: reference :: Ljava/util/List :: v16 = org.biojava.nbio.structure.align.util.AFPAlignmentDisplay.aa1List::JM,6408
+2280 :: EXPR :: modify :: [Ljava/lang/Character :: org.biojava.nbio.structure.align.util.AFPAlignmentDisplay.aa1 = v53::
+6377 :: CALL :: call :: Ljava/lang/Character :: v18 = valueOf(v10)::JM,6408
+2282 :: EXPR :: reference :: [Ljava/lang/Character :: v117 = org.biojava.nbio.structure.align.util.AFPAlignmentDisplay.aa1::JM,2284
+2284 :: CALL :: call :: Ljava/util/List :: v119 = asList(v117)::JM,2284
+6381 :: CALL :: call :: I :: v20 = v16.indexOf(v18)::JM,6408
+6386 :: PRED :: IF :: Z :: if (v15 >= #(0)) goto 94::CD,6389:CD,6394:CD,6399:CD,6407:CD,6408
+6389 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v35 = new java.lang.StringBuilder::
+6394 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v35.append(v9)::
+6399 :: CALL :: call :: Ljava/lang/String :: v40 = v38.toString()::
+6407 :: NORM :: compound :: I :: return #(0)::DD,6356
+6408 :: PRED :: IF :: Z :: if (v20 >= #(0)) goto 124::CD,6411:CD,6416:CD,6421:CD,6429:CD,6430:CD,6440
+6411 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v26 = new java.lang.StringBuilder::
+6416 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v26.append(v10)::
+6421 :: CALL :: call :: Ljava/lang/String :: v32 = v30.toString()::
+6429 :: NORM :: compound :: I :: return #(0)::DD,6356
+6430 :: EXPR :: reference :: [[I :: v22 = org.biojava.nbio.structure.align.util.AFPAlignmentDisplay.aaMatrix::
+6432 :: EXPR :: reference :: Ljava/lang/Object :: v23 = v22[v15]::
+6436 :: EXPR :: reference :: I :: v24 = v23[v20]::DD,6440
+6440 :: NORM :: compound :: I :: return v24::DD,6356
+6441 :: EXPR :: assign :: null :: PHI v6 = p1 $a , #(45)::DD,6362:DD,6443:CF,6361
+6442 :: EXPR :: assign :: null :: PHI v7 = p2 $b , #(45)::DD,6363:DD,6444:CF,6362
+6443 :: EXPR :: assign :: null :: PHI v9 = v6, #(45)::JM,6386:CF,6363
+6444 :: EXPR :: assign :: null :: PHI v10 = v7, #(45)::JM,6408
+6497 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getAlnLength()::CE,6498:CD,6504
+6498 :: EXIT :: exit :: I :: org.biojava.nbio.structure.align.model.AFPChain.getAlnLength()::
+6501 :: EXPR :: reference :: I :: v3 = p0 $this .alnLength::DD,6504
+6504 :: NORM :: compound :: I :: return v3::CF,6498
+6506 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getGapLen()::CE,6507:CD,6513
+6507 :: EXIT :: exit :: I :: org.biojava.nbio.structure.align.model.AFPChain.getGapLen()::
+6510 :: EXPR :: reference :: I :: v3 = p0 $this .gapLen::DD,6513
+6513 :: NORM :: compound :: I :: return v3::CF,6507
+6515 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getOptLength()::CE,6516:CD,6522
+6516 :: EXIT :: exit :: I :: org.biojava.nbio.structure.align.model.AFPChain.getOptLength()::
+6519 :: EXPR :: reference :: I :: v3 = p0 $this .optLength::DD,6522
+6522 :: NORM :: compound :: I :: return v3::CF,6516
+6524 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getTotalLenIni()::CE,6525:CD,6531
+6525 :: EXIT :: exit :: I :: org.biojava.nbio.structure.align.model.AFPChain.getTotalLenIni()::
+6528 :: EXPR :: reference :: I :: v3 = p0 $this .totalLenIni::DD,6531
+6531 :: NORM :: compound :: I :: return v3::CF,6525
+6533 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getAlignScore()::CE,6534:CD,6540
+6534 :: EXIT :: exit :: D :: org.biojava.nbio.structure.align.model.AFPChain.getAlignScore()::JM,4976:JM,4980
+6537 :: EXPR :: reference :: D :: v3 = p0 $this .alignScore::DD,6540
+6540 :: NORM :: compound :: D :: return v3::CF,6534
+6542 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getChainRmsd()::CE,6543:CD,6549
+6543 :: EXIT :: exit :: D :: org.biojava.nbio.structure.align.model.AFPChain.getChainRmsd()::JM,5003:JM,5007
+6546 :: EXPR :: reference :: D :: v3 = p0 $this .chainRmsd::DD,6549
+6549 :: NORM :: compound :: D :: return v3::CF,6543
+6551 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getIdentity()::CE,6552:CD,6558:CD,6559:CD,6566
+6552 :: EXIT :: exit :: D :: org.biojava.nbio.structure.align.model.AFPChain.getIdentity()::JM,5030:JM,5034
+6555 :: EXPR :: reference :: D :: v3 = p0 $this .identity::DD,6558
+6558 :: EXPR :: assign :: Z :: v5 = v3 > #(0.0 d)::DD,6559
+6559 :: PRED :: IF :: Z :: if (v5 > #(0)) goto 14::CD,6560
+6560 :: CALL :: call :: V :: p0 $this .calcSimilarity()::CL,4231
+6563 :: EXPR :: reference :: D :: v8 = p0 $this .identity::DD,6566
+6566 :: NORM :: compound :: D :: return v8::DD,6552
+6572 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getNormAlignScore()::CE,6573:CD,6579
+6573 :: EXIT :: exit :: D :: org.biojava.nbio.structure.align.model.AFPChain.getNormAlignScore()::JM,5057:JM,5061
+6576 :: EXPR :: reference :: D :: v3 = p0 $this .normAlignScore::DD,6579
+6579 :: NORM :: compound :: D :: return v3::CF,6573
+6581 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getProbability()::CE,6582:CD,6588
+6582 :: EXIT :: exit :: D :: org.biojava.nbio.structure.align.model.AFPChain.getProbability()::JM,5088:JM,5084
+6585 :: EXPR :: reference :: D :: v3 = p0 $this .probability::DD,6588
+6588 :: NORM :: compound :: D :: return v3::CF,6582
+6590 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getCoverage1()::CE,6591:CD,6597:CD,6637
+6591 :: EXIT :: exit :: I :: org.biojava.nbio.structure.align.model.AFPChain.getCoverage1()::
+6594 :: EXPR :: reference :: I :: v3 = p0 $this .myResultsSimilarity1::DD,6597
+6597 :: PRED :: IF :: Z :: if (v3 >= #(0)) goto 58::CD,6604:CD,6605:CD,6609:CD,6610:CD,6617:CD,6618:CD,6619:CD,6620:CD,6624:CD,6625:CD,6626:CD,6627
+6598 :: EXPR :: reference :: I :: v5 = p0 $this .ca1Length::DD,6604
+6601 :: EXPR :: reference :: I :: v6 = p0 $this .ca2Length::DD,6604
+6604 :: EXPR :: assign :: Ljava/lang/Object :: v7 = v5 + v6::DD,6610
+6605 :: CALL :: call :: I :: v10 = p0 $this .getNrEQR()::JM,6609:CL,7205
+6609 :: EXPR :: assign :: Ljava/lang/Object :: v11 = #(2) * v10::CF,6610
+6610 :: EXPR :: assign :: Ljava/lang/Object :: v12 = v7 - v11::DD,6618
+6611 :: EXPR :: reference :: I :: v13 = p0 $this .ca1Length::DD,6617
+6614 :: EXPR :: reference :: I :: v14 = p0 $this .ca2Length::DD,6617
+6617 :: EXPR :: assign :: Ljava/lang/Object :: v15 = v13 + v14::DD,6618
+6618 :: EXPR :: assign :: Ljava/lang/Object :: v16 = v15 - v12::DD,6619
+6619 :: EXPR :: assign :: Ljava/lang/Object :: v17 = v16 / #(2)::DD,6620
+6620 :: EXPR :: assign :: F :: v18 = CONVERT I to F v17::DD,6625
+6621 :: EXPR :: reference :: I :: v19 = p0 $this .ca1Length::DD,6624
+6624 :: EXPR :: assign :: F :: v20 = CONVERT I to F v19::CF,6625
+6625 :: EXPR :: assign :: Ljava/lang/Object :: v21 = v18 / v20::DD,6626
+6626 :: EXPR :: assign :: Ljava/lang/Object :: v23 = v21 * #(100.0 f)::JM,6627:JM,6631
+6627 :: CALL :: call :: I :: v25 = round(v23)::JM,6627:JM,6631
+6631 :: EXPR :: modify :: I :: p0 $this .myResultsSimilarity1 = v25::
+6634 :: EXPR :: reference :: I :: v26 = p0 $this .myResultsSimilarity1::DD,6637
+6637 :: NORM :: compound :: I :: return v26::DD,6591
+6655 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getCoverage2()::CE,6656:CD,6662:CD,6702
+6656 :: EXIT :: exit :: I :: org.biojava.nbio.structure.align.model.AFPChain.getCoverage2()::
+6659 :: EXPR :: reference :: I :: v3 = p0 $this .myResultsSimilarity2::DD,6662
+6662 :: PRED :: IF :: Z :: if (v3 >= #(0)) goto 58::CD,6669:CD,6670:CD,6674:CD,6675:CD,6682:CD,6683:CD,6684:CD,6685:CD,6689:CD,6690:CD,6691:CD,6692
+6663 :: EXPR :: reference :: I :: v5 = p0 $this .ca1Length::DD,6669
+6666 :: EXPR :: reference :: I :: v6 = p0 $this .ca2Length::DD,6669
+6669 :: EXPR :: assign :: Ljava/lang/Object :: v7 = v5 + v6::DD,6675
+6670 :: CALL :: call :: I :: v10 = p0 $this .getNrEQR()::JM,6674:CL,7205
+6674 :: EXPR :: assign :: Ljava/lang/Object :: v11 = #(2) * v10::CF,6675
+6675 :: EXPR :: assign :: Ljava/lang/Object :: v12 = v7 - v11::DD,6683
+6676 :: EXPR :: reference :: I :: v13 = p0 $this .ca1Length::DD,6682
+6679 :: EXPR :: reference :: I :: v14 = p0 $this .ca2Length::DD,6682
+6682 :: EXPR :: assign :: Ljava/lang/Object :: v15 = v13 + v14::DD,6683
+6683 :: EXPR :: assign :: Ljava/lang/Object :: v16 = v15 - v12::DD,6684
+6684 :: EXPR :: assign :: Ljava/lang/Object :: v17 = v16 / #(2)::DD,6685
+6685 :: EXPR :: assign :: F :: v18 = CONVERT I to F v17::DD,6690
+6686 :: EXPR :: reference :: I :: v19 = p0 $this .ca2Length::DD,6689
+6689 :: EXPR :: assign :: F :: v20 = CONVERT I to F v19::CF,6690
+6690 :: EXPR :: assign :: Ljava/lang/Object :: v21 = v18 / v20::DD,6691
+6691 :: EXPR :: assign :: Ljava/lang/Object :: v23 = v21 * #(100.0 f)::JM,6692:JM,6696
+6692 :: CALL :: call :: I :: v25 = round(v23)::JM,6692:JM,6696
+6696 :: EXPR :: modify :: I :: p0 $this .myResultsSimilarity2 = v25::
+6699 :: EXPR :: reference :: I :: v26 = p0 $this .myResultsSimilarity2::DD,6702
+6702 :: NORM :: compound :: I :: return v26::DD,6656
+6720 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getTotalRmsdIni()::CE,6721:CD,6727
+6721 :: EXIT :: exit :: D :: org.biojava.nbio.structure.align.model.AFPChain.getTotalRmsdIni()::JM,5186:JM,5182
+6724 :: EXPR :: reference :: D :: v3 = p0 $this .totalRmsdIni::DD,6727
+6727 :: NORM :: compound :: D :: return v3::CF,6721
+6729 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getTotalRmsdOpt()::CE,6730:CD,6736
+6730 :: EXIT :: exit :: D :: org.biojava.nbio.structure.align.model.AFPChain.getTotalRmsdOpt()::JM,5209:JM,5213
+6733 :: EXPR :: reference :: D :: v3 = p0 $this .totalRmsdOpt::DD,6736
+6736 :: NORM :: compound :: D :: return v3::CF,6730
+6738 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getCa1Length()::CE,6739:CD,6745
+6739 :: EXIT :: exit :: I :: org.biojava.nbio.structure.align.model.AFPChain.getCa1Length()::
+6742 :: EXPR :: reference :: I :: v3 = p0 $this .ca1Length::DD,6745
+6745 :: NORM :: compound :: I :: return v3::CF,6739
+6747 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getCa2Length()::CE,6748:CD,6754
+6748 :: EXIT :: exit :: I :: org.biojava.nbio.structure.align.model.AFPChain.getCa2Length()::
+6751 :: EXPR :: reference :: I :: v3 = p0 $this .ca2Length::DD,6754
+6754 :: NORM :: compound :: I :: return v3::CF,6748
+6756 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getAfpSet()::CE,6757:CD,6763
+6757 :: EXIT :: exit :: Ljava/util/List :: org.biojava.nbio.structure.align.model.AFPChain.getAfpSet()::
+6760 :: EXPR :: reference :: Ljava/util/List :: v3 = p0 $this .afpSet::DD,6763
+6763 :: NORM :: compound :: Ljava/util/List :: return v3::CF,6757
+6765 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getAlignScoreUpdate()::CE,6766:CD,6772
+6766 :: EXIT :: exit :: D :: org.biojava.nbio.structure.align.model.AFPChain.getAlignScoreUpdate()::JM,5306:JM,5310
+6769 :: EXPR :: reference :: D :: v3 = p0 $this .alignScoreUpdate::DD,6772
+6772 :: NORM :: compound :: D :: return v3::CF,6766
+6774 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getCalculationTime()::CE,6775:CD,6781
+6775 :: EXIT :: exit :: J :: org.biojava.nbio.structure.align.model.AFPChain.getCalculationTime()::JM,5337
+6778 :: EXPR :: reference :: J :: v3 = p0 $this .calculationTime::DD,6781
+6781 :: NORM :: compound :: J :: return v3::CF,6775
+6783 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getTMScore()::CE,6784:CD,6790
+6784 :: EXIT :: exit :: D :: org.biojava.nbio.structure.align.model.AFPChain.getTMScore()::JM,5355:JM,5362:JM,5366
+6787 :: EXPR :: reference :: D :: v3 = p0 $this .tmScore::DD,6790
+6790 :: NORM :: compound :: D :: return v3::CF,6784
+7112 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getBlockSize()::CE,7113:CD,7119
+7113 :: EXIT :: exit :: [I :: org.biojava.nbio.structure.align.model.AFPChain.getBlockSize()::
+7116 :: EXPR :: reference :: [I :: v3 = p0 $this .blockSize::DD,7119
+7119 :: NORM :: compound :: [I :: return v3::CF,7113
+7121 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getBlockGap()::CE,7122:CD,7128
+7122 :: EXIT :: exit :: [I :: org.biojava.nbio.structure.align.model.AFPChain.getBlockGap()::
+7125 :: EXPR :: reference :: [I :: v3 = p0 $this .blockGap::DD,7128
+7128 :: NORM :: compound :: [I :: return v3::CF,7122
+7130 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getBlockScore()::CE,7131:CD,7137
+7131 :: EXIT :: exit :: [D :: org.biojava.nbio.structure.align.model.AFPChain.getBlockScore()::
+7134 :: EXPR :: reference :: [D :: v3 = p0 $this .blockScore::DD,7137
+7137 :: NORM :: compound :: [D :: return v3::CF,7131
+7139 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getBlockRmsd()::CE,7140:CD,7146
+7140 :: EXIT :: exit :: [D :: org.biojava.nbio.structure.align.model.AFPChain.getBlockRmsd()::
+7143 :: EXPR :: reference :: [D :: v3 = p0 $this .blockRmsd::DD,7146
+7146 :: NORM :: compound :: [D :: return v3::CF,7140
+7187 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getBlockRotationMatrix()::CE,7188:CD,7194
+7188 :: EXIT :: exit :: [Lorg/biojava/nbio/structure/jama/Matrix :: org.biojava.nbio.structure.align.model.AFPChain.getBlockRotationMatrix()::JM,6123:JM,6124
+7191 :: EXPR :: reference :: [Lorg/biojava/nbio/structure/jama/Matrix :: v3 = p0 $this .blockRotationMatrix::DD,7194
+7194 :: NORM :: compound :: [Lorg/biojava/nbio/structure/jama/Matrix :: return v3::CF,7188
+7196 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getBlockShiftVector()::CE,7197:CD,7203
+7197 :: EXIT :: exit :: [Lorg/biojava/nbio/structure/Atom :: org.biojava.nbio.structure.align.model.AFPChain.getBlockShiftVector()::
+7200 :: EXPR :: reference :: [Lorg/biojava/nbio/structure/Atom :: v3 = p0 $this .blockShiftVector::DD,7203
+7203 :: NORM :: compound :: [Lorg/biojava/nbio/structure/Atom :: return v3::CF,7197
+7205 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getNrEQR()::CE,7206:CD,7212
+7206 :: EXIT :: exit :: I :: org.biojava.nbio.structure.align.model.AFPChain.getNrEQR()::JM,6609:JM,6674
+7209 :: EXPR :: reference :: I :: v3 = p0 $this .myResultsEQR::DD,7212
+7212 :: PRED :: IF :: Z :: if (v3 >= #(0)) goto 66::CD,7216:CD,7244
+7213 :: EXPR :: reference :: [I :: v5 = p0 $this .optLen::DD,7216
+7216 :: PRED :: IF :: Z :: if (v5 != #(null)) goto 25::CD,7220:CD,7237:CD,7244:CD,7248:CD,7249
+7220 :: NORM :: compound :: I :: return #(0)::DD,7206
+7223 :: EXPR :: assign :: Ljava/lang/Object :: v11 = v13 + #(1)::DD,7245:CF,7224
+7224 :: EXPR :: assign :: Ljava/lang/Object :: v12 = v14 + #(1)::DD,7247:CF,7245
+7225 :: EXPR :: reference :: [I :: v8 = p0 $this .optLen::
+7228 :: EXPR :: reference :: I :: v9 = v8[v18]::DD,7232
+7232 :: PRED :: IF :: Z :: if (v14 < v9) goto 33::CD,7223:CD,7224:CD,7245:CD,7246:CD,7247:CF,7233
+7233 :: EXPR :: assign :: Ljava/lang/Object :: v15 = v18 + #(1)::DD,7249:CF,7248
+7234 :: EXPR :: reference :: I :: v7 = p0 $this .blockNum::DD,7237
+7237 :: PRED :: IF :: Z :: if (v17 < v7) goto 30::CD,7232:CD,7233:CD,7245:CD,7246:CD,7247:CD,7248:CD,7249
+7238 :: EXPR :: modify :: I :: p0 $this .myResultsEQR = v16::
+7241 :: EXPR :: reference :: I :: v19 = p0 $this .myResultsEQR::DD,7244
+7244 :: NORM :: compound :: I :: return v19::DD,7206
+7245 :: EXPR :: assign :: null :: PHI v13 = v16, v11::CF,7246:DD,7223:DD,7248
+7246 :: EXPR :: assign :: null :: PHI v18 = v17, v18::CF,7247:DD,7233:DD,7246
+7247 :: EXPR :: assign :: null :: PHI v14 = #(0), v12::DD,7224:DD,7232
+7248 :: EXPR :: assign :: null :: PHI v16 = #(0), v13::CF,7249:DD,7238:DD,7245
+7249 :: EXPR :: assign :: null :: PHI v17 = #(0), v15::DD,7237:DD,7246
+3627 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.init()::CD,3727:CD,3755:CD,3763
+3727 :: NORM :: declaration :: Ljava/util/ArrayList :: v25 = new java.util.ArrayList::
+3755 :: NORM :: declaration :: Ljava/lang/Double :: v27 = new java.lang.Double::
+3763 :: NORM :: declaration :: Ljava/lang/Double :: v29 = new java.lang.Double::
+3899 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.ResourceManager.getString(java.lang.String)::CE,3900:CD,3907:CD,3912:CD,3923:CD,3932:CD,3937:CD,3942:CD,3946
+3900 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.util.ResourceManager.getString(java.lang.String)::JM,63
+3904 :: EXPR :: reference :: Ljava/util/ResourceBundle :: v4 = p0 $this .RESOURCE_BUNDLE::JM,3912
+3907 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getString(p1 $key )::JM,3912:JM,3946:JM,3900
+3912 :: NORM :: compound :: Ljava/lang/String :: return v6::CF,3900
+3923 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::CF,3900:JM,3946
+3932 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v12.append(p1 $key )::JM,3946:JM,3900:JM,3912
+3937 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v18.append(#(33))::JM,3946:JM,3900
+3942 :: CALL :: call :: Ljava/lang/String :: v22 = v20.toString()::JM,3946:JM,3900
+3946 :: NORM :: compound :: Ljava/lang/String :: return v22::CF,3900
+3984 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getSimilarity()::CE,3985:CD,3991:CD,3992:CD,3999
+3985 :: EXIT :: exit :: D :: org.biojava.nbio.structure.align.model.AFPChain.getSimilarity()::JM,5111:JM,5115
+3988 :: EXPR :: reference :: D :: v3 = p0 $this .similarity::DD,3991
+3991 :: EXPR :: assign :: Z :: v5 = v3 > #(0.0 d)::DD,3992
+3992 :: PRED :: IF :: Z :: if (v5 >= #(0)) goto 14::CD,3993
+3993 :: CALL :: call :: V :: p0 $this .calcSimilarity()::CL,4231
+3996 :: EXPR :: reference :: D :: v8 = p0 $this .similarity::DD,3999
+3999 :: NORM :: compound :: D :: return v8::DD,3985
+4005 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.xml.AFPChainXMLConverter.toXML(org.biojava.nbio.structure.align.model.AFPChain,org.biojava.nbio.structure.Atom[],org.biojava.nbio.structure.Atom[])::CD,4011:CD,4015:CD,4021
+4011 :: NORM :: declaration :: Ljava/io/StringWriter :: v5 = new java.io.StringWriter::
+4015 :: CALL :: call :: V :: toXML(p1 $afpChain , v5, p2 $ca1 , p3 $ca2 )::CL,4287
+4021 :: CALL :: call :: Ljava/lang/String :: v9 = v5.toString()::
+4033 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getName1()::CE,4034:CD,4040
+4034 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.model.AFPChain.getName1()::JM,51
+4037 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .name1::DD,4040
+4040 :: NORM :: compound :: Ljava/lang/String :: return v3::CF,4034
+4042 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.model.AFPChain.getName2()::CE,4043:CD,4049
+4043 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.model.AFPChain.getName2()::JM,59
+4046 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .name2::DD,4049
+4049 :: NORM :: compound :: Ljava/lang/String :: return v3::CF,4043
+4051 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.doPOST(java.net.URL,java.lang.String,int)::CE,4052:CD,4057:CD,4066:CD,4067:CD,4075:CD,4082:CD,4086
+4052 :: EXIT :: exit :: Ljava/io/InputStream :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.doPOST(java.net.URL,java.lang.String,int)::
+4057 :: CALL :: call :: Ljava/net/HttpURLConnection :: v6 = openHttpURLConnection(p1 $url , p3 $timeout )::JM,4082:JM,4067:JM,4086:CL,4415
+4066 :: NORM :: declaration :: Ljava/io/OutputStreamWriter :: v9 = new java.io.OutputStreamWriter::JM,4082:JM,4067:JM,4086
+4067 :: CALL :: call :: Ljava/io/OutputStream :: v11 = v6.getOutputStream()::JM,4082:JM,4067:JM,4086
+4075 :: CALL :: call :: V :: v9.write(p2 $data )::
+4082 :: CALL :: call :: Ljava/io/InputStream :: v16 = v6.getInputStream()::JM,4082:JM,4067:JM,4086
+4086 :: NORM :: compound :: Ljava/io/InputStream :: return v16::DD,4052

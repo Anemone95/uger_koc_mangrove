@@ -1,0 +1,17 @@
+[54, 60]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest05875.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,13:CD,24:CD,28:CD,32:CD,37:CD,42:CD,47:CD,51:CD,54:CD,79
+7 :: CALL :: call :: [Ljava/lang/String :: v7 = p1 $request .getParameterValues(#(foo))::JM,12
+12 :: EXPR :: assign :: I :: v8 = v7.length::DD,13
+13 :: PRED :: IF :: Z :: if (v8 == #(0)) goto 34::CD,14:CD,79:JM,12
+14 :: CALL :: call :: [Ljava/lang/String :: v12 = p1 $request .getParameterValues(#(foo))::JM,12
+19 :: EXPR :: reference :: Ljava/lang/Object :: v13 = v12[#(0)]::DD,79
+24 :: CALL :: call :: Ljava/lang/String :: v16 = escapeHtml(v14)::JM,54:JM,24
+28 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v17 = new java.lang.StringBuilder::JM,54
+32 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v17.append(#(SELECT * from USERS w...))::JM,54
+37 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v21.append(v16)::JM,54
+42 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v23.append(#('))::JM,54
+47 :: CALL :: call :: Ljava/lang/String :: v28 = v26.toString()::JM,54
+51 :: CALL :: call :: Ljava/sql/Connection :: v30 = getSqlConnection()::JM,54
+54 :: CALL :: call :: Ljava/sql/PreparedStatement :: v34 = v30.prepareStatement(v28, #(1003), #(1007))::JM,54
+79 :: EXPR :: assign :: null :: PHI v14 = v13, #(null)::JM,54:JM,24

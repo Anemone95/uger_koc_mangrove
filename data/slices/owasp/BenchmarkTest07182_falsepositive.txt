@@ -1,0 +1,24 @@
+[82, 77]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest07182.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,17:CD,21:CD,51:CD,55:CD,60:CD,65:CD,70:CD,74:CD,77:CD,92
+12 :: CALL :: call :: Ljava/lang/String :: v9 = v5.getTheValue(#(foo))::JM,35:JM,21:JM,92:CL,187
+17 :: CALL :: call :: I :: v11 = v9.length()::JM,35:JM,21:JM,92
+21 :: PRED :: IF :: Z :: if (v11 <= #(1)) goto 69::CF,92:CF,22:CD,27:CD,31:CD,35:CD,36:CD,40:CD,47
+22 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::JM,92
+27 :: CALL :: call :: I :: v16 = v9.length()::JM,35:JM,21:JM,92
+31 :: CALL :: call :: I :: v19 = #(Z).length()::JM,35
+35 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v16 - v19::JM,92:JM,35:JM,21
+36 :: CALL :: call :: I :: v22 = v9.length()::JM,35:JM,21:JM,92
+40 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v13.replace(v20, v22, #(Z))::JM,92
+47 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::JM,92
+51 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v28 = new java.lang.StringBuilder::JM,77
+55 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v28.append(#(UPDATE USERS SET PASS...))::JM,77
+60 :: CALL :: call :: Ljava/lang/StringBuilder :: v34 = v32.append(v27)::JM,77
+65 :: CALL :: call :: Ljava/lang/StringBuilder :: v37 = v34.append(#(' WHERE USERNAME='foo'))::JM,77
+70 :: CALL :: call :: Ljava/lang/String :: v39 = v37.toString()::JM,77
+74 :: CALL :: call :: Ljava/sql/Statement :: v41 = getSqlStatement()::JM,77
+77 :: CALL :: call :: I :: v43 = v41.executeUpdate(v39, #(1))::JM,77
+92 :: EXPR :: assign :: null :: PHI v27 = v9, v26::CF,51:JM,77
+187 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheValue(java.lang.String)::CF,188:CD,192
+188 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheValue(java.lang.String)::JM,35:JM,21:JM,92
+192 :: NORM :: compound :: Ljava/lang/String :: return #(bar)::CF,188

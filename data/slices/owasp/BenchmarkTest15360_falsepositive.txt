@@ -1,0 +1,24 @@
+[42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 56]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest15360.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,16:CD,20:CD,25:CD,30:CD,35:CD,39:CD,42:CD,51
+12 :: CALL :: call :: Ljava/lang/String :: v9 = doSomething(v7)::JM,51:CL,137
+16 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::JM,51
+20 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v10.append(#(UPDATE USERS SET PASS...))::JM,51
+25 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v14.append(v9)::JM,51
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v19 = v16.append(#(' WHERE USERNAME='foo'))::JM,51
+35 :: CALL :: call :: Ljava/lang/String :: v21 = v19.toString()::JM,51
+39 :: CALL :: call :: Ljava/sql/Statement :: v23 = getSqlStatement()::JM,51
+42 :: NORM :: declaration :: [Ljava/lang/String :: v25 = new java.lang.String[]::JM,51
+43 :: EXPR :: modify :: Ljava/lang/Object :: v25[#(0)] = #(user)::
+47 :: EXPR :: modify :: Ljava/lang/Object :: v25[#(1)] = #(password)::
+51 :: CALL :: call :: I :: v31 = v23.executeUpdate(v21, v25)::JM,51
+137 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest15360.doSomething(java.lang.String)::CE,138:CD,141:CD,145:CD,151:CD,155:CD,161:CD,173:CD,178:CD,179
+138 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest15360.doSomething(java.lang.String)::JM,51
+141 :: NORM :: declaration :: Ljava/util/HashMap :: v4 = new java.util.HashMap::JM,178
+145 :: CALL :: call :: Ljava/lang/Object :: v9 = v4.put(#(keyA-21314), #(a_Value))::
+151 :: CALL :: call :: Ljava/lang/String :: v12 = p1 $param .toString()::JM,151:JM,141
+155 :: CALL :: call :: Ljava/lang/Object :: v14 = v4.put(#(keyB-21314), v12)::
+161 :: CALL :: call :: Ljava/lang/Object :: v18 = v4.put(#(keyC), #(another_Value))::
+173 :: CALL :: call :: Ljava/lang/Object :: v23 = v4.get(#(keyA-21314))::JM,178
+178 :: EXPR :: assign :: Ljava/lang/Object :: v24 = CHECKCAST v23::DD,179
+179 :: NORM :: compound :: Ljava/lang/String :: return v24::DD,138

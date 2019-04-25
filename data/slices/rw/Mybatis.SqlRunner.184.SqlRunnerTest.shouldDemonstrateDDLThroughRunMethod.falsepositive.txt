@@ -1,0 +1,11 @@
+[1451]
+1 :: ENTR :: entry :: null :: org.apache.ibatis.jdbc.SqlRunnerTest.shouldDemonstrateDDLThroughRunMethod()::CD,13:JM,1423:CD,18:CD,22:CD,33
+13 :: NORM :: declaration :: Lorg/apache/ibatis/jdbc/SqlRunner :: v8 = new org.apache.ibatis.jdbc.SqlRunner::JM,1451
+1423 :: EXPR :: modify :: Ljava/sql/Connection :: p0 $this .connection = p1 $connection ::
+18 :: CALL :: call :: V :: v8.run(#(CREATE TABLE BLAH(ID ...))::JM,1451:CL,1439
+22 :: CALL :: call :: V :: v8.run(#(insert into BLAH valu...))::JM,1451:CL,1439
+1439 :: ENTR :: entry :: null :: org.apache.ibatis.jdbc.SqlRunner.run(java.lang.String)::CD,1447:CD,1451
+33 :: CALL :: call :: V :: v8.run(#(DROP TABLE BLAH))::JM,1451:CL,1439
+1444 :: EXPR :: reference :: Ljava/sql/Connection :: v4 = p0 $this .connection::JM,1447:JM,1451
+1447 :: CALL :: call :: Ljava/sql/Statement :: v6 = v4.createStatement()::JM,1447:JM,1451
+1451 :: CALL :: call :: Z :: v8 = v6.execute(p1 $sql )::JM,1451

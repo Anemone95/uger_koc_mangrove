@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BugCollection version="3.0.2-dev-20160306-90c514b" sequence="1" timestamp="1519504177271" analysisTimestamp="1519504165640" release="">
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.BaseIntegrationTest">
+      <SourceLine classname="com.ctrip.framework.apollo.BaseIntegrationTest" sourcefile="BaseIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/BaseIntegrationTest.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.BaseIntegrationTest" name="beforeClass" signature="()V" isStatic="true">
+      <SourceLine classname="com.ctrip.framework.apollo.BaseIntegrationTest" start="52" end="55" startBytecode="0" endBytecode="96" sourcefile="BaseIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/BaseIntegrationTest.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.BaseIntegrationTest" start="52" end="52" startBytecode="9" endBytecode="9" sourcefile="BaseIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/BaseIntegrationTest.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.BaseIntegrationTest" start="52" end="52" startBytecode="4" endBytecode="4" sourcefile="BaseIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/BaseIntegrationTest.java"/>
+  </BugInstance>
+  <BugInstance type="XSS_SERVLET" priority="2" rank="7" abbrev="SECXSS2" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.BaseIntegrationTest$1">
+      <SourceLine classname="com.ctrip.framework.apollo.BaseIntegrationTest$1" sourcefile="BaseIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/BaseIntegrationTest.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.BaseIntegrationTest$1" name="handle" signature="(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.BaseIntegrationTest$1" start="114" end="125" startBytecode="0" endBytecode="215" sourcefile="BaseIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/BaseIntegrationTest.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.BaseIntegrationTest$1" start="122" end="122" startBytecode="84" endBytecode="84" sourcefile="BaseIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/BaseIntegrationTest.java"/>
+    <String value="PrintWriter.println(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.BaseIntegrationTest$1" start="122" end="122" startBytecode="81" endBytecode="81" sourcefile="BaseIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/BaseIntegrationTest.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest">
+      <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest" name="createLocalCachePropertyFile" signature="(Ljava/util/Properties;)Ljava/io/File;" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest" start="448" end="458" startBytecode="0" endBytecode="220" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest" start="448" end="448" startBytecode="12" endBytecode="12" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest" start="448" end="448" startBytecode="9" endBytecode="9" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest">
+      <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest" name="setUp" signature="()V" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest" start="59" end="70" startBytecode="0" endBytecode="181" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest" start="64" end="64" startBytecode="48" endBytecode="48" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest" start="64" end="64" startBytecode="42" endBytecode="42" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+  </BugInstance>
+  <BugInstance type="XSS_SERVLET" priority="2" rank="7" abbrev="SECXSS2" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest$6">
+      <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest$6" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest$6" name="handle" signature="(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest$6" start="388" end="403" startBytecode="0" endBytecode="242" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest$6" start="401" end="401" startBytecode="90" endBytecode="90" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+    <String value="PrintWriter.println(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest$6" start="401" end="401" startBytecode="87" endBytecode="87" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+  </BugInstance>
+  <BugInstance type="XSS_SERVLET" priority="2" rank="7" abbrev="SECXSS2" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest$7">
+      <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest$7" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest$7" name="handle" signature="(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest$7" start="418" end="428" startBytecode="0" endBytecode="206" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest$7" start="426" end="426" startBytecode="75" endBytecode="75" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+    <String value="PrintWriter.println(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.integration.ConfigIntegrationTest$7" start="426" end="426" startBytecode="72" endBytecode="72" sourcefile="ConfigIntegrationTest.java" sourcepath="com/ctrip/framework/apollo/integration/ConfigIntegrationTest.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.internals.DefaultConfigTest">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" sourcefile="DefaultConfigTest.java" sourcepath="com/ctrip/framework/apollo/internals/DefaultConfigTest.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" name="setUp" signature="()V" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" start="45" end="52" startBytecode="0" endBytecode="139" sourcefile="DefaultConfigTest.java" sourcepath="com/ctrip/framework/apollo/internals/DefaultConfigTest.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" start="48" end="48" startBytecode="41" endBytecode="41" sourcefile="DefaultConfigTest.java" sourcepath="com/ctrip/framework/apollo/internals/DefaultConfigTest.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" start="48" end="48" startBytecode="38" endBytecode="38" sourcefile="DefaultConfigTest.java" sourcepath="com/ctrip/framework/apollo/internals/DefaultConfigTest.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.internals.DefaultConfigTest">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" sourcefile="DefaultConfigTest.java" sourcepath="com/ctrip/framework/apollo/internals/DefaultConfigTest.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" name="testGetPropertyWithAllPropertyHierarchy" signature="()V" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" start="74" end="114" startBytecode="0" endBytecode="566" sourcefile="DefaultConfigTest.java" sourcepath="com/ctrip/framework/apollo/internals/DefaultConfigTest.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" start="93" end="93" startBytecode="112" endBytecode="112" sourcefile="DefaultConfigTest.java" sourcepath="com/ctrip/framework/apollo/internals/DefaultConfigTest.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" start="93" end="93" startBytecode="109" endBytecode="109" sourcefile="DefaultConfigTest.java" sourcepath="com/ctrip/framework/apollo/internals/DefaultConfigTest.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.internals.DefaultConfigTest">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" sourcefile="DefaultConfigTest.java" sourcepath="com/ctrip/framework/apollo/internals/DefaultConfigTest.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" name="testOnRepositoryChange" signature="()V" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" start="569" end="646" startBytecode="0" endBytecode="977" sourcefile="DefaultConfigTest.java" sourcepath="com/ctrip/framework/apollo/internals/DefaultConfigTest.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" start="593" end="593" startBytecode="131" endBytecode="131" sourcefile="DefaultConfigTest.java" sourcepath="com/ctrip/framework/apollo/internals/DefaultConfigTest.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.DefaultConfigTest" start="593" end="593" startBytecode="114" endBytecode="114" sourcefile="DefaultConfigTest.java" sourcepath="com/ctrip/framework/apollo/internals/DefaultConfigTest.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" name="assembleLocalCacheFile" signature="(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" start="269" end="271" startBytecode="0" endBytecode="142" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" start="271" end="271" startBytecode="51" endBytecode="51" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" start="269" end="269" startBytecode="41" endBytecode="41" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" start="270" end="270" startBytecode="37" endBytecode="37" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" name="findLocalCacheDir" signature="()Ljava/io/File;" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" start="68" end="80" startBytecode="0" endBytecode="208" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" start="74" end="74" startBytecode="62" endBytecode="62" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" start="68" end="68" startBytecode="4" endBytecode="4" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" name="findLocalCacheDir" signature="()Ljava/io/File;" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" start="68" end="80" startBytecode="0" endBytecode="208" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" start="80" end="80" startBytecode="76" endBytecode="76" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepository" start="80" end="80" startBytecode="71" endBytecode="71" sourcefile="LocalFileConfigRepository.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepository.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepositoryTest">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepositoryTest" sourcefile="LocalFileConfigRepositoryTest.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepositoryTest.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepositoryTest" name="createLocalCachePropertyFile" signature="(Ljava/util/Properties;)Ljava/io/File;" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepositoryTest" start="189" end="199" startBytecode="0" endBytecode="220" sourcefile="LocalFileConfigRepositoryTest.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepositoryTest.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepositoryTest" start="189" end="189" startBytecode="12" endBytecode="12" sourcefile="LocalFileConfigRepositoryTest.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepositoryTest.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepositoryTest" start="189" end="189" startBytecode="9" endBytecode="9" sourcefile="LocalFileConfigRepositoryTest.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepositoryTest.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepositoryTest">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepositoryTest" sourcefile="LocalFileConfigRepositoryTest.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepositoryTest.java"/>
+    </Class>
+    <Method classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepositoryTest" name="testLoadConfigWithLocalFileAndFallbackRepo" signature="()V" isStatic="false">
+      <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepositoryTest" start="103" end="115" startBytecode="0" endBytecode="209" sourcefile="LocalFileConfigRepositoryTest.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepositoryTest.java"/>
+    </Method>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepositoryTest" start="103" end="103" startBytecode="12" endBytecode="12" sourcefile="LocalFileConfigRepositoryTest.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepositoryTest.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="com.ctrip.framework.apollo.internals.LocalFileConfigRepositoryTest" start="103" end="103" startBytecode="9" endBytecode="9" sourcefile="LocalFileConfigRepositoryTest.java" sourcepath="com/ctrip/framework/apollo/internals/LocalFileConfigRepositoryTest.java"/>
+  </BugInstance>
+</BugCollection>

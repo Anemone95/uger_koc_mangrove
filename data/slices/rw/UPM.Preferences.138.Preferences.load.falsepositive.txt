@@ -1,0 +1,615 @@
+[189, 190]
+1 :: ENTR :: entry :: null :: com._17od.upm.util.Preferences.load()::CD,4:CD,7:CD,12:CD,164:CD,168:CD,170:CD,172:CD,189:CD,190
+4 :: CALL :: call :: Ljava/util/Properties :: v3 = getProperties()::JM,7:JM,12
+7 :: CALL :: call :: Z :: v6 = v3.containsKey(#(upm.properties))::JM,7:JM,12
+12 :: PRED :: IF :: Z :: if (v6 != #(0)) goto 178::CF,13:CD,16:JM,164:JM,168
+13 :: CALL :: call :: Z :: v9 = isLinux()::JM,16:CL,6328
+16 :: PRED :: IF :: Z :: if (v9 == #(0)) goto 107::CF,96:CD,17:CD,21:CD,63:CD,64:CD,72:CD,76:CD,81:CD,86:CD,90:CD,99:CD,273
+17 :: CALL :: call :: Ljava/lang/String :: v46 = getenv(#(XDG_CONFIG_HOME))::JM,273:JM,21:JM,31
+21 :: PRED :: IF :: Z :: if (v46 == #(null)) goto 39::CF,32:CD,22:CD,26:CD,31:CD,33:CD,37:CD,45:CD,49:CD,54:CD,59:CD,273
+22 :: CALL :: call :: Ljava/lang/String :: v49 = v46.trim()::JM,273:JM,31
+26 :: CALL :: call :: Z :: v52 = v49.equals(#())::JM,31
+31 :: PRED :: IF :: Z :: if (v52 == #(0)) goto 73::CF,273:CF,32:CD,33:CD,37:CD,45:CD,49:CD,54:CD,59
+32 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v53 = new java.lang.StringBuffer::JM,273:JM,33
+33 :: CALL :: call :: Ljava/lang/String :: v55 = getProperty(#(user.home))::JM,33
+37 :: CALL :: call :: Ljava/lang/String :: v57 = valueOf(v55)::
+45 :: CALL :: call :: Ljava/lang/String :: v60 = getProperty(#(file.separator))::JM,273:JM,45
+49 :: CALL :: call :: Ljava/lang/StringBuffer :: v62 = v53.append(v60)::JM,273
+54 :: CALL :: call :: Ljava/lang/StringBuffer :: v65 = v62.append(#(.config))::JM,273
+59 :: CALL :: call :: Ljava/lang/String :: v67 = v65.toString()::JM,273
+63 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v69 = new java.lang.StringBuffer::
+64 :: CALL :: call :: Ljava/lang/String :: v71 = valueOf(v68)::
+72 :: CALL :: call :: Ljava/lang/String :: v74 = getProperty(#(file.separator))::JM,72
+76 :: CALL :: call :: Ljava/lang/StringBuffer :: v76 = v69.append(v74)::
+81 :: CALL :: call :: Ljava/lang/StringBuffer :: v78 = v76.append(#(upm.properties))::
+86 :: CALL :: call :: Ljava/lang/String :: v80 = v78.toString()::
+90 :: CALL :: call :: Ljava/lang/String :: v82 = setProperty(#(upm.properties), v80)::
+96 :: CALL :: call :: Z :: v11 = isMAC()::JM,99:CL,6429
+99 :: PRED :: IF :: Z :: if (v11 == #(0)) goto 178::CD,100:CD,101:CD,105:CD,113:CD,117:CD,122:CD,127:CD,131:CD,136:CD,141:CD,145:CD,150:CD,155:CD,159:JM,164:JM,168
+100 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v12 = new java.lang.StringBuffer::JM,101
+101 :: CALL :: call :: Ljava/lang/String :: v15 = getProperty(#(user.home))::JM,101
+105 :: CALL :: call :: Ljava/lang/String :: v17 = valueOf(v15)::
+113 :: CALL :: call :: Ljava/lang/String :: v21 = getProperty(#(file.separator))::JM,113
+117 :: CALL :: call :: Ljava/lang/StringBuffer :: v23 = v12.append(v21)::
+122 :: CALL :: call :: Ljava/lang/StringBuffer :: v26 = v23.append(#(Library))::
+127 :: CALL :: call :: Ljava/lang/String :: v28 = getProperty(#(file.separator))::JM,127
+131 :: CALL :: call :: Ljava/lang/StringBuffer :: v30 = v26.append(v28)::
+136 :: CALL :: call :: Ljava/lang/StringBuffer :: v33 = v30.append(#(Preferences))::
+141 :: CALL :: call :: Ljava/lang/String :: v35 = getProperty(#(file.separator))::JM,141
+145 :: CALL :: call :: Ljava/lang/StringBuffer :: v37 = v33.append(v35)::
+150 :: CALL :: call :: Ljava/lang/StringBuffer :: v39 = v37.append(#(upm.properties))::
+155 :: CALL :: call :: Ljava/lang/String :: v41 = v39.toString()::
+159 :: CALL :: call :: Ljava/lang/String :: v43 = setProperty(#(upm.properties), v41)::
+164 :: CALL :: call :: Ljava/lang/String :: v84 = getProperty(#(upm.properties))::JM,164:JM,168
+168 :: EXPR :: modify :: Ljava/lang/String :: com._17od.upm.util.Preferences.propertiesFile = v84::
+170 :: EXPR :: reference :: Ljava/lang/String :: v85 = com._17od.upm.util.Preferences.propertiesFile::DD,172
+172 :: PRED :: IF :: Z :: if (v85 == #(null)) goto 204::CD,173:CD,175:CD,179:CD,184:CD,185:CD,187
+173 :: EXPR :: reference :: Ljava/lang/String :: v86 = com._17od.upm.util.Preferences.propertiesFile::JM,184
+175 :: CALL :: call :: Ljava/lang/String :: v88 = v86.trim()::JM,184
+179 :: CALL :: call :: Z :: v90 = v88.equals(#())::JM,184
+184 :: PRED :: IF :: Z :: if (v90 == #(0)) goto 210::CF,189:CD,185:CD,187
+185 :: EXPR :: reference :: Ljava/lang/String :: v91 = com._17od.upm.util.Preferences.PREF_FILE::CF,187
+187 :: EXPR :: modify :: Ljava/lang/String :: com._17od.upm.util.Preferences.propertiesFile = v91::
+189 :: NORM :: declaration :: Ljava/io/File :: v92 = new java.io.File::
+190 :: EXPR :: reference :: Ljava/lang/String :: v93 = com._17od.upm.util.Preferences.propertiesFile::
+273 :: EXPR :: assign :: null :: PHI v68 = v46, v67::CF,63
+453 :: ENTR :: entry :: null :: com._17od.upm.util.Preferences.<clinit>()::CD,476:CD,482:CD,483:CD,487:CD,495:CD,499:CD,504:CD,509:CD,513
+476 :: CALL :: call :: Lorg/apache/commons/logging/Log :: v14 = getLog(v12)::CL,6544
+482 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v15 = new java.lang.StringBuffer::JM,513:JM,483
+483 :: CALL :: call :: Ljava/lang/String :: v18 = getProperty(#(user.home))::JM,483
+487 :: CALL :: call :: Ljava/lang/String :: v20 = valueOf(v18)::
+495 :: CALL :: call :: Ljava/lang/String :: v24 = getProperty(#(file.separator))::JM,513:JM,495
+499 :: CALL :: call :: Ljava/lang/StringBuffer :: v26 = v15.append(v24)::JM,513
+504 :: CALL :: call :: Ljava/lang/StringBuffer :: v29 = v26.append(#(upm.properties))::JM,513
+509 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::JM,513
+513 :: EXPR :: modify :: Ljava/lang/String :: com._17od.upm.util.Preferences.PREF_FILE = v31::
+626 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.<clinit>()::CD,647:CD,653:CD,667:CD,670:CD,675:CD,678
+647 :: CALL :: call :: Ljava/lang/ClassLoader :: v10 = getClassLoader(v8)::CL,6631
+653 :: CALL :: call :: V :: initDiagnostics()::CL,6678
+667 :: CALL :: call :: V :: logClassLoaderEnvironment(v16)::CL,6793
+670 :: CALL :: call :: Ljava/util/Hashtable :: v19 = createFactoryStore()::CL,6953
+675 :: CALL :: call :: Z :: v21 = isDiagnosticsEnabled()::JM,678:CL,7016
+678 :: PRED :: IF :: Z :: if (v21 == #(0)) goto 83::CD,679
+679 :: CALL :: call :: V :: logDiagnostic(#(BOOTSTRAP COMPLETED))::CL,7029
+6328 :: ENTR :: entry :: null :: com._17od.upm.platformspecific.PlatformSpecificCode.isLinux()::CF,6329:CD,6331:CD,6335:CD,6340
+6329 :: EXIT :: exit :: Z :: com._17od.upm.platformspecific.PlatformSpecificCode.isLinux()::JM,16
+6331 :: CALL :: call :: Ljava/lang/String :: v4 = getProperty(#(os.name))::JM,6340:JM,6331
+6335 :: CALL :: call :: Z :: v7 = v4.equals(#(Linux))::JM,6340
+6340 :: NORM :: compound :: Z :: return v7::CF,6329
+6429 :: ENTR :: entry :: null :: com._17od.upm.platformspecific.PlatformSpecificCode.isMAC()::CF,6430:CD,6432:CD,6436:CD,6441
+6430 :: EXIT :: exit :: Z :: com._17od.upm.platformspecific.PlatformSpecificCode.isMAC()::JM,99
+6432 :: CALL :: call :: Ljava/lang/String :: v4 = getProperty(#(os.name))::JM,6432:JM,6441
+6436 :: CALL :: call :: Z :: v7 = v4.equals(#(Mac OS X))::JM,6441
+6441 :: NORM :: compound :: Z :: return v7::CF,6430
+6544 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.getLog(java.lang.Class)::CD,6548
+6548 :: CALL :: call :: Lorg/apache/commons/logging/LogFactory :: v4 = getFactory()::CL,7376
+6610 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.class$(java.lang.String)::CF,6611:CD,6614:CD,6618
+6611 :: EXIT :: exit :: Ljava/lang/Class :: org.apache.commons.logging.LogFactory.class$(java.lang.String)::JM,10985
+6614 :: CALL :: call :: Ljava/lang/Class :: v4 = forName(p1 $class$ )::JM,6614:JM,6618
+6618 :: NORM :: compound :: Ljava/lang/Class :: return v4::CF,6611
+6631 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.getClassLoader(java.lang.Class)::CE,6632:CD,6635:CD,6639:CD,6672
+6632 :: EXIT :: exit :: Ljava/lang/ClassLoader :: org.apache.commons.logging.LogFactory.getClassLoader(java.lang.Class)::JM,11148
+6635 :: CALL :: call :: Ljava/lang/ClassLoader :: v4 = p1 $clazz .getClassLoader()::JM,6639
+6639 :: NORM :: compound :: Ljava/lang/ClassLoader :: return v4::DD,6632
+6672 :: CALL :: call :: V :: logDiagnostic(v22)::CL,7029
+6678 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.initDiagnostics()::CD,6681:CD,6685
+6681 :: CALL :: call :: Ljava/lang/String :: v4 = getProperty(#(org.apache.commons.lo...))::JM,6704:JM,6693:JM,6681:JM,6685
+6685 :: PRED :: IF :: Z :: if (v4 != #(null)) goto 16::CD,6688:CD,6693:JM,6704
+6688 :: CALL :: call :: Z :: v9 = v4.equals(#(STDOUT))::JM,6704:JM,6693
+6693 :: PRED :: IF :: Z :: if (v9 == #(0)) goto 34::CD,6699:CD,6704:JM,6693
+6699 :: CALL :: call :: Z :: v13 = v4.equals(#(STDERR))::JM,6704:JM,6693
+6704 :: PRED :: IF :: Z :: if (v13 == #(0)) goto 49::CF,6710:CD,6716
+6710 :: NORM :: declaration :: Ljava/io/FileOutputStream :: v14 = new java.io.FileOutputStream::
+6716 :: NORM :: declaration :: Ljava/io/PrintStream :: v18 = new java.io.PrintStream::
+6793 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.logClassLoaderEnvironment(java.lang.Class)::CD,6797:CD,6800:CD,6845:CD,6871
+6797 :: CALL :: call :: Z :: v4 = isDiagnosticsEnabled()::JM,6800:CL,7016
+6800 :: PRED :: IF :: Z :: if (v4 != #(0)) goto 7::CD,6820:CD,6841:CD,6852:CD,6903:CD,6925
+6820 :: CALL :: call :: V :: logDiagnostic(v15)::CL,7029
+6841 :: CALL :: call :: V :: logDiagnostic(v26)::CL,7029
+6845 :: CALL :: call :: V :: logDiagnostic(#([ENV] Security settin...))::CL,7029
+6852 :: CALL :: call :: Ljava/lang/ClassLoader :: v35 = getClassLoader(p1 $clazz )::CL,6631
+6871 :: CALL :: call :: V :: logDiagnostic(v43)::CL,7029
+6903 :: CALL :: call :: V :: logDiagnostic(v58)::CL,7029
+6925 :: CALL :: call :: V :: logHierarchy(v69, v35)::CL,8093
+6953 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.createFactoryStore()::CD,6956:CD,6960:CD,6961:CD,6965:CD,6969:CD,6981:CD,6987:CD,6991:CD,6998:CD,6999
+6956 :: CALL :: call :: Ljava/lang/String :: v5 = getProperty(#(org.apache.commons.lo...))::JM,6960:JM,6998:JM,6956
+6960 :: PRED :: IF :: Z :: if (v5 != #(null)) goto 16::CF,6998
+6961 :: CALL :: call :: Ljava/lang/Class :: v9 = forName(v7)::JM,6961:JM,6965:JM,6969
+6965 :: CALL :: call :: Ljava/lang/Object :: v11 = v9.newInstance()::JM,6965:JM,6969
+6969 :: EXPR :: assign :: Ljava/lang/Object :: v12 = CHECKCAST v11::DD,6999
+6981 :: CALL :: call :: V :: logDiagnostic(#([ERROR] LogFactory: L...))::CL,7029
+6987 :: CALL :: call :: V :: v19.println(#([ERROR] LogFactory: L...))::
+6991 :: PRED :: IF :: Z :: if (v24 != #(null)) goto 76::CF,6992
+6992 :: NORM :: declaration :: Ljava/util/Hashtable :: v25 = new java.util.Hashtable::
+6998 :: EXPR :: assign :: null :: PHI v7 = v5, #(org.apache.commons.lo...)::JM,6961:JM,6965:JM,6969
+6999 :: EXPR :: assign :: null :: PHI v24 = v12, #(null), #(null), #(null)::DD,6991
+7016 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.isDiagnosticsEnabled()::CF,7017:CD,7019:CD,7021:CD,7023:CD,7024
+7017 :: EXIT :: exit :: Z :: org.apache.commons.logging.LogFactory.isDiagnosticsEnabled()::JM,678:JM,6800:JM,7386:JM,7399:JM,7451:JM,7463:JM,7501:JM,7580:JM,7629:JM,7677:JM,7722:JM,7735:JM,7768:JM,7776:JM,7784:JM,8101:JM,9176:JM,9225:JM,9287:JM,9361:JM,9573:JM,10542:JM,10582:JM,10905
+7019 :: EXPR :: reference :: Ljava/io/PrintStream :: v2 = org.apache.commons.logging.LogFactory.diagnosticsStream::DD,7021
+7021 :: PRED :: IF :: Z :: if (v2 != #(null)) goto 11::CD,7024
+7023 :: NORM :: compound :: Z :: return v6::CF,7017
+7024 :: EXPR :: assign :: null :: PHI v6 = #(0), #(1)::CF,7023
+7029 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.logDiagnostic(java.lang.String)::CD,7033:CD,7035
+7033 :: EXPR :: reference :: Ljava/io/PrintStream :: v3 = org.apache.commons.logging.LogFactory.diagnosticsStream::DD,7035
+7035 :: PRED :: IF :: Z :: if (v3 == #(null)) goto 28::CD,7040:CD,7046:CD,7050:CD,7052
+7040 :: CALL :: call :: V :: v5.print(v6)::
+7046 :: CALL :: call :: V :: v8.println(p1 $msg )::
+7050 :: EXPR :: reference :: Ljava/io/PrintStream :: v10 = org.apache.commons.logging.LogFactory.diagnosticsStream::
+7052 :: CALL :: call :: V :: v10.flush()::
+7376 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.getFactory()::CD,7379:CD,7382:CD,7390:CD,7394:CD,7510:CD,7515:CD,7519:CD,7523:CD,7528:CD,7533:CD,7537:CD,7545:CD,7550:CD,7554:CD,7558:CD,7563:CD,7568:CD,7572:CD,7602:CD,7603:CD,7686:CD,7691:CD,7695:CD,7699:CD,7704:CD,7709:CD,7713:CD,7828:CD,7829:CD,7831
+7379 :: CALL :: call :: Ljava/lang/ClassLoader :: v3 = getContextClassLoader()::JM,7382:CL,9099
+7382 :: PRED :: IF :: Z :: if (v3 != #(null)) goto 20::CD,7383:CD,7386
+7383 :: CALL :: call :: Z :: v6 = isDiagnosticsEnabled()::JM,7386:CL,7016
+7386 :: PRED :: IF :: Z :: if (v6 == #(0)) goto 20::CD,7387
+7387 :: CALL :: call :: V :: logDiagnostic(#(Context classloader i...))::CL,7029
+7390 :: CALL :: call :: Lorg/apache/commons/logging/LogFactory :: v11 = getCachedFactory(v3)::JM,7394:JM,7833:CL,9113
+7394 :: PRED :: IF :: Z :: if (v11 == #(null)) goto 30::CD,7396:CD,7399:CD,7425:CD,7448:CD,7451:CD,7455:CD,7459:CD,7576:CD,7717:CD,7780:CD,7796:CD,7833:CD,7835:CD,7836:CD,7837
+7396 :: CALL :: call :: Z :: v13 = isDiagnosticsEnabled()::JM,7399:CL,7016
+7399 :: PRED :: IF :: Z :: if (v13 == #(0)) goto 67::CF,7400:CD,7405:CD,7409:CD,7414:CD,7418:CD,7421
+7400 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v14 = new java.lang.StringBuffer::
+7405 :: CALL :: call :: Ljava/lang/String :: v18 = objectId(v3)::CL,8044
+7409 :: CALL :: call :: Ljava/lang/StringBuffer :: v20 = v14.append(v18)::
+7414 :: CALL :: call :: Ljava/lang/String :: v22 = v20.toString()::
+7418 :: CALL :: call :: V :: logDiagnostic(v22)::CL,7029
+7421 :: CALL :: call :: V :: logHierarchy(#([LOOKUP] ), v3)::CL,8093
+7425 :: CALL :: call :: Ljava/util/Properties :: v28 = getConfigurationFile(v3, #(commons-logging.prope...))::JM,7826:JM,7731:JM,7718:JM,7801:CL,9140
+7448 :: CALL :: call :: Z :: v39 = isDiagnosticsEnabled()::JM,7451:CL,7016
+7451 :: PRED :: IF :: Z :: if (v39 == #(0)) goto 119::CD,7452:JM,7459:JM,7455
+7452 :: CALL :: call :: V :: logDiagnostic(#([LOOKUP] Looking for ...))::CL,7029
+7455 :: CALL :: call :: Ljava/lang/String :: v44 = getProperty(#(org.apache.commons.lo...))::JM,7459:JM,7455
+7459 :: PRED :: IF :: Z :: if (v44 == #(null)) goto 176::CD,7460:CD,7463:CD,7491:CD,7498:CD,7501:CD,7833
+7460 :: CALL :: call :: Z :: v50 = isDiagnosticsEnabled()::JM,7463:CL,7016
+7463 :: PRED :: IF :: Z :: if (v50 == #(0)) goto 169::CF,7464:CD,7469:CD,7474:CD,7479:CD,7484:CD,7488
+7464 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v51 = new java.lang.StringBuffer::
+7469 :: CALL :: call :: Ljava/lang/StringBuffer :: v55 = v51.append(v44)::
+7474 :: CALL :: call :: Ljava/lang/StringBuffer :: v58 = v55.append(#(' as specified by sys...))::
+7479 :: CALL :: call :: Ljava/lang/StringBuffer :: v60 = v58.append(#(org.apache.commons.lo...))::
+7484 :: CALL :: call :: Ljava/lang/String :: v62 = v60.toString()::
+7488 :: CALL :: call :: V :: logDiagnostic(v62)::CL,7029
+7491 :: CALL :: call :: Lorg/apache/commons/logging/LogFactory :: v65 = newFactory(v44, v37, v3)::JM,7833:CL,9525
+7498 :: CALL :: call :: Z :: v46 = isDiagnosticsEnabled()::JM,7501:CL,7016
+7501 :: PRED :: IF :: Z :: if (v46 == #(0)) goto 275::CF,7833:CD,7502
+7502 :: CALL :: call :: V :: logDiagnostic(#([LOOKUP] No system pr...))::CL,7029
+7510 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v87 = new java.lang.StringBuffer::
+7515 :: CALL :: call :: Ljava/lang/String :: v91 = v84.getMessage()::
+7519 :: CALL :: call :: Ljava/lang/String :: v93 = v91.trim()::
+7523 :: CALL :: call :: Ljava/lang/StringBuffer :: v95 = v87.append(v93)::
+7528 :: CALL :: call :: Ljava/lang/StringBuffer :: v98 = v95.append(#(]. Trying alternative...))::
+7533 :: CALL :: call :: Ljava/lang/String :: v100 = v98.toString()::
+7537 :: CALL :: call :: V :: logDiagnostic(v100)::CL,7029
+7545 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v69 = new java.lang.StringBuffer::
+7550 :: CALL :: call :: Ljava/lang/String :: v73 = v66.getMessage()::
+7554 :: CALL :: call :: Ljava/lang/String :: v75 = v73.trim()::
+7558 :: CALL :: call :: Ljava/lang/StringBuffer :: v77 = v69.append(v75)::
+7563 :: CALL :: call :: Ljava/lang/StringBuffer :: v80 = v77.append(#(] as specified by a s...))::
+7568 :: CALL :: call :: Ljava/lang/String :: v82 = v80.toString()::
+7572 :: CALL :: call :: V :: logDiagnostic(v82)::CL,7029
+7576 :: PRED :: IF :: Z :: if (v103 != #(null)) goto 485::CF,7835:CD,7577:CD,7580:CD,7584:CD,7589
+7577 :: CALL :: call :: Z :: v106 = isDiagnosticsEnabled()::JM,7580:CL,7016
+7580 :: PRED :: IF :: Z :: if (v106 == #(0)) goto 292::CD,7581
+7581 :: CALL :: call :: V :: logDiagnostic(#([LOOKUP] Looking for ...))::CL,7029
+7584 :: CALL :: call :: Ljava/io/InputStream :: v111 = getResourceAsStream(v3, #(META-INF/services/org...))::JM,7589:CL,9624
+7589 :: PRED :: IF :: Z :: if (v111 == #(null)) goto 428::CF,7590:CD,7591:CD,7612:CD,7616:CD,7619:CD,7674:CD,7677:CD,7834:CD,7835
+7590 :: NORM :: declaration :: Ljava/io/BufferedReader :: v116 = new java.io.BufferedReader::DD,7834:CF,7591
+7591 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v117 = new java.io.InputStreamReader::
+7602 :: NORM :: declaration :: Ljava/io/BufferedReader :: v121 = new java.io.BufferedReader::DD,7834
+7603 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v122 = new java.io.InputStreamReader::
+7612 :: CALL :: call :: Ljava/lang/String :: v129 = v127.readLine()::JM,7619:JM,7625
+7616 :: CALL :: call :: V :: v127.close()::
+7619 :: PRED :: IF :: Z :: if (v129 == #(null)) goto 485::CF,7835:CD,7620:CD,7625
+7620 :: CALL :: call :: Z :: v133 = #().equals(v129)::JM,7625
+7625 :: PRED :: IF :: Z :: if (v133 != #(0)) goto 485::CF,7835:CD,7626:CD,7629:CD,7667
+7626 :: CALL :: call :: Z :: v135 = isDiagnosticsEnabled()::JM,7629:CL,7016
+7629 :: PRED :: IF :: Z :: if (v135 == #(0)) goto 421::CF,7630:CD,7635:CD,7640:CD,7645:CD,7650:CD,7655:CD,7660:CD,7664
+7630 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v136 = new java.lang.StringBuffer::
+7635 :: CALL :: call :: Ljava/lang/StringBuffer :: v140 = v136.append(v129)::JM,7625
+7640 :: CALL :: call :: Ljava/lang/StringBuffer :: v143 = v140.append(#( as specified by file '))::
+7645 :: CALL :: call :: Ljava/lang/StringBuffer :: v145 = v143.append(#(META-INF/services/org...))::
+7650 :: CALL :: call :: Ljava/lang/StringBuffer :: v148 = v145.append(#(' which was present i...))::
+7655 :: CALL :: call :: Ljava/lang/StringBuffer :: v151 = v148.append(#( classloader.))::
+7660 :: CALL :: call :: Ljava/lang/String :: v153 = v151.toString()::
+7664 :: CALL :: call :: V :: logDiagnostic(v153)::CL,7029
+7667 :: CALL :: call :: Lorg/apache/commons/logging/LogFactory :: v156 = newFactory(v129, v37, v3)::JM,7835:CL,9525
+7674 :: CALL :: call :: Z :: v113 = isDiagnosticsEnabled()::JM,7677:CL,7016
+7677 :: PRED :: IF :: Z :: if (v113 == #(0)) goto 485::CF,7835:CD,7678
+7678 :: CALL :: call :: V :: logDiagnostic(#([LOOKUP] No resource ...))::CL,7029
+7686 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v161 = new java.lang.StringBuffer::
+7691 :: CALL :: call :: Ljava/lang/String :: v164 = v157.getMessage()::
+7695 :: CALL :: call :: Ljava/lang/String :: v166 = v164.trim()::
+7699 :: CALL :: call :: Ljava/lang/StringBuffer :: v168 = v161.append(v166)::
+7704 :: CALL :: call :: Ljava/lang/StringBuffer :: v170 = v168.append(#(]. Trying alternative...))::
+7709 :: CALL :: call :: Ljava/lang/String :: v172 = v170.toString()::
+7713 :: CALL :: call :: V :: logDiagnostic(v172)::CL,7029
+7717 :: PRED :: IF :: Z :: if (v175 != #(null)) goto 584::CF,7836:CD,7718
+7718 :: PRED :: IF :: Z :: if (v28 == #(null)) goto 572::CD,7719:CD,7722:CD,7726:CD,7731:CD,7773:CD,7776:CD,7836
+7719 :: CALL :: call :: Z :: v182 = isDiagnosticsEnabled()::JM,7722:CL,7016
+7722 :: PRED :: IF :: Z :: if (v182 == #(0)) goto 506::CD,7723:JM,7826:JM,7731:JM,7801
+7723 :: CALL :: call :: V :: logDiagnostic(#([LOOKUP] Looking in p...))::CL,7029
+7726 :: CALL :: call :: Ljava/lang/String :: v186 = v28.getProperty(#(org.apache.commons.lo...))::JM,7826:JM,7731:JM,7801
+7731 :: PRED :: IF :: Z :: if (v186 == #(null)) goto 558::CD,7732:CD,7735:CD,7758:CD,7765:CD,7768:CD,7836
+7732 :: CALL :: call :: Z :: v192 = isDiagnosticsEnabled()::JM,7735:CL,7016
+7735 :: PRED :: IF :: Z :: if (v192 == #(0)) goto 551::CF,7736:CD,7741:CD,7746:CD,7751:CD,7755
+7736 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v193 = new java.lang.StringBuffer::
+7741 :: CALL :: call :: Ljava/lang/StringBuffer :: v197 = v193.append(v186)::JM,7826
+7746 :: CALL :: call :: Ljava/lang/StringBuffer :: v200 = v197.append(#('))::JM,7826
+7751 :: CALL :: call :: Ljava/lang/String :: v202 = v200.toString()::
+7755 :: CALL :: call :: V :: logDiagnostic(v202)::CL,7029
+7758 :: CALL :: call :: Lorg/apache/commons/logging/LogFactory :: v205 = newFactory(v186, v37, v3)::JM,7836:CL,9525
+7765 :: CALL :: call :: Z :: v188 = isDiagnosticsEnabled()::JM,7768:CL,7016
+7768 :: PRED :: IF :: Z :: if (v188 == #(0)) goto 584::CF,7836:CD,7769
+7769 :: CALL :: call :: V :: logDiagnostic(#([LOOKUP] Properties f...))::CL,7029
+7773 :: CALL :: call :: Z :: v178 = isDiagnosticsEnabled()::JM,7776:CL,7016
+7776 :: PRED :: IF :: Z :: if (v178 == #(0)) goto 584::CF,7836:CD,7777
+7777 :: CALL :: call :: V :: logDiagnostic(#([LOOKUP] No propertie...))::CL,7029
+7780 :: PRED :: IF :: Z :: if (v206 != #(null)) goto 609::CF,7837:CD,7781:CD,7784:CD,7790
+7781 :: CALL :: call :: Z :: v209 = isDiagnosticsEnabled()::JM,7784:CL,7016
+7784 :: PRED :: IF :: Z :: if (v209 == #(0)) goto 600::CD,7785
+7785 :: CALL :: call :: V :: logDiagnostic(#([LOOKUP] Loading the ...))::CL,7029
+7790 :: CALL :: call :: Lorg/apache/commons/logging/LogFactory :: v215 = newFactory(#(org.apache.commons.lo...), v213, v3)::JM,7837:CL,9525
+7796 :: PRED :: IF :: Z :: if (v216 == #(null)) goto 669::CD,7797:CD,7801
+7797 :: CALL :: call :: V :: cacheFactory(v3, v216)::CL,9644
+7801 :: PRED :: IF :: Z :: if (v28 == #(null)) goto 669::CD,7802:CD,7822:CD,7826:JM,7731
+7802 :: CALL :: call :: Ljava/util/Enumeration :: v219 = v28.propertyNames()::JM,7826:JM,7731
+7807 :: CALL :: call :: Ljava/lang/Object :: v223 = v219.nextElement()::JM,7826
+7822 :: CALL :: call :: Z :: v221 = v219.hasMoreElements()::JM,7826
+7826 :: PRED :: IF :: Z :: if (v221 != #(0)) goto 632::CD,7807:CD,7822:JM,7826
+7828 :: EXPR :: assign :: Ljava/lang/Exception :: v84 = catch <exc>::
+7829 :: EXPR :: assign :: Ljava/lang/Exception :: v66 = catch <exc>::
+7831 :: EXPR :: assign :: Ljava/lang/Exception :: v157 = catch <exc>::
+7833 :: EXPR :: assign :: null :: PHI v103 = v65, v11, v11, v11, v11::DD,7576:DD,7835
+7834 :: EXPR :: assign :: null :: PHI v127 = v116, v121::JM,7619:JM,7625
+7835 :: EXPR :: assign :: null :: PHI v175 = v103, v103, v103, v156, v103, v103, v103, v103::DD,7717:DD,7836
+7836 :: EXPR :: assign :: null :: PHI v206 = v175, v205, v175, v175, v175, v175::DD,7780:DD,7837
+7837 :: EXPR :: assign :: null :: PHI v216 = v206, v215::DD,7796
+8044 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.objectId(java.lang.Object)::CE,8045:CD,8048:JM,8051:JM,8085:JM,8055:JM,8072
+8045 :: EXIT :: exit :: Ljava/lang/String :: org.apache.commons.logging.LogFactory.objectId(java.lang.Object)::
+8048 :: PRED :: IF :: Z :: if (p1 $o  != #(null)) goto 7::CF,8050:CD,8049:CD,8051:CD,8055:CD,8059:CD,8067:CD,8072:CD,8076:CD,8081:CD,8085
+8049 :: NORM :: compound :: Ljava/lang/String :: return #(null)::DD,8045
+8050 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v4 = new java.lang.StringBuffer::JM,8085:JM,8048:JM,8051:JM,8055:JM,8072
+8051 :: CALL :: call :: Ljava/lang/Class :: v6 = p1 $o .getClass()::JM,8048:JM,8051:JM,8085:JM,8055:JM,8072
+8055 :: CALL :: call :: Ljava/lang/String :: v8 = v6.getName()::JM,8085:JM,8055
+8059 :: CALL :: call :: Ljava/lang/String :: v10 = valueOf(v8)::JM,8085
+8067 :: CALL :: call :: Ljava/lang/StringBuffer :: v14 = v4.append(#(@))::JM,8085
+8072 :: CALL :: call :: I :: v16 = identityHashCode(p1 $o )::JM,8048:JM,8051:JM,8085:JM,8055:JM,8072
+8076 :: CALL :: call :: Ljava/lang/StringBuffer :: v18 = v14.append(v16)::JM,8085:JM,8055
+8081 :: CALL :: call :: Ljava/lang/String :: v20 = v18.toString()::JM,8085
+8085 :: NORM :: compound :: Ljava/lang/String :: return v20::DD,8045
+8093 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.logHierarchy(java.lang.String,java.lang.ClassLoader)::CD,8098:CD,8101:CD,8170:JM,8103:JM,8174
+8098 :: CALL :: call :: Z :: v5 = isDiagnosticsEnabled()::JM,8101:CL,7016
+8101 :: PRED :: IF :: Z :: if (v5 != #(0)) goto 8::CD,8103:CD,8148:CD,8174
+8103 :: PRED :: IF :: Z :: if (p2 $classLoader  == #(null)) goto 54::CD,8145
+8145 :: CALL :: call :: V :: logDiagnostic(v27)::CL,7029
+8148 :: CALL :: call :: Ljava/lang/ClassLoader :: v30 = getSystemClassLoader()::
+8170 :: CALL :: call :: V :: logDiagnostic(v40)::CL,7029
+8174 :: PRED :: IF :: Z :: if (p2 $classLoader  == #(null)) goto 184::CD,8213:CD,8229:CD,8240
+8213 :: CALL :: call :: Ljava/lang/ClassLoader :: v61 = v65.getParent()::JM,8229
+8229 :: PRED :: IF :: Z :: if (v61 != #(null)) goto 118::CD,8213
+8240 :: CALL :: call :: V :: logDiagnostic(v75)::CL,7029
+8652 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.3.run()::CE,8653:CD,8659
+8653 :: EXIT :: exit :: Ljava/lang/Object :: org.apache.commons.logging.LogFactory.3.run()::
+8656 :: EXPR :: reference :: Ljava/lang/ClassLoader :: v3 = p0 $this .val$loader::DD,8659
+8659 :: PRED :: IF :: Z :: if (v3 == #(null)) goto 20::CD,8666:CD,8671:CD,8675:CD,8679
+8660 :: EXPR :: reference :: Ljava/lang/ClassLoader :: v8 = p0 $this .val$loader::JM,8671
+8663 :: EXPR :: reference :: Ljava/lang/String :: v9 = p0 $this .val$name::JM,8671
+8666 :: CALL :: call :: Ljava/io/InputStream :: v11 = v8.getResourceAsStream(v9)::JM,8671
+8671 :: NORM :: compound :: Ljava/lang/Object :: return v11::DD,8653
+8675 :: CALL :: call :: Ljava/io/InputStream :: v7 = getSystemResourceAsStream(v5)::JM,8679
+8679 :: NORM :: compound :: Ljava/lang/Object :: return v7::DD,8653
+8685 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.2.run()::CE,8686:CD,8695:CD,8700
+8686 :: EXIT :: exit :: Ljava/lang/Object :: org.apache.commons.logging.LogFactory.2.run()::
+8695 :: CALL :: call :: Ljava/lang/Object :: v6 = createFactory(v3, v4)::JM,8700:CL,10510
+8700 :: NORM :: compound :: Ljava/lang/Object :: return v6::DD,8686
+8703 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.4.run()::CE,8704:CD,8710:CD,8766:CD,8769:CD,8770
+8704 :: EXIT :: exit :: Ljava/lang/Object :: org.apache.commons.logging.LogFactory.4.run()::
+8707 :: EXPR :: reference :: Ljava/lang/ClassLoader :: v3 = p0 $this .val$loader::DD,8710
+8710 :: PRED :: IF :: Z :: if (v3 == #(null)) goto 20::CD,8717:CD,8722:CD,8726:CD,8730
+8711 :: EXPR :: reference :: Ljava/lang/ClassLoader :: v8 = p0 $this .val$loader::JM,8722
+8714 :: EXPR :: reference :: Ljava/lang/String :: v9 = p0 $this .val$name::JM,8722
+8717 :: CALL :: call :: Ljava/util/Enumeration :: v11 = v8.getResources(v9)::JM,8722
+8722 :: NORM :: compound :: Ljava/lang/Object :: return v11::DD,8704
+8726 :: CALL :: call :: Ljava/util/Enumeration :: v7 = getSystemResources(v5)::JM,8730
+8730 :: NORM :: compound :: Ljava/lang/Object :: return v7::DD,8704
+8766 :: CALL :: call :: V :: access$0(v31)::CL,11061
+8769 :: NORM :: compound :: Ljava/lang/Object :: return #(null)::DD,8704
+8770 :: NORM :: compound :: Ljava/lang/Object :: return #(null)::DD,8704
+8778 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.1.run()::CE,8779:CD,8782:CD,8785
+8779 :: EXIT :: exit :: Ljava/lang/Object :: org.apache.commons.logging.LogFactory.1.run()::
+8782 :: CALL :: call :: Ljava/lang/ClassLoader :: v4 = directGetContextClassLoader()::JM,8785:CL,11070
+8785 :: NORM :: compound :: Ljava/lang/Object :: return v4::DD,8779
+8786 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.5.run()::CE,8787:CD,8793:CD,8797:CD,8831
+8787 :: EXIT :: exit :: Ljava/lang/Object :: org.apache.commons.logging.LogFactory.5.run()::
+8790 :: EXPR :: reference :: Ljava/net/URL :: v3 = p0 $this .val$url::JM,8793:JM,8797
+8793 :: CALL :: call :: Ljava/io/InputStream :: v5 = v3.openStream()::JM,8793:JM,8797
+8797 :: PRED :: IF :: Z :: if (v5 == #(null)) goto 61::CF,8798:CD,8802:CD,8809:CD,8834
+8798 :: NORM :: declaration :: Ljava/util/Properties :: v7 = new java.util.Properties::DD,8809
+8802 :: CALL :: call :: V :: v7.load(v5)::
+8809 :: NORM :: compound :: Ljava/lang/Object :: return v7::DD,8787
+8831 :: CALL :: call :: V :: access$0(v22)::CL,11061
+8834 :: NORM :: compound :: Ljava/lang/Object :: return #(null)::DD,8787
+9099 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.getContextClassLoader()::CE,9100:CD,9106:CD,9110:CD,9111
+9100 :: EXIT :: exit :: Ljava/lang/ClassLoader :: org.apache.commons.logging.LogFactory.getContextClassLoader()::JM,7382
+9106 :: CALL :: call :: Ljava/lang/Object :: v5 = doPrivileged(v2)::JM,9110
+9110 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST v5::CF,9111
+9111 :: NORM :: compound :: Ljava/lang/ClassLoader :: return v6::DD,9100
+9113 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.getCachedFactory(java.lang.ClassLoader)::CE,9114:CD,9117:CD,9129:CD,9130:JM,9128
+9114 :: EXIT :: exit :: Lorg/apache/commons/logging/LogFactory :: org.apache.commons.logging.LogFactory.getCachedFactory(java.lang.ClassLoader)::JM,7394:JM,7833
+9117 :: PRED :: IF :: Z :: if (p1 $contextClassLoader  != #(null)) goto 13::CD,9118:CD,9121:CD,9123:CD,9128:CD,9130
+9118 :: EXPR :: reference :: Lorg/apache/commons/logging/LogFactory :: v8 = org.apache.commons.logging.LogFactory.nullClassLoaderFactory::DD,9130
+9121 :: EXPR :: reference :: Ljava/util/Hashtable :: v4 = org.apache.commons.logging.LogFactory.factories::JM,9128
+9123 :: CALL :: call :: Ljava/lang/Object :: v6 = v4.get(p1 $contextClassLoader )::JM,9128
+9128 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST v6::DD,9130
+9129 :: NORM :: compound :: Lorg/apache/commons/logging/LogFactory :: return v9::CF,9114
+9130 :: EXPR :: assign :: null :: PHI v9 = v8, v7::CF,9129
+9140 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.getConfigurationFile(java.lang.ClassLoader,java.lang.String)::CE,9141:CD,9145:CD,9150:CD,9355:CD,9425:CD,9426:CD,9422:CD,9423:CD,9424
+9141 :: EXIT :: exit :: Ljava/util/Properties :: org.apache.commons.logging.LogFactory.getConfigurationFile(java.lang.ClassLoader,java.lang.String)::JM,7826:JM,7731:JM,7718:JM,7801
+9145 :: CALL :: call :: Ljava/util/Enumeration :: v7 = getResources(p1 $classLoader , p2 $fileName )::JM,9156:JM,9349:JM,9150:CL,11471
+9150 :: PRED :: IF :: Z :: if (v7 != #(null)) goto 296::CF,9422:CD,9151:CD,9345:CD,9349:CD,9358:CD,9361:CD,9418:CD,9423:CD,9424:CD,9427:CD,9428
+9151 :: NORM :: compound :: Ljava/util/Properties :: return #(null)::DD,9141
+9152 :: CALL :: call :: Ljava/lang/Object :: v12 = v7.nextElement()::JM,9156:JM,9349
+9156 :: EXPR :: assign :: Ljava/lang/Object :: v13 = CHECKCAST v12::JM,9197:JM,9271:JM,9246:JM,9333:JM,9308:DD,9424:DD,9426
+9157 :: CALL :: call :: Ljava/util/Properties :: v15 = getProperties(v13)::JM,9168:JM,9216:JM,9425:JM,9169:JM,9161:JM,9420:JM,9421:JM,9422:JM,9215:CL,11495
+9161 :: PRED :: IF :: Z :: if (v15 == #(null)) goto 296::CF,9422:CD,9162
+9162 :: PRED :: IF :: Z :: if (v24 != #(null)) goto 124::CD,9163:CD,9168:CD,9173:CD,9176:CD,9210:CD,9215:CD,9220:CD,9221:CD,9420:CD,9421:CD,9422:CD,9423:CD,9424:JM,9216:JM,9425:JM,9169
+9163 :: CALL :: call :: Ljava/lang/String :: v18 = v15.getProperty(#(priority))::JM,9168:JM,9216:JM,9425:JM,9169:JM,9420:JM,9421:JM,9422:JM,9215
+9168 :: PRED :: IF :: Z :: if (v18 == #(null)) goto 77::CF,9420:CD,9169:JM,9216:JM,9421:JM,9215
+9169 :: CALL :: call :: D :: v20 = parseDouble(v18)::JM,9216:JM,9169:JM,9420:JM,9421:JM,9215
+9173 :: CALL :: call :: Z :: v23 = isDiagnosticsEnabled()::JM,9176:CL,7016
+9176 :: PRED :: IF :: Z :: if (v23 == #(0)) goto 296::CF,9422:CF,9177:CD,9182:CD,9187:CD,9192:CD,9197:CD,9202:CD,9206:CD,9423:CD,9424
+9177 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v35 = new java.lang.StringBuffer::JM,9197
+9182 :: CALL :: call :: Ljava/lang/StringBuffer :: v39 = v35.append(v13)::JM,9197
+9187 :: CALL :: call :: Ljava/lang/StringBuffer :: v42 = v39.append(#('))::JM,9197
+9192 :: CALL :: call :: Ljava/lang/StringBuffer :: v45 = v42.append(#( with priority ))::JM,9197
+9197 :: CALL :: call :: Ljava/lang/StringBuffer :: v47 = v45.append(v21)::JM,9197
+9202 :: CALL :: call :: Ljava/lang/String :: v49 = v47.toString()::
+9206 :: CALL :: call :: V :: logDiagnostic(v49)::CL,7029
+9210 :: CALL :: call :: Ljava/lang/String :: v28 = v15.getProperty(#(priority))::JM,9168:JM,9216:JM,9425:JM,9169:JM,9420:JM,9421:JM,9422:JM,9215
+9215 :: PRED :: IF :: Z :: if (v28 == #(null)) goto 147::CF,9421:CD,9216:JM,9169:JM,9420
+9216 :: CALL :: call :: D :: v30 = parseDouble(v28)::JM,9216:JM,9169:JM,9420:JM,9421
+9220 :: EXPR :: assign :: Z :: v32 = v31 < v25::DD,9221
+9221 :: PRED :: IF :: Z :: if (v32 <= #(0)) goto 229::CD,9222:CD,9225:CD,9284:CD,9287:CD,9422:CD,9423:CD,9424
+9222 :: CALL :: call :: Z :: v52 = isDiagnosticsEnabled()::JM,9225:CL,7016
+9225 :: PRED :: IF :: Z :: if (v52 == #(0)) goto 226::CF,9226:CD,9231:CD,9236:CD,9241:CD,9246:CD,9251:CD,9256:CD,9261:CD,9266:CD,9271:CD,9276:CD,9280
+9226 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v53 = new java.lang.StringBuffer::JM,9271:JM,9246
+9231 :: CALL :: call :: Ljava/lang/StringBuffer :: v57 = v53.append(v13)::JM,9271:JM,9246
+9236 :: CALL :: call :: Ljava/lang/StringBuffer :: v59 = v57.append(#('))::JM,9271:JM,9246
+9241 :: CALL :: call :: Ljava/lang/StringBuffer :: v61 = v59.append(#( with priority ))::JM,9271:JM,9246
+9246 :: CALL :: call :: Ljava/lang/StringBuffer :: v63 = v61.append(v31)::JM,9271:JM,9246
+9251 :: CALL :: call :: Ljava/lang/StringBuffer :: v66 = v63.append(#( overrides file at '))::JM,9271
+9256 :: CALL :: call :: Ljava/lang/StringBuffer :: v68 = v66.append(v26)::JM,9271
+9261 :: CALL :: call :: Ljava/lang/StringBuffer :: v70 = v68.append(#('))::JM,9271
+9266 :: CALL :: call :: Ljava/lang/StringBuffer :: v72 = v70.append(#( with priority ))::JM,9271
+9271 :: CALL :: call :: Ljava/lang/StringBuffer :: v74 = v72.append(v25)::JM,9271
+9276 :: CALL :: call :: Ljava/lang/String :: v76 = v74.toString()::
+9280 :: CALL :: call :: V :: logDiagnostic(v76)::CL,7029
+9284 :: CALL :: call :: Z :: v34 = isDiagnosticsEnabled()::JM,9287:CL,7016
+9287 :: PRED :: IF :: Z :: if (v34 == #(0)) goto 296::CF,9422:CF,9288:CD,9293:CD,9298:CD,9303:CD,9308:CD,9313:CD,9318:CD,9323:CD,9328:CD,9333:CD,9338:CD,9342
+9288 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v78 = new java.lang.StringBuffer::JM,9333:JM,9308
+9293 :: CALL :: call :: Ljava/lang/StringBuffer :: v81 = v78.append(v13)::JM,9333:JM,9308
+9298 :: CALL :: call :: Ljava/lang/StringBuffer :: v83 = v81.append(#('))::JM,9333:JM,9308
+9303 :: CALL :: call :: Ljava/lang/StringBuffer :: v85 = v83.append(#( with priority ))::JM,9333:JM,9308
+9308 :: CALL :: call :: Ljava/lang/StringBuffer :: v87 = v85.append(v31)::JM,9333:JM,9308
+9313 :: CALL :: call :: Ljava/lang/StringBuffer :: v90 = v87.append(#( does not override fi...))::JM,9333
+9318 :: CALL :: call :: Ljava/lang/StringBuffer :: v92 = v90.append(v26)::JM,9333
+9323 :: CALL :: call :: Ljava/lang/StringBuffer :: v94 = v92.append(#('))::JM,9333
+9328 :: CALL :: call :: Ljava/lang/StringBuffer :: v96 = v94.append(#( with priority ))::JM,9333
+9333 :: CALL :: call :: Ljava/lang/StringBuffer :: v98 = v96.append(v25)::JM,9333
+9338 :: CALL :: call :: Ljava/lang/String :: v100 = v98.toString()::
+9342 :: CALL :: call :: V :: logDiagnostic(v100)::CL,7029
+9345 :: CALL :: call :: Z :: v9 = v7.hasMoreElements()::JM,9156:JM,9349
+9349 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 23::CD,9152:CD,9156:CD,9157:CD,9161:CD,9345:CD,9422:CD,9423:CD,9424:JM,9349
+9355 :: CALL :: call :: V :: logDiagnostic(#(SecurityException thr...))::CL,7029
+9358 :: CALL :: call :: Z :: v115 = isDiagnosticsEnabled()::JM,9361:CL,7016
+9361 :: PRED :: IF :: Z :: if (v115 == #(0)) goto 391::CD,9362:CF,9418
+9362 :: PRED :: IF :: Z :: if (v111 != #(null)) goto 356::CF,9386:CF,9363:CD,9368:CD,9373:CD,9378:CD,9382:CD,9391:CD,9396:CD,9401:CD,9406:CD,9411:CD,9415
+9363 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v132 = new java.lang.StringBuffer::
+9368 :: CALL :: call :: Ljava/lang/StringBuffer :: v136 = v132.append(p2 $fileName )::
+9373 :: CALL :: call :: Ljava/lang/StringBuffer :: v139 = v136.append(#(' found.))::
+9378 :: CALL :: call :: Ljava/lang/String :: v141 = v139.toString()::
+9382 :: CALL :: call :: V :: logDiagnostic(v141)::CL,7029
+9386 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v116 = new java.lang.StringBuffer::
+9391 :: CALL :: call :: Ljava/lang/StringBuffer :: v120 = v116.append(p2 $fileName )::
+9396 :: CALL :: call :: Ljava/lang/StringBuffer :: v123 = v120.append(#(' found at '))::
+9401 :: CALL :: call :: Ljava/lang/StringBuffer :: v125 = v123.append(v113)::
+9406 :: CALL :: call :: Ljava/lang/StringBuffer :: v128 = v125.append(#(34))::
+9411 :: CALL :: call :: Ljava/lang/String :: v130 = v128.toString()::
+9415 :: CALL :: call :: V :: logDiagnostic(v130)::CL,7029
+9418 :: NORM :: compound :: Ljava/util/Properties :: return v111::DD,9141
+9420 :: EXPR :: assign :: null :: PHI v21 = #(0.0 d), v20::JM,9197:DD,9423
+9421 :: EXPR :: assign :: null :: PHI v31 = #(0.0 d), v30::DD,9220:JM,9271:JM,9246:JM,9333:JM,9308:DD,9423
+9422 :: EXPR :: assign :: null :: PHI v24 = #(null), v24, v15, v15, v15, v24, v24::CF,9423:DD,9162:DD,9422:DD,9425:DD,9427
+9423 :: EXPR :: assign :: null :: PHI v25 = #(0.0 d), v25, v21, v21, v31, v25, v25::CF,9424:DD,9220:JM,9271:JM,9333:DD,9423
+9424 :: EXPR :: assign :: null :: PHI v26 = #(null), v26, v13, v13, v13, v26, v26::JM,9156:JM,9349:JM,9271:JM,9333:DD,9424:DD,9426:DD,9428
+9425 :: EXPR :: assign :: null :: PHI v103 = #(null), v24, v24, v15, v15, v15, v15, v15, v15, v15, v15, v15, v15, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24, v24::DD,9427
+9426 :: EXPR :: assign :: null :: PHI v105 = #(null), v26, v26, v13, v13, v13, v13, v13, v13, v13, v13, v13, v13, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26, v26::DD,9428
+9427 :: EXPR :: assign :: null :: PHI v111 = v24, v103, v103::CF,9428:DD,9362:DD,9418
+9428 :: EXPR :: assign :: null :: PHI v113 = v26, v105, v105::
+9525 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.newFactory(java.lang.String,java.lang.ClassLoader,java.lang.ClassLoader)::CE,9526:CD,9537:CD,9566:CD,9570:CD,9573:CD,9609:CD,9610
+9526 :: EXIT :: exit :: Lorg/apache/commons/logging/LogFactory :: org.apache.commons.logging.LogFactory.newFactory(java.lang.String,java.lang.ClassLoader,java.lang.ClassLoader)::JM,7833:JM,7835:JM,7836:JM,7837
+9537 :: CALL :: call :: Ljava/lang/Object :: v8 = doPrivileged(v5)::JM,9609
+9566 :: CALL :: call :: V :: logDiagnostic(v42)::CL,7029
+9570 :: CALL :: call :: Z :: v12 = isDiagnosticsEnabled()::JM,9573:CL,7016
+9573 :: PRED :: IF :: Z :: if (v12 == #(0)) goto 99::CD,9606:CF,9609
+9606 :: CALL :: call :: V :: logDiagnostic(v28)::CL,7029
+9609 :: EXPR :: assign :: Ljava/lang/Object :: v30 = CHECKCAST v8::CF,9610
+9610 :: NORM :: compound :: Lorg/apache/commons/logging/LogFactory :: return v30::DD,9526
+9624 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.getResourceAsStream(java.lang.ClassLoader,java.lang.String)::CE,9625:CD,9635:CD,9639:CD,9640
+9625 :: EXIT :: exit :: Ljava/io/InputStream :: org.apache.commons.logging.LogFactory.getResourceAsStream(java.lang.ClassLoader,java.lang.String)::JM,7589
+9635 :: CALL :: call :: Ljava/lang/Object :: v7 = doPrivileged(v4)::JM,9639
+9639 :: EXPR :: assign :: Ljava/lang/Object :: v8 = CHECKCAST v7::CF,9640
+9640 :: NORM :: compound :: Ljava/io/InputStream :: return v8::DD,9625
+9644 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.cacheFactory(java.lang.ClassLoader,org.apache.commons.logging.LogFactory)::CD,9649:JM,9650
+9649 :: PRED :: IF :: Z :: if (p2 $factory  == #(null)) goto 24::CD,9650
+9650 :: PRED :: IF :: Z :: if (p1 $classLoader  != #(null)) goto 15::CD,9654:CD,9656
+9654 :: EXPR :: reference :: Ljava/util/Hashtable :: v5 = org.apache.commons.logging.LogFactory.factories::
+9656 :: CALL :: call :: Ljava/lang/Object :: v7 = v5.put(p1 $classLoader , p2 $factory )::JM,9649
+10510 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.createFactory(java.lang.String,java.lang.ClassLoader)::CE,10511:CD,10515:CD,10698:CD,10752:CD,10759:CD,10893:CD,10946:CD,10968:CD,10974:CD,10975:CD,10980:JM,10657:JM,10932:JM,10533:JM,10661:JM,10936:JM,10538:JM,10940
+10511 :: EXIT :: exit :: Ljava/lang/Object :: org.apache.commons.logging.LogFactory.createFactory(java.lang.String,java.lang.ClassLoader)::JM,8700
+10515 :: PRED :: IF :: Z :: if (p2 $classLoader  == #(null)) goto 477::CD,10516:CD,10521:CD,10523:CD,10533:CD,10538:CD,10657:CD,10661:CD,10662:CD,10902:CD,10905:CD,10932:CD,10936:CD,10940:CD,10941:CD,10985
+10516 :: CALL :: call :: Ljava/lang/Class :: v6 = p2 $classLoader .loadClass(p1 $factoryClass )::JM,10657:JM,10932:JM,10533:JM,10661:JM,10936:JM,10538:JM,10940:JM,10515
+10521 :: EXPR :: reference :: Ljava/lang/Class :: v27 = org.apache.commons.logging.LogFactory.class$org$apache$commons$logging$LogFactory::DD,10523
+10523 :: PRED :: IF :: Z :: if (v27 == #(null)) goto 26::CD,10524:CD,10527:CD,10985
+10524 :: EXPR :: reference :: Ljava/lang/Class :: v31 = org.apache.commons.logging.LogFactory.class$org$apache$commons$logging$LogFactory::DD,10985
+10527 :: CALL :: call :: Ljava/lang/Class :: v30 = class$(#(org.apache.commons.lo...))::JM,10985:CL,6610
+10533 :: CALL :: call :: Z :: v34 = v32.isAssignableFrom(v6)::JM,10533:JM,10538:JM,10657:JM,10661:JM,10936:JM,10940
+10538 :: PRED :: IF :: Z :: if (v34 == #(0)) goto 83::CD,10539:CD,10542:CD,10579:CD,10582
+10539 :: CALL :: call :: Z :: v74 = isDiagnosticsEnabled()::JM,10542:CL,7016
+10542 :: PRED :: IF :: Z :: if (v74 == #(0)) goto 170::CD,10575:JM,10657:JM,10533:JM,10661:JM,10936:JM,10538:JM,10940
+10575 :: CALL :: call :: V :: logDiagnostic(v90)::CL,7029
+10579 :: CALL :: call :: Z :: v36 = isDiagnosticsEnabled()::JM,10582:CL,7016
+10582 :: PRED :: IF :: Z :: if (v36 == #(0)) goto 170::CD,10602:CD,10650:CD,10653:JM,10657:JM,10533:JM,10661:JM,10936:JM,10538:JM,10940
+10602 :: CALL :: call :: Ljava/lang/ClassLoader :: v48 = v6.getClassLoader()::
+10650 :: CALL :: call :: V :: logDiagnostic(v69)::CL,7029
+10653 :: CALL :: call :: V :: logHierarchy(#([BAD CL TREE] ), p2 $classLoader )::CL,8093
+10657 :: CALL :: call :: Ljava/lang/Object :: v93 = v6.newInstance()::JM,10657:JM,10533:JM,10661:JM,10936:JM,10538:JM,10940
+10661 :: EXPR :: assign :: Ljava/lang/Object :: v123 = CHECKCAST v93::CF,10662
+10662 :: NORM :: compound :: Ljava/lang/Object :: return v123::DD,10511
+10698 :: CALL :: call :: V :: logDiagnostic(v25)::CL,7029
+10752 :: CALL :: call :: V :: logDiagnostic(v121)::CL,7029
+10759 :: CALL :: call :: Z :: v150 = implementsLogFactory(v125)::CL,12121
+10893 :: CALL :: call :: V :: logDiagnostic(v215)::CL,7029
+10902 :: CALL :: call :: Z :: v130 = isDiagnosticsEnabled()::JM,10905:CL,7016
+10905 :: PRED :: IF :: Z :: if (v130 == #(0)) goto 511::CD,10929:JM,10657:JM,10515:JM,10932:JM,10533:JM,10661:JM,10936:JM,10538:JM,10940
+10929 :: CALL :: call :: V :: logDiagnostic(v142)::CL,7029
+10932 :: CALL :: call :: Ljava/lang/Class :: v145 = forName(p1 $factoryClass )::JM,10657:JM,10515:JM,10932:JM,10533:JM,10661:JM,10936:JM,10538:JM,10940
+10936 :: CALL :: call :: Ljava/lang/Object :: v147 = v145.newInstance()::JM,10657:JM,10533:JM,10661:JM,10936:JM,10538:JM,10940
+10940 :: EXPR :: assign :: Ljava/lang/Object :: v148 = CHECKCAST v147::CF,10941
+10941 :: NORM :: compound :: Ljava/lang/Object :: return v148::DD,10511
+10946 :: CALL :: call :: V :: logDiagnostic(#(Unable to create LogF...))::CL,7029
+10968 :: NORM :: declaration :: Lorg/apache/commons/logging/LogConfigurationException :: v236 = new org.apache.commons.logging.LogConfigurationException::DD,10974
+10974 :: NORM :: compound :: Ljava/lang/Object :: return v236::DD,10511
+10975 :: NORM :: declaration :: Lorg/apache/commons/logging/LogConfigurationException :: v234 = new org.apache.commons.logging.LogConfigurationException::DD,10980
+10980 :: NORM :: compound :: Ljava/lang/Object :: return v234::DD,10511
+10985 :: EXPR :: assign :: null :: PHI v32 = v31, v30::JM,10533:JM,10538
+11061 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.access$0(java.lang.String)::CD,11065
+11065 :: CALL :: call :: V :: logDiagnostic(p1 $$0 )::CL,7029
+11070 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.directGetContextClassLoader()::CE,11071:CD,11085:CD,11091:CD,11094:CD,11100:CD,11138:CD,11142:CD,11148
+11071 :: EXIT :: exit :: Ljava/lang/ClassLoader :: org.apache.commons.logging.LogFactory.directGetContextClassLoader()::JM,8785
+11085 :: CALL :: call :: Ljava/lang/reflect/Method :: v11 = v8.getMethod(#(getContextClassLoader), #(null))::JM,11100
+11091 :: CALL :: call :: Ljava/lang/Thread :: v13 = currentThread()::JM,11100
+11094 :: CALL :: call :: Ljava/lang/Object :: v15 = v11.invoke(v13, #(null))::JM,11100
+11100 :: EXPR :: assign :: Ljava/lang/Object :: v39 = CHECKCAST v15::DD,11148
+11138 :: CALL :: call :: Ljava/lang/ClassLoader :: v38 = getClassLoader(v36)::JM,11148:CL,6631
+11142 :: NORM :: compound :: Ljava/lang/ClassLoader :: return v41::DD,11071
+11148 :: EXPR :: assign :: null :: PHI v41 = v39, #(null), v38::CF,11142
+11471 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.getResources(java.lang.ClassLoader,java.lang.String)::CE,11472:CD,11482:CD,11486:CD,11487
+11472 :: EXIT :: exit :: Ljava/util/Enumeration :: org.apache.commons.logging.LogFactory.getResources(java.lang.ClassLoader,java.lang.String)::JM,9156:JM,9349:JM,9150
+11482 :: CALL :: call :: Ljava/lang/Object :: v7 = doPrivileged(v4)::JM,11486
+11486 :: EXPR :: assign :: Ljava/lang/Object :: v8 = CHECKCAST v7::CF,11487
+11487 :: NORM :: compound :: Ljava/util/Enumeration :: return v8::DD,11472
+11495 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.getProperties(java.net.URL)::CE,11496:CD,11504:CD,11508:CD,11509
+11496 :: EXIT :: exit :: Ljava/util/Properties :: org.apache.commons.logging.LogFactory.getProperties(java.net.URL)::JM,9168:JM,9216:JM,9425:JM,9169:JM,9161:JM,9420:JM,9421:JM,9422:JM,9215
+11504 :: CALL :: call :: Ljava/lang/Object :: v6 = doPrivileged(v3)::JM,11508
+11508 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST v6::CF,11509
+11509 :: NORM :: compound :: Ljava/util/Properties :: return v7::DD,11496
+12121 :: ENTR :: entry :: null :: org.apache.commons.logging.LogFactory.implementsLogFactory(java.lang.Class)::CD,12125:CD,12223:CD,12245:CD,12249:JM,12145:JM,12150
+12125 :: PRED :: IF :: Z :: if (p1 $logFactoryClass  == #(null)) goto 169::CD,12126:CD,12130
+12126 :: CALL :: call :: Ljava/lang/ClassLoader :: v6 = p1 $logFactoryClass .getClassLoader()::JM,12130
+12130 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 26::CD,12131:CD,12135:CD,12139:CD,12145:CD,12150
+12131 :: CALL :: call :: V :: logDiagnostic(#([CUSTOM LOG FACTORY] ...))::CL,7029
+12135 :: CALL :: call :: V :: logHierarchy(#([CUSTOM LOG FACTORY] ), v6)::CL,8093
+12139 :: CALL :: call :: Ljava/lang/Class :: v11 = forName(#(org.apache.commons.lo...), #(0), v6)::JM,12145:JM,12150
+12145 :: CALL :: call :: Z :: v16 = v11.isAssignableFrom(p1 $logFactoryClass )::JM,12145:JM,12150:JM,12125
+12150 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 77::CD,12174:CD,12201
+12174 :: CALL :: call :: V :: logDiagnostic(v39)::CL,7029
+12201 :: CALL :: call :: V :: logDiagnostic(v27)::CL,7029
+12223 :: CALL :: call :: V :: logDiagnostic(v65)::CL,7029
+12245 :: CALL :: call :: V :: logDiagnostic(v53)::CL,7029
+12249 :: CALL :: call :: V :: logDiagnostic(#([CUSTOM LOG FACTORY] ...))::CL,7029
+13242 :: PRED :: IF :: Z :: if (p3 $handler  == #(null)) goto 50::CF,13243:CD,13246:JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13243 :: CALL :: call :: Ljava/lang/SecurityManager :: v11 = getSecurityManager()::JM,13246
+13246 :: PRED :: IF :: Z :: if (v11 == #(null)) goto 50::CD,13247:JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13247 :: CALL :: call :: V :: p0 $this .checkSpecifyHandler(v11)::
+13251 :: CALL :: call :: I :: v14 = p2 $spec .length()::JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13256 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v21 + #(-1)::DD,13515
+13257 :: PRED :: IF :: Z :: if (v21 <= #(0)) goto 89::CF,13516:CD,13258:CD,13259:CD,13264
+13258 :: EXPR :: assign :: Ljava/lang/Object :: v16 = v21 - #(1)::JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13259 :: CALL :: call :: C :: v18 = p2 $spec .charAt(v16)::JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13264 :: PRED :: IF :: Z :: if (v18 <= #(32)) goto 58::CD,13256:CD,13257:CD,13515:CD,13516
+13266 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v25 + #(1)::DD,13516
+13267 :: PRED :: IF :: Z :: if (v25 >= v21) goto 111::CD,13268:CD,13273:JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13242:JM,13339
+13268 :: CALL :: call :: C :: v23 = p2 $spec .charAt(v25)::JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13273 :: PRED :: IF :: Z :: if (v23 <= #(32)) goto 82::CD,13266:CD,13267:CD,13516:JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13274 :: CALL :: call :: Z :: v29 = p2 $spec .regionMatches(#(1), v25, #(url:), #(0), #(4))::JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13283 :: PRED :: IF :: Z :: if (v29 == #(0)) goto 123::CF,13517:CD,13284
+13284 :: EXPR :: assign :: Ljava/lang/Object :: v30 = v25 + #(4)::DD,13517
+13285 :: CALL :: call :: I :: v33 = p2 $spec .length()::JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13289 :: PRED :: IF :: Z :: if (v31 >= v33) goto 147::CF,13518:CD,13290:CD,13295:JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13290 :: CALL :: call :: C :: v35 = p2 $spec .charAt(v31)::JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13295 :: PRED :: IF :: Z :: if (v35 != #(35)) goto 147::CF,13518
+13297 :: PRED :: IF :: Z :: if (v39 != #(58)) goto 192::CD,13298:CD,13304:CD,13308:CD,13313:CD,13316:CD,13317:CD,13519:CD,13521:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13298 :: CALL :: call :: Ljava/lang/String :: v45 = p2 $spec .substring(v31, v43)::JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13304 :: CALL :: call :: Ljava/lang/String :: v47 = v45.toLowerCase()::JM,13521:JM,13313
+13308 :: CALL :: call :: Z :: v49 = p0 $this .isValidProtocol(v47)::JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13328:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339:JM,13521
+13313 :: PRED :: IF :: Z :: if (v49 == #(0)) goto 224::CD,13521
+13316 :: EXPR :: assign :: Ljava/lang/Object :: v42 = v43 + #(1)::DD,13519
+13317 :: PRED :: IF :: Z :: if (v37 != #(0)) goto 224::CD,13318:CD,13521
+13318 :: PRED :: IF :: Z :: if (v43 >= v21) goto 224::CD,13319:CD,13324:CD,13521:JM,13313:JM,13283:JM,13289:JM,13515:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13319 :: CALL :: call :: C :: v39 = p2 $spec .charAt(v43)::JM,13313:JM,13283:JM,13289:JM,13515:JM,13324:JM,13295:JM,13264:JM,13297:JM,13522:JM,13524:JM,13273:JM,13242:JM,13339
+13324 :: PRED :: IF :: Z :: if (v39 != #(47)) goto 154::CD,13297
+13328 :: PRED :: IF :: Z :: if (p1 $context  == #(null)) goto 344::CF,13524:CD,13329
+13329 :: PRED :: IF :: Z :: if (v52 == #(null)) goto 249::CD,13333:CD,13338:CD,13339:CD,13346:CD,13356:CD,13522:CD,13523:CD,13524
+13330 :: EXPR :: reference :: Ljava/lang/String :: v53 = p1 $context .protocol::JM,13338
+13333 :: CALL :: call :: Z :: v55 = v52.equalsIgnoreCase(v53)::JM,13338
+13338 :: PRED :: IF :: Z :: if (v55 == #(0)) goto 344::CF,13524:CD,13339:CD,13346:CD,13356:CD,13522:CD,13523
+13339 :: PRED :: IF :: Z :: if (p3 $handler  != #(null)) goto 258::CF,13522
+13340 :: EXPR :: reference :: Ljava/net/URLStreamHandler :: v56 = p1 $context .handler::DD,13522
+13343 :: EXPR :: reference :: Ljava/lang/String :: v58 = p1 $context .path::DD,13346
+13346 :: PRED :: IF :: Z :: if (v58 == #(null)) goto 281::CF,13523:CD,13350:CD,13355
+13347 :: EXPR :: reference :: Ljava/lang/String :: v59 = p1 $context .path::JM,13350:JM,13355
+13350 :: CALL :: call :: Z :: v62 = v59.startsWith(#(/))::JM,13350:JM,13355
+13355 :: PRED :: IF :: Z :: if (v62 == #(0)) goto 281::CF,13523
+13356 :: PRED :: IF :: Z :: if (v63 != #(null)) goto 344::CF,13524
+13423 :: PRED :: IF :: Z :: if (v71 != #(null)) goto 420::CD,13427
+13427 :: CALL :: call :: Ljava/net/URLStreamHandler :: v77 = getURLStreamHandler(v75)::
+13515 :: EXPR :: assign :: null :: PHI v21 = v14, v20::DD,13256:DD,13257:DD,13258:DD,13267:DD,13318
+13516 :: EXPR :: assign :: null :: PHI v25 = #(0), #(0), v24::DD,13266:DD,13267:JM,13264:JM,13313:JM,13297:JM,13283:JM,13273:JM,13289:JM,13515:JM,13324:JM,13295:DD,13284:DD,13517
+13517 :: EXPR :: assign :: null :: PHI v31 = v25, v30::DD,13289:JM,13264:JM,13313:JM,13297:JM,13283:JM,13273:JM,13515:JM,13324:JM,13295:DD,13519:JM,13522:JM,13524:JM,13242:JM,13339
+13518 :: EXPR :: assign :: null :: PHI v37 = #(0), #(0), #(1)::DD,13317
+13519 :: EXPR :: assign :: null :: PHI v43 = v31, v42::JM,13264:JM,13297:JM,13283:JM,13273:JM,13289:JM,13515:JM,13324:JM,13295:DD,13316:DD,13318:JM,13313:CF,13317
+13521 :: EXPR :: assign :: null :: PHI v52 = #(null), v47, #(null), #(null), #(null)::DD,13329:JM,13338:DD,13523
+13522 :: EXPR :: assign :: null :: PHI v57 = p3 $handler , v56::DD,13524
+13523 :: EXPR :: assign :: null :: PHI v63 = v52, v52, #(null)::DD,13356
+13524 :: EXPR :: assign :: null :: PHI v71 = p3 $handler , p3 $handler , v57, v57::DD,13423
+13685 :: CALL :: call :: V :: p1 $sm .checkPermission(v4)::
+13699 :: EXPR :: reference :: Ljava/util/Hashtable :: v3 = java.net.URL.handlers::JM,13706
+13701 :: CALL :: call :: Ljava/lang/Object :: v5 = v3.get(p1 $protocol )::JM,13706:JM,13713:JM,13810:JM,13880:JM,13883
+13706 :: EXPR :: assign :: Ljava/lang/Object :: v6 = CHECKCAST v5::DD,13707:DD,13880
+13707 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 315::CD,13708:CD,13710:CD,13718:CD,13880
+13708 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v9 = java.net.URL.factory::DD,13710
+13710 :: PRED :: IF :: Z :: if (v9 == #(null)) goto 36::CF,13880:CD,13711:CD,13713
+13711 :: EXPR :: reference :: Ljava/net/URLStreamHandlerFactory :: v10 = java.net.URL.factory::JM,13713:JM,13880
+13713 :: CALL :: call :: Ljava/net/URLStreamHandler :: v12 = v10.createURLStreamHandler(p1 $protocol )::JM,13713:JM,13880:JM,13810:JM,13706:JM,13883
+13718 :: PRED :: IF :: Z :: if (v14 != #(null)) goto 233::CD,13725:CD,13729:CD,13730:CD,13749:CD,13750:CD,13758:CD,13763:CD,13767:CD,13831:CD,13882:CD,13884
+13725 :: CALL :: call :: Ljava/lang/Object :: v21 = doPrivileged(v16)::JM,13729
+13729 :: EXPR :: assign :: Ljava/lang/Object :: v22 = CHECKCAST v21::DD,13730:DD,13882
+13730 :: PRED :: IF :: Z :: if (v22 == #()) goto 88::CF,13882:CF,13731:CD,13732:CD,13740:CD,13745
+13731 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v23 = new java.lang.StringBuilder::JM,13882
+13732 :: CALL :: call :: Ljava/lang/String :: v25 = valueOf(v22)::
+13740 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v23.append(#(|))::JM,13882
+13745 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::JM,13882
+13749 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v33 = new java.lang.StringBuilder::
+13750 :: CALL :: call :: Ljava/lang/String :: v35 = valueOf(v32)::
+13758 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v33.append(#(sun.net.www.protocol))::
+13763 :: CALL :: call :: Ljava/lang/String :: v41 = v39.toString()::
+13767 :: NORM :: declaration :: Ljava/util/StringTokenizer :: v42 = new java.util.StringTokenizer::JM,13836
+13774 :: CALL :: call :: Ljava/lang/String :: v47 = v42.nextToken()::
+13778 :: CALL :: call :: Ljava/lang/String :: v49 = v47.trim()::
+13782 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v50 = new java.lang.StringBuilder::JM,13810:JM,13883
+13783 :: CALL :: call :: Ljava/lang/String :: v52 = valueOf(v49)::
+13791 :: CALL :: call :: Ljava/lang/StringBuilder :: v56 = v50.append(#(.))::JM,13810:JM,13883
+13796 :: CALL :: call :: Ljava/lang/StringBuilder :: v58 = v56.append(p1 $protocol )::JM,13810:JM,13883:JM,13713:JM,13880:JM,13706
+13801 :: CALL :: call :: Ljava/lang/StringBuilder :: v61 = v58.append(#(.Handler))::JM,13810:JM,13883
+13806 :: CALL :: call :: Ljava/lang/String :: v63 = v61.toString()::JM,13810:JM,13883
+13810 :: CALL :: call :: Ljava/lang/Class :: v65 = forName(v63)::JM,13810:JM,13883
+13815 :: CALL :: call :: Ljava/lang/ClassLoader :: v68 = getSystemClassLoader()::JM,13883
+13819 :: CALL :: call :: Ljava/lang/Class :: v70 = v68.loadClass(v63)::JM,13883:JM,13810
+13824 :: PRED :: IF :: Z :: if (v72 == #(null)) goto 222::CF,13884:CD,13825:CD,13829
+13825 :: CALL :: call :: Ljava/lang/Object :: v75 = v72.newInstance()::JM,13825:JM,13829
+13829 :: EXPR :: assign :: Ljava/lang/Object :: v76 = CHECKCAST v75::DD,13884
+13831 :: PRED :: IF :: Z :: if (v77 != #(null)) goto 233::CD,13832:CD,13836
+13832 :: CALL :: call :: Z :: v45 = v42.hasMoreTokens()::JM,13836
+13836 :: PRED :: IF :: Z :: if (v45 != #(0)) goto 127::CD,13774:CD,13778:CD,13782:CD,13783:CD,13791:CD,13796:CD,13801:CD,13806:CD,13810:CD,13824:CD,13831:CD,13883:CD,13884
+13880 :: EXPR :: assign :: null :: PHI v14 = v6, v12::DD,13718:DD,13884
+13882 :: EXPR :: assign :: null :: PHI v32 = v22, v31::CF,13749
+13883 :: EXPR :: assign :: null :: PHI v72 = v65, #(null), v70::DD,13824:JM,13825:JM,13829
+13884 :: EXPR :: assign :: null :: PHI v77 = v14, v77, v76, v77::DD,13831:DD,13884

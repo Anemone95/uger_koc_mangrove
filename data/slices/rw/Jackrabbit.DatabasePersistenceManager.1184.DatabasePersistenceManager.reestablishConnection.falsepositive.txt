@@ -1,0 +1,169 @@
+[965, 968, 971, 974, 977, 982]
+1 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.persistence.db.DatabasePersistenceManager.reestablishConnection()::CD,8:CD,12:CD,27:CD,31:CD,35:CD,44:CD,47
+5 :: EXPR :: reference :: Ljava/util/Map :: v3 = p0 $this .preparedStatements::JM,31
+8 :: CALL :: call :: Ljava/util/Collection :: v5 = v3.values()::JM,31
+12 :: CALL :: call :: Ljava/util/Iterator :: v7 = v5.iterator()::JM,31
+17 :: CALL :: call :: Ljava/lang/Object :: v12 = v7.next()::JM,31
+27 :: CALL :: call :: Z :: v9 = v7.hasNext()::JM,31
+31 :: PRED :: IF :: Z :: if (v9 != #(0)) goto 19::CD,17:CD,27:JM,31
+35 :: CALL :: call :: V :: p0 $this .closeConnection(v18)::CL,382
+44 :: CALL :: call :: V :: p0 $this .initConnection()::CL,487
+47 :: CALL :: call :: V :: p0 $this .initPreparedStatements()::CL,520
+337 :: NORM :: declaration :: Ljava/util/HashMap :: v5 = new java.util.HashMap::DD,341
+341 :: EXPR :: modify :: Ljava/util/Map :: p0 $this .preparedStatements = v5::
+350 :: EXPR :: modify :: Z :: p0 $this .externalBLOBs = #(1)::
+382 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.persistence.db.DerbyPersistenceManager.closeConnection(java.sql.Connection)::CD,387:CD,391:CD,404:CD,409:CD,416:CD,417:CD,425:CD,430:CD,463:JM,410
+387 :: CALL :: call :: Ljava/sql/DatabaseMetaData :: v5 = p1 $connection .getMetaData()::JM,387:JM,404:JM,391:JM,409:JM,410:JM,463
+391 :: CALL :: call :: Ljava/lang/String :: v7 = v5.getURL()::JM,404:JM,391:JM,409:JM,410:JM,463
+404 :: CALL :: call :: I :: v14 = v7.lastIndexOf(#(59))::JM,404:JM,409:JM,410:JM,463
+409 :: PRED :: IF :: Z :: if (v14 == #(-1)) goto 47::CF,463:CD,410:JM,404:JM,409
+410 :: CALL :: call :: Ljava/lang/String :: v18 = v7.substring(#(0), v14)::JM,404:JM,409:JM,410:JM,463
+416 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v20 = new java.lang.StringBuilder::JM,417
+417 :: CALL :: call :: Ljava/lang/String :: v22 = valueOf(v19)::JM,417
+425 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v20.append(#(;shutdown=true))::
+430 :: CALL :: call :: Ljava/lang/String :: v28 = v26.toString()::
+463 :: EXPR :: assign :: null :: PHI v19 = v7, v18::CF,416:JM,417
+487 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.persistence.db.DatabasePersistenceManager.initConnection()::CD,491
+491 :: CALL :: call :: Ljava/sql/Connection :: v4 = p0 $this .getConnection()::JM,495:CL,1100:CL,1128
+495 :: EXPR :: modify :: Ljava/sql/Connection :: p0 $this .con = v4::
+520 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.persistence.db.DatabasePersistenceManager.initPreparedStatements()::CD,536:CD,541:CD,559:CD,564:CD,582:CD,587:CD,605:CD,610:CD,628:CD,633:CD,651:CD,656:CD,674:CD,679:CD,697:CD,702:CD,720:CD,725:CD,743:CD,748:CD,766:CD,771:CD,789:CD,794:CD,812:CD,817:CD,835:CD,840:CD,858:CD,863:CD,872
+524 :: EXPR :: reference :: Ljava/util/Map :: v3 = p0 $this .preparedStatements::
+527 :: EXPR :: reference :: Ljava/lang/String :: v4 = p0 $this .nodeStateInsertSQL::
+530 :: EXPR :: reference :: Ljava/sql/Connection :: v5 = p0 $this .con::JM,536
+533 :: EXPR :: reference :: Ljava/lang/String :: v6 = p0 $this .nodeStateInsertSQL::JM,536
+536 :: CALL :: call :: Ljava/sql/PreparedStatement :: v8 = v5.prepareStatement(v6)::JM,536
+541 :: CALL :: call :: Ljava/lang/Object :: v10 = v3.put(v4, v8)::
+547 :: EXPR :: reference :: Ljava/util/Map :: v11 = p0 $this .preparedStatements::
+550 :: EXPR :: reference :: Ljava/lang/String :: v12 = p0 $this .nodeStateUpdateSQL::
+553 :: EXPR :: reference :: Ljava/sql/Connection :: v13 = p0 $this .con::JM,559
+556 :: EXPR :: reference :: Ljava/lang/String :: v14 = p0 $this .nodeStateUpdateSQL::JM,559
+559 :: CALL :: call :: Ljava/sql/PreparedStatement :: v16 = v13.prepareStatement(v14)::JM,559
+564 :: CALL :: call :: Ljava/lang/Object :: v18 = v11.put(v12, v16)::
+570 :: EXPR :: reference :: Ljava/util/Map :: v19 = p0 $this .preparedStatements::
+573 :: EXPR :: reference :: Ljava/lang/String :: v20 = p0 $this .nodeStateSelectSQL::
+576 :: EXPR :: reference :: Ljava/sql/Connection :: v21 = p0 $this .con::JM,582
+579 :: EXPR :: reference :: Ljava/lang/String :: v22 = p0 $this .nodeStateSelectSQL::JM,582
+582 :: CALL :: call :: Ljava/sql/PreparedStatement :: v24 = v21.prepareStatement(v22)::JM,582
+587 :: CALL :: call :: Ljava/lang/Object :: v26 = v19.put(v20, v24)::
+593 :: EXPR :: reference :: Ljava/util/Map :: v27 = p0 $this .preparedStatements::
+596 :: EXPR :: reference :: Ljava/lang/String :: v28 = p0 $this .nodeStateSelectExistSQL::
+599 :: EXPR :: reference :: Ljava/sql/Connection :: v29 = p0 $this .con::JM,605
+602 :: EXPR :: reference :: Ljava/lang/String :: v30 = p0 $this .nodeStateSelectExistSQL::JM,605
+605 :: CALL :: call :: Ljava/sql/PreparedStatement :: v32 = v29.prepareStatement(v30)::JM,605
+610 :: CALL :: call :: Ljava/lang/Object :: v34 = v27.put(v28, v32)::
+616 :: EXPR :: reference :: Ljava/util/Map :: v35 = p0 $this .preparedStatements::
+619 :: EXPR :: reference :: Ljava/lang/String :: v36 = p0 $this .nodeStateDeleteSQL::
+622 :: EXPR :: reference :: Ljava/sql/Connection :: v37 = p0 $this .con::JM,628
+625 :: EXPR :: reference :: Ljava/lang/String :: v38 = p0 $this .nodeStateDeleteSQL::JM,628
+628 :: CALL :: call :: Ljava/sql/PreparedStatement :: v40 = v37.prepareStatement(v38)::JM,628
+633 :: CALL :: call :: Ljava/lang/Object :: v42 = v35.put(v36, v40)::
+639 :: EXPR :: reference :: Ljava/util/Map :: v43 = p0 $this .preparedStatements::
+642 :: EXPR :: reference :: Ljava/lang/String :: v44 = p0 $this .propertyStateInsertSQL::
+645 :: EXPR :: reference :: Ljava/sql/Connection :: v45 = p0 $this .con::JM,651
+648 :: EXPR :: reference :: Ljava/lang/String :: v46 = p0 $this .propertyStateInsertSQL::JM,651
+651 :: CALL :: call :: Ljava/sql/PreparedStatement :: v48 = v45.prepareStatement(v46)::JM,651
+656 :: CALL :: call :: Ljava/lang/Object :: v50 = v43.put(v44, v48)::
+662 :: EXPR :: reference :: Ljava/util/Map :: v51 = p0 $this .preparedStatements::
+665 :: EXPR :: reference :: Ljava/lang/String :: v52 = p0 $this .propertyStateUpdateSQL::
+668 :: EXPR :: reference :: Ljava/sql/Connection :: v53 = p0 $this .con::JM,674
+671 :: EXPR :: reference :: Ljava/lang/String :: v54 = p0 $this .propertyStateUpdateSQL::JM,674
+674 :: CALL :: call :: Ljava/sql/PreparedStatement :: v56 = v53.prepareStatement(v54)::JM,674
+679 :: CALL :: call :: Ljava/lang/Object :: v58 = v51.put(v52, v56)::
+685 :: EXPR :: reference :: Ljava/util/Map :: v59 = p0 $this .preparedStatements::
+688 :: EXPR :: reference :: Ljava/lang/String :: v60 = p0 $this .propertyStateSelectSQL::
+691 :: EXPR :: reference :: Ljava/sql/Connection :: v61 = p0 $this .con::JM,697
+694 :: EXPR :: reference :: Ljava/lang/String :: v62 = p0 $this .propertyStateSelectSQL::JM,697
+697 :: CALL :: call :: Ljava/sql/PreparedStatement :: v64 = v61.prepareStatement(v62)::JM,697
+702 :: CALL :: call :: Ljava/lang/Object :: v66 = v59.put(v60, v64)::
+708 :: EXPR :: reference :: Ljava/util/Map :: v67 = p0 $this .preparedStatements::
+711 :: EXPR :: reference :: Ljava/lang/String :: v68 = p0 $this .propertyStateSelectExistSQL::
+714 :: EXPR :: reference :: Ljava/sql/Connection :: v69 = p0 $this .con::JM,720
+717 :: EXPR :: reference :: Ljava/lang/String :: v70 = p0 $this .propertyStateSelectExistSQL::JM,720
+720 :: CALL :: call :: Ljava/sql/PreparedStatement :: v72 = v69.prepareStatement(v70)::JM,720
+725 :: CALL :: call :: Ljava/lang/Object :: v74 = v67.put(v68, v72)::
+731 :: EXPR :: reference :: Ljava/util/Map :: v75 = p0 $this .preparedStatements::
+734 :: EXPR :: reference :: Ljava/lang/String :: v76 = p0 $this .propertyStateDeleteSQL::
+737 :: EXPR :: reference :: Ljava/sql/Connection :: v77 = p0 $this .con::JM,743
+740 :: EXPR :: reference :: Ljava/lang/String :: v78 = p0 $this .propertyStateDeleteSQL::JM,743
+743 :: CALL :: call :: Ljava/sql/PreparedStatement :: v80 = v77.prepareStatement(v78)::JM,743
+748 :: CALL :: call :: Ljava/lang/Object :: v82 = v75.put(v76, v80)::
+754 :: EXPR :: reference :: Ljava/util/Map :: v83 = p0 $this .preparedStatements::
+757 :: EXPR :: reference :: Ljava/lang/String :: v84 = p0 $this .nodeReferenceInsertSQL::
+760 :: EXPR :: reference :: Ljava/sql/Connection :: v85 = p0 $this .con::JM,766
+763 :: EXPR :: reference :: Ljava/lang/String :: v86 = p0 $this .nodeReferenceInsertSQL::JM,766
+766 :: CALL :: call :: Ljava/sql/PreparedStatement :: v88 = v85.prepareStatement(v86)::JM,766
+771 :: CALL :: call :: Ljava/lang/Object :: v90 = v83.put(v84, v88)::
+777 :: EXPR :: reference :: Ljava/util/Map :: v91 = p0 $this .preparedStatements::
+780 :: EXPR :: reference :: Ljava/lang/String :: v92 = p0 $this .nodeReferenceUpdateSQL::
+783 :: EXPR :: reference :: Ljava/sql/Connection :: v93 = p0 $this .con::JM,789
+786 :: EXPR :: reference :: Ljava/lang/String :: v94 = p0 $this .nodeReferenceUpdateSQL::JM,789
+789 :: CALL :: call :: Ljava/sql/PreparedStatement :: v96 = v93.prepareStatement(v94)::JM,789
+794 :: CALL :: call :: Ljava/lang/Object :: v98 = v91.put(v92, v96)::
+800 :: EXPR :: reference :: Ljava/util/Map :: v99 = p0 $this .preparedStatements::
+803 :: EXPR :: reference :: Ljava/lang/String :: v100 = p0 $this .nodeReferenceSelectSQL::
+806 :: EXPR :: reference :: Ljava/sql/Connection :: v101 = p0 $this .con::JM,812
+809 :: EXPR :: reference :: Ljava/lang/String :: v102 = p0 $this .nodeReferenceSelectSQL::JM,812
+812 :: CALL :: call :: Ljava/sql/PreparedStatement :: v104 = v101.prepareStatement(v102)::JM,812
+817 :: CALL :: call :: Ljava/lang/Object :: v106 = v99.put(v100, v104)::
+823 :: EXPR :: reference :: Ljava/util/Map :: v107 = p0 $this .preparedStatements::
+826 :: EXPR :: reference :: Ljava/lang/String :: v108 = p0 $this .nodeReferenceSelectExistSQL::
+829 :: EXPR :: reference :: Ljava/sql/Connection :: v109 = p0 $this .con::JM,835
+832 :: EXPR :: reference :: Ljava/lang/String :: v110 = p0 $this .nodeReferenceSelectExistSQL::JM,835
+835 :: CALL :: call :: Ljava/sql/PreparedStatement :: v112 = v109.prepareStatement(v110)::JM,835
+840 :: CALL :: call :: Ljava/lang/Object :: v114 = v107.put(v108, v112)::
+846 :: EXPR :: reference :: Ljava/util/Map :: v115 = p0 $this .preparedStatements::
+849 :: EXPR :: reference :: Ljava/lang/String :: v116 = p0 $this .nodeReferenceDeleteSQL::
+852 :: EXPR :: reference :: Ljava/sql/Connection :: v117 = p0 $this .con::JM,858
+855 :: EXPR :: reference :: Ljava/lang/String :: v118 = p0 $this .nodeReferenceDeleteSQL::JM,858
+858 :: CALL :: call :: Ljava/sql/PreparedStatement :: v120 = v117.prepareStatement(v118)::JM,858
+863 :: CALL :: call :: Ljava/lang/Object :: v122 = v115.put(v116, v120)::
+869 :: EXPR :: reference :: Z :: v123 = p0 $this .externalBLOBs::DD,872
+872 :: PRED :: IF :: Z :: if (v123 != #(0)) goto 547::CD,885:CD,890:CD,908:CD,913:CD,931:CD,936:CD,954:CD,959:CD,977:CD,982
+873 :: EXPR :: reference :: Ljava/util/Map :: v125 = p0 $this .preparedStatements::
+876 :: EXPR :: reference :: Ljava/lang/String :: v126 = p0 $this .blobInsertSQL::
+879 :: EXPR :: reference :: Ljava/sql/Connection :: v127 = p0 $this .con::JM,885
+882 :: EXPR :: reference :: Ljava/lang/String :: v128 = p0 $this .blobInsertSQL::JM,885
+885 :: CALL :: call :: Ljava/sql/PreparedStatement :: v130 = v127.prepareStatement(v128)::JM,885
+890 :: CALL :: call :: Ljava/lang/Object :: v132 = v125.put(v126, v130)::
+896 :: EXPR :: reference :: Ljava/util/Map :: v133 = p0 $this .preparedStatements::
+899 :: EXPR :: reference :: Ljava/lang/String :: v134 = p0 $this .blobUpdateSQL::
+902 :: EXPR :: reference :: Ljava/sql/Connection :: v135 = p0 $this .con::JM,908
+905 :: EXPR :: reference :: Ljava/lang/String :: v136 = p0 $this .blobUpdateSQL::JM,908
+908 :: CALL :: call :: Ljava/sql/PreparedStatement :: v138 = v135.prepareStatement(v136)::JM,908
+913 :: CALL :: call :: Ljava/lang/Object :: v140 = v133.put(v134, v138)::
+919 :: EXPR :: reference :: Ljava/util/Map :: v141 = p0 $this .preparedStatements::
+922 :: EXPR :: reference :: Ljava/lang/String :: v142 = p0 $this .blobSelectSQL::
+925 :: EXPR :: reference :: Ljava/sql/Connection :: v143 = p0 $this .con::JM,931
+928 :: EXPR :: reference :: Ljava/lang/String :: v144 = p0 $this .blobSelectSQL::JM,931
+931 :: CALL :: call :: Ljava/sql/PreparedStatement :: v146 = v143.prepareStatement(v144)::JM,931
+936 :: CALL :: call :: Ljava/lang/Object :: v148 = v141.put(v142, v146)::
+942 :: EXPR :: reference :: Ljava/util/Map :: v149 = p0 $this .preparedStatements::
+945 :: EXPR :: reference :: Ljava/lang/String :: v150 = p0 $this .blobSelectExistSQL::
+948 :: EXPR :: reference :: Ljava/sql/Connection :: v151 = p0 $this .con::JM,954
+951 :: EXPR :: reference :: Ljava/lang/String :: v152 = p0 $this .blobSelectExistSQL::JM,954
+954 :: CALL :: call :: Ljava/sql/PreparedStatement :: v154 = v151.prepareStatement(v152)::JM,954
+959 :: CALL :: call :: Ljava/lang/Object :: v156 = v149.put(v150, v154)::
+965 :: EXPR :: reference :: Ljava/util/Map :: v157 = p0 $this .preparedStatements::
+968 :: EXPR :: reference :: Ljava/lang/String :: v158 = p0 $this .blobDeleteSQL::
+971 :: EXPR :: reference :: Ljava/sql/Connection :: v159 = p0 $this .con::JM,977
+974 :: EXPR :: reference :: Ljava/lang/String :: v160 = p0 $this .blobDeleteSQL::JM,977
+977 :: CALL :: call :: Ljava/sql/PreparedStatement :: v162 = v159.prepareStatement(v160)::JM,977
+982 :: CALL :: call :: Ljava/lang/Object :: v164 = v157.put(v158, v162)::
+1100 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.persistence.db.JNDIDatabasePersistenceManager.getConnection()::CE,1101:CD,1104:CD,1111:CD,1116:CD,1117:CD,1121
+1101 :: EXIT :: exit :: Ljava/sql/Connection :: org.apache.jackrabbit.core.persistence.db.JNDIDatabasePersistenceManager.getConnection()::JM,495
+1104 :: NORM :: declaration :: Ljavax/naming/InitialContext :: v3 = new javax.naming.InitialContext::JM,1111:JM,1116
+1108 :: EXPR :: reference :: Ljava/lang/String :: v5 = p0 $this .dataSourceLocation::JM,1111:JM,1116
+1111 :: CALL :: call :: Ljava/lang/Object :: v7 = v3.lookup(v5)::JM,1111:JM,1116
+1116 :: EXPR :: assign :: Ljava/lang/Object :: v8 = CHECKCAST v7::JM,1121:JM,1117
+1117 :: CALL :: call :: Ljava/sql/Connection :: v10 = v8.getConnection()::JM,1121:JM,1117
+1121 :: NORM :: compound :: Ljava/sql/Connection :: return v10::CF,1101
+1128 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.persistence.db.SimpleDbPersistenceManager.getConnection()::CE,1129:CD,1147:CD,1155:CD,1159
+1129 :: EXIT :: exit :: Ljava/sql/Connection :: org.apache.jackrabbit.core.persistence.db.SimpleDbPersistenceManager.getConnection()::JM,495
+1132 :: EXPR :: reference :: Lorg/apache/jackrabbit/core/util/db/ConnectionFactory :: v3 = p0 $this .connectionFactory::JM,1155:JM,1159:JM,1147
+1135 :: EXPR :: reference :: Ljava/lang/String :: v4 = p0 $this .driver::JM,1155:JM,1159:JM,1147
+1138 :: EXPR :: reference :: Ljava/lang/String :: v5 = p0 $this .url::JM,1155:JM,1159:JM,1147
+1141 :: EXPR :: reference :: Ljava/lang/String :: v6 = p0 $this .user::JM,1155:JM,1159:JM,1147
+1144 :: EXPR :: reference :: Ljava/lang/String :: v7 = p0 $this .password::JM,1155:JM,1159:JM,1147
+1147 :: CALL :: call :: Ljavax/sql/DataSource :: v9 = v3.getDataSource(v4, v5, v6, v7)::JM,1155:JM,1159:JM,1147
+1155 :: CALL :: call :: Ljava/sql/Connection :: v11 = v9.getConnection()::JM,1155:JM,1159:JM,1147
+1159 :: NORM :: compound :: Ljava/sql/Connection :: return v11::CF,1129

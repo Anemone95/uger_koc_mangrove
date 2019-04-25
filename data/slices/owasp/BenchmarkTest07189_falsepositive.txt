@@ -1,0 +1,24 @@
+[81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 95]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest07189.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,17:CD,21:CD,27:CD,31:CD,37:CD,49:CD,54:CD,55:CD,59:CD,64:CD,69:CD,74:CD,78:CD,81:CD,90
+12 :: CALL :: call :: Ljava/lang/String :: v9 = v5.getTheValue(#(foo))::JM,27:CL,214
+17 :: NORM :: declaration :: Ljava/util/HashMap :: v11 = new java.util.HashMap::JM,54
+21 :: CALL :: call :: Ljava/lang/Object :: v16 = v11.put(#(keyA-98847), #(a_Value))::
+27 :: CALL :: call :: Ljava/lang/String :: v19 = v9.toString()::JM,27
+31 :: CALL :: call :: Ljava/lang/Object :: v21 = v11.put(#(keyB-98847), v19)::
+37 :: CALL :: call :: Ljava/lang/Object :: v25 = v11.put(#(keyC), #(another_Value))::
+49 :: CALL :: call :: Ljava/lang/Object :: v30 = v11.get(#(keyA-98847))::JM,54
+54 :: EXPR :: assign :: Ljava/lang/Object :: v31 = CHECKCAST v30::JM,90:CF,55
+55 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v32 = new java.lang.StringBuilder::JM,90
+59 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v32.append(#(UPDATE USERS SET PASS...))::JM,90
+64 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v36.append(v31)::JM,90
+69 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v38.append(#(' WHERE USERNAME='foo'))::JM,90
+74 :: CALL :: call :: Ljava/lang/String :: v43 = v41.toString()::JM,90
+78 :: CALL :: call :: Ljava/sql/Statement :: v45 = getSqlStatement()::JM,90
+81 :: NORM :: declaration :: [I :: v47 = new []::JM,90
+82 :: EXPR :: modify :: I :: v47[#(0)] = #(1)::
+86 :: EXPR :: modify :: I :: v47[#(1)] = #(2)::
+90 :: CALL :: call :: I :: v51 = v45.executeUpdate(v43, v47)::JM,90
+214 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheValue(java.lang.String)::CF,215:CD,219
+215 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheValue(java.lang.String)::JM,27
+219 :: NORM :: compound :: Ljava/lang/String :: return #(bar)::CF,215

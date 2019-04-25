@@ -1,0 +1,255 @@
+[2572, 2574, 2579, 2584, 2589, 2593]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.run()::CD,8:CD,10:CD,13
+8 :: CALL :: call :: V :: initPath()::CL,2026
+10 :: CALL :: call :: V :: p0 $this .ensureFileExists()::CL,2049
+13 :: CALL :: call :: V :: p0 $this .loadAllChemComps()::CL,2085
+4224 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.initServerName()::CD,4227:CD,4229
+4227 :: EXPR :: reference :: Ljava/lang/String :: v2 = org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.serverName::DD,4229
+4229 :: PRED :: IF :: Z :: if (v2 != #(null)) goto 12::CD,4230:CD,4233
+4230 :: CALL :: call :: Ljava/lang/String :: v5 = getServerName()::JM,4233:CL,6143
+4233 :: EXPR :: modify :: Ljava/lang/String :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.serverName = v5::
+4239 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.downloadFileFromRemote(java.net.URL,java.io.File)::CD,4246:CD,4251:CD,4256:CD,4261:CD,4266:CD,4274
+4246 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v5 = new java.lang.StringBuilder::
+4251 :: CALL :: call :: Ljava/lang/StringBuilder :: v9 = v5.append(p1 $remoteURL )::
+4256 :: CALL :: call :: Ljava/lang/StringBuilder :: v12 = v9.append(#( to: ))::
+4261 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v12.append(p2 $localFile )::
+4266 :: CALL :: call :: Ljava/lang/String :: v16 = v14.toString()::
+4274 :: NORM :: declaration :: Ljava/io/FileOutputStream :: v18 = new java.io.FileOutputStream::
+4335 :: NORM :: declaration :: Ljava/util/HashMap :: v4 = new java.util.HashMap::
+4342 :: NORM :: declaration :: Ljava/util/HashMap :: v6 = new java.util.HashMap::
+4349 :: NORM :: declaration :: Ljava/util/HashMap :: v8 = new java.util.HashMap::
+4364 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.SimpleMMcifParser.triggerDocumentStart()::CD,4371:CD,4384:CD,4388
+4368 :: EXPR :: reference :: Ljava/util/List :: v3 = p0 $this .consumers::JM,4388
+4371 :: CALL :: call :: Ljava/util/Iterator :: v5 = v3.iterator()::JM,4388
+4376 :: CALL :: call :: Ljava/lang/Object :: v10 = v5.next()::JM,4388
+4384 :: CALL :: call :: Z :: v7 = v5.hasNext()::JM,4388
+4388 :: PRED :: IF :: Z :: if (v7 != #(0)) goto 14::CD,4376:CD,4384:JM,4388
+298 :: EXPR :: reference :: Ljava/util/concurrent/atomic/AtomicBoolean :: v4 = org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.loading::JM,304
+300 :: CALL :: call :: Z :: v6 = v4.get()::JM,304
+304 :: PRED :: IF :: Z :: if (v6 == #(0)) goto 24::CD,312:CD,314:CD,318
+312 :: EXPR :: reference :: Ljava/util/concurrent/atomic/AtomicBoolean :: v8 = org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.isInitialized::JM,318
+314 :: CALL :: call :: Z :: v10 = v8.get()::JM,318
+318 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 34::CD,320:CD,322:CD,326:CD,331
+320 :: EXPR :: reference :: Ljava/util/concurrent/atomic/AtomicBoolean :: v11 = org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.loading::JM,322
+322 :: CALL :: call :: V :: v11.set(#(1))::JM,322
+326 :: NORM :: declaration :: Ljava/lang/Thread :: v14 = new java.lang.Thread::
+331 :: CALL :: call :: V :: v14.start()::
+347 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.<clinit>()::CD,357:CD,362:CD,364:CD,369
+357 :: NORM :: declaration :: Ljava/util/concurrent/atomic/AtomicBoolean :: v5 = new java.util.concurrent.atomic.AtomicBoolean::DD,362
+362 :: EXPR :: modify :: Ljava/util/concurrent/atomic/AtomicBoolean :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.loading = v5::
+364 :: NORM :: declaration :: Ljava/util/concurrent/atomic/AtomicBoolean :: v8 = new java.util.concurrent.atomic.AtomicBoolean::DD,369
+369 :: EXPR :: modify :: Ljava/util/concurrent/atomic/AtomicBoolean :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.isInitialized = v8::
+399 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.SimpleMMcifParser.<clinit>()::CF,402:CD,403:CD,407
+402 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lorg/biojava/nbio/structure/io/mmcif/SimpleMMcifParser>-><Primordial,Ljava/lang/Class>::JM,403:JM,407
+403 :: CALL :: call :: Lorg/slf4j/Logger :: v4 = getLogger(v2)::JM,403:JM,407
+407 :: EXPR :: modify :: Lorg/slf4j/Logger :: org.biojava.nbio.structure.io.mmcif.SimpleMMcifParser.logger = v4::
+423 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.LocalPDBDirectory.FetchBehavior.<clinit>()::
+542 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.LocalPDBDirectory.ObsoleteBehavior.<clinit>()::
+686 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.LocalPDBDirectory.<clinit>()::CD,689:CD,690:CD,725:CD,730:CD,734:CD,739:CD,756
+689 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lorg/biojava/nbio/structure/io/LocalPDBDirectory>-><Primordial,Ljava/lang/Class>::
+690 :: CALL :: call :: Z :: v4 = v2.desiredAssertionStatus()::
+725 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v23 = new java.lang.StringBuilder::
+730 :: CALL :: call :: Ljava/lang/String :: v27 = v21.getMessage()::
+734 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v23.append(v27)::
+739 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::
+756 :: EXPR :: assign :: Ljava/lang/Exception :: v21 = catch <exc>::
+823 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.chem.ResidueType.<clinit>()::
+1616 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.chem.PolymerType.<clinit>()::CD,1619:CD,1626:CD,1637:CD,1644:CD,1646:CD,1653:CD,1655:CD,1662:CD,1787:CD,1791:CD,1793:CD,1798:CD,1804:CD,1808:CD,1810:CD,1815:CD,1821:CD,1825:CD,1827:CD,1832:CD,1838:CD,1842:CD,1844:CD,1849:CD,1851:CD,1856:CD,1858:CD,1863:CD,1869:CD,1870:CD,1873:CD,1881
+1619 :: NORM :: declaration :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v2 = new org.biojava.nbio.structure.io.mmcif.chem.PolymerType::DD,1626
+1626 :: EXPR :: modify :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: org.biojava.nbio.structure.io.mmcif.chem.PolymerType.peptide = v2::
+1637 :: NORM :: declaration :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v12 = new org.biojava.nbio.structure.io.mmcif.chem.PolymerType::DD,1644
+1644 :: EXPR :: modify :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: org.biojava.nbio.structure.io.mmcif.chem.PolymerType.dna = v12::
+1646 :: NORM :: declaration :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v17 = new org.biojava.nbio.structure.io.mmcif.chem.PolymerType::DD,1653
+1653 :: EXPR :: modify :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: org.biojava.nbio.structure.io.mmcif.chem.PolymerType.rna = v17::
+1655 :: NORM :: declaration :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v22 = new org.biojava.nbio.structure.io.mmcif.chem.PolymerType::DD,1662
+1662 :: EXPR :: modify :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: org.biojava.nbio.structure.io.mmcif.chem.PolymerType.dnarna = v22::
+1787 :: NORM :: declaration :: Ljava/util/HashSet :: v70 = new java.util.HashSet::JM,1798
+1791 :: EXPR :: reference :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v72 = org.biojava.nbio.structure.io.mmcif.chem.PolymerType.peptide::
+1793 :: CALL :: call :: Z :: v74 = v70.add(v72)::
+1798 :: CALL :: call :: Ljava/util/Set :: v76 = unmodifiableSet(v70)::JM,1798
+1804 :: NORM :: declaration :: Ljava/util/HashSet :: v77 = new java.util.HashSet::JM,1815
+1808 :: EXPR :: reference :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v79 = org.biojava.nbio.structure.io.mmcif.chem.PolymerType.dna::
+1810 :: CALL :: call :: Z :: v81 = v77.add(v79)::
+1815 :: CALL :: call :: Ljava/util/Set :: v83 = unmodifiableSet(v77)::JM,1815
+1821 :: NORM :: declaration :: Ljava/util/HashSet :: v84 = new java.util.HashSet::JM,1832
+1825 :: EXPR :: reference :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v86 = org.biojava.nbio.structure.io.mmcif.chem.PolymerType.rna::
+1827 :: CALL :: call :: Z :: v88 = v84.add(v86)::
+1832 :: CALL :: call :: Ljava/util/Set :: v90 = unmodifiableSet(v84)::JM,1832
+1838 :: NORM :: declaration :: Ljava/util/HashSet :: v91 = new java.util.HashSet::JM,1863
+1842 :: EXPR :: reference :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v93 = org.biojava.nbio.structure.io.mmcif.chem.PolymerType.dna::
+1844 :: CALL :: call :: Z :: v95 = v91.add(v93)::
+1849 :: EXPR :: reference :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v96 = org.biojava.nbio.structure.io.mmcif.chem.PolymerType.rna::
+1851 :: CALL :: call :: Z :: v98 = v91.add(v96)::
+1856 :: EXPR :: reference :: Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v99 = org.biojava.nbio.structure.io.mmcif.chem.PolymerType.dnarna::
+1858 :: CALL :: call :: Z :: v101 = v91.add(v99)::
+1863 :: CALL :: call :: Ljava/util/Set :: v103 = unmodifiableSet(v91)::JM,1863
+1869 :: NORM :: declaration :: Ljava/util/HashSet :: v104 = new java.util.HashSet::JM,1881
+1870 :: CALL :: call :: [Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v106 = values()::JM,1873:CL,2316
+1873 :: CALL :: call :: Ljava/util/List :: v108 = asList(v106)::JM,1873
+1881 :: CALL :: call :: Ljava/util/Set :: v111 = unmodifiableSet(v104)::JM,1881
+2026 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.initPath()::CD,2029:CD,2031
+2029 :: EXPR :: reference :: Ljava/lang/String :: v2 = org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.path::DD,2031
+2031 :: PRED :: IF :: Z :: if (v2 != #(null)) goto 21::JM,2385:JM,2378
+6143 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.LocalPDBDirectory.getServerName()::CE,6144:CD,6146:CD,6150:CD,6210:CD,6212
+6144 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.io.LocalPDBDirectory.getServerName()::JM,4233
+2049 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.ensureFileExists()::CD,2053:CD,2056:CD,2061:CD,2065
+6146 :: CALL :: call :: Ljava/lang/String :: v4 = getProperty(#(PDB.FILE.SERVER))::JM,6146:JM,6211:JM,6179:JM,6150:JM,6155:JM,6173:JM,6159
+2053 :: CALL :: call :: Ljava/lang/String :: v4 = getLocalFileName()::CL,2180
+6150 :: PRED :: IF :: Z :: if (v4 == #(null)) goto 23::CD,6151:CD,6155:CD,6159:CD,6212:JM,6211:JM,6179:JM,6173
+6151 :: CALL :: call :: Ljava/lang/String :: v7 = v4.trim()::JM,6211:JM,6179:JM,6155:JM,6173:JM,6159
+2056 :: NORM :: declaration :: Ljava/io/File :: v5 = new java.io.File::JM,2065
+6155 :: CALL :: call :: Z :: v9 = v7.isEmpty()::JM,6179:JM,6211:JM,6155:JM,6173:JM,6159
+2061 :: CALL :: call :: Z :: v8 = v5.exists()::JM,2065
+6159 :: PRED :: IF :: Z :: if (v9 == #(0)) goto 42::CD,6168:CD,6173:CD,6211:CD,6212:JM,6179:JM,6155:JM,6159
+2065 :: PRED :: IF :: Z :: if (v8 != #(0)) goto 38::CD,2066
+2066 :: CALL :: call :: V :: downloadFile()::CL,2416
+6168 :: CALL :: call :: Z :: v13 = v4.startsWith(#(http://))::JM,6211:JM,6179:JM,6155:JM,6173:JM,6159
+6173 :: PRED :: IF :: Z :: if (v13 != #(0)) goto 90::CF,6211:CD,6174:CD,6179:JM,6155:JM,6173:JM,6159
+6174 :: CALL :: call :: Z :: v16 = v4.startsWith(#(ftp://))::JM,6211:JM,6179:JM,6155:JM,6173:JM,6159
+6179 :: PRED :: IF :: Z :: if (v16 != #(0)) goto 90::CF,6211:CD,6188:CD,6193:CD,6198
+2085 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.loadAllChemComps()::CD,2089:CD,2094:CD,2099:CD,2104:CD,2112:CD,2116:JM,2483:JM,4342:JM,4349:JM,4335:CD,2129:CD,2133:CD,2134:CD,2143
+2089 :: CALL :: call :: Ljava/lang/String :: v4 = getLocalFileName()::JM,2116:CL,2180
+6188 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v20 = new java.lang.StringBuilder::JM,6211
+2094 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v6 = new java.lang.StringBuilder::
+6193 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v20.append(v4)::JM,6211:JM,6179:JM,6155:JM,6173:JM,6159
+2099 :: CALL :: call :: Ljava/lang/StringBuilder :: v10 = v6.append(v4)::JM,2116
+6198 :: CALL :: call :: Ljava/lang/String :: v25 = v23.toString()::JM,6211:JM,6155:JM,6159
+2104 :: CALL :: call :: Ljava/lang/String :: v12 = v10.toString()::
+2112 :: NORM :: declaration :: Lorg/biojava/nbio/core/util/InputStreamProvider :: v14 = new org.biojava.nbio.core.util.InputStreamProvider::JM,2116
+6210 :: NORM :: compound :: Ljava/lang/String :: return v34::DD,6144
+6211 :: EXPR :: assign :: null :: PHI v26 = v4, v4, v25::DD,6212
+2116 :: CALL :: call :: Ljava/io/InputStream :: v17 = v14.getInputStream(v4)::JM,2116
+6212 :: EXPR :: assign :: null :: PHI v34 = #(http://ftp.wwpdb.org), v26::CF,6210
+2129 :: CALL :: call :: V :: v18.addMMcifConsumer(v20)::CL,2517
+2133 :: NORM :: declaration :: Ljava/io/BufferedReader :: v23 = new java.io.BufferedReader::JM,2593:JM,2565:JM,2571:CF,2134
+2134 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v24 = new java.io.InputStreamReader::
+2143 :: CALL :: call :: V :: v18.parse(v23)::JM,2593:JM,2565:JM,2571:CL,2534
+2180 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.getLocalFileName()::CE,2181:CD,2183:CD,2184:CD,2191:CD,2195:CD,2211:CD,2217:CD,2221
+2181 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.getLocalFileName()::JM,2116
+2183 :: NORM :: declaration :: Ljava/io/File :: v2 = new java.io.File::JM,2195
+2184 :: EXPR :: reference :: Ljava/lang/String :: v3 = org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.path::
+2191 :: CALL :: call :: Z :: v7 = v2.exists()::JM,2195
+2195 :: PRED :: IF :: Z :: if (v7 != #(0)) goto 39::CF,2211:CD,2207
+2207 :: CALL :: call :: Z :: v15 = v2.mkdir()::
+2211 :: NORM :: declaration :: Ljava/io/File :: v16 = new java.io.File::JM,2221
+2217 :: CALL :: call :: Ljava/lang/String :: v20 = v16.toString()::JM,2221
+2221 :: NORM :: compound :: Ljava/lang/String :: return v20::DD,2181
+2316 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.chem.PolymerType.values()::CF,2317:CD,2319:CD,2321:CD,2322:CD,2330
+2317 :: EXIT :: exit :: [Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: org.biojava.nbio.structure.io.mmcif.chem.PolymerType.values()::JM,1873
+2319 :: EXPR :: reference :: [Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v2 = org.biojava.nbio.structure.io.mmcif.chem.PolymerType.ENUM$VALUES::DD,2321
+2321 :: EXPR :: assign :: I :: v4 = v2.length::DD,2322
+2322 :: NORM :: declaration :: [Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: v5 = new org.biojava.nbio.structure.io.mmcif.chem.PolymerType[]::DD,2330
+2330 :: NORM :: compound :: [Lorg/biojava/nbio/structure/io/mmcif/chem/PolymerType :: return v5::CF,2317
+2378 :: CALL :: call :: Ljava/lang/String :: v7 = p0 $this .initPdbFilePath()::CL,3462
+2385 :: CALL :: call :: Ljava/lang/String :: v9 = p0 $this .initCacheFilePath()::CL,3788
+2416 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.downloadFile()::CD,2419:CD,2421:CD,2423:CD,2426:CD,2427:CD,2429:CD,2437:CD,2442:CD,2447:CD,2451:CD,2456:CD,2461
+2419 :: CALL :: call :: V :: initPath()::CL,2026
+2421 :: CALL :: call :: V :: initServerName()::CL,4224
+2423 :: CALL :: call :: Ljava/lang/String :: v5 = getLocalFileName()::CL,2180
+2426 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v6 = new java.lang.StringBuilder::
+2427 :: EXPR :: reference :: Ljava/lang/String :: v7 = org.biojava.nbio.structure.io.mmcif.AllChemCompProvider.serverName::
+2429 :: CALL :: call :: Ljava/lang/String :: v9 = valueOf(v7)::
+2437 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v6.append(#(/))::
+2442 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v13.append(#(pub/pdb/data/monomers...))::
+2447 :: CALL :: call :: Ljava/lang/String :: v18 = v16.toString()::
+2451 :: NORM :: declaration :: Ljava/net/URL :: v19 = new java.net.URL::
+2456 :: NORM :: declaration :: Ljava/io/File :: v21 = new java.io.File::
+2461 :: CALL :: call :: V :: downloadFileFromRemote(v19, v21)::CL,4239
+2483 :: NORM :: declaration :: Ljava/util/ArrayList :: v4 = new java.util.ArrayList::
+2517 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.SimpleMMcifParser.addMMcifConsumer(org.biojava.nbio.structure.io.mmcif.MMcifConsumer)::CD,2525
+2522 :: EXPR :: reference :: Ljava/util/List :: v4 = p0 $this .consumers::
+2525 :: CALL :: call :: Z :: v6 = v4.add(p1 $consumer )::
+2534 :: ENTR :: entry :: null :: org.biojava.nbio.structure.io.mmcif.SimpleMMcifParser.parse(java.io.BufferedReader)::CD,2539:CD,2549:CD,2553:CD,2557:CD,2561:CD,2565:JM,2593:JM,2571
+2539 :: CALL :: call :: V :: p0 $this .triggerDocumentStart()::CL,4364
+2549 :: NORM :: declaration :: Ljava/util/ArrayList :: v9 = new java.util.ArrayList::
+2553 :: NORM :: declaration :: Ljava/util/ArrayList :: v11 = new java.util.ArrayList::
+2557 :: NORM :: declaration :: Ljava/util/HashSet :: v13 = new java.util.HashSet::
+2561 :: CALL :: call :: Ljava/lang/String :: v16 = p1 $buf .readLine()::JM,2593:JM,2565:JM,2571
+2565 :: PRED :: IF :: Z :: if (v16 == #(null)) goto 70::CD,2566:CD,2571:CD,2572:CD,2574:CD,2579:CD,2584:CD,2589:CD,2593
+2566 :: CALL :: call :: Z :: v19 = v16.startsWith(#(data_))::JM,2593:JM,2571
+2571 :: PRED :: IF :: Z :: if (v19 != #(0)) goto 988::CD,2572:CD,2574:CD,2579:CD,2584:CD,2589:CD,2593
+2572 :: EXPR :: reference :: Lorg/slf4j/Logger :: v237 = org.biojava.nbio.structure.io.mmcif.SimpleMMcifParser.logger::CF,2574:JM,2593
+2574 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v238 = new java.lang.StringBuilder::JM,2593
+2579 :: CALL :: call :: Ljava/lang/StringBuilder :: v242 = v238.append(v16)::JM,2593:JM,2571
+2584 :: CALL :: call :: Ljava/lang/StringBuilder :: v244 = v242.append(#('))::JM,2593
+2589 :: CALL :: call :: Ljava/lang/String :: v246 = v244.toString()::JM,2593
+2593 :: CALL :: call :: V :: v237.error(v246)::JM,2593
+3462 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.UserConfiguration.initPdbFilePath()::CD,3466:CD,3470:CD,3661:CD,3663:CD,3668:CD,3690
+3466 :: CALL :: call :: Ljava/lang/String :: v6 = getProperty(#(PDB_DIR))::JM,3475:JM,3479:JM,3466:JM,3690:JM,3470
+3470 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 118::CD,3471:CD,3475:CD,3479:CD,3541:CD,3544:CD,3549:JM,3690
+3471 :: CALL :: call :: Ljava/lang/String :: v8 = v6.trim()::JM,3475:JM,3479:JM,3690
+3475 :: CALL :: call :: Z :: v10 = v8.isEmpty()::JM,3475:JM,3479
+3479 :: PRED :: IF :: Z :: if (v10 != #(0)) goto 118::CD,3488:CD,3493:CD,3497:CD,3541:CD,3544:CD,3549
+3488 :: NORM :: declaration :: Ljava/io/File :: v61 = new java.io.File::JM,3497:JM,3531
+3493 :: CALL :: call :: Z :: v64 = v61.isDirectory()::JM,3497
+3497 :: PRED :: IF :: Z :: if (v64 != #(0)) goto 97::CD,3522:CD,3527:CD,3531:CD,3690
+3522 :: CALL :: call :: Ljava/lang/String :: v77 = getProperty(#(java.io.tmpdir))::JM,3522:JM,3690
+3527 :: CALL :: call :: Z :: v66 = v61.canWrite()::JM,3531
+3531 :: PRED :: IF :: Z :: if (v66 != #(0)) goto 297::CF,3690
+3541 :: CALL :: call :: Ljava/util/Map :: v13 = getenv()::JM,3570:JM,3555:JM,3549
+3544 :: CALL :: call :: Z :: v15 = v13.containsKey(#(PDB_DIR))::JM,3570:JM,3555:JM,3549
+3549 :: PRED :: IF :: Z :: if (v15 == #(0)) goto 260::CD,3550:CD,3555:CD,3556:CD,3560:CD,3564:CD,3632:CD,3656:CD,3690:JM,3570:JM,3549
+3550 :: CALL :: call :: Ljava/lang/Object :: v17 = v13.get(#(PDB_DIR))::JM,3570:JM,3555:JM,3549
+3555 :: EXPR :: assign :: Ljava/lang/Object :: v18 = CHECKCAST v17::JM,3560:JM,3564
+3556 :: CALL :: call :: Ljava/lang/String :: v20 = v18.trim()::JM,3560:JM,3564
+3560 :: CALL :: call :: Z :: v22 = v20.isEmpty()::JM,3560:JM,3564
+3564 :: PRED :: IF :: Z :: if (v22 != #(0)) goto 260::CD,3565:CD,3570:CD,3579:CD,3584:CD,3588:CD,3632:CD,3656:CD,3690:JM,3555:JM,3549
+3565 :: CALL :: call :: Ljava/lang/Object :: v36 = v13.get(#(PDB_DIR))::JM,3570:JM,3555:JM,3549
+3570 :: EXPR :: assign :: Ljava/lang/Object :: v37 = CHECKCAST v36::DD,3690
+3579 :: NORM :: declaration :: Ljava/io/File :: v41 = new java.io.File::JM,3588:JM,3622
+3584 :: CALL :: call :: Z :: v44 = v41.isDirectory()::JM,3588
+3588 :: PRED :: IF :: Z :: if (v44 != #(0)) goto 237::CD,3613:CD,3618:CD,3622:CD,3690
+3613 :: CALL :: call :: Ljava/lang/String :: v57 = getProperty(#(java.io.tmpdir))::JM,3690:JM,3613
+3618 :: CALL :: call :: Z :: v46 = v41.canWrite()::JM,3622
+3622 :: PRED :: IF :: Z :: if (v46 != #(0)) goto 297::CF,3690
+3632 :: CALL :: call :: Ljava/lang/String :: v25 = getProperty(#(java.io.tmpdir))::JM,3632:JM,3690
+3656 :: CALL :: call :: Ljava/lang/String :: v34 = setProperty(#(PDB_DIR), v25)::JM,3690
+3661 :: EXPR :: reference :: Ljava/lang/String :: v80 = org.biojava.nbio.structure.align.util.UserConfiguration.lineSplit::JM,3668
+3663 :: CALL :: call :: Z :: v82 = v78.endsWith(v80)::JM,3668
+3668 :: PRED :: IF :: Z :: if (v82 != #(0)) goto 328::CF,3669:CD,3670:CD,3678:CD,3680:CD,3685
+3669 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v83 = new java.lang.StringBuilder::
+3670 :: CALL :: call :: Ljava/lang/String :: v85 = valueOf(v78)::
+3678 :: EXPR :: reference :: Ljava/lang/String :: v87 = org.biojava.nbio.structure.align.util.UserConfiguration.lineSplit::
+3680 :: CALL :: call :: Ljava/lang/StringBuilder :: v89 = v83.append(v87)::
+3685 :: CALL :: call :: Ljava/lang/String :: v91 = v89.toString()::
+3690 :: EXPR :: assign :: null :: PHI v78 = v77, v6, v6, v57, v37, v37, v25::JM,3668
+3788 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.UserConfiguration.initCacheFilePath()::CD,3792:CD,3796:CD,4057:CD,4059:CD,4064:CD,4086
+3792 :: CALL :: call :: Ljava/lang/String :: v6 = getProperty(#(PDB_CACHE_DIR))::JM,3792:JM,3796:JM,4086
+3796 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 138::CD,3805:CD,3810:CD,3814:CD,3883:CD,3886:CD,3891
+3805 :: NORM :: declaration :: Ljava/io/File :: v69 = new java.io.File::JM,3814:JM,3848
+3810 :: CALL :: call :: Z :: v72 = v69.isDirectory()::JM,3814
+3814 :: PRED :: IF :: Z :: if (v72 != #(0)) goto 87::CD,3839:CD,3844:CD,3848:CD,4086
+3839 :: CALL :: call :: Ljava/lang/String :: v92 = getProperty(#(java.io.tmpdir))::JM,4086:JM,3839
+3844 :: CALL :: call :: Z :: v74 = v69.canWrite()::JM,3848
+3848 :: PRED :: IF :: Z :: if (v74 != #(0)) goto 385::CF,4086:CD,3873:CD,3877
+3873 :: CALL :: call :: Ljava/lang/String :: v82 = getProperty(#(java.io.tmpdir))::JM,3873:JM,4086
+3877 :: CALL :: call :: Ljava/lang/String :: v84 = setProperty(#(PDB_CACHE_DIR), v82)::JM,4086
+3883 :: CALL :: call :: Ljava/util/Map :: v8 = getenv()::JM,3891:JM,3897
+3886 :: CALL :: call :: Z :: v10 = v8.containsKey(#(PDB_CACHE_DIR))::JM,3891:JM,3897
+3891 :: PRED :: IF :: Z :: if (v10 == #(0)) goto 282::CF,3979:CD,3892:CD,3897:CD,3906:CD,3911:CD,3915:CD,3987:CD,3991:JM,3891
+3892 :: CALL :: call :: Ljava/lang/Object :: v39 = v8.get(#(PDB_CACHE_DIR))::JM,3891:JM,3897
+3897 :: EXPR :: assign :: Ljava/lang/Object :: v40 = CHECKCAST v39::DD,4086
+3906 :: NORM :: declaration :: Ljava/io/File :: v44 = new java.io.File::JM,3915:JM,3949
+3911 :: CALL :: call :: Z :: v47 = v44.isDirectory()::JM,3915
+3915 :: PRED :: IF :: Z :: if (v47 != #(0)) goto 237::CD,3940:CD,3945:CD,3949:CD,4086
+3940 :: CALL :: call :: Ljava/lang/String :: v65 = getProperty(#(java.io.tmpdir))::JM,3940:JM,4086
+3945 :: CALL :: call :: Z :: v49 = v44.canWrite()::JM,3949
+3949 :: PRED :: IF :: Z :: if (v49 != #(0)) goto 385::CF,4086:CD,3974
+3974 :: CALL :: call :: Ljava/lang/String :: v57 = getProperty(#(java.io.tmpdir))::JM,3974:JM,4086
+3979 :: NORM :: declaration :: Ljava/io/File :: v12 = new java.io.File::JM,3991
+3980 :: EXPR :: reference :: Ljava/lang/String :: v13 = p0 $this .pdbFilePath::
+3987 :: CALL :: call :: Z :: v16 = v12.canWrite()::JM,3991
+3991 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 341::CD,4015:CD,4021:CD,4052:CD,4086
+3992 :: EXPR :: reference :: Ljava/lang/String :: v31 = p0 $this .pdbFilePath::DD,4086
+4015 :: CALL :: call :: Ljava/lang/String :: v37 = setProperty(#(PDB_CACHE_DIR), v31)::
+4021 :: CALL :: call :: Ljava/lang/String :: v19 = getProperty(#(java.io.tmpdir))::JM,4021:JM,4086
+4052 :: CALL :: call :: Ljava/lang/String :: v30 = setProperty(#(PDB_CACHE_DIR), v19)::JM,4086
+4057 :: EXPR :: reference :: Ljava/lang/String :: v95 = org.biojava.nbio.structure.align.util.UserConfiguration.lineSplit::JM,4064
+4059 :: CALL :: call :: Z :: v97 = v93.endsWith(v95)::JM,4064
+4064 :: PRED :: IF :: Z :: if (v97 != #(0)) goto 416::CF,4065:CD,4066:CD,4074:CD,4076:CD,4081
+4065 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v98 = new java.lang.StringBuilder::
+4066 :: CALL :: call :: Ljava/lang/String :: v100 = valueOf(v93)::
+4074 :: EXPR :: reference :: Ljava/lang/String :: v102 = org.biojava.nbio.structure.align.util.UserConfiguration.lineSplit::
+4076 :: CALL :: call :: Ljava/lang/StringBuilder :: v104 = v98.append(v102)::
+4081 :: CALL :: call :: Ljava/lang/String :: v106 = v104.toString()::
+4086 :: EXPR :: assign :: null :: PHI v93 = v92, v6, v82, v65, v40, v57, v31, v19::JM,4064

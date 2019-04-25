@@ -1,0 +1,124 @@
+[5, 6, 14]
+1 :: ENTR :: entry :: null :: okhttp3.internal.http2.MockHttp2Peer.openSocket()::CD,5:CD,14
+5 :: NORM :: declaration :: Ljava/net/Socket :: v3 = new java.net.Socket::DD,14
+6 :: EXPR :: reference :: I :: v5 = p0 $this .port::
+1035 :: ENTR :: entry :: null :: okhttp3.ResponseBody.create(okhttp3.MediaType,[])::CD,1051
+14 :: NORM :: compound :: Ljava/net/Socket :: return v3::
+1051 :: CALL :: call :: Lokhttp3/ResponseBody :: v11 = create(p1 $contentType , v9, v7)::CL,1145
+1064 :: ENTR :: entry :: null :: okhttp3.RequestBody.create(okhttp3.MediaType,[])::CD,1070
+1070 :: CALL :: call :: Lokhttp3/RequestBody :: v7 = create(p1 $contentType , p2 $content , #(0), v5)::CL,1172
+1091 :: ENTR :: entry :: null :: okhttp3.internal.Util.format(java.lang.String,java.lang.Object[])::CE,1092:CD,1096:CD,1098:CD,1104
+1092 :: EXIT :: exit :: Ljava/lang/String :: okhttp3.internal.Util.format(java.lang.String,java.lang.Object[])::
+1096 :: EXPR :: reference :: Ljava/util/Locale :: v4 = java.util.Locale.US::JM,1104
+1098 :: CALL :: call :: Ljava/lang/String :: v6 = format(v4, p1 $format , p2 $args )::JM,1104
+1104 :: NORM :: compound :: Ljava/lang/String :: return v6::DD,1092
+1145 :: ENTR :: entry :: null :: okhttp3.ResponseBody.create(okhttp3.MediaType,long,okio.BufferedSource)::CF,1152
+1152 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v8 = new java.lang.NullPointerException::
+1172 :: ENTR :: entry :: null :: okhttp3.RequestBody.create(okhttp3.MediaType,[],int,int)::CF,1180
+1180 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v14 = new java.lang.NullPointerException::
+276 :: NORM :: declaration :: Ljava/util/ArrayList :: v11 = new java.util.ArrayList::
+290 :: CALL :: call :: Ljava/util/concurrent/ThreadFactory :: v17 = threadFactory(#(MockHttp2Peer), #(0))::CL,1020
+321 :: ENTR :: entry :: null :: okhttp3.internal.http2.MockHttp2Peer.<clinit>()::CD,324:CD,325:CD,329
+324 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lokhttp3/internal/http2/MockHttp2Peer>-><Primordial,Ljava/lang/Class>::JM,325
+325 :: CALL :: call :: Ljava/lang/String :: v4 = v2.getName()::JM,325
+329 :: CALL :: call :: Ljava/util/logging/Logger :: v6 = getLogger(v4)::
+337 :: ENTR :: entry :: null :: okhttp3.internal.http2.Http2Writer.<clinit>()::CD,340:CD,341:CD,345
+340 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lokhttp3/internal/http2/Http2>-><Primordial,Ljava/lang/Class>::JM,341
+341 :: CALL :: call :: Ljava/lang/String :: v4 = v2.getName()::JM,341
+345 :: CALL :: call :: Ljava/util/logging/Logger :: v6 = getLogger(v4)::
+353 :: ENTR :: entry :: null :: okhttp3.internal.Util.<clinit>()::CD,364:CD,373:CD,410:CD,416:CD,422:CD,428:CD,434:CD,440:CD,446:CD,458
+364 :: CALL :: call :: Lokhttp3/ResponseBody :: v8 = create(#(null), v6)::CL,1035
+373 :: CALL :: call :: Lokhttp3/RequestBody :: v11 = create(#(null), v9)::CL,1064
+410 :: CALL :: call :: Ljava/nio/charset/Charset :: v29 = forName(#(UTF-8))::
+416 :: CALL :: call :: Ljava/nio/charset/Charset :: v32 = forName(#(ISO-8859-1))::
+422 :: CALL :: call :: Ljava/nio/charset/Charset :: v35 = forName(#(UTF-16BE))::
+428 :: CALL :: call :: Ljava/nio/charset/Charset :: v38 = forName(#(UTF-16LE))::
+434 :: CALL :: call :: Ljava/nio/charset/Charset :: v41 = forName(#(UTF-32BE))::
+440 :: CALL :: call :: Ljava/nio/charset/Charset :: v44 = forName(#(UTF-32LE))::
+446 :: CALL :: call :: Ljava/util/TimeZone :: v47 = getTimeZone(#(GMT))::
+458 :: CALL :: call :: Ljava/util/regex/Pattern :: v52 = compile(#(([0-9a-fA-F]*:[0-9a-f...))::
+502 :: ENTR :: entry :: null :: okhttp3.internal.http2.Http2.<clinit>()::CD,554:CD,555:CD,557:CD,558:CD,560:CD,562:CD,563:CD,592:CD,598:CD,604:CD,609:CD,615:CD,616:CD,654:CD,660:CD,666:CD,672:CD,685:CD,686:CD,817:CD,818:CD,819
+554 :: NORM :: declaration :: [Ljava/lang/String :: v28 = new java.lang.String[]::CF,555
+555 :: EXPR :: modify :: [Ljava/lang/String :: okhttp3.internal.http2.Http2.FLAGS = v28::
+557 :: NORM :: declaration :: [Ljava/lang/String :: v30 = new java.lang.String[]::CF,558
+558 :: EXPR :: modify :: [Ljava/lang/String :: okhttp3.internal.http2.Http2.BINARY = v30::
+560 :: EXPR :: reference :: [Ljava/lang/String :: v31 = okhttp3.internal.http2.Http2.BINARY::CF,562
+562 :: EXPR :: assign :: I :: v32 = v31.length::CF,563
+563 :: PRED :: IF :: Z :: if (v45 >= v32) goto 131::CD,560:CD,562:CD,566:CD,567:CD,575:CD,580:CD,590:CD,817
+566 :: NORM :: declaration :: [Ljava/lang/Object :: v35 = new java.lang.Object[]::JM,571
+567 :: CALL :: call :: Ljava/lang/String :: v37 = toBinaryString(v45)::JM,571
+571 :: EXPR :: modify :: Ljava/lang/Object :: v35[#(0)] = v37::
+575 :: CALL :: call :: Ljava/lang/String :: v39 = format(#(%8s), v35)::CL,1091
+580 :: CALL :: call :: Ljava/lang/String :: v43 = v39.replace(#(32), #(48))::
+590 :: EXPR :: assign :: Ljava/lang/Object :: v44 = v45 + #(1)::DD,817
+592 :: EXPR :: reference :: [Ljava/lang/String :: v46 = okhttp3.internal.http2.Http2.FLAGS::
+594 :: EXPR :: modify :: Ljava/lang/Object :: v46[#(0)] = #()::
+598 :: EXPR :: reference :: [Ljava/lang/String :: v48 = okhttp3.internal.http2.Http2.FLAGS::
+600 :: EXPR :: modify :: Ljava/lang/Object :: v48[#(1)] = #(END_STREAM)::
+604 :: NORM :: declaration :: [I :: v50 = new []::DD,615:DD,691
+605 :: EXPR :: modify :: I :: v50[#(0)] = #(1)::
+609 :: EXPR :: reference :: [Ljava/lang/String :: v51 = okhttp3.internal.http2.Http2.FLAGS::
+611 :: EXPR :: modify :: Ljava/lang/Object :: v51[#(8)] = #(PADDED)::
+615 :: EXPR :: assign :: I :: v53 = v50.length::DD,616:CF,818
+616 :: PRED :: IF :: Z :: if (v69 >= v53) goto 217::CD,621:CD,623:CD,624:CD,628:CD,634:CD,639:CD,644:CD,652:CD,818
+617 :: EXPR :: reference :: I :: v54 = v50[v69]::DD,623
+621 :: EXPR :: reference :: [Ljava/lang/String :: v55 = okhttp3.internal.http2.Http2.FLAGS::CF,623
+623 :: EXPR :: assign :: Ljava/lang/Object :: v56 = v54 || #(8)::CF,624
+624 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v57 = new java.lang.StringBuilder::JM,648
+628 :: EXPR :: reference :: [Ljava/lang/String :: v59 = okhttp3.internal.http2.Http2.FLAGS::
+630 :: EXPR :: reference :: Ljava/lang/Object :: v60 = v59[v54]::JM,648
+634 :: CALL :: call :: Ljava/lang/StringBuilder :: v62 = v57.append(v60)::JM,648
+639 :: CALL :: call :: Ljava/lang/StringBuilder :: v65 = v62.append(#(|PADDED))::JM,648
+644 :: CALL :: call :: Ljava/lang/String :: v67 = v65.toString()::JM,648
+648 :: EXPR :: modify :: Ljava/lang/Object :: v55[v56] = v67::
+652 :: EXPR :: assign :: Ljava/lang/Object :: v68 = v69 + #(1)::DD,818
+654 :: EXPR :: reference :: [Ljava/lang/String :: v70 = okhttp3.internal.http2.Http2.FLAGS::
+656 :: EXPR :: modify :: Ljava/lang/Object :: v70[#(4)] = #(END_HEADERS)::
+660 :: EXPR :: reference :: [Ljava/lang/String :: v72 = okhttp3.internal.http2.Http2.FLAGS::
+662 :: EXPR :: modify :: Ljava/lang/Object :: v72[#(32)] = #(PRIORITY)::
+666 :: EXPR :: reference :: [Ljava/lang/String :: v73 = okhttp3.internal.http2.Http2.FLAGS::
+668 :: EXPR :: modify :: Ljava/lang/Object :: v73[#(36)] = #(END_HEADERS|PRIORITY)::
+672 :: NORM :: declaration :: [I :: v76 = new []::DD,685
+673 :: EXPR :: modify :: I :: v76[#(0)] = #(4)::
+677 :: EXPR :: modify :: I :: v76[#(1)] = #(32)::
+681 :: EXPR :: modify :: I :: v76[#(2)] = #(36)::
+685 :: EXPR :: assign :: I :: v77 = v76.length::DD,686:CF,819
+686 :: PRED :: IF :: Z :: if (v120 >= v77) goto 410::CD,691:CD,692:CD,789:CD,819:CD,820:CD,821
+687 :: EXPR :: reference :: I :: v78 = v76[v120]::DD,699:DD,741
+691 :: EXPR :: assign :: I :: v79 = v50.length::DD,692:CF,820
+692 :: PRED :: IF :: Z :: if (v118 >= v79) goto 401::CD,697:CD,699:CD,700:CD,704:CD,710:CD,715:CD,720:CD,726:CD,731:CD,739:CD,741:CD,742:CD,743:CD,747:CD,753:CD,758:CD,763:CD,769:CD,774:CD,779:CD,787:CD,820:CD,821:CF,789
+693 :: EXPR :: reference :: I :: v80 = v50[v118]::DD,699:DD,741
+697 :: EXPR :: reference :: [Ljava/lang/String :: v81 = okhttp3.internal.http2.Http2.FLAGS::CF,699
+699 :: EXPR :: assign :: Ljava/lang/Object :: v82 = v80 || v78::CF,700
+700 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v83 = new java.lang.StringBuilder::JM,735
+704 :: EXPR :: reference :: [Ljava/lang/String :: v85 = okhttp3.internal.http2.Http2.FLAGS::
+706 :: EXPR :: reference :: Ljava/lang/Object :: v86 = v85[v80]::JM,735
+710 :: CALL :: call :: Ljava/lang/StringBuilder :: v88 = v83.append(v86)::JM,735
+715 :: CALL :: call :: Ljava/lang/StringBuilder :: v91 = v88.append(#(124))::JM,735
+720 :: EXPR :: reference :: [Ljava/lang/String :: v92 = okhttp3.internal.http2.Http2.FLAGS::
+722 :: EXPR :: reference :: Ljava/lang/Object :: v93 = v92[v78]::JM,735
+726 :: CALL :: call :: Ljava/lang/StringBuilder :: v95 = v91.append(v93)::JM,735
+731 :: CALL :: call :: Ljava/lang/String :: v97 = v95.toString()::JM,735
+735 :: EXPR :: modify :: Ljava/lang/Object :: v81[v82] = v97::
+739 :: EXPR :: reference :: [Ljava/lang/String :: v98 = okhttp3.internal.http2.Http2.FLAGS::CF,741
+741 :: EXPR :: assign :: Ljava/lang/Object :: v99 = v80 || v78::DD,742
+742 :: EXPR :: assign :: Ljava/lang/Object :: v100 = v99 || #(8)::CF,743
+743 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v101 = new java.lang.StringBuilder::JM,783
+747 :: EXPR :: reference :: [Ljava/lang/String :: v103 = okhttp3.internal.http2.Http2.FLAGS::
+749 :: EXPR :: reference :: Ljava/lang/Object :: v104 = v103[v80]::JM,783
+753 :: CALL :: call :: Ljava/lang/StringBuilder :: v106 = v101.append(v104)::JM,783
+758 :: CALL :: call :: Ljava/lang/StringBuilder :: v108 = v106.append(#(124))::JM,783
+763 :: EXPR :: reference :: [Ljava/lang/String :: v109 = okhttp3.internal.http2.Http2.FLAGS::
+765 :: EXPR :: reference :: Ljava/lang/Object :: v110 = v109[v78]::JM,783
+769 :: CALL :: call :: Ljava/lang/StringBuilder :: v112 = v108.append(v110)::JM,783
+774 :: CALL :: call :: Ljava/lang/StringBuilder :: v114 = v112.append(#(|PADDED))::JM,783
+779 :: CALL :: call :: Ljava/lang/String :: v116 = v114.toString()::JM,783
+783 :: EXPR :: modify :: Ljava/lang/Object :: v98[v100] = v116::
+787 :: EXPR :: assign :: Ljava/lang/Object :: v117 = v118 + #(1)::DD,821
+789 :: EXPR :: assign :: Ljava/lang/Object :: v119 = v121 + #(1)::DD,819
+817 :: EXPR :: assign :: null :: PHI v45 = v44, #(0)::DD,563:JM,571:DD,590
+818 :: EXPR :: assign :: null :: PHI v69 = v68, #(0)::DD,616:DD,652
+819 :: EXPR :: assign :: null :: PHI v120 = v119, #(0)::DD,686:DD,820
+820 :: EXPR :: assign :: null :: PHI v121 = v121, v120::CF,821:DD,789:DD,820
+821 :: EXPR :: assign :: null :: PHI v118 = v117, #(0)::DD,692:DD,787
+1020 :: ENTR :: entry :: null :: okhttp3.internal.Util.threadFactory(java.lang.String,boolean)::

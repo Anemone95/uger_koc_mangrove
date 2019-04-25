@@ -1,0 +1,24 @@
+[66, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest16621.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,22:CD,26:CD,30:CD,35:CD,40:CD,45:CD,49:CD,52:CD,61
+22 :: CALL :: call :: Ljava/lang/String :: v17 = doSomething(v15)::JM,61:CL,153
+26 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v18 = new java.lang.StringBuilder::JM,61
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v18.append(#(UPDATE USERS SET PASS...))::JM,61
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v22.append(v17)::JM,61
+40 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v24.append(#(' WHERE USERNAME='foo'))::JM,61
+45 :: CALL :: call :: Ljava/lang/String :: v29 = v27.toString()::JM,61
+49 :: CALL :: call :: Ljava/sql/Statement :: v31 = getSqlStatement()::JM,61
+52 :: NORM :: declaration :: [I :: v33 = new []::JM,61
+53 :: EXPR :: modify :: I :: v33[#(0)] = #(1)::
+57 :: EXPR :: modify :: I :: v33[#(1)] = #(2)::
+61 :: CALL :: call :: I :: v36 = v31.executeUpdate(v29, v33)::JM,61
+153 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest16621.doSomething(java.lang.String)::CE,154:CD,157:CD,161:CD,167:CD,171:CD,177:CD,189:CD,194:CD,195
+154 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest16621.doSomething(java.lang.String)::JM,61
+157 :: NORM :: declaration :: Ljava/util/HashMap :: v4 = new java.util.HashMap::JM,194
+161 :: CALL :: call :: Ljava/lang/Object :: v9 = v4.put(#(keyA-69814), #(a_Value))::
+167 :: CALL :: call :: Ljava/lang/String :: v12 = p1 $param .toString()::JM,167:JM,157
+171 :: CALL :: call :: Ljava/lang/Object :: v14 = v4.put(#(keyB-69814), v12)::
+177 :: CALL :: call :: Ljava/lang/Object :: v18 = v4.put(#(keyC), #(another_Value))::
+189 :: CALL :: call :: Ljava/lang/Object :: v23 = v4.get(#(keyA-69814))::JM,194
+194 :: EXPR :: assign :: Ljava/lang/Object :: v24 = CHECKCAST v23::DD,195
+195 :: NORM :: compound :: Ljava/lang/String :: return v24::DD,154

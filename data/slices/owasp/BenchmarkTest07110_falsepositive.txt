@@ -1,0 +1,24 @@
+[83, 77]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest07110.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,17:CD,21:CD,51:CD,55:CD,60:CD,65:CD,70:CD,74:CD,77:CD,102
+12 :: CALL :: call :: Ljava/lang/String :: v9 = v5.getTheValue(#(foo))::JM,35:JM,21:JM,102:CL,203
+17 :: CALL :: call :: I :: v11 = v9.length()::JM,35:JM,21:JM,102
+21 :: PRED :: IF :: Z :: if (v11 <= #(1)) goto 69::CF,102:CF,22:CD,27:CD,31:CD,35:CD,36:CD,40:CD,47
+22 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v13 = new java.lang.StringBuilder::JM,102
+27 :: CALL :: call :: I :: v16 = v9.length()::JM,35:JM,21:JM,102
+31 :: CALL :: call :: I :: v19 = #(Z).length()::JM,35
+35 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v16 - v19::JM,102:JM,35:JM,21
+36 :: CALL :: call :: I :: v22 = v9.length()::JM,35:JM,21:JM,102
+40 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v13.replace(v20, v22, #(Z))::JM,102
+47 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::JM,102
+51 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v28 = new java.lang.StringBuilder::JM,77
+55 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v28.append(#(SELECT * from USERS w...))::JM,77
+60 :: CALL :: call :: Ljava/lang/StringBuilder :: v34 = v32.append(v27)::JM,77
+65 :: CALL :: call :: Ljava/lang/StringBuilder :: v37 = v34.append(#('))::JM,77
+70 :: CALL :: call :: Ljava/lang/String :: v39 = v37.toString()::JM,77
+74 :: CALL :: call :: Ljava/sql/Connection :: v41 = getSqlConnection()::JM,77
+77 :: CALL :: call :: Ljava/sql/PreparedStatement :: v45 = v41.prepareStatement(v39, #(1003), #(1007))::JM,77
+102 :: EXPR :: assign :: null :: PHI v27 = v9, v26::CF,51:JM,77
+203 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheValue(java.lang.String)::CF,204:CD,208
+204 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheValue(java.lang.String)::JM,35:JM,21:JM,102
+208 :: NORM :: compound :: Ljava/lang/String :: return #(bar)::CF,204

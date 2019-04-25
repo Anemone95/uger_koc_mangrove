@@ -1,0 +1,77 @@
+[257, 247, 249]
+1 :: ENTR :: entry :: null :: org.hsqldb.sample.TriggerSample.setup()::CD,4:CD,7:CD,31:CD,36:CD,41:CD,46:CD,51:CD,56:CD,61:CD,66:CD,71
+4 :: CALL :: call :: Ljava/sql/Connection :: v3 = getConnection()::JM,257:JM,278:JM,7:CL,205
+7 :: CALL :: call :: Ljava/sql/Statement :: v5 = v3.createStatement()::JM,257:JM,278:JM,7
+31 :: CALL :: call :: V :: createTrigger(v5, #(tibr_trig_test), #(6))::JM,257:JM,278:CL,241
+36 :: CALL :: call :: V :: createTrigger(v5, #(tia_trig_test), #(0))::JM,257:JM,278:CL,241
+41 :: CALL :: call :: V :: createTrigger(v5, #(tiar_trig_test), #(3))::JM,257:JM,278:CL,241
+46 :: CALL :: call :: V :: createTrigger(v5, #(tubr_trig_test), #(8))::JM,257:JM,278:CL,241
+51 :: CALL :: call :: V :: createTrigger(v5, #(tua_trig_test), #(2))::JM,257:JM,278:CL,241
+56 :: CALL :: call :: V :: createTrigger(v5, #(tuar_trig_test), #(5))::JM,257:JM,278:CL,241
+61 :: CALL :: call :: V :: createTrigger(v5, #(tdbr_trig_test), #(7))::JM,257:JM,278:CL,241
+66 :: CALL :: call :: V :: createTrigger(v5, #(tda_trig_test), #(1))::JM,257:JM,278:CL,241
+71 :: CALL :: call :: V :: createTrigger(v5, #(tdar_trig_test), #(4))::JM,257:JM,278:CL,241
+181 :: ENTR :: entry :: null :: org.hsqldb.sample.TriggerSample.<clinit>()::CD,184:CD,185:CD,193:CD,194:CD,198
+184 :: NORM :: declaration :: Ljava/io/PrintWriter :: v2 = new java.io.PrintWriter::
+185 :: EXPR :: reference :: Ljava/io/PrintStream :: v3 = java.lang.System.out::
+193 :: EXPR :: assign :: Ljava/lang/Class :: v5 = metadata <Application,Lorg/hsqldb/sample/TriggerSample>-><Primordial,Ljava/lang/Class>::JM,194:JM,198
+194 :: CALL :: call :: Ljava/lang/String :: v7 = v5.getName()::JM,194:JM,198
+198 :: EXPR :: modify :: Ljava/lang/String :: org.hsqldb.sample.TriggerSample.impl = v7::
+205 :: ENTR :: entry :: null :: org.hsqldb.sample.TriggerSample.getConnection()::CF,206:CD,216:CD,222
+206 :: EXIT :: exit :: Ljava/sql/Connection :: org.hsqldb.sample.TriggerSample.getConnection()::JM,257:JM,278:JM,7
+216 :: CALL :: call :: Ljava/sql/Connection :: v11 = getConnection(#(jdbc:hsqldb:mem:trigg...), #(SA), #())::JM,216:JM,222
+222 :: NORM :: compound :: Ljava/sql/Connection :: return v11::CF,206
+241 :: ENTR :: entry :: null :: org.hsqldb.sample.TriggerSample.createTrigger(java.sql.Statement,java.lang.String,int)::CD,247:CD,249:CD,257:JM,278
+247 :: EXPR :: reference :: Ljava/lang/String :: v7 = org.hsqldb.sample.TriggerSample.impl::JM,257:JM,278
+249 :: CALL :: call :: Ljava/lang/String :: v9 = getTriggerDDL(p2 $trn , p3 $typ , #(trig_test), #(0), v7)::JM,257:JM,278:CL,270
+257 :: CALL :: call :: Z :: v11 = p1 $stmt .execute(v9)::JM,257:JM,278
+270 :: ENTR :: entry :: null :: org.hsqldb.sample.TriggerSample.getTriggerDDL(java.lang.String,int,java.lang.String,int,java.lang.String)::CE,271:CD,278:CD,282:CD,287:CD,292:CD,297:CD,301:CD,306:CD,311:CD,315:CD,320:CD,325:CD,330:CD,335:CD,339:CD,344:CD,349:CD,353:CD,358:CD,363:CD,368:CD,373:CD,377:JM,257
+271 :: EXIT :: exit :: Ljava/lang/String :: org.hsqldb.sample.TriggerSample.getTriggerDDL(java.lang.String,int,java.lang.String,int,java.lang.String)::JM,257
+278 :: NORM :: declaration :: Ljava/lang/StringBuffer :: v7 = new java.lang.StringBuffer::JM,377
+282 :: CALL :: call :: Ljava/lang/StringBuffer :: v11 = v7.append(#(CREATE TRIGGER ))::
+287 :: CALL :: call :: Ljava/lang/StringBuffer :: v13 = v7.append(p1 $trn )::JM,278
+292 :: CALL :: call :: Ljava/lang/StringBuffer :: v16 = v7.append(#(32))::
+297 :: CALL :: call :: Ljava/lang/String :: v18 = getWhenSpec(p2 $typ )::CL,426
+301 :: CALL :: call :: Ljava/lang/StringBuffer :: v20 = v7.append(v18)::
+306 :: CALL :: call :: Ljava/lang/StringBuffer :: v22 = v7.append(#(32))::
+311 :: CALL :: call :: Ljava/lang/String :: v24 = getOperationSpec(p2 $typ )::CL,438
+315 :: CALL :: call :: Ljava/lang/StringBuffer :: v26 = v7.append(v24)::
+320 :: CALL :: call :: Ljava/lang/StringBuffer :: v29 = v7.append(#( ON ))::
+325 :: CALL :: call :: Ljava/lang/StringBuffer :: v31 = v7.append(p3 $tab )::JM,278
+330 :: CALL :: call :: Ljava/lang/StringBuffer :: v33 = v7.append(#(32))::
+335 :: CALL :: call :: Ljava/lang/String :: v35 = getForEachSpec(p2 $typ )::CL,452
+339 :: CALL :: call :: Ljava/lang/StringBuffer :: v37 = v7.append(v35)::
+344 :: CALL :: call :: Ljava/lang/StringBuffer :: v39 = v7.append(#(32))::
+349 :: CALL :: call :: Ljava/lang/String :: v41 = getQueueSpec(p4 $qs )::CL,462
+353 :: CALL :: call :: Ljava/lang/StringBuffer :: v43 = v7.append(v41)::
+358 :: CALL :: call :: Ljava/lang/StringBuffer :: v46 = v7.append(#( CALL '))::
+363 :: CALL :: call :: Ljava/lang/StringBuffer :: v48 = v7.append(p5 $impl )::
+368 :: CALL :: call :: Ljava/lang/StringBuffer :: v51 = v7.append(#('))::
+373 :: CALL :: call :: Ljava/lang/String :: v53 = v7.toString()::JM,377
+377 :: NORM :: compound :: Ljava/lang/String :: return v53::DD,271
+426 :: ENTR :: entry :: null :: org.hsqldb.sample.TriggerSample.getWhenSpec(int)::CF,427:CD,430
+427 :: EXIT :: exit :: Ljava/lang/String :: org.hsqldb.sample.TriggerSample.getWhenSpec(int)::
+430 :: PRED :: IF :: null :: switch p1 $type ::CD,431:CD,432:CD,433
+431 :: NORM :: compound :: Ljava/lang/String :: return #(BEFORE)::CF,427
+432 :: NORM :: compound :: Ljava/lang/String :: return #(AFTER)::CF,427
+433 :: NORM :: compound :: Ljava/lang/String :: return #()::CF,427
+438 :: ENTR :: entry :: null :: org.hsqldb.sample.TriggerSample.getOperationSpec(int)::CF,439:CD,442
+439 :: EXIT :: exit :: Ljava/lang/String :: org.hsqldb.sample.TriggerSample.getOperationSpec(int)::
+442 :: PRED :: IF :: null :: switch p1 $type ::CD,443:CD,444:CD,445:CD,446
+443 :: NORM :: compound :: Ljava/lang/String :: return #(INSERT)::CF,439
+444 :: NORM :: compound :: Ljava/lang/String :: return #(UPDATE)::CF,439
+445 :: NORM :: compound :: Ljava/lang/String :: return #(DELETE)::CF,439
+446 :: NORM :: compound :: Ljava/lang/String :: return #()::CF,439
+452 :: ENTR :: entry :: null :: org.hsqldb.sample.TriggerSample.getForEachSpec(int)::CF,453:CD,456
+453 :: EXIT :: exit :: Ljava/lang/String :: org.hsqldb.sample.TriggerSample.getForEachSpec(int)::
+456 :: PRED :: IF :: null :: switch p1 $type ::CD,457:CD,458
+457 :: NORM :: compound :: Ljava/lang/String :: return #(FOR EACH ROW)::CF,453
+458 :: NORM :: compound :: Ljava/lang/String :: return #(FOR EACH STATEMENT)::CF,453
+462 :: ENTR :: entry :: null :: org.hsqldb.sample.TriggerSample.getQueueSpec(int)::CE,463:CD,466:CD,482:CD,483
+463 :: EXIT :: exit :: Ljava/lang/String :: org.hsqldb.sample.TriggerSample.getQueueSpec(int)::
+466 :: PRED :: IF :: Z :: if (p1 $qs  >= #(0)) goto 9::CF,468:CD,473:CD,478:CD,483
+468 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v4 = new java.lang.StringBuilder::JM,483
+473 :: CALL :: call :: Ljava/lang/StringBuilder :: v8 = v4.append(p1 $qs )::JM,483:JM,466
+478 :: CALL :: call :: Ljava/lang/String :: v10 = v8.toString()::JM,483
+482 :: NORM :: compound :: Ljava/lang/String :: return v12::DD,463
+483 :: EXPR :: assign :: null :: PHI v12 = #(), v10::CF,482

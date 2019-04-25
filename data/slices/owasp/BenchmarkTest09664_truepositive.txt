@@ -1,0 +1,23 @@
+[64, 65, 66, 67, 68, 73, 59, 60, 61, 62, 63]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest09664.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,28:CD,33:CD,37:CD,42:CD,47:CD,52:CD,56:CD,59:CD,68
+28 :: CALL :: call :: Ljava/lang/String :: v20 = v16.doSomething(v15)::JM,68:CL,191
+33 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v21 = new java.lang.StringBuilder::JM,68
+37 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v21.append(#(SELECT * from USERS w...))::JM,68
+42 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v25.append(v20)::JM,68
+47 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v27.append(#('))::JM,68
+52 :: CALL :: call :: Ljava/lang/String :: v32 = v30.toString()::JM,68
+56 :: CALL :: call :: Ljava/sql/Connection :: v34 = getSqlConnection()::JM,68
+59 :: NORM :: declaration :: [Ljava/lang/String :: v36 = new java.lang.String[]::JM,68
+60 :: EXPR :: modify :: Ljava/lang/Object :: v36[#(0)] = #(Column1)::
+64 :: EXPR :: modify :: Ljava/lang/Object :: v36[#(1)] = #(Column2)::
+68 :: CALL :: call :: Ljava/sql/PreparedStatement :: v41 = v34.prepareStatement(v32, v36)::JM,68
+191 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest09664.Test.doSomething(java.lang.String)::CE,192:CD,196:CD,200:CD,212:CD,213:JM,205
+192 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest09664.Test.doSomething(java.lang.String)::JM,68
+196 :: CALL :: call :: I :: v5 = p1 $param .length()::JM,213:JM,200:JM,205
+200 :: PRED :: IF :: Z :: if (v5 <= #(1)) goto 23::CF,213:CD,201:CD,205:CD,206:JM,200
+201 :: CALL :: call :: I :: v9 = p1 $param .length()::JM,213:JM,200:JM,205
+205 :: EXPR :: assign :: Ljava/lang/Object :: v10 = v9 - #(1)::JM,213:JM,200:JM,205
+206 :: CALL :: call :: Ljava/lang/String :: v12 = p1 $param .substring(#(0), v10)::JM,213:JM,200:JM,205
+212 :: NORM :: compound :: Ljava/lang/String :: return v13::DD,192
+213 :: EXPR :: assign :: null :: PHI v13 = p1 $param , v12::CF,212

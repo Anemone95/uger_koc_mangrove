@@ -1,0 +1,47 @@
+[35801]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.main(java.lang.String[])::CD,51
+51 :: CALL :: call :: Ljava/util/SortedSet :: v28 = getRepresentatives(v25, #(40))::CL,33108
+48235 :: NORM :: compound :: Ljava/net/HttpURLConnection :: return v7::DD,48119
+42268 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,boolean,int)::CE,42269:CD,42274:CD,42289:CD,42293:CD,42297:CD,42309:CD,42310
+42269 :: EXIT :: exit :: Ljava/io/InputStream :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,boolean,int)::JM,35244
+42274 :: CALL :: call :: Ljava/net/HttpURLConnection :: v7 = openHttpURLConnection(p1 $url , p3 $timeout )::JM,42289:JM,42293:JM,42310:JM,42297:JM,42298:JM,42303:CL,48118
+42289 :: CALL :: call :: Ljava/lang/String :: v15 = v7.getContentEncoding()::JM,42289:JM,42293:JM,42310:JM,42297:JM,42298:JM,42303
+42293 :: CALL :: call :: Ljava/io/InputStream :: v17 = v7.getInputStream()::JM,42289:JM,42293:JM,42310:JM,42297:JM,42298:JM,42303
+42297 :: PRED :: IF :: Z :: if (v15 == #(null)) goto 67::CF,42310:CD,42298:CD,42303
+42298 :: CALL :: call :: Z :: v19 = v15.contains(#(gzip))::JM,42310:JM,42298:JM,42303
+42303 :: PRED :: IF :: Z :: if (v19 == #(0)) goto 67::CF,42310:CF,42304
+42304 :: NORM :: declaration :: Ljava/util/zip/GZIPInputStream :: v20 = new java.util.zip.GZIPInputStream::DD,42310
+42309 :: NORM :: compound :: Ljava/io/InputStream :: return v22::DD,42269
+42310 :: EXPR :: assign :: null :: PHI v22 = v17, v17, v20::CF,42309
+33108 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.getRepresentatives(java.lang.String,int)::CD,33178:CD,33183:CD,33188:CD,33204
+33178 :: CALL :: call :: Ljava/io/InputStream :: v39 = getInputStream(v36, v19)::JM,33183:CL,35233
+33183 :: PRED :: IF :: Z :: if (v39 == #(null)) goto 122::CF,33204:CD,33184
+33184 :: CALL :: call :: Ljava/lang/String :: v46 = convertStreamToString(v39)::JM,33204:CL,35248
+35233 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,int)::CE,35234:CD,35238:CD,35244
+35234 :: EXIT :: exit :: Ljava/io/InputStream :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.getInputStream(java.net.URL,int)::JM,33183
+33188 :: PRED :: IF :: Z :: if (v47 == #(null)) goto 150::CD,33189
+33189 :: CALL :: call :: Ljava/util/SortedSet :: v49 = fromXML(v47)::CL,35773
+35238 :: CALL :: call :: Ljava/io/InputStream :: v6 = getInputStream(p1 $url , #(1), p2 $timeout )::JM,35244:CL,42268
+35244 :: NORM :: compound :: Ljava/io/InputStream :: return v6::DD,35234
+35248 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.client.JFatCatClient.convertStreamToString(java.io.InputStream)::CE,35249:CD,35252:CD,35253:CD,35262:CD,35279:CD,35283:CD,35327:CD,35331
+35249 :: EXIT :: exit :: Ljava/lang/String :: org.biojava.nbio.structure.align.client.JFatCatClient.convertStreamToString(java.io.InputStream)::JM,33204
+33204 :: EXPR :: assign :: null :: PHI v47 = #(null), v46::DD,33188
+35252 :: NORM :: declaration :: Ljava/io/BufferedReader :: v3 = new java.io.BufferedReader::JM,35283:CF,35253
+35253 :: NORM :: declaration :: Ljava/io/InputStreamReader :: v4 = new java.io.InputStreamReader::
+35262 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v7 = new java.lang.StringBuilder::JM,35331
+35267 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v7.append(v11)::JM,35283
+35272 :: EXPR :: reference :: Ljava/lang/String :: v14 = org.biojava.nbio.structure.align.client.JFatCatClient.newline::
+35274 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v13.append(v14)::
+35279 :: CALL :: call :: Ljava/lang/String :: v11 = v3.readLine()::JM,35283
+35283 :: PRED :: IF :: Z :: if (v11 != #(null)) goto 31::CD,35267:CD,35272:CD,35274:CD,35279
+35327 :: CALL :: call :: Ljava/lang/String :: v33 = v7.toString()::JM,35331
+35331 :: NORM :: compound :: Ljava/lang/String :: return v33::DD,35249
+35773 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.xml.RepresentativeXMLConverter.fromXML(java.lang.String)::CD,35781:CD,35784:CD,35788:CD,35801
+35781 :: CALL :: call :: Ljavax/xml/parsers/DocumentBuilderFactory :: v6 = newInstance()::JM,35784:JM,35801
+35784 :: CALL :: call :: Ljavax/xml/parsers/DocumentBuilder :: v8 = v6.newDocumentBuilder()::JM,35784:JM,35801
+35788 :: NORM :: declaration :: Lorg/xml/sax/InputSource :: v9 = new org.xml.sax.InputSource::JM,35801
+35801 :: CALL :: call :: Lorg/w3c/dom/Document :: v15 = v8.parse(v9)::JM,35801
+48118 :: ENTR :: entry :: null :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::CE,48119:CD,48123:CD,48127:CD,48235
+48119 :: EXIT :: exit :: Ljava/net/HttpURLConnection :: org.biojava.nbio.structure.align.util.HTTPConnectionTools.openHttpURLConnection(java.net.URL,int)::JM,42289:JM,42293:JM,42310:JM,42297:JM,42298:JM,42303
+48123 :: CALL :: call :: Ljava/net/URLConnection :: v6 = p1 $url .openConnection()::JM,48127
+48127 :: EXPR :: assign :: Ljava/lang/Object :: v7 = CHECKCAST v6::DD,48235

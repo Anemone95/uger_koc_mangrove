@@ -1,0 +1,319 @@
+[3584, 3583]
+1 :: ENTR :: entry :: null :: org.apache.giraph.graph.GraphTaskManager.startZooKeeperManager()::CD,5:JM,3425:JM,3283:JM,3475:JM,3364:JM,4933:JM,3254:JM,4920:JM,3369:JM,4921:JM,4938:JM,3260:JM,4925:CD,30:CD,36:CD,40
+5 :: NORM :: declaration :: Lorg/apache/giraph/zk/ZooKeeperManager :: v3 = new org.apache.giraph.zk.ZooKeeperManager::DD,17
+17 :: EXPR :: modify :: Lorg/apache/giraph/zk/ZooKeeperManager :: p0 $this .zkManager = v3::
+30 :: CALL :: call :: V :: v10.setup()::CL,3534
+36 :: CALL :: call :: Z :: v14 = v12.computationDone()::JM,40:CL,3547
+40 :: PRED :: IF :: Z :: if (v14 == #(0)) goto 54::CD,48
+45 :: EXPR :: reference :: Lorg/apache/giraph/zk/ZooKeeperManager :: v16 = p0 $this .zkManager::
+48 :: CALL :: call :: V :: v16.onlineZooKeeperServer()::CL,3572
+291 :: ENTR :: entry :: null :: org.apache.giraph.graph.GraphTaskManager.<clinit>()::CD,296
+296 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v7 = create(#(giraph.checkerIfWorke...), v3, v4, #(Class which checks if...))::CL,4454
+353 :: ENTR :: entry :: null :: org.apache.giraph.time.SystemTime.<clinit>()::
+4454 :: ENTR :: entry :: null :: org.apache.giraph.conf.ClassConfOption.create(java.lang.String,java.lang.Class,java.lang.Class,java.lang.String)::
+365 :: ENTR :: entry :: null :: org.apache.giraph.conf.GiraphConstants.<clinit>()::CD,369:CD,379:CD,407:CD,417:CD,428:CD,438:CD,449:CD,460:CD,472:JM,4546:JM,4579:JM,4551:JM,4621:JM,4622:JM,4593:JM,4594:JM,4565:JM,4566:JM,4630:JM,4537:JM,4538:JM,4602:JM,4635:JM,4574:JM,4607:CD,492:CD,503:CD,514:CD,525:CD,536:CD,547:CD,558:CD,569:CD,580:CD,590:CD,600:CD,610:CD,620:CD,631:CD,642:CD,654:CD,674:CD,685:CD,696:CD,715:CD,725:CD,735:CD,746:CD,757:CD,768:CD,778:CD,797:CD,888:CD,898:CD,908:CD,918:CD,929:CD,940:CD,951:CD,1735:CD,1746:CD,1896:CD,1916:CD,1927:CD,1962:CD,2018:CD,2038
+369 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v7 = create(#(giraph.mappingStoreClass), #(null), v4, #(MappingStore Class))::CL,4454
+379 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v12 = create(#(giraph.mappingStoreOp...), #(null), v9, #(MappingStoreOps class))::CL,4454
+407 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v26 = create(#(giraph.edgeTranslatio...), #(null), v23, #(Class used to conduct...))::CL,4454
+4505 :: ENTR :: entry :: null :: org.apache.giraph.conf.PerGraphTypeEnumConfOption.create(java.lang.String,java.lang.Class,java.lang.Enum,java.lang.String)::JM,5986:JM,6018:JM,5990:JM,6056:JM,6057:JM,6028:JM,6029:JM,6000:JM,6001:JM,6065:JM,5972:JM,5973:JM,6037:JM,6070:JM,6009:JM,6042:JM,6074:JM,5981:JM,6014:JM,6046
+417 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v31 = create(#(giraph.computationClass), #(null), v28, #(Computation class - r...))::CL,4454
+428 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v37 = create(#(giraph.computation.fa...), v33, v34, #(Computation factory c...))::CL,4454
+438 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v42 = create(#(giraph.typesHolder), #(null), v39, #(TypesHolder, used if ...))::CL,4454
+4537 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v8 = new java.lang.StringBuilder::
+4538 :: CALL :: call :: Ljava/lang/String :: v10 = valueOf(p1 $keyPrefix )::
+449 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v48 = create(#(giraph.edgeStoreFacto...), v44, v45, #(Edge Store Factory cl...))::CL,4454
+4546 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v8.append(#(.vertex.id))::
+4551 :: CALL :: call :: Ljava/lang/String :: v16 = v14.toString()::
+460 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v54 = create(#(giraph.messageStoreFa...), v50, v51, #(Message Store Factory...))::CL,4454
+4565 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v19 = new java.lang.StringBuilder::
+4566 :: CALL :: call :: Ljava/lang/String :: v21 = valueOf(p1 $keyPrefix )::
+472 :: CALL :: call :: Lorg/apache/giraph/conf/PerGraphTypeEnumConfOption :: v60 = create(#(giraph.types.language), v56, v57, #(Language user graph t...))::CL,4505
+4574 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v19.append(#(.vertex.value))::
+4579 :: CALL :: call :: Ljava/lang/String :: v27 = v25.toString()::
+492 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v71 = create(#(giraph.vertexIdFactor...), v67, v68, #(Vertex ID factory cla...))::CL,4454
+4593 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v30 = new java.lang.StringBuilder::
+4594 :: CALL :: call :: Ljava/lang/String :: v32 = valueOf(p1 $keyPrefix )::
+503 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v77 = create(#(giraph.vertexValueFac...), v73, v74, #(Vertex value factory ...))::CL,4454
+4602 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v30.append(#(.edge.value))::
+4607 :: CALL :: call :: Ljava/lang/String :: v38 = v36.toString()::
+514 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v83 = create(#(giraph.edgeValueFacto...), v79, v80, #(Edge value factory cl...))::CL,4454
+525 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v89 = create(#(giraph.outgoingMessag...), v85, v86, #(Outgoing message valu...))::CL,4454
+4621 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v41 = new java.lang.StringBuilder::
+4622 :: CALL :: call :: Ljava/lang/String :: v43 = valueOf(p1 $keyPrefix )::
+4630 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v41.append(#(.outgoing.message))::
+536 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v95 = create(#(giraph.outEdgesClass), v91, v92, #(Vertex edges class - ...))::CL,4454
+4635 :: CALL :: call :: Ljava/lang/String :: v49 = v47.toString()::
+547 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v101 = create(#(giraph.inputOutEdgesClass), v97, v98, #(Vertex edges class to...))::CL,4454
+558 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v107 = create(#(giraph.outEdgesFactor...), v103, v104, #(OutEdges factory clas...))::CL,4454
+569 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v113 = create(#(giraph.inputOutEdgesF...), v109, v110, #(OutEdges for input fa...))::CL,4454
+580 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v119 = create(#(giraph.masterComputeClass), v115, v116, #(Class for Master - op...))::CL,4454
+4678 :: ENTR :: entry :: null :: org.apache.giraph.conf.EnumConfOption.create(java.lang.String,java.lang.Class,java.lang.Enum,java.lang.String)::
+590 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v124 = create(#(giraph.master.observers), #(null), v121, #(Classes for Master Ob...))::CL,4454
+600 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v129 = create(#(giraph.worker.observers), #(null), v126, #(Classes for Worker Ob...))::CL,4454
+610 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v134 = create(#(giraph.mapper.observers), #(null), v131, #(Classes for Mapper Ob...))::CL,4454
+620 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v139 = create(#(giraph.messageCombine...), #(null), v136, #(Message combiner clas...))::CL,4454
+631 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v145 = create(#(giraph.vertexResolver...), v141, v142, #(Vertex resolver class...))::CL,4454
+642 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v151 = create(#(giraph.vertexValueCom...), v147, v148, #(Vertex value combiner...))::CL,4454
+654 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v157 = create(#(giraph.computation.la...), v153, v154, #(Which language comput...))::CL,4678
+674 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v168 = create(#(giraph.graphPartition...), v164, v165, #(Graph partitioner fac...))::CL,4454
+685 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v174 = create(#(giraph.jobObserverClass), v170, v171, #(Observer class to wat...))::CL,4454
+696 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v180 = create(#(giraph.jobRetryChecke...), v176, v177, #(Class which decides w...))::CL,4454
+715 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v190 = create(#(giraph.vertexInputFor...), #(null), v187, #(VertexInputFormat cla...))::CL,4454
+725 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v195 = create(#(giraph.edgeInputForma...), #(null), v192, #(EdgeInputFormat class))::CL,4454
+735 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v200 = create(#(giraph.mappingInputFo...), #(null), v197, #(MappingInputFormat class))::CL,4454
+746 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v206 = create(#(giraph.edgeInputFilte...), v202, v203, #(EdgeInputFilter class))::CL,4454
+4848 :: ENTR :: entry :: null :: org.apache.giraph.zk.ZooKeeperManager.getFinalZooKeeperPath()::CD,4852:CD,4855:CD,4859:CD,4867:CD,4875:CD,4880
+4852 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v3 = new java.lang.StringBuilder::
+757 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v212 = create(#(giraph.vertexInputFil...), v208, v209, #(VertexInputFilter class))::CL,4454
+4855 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getDefaultValue()::CL,4984
+4859 :: CALL :: call :: Ljava/lang/String :: v8 = valueOf(v6)::
+768 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v218 = create(#(giraph.vertexClass), v214, v215, #(Vertex class))::CL,4454
+4867 :: CALL :: call :: Ljava/lang/StringBuilder :: v12 = v3.append(#(/))::
+4872 :: EXPR :: reference :: Ljava/lang/String :: v13 = p0 $this .jobId::
+778 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v223 = create(#(giraph.vertexOutputFo...), #(null), v220, #(VertexOutputFormat class))::CL,4454
+4875 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v12.append(v13)::
+4880 :: CALL :: call :: Ljava/lang/String :: v17 = v15.toString()::
+797 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v233 = create(#(giraph.edgeOutputForm...), #(null), v230, #(EdgeOutputFormat class))::CL,4454
+4920 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v5 = new java.lang.StringBuilder::
+4921 :: CALL :: call :: Ljava/lang/String :: v7 = toString(p1 $workerId )::
+4925 :: CALL :: call :: Ljava/lang/String :: v9 = valueOf(v7)::
+4933 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v5.append(#(.COMPUTATION_DONE))::
+4938 :: CALL :: call :: Ljava/lang/String :: v15 = v13.toString()::
+888 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v276 = create(#(giraph.vertexIdClass), #(null), v273, #(Vertex index class))::CL,4454
+4984 :: ENTR :: entry :: null :: org.apache.giraph.conf.StrConfOption.getDefaultValue()::CE,4985:CD,4991
+4985 :: EXIT :: exit :: Ljava/lang/String :: org.apache.giraph.conf.StrConfOption.getDefaultValue()::JM,3475
+4988 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .defaultValue::DD,4991
+4991 :: NORM :: compound :: Ljava/lang/String :: return v3::CF,4985
+898 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v281 = create(#(giraph.vertexValueClass), #(null), v278, #(Vertex value class))::CL,4454
+908 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v286 = create(#(giraph.edgeValueClass), #(null), v283, #(Edge value class))::CL,4454
+5012 :: ENTR :: entry :: null :: org.apache.giraph.zk.ZooKeeperManager.createCandidateStamp()::CD,5029:CD,5037:CD,5042:CD,5053:CD,5061:CD,5066:CD,5087:CD,5095:CD,5100:CD,5111:CD,5119:CD,5124:CD,5148:CD,5149:CD,5157:CD,5162:CD,5167:CD,5176:CD,5177:CD,5185:CD,5190:CD,5195:CD,5200:CD,5207:CD,5211:CD,5216:CD,5226:CD,5230:CD,5234:CD,5242:CD,5250:CD,5255:CD,5264:CD,5266:CD,5270:CD,5302:CD,5307:CD,5312:CD,5324
+918 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v291 = create(#(giraph.outgoingMessag...), #(null), v288, #(Outgoing message valu...))::CL,4454
+929 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v297 = create(#(giraph.workerContextClass), v293, v294, #(Worker contextclass))::CL,4454
+5029 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v8 = new java.lang.StringBuilder::
+5034 :: EXPR :: reference :: Lorg/apache/hadoop/fs/Path :: v11 = p0 $this .baseDirectory::
+940 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v303 = create(#(giraph.aggregatorWrit...), v299, v300, #(AggregatorWriter clas...))::CL,4454
+5037 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v8.append(v11)::
+5042 :: CALL :: call :: Ljava/lang/String :: v15 = v13.toString()::
+951 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v309 = create(#(giraph.partitionClass), v305, v306, #(Partition class - opt...))::CL,4454
+5053 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v19 = new java.lang.StringBuilder::
+5058 :: EXPR :: reference :: Lorg/apache/hadoop/fs/Path :: v22 = p0 $this .baseDirectory::
+5061 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v19.append(v22)::
+5066 :: CALL :: call :: Ljava/lang/String :: v26 = v24.toString()::
+5087 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v34 = new java.lang.StringBuilder::
+5092 :: EXPR :: reference :: Lorg/apache/hadoop/fs/Path :: v36 = p0 $this .serverDirectory::
+5095 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v34.append(v36)::
+5100 :: CALL :: call :: Ljava/lang/String :: v40 = v38.toString()::
+5111 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v44 = new java.lang.StringBuilder::
+5116 :: EXPR :: reference :: Lorg/apache/hadoop/fs/Path :: v46 = p0 $this .serverDirectory::
+5119 :: CALL :: call :: Ljava/lang/StringBuilder :: v48 = v44.append(v46)::
+5124 :: CALL :: call :: Ljava/lang/String :: v50 = v48.toString()::
+5148 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v102 = new java.lang.IllegalArgumentException::
+5149 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v103 = new java.lang.StringBuilder::
+5154 :: EXPR :: reference :: Lorg/apache/hadoop/fs/Path :: v106 = p0 $this .baseDirectory::
+5157 :: CALL :: call :: Ljava/lang/StringBuilder :: v108 = v103.append(v106)::
+5162 :: CALL :: call :: Ljava/lang/StringBuilder :: v111 = v108.append(#( is not a directory, ...))::
+5167 :: CALL :: call :: Ljava/lang/String :: v113 = v111.toString()::
+5176 :: NORM :: declaration :: Ljava/lang/IllegalArgumentException :: v116 = new java.lang.IllegalArgumentException::
+5177 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v117 = new java.lang.StringBuilder::
+5182 :: EXPR :: reference :: Lorg/apache/hadoop/fs/Path :: v120 = p0 $this .baseDirectory::
+5185 :: CALL :: call :: Ljava/lang/StringBuilder :: v122 = v117.append(v120)::
+5190 :: CALL :: call :: Ljava/lang/StringBuilder :: v125 = v122.append(#(.  If there is an ))::
+5195 :: CALL :: call :: Ljava/lang/StringBuilder :: v128 = v125.append(#(issue with this direc...))::
+5200 :: CALL :: call :: Ljava/lang/StringBuilder :: v131 = v128.append(#(base directory with t...))::
+5207 :: CALL :: call :: Ljava/lang/String :: v134 = v132.getKey()::CL,6141
+5211 :: CALL :: call :: Ljava/lang/StringBuilder :: v136 = v131.append(v134)::
+5216 :: CALL :: call :: Ljava/lang/String :: v138 = v136.toString()::
+5226 :: NORM :: declaration :: Lorg/apache/hadoop/fs/Path :: v60 = new org.apache.hadoop.fs.Path::
+5230 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v62 = new java.lang.StringBuilder::
+5231 :: EXPR :: reference :: Ljava/lang/String :: v63 = p0 $this .myHostname::
+5234 :: CALL :: call :: Ljava/lang/String :: v65 = valueOf(v63)::
+5242 :: CALL :: call :: Ljava/lang/StringBuilder :: v69 = v62.append(#( ))::
+5247 :: EXPR :: reference :: I :: v70 = p0 $this .taskPartition::
+5250 :: CALL :: call :: Ljava/lang/StringBuilder :: v72 = v69.append(v70)::
+5255 :: CALL :: call :: Ljava/lang/String :: v74 = v72.toString()::
+5264 :: EXPR :: reference :: Lorg/apache/log4j/Logger :: v76 = org.apache.giraph.zk.ZooKeeperManager.LOG::JM,5266:JM,5270
+5266 :: CALL :: call :: Z :: v78 = v76.isInfoEnabled()::JM,5266:JM,5270
+5270 :: PRED :: IF :: Z :: if (v78 == #(0)) goto 316::CD,5273:CD,5278:CD,5283
+5273 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v80 = new java.lang.StringBuilder::
+5278 :: CALL :: call :: Ljava/lang/StringBuilder :: v84 = v80.append(v60)::
+5283 :: CALL :: call :: Ljava/lang/String :: v86 = v84.toString()::
+5302 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v93 = new java.lang.StringBuilder::
+5307 :: CALL :: call :: Ljava/lang/StringBuilder :: v97 = v93.append(v60)::
+5312 :: CALL :: call :: Ljava/lang/String :: v99 = v97.toString()::
+5324 :: EXPR :: assign :: Ljava/lang/Exception :: v115 = catch <exc>::
+5357 :: ENTR :: entry :: null :: org.apache.giraph.zk.ZooKeeperManager.getZooKeeperServerList()::CD,5364:CD,5373:CD,5377:CD,5379:CD,5383:CD,5435:CD,5447:CD,5452:CD,5456:CD,5461:CD,5470:CD,5474:CD,5479:CD,5484:CD,5486:CD,5490:CD,5541:CD,5548:CD,5552
+5361 :: EXPR :: reference :: I :: v3 = p0 $this .taskPartition::DD,5364
+5364 :: PRED :: IF :: Z :: if (v3 != #(0)) goto 21::CD,5365:CD,5369
+5365 :: CALL :: call :: Ljava/lang/String :: v6 = p0 $this .getServerListFile()::JM,5369:CL,6150
+5369 :: PRED :: IF :: Z :: if (v6 != #(null)) goto 21::CD,5370
+5370 :: CALL :: call :: V :: p0 $this .createZooKeeperServerList()::CL,6222
+5373 :: CALL :: call :: Ljava/lang/String :: v10 = p0 $this .getServerListFile()::JM,5474:JM,5479:JM,5435:CL,6150
+5377 :: EXPR :: reference :: Lorg/apache/log4j/Logger :: v11 = org.apache.giraph.zk.ZooKeeperManager.LOG::JM,5379:JM,5383
+5379 :: CALL :: call :: Z :: v13 = v11.isInfoEnabled()::JM,5379:JM,5383
+5383 :: PRED :: IF :: Z :: if (v13 == #(0)) goto 90::CD,5386:CD,5394:CD,5399:CD,5404:CD,5409:CD,5417:CD,5422:CD,5427:CF,5435
+5386 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v15 = new java.lang.StringBuilder::
+5391 :: EXPR :: reference :: I :: v18 = p0 $this .taskPartition::
+5394 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v15.append(v18)::
+5399 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v20.append(#(, got file '))::
+5404 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v23.append(v10)::JM,5474:JM,5479:JM,5435
+5409 :: CALL :: call :: Ljava/lang/StringBuilder :: v28 = v25.append(#(' (polling period is ))::JM,5479
+5414 :: EXPR :: reference :: I :: v29 = p0 $this .pollMsecs::
+5417 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v28.append(v29)::
+5422 :: CALL :: call :: Ljava/lang/StringBuilder :: v34 = v31.append(#()))::
+5427 :: CALL :: call :: Ljava/lang/String :: v36 = v34.toString()::
+5435 :: PRED :: IF :: Z :: if (v10 == #(null)) goto 97::CD,5373:CD,5377:CD,5379:CD,5383
+5447 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v43 = new java.lang.StringBuilder::
+5452 :: CALL :: call :: Ljava/lang/String :: v47 = v41.getMessage()::
+5456 :: CALL :: call :: Ljava/lang/StringBuilder :: v49 = v43.append(v47)::
+5461 :: CALL :: call :: Ljava/lang/String :: v51 = v49.toString()::
+5470 :: CALL :: call :: I :: v55 = #(zkServerList_).length()::JM,5474:JM,5479
+5474 :: CALL :: call :: Ljava/lang/String :: v57 = v10.substring(v55)::JM,5474:JM,5479
+5479 :: CALL :: call :: [Ljava/lang/String :: v60 = v57.split(#( ))::JM,5479
+5484 :: EXPR :: reference :: Lorg/apache/log4j/Logger :: v61 = org.apache.giraph.zk.ZooKeeperManager.LOG::JM,5490:JM,5486
+5486 :: CALL :: call :: Z :: v63 = v61.isInfoEnabled()::JM,5490:JM,5486
+5490 :: PRED :: IF :: Z :: if (v63 == #(0)) goto 206::CD,5493:CD,5498:CD,5502:CD,5507:CD,5512:CD,5517:CD,5522
+5493 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v65 = new java.lang.StringBuilder::
+5498 :: CALL :: call :: Ljava/lang/String :: v69 = toString(v60)::
+5502 :: CALL :: call :: Ljava/lang/StringBuilder :: v71 = v65.append(v69)::
+5507 :: CALL :: call :: Ljava/lang/StringBuilder :: v74 = v71.append(#( hosts in filename '))::
+5512 :: CALL :: call :: Ljava/lang/StringBuilder :: v76 = v74.append(v10)::JM,5474:JM,5479
+5517 :: CALL :: call :: Ljava/lang/StringBuilder :: v79 = v76.append(#('))::JM,5479
+5522 :: CALL :: call :: Ljava/lang/String :: v81 = v79.toString()::
+5537 :: EXPR :: reference :: Ljava/lang/Object :: v85 = v60[#(1)]::JM,5545
+5541 :: CALL :: call :: I :: v87 = parseInt(v85)::JM,5545
+5545 :: EXPR :: modify :: I :: p0 $this .zkServerTask = v87::
+5548 :: CALL :: call :: V :: p0 $this .updateZkPortString()::CL,5871
+5552 :: EXPR :: assign :: Ljava/lang/Exception :: v41 = catch <exc>::
+1735 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v689 = create(#(giraph.outOfCoreDataA...), v685, v686, #(Data accessor used in...))::CL,4454
+1746 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v695 = create(#(giraph.outOfCoreOracle), v691, v692, #(Out-of-core oracle th...))::CL,4454
+5871 :: ENTR :: entry :: null :: org.apache.giraph.zk.ZooKeeperManager.updateZkPortString()::CD,5875:CD,5879:CD,5887:CD,5895:CD,5900
+5875 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v3 = new java.lang.StringBuilder::
+5876 :: EXPR :: reference :: Ljava/lang/String :: v4 = p0 $this .zkServerHost::
+5879 :: CALL :: call :: Ljava/lang/String :: v6 = valueOf(v4)::
+5887 :: CALL :: call :: Ljava/lang/StringBuilder :: v10 = v3.append(#(:))::
+5892 :: EXPR :: reference :: I :: v11 = p0 $this .zkBasePort::
+5895 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v10.append(v11)::
+5900 :: CALL :: call :: Ljava/lang/String :: v15 = v13.toString()::
+5972 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v8 = new java.lang.StringBuilder::
+5973 :: CALL :: call :: Ljava/lang/String :: v10 = valueOf(p1 $keyPrefix )::
+5981 :: CALL :: call :: Ljava/lang/StringBuilder :: v14 = v8.append(#(.vertex.id))::
+5986 :: CALL :: call :: Ljava/lang/String :: v16 = v14.toString()::
+5990 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v18 = create(v16, p2 $klass , p3 $defaultValue , p4 $description )::CL,4678
+1896 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v764 = create(#(giraph.messageEncodeA...), v760, v761, #(Select the message_en...))::CL,4678
+6000 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v19 = new java.lang.StringBuilder::
+6001 :: CALL :: call :: Ljava/lang/String :: v21 = valueOf(p1 $keyPrefix )::
+6009 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v19.append(#(.vertex.value))::
+1916 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v774 = create(#(giraph.createEdgeSour...), v770, v771, #(Decide whether we sho...))::CL,4454
+6014 :: CALL :: call :: Ljava/lang/String :: v27 = v25.toString()::
+6018 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v29 = create(v27, p2 $klass , p3 $defaultValue , p4 $description )::CL,4678
+1927 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v780 = create(#(giraph.haltInstructio...), v776, v777, #(Class used to write i...))::CL,4454
+6028 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v30 = new java.lang.StringBuilder::
+6029 :: CALL :: call :: Ljava/lang/String :: v32 = valueOf(p1 $keyPrefix )::
+6037 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v30.append(#(.edge.value))::
+6042 :: CALL :: call :: Ljava/lang/String :: v38 = v36.toString()::
+6046 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v40 = create(v38, p2 $klass , p3 $defaultValue , p4 $description )::CL,4678
+6056 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v41 = new java.lang.StringBuilder::
+6057 :: CALL :: call :: Ljava/lang/String :: v43 = valueOf(p1 $keyPrefix )::
+1962 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v797 = create(#(giraph.jobProgressTra...), v793, v794, #(Class to use to track...))::CL,4454
+6065 :: CALL :: call :: Ljava/lang/StringBuilder :: v47 = v41.append(#(.outgoing.message))::
+6070 :: CALL :: call :: Ljava/lang/String :: v49 = v47.toString()::
+6074 :: CALL :: call :: Lorg/apache/giraph/conf/EnumConfOption :: v51 = create(v49, p2 $klass , p3 $defaultValue , p4 $description )::CL,4678
+2018 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v825 = create(#(giraph.checkpoint.sup...), v821, v822, #(This is the way to sp...))::CL,4454
+2038 :: CALL :: call :: Lorg/apache/giraph/conf/ClassConfOption :: v835 = create(#(giraph.hadoopOutputFo...), v831, v832, #(Output format class f...))::CL,4454
+6141 :: ENTR :: entry :: null :: org.apache.giraph.conf.AbstractConfOption.getKey()::CE,6142:CD,6148
+6142 :: EXIT :: exit :: Ljava/lang/String :: org.apache.giraph.conf.AbstractConfOption.getKey()::
+6145 :: EXPR :: reference :: Ljava/lang/String :: v3 = p0 $this .key::DD,6148
+6148 :: NORM :: compound :: Ljava/lang/String :: return v3::CF,6142
+6150 :: ENTR :: entry :: null :: org.apache.giraph.zk.ZooKeeperManager.getServerListFile()::CE,6151:CD,6160:CD,6165:CD,6195:CD,6196:CD,6197:CD,6198
+6151 :: EXIT :: exit :: Ljava/lang/String :: org.apache.giraph.zk.ZooKeeperManager.getServerListFile()::JM,5369:JM,5474:JM,5479:JM,5435
+6154 :: EXPR :: reference :: Lorg/apache/hadoop/fs/FileSystem :: v4 = p0 $this .fs::JM,6160:JM,6165
+6157 :: EXPR :: reference :: Lorg/apache/hadoop/fs/Path :: v5 = p0 $this .baseDirectory::JM,6160:JM,6165
+6160 :: CALL :: call :: [Lorg/apache/hadoop/fs/FileStatus :: v7 = v4.listStatus(v5)::JM,6160:JM,6165
+6165 :: EXPR :: assign :: I :: v8 = v7.length::DD,6195
+6167 :: EXPR :: reference :: Ljava/lang/Object :: v10 = v7[v20]::JM,6179:JM,6184:JM,6171:JM,6175:JM,6198:JM,6185:JM,6189
+6171 :: CALL :: call :: Lorg/apache/hadoop/fs/Path :: v12 = v10.getPath()::JM,6179:JM,6184:JM,6171:JM,6175
+6175 :: CALL :: call :: Ljava/lang/String :: v14 = v12.getName()::JM,6179:JM,6184:JM,6175
+6179 :: CALL :: call :: Z :: v17 = v14.startsWith(#(zkServerList_))::JM,6179:JM,6184
+6184 :: PRED :: IF :: Z :: if (v17 == #(0)) goto 59::CD,6185:CD,6189:CD,6194:CD,6195:CD,6197:CD,6198
+6185 :: CALL :: call :: Lorg/apache/hadoop/fs/Path :: v22 = v10.getPath()::JM,6198:JM,6185:JM,6189
+6189 :: CALL :: call :: Ljava/lang/String :: v24 = v22.getName()::JM,6198:JM,6189
+6194 :: EXPR :: assign :: Ljava/lang/Object :: v19 = v20 + #(1)::DD,6197
+6195 :: PRED :: IF :: Z :: if (v20 < v8) goto 31::CF,6198:CD,6171:CD,6175:CD,6179:CD,6184
+6196 :: NORM :: compound :: Ljava/lang/String :: return v25::CF,6151
+6197 :: EXPR :: assign :: null :: PHI v20 = #(0), v19::DD,6194:DD,6195
+6198 :: EXPR :: assign :: null :: PHI v25 = v24, #(null)::CF,6196
+6222 :: ENTR :: entry :: null :: org.apache.giraph.zk.ZooKeeperManager.createZooKeeperServerList()::CD,6232:CD,6237:CD,6238:CD,6243:CD,6247:CD,6251:CD,6259:CD,6264:CD,6268:CD,6272:CD,6277:CD,6302:CD,6307:CD,6312:CD,6317:CD,6322:CD,6326:CD,6335:CD,6337:CD,6341
+6226 :: EXPR :: reference :: Lorg/apache/hadoop/fs/FileSystem :: v3 = p0 $this .fs::JM,6232:JM,6237
+6229 :: EXPR :: reference :: Lorg/apache/hadoop/fs/Path :: v4 = p0 $this .taskDirectory::JM,6232:JM,6237
+6232 :: CALL :: call :: [Lorg/apache/hadoop/fs/FileStatus :: v6 = v3.listStatus(v4)::JM,6232:JM,6237
+6237 :: EXPR :: assign :: I :: v7 = v6.length::DD,6238
+6238 :: PRED :: IF :: Z :: if (v7 <= #(0)) goto 90::CD,6232:CD,6237
+6239 :: EXPR :: reference :: Ljava/lang/Object :: v12 = v6[#(0)]::JM,6243:JM,6247:JM,6251:JM,6264:JM,6268
+6243 :: CALL :: call :: Lorg/apache/hadoop/fs/Path :: v14 = v12.getPath()::JM,6243:JM,6247:JM,6251
+6247 :: CALL :: call :: Ljava/lang/String :: v16 = v14.getName()::JM,6247:JM,6251
+6251 :: CALL :: call :: [Ljava/lang/String :: v19 = v16.split(#( ))::JM,6251
+6259 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v24 = new java.lang.StringBuilder::
+6264 :: CALL :: call :: Lorg/apache/hadoop/fs/Path :: v28 = v12.getPath()::JM,6264:JM,6268
+6268 :: CALL :: call :: Ljava/lang/String :: v30 = v28.getName()::JM,6268
+6272 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v24.append(v30)::
+6277 :: CALL :: call :: Ljava/lang/String :: v34 = v32.toString()::
+6285 :: EXPR :: reference :: Ljava/lang/Object :: v36 = v19[#(0)]::
+6289 :: EXPR :: reference :: Ljava/lang/Object :: v37 = v19[#(1)]::
+6302 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v38 = new java.lang.StringBuilder::
+6307 :: CALL :: call :: Ljava/lang/StringBuilder :: v42 = v38.append(v36)::
+6312 :: CALL :: call :: Ljava/lang/StringBuilder :: v44 = v42.append(#( ))::
+6317 :: CALL :: call :: Ljava/lang/StringBuilder :: v46 = v44.append(v37)::
+6322 :: CALL :: call :: Ljava/lang/String :: v48 = v46.toString()::
+6326 :: NORM :: declaration :: Lorg/apache/hadoop/fs/Path :: v49 = new org.apache.hadoop.fs.Path::
+6335 :: EXPR :: reference :: Lorg/apache/log4j/Logger :: v52 = org.apache.giraph.zk.ZooKeeperManager.LOG::JM,6337:JM,6341
+6337 :: CALL :: call :: Z :: v54 = v52.isInfoEnabled()::JM,6337:JM,6341
+6341 :: PRED :: IF :: Z :: if (v54 == #(0)) goto 180::CD,6344:CD,6349:CD,6354:CD,6359
+6344 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v56 = new java.lang.StringBuilder::
+6349 :: CALL :: call :: Ljava/lang/StringBuilder :: v60 = v56.append(v49)::
+6354 :: CALL :: call :: Ljava/lang/StringBuilder :: v63 = v60.append(#('))::
+6359 :: CALL :: call :: Ljava/lang/String :: v65 = v63.toString()::
+2892 :: ENTR :: entry :: null :: org.apache.giraph.graph.Language.<clinit>()::
+2955 :: ENTR :: entry :: null :: org.apache.giraph.ooc.persistence.LocalDiskDataAccessor.<clinit>()::
+2981 :: ENTR :: entry :: null :: org.apache.giraph.ooc.policy.MemoryEstimatorOracle.<clinit>()::
+3105 :: ENTR :: entry :: null :: org.apache.giraph.comm.messages.MessageEncodeAndStoreType.<clinit>()::
+3195 :: ENTR :: entry :: null :: org.apache.giraph.job.DefaultJobProgressTrackerService.<clinit>()::
+3254 :: EXPR :: modify :: Lorg/apache/giraph/conf/ImmutableClassesGiraphConfiguration :: p0 $this .conf = p2 $configuration ::
+3257 :: EXPR :: reference :: Lorg/apache/giraph/conf/ImmutableClassesGiraphConfiguration :: v9 = p0 $this .conf::JM,3264:JM,3260
+3260 :: CALL :: call :: I :: v11 = v9.getTaskPartition()::JM,3264:JM,3260
+3264 :: EXPR :: modify :: I :: p0 $this .taskPartition = v11::
+3283 :: CALL :: call :: Ljava/lang/String :: v19 = p0 $this .getFinalZooKeeperPath()::CL,4848
+3361 :: EXPR :: reference :: Lorg/apache/giraph/conf/ImmutableClassesGiraphConfiguration :: v43 = p0 $this .conf::JM,3364:JM,3369
+3364 :: CALL :: call :: Ljava/lang/String :: v46 = v43.get(#(job.local.dir))::JM,3364:JM,3369
+3369 :: PRED :: IF :: Z :: if (v46 == #(null)) goto 188::CF,3389:CF,3370:CD,3371:CD,3379:CD,3384:CD,3390:CD,3394:CD,3402:CD,3409:CD,3413:CD,3418:CD,3475
+3370 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v64 = new java.lang.StringBuilder::JM,3475
+3371 :: CALL :: call :: Ljava/lang/String :: v66 = valueOf(v46)::
+3379 :: CALL :: call :: Ljava/lang/StringBuilder :: v70 = v64.append(#(/_bspZooKeeper))::JM,3475
+3384 :: CALL :: call :: Ljava/lang/String :: v72 = v70.toString()::JM,3475
+3389 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v47 = new java.lang.StringBuilder::JM,3475:JM,3390
+3390 :: CALL :: call :: Ljava/lang/String :: v50 = getProperty(#(user.dir))::JM,3390
+3394 :: CALL :: call :: Ljava/lang/String :: v52 = valueOf(v50)::
+3402 :: CALL :: call :: Ljava/lang/StringBuilder :: v56 = v47.append(#(/))::JM,3475
+3409 :: CALL :: call :: Ljava/lang/String :: v59 = v57.getDefaultValue()::JM,3475:CL,4984
+3413 :: CALL :: call :: Ljava/lang/StringBuilder :: v61 = v56.append(v59)::JM,3475
+3418 :: CALL :: call :: Ljava/lang/String :: v63 = v61.toString()::JM,3475
+3422 :: EXPR :: reference :: Lorg/apache/giraph/conf/ImmutableClassesGiraphConfiguration :: v74 = p0 $this .conf::JM,3425:JM,3431
+3425 :: CALL :: call :: Ljava/lang/String :: v77 = v74.get(#(giraph.zkDir), v73)::JM,3425:JM,3431
+3431 :: EXPR :: modify :: Ljava/lang/String :: p0 $this .zkDir = v77::
+3475 :: EXPR :: assign :: null :: PHI v73 = v72, v63::JM,3425:JM,3431
+3534 :: ENTR :: entry :: null :: org.apache.giraph.zk.ZooKeeperManager.setup()::CD,3538:CD,3541
+3538 :: CALL :: call :: V :: p0 $this .createCandidateStamp()::CL,5012
+3541 :: CALL :: call :: V :: p0 $this .getZooKeeperServerList()::CL,5357
+3547 :: ENTR :: entry :: null :: org.apache.giraph.zk.ZooKeeperManager.computationDone()::CE,3548:CD,3557:CD,3562:CD,3563:CD,3569
+3548 :: EXIT :: exit :: Z :: org.apache.giraph.zk.ZooKeeperManager.computationDone()::JM,40
+3551 :: EXPR :: reference :: Lorg/apache/hadoop/fs/FileSystem :: v3 = p0 $this .fs::JM,3557:JM,3562
+3554 :: EXPR :: reference :: Lorg/apache/hadoop/fs/Path :: v4 = p0 $this .myClosedPath::JM,3557:JM,3562
+3557 :: CALL :: call :: Z :: v6 = v3.exists(v4)::JM,3557:JM,3562
+3562 :: NORM :: compound :: Z :: return v6::DD,3548
+3563 :: NORM :: declaration :: Ljava/lang/RuntimeException :: v8 = new java.lang.RuntimeException::
+3569 :: EXPR :: assign :: Ljava/lang/Exception :: v7 = catch <exc>::
+3572 :: ENTR :: entry :: null :: org.apache.giraph.zk.ZooKeeperManager.onlineZooKeeperServer()::CD,3582
+3576 :: EXPR :: reference :: I :: v3 = p0 $this .zkServerTask::DD,3582
+3579 :: EXPR :: reference :: I :: v4 = p0 $this .taskPartition::DD,3582
+3582 :: PRED :: IF :: Z :: if (v3 != v4) goto 598::CF,3583
+3583 :: NORM :: declaration :: Ljava/io/File :: v132 = new java.io.File::
+3584 :: EXPR :: reference :: Ljava/lang/String :: v133 = p0 $this .zkDir::

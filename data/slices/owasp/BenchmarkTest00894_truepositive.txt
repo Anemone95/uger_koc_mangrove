@@ -1,0 +1,30 @@
+[81, 76]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest00894.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,36:CD,41:CD,46:CD,50:CD,54:CD,59:CD,64:CD,69:CD,73:CD,76:CD,96:JM,12
+7 :: CALL :: call :: [Ljavax/servlet/http/Cookie :: v6 = p1 $request .getCookies()::JM,11:JM,12
+11 :: PRED :: IF :: Z :: if (v6 == #(null)) goto 87::CD,12:CD,13:CD,34:CD,91:CD,92:CD,93:CD,96
+12 :: EXPR :: assign :: I :: v10 = v6.length::DD,13:CF,91
+13 :: PRED :: IF :: Z :: if (v25 >= v10) goto 73::CD,18:CD,22:CD,27:CD,32:CD,91:CD,92:CD,93:CD,94:CD,95:CF,34
+14 :: EXPR :: reference :: Ljava/lang/Object :: v11 = v6[v25]::JM,18:JM,22:JM,27:JM,28:JM,94
+18 :: CALL :: call :: Ljava/lang/String :: v13 = v11.getName()::JM,18:JM,22:JM,27
+22 :: CALL :: call :: Z :: v16 = v13.equals(#(foo))::JM,22:JM,27
+27 :: PRED :: IF :: Z :: if (v16 == #(0)) goto 65::CF,94:CD,28:CD,95
+28 :: CALL :: call :: Ljava/lang/String :: v18 = v11.getValue()::JM,28:JM,94
+32 :: EXPR :: assign :: Ljava/lang/Object :: v22 = v25 + #(1)::DD,93
+34 :: PRED :: IF :: Z :: if (v24 != #(0)) goto 87::CF,96
+36 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v28 = new java.lang.StringBuilder::JM,76
+41 :: CALL :: call :: Ljava/lang/StringBuilder :: v32 = v28.append(#(_SafeStuff))::JM,76
+46 :: CALL :: call :: Ljava/lang/String :: v34 = v32.toString()::JM,76
+50 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v35 = new java.lang.StringBuilder::JM,76
+54 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v35.append(#(SELECT * from USERS w...))::JM,76
+59 :: CALL :: call :: Ljava/lang/StringBuilder :: v41 = v39.append(v34)::JM,76
+64 :: CALL :: call :: Ljava/lang/StringBuilder :: v44 = v41.append(#('))::JM,76
+69 :: CALL :: call :: Ljava/lang/String :: v46 = v44.toString()::JM,76
+73 :: CALL :: call :: Ljava/sql/Statement :: v48 = getSqlStatement()::JM,76
+76 :: CALL :: call :: Z :: v50 = v48.execute(v46, #(1))::JM,76
+91 :: EXPR :: assign :: null :: PHI v23 = v20, #(null)::CF,92:DD,94:DD,96
+92 :: EXPR :: assign :: null :: PHI v24 = v21, #(0)::CF,93:DD,34:DD,95
+93 :: EXPR :: assign :: null :: PHI v25 = v22, #(0)::DD,13:DD,32
+94 :: EXPR :: assign :: null :: PHI v20 = v23, v18::CF,95:DD,91
+95 :: EXPR :: assign :: null :: PHI v21 = v24, #(1)::DD,92:CF,32
+96 :: EXPR :: assign :: null :: PHI v26 = v23, #(), #()::CF,36

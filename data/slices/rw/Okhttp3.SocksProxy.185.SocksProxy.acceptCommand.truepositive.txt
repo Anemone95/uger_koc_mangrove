@@ -1,0 +1,57 @@
+[134]
+
+1 :: ENTR :: entry :: null :: okhttp3.SocksProxy.acceptCommand(java.net.InetAddress,okio.BufferedSource,okio.BufferedSink)::CD,8:CD,34:CD,39:CD,65:CD,69:CD,70:CD,128:CD,132:CD,134:CD,306:JM,97:JM,305:JM,85
+8 :: CALL :: call :: B :: v7 = p2 $fromSource .readByte()::JM,97:JM,305:JM,306:JM,132:JM,69:JM,85
+1046 :: ENTR :: entry :: null :: okhttp3.ResponseBody.create(okhttp3.MediaType,long,okio.BufferedSource)::CF,1053
+1053 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v8 = new java.lang.NullPointerException::
+34 :: CALL :: call :: B :: v12 = p2 $fromSource .readByte()::JM,97:JM,305:JM,306:JM,132:JM,69:JM,85
+39 :: CALL :: call :: B :: v15 = p2 $fromSource .readByte()::JM,97:JM,305:JM,306:JM,132:JM,69:JM,85
+1073 :: ENTR :: entry :: null :: okhttp3.RequestBody.create(okhttp3.MediaType,[],int,int)::CF,1081
+1081 :: NORM :: declaration :: Ljava/lang/NullPointerException :: v14 = new java.lang.NullPointerException::
+65 :: CALL :: call :: B :: v19 = p2 $fromSource .readByte()::JM,97:JM,305:JM,306:JM,132:JM,69:JM,85
+69 :: EXPR :: assign :: Ljava/lang/Object :: v20 = v19 && #(255)::DD,70
+70 :: PRED :: IF :: null :: switch v20::CD,71:CD,76:CD,81:CD,85:CD,86:CD,87:CD,92:CD,97:CD,305:CD,306:JM,132:JM,69
+71 :: CALL :: call :: [B :: v47 = p2 $fromSource .readByteArray(#(4 l))::JM,97:JM,305:JM,306:JM,132:JM,69:JM,85
+76 :: CALL :: call :: Ljava/net/InetAddress :: v49 = getByAddress(v47)::JM,97:JM,305:JM,306:JM,132:JM,85
+81 :: CALL :: call :: B :: v31 = p2 $fromSource .readByte()::JM,97:JM,305:JM,306:JM,132:JM,69:JM,85
+85 :: EXPR :: assign :: Ljava/lang/Object :: v32 = v31 && #(255)::DD,86
+86 :: EXPR :: assign :: J :: v33 = CONVERT I to J v32::JM,97:JM,305:JM,306:JM,132:JM,69:JM,85
+87 :: CALL :: call :: Ljava/lang/String :: v35 = p2 $fromSource .readUtf8(v33)::JM,97:JM,305:JM,306:JM,132:JM,69:JM,85
+92 :: CALL :: call :: Z :: v38 = v35.equalsIgnoreCase(#(onlyProxyCanResolveMe.org))::JM,97:JM,305:JM,306:JM,132
+97 :: PRED :: IF :: Z :: if (v38 == #(0)) goto 196::CD,98:CD,103:CD,305:JM,97:JM,306:JM,132
+98 :: CALL :: call :: Ljava/net/InetAddress :: v43 = getByName(#(localhost))::JM,305
+103 :: CALL :: call :: Ljava/net/InetAddress :: v40 = getByName(v35)::JM,97:JM,305:JM,306:JM,132
+128 :: CALL :: call :: S :: v52 = p2 $fromSource .readShort()::JM,97:JM,305:JM,306:JM,132:JM,69:JM,85
+132 :: EXPR :: assign :: Ljava/lang/Object :: v54 = v52 && #(65535)::
+134 :: NORM :: declaration :: Ljava/net/Socket :: v64 = new java.net.Socket::
+305 :: EXPR :: assign :: null :: PHI v44 = v43, v40::DD,306
+306 :: EXPR :: assign :: null :: PHI v50 = v49, v44::JM,97:JM,305:JM,306:JM,132:JM,69:JM,85
+670 :: CALL :: call :: Ljava/util/concurrent/ThreadFactory :: v7 = threadFactory(#(SocksProxy), #(0))::CL,874
+689 :: NORM :: declaration :: Ljava/util/concurrent/ConcurrentHashMap :: v12 = new java.util.concurrent.ConcurrentHashMap::
+709 :: ENTR :: entry :: null :: okhttp3.SocksProxy.<clinit>()::CD,712:CD,713:CD,717
+712 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lokhttp3/SocksProxy>-><Primordial,Ljava/lang/Class>::JM,713
+713 :: CALL :: call :: Ljava/lang/String :: v4 = v2.getName()::JM,713
+717 :: CALL :: call :: Ljava/util/logging/Logger :: v6 = getLogger(v4)::
+725 :: ENTR :: entry :: null :: okhttp3.internal.Util.<clinit>()::CD,736:CD,745:CD,752:CD,758:CD,764:CD,770:CD,776:CD,782:CD,788:CD,794:CD,800:CD,806:CD,812:CD,818:CD,830
+736 :: CALL :: call :: Lokhttp3/ResponseBody :: v8 = create(#(null), v6)::CL,936
+745 :: CALL :: call :: Lokhttp3/RequestBody :: v11 = create(#(null), v9)::CL,965
+752 :: CALL :: call :: Lokio/ByteString :: v14 = decodeHex(#(efbbbf))::
+758 :: CALL :: call :: Lokio/ByteString :: v17 = decodeHex(#(feff))::
+764 :: CALL :: call :: Lokio/ByteString :: v20 = decodeHex(#(fffe))::
+770 :: CALL :: call :: Lokio/ByteString :: v23 = decodeHex(#(0000ffff))::
+776 :: CALL :: call :: Lokio/ByteString :: v26 = decodeHex(#(ffff0000))::
+782 :: CALL :: call :: Ljava/nio/charset/Charset :: v29 = forName(#(UTF-8))::
+788 :: CALL :: call :: Ljava/nio/charset/Charset :: v32 = forName(#(ISO-8859-1))::
+794 :: CALL :: call :: Ljava/nio/charset/Charset :: v35 = forName(#(UTF-16BE))::
+800 :: CALL :: call :: Ljava/nio/charset/Charset :: v38 = forName(#(UTF-16LE))::
+806 :: CALL :: call :: Ljava/nio/charset/Charset :: v41 = forName(#(UTF-32BE))::
+812 :: CALL :: call :: Ljava/nio/charset/Charset :: v44 = forName(#(UTF-32LE))::
+818 :: CALL :: call :: Ljava/util/TimeZone :: v47 = getTimeZone(#(GMT))::
+830 :: CALL :: call :: Ljava/util/regex/Pattern :: v52 = compile(#(([0-9a-fA-F]*:[0-9a-f...))::
+874 :: ENTR :: entry :: null :: okhttp3.internal.Util.threadFactory(java.lang.String,boolean)::
+936 :: ENTR :: entry :: null :: okhttp3.ResponseBody.create(okhttp3.MediaType,[])::CD,941:CD,945:CD,952
+941 :: NORM :: declaration :: Lokio/Buffer :: v4 = new okio.Buffer::
+945 :: CALL :: call :: Lokio/Buffer :: v7 = v4.write(p2 $content )::
+952 :: CALL :: call :: Lokhttp3/ResponseBody :: v11 = create(p1 $contentType , v9, v7)::CL,1046
+965 :: ENTR :: entry :: null :: okhttp3.RequestBody.create(okhttp3.MediaType,[])::CD,971
+971 :: CALL :: call :: Lokhttp3/RequestBody :: v7 = create(p1 $contentType , p2 $content , #(0), v5)::CL,1073

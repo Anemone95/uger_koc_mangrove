@@ -1,0 +1,130 @@
+[24786, 24862, 24783]
+1 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.LdapLoginModule.login()::CD,16:CD,32:CD,33:CD,41:CD,42:CD,46
+16 :: CALL :: call :: [Ljavax/security/auth/callback/Callback :: v7 = p0 $this .configureCallbacks()::CL,16230
+28 :: EXPR :: reference :: Ljava/lang/Object :: v12 = v7[#(0)]::DD,32
+16413 :: NORM :: compound :: Z :: return #(1)::DD,16299
+32 :: EXPR :: assign :: Ljava/lang/Object :: v13 = CHECKCAST v12::JM,33:JM,46
+33 :: CALL :: call :: Ljava/lang/String :: v15 = v13.getName()::JM,33:JM,46
+37 :: EXPR :: reference :: Ljava/lang/Object :: v17 = v7[#(1)]::DD,41
+41 :: EXPR :: assign :: Ljava/lang/Object :: v18 = CHECKCAST v17::JM,89:JM,42:JM,47
+42 :: CALL :: call :: Ljava/lang/Object :: v20 = v18.getObject()::JM,89:JM,42:JM,47
+46 :: PRED :: IF :: Z :: if (v15 == #(null)) goto 62::CD,47
+47 :: PRED :: IF :: Z :: if (v20 != #(null)) goto 74::CD,60
+57 :: EXPR :: reference :: Z :: v21 = p0 $this ._forceBindingLogin::DD,60
+60 :: PRED :: IF :: Z :: if (v21 == #(0)) goto 93::CD,61:CD,68:CD,73:CD,107:CD,151
+61 :: CALL :: call :: Z :: v37 = p0 $this .bindingLogin(v15, v20)::JM,151:CL,16298
+68 :: CALL :: call :: Lorg/eclipse/jetty/jaas/spi/UserInfo :: v23 = p0 $this .getUserInfo(v15)::JM,73:CL,16463
+73 :: PRED :: IF :: Z :: if (v23 != #(null)) goto 111::JM,16527:CD,89:CD,90:CD,107:CD,151
+16463 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.LdapLoginModule.getUserInfo(java.lang.String)::CE,16464:CD,16473:CD,16478
+16464 :: EXIT :: exit :: Lorg/eclipse/jetty/jaas/spi/UserInfo :: org.eclipse.jetty.jaas.spi.LdapLoginModule.getUserInfo(java.lang.String)::JM,73
+89 :: EXPR :: assign :: Z :: v27=v20 INSTANCEOF java.lang.String::DD,90
+16473 :: CALL :: call :: Ljava/lang/String :: v7 = p0 $this .getUserCredentials(v5)::JM,16478:CL,18654
+90 :: PRED :: IF :: Z :: if (v27 == #(0)) goto 149::CD,96:CD,102:CD,151
+16478 :: PRED :: IF :: Z :: if (v7 != #(null)) goto 19::CD,16479:CD,16488:JM,18898:JM,18565:JM,18581:JM,18890:JM,18575:CD,16496
+16479 :: NORM :: compound :: Lorg/eclipse/jetty/jaas/spi/UserInfo :: return #(null)::DD,16464
+96 :: CALL :: call :: Z :: v34 = p0 $this .credentialLogin(v32)::JM,151:CL,16657
+102 :: CALL :: call :: Z :: v29 = p0 $this .credentialLogin(v20)::JM,151:CL,16657
+16488 :: NORM :: declaration :: Lorg/eclipse/jetty/jaas/spi/LdapLoginModule$LDAPUserInfo :: v13 = new org.eclipse.jetty.jaas.spi.LdapLoginModule$LDAPUserInfo::DD,16496
+107 :: PRED :: IF :: Z :: if (v38 == #(0)) goto 168::CD,108:CD,112
+108 :: CALL :: call :: Lorg/eclipse/jetty/jaas/spi/AbstractLoginModule$JAASUserInfo :: v40 = p0 $this .getCurrentUser()::CL,16684
+112 :: CALL :: call :: V :: v40.fetchRoles()::CL,16693
+16496 :: NORM :: compound :: Lorg/eclipse/jetty/jaas/spi/UserInfo :: return v13::DD,16464
+18565 :: NORM :: declaration :: Ljava/util/ArrayList :: v7 = new java.util.ArrayList::DD,18569
+18569 :: EXPR :: modify :: Ljava/util/List :: p0 $this ._roleNames = v7::
+18572 :: EXPR :: modify :: Z :: p0 $this ._rolesLoaded = #(0)::
+16527 :: EXPR :: modify :: Lorg/eclipse/jetty/jaas/spi/UserInfo :: p0 $this .user = p2 $u ::
+18575 :: EXPR :: modify :: Ljava/lang/String :: p0 $this ._userName = p1 $userName ::
+18581 :: PRED :: IF :: Z :: if (p3 $roleNames  == #(null)) goto 72::
+151 :: EXPR :: assign :: null :: PHI v38 = v37, v34, v29::DD,107
+18594 :: EXPR :: modify :: Z :: p0 $this ._rolesLoaded = #(1)::
+24770 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule.getRoles(java.lang.String)::CD,24779:CD,24786:CD,24862:CD,24915
+24779 :: CALL :: call :: Ljava/sql/Connection :: v7 = p0 $this .getConnection()::JM,24786:CL,19226:CL,19213
+24783 :: EXPR :: reference :: Ljava/lang/String :: v9 = p0 $this .rolesQuery::JM,24786
+24786 :: CALL :: call :: Ljava/sql/PreparedStatement :: v11 = v7.prepareStatement(v9)::JM,24786
+18654 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.LdapLoginModule.getUserCredentials(javax.naming.directory.Attributes)::CE,18655:CD,18662:CD,18667:CD,18735:CD,18737:JM,18672:JM,18668
+18655 :: EXIT :: exit :: Ljava/lang/String :: org.eclipse.jetty.jaas.spi.LdapLoginModule.getUserCredentials(javax.naming.directory.Attributes)::JM,16478
+18659 :: EXPR :: reference :: Ljava/lang/String :: v5 = p0 $this ._userPasswordAttribute::JM,18672:JM,18662:JM,18667:JM,18668
+18662 :: CALL :: call :: Ljavax/naming/directory/Attribute :: v7 = p1 $attributes .get(v5)::JM,18672:JM,18662:JM,18667:JM,18668
+18667 :: PRED :: IF :: Z :: if (v7 == #(null)) goto 80::CF,18737:CD,18668:CD,18672:CD,18673:CD,18674
+18668 :: CALL :: call :: Ljava/lang/Object :: v9 = v7.get()::JM,18672:JM,18668
+18672 :: EXPR :: assign :: Ljava/lang/Object :: v10 = CHECKCAST v9::CF,18673
+18673 :: EXPR :: assign :: Ljava/lang/Object :: v11 = CHECKCAST v10::CF,18674
+18674 :: NORM :: declaration :: Ljava/lang/String :: v12 = new java.lang.String::JM,18674:DD,18737
+16657 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.LdapLoginModule.credentialLogin(java.lang.Object)::CE,16658:CD,16675:CD,16679
+16658 :: EXIT :: exit :: Z :: org.eclipse.jetty.jaas.spi.LdapLoginModule.credentialLogin(java.lang.Object)::JM,151
+24862 :: NORM :: compound :: Ljava/lang/Exception :: throw v46::
+16675 :: CALL :: call :: Z :: v10 = p0 $this .isAuthenticated()::JM,16679:CL,16289
+16679 :: NORM :: compound :: Z :: return v10::DD,16658
+16684 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.getCurrentUser()::CE,16685:CD,16691
+16685 :: EXIT :: exit :: Lorg/eclipse/jetty/jaas/spi/AbstractLoginModule$JAASUserInfo :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.getCurrentUser()::
+18735 :: NORM :: compound :: Ljava/lang/String :: return v30::DD,18655
+16688 :: EXPR :: reference :: Lorg/eclipse/jetty/jaas/spi/AbstractLoginModule$JAASUserInfo :: v3 = p0 $this .currentUser::DD,16691
+18737 :: EXPR :: assign :: null :: PHI v30 = #(null), v12, #(null)::DD,18735
+16691 :: NORM :: compound :: Lorg/eclipse/jetty/jaas/spi/AbstractLoginModule$JAASUserInfo :: return v3::CF,16685
+16693 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.JAASUserInfo.fetchRoles()::CD,16700
+16697 :: EXPR :: reference :: Lorg/eclipse/jetty/jaas/spi/UserInfo :: v3 = p0 $this .user::
+16700 :: CALL :: call :: V :: v3.fetchRoles()::CL,19065
+24915 :: EXPR :: assign :: Ljava/lang/Exception :: v46 = catch <exc>::DD,24862
+16771 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.isIgnored()::CF,16772:CD,16775
+16772 :: EXIT :: exit :: Z :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.isIgnored()::JM,500
+16775 :: NORM :: compound :: Z :: return #(0)::CF,16772
+16777 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.PropertyFileLoginModule.getUserInfo(java.lang.String)::CD,16787:CD,16792:CD,16839:CD,16844
+16787 :: CALL :: call :: Ljava/lang/Object :: v7 = v4.get(v5)::JM,16792
+16792 :: EXPR :: assign :: Ljava/lang/Object :: v8 = CHECKCAST v7::JM,16839:JM,16844
+448 :: EXPR :: modify :: Ljava/lang/String :: p0 $this ._userRdnAttribute = #(uid)::
+16839 :: CALL :: call :: Lorg/eclipse/jetty/server/UserIdentity :: v30 = v8.getUserIdentity(p1 $userName )::JM,16839:JM,16844
+457 :: EXPR :: modify :: Ljava/lang/String :: p0 $this ._roleObjectClass = #(groupOfUniqueNames)::
+18890 :: EXPR :: modify :: Lorg/eclipse/jetty/jaas/spi/LdapLoginModule :: p0 $this .this$0 = p1 $this$0 ::
+460 :: EXPR :: modify :: Ljava/lang/String :: p0 $this ._roleMemberAttribute = #(uniqueMember)::
+16844 :: PRED :: IF :: Z :: if (v30 != #(null)) goto 84::JM,18565:JM,18581:JM,18575
+463 :: EXPR :: modify :: Ljava/lang/String :: p0 $this ._roleNameAttribute = #(roleName)::
+466 :: EXPR :: modify :: Z :: p0 $this ._forceBindingLogin = #(0)::
+18898 :: EXPR :: modify :: Ljavax/naming/directory/Attributes :: p0 $this .attributes = p4 $attributes ::
+492 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.login()::CD,496:CD,500
+496 :: CALL :: call :: Z :: v4 = p0 $this .isIgnored()::JM,500:CL,16771
+500 :: PRED :: IF :: Z :: if (v4 == #(0)) goto 10::CD,562:CD,577:JM,16527:CD,606
+562 :: CALL :: call :: Lorg/eclipse/jetty/jaas/spi/UserInfo :: v28 = p0 $this .getUserInfo(v15)::CL,16989:CL,16777:CL,16463
+577 :: NORM :: declaration :: Lorg/eclipse/jetty/jaas/spi/AbstractLoginModule$JAASUserInfo :: v29 = new org.eclipse.jetty.jaas.spi.AbstractLoginModule$JAASUserInfo::DD,583
+583 :: EXPR :: modify :: Lorg/eclipse/jetty/jaas/spi/AbstractLoginModule$JAASUserInfo :: p0 $this .currentUser = v29::
+603 :: EXPR :: reference :: Lorg/eclipse/jetty/jaas/spi/AbstractLoginModule$JAASUserInfo :: v39 = p0 $this .currentUser::
+16989 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule.getUserInfo(java.lang.String)::CD,16994:CD,17001:CD,17011:CD,17015:CD,17019:CD,17087:CD,17158
+606 :: CALL :: call :: V :: v39.fetchRoles()::CL,16693
+16994 :: CALL :: call :: Ljava/sql/Connection :: v5 = p0 $this .getConnection()::JM,17011:JM,17158:JM,17015:JM,17001:JM,17019:JM,17020:CL,19226:CL,19213
+16998 :: EXPR :: reference :: Ljava/lang/String :: v7 = p0 $this .userQuery::JM,17011:JM,17158:JM,17015:JM,17001:JM,17019:JM,17020
+17001 :: CALL :: call :: Ljava/sql/PreparedStatement :: v9 = v5.prepareStatement(v7)::JM,17011:JM,17158:JM,17015:JM,17001:JM,17019:JM,17020
+17011 :: CALL :: call :: Ljava/sql/ResultSet :: v13 = v9.executeQuery()::JM,17011:JM,17158:JM,17015:JM,17019:JM,17020
+17015 :: CALL :: call :: Z :: v15 = v13.next()::JM,17158:JM,17015:JM,17019:JM,17020
+19065 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.UserInfo.fetchRoles()::CD,19076
+17019 :: PRED :: IF :: Z :: if (v15 == #(0)) goto 68::CF,17158:CD,17020:JM,17015:JM,17019
+17020 :: CALL :: call :: Ljava/lang/String :: v18 = v13.getString(#(1))::JM,17158:JM,17015:JM,17019:JM,17020
+19073 :: EXPR :: reference :: Z :: v4 = p0 $this ._rolesLoaded::DD,19076
+19076 :: PRED :: IF :: Z :: if (v4 != #(0)) goto 34::CD,19080
+19080 :: CALL :: call :: Ljava/util/List :: v8 = p0 $this .doFetchRoles()::CL,21270
+17087 :: PRED :: IF :: Z :: if (v26 != #(null)) goto 301::JM,19346:JM,18565:JM,18581:JM,18575
+17158 :: EXPR :: assign :: null :: PHI v26 = #(null), v18::DD,17087
+19213 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.DataSourceLoginModule.getConnection()::CE,19214:CD,19220:CD,19224
+19214 :: EXIT :: exit :: Ljava/sql/Connection :: org.eclipse.jetty.jaas.spi.DataSourceLoginModule.getConnection()::JM,17011:JM,17158:JM,17015:JM,17001:JM,17019:JM,17020:JM,24786
+19217 :: EXPR :: reference :: Ljavax/sql/DataSource :: v3 = p0 $this .dataSource::JM,19220:JM,19224
+19220 :: CALL :: call :: Ljava/sql/Connection :: v5 = v3.getConnection()::JM,19220:JM,19224
+21270 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.AbstractDatabaseLoginModule.JDBCUserInfo.doFetchRoles()::CD,21281
+19224 :: NORM :: compound :: Ljava/sql/Connection :: return v5::CF,19214
+21274 :: EXPR :: reference :: Lorg/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule :: v3 = p0 $this .this$0::
+19226 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.JDBCLoginModule.getConnection()::CE,19227:CD,19315:CD,19321
+19227 :: EXIT :: exit :: Ljava/sql/Connection :: org.eclipse.jetty.jaas.spi.JDBCLoginModule.getConnection()::JM,17011:JM,17158:JM,17015:JM,17001:JM,17019:JM,17020:JM,24786
+21281 :: CALL :: call :: Ljava/util/List :: v7 = v3.getRoles(v5)::CL,24770
+16230 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.configureCallbacks()::CE,16231:CD,16234:CD,16262
+16231 :: EXIT :: exit :: [Ljavax/security/auth/callback/Callback :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.configureCallbacks()::
+16234 :: NORM :: declaration :: [Ljavax/security/auth/callback/Callback :: v4 = new javax.security.auth.callback.Callback[]::DD,16262
+19306 :: EXPR :: reference :: Ljava/lang/String :: v35 = p0 $this .dbUrl::JM,19315:JM,19321
+19309 :: EXPR :: reference :: Ljava/lang/String :: v36 = p0 $this .dbUserName::JM,19315:JM,19321
+19312 :: EXPR :: reference :: Ljava/lang/String :: v37 = p0 $this .dbPassword::JM,19315:JM,19321
+19315 :: CALL :: call :: Ljava/sql/Connection :: v39 = getConnection(v35, v36, v37)::JM,19315:JM,19321
+19321 :: NORM :: compound :: Ljava/sql/Connection :: return v39::DD,19227
+16262 :: NORM :: compound :: [Ljavax/security/auth/callback/Callback :: return v4::DD,16231
+19346 :: EXPR :: modify :: Lorg/eclipse/jetty/jaas/spi/AbstractDatabaseLoginModule :: p0 $this .this$0 = p1 $this$0 ::
+16289 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.isAuthenticated()::CE,16290:CD,16296
+16290 :: EXIT :: exit :: Z :: org.eclipse.jetty.jaas.spi.AbstractLoginModule.isAuthenticated()::JM,16679
+16293 :: EXPR :: reference :: Z :: v3 = p0 $this .authState::DD,16296
+16296 :: NORM :: compound :: Z :: return v3::CF,16290
+16298 :: ENTR :: entry :: null :: org.eclipse.jetty.jaas.spi.LdapLoginModule.bindingLogin(java.lang.String,java.lang.Object)::CE,16299:JM,18565:JM,18581:JM,18575:JM,16527:CD,16413
+16299 :: EXIT :: exit :: Z :: org.eclipse.jetty.jaas.spi.LdapLoginModule.bindingLogin(java.lang.String,java.lang.Object)::JM,151

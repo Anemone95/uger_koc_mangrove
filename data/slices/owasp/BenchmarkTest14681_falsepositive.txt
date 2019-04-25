@@ -1,0 +1,17 @@
+[66, 70]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest14681.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,36:CD,40:CD,44:CD,49:CD,54:CD,59:CD,63:CD,66
+36 :: CALL :: call :: Ljava/lang/String :: v29 = doSomething(v26)::JM,66:CL,185
+40 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v30 = new java.lang.StringBuilder::JM,66
+44 :: CALL :: call :: Ljava/lang/StringBuilder :: v34 = v30.append(#({call verifyUserPassw...))::JM,66
+49 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v34.append(v29)::JM,66
+54 :: CALL :: call :: Ljava/lang/StringBuilder :: v39 = v36.append(#(')}))::JM,66
+185 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest14681.doSomething(java.lang.String)::CF,186:CD,189:CD,190:CD,192:CD,193
+186 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest14681.doSomething(java.lang.String)::JM,66
+59 :: CALL :: call :: Ljava/lang/String :: v41 = v39.toString()::JM,66
+189 :: EXPR :: assign :: Ljava/lang/Object :: v5 = #(294) - #(86)::DD,190
+190 :: PRED :: IF :: Z :: if (v5 <= #(200)) goto 23::CD,193
+63 :: CALL :: call :: Ljava/sql/Connection :: v43 = getSqlConnection()::JM,66
+192 :: NORM :: compound :: Ljava/lang/String :: return v8::CF,186
+193 :: EXPR :: assign :: null :: PHI v8 = #(This_should_always_happen), p1 $param ::CF,192
+66 :: CALL :: call :: Ljava/sql/CallableStatement :: v45 = v43.prepareCall(v41)::JM,66

@@ -1,0 +1,27 @@
+[47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 61]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest20980.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,17:CD,21:CD,25:CD,30:CD,35:CD,40:CD,44:CD,47:CD,56
+17 :: CALL :: call :: Ljava/lang/String :: v11 = doSomething(v9)::JM,56:CL,167
+21 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::JM,56
+25 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v12.append(#(SELECT * from USERS w...))::JM,56
+30 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v16.append(v11)::JM,56
+35 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v18.append(#('))::JM,56
+40 :: CALL :: call :: Ljava/lang/String :: v23 = v21.toString()::JM,56
+44 :: CALL :: call :: Ljava/sql/Statement :: v25 = getSqlStatement()::JM,56
+47 :: NORM :: declaration :: [I :: v27 = new []::JM,56
+48 :: EXPR :: modify :: I :: v27[#(0)] = #(1)::
+52 :: EXPR :: modify :: I :: v27[#(1)] = #(2)::
+56 :: CALL :: call :: Z :: v31 = v25.execute(v23, v27)::JM,56
+167 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest20980.doSomething(java.lang.String)::CE,168:CD,171:CD,175:CD,205:CD,206:JM,189
+168 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest20980.doSomething(java.lang.String)::JM,56
+171 :: CALL :: call :: I :: v4 = p1 $param .length()::JM,189:JM,206:JM,175
+175 :: PRED :: IF :: Z :: if (v4 <= #(1)) goto 44::CF,206:CF,176:CD,181:CD,185:CD,189:CD,190:CD,194:CD,201
+176 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v6 = new java.lang.StringBuilder::JM,206
+181 :: CALL :: call :: I :: v9 = p1 $param .length()::JM,189:JM,206:JM,175
+185 :: CALL :: call :: I :: v12 = #(Z).length()::JM,189
+189 :: EXPR :: assign :: Ljava/lang/Object :: v13 = v9 - v12::JM,206:JM,189:JM,175
+190 :: CALL :: call :: I :: v15 = p1 $param .length()::JM,189:JM,206:JM,175
+194 :: CALL :: call :: Ljava/lang/StringBuilder :: v17 = v6.replace(v13, v15, #(Z))::JM,206
+201 :: CALL :: call :: Ljava/lang/String :: v19 = v17.toString()::JM,206
+205 :: NORM :: compound :: Ljava/lang/String :: return v20::DD,168
+206 :: EXPR :: assign :: null :: PHI v20 = p1 $param , v19::CF,205

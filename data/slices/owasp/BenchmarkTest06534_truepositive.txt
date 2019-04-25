@@ -1,0 +1,17 @@
+[65, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest06534.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,16:CD,21:CD,25:CD,29:CD,34:CD,39:CD,44:CD,48:CD,51:CD,60
+7 :: CALL :: call :: Ljava/lang/String :: v6 = p1 $request .getQueryString()::
+11 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v7 = new java.lang.StringBuilder::JM,60
+16 :: CALL :: call :: Ljava/lang/StringBuilder :: v11 = v7.append(#(_SafeStuff))::JM,60
+21 :: CALL :: call :: Ljava/lang/String :: v13 = v11.toString()::JM,60
+25 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v14 = new java.lang.StringBuilder::JM,60
+29 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v14.append(#(SELECT * from USERS w...))::JM,60
+34 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v18.append(v13)::JM,60
+39 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v20.append(#('))::JM,60
+44 :: CALL :: call :: Ljava/lang/String :: v25 = v23.toString()::JM,60
+48 :: CALL :: call :: Ljava/sql/Statement :: v27 = getSqlStatement()::JM,60
+51 :: NORM :: declaration :: [I :: v29 = new []::JM,60
+52 :: EXPR :: modify :: I :: v29[#(0)] = #(1)::
+56 :: EXPR :: modify :: I :: v29[#(1)] = #(2)::
+60 :: CALL :: call :: Z :: v33 = v27.execute(v25, v29)::JM,60

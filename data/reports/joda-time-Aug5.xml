@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.2-dev-20160306-90c514b" sequence="1" timestamp="1519838475909" analysisTimestamp="1519838459572" release="">
+  <Project projectName="joda-time">
+    <Jar>/Users/ukoc/workspace-bench/joda-time/target/test-classes</Jar>
+    <Jar>/Users/ukoc/workspace-bench/joda-time/target/classes</Jar>
+    <AuxClasspathEntry>/Users/ukoc/workspace-bench/joda-time/target/classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/workspace-bench/joda-time/target/test-classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/ukoc/.m2/repository/junit/junit/3.8.2/junit-3.8.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar</AuxClasspathEntry>
+    <SrcDir>/Users/ukoc/workspace-bench/joda-time/src/test/java</SrcDir>
+    <SrcDir>/Users/ukoc/workspace-bench/joda-time/src/main/java</SrcDir>
+    <SrcDir>/Users/ukoc/workspace-bench/joda-time/src/test/resources</SrcDir>
+    <WrkDir>/Users/ukoc/workspace-bench/.metadata/.plugins/edu.umd.cs.findbugs.plugin.eclipse</WrkDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="1" rank="5" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.joda.time.tz.ZoneInfoCompiler">
+      <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+    </Class>
+    <Method classname="org.joda.time.tz.ZoneInfoCompiler" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" start="81" end="124" startBytecode="0" endBytecode="477" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+    </Method>
+    <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" start="94" end="94" startBytecode="44" endBytecode="44" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+    <String value="File(...)" role="Sink method"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="1" rank="5" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.joda.time.tz.ZoneInfoCompiler">
+      <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+    </Class>
+    <Method classname="org.joda.time.tz.ZoneInfoCompiler" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" start="81" end="124" startBytecode="0" endBytecode="477" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+    </Method>
+    <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" start="96" end="96" startBytecode="74" endBytecode="74" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+    <String value="File(...)" role="Sink method"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="1" rank="5" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.joda.time.tz.ZoneInfoCompiler">
+      <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+    </Class>
+    <Method classname="org.joda.time.tz.ZoneInfoCompiler" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" start="81" end="124" startBytecode="0" endBytecode="477" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+    </Method>
+    <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" start="118" end="118" startBytecode="188" endBytecode="188" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+    <String value="File(...)" role="Sink method"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.joda.time.tz.ZoneInfoCompiler">
+      <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+    </Class>
+    <Method classname="org.joda.time.tz.ZoneInfoCompiler" name="writeZone" signature="(Ljava/io/File;Lorg/joda/time/tz/DateTimeZoneBuilder;Lorg/joda/time/DateTimeZone;)V" isStatic="false">
+      <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" start="468" end="491" startBytecode="0" endBytecode="365" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+    </Method>
+    <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" start="471" end="471" startBytecode="41" endBytecode="41" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.joda.time.tz.ZoneInfoCompiler" start="471" end="471" startBytecode="38" endBytecode="38" sourcefile="ZoneInfoCompiler.java" sourcepath="org/joda/time/tz/ZoneInfoCompiler.java"/>
+  </BugInstance>
+  <BugInstance type="PATH_TRAVERSAL_IN" priority="2" rank="7" abbrev="SECPTI" category="SECURITY" first="1">
+    <Class classname="org.joda.time.tz.ZoneInfoProvider">
+      <SourceLine classname="org.joda.time.tz.ZoneInfoProvider" sourcefile="ZoneInfoProvider.java" sourcepath="org/joda/time/tz/ZoneInfoProvider.java"/>
+    </Class>
+    <Method classname="org.joda.time.tz.ZoneInfoProvider" name="openResource" signature="(Ljava/lang/String;)Ljava/io/InputStream;" isStatic="false">
+      <SourceLine classname="org.joda.time.tz.ZoneInfoProvider" start="197" end="219" startBytecode="0" endBytecode="264" sourcefile="ZoneInfoProvider.java" sourcepath="org/joda/time/tz/ZoneInfoProvider.java"/>
+    </Method>
+    <SourceLine classname="org.joda.time.tz.ZoneInfoProvider" start="198" end="198" startBytecode="20" endBytecode="20" sourcefile="ZoneInfoProvider.java" sourcepath="org/joda/time/tz/ZoneInfoProvider.java"/>
+    <String value="File(...)" role="Sink method"/>
+    <SourceLine classname="org.joda.time.tz.ZoneInfoProvider" start="146" end="146" startBytecode="11" endBytecode="11" sourcefile="ZoneInfoProvider.java" sourcepath="org/joda/time/tz/ZoneInfoProvider.java"/>
+    <SourceLine classname="org.joda.time.tz.ZoneInfoProvider" start="159" end="159" startBytecode="54" endBytecode="54" sourcefile="ZoneInfoProvider.java" sourcepath="org/joda/time/tz/ZoneInfoProvider.java"/>
+    <SourceLine classname="org.joda.time.tz.ZoneInfoProvider" start="162" end="162" startBytecode="68" endBytecode="68" sourcefile="ZoneInfoProvider.java" sourcepath="org/joda/time/tz/ZoneInfoProvider.java"/>
+    <SourceLine classname="org.joda.time.tz.ZoneInfoProvider" start="166" end="166" startBytecode="77" endBytecode="77" sourcefile="ZoneInfoProvider.java" sourcepath="org/joda/time/tz/ZoneInfoProvider.java"/>
+    <SourceLine classname="org.joda.time.tz.ZoneInfoProvider" start="231" end="231" startBytecode="4" endBytecode="4" sourcefile="ZoneInfoProvider.java" sourcepath="org/joda/time/tz/ZoneInfoProvider.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 28 Feb 2018 12:20:34 -0500" total_classes="530" referenced_classes="735" total_bugs="5" total_size="72783" num_packages="8" java_version="1.8.0_101" vm_version="25.101-b13" cpu_seconds="43.64" clock_seconds="18.20" peak_mbytes="1384.44" alloc_mbytes="1024.00" gc_seconds="0.62" priority_2="2" priority_1="3">
+    <PackageStats package="org.joda.time" total_bugs="0" total_types="208" total_size="42141">
+      <ClassStats class="org.joda.time.Chronology" sourceFile="Chronology.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.joda.time.ClassLoadTest" sourceFile="ClassLoadTest.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.joda.time.DateMidnight" sourceFile="DateMidnight.java" interface="false" size="209" bugs="0"/>
+      <ClassStats class="org.joda.time.DateMidnight$Property" sourceFile="DateMidnight.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTime" sourceFile="DateTime.java" interface="false" size="338" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTime$Property" sourceFile="DateTime.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeComparator" sourceFile="DateTimeComparator.java" interface="false" size="79" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeConstants" sourceFile="DateTimeConstants.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeField" sourceFile="DateTimeField.java" interface="false" size="55" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeFieldType" sourceFile="DateTimeFieldType.java" interface="false" size="178" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeFieldType$StandardDateTimeFieldType" sourceFile="DateTimeFieldType.java" interface="false" size="76" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeUtils" sourceFile="DateTimeUtils.java" interface="false" size="140" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeUtils$FixedMillisProvider" sourceFile="DateTimeUtils.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeUtils$MillisProvider" sourceFile="DateTimeUtils.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeUtils$OffsetMillisProvider" sourceFile="DateTimeUtils.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeUtils$SystemMillisProvider" sourceFile="DateTimeUtils.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeZone" sourceFile="DateTimeZone.java" interface="false" size="372" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeZone$LazyInit" sourceFile="DateTimeZone.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeZone$LazyInit$1" sourceFile="DateTimeZone.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.DateTimeZone$Stub" sourceFile="DateTimeZone.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.joda.time.Days" sourceFile="Days.java" interface="false" size="117" bugs="0"/>
+      <ClassStats class="org.joda.time.Duration" sourceFile="Duration.java" interface="false" size="104" bugs="0"/>
+      <ClassStats class="org.joda.time.DurationField" sourceFile="DurationField.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.joda.time.DurationFieldType" sourceFile="DurationFieldType.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.joda.time.DurationFieldType$StandardDurationFieldType" sourceFile="DurationFieldType.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.joda.time.Hours" sourceFile="Hours.java" interface="false" size="120" bugs="0"/>
+      <ClassStats class="org.joda.time.IllegalFieldValueException" sourceFile="IllegalFieldValueException.java" interface="false" size="143" bugs="0"/>
+      <ClassStats class="org.joda.time.IllegalInstantException" sourceFile="IllegalInstantException.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.joda.time.Instant" sourceFile="Instant.java" interface="false" size="55" bugs="0"/>
+      <ClassStats class="org.joda.time.Interval" sourceFile="Interval.java" interface="false" size="137" bugs="0"/>
+      <ClassStats class="org.joda.time.JodaTimePermission" sourceFile="JodaTimePermission.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.LocalDate" sourceFile="LocalDate.java" interface="false" size="407" bugs="0"/>
+      <ClassStats class="org.joda.time.LocalDate$Property" sourceFile="LocalDate.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.joda.time.LocalDateTime" sourceFile="LocalDateTime.java" interface="false" size="457" bugs="0"/>
+      <ClassStats class="org.joda.time.LocalDateTime$Property" sourceFile="LocalDateTime.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.joda.time.LocalTime" sourceFile="LocalTime.java" interface="false" size="303" bugs="0"/>
+      <ClassStats class="org.joda.time.LocalTime$Property" sourceFile="LocalTime.java" interface="false" size="58" bugs="0"/>
+      <ClassStats class="org.joda.time.Minutes" sourceFile="Minutes.java" interface="false" size="105" bugs="0"/>
+      <ClassStats class="org.joda.time.MockNullZoneChronology" sourceFile="MockNullZoneChronology.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.MockPartial" sourceFile="MockPartial.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.joda.time.MockZone" sourceFile="MockZone.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.joda.time.MonthDay" sourceFile="MonthDay.java" interface="false" size="163" bugs="0"/>
+      <ClassStats class="org.joda.time.MonthDay$Property" sourceFile="MonthDay.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.joda.time.Months" sourceFile="Months.java" interface="false" size="118" bugs="0"/>
+      <ClassStats class="org.joda.time.MutableDateTime" sourceFile="MutableDateTime.java" interface="false" size="307" bugs="0"/>
+      <ClassStats class="org.joda.time.MutableDateTime$Property" sourceFile="MutableDateTime.java" interface="false" size="59" bugs="0"/>
+      <ClassStats class="org.joda.time.MutableInterval" sourceFile="MutableInterval.java" interface="false" size="104" bugs="0"/>
+      <ClassStats class="org.joda.time.MutablePeriod" sourceFile="MutablePeriod.java" interface="false" size="231" bugs="0"/>
+      <ClassStats class="org.joda.time.Partial" sourceFile="Partial.java" interface="false" size="286" bugs="0"/>
+      <ClassStats class="org.joda.time.Partial$Property" sourceFile="Partial.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.joda.time.Period" sourceFile="Period.java" interface="false" size="379" bugs="0"/>
+      <ClassStats class="org.joda.time.PeriodType" sourceFile="PeriodType.java" interface="false" size="364" bugs="0"/>
+      <ClassStats class="org.joda.time.ReadWritableDateTime" sourceFile="ReadWritableDateTime.java" interface="true" size="27" bugs="0"/>
+      <ClassStats class="org.joda.time.ReadWritableInstant" sourceFile="ReadWritableInstant.java" interface="true" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.ReadWritableInterval" sourceFile="ReadWritableInterval.java" interface="true" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.ReadWritablePeriod" sourceFile="ReadWritablePeriod.java" interface="true" size="27" bugs="0"/>
+      <ClassStats class="org.joda.time.ReadableDateTime" sourceFile="ReadableDateTime.java" interface="true" size="23" bugs="0"/>
+      <ClassStats class="org.joda.time.ReadableDuration" sourceFile="ReadableDuration.java" interface="true" size="10" bugs="0"/>
+      <ClassStats class="org.joda.time.ReadableInstant" sourceFile="ReadableInstant.java" interface="true" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.ReadableInterval" sourceFile="ReadableInterval.java" interface="true" size="22" bugs="0"/>
+      <ClassStats class="org.joda.time.ReadablePartial" sourceFile="ReadablePartial.java" interface="true" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.ReadablePeriod" sourceFile="ReadablePeriod.java" interface="true" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.Seconds" sourceFile="Seconds.java" interface="false" size="105" bugs="0"/>
+      <ClassStats class="org.joda.time.TestAbstractPartial" sourceFile="TestAbstractPartial.java" interface="false" size="91" bugs="0"/>
+      <ClassStats class="org.joda.time.TestAbstractPartial$MockPartial" sourceFile="TestAbstractPartial.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.joda.time.TestAbstractPartial$MockProperty0" sourceFile="TestAbstractPartial.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.joda.time.TestAbstractPartial$MockProperty0Chrono" sourceFile="TestAbstractPartial.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.TestAbstractPartial$MockProperty0Chrono$1" sourceFile="TestAbstractPartial.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.TestAbstractPartial$MockProperty0Field" sourceFile="TestAbstractPartial.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.TestAbstractPartial$MockProperty0Val" sourceFile="TestAbstractPartial.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.TestAbstractPartial$MockProperty1" sourceFile="TestAbstractPartial.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.joda.time.TestAll" sourceFile="TestAll.java" interface="false" size="86" bugs="0"/>
+      <ClassStats class="org.joda.time.TestAllPackages" sourceFile="TestAllPackages.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.joda.time.TestBasePartial" sourceFile="TestBasePartial.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.joda.time.TestBasePartial$MockPartial" sourceFile="TestBasePartial.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.joda.time.TestBaseSingleFieldPeriod" sourceFile="TestBaseSingleFieldPeriod.java" interface="false" size="176" bugs="0"/>
+      <ClassStats class="org.joda.time.TestBaseSingleFieldPeriod$Single" sourceFile="TestBaseSingleFieldPeriod.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.joda.time.TestChronology" sourceFile="TestChronology.java" interface="false" size="154" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateMidnight_Basics" sourceFile="TestDateMidnight_Basics.java" interface="false" size="775" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateMidnight_Basics$1" sourceFile="TestDateMidnight_Basics.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateMidnight_Basics$MockInstant" sourceFile="TestDateMidnight_Basics.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateMidnight_Constructors" sourceFile="TestDateMidnight_Constructors.java" interface="false" size="382" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateMidnight_Properties" sourceFile="TestDateMidnight_Properties.java" interface="false" size="440" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeComparator" sourceFile="TestDateTimeComparator.java" interface="false" size="621" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeConstants" sourceFile="TestDateTimeConstants.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeConstants$1" sourceFile="TestDateTimeConstants.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeFieldType" sourceFile="TestDateTimeFieldType.java" interface="false" size="254" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeUtils" sourceFile="TestDateTimeUtils.java" interface="false" size="312" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeUtils$1" sourceFile="TestDateTimeUtils.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeUtils$2" sourceFile="TestDateTimeUtils.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeUtils$3" sourceFile="TestDateTimeUtils.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeUtils$4" sourceFile="TestDateTimeUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeUtils$5" sourceFile="TestDateTimeUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeUtils$6" sourceFile="TestDateTimeUtils.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeUtils$7" sourceFile="TestDateTimeUtils.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone" sourceFile="TestDateTimeZone.java" interface="false" size="667" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone$1" sourceFile="TestDateTimeZone.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone$2" sourceFile="TestDateTimeZone.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone$3" sourceFile="TestDateTimeZone.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone$4" sourceFile="TestDateTimeZone.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone$5" sourceFile="TestDateTimeZone.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone$MockBadUTCProvider" sourceFile="TestDateTimeZone.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone$MockDateTimeZone" sourceFile="TestDateTimeZone.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone$MockEmptyIDSProvider" sourceFile="TestDateTimeZone.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone$MockNoUTCProvider" sourceFile="TestDateTimeZone.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone$MockNullIDSProvider" sourceFile="TestDateTimeZone.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone$MockOKButNullNameProvider" sourceFile="TestDateTimeZone.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZone$MockOKProvider" sourceFile="TestDateTimeZone.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTimeZoneCutover" sourceFile="TestDateTimeZoneCutover.java" interface="false" size="1056" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTime_Basics" sourceFile="TestDateTime_Basics.java" interface="false" size="999" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTime_Basics$1" sourceFile="TestDateTime_Basics.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTime_Basics$MockEqualsChronology" sourceFile="TestDateTime_Basics.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTime_Basics$MockInstant" sourceFile="TestDateTime_Basics.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTime_Constructors" sourceFile="TestDateTime_Constructors.java" interface="false" size="494" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDateTime_Properties" sourceFile="TestDateTime_Properties.java" interface="false" size="1114" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDays" sourceFile="TestDays.java" interface="false" size="289" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDurationField" sourceFile="TestDurationField.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDurationFieldType" sourceFile="TestDurationFieldType.java" interface="false" size="127" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDuration_Basics" sourceFile="TestDuration_Basics.java" interface="false" size="604" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDuration_Basics$MockDuration" sourceFile="TestDuration_Basics.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDuration_Basics$MockMutableDuration" sourceFile="TestDuration_Basics.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.TestDuration_Constructors" sourceFile="TestDuration_Constructors.java" interface="false" size="188" bugs="0"/>
+      <ClassStats class="org.joda.time.TestHours" sourceFile="TestHours.java" interface="false" size="264" bugs="0"/>
+      <ClassStats class="org.joda.time.TestIllegalFieldValueException" sourceFile="TestIllegalFieldValueException.java" interface="false" size="247" bugs="0"/>
+      <ClassStats class="org.joda.time.TestInstant_Basics" sourceFile="TestInstant_Basics.java" interface="false" size="434" bugs="0"/>
+      <ClassStats class="org.joda.time.TestInstant_Basics$MockInstant" sourceFile="TestInstant_Basics.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.joda.time.TestInstant_Constructors" sourceFile="TestInstant_Constructors.java" interface="false" size="95" bugs="0"/>
+      <ClassStats class="org.joda.time.TestInterval_Basics" sourceFile="TestInterval_Basics.java" interface="false" size="986" bugs="0"/>
+      <ClassStats class="org.joda.time.TestInterval_Basics$MockInterval" sourceFile="TestInterval_Basics.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.TestInterval_Constructors" sourceFile="TestInterval_Constructors.java" interface="false" size="541" bugs="0"/>
+      <ClassStats class="org.joda.time.TestInterval_Constructors$1" sourceFile="TestInterval_Constructors.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.TestInterval_Constructors$2" sourceFile="TestInterval_Constructors.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.TestInterval_Constructors$MockInterval" sourceFile="TestInterval_Constructors.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalDateTime_Basics" sourceFile="TestLocalDateTime_Basics.java" interface="false" size="847" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalDateTime_Basics$MockInstant" sourceFile="TestLocalDateTime_Basics.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalDateTime_Constructors" sourceFile="TestLocalDateTime_Constructors.java" interface="false" size="641" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalDateTime_Properties" sourceFile="TestLocalDateTime_Properties.java" interface="false" size="839" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalDate_Basics" sourceFile="TestLocalDate_Basics.java" interface="false" size="861" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalDate_Basics$MockInstant" sourceFile="TestLocalDate_Basics.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalDate_Constructors" sourceFile="TestLocalDate_Constructors.java" interface="false" size="469" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalDate_Properties" sourceFile="TestLocalDate_Properties.java" interface="false" size="421" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalTime_Basics" sourceFile="TestLocalTime_Basics.java" interface="false" size="583" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalTime_Basics$1" sourceFile="TestLocalTime_Basics.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalTime_Basics$2" sourceFile="TestLocalTime_Basics.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalTime_Basics$MockInstant" sourceFile="TestLocalTime_Basics.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalTime_Constructors" sourceFile="TestLocalTime_Constructors.java" interface="false" size="595" bugs="0"/>
+      <ClassStats class="org.joda.time.TestLocalTime_Properties" sourceFile="TestLocalTime_Properties.java" interface="false" size="583" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMinMaxLong" sourceFile="TestMinMaxLong.java" interface="false" size="220" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMinutes" sourceFile="TestMinutes.java" interface="false" size="251" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMonthDay_Basics" sourceFile="TestMonthDay_Basics.java" interface="false" size="615" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMonthDay_Basics$MockMD" sourceFile="TestMonthDay_Basics.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMonthDay_Constructors" sourceFile="TestMonthDay_Constructors.java" interface="false" size="254" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMonthDay_Properties" sourceFile="TestMonthDay_Properties.java" interface="false" size="261" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMonths" sourceFile="TestMonths.java" interface="false" size="267" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableDateTime_Adds" sourceFile="TestMutableDateTime_Adds.java" interface="false" size="288" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableDateTime_Basics" sourceFile="TestMutableDateTime_Basics.java" interface="false" size="552" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableDateTime_Basics$1" sourceFile="TestMutableDateTime_Basics.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableDateTime_Basics$MockEqualsChronology" sourceFile="TestMutableDateTime_Basics.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableDateTime_Basics$MockInstant" sourceFile="TestMutableDateTime_Basics.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableDateTime_Constructors" sourceFile="TestMutableDateTime_Constructors.java" interface="false" size="342" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableDateTime_Properties" sourceFile="TestMutableDateTime_Properties.java" interface="false" size="624" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableDateTime_Sets" sourceFile="TestMutableDateTime_Sets.java" interface="false" size="512" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableInterval_Basics" sourceFile="TestMutableInterval_Basics.java" interface="false" size="344" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableInterval_Basics$MockInterval" sourceFile="TestMutableInterval_Basics.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableInterval_Constructors" sourceFile="TestMutableInterval_Constructors.java" interface="false" size="454" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableInterval_Constructors$1" sourceFile="TestMutableInterval_Constructors.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableInterval_Constructors$2" sourceFile="TestMutableInterval_Constructors.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableInterval_Constructors$MockInterval" sourceFile="TestMutableInterval_Constructors.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableInterval_Updates" sourceFile="TestMutableInterval_Updates.java" interface="false" size="277" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutableInterval_Updates$MockBadInterval" sourceFile="TestMutableInterval_Updates.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutablePeriod_Basics" sourceFile="TestMutablePeriod_Basics.java" interface="false" size="144" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutablePeriod_Basics$MockMutablePeriod" sourceFile="TestMutablePeriod_Basics.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutablePeriod_Constructors" sourceFile="TestMutablePeriod_Constructors.java" interface="false" size="781" bugs="0"/>
+      <ClassStats class="org.joda.time.TestMutablePeriod_Updates" sourceFile="TestMutablePeriod_Updates.java" interface="false" size="1035" bugs="0"/>
+      <ClassStats class="org.joda.time.TestPartial_Basics" sourceFile="TestPartial_Basics.java" interface="false" size="696" bugs="0"/>
+      <ClassStats class="org.joda.time.TestPartial_Constructors" sourceFile="TestPartial_Constructors.java" interface="false" size="289" bugs="0"/>
+      <ClassStats class="org.joda.time.TestPartial_Match" sourceFile="TestPartial_Match.java" interface="false" size="115" bugs="0"/>
+      <ClassStats class="org.joda.time.TestPartial_Properties" sourceFile="TestPartial_Properties.java" interface="false" size="256" bugs="0"/>
+      <ClassStats class="org.joda.time.TestPeriodType" sourceFile="TestPeriodType.java" interface="false" size="736" bugs="0"/>
+      <ClassStats class="org.joda.time.TestPeriod_Basics" sourceFile="TestPeriod_Basics.java" interface="false" size="1001" bugs="0"/>
+      <ClassStats class="org.joda.time.TestPeriod_Basics$MockPeriod" sourceFile="TestPeriod_Basics.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.TestPeriod_Constructors" sourceFile="TestPeriod_Constructors.java" interface="false" size="1284" bugs="0"/>
+      <ClassStats class="org.joda.time.TestSeconds" sourceFile="TestSeconds.java" interface="false" size="245" bugs="0"/>
+      <ClassStats class="org.joda.time.TestSerialization" sourceFile="TestSerialization.java" interface="false" size="218" bugs="0"/>
+      <ClassStats class="org.joda.time.TestStringConvert" sourceFile="TestStringConvert.java" interface="false" size="136" bugs="0"/>
+      <ClassStats class="org.joda.time.TestTimeOfDay_Basics" sourceFile="TestTimeOfDay_Basics.java" interface="false" size="551" bugs="0"/>
+      <ClassStats class="org.joda.time.TestTimeOfDay_Basics$MockInstant" sourceFile="TestTimeOfDay_Basics.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.joda.time.TestTimeOfDay_Constructors" sourceFile="TestTimeOfDay_Constructors.java" interface="false" size="517" bugs="0"/>
+      <ClassStats class="org.joda.time.TestTimeOfDay_Properties" sourceFile="TestTimeOfDay_Properties.java" interface="false" size="541" bugs="0"/>
+      <ClassStats class="org.joda.time.TestWeeks" sourceFile="TestWeeks.java" interface="false" size="259" bugs="0"/>
+      <ClassStats class="org.joda.time.TestYearMonthDay_Basics" sourceFile="TestYearMonthDay_Basics.java" interface="false" size="613" bugs="0"/>
+      <ClassStats class="org.joda.time.TestYearMonthDay_Basics$MockInstant" sourceFile="TestYearMonthDay_Basics.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.TestYearMonthDay_Constructors" sourceFile="TestYearMonthDay_Constructors.java" interface="false" size="303" bugs="0"/>
+      <ClassStats class="org.joda.time.TestYearMonthDay_Properties" sourceFile="TestYearMonthDay_Properties.java" interface="false" size="424" bugs="0"/>
+      <ClassStats class="org.joda.time.TestYearMonth_Basics" sourceFile="TestYearMonth_Basics.java" interface="false" size="476" bugs="0"/>
+      <ClassStats class="org.joda.time.TestYearMonth_Basics$MockYM" sourceFile="TestYearMonth_Basics.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.TestYearMonth_Constructors" sourceFile="TestYearMonth_Constructors.java" interface="false" size="252" bugs="0"/>
+      <ClassStats class="org.joda.time.TestYearMonth_Properties" sourceFile="TestYearMonth_Properties.java" interface="false" size="272" bugs="0"/>
+      <ClassStats class="org.joda.time.TestYears" sourceFile="TestYears.java" interface="false" size="207" bugs="0"/>
+      <ClassStats class="org.joda.time.TimeOfDay" sourceFile="TimeOfDay.java" interface="false" size="195" bugs="0"/>
+      <ClassStats class="org.joda.time.TimeOfDay$Property" sourceFile="TimeOfDay.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.joda.time.UTCDateTimeZone" sourceFile="UTCDateTimeZone.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.joda.time.Weeks" sourceFile="Weeks.java" interface="false" size="105" bugs="0"/>
+      <ClassStats class="org.joda.time.YearMonth" sourceFile="YearMonth.java" interface="false" size="163" bugs="0"/>
+      <ClassStats class="org.joda.time.YearMonth$Property" sourceFile="YearMonth.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.joda.time.YearMonthDay" sourceFile="YearMonthDay.java" interface="false" size="181" bugs="0"/>
+      <ClassStats class="org.joda.time.YearMonthDay$Property" sourceFile="YearMonthDay.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.joda.time.Years" sourceFile="Years.java" interface="false" size="91" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.joda.time.base" total_bugs="0" total_types="14" total_size="1095">
+      <ClassStats class="org.joda.time.base.AbstractDateTime" sourceFile="AbstractDateTime.java" interface="false" size="66" bugs="0"/>
+      <ClassStats class="org.joda.time.base.AbstractDuration" sourceFile="AbstractDuration.java" interface="false" size="54" bugs="0"/>
+      <ClassStats class="org.joda.time.base.AbstractInstant" sourceFile="AbstractInstant.java" interface="false" size="94" bugs="0"/>
+      <ClassStats class="org.joda.time.base.AbstractInterval" sourceFile="AbstractInterval.java" interface="false" size="109" bugs="0"/>
+      <ClassStats class="org.joda.time.base.AbstractPartial" sourceFile="AbstractPartial.java" interface="false" size="104" bugs="0"/>
+      <ClassStats class="org.joda.time.base.AbstractPeriod" sourceFile="AbstractPeriod.java" interface="false" size="55" bugs="0"/>
+      <ClassStats class="org.joda.time.base.BaseDateTime" sourceFile="BaseDateTime.java" interface="false" size="74" bugs="0"/>
+      <ClassStats class="org.joda.time.base.BaseDuration" sourceFile="BaseDuration.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.joda.time.base.BaseInterval" sourceFile="BaseInterval.java" interface="false" size="91" bugs="0"/>
+      <ClassStats class="org.joda.time.base.BaseLocal" sourceFile="BaseLocal.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.joda.time.base.BasePartial" sourceFile="BasePartial.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.joda.time.base.BasePeriod" sourceFile="BasePeriod.java" interface="false" size="216" bugs="0"/>
+      <ClassStats class="org.joda.time.base.BasePeriod$1" sourceFile="BasePeriod.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.joda.time.base.BaseSingleFieldPeriod" sourceFile="BaseSingleFieldPeriod.java" interface="false" size="95" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.joda.time.chrono" total_bugs="0" total_types="58" total_size="7327">
+      <ClassStats class="org.joda.time.chrono.AssembledChronology" sourceFile="AssembledChronology.java" interface="false" size="199" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.AssembledChronology$Fields" sourceFile="AssembledChronology.java" interface="false" size="115" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BaseChronology" sourceFile="BaseChronology.java" interface="false" size="167" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BasicChronology" sourceFile="BasicChronology.java" interface="false" size="318" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BasicChronology$HalfdayField" sourceFile="BasicChronology.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BasicChronology$YearInfo" sourceFile="BasicChronology.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BasicDayOfMonthDateTimeField" sourceFile="BasicDayOfMonthDateTimeField.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BasicDayOfYearDateTimeField" sourceFile="BasicDayOfYearDateTimeField.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BasicFixedMonthChronology" sourceFile="BasicFixedMonthChronology.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BasicGJChronology" sourceFile="BasicGJChronology.java" interface="false" size="90" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BasicMonthOfYearDateTimeField" sourceFile="BasicMonthOfYearDateTimeField.java" interface="false" size="154" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BasicSingleEraDateTimeField" sourceFile="BasicSingleEraDateTimeField.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BasicWeekOfWeekyearDateTimeField" sourceFile="BasicWeekOfWeekyearDateTimeField.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BasicWeekyearDateTimeField" sourceFile="BasicWeekyearDateTimeField.java" interface="false" size="81" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BasicYearDateTimeField" sourceFile="BasicYearDateTimeField.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.BuddhistChronology" sourceFile="BuddhistChronology.java" interface="false" size="82" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.CopticChronology" sourceFile="CopticChronology.java" interface="false" size="94" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.EthiopicChronology" sourceFile="EthiopicChronology.java" interface="false" size="92" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.GJCacheKey" sourceFile="GJCacheKey.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.GJChronology" sourceFile="GJChronology.java" interface="false" size="223" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.GJChronology$CutoverField" sourceFile="GJChronology.java" interface="false" size="175" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.GJChronology$ImpreciseCutoverField" sourceFile="GJChronology.java" interface="false" size="88" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.GJChronology$LinkedDurationField" sourceFile="GJChronology.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.GJDayOfWeekDateTimeField" sourceFile="GJDayOfWeekDateTimeField.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.GJEraDateTimeField" sourceFile="GJEraDateTimeField.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.GJLocaleSymbols" sourceFile="GJLocaleSymbols.java" interface="false" size="135" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.GJMonthOfYearDateTimeField" sourceFile="GJMonthOfYearDateTimeField.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.GJYearOfEraDateTimeField" sourceFile="GJYearOfEraDateTimeField.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.GregorianChronology" sourceFile="GregorianChronology.java" interface="false" size="89" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.ISOChronology" sourceFile="ISOChronology.java" interface="false" size="61" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.ISOChronology$Stub" sourceFile="ISOChronology.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.ISOYearOfEraDateTimeField" sourceFile="ISOYearOfEraDateTimeField.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.IslamicChronology" sourceFile="IslamicChronology.java" interface="false" size="184" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.IslamicChronology$LeapYearPatternType" sourceFile="IslamicChronology.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.JulianChronology" sourceFile="JulianChronology.java" interface="false" size="100" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.LenientChronology" sourceFile="LenientChronology.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.LimitChronology" sourceFile="LimitChronology.java" interface="false" size="147" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.LimitChronology$LimitDateTimeField" sourceFile="LimitChronology.java" interface="false" size="107" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.LimitChronology$LimitDurationField" sourceFile="LimitChronology.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.LimitChronology$LimitException" sourceFile="LimitChronology.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.StrictChronology" sourceFile="StrictChronology.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.TestAll" sourceFile="TestAll.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.TestBuddhistChronology" sourceFile="TestBuddhistChronology.java" interface="false" size="320" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.TestCopticChronology" sourceFile="TestCopticChronology.java" interface="false" size="479" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.TestEthiopicChronology" sourceFile="TestEthiopicChronology.java" interface="false" size="479" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.TestGJChronology" sourceFile="TestGJChronology.java" interface="false" size="424" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.TestGJDate" sourceFile="TestGJDate.java" interface="false" size="82" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.TestGregorianChronology" sourceFile="TestGregorianChronology.java" interface="false" size="260" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.TestISOChronology" sourceFile="TestISOChronology.java" interface="false" size="372" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.TestIslamicChronology" sourceFile="TestIslamicChronology.java" interface="false" size="610" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.TestJulianChronology" sourceFile="TestJulianChronology.java" interface="false" size="253" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.TestLenientChronology" sourceFile="TestLenientChronology.java" interface="false" size="101" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.ThreadContention" sourceFile="ThreadContention.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.ThreadContention$1" sourceFile="ThreadContention.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.ThreadContention$2" sourceFile="ThreadContention.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.ZonedChronology" sourceFile="ZonedChronology.java" interface="false" size="127" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.ZonedChronology$ZonedDateTimeField" sourceFile="ZonedChronology.java" interface="false" size="153" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.ZonedChronology$ZonedDurationField" sourceFile="ZonedChronology.java" interface="false" size="67" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.joda.time.chrono.gj" total_bugs="0" total_types="17" total_size="802">
+      <ClassStats class="org.joda.time.chrono.gj.MainTest" sourceFile="MainTest.java" interface="false" size="258" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestAll" sourceFile="TestAll.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestGJChronology" sourceFile="TestGJChronology.java" interface="false" size="98" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestGJDateTimeField" sourceFile="TestGJDateTimeField.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestGJDayOfMonthField" sourceFile="TestGJDayOfMonthField.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestGJDayOfWeekField" sourceFile="TestGJDayOfWeekField.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestGJDayOfYearField" sourceFile="TestGJDayOfYearField.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestGJMonthOfYearField" sourceFile="TestGJMonthOfYearField.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestGJWeekOfWeekyearField" sourceFile="TestGJWeekOfWeekyearField.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestGJWeekyearField" sourceFile="TestGJWeekyearField.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestGJYearField" sourceFile="TestGJYearField.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestGregorianChronology" sourceFile="TestGregorianChronology.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestJulianChronology" sourceFile="TestJulianChronology.java" interface="false" size="76" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestJulianDayOfMonthField" sourceFile="TestJulianDayOfMonthField.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestJulianMonthOfYearField" sourceFile="TestJulianMonthOfYearField.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestJulianWeekyearField" sourceFile="TestJulianWeekyearField.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.joda.time.chrono.gj.TestJulianYearField" sourceFile="TestJulianYearField.java" interface="false" size="23" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.joda.time.convert" total_bugs="0" total_types="69" total_size="3029">
+      <ClassStats class="org.joda.time.convert.AbstractConverter" sourceFile="AbstractConverter.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.CalendarConverter" sourceFile="CalendarConverter.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.Converter" sourceFile="Converter.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.ConverterManager" sourceFile="ConverterManager.java" interface="false" size="207" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.ConverterSet" sourceFile="ConverterSet.java" interface="false" size="128" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.ConverterSet$Entry" sourceFile="ConverterSet.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.DateConverter" sourceFile="DateConverter.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.DurationConverter" sourceFile="DurationConverter.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.InstantConverter" sourceFile="InstantConverter.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.IntervalConverter" sourceFile="IntervalConverter.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.LongConverter" sourceFile="LongConverter.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.MockBadChronology" sourceFile="MockBadChronology.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.MockUnknownCalendar" sourceFile="MockUnknownCalendar.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.MockUnknownTimeZone" sourceFile="MockUnknownTimeZone.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.MockZeroNullIntegerConverter" sourceFile="MockZeroNullIntegerConverter.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.NullConverter" sourceFile="NullConverter.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.PartialConverter" sourceFile="PartialConverter.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.PeriodConverter" sourceFile="PeriodConverter.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.ReadableDurationConverter" sourceFile="ReadableDurationConverter.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.ReadableInstantConverter" sourceFile="ReadableInstantConverter.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.ReadableIntervalConverter" sourceFile="ReadableIntervalConverter.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.ReadablePartialConverter" sourceFile="ReadablePartialConverter.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.ReadablePeriodConverter" sourceFile="ReadablePeriodConverter.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.StringConverter" sourceFile="StringConverter.java" interface="false" size="104" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestAll" sourceFile="TestAll.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestCalendarConverter" sourceFile="TestCalendarConverter.java" interface="false" size="102" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager" sourceFile="TestConverterManager.java" interface="false" size="619" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$1" sourceFile="TestConverterManager.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$10" sourceFile="TestConverterManager.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$11" sourceFile="TestConverterManager.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$12" sourceFile="TestConverterManager.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$13" sourceFile="TestConverterManager.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$14" sourceFile="TestConverterManager.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$15" sourceFile="TestConverterManager.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$16" sourceFile="TestConverterManager.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$17" sourceFile="TestConverterManager.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$18" sourceFile="TestConverterManager.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$19" sourceFile="TestConverterManager.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$2" sourceFile="TestConverterManager.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$20" sourceFile="TestConverterManager.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$21" sourceFile="TestConverterManager.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$3" sourceFile="TestConverterManager.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$4" sourceFile="TestConverterManager.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$5" sourceFile="TestConverterManager.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$6" sourceFile="TestConverterManager.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$7" sourceFile="TestConverterManager.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$8" sourceFile="TestConverterManager.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterManager$9" sourceFile="TestConverterManager.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterSet" sourceFile="TestConverterSet.java" interface="false" size="115" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterSet$1" sourceFile="TestConverterSet.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterSet$2" sourceFile="TestConverterSet.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterSet$3" sourceFile="TestConverterSet.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterSet$4" sourceFile="TestConverterSet.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterSet$5" sourceFile="TestConverterSet.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestConverterSet$6" sourceFile="TestConverterSet.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestDateConverter" sourceFile="TestDateConverter.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestLongConverter" sourceFile="TestLongConverter.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestNullConverter" sourceFile="TestNullConverter.java" interface="false" size="116" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestReadableDurationConverter" sourceFile="TestReadableDurationConverter.java" interface="false" size="72" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestReadableInstantConverter" sourceFile="TestReadableInstantConverter.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestReadableInstantConverter$1" sourceFile="TestReadableInstantConverter.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestReadableInstantConverter$2" sourceFile="TestReadableInstantConverter.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestReadableIntervalConverter" sourceFile="TestReadableIntervalConverter.java" interface="false" size="115" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestReadableIntervalConverter$1" sourceFile="TestReadableIntervalConverter.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestReadableIntervalConverter$2" sourceFile="TestReadableIntervalConverter.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestReadablePartialConverter" sourceFile="TestReadablePartialConverter.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestReadablePartialConverter$MockTOD" sourceFile="TestReadablePartialConverter.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestReadablePeriodConverter" sourceFile="TestReadablePeriodConverter.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.joda.time.convert.TestStringConverter" sourceFile="TestStringConverter.java" interface="false" size="444" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.joda.time.field" total_bugs="0" total_types="60" total_size="4518">
+      <ClassStats class="org.joda.time.field.AbstractPartialFieldProperty" sourceFile="AbstractPartialFieldProperty.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.joda.time.field.AbstractReadableInstantFieldProperty" sourceFile="AbstractReadableInstantFieldProperty.java" interface="false" size="98" bugs="0"/>
+      <ClassStats class="org.joda.time.field.BaseDateTimeField" sourceFile="BaseDateTimeField.java" interface="false" size="222" bugs="0"/>
+      <ClassStats class="org.joda.time.field.BaseDurationField" sourceFile="BaseDurationField.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.joda.time.field.DecoratedDateTimeField" sourceFile="DecoratedDateTimeField.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.joda.time.field.DecoratedDurationField" sourceFile="DecoratedDurationField.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.joda.time.field.DelegatedDateTimeField" sourceFile="DelegatedDateTimeField.java" interface="false" size="123" bugs="0"/>
+      <ClassStats class="org.joda.time.field.DelegatedDurationField" sourceFile="DelegatedDurationField.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.joda.time.field.DividedDateTimeField" sourceFile="DividedDateTimeField.java" interface="false" size="85" bugs="0"/>
+      <ClassStats class="org.joda.time.field.FieldUtils" sourceFile="FieldUtils.java" interface="false" size="107" bugs="0"/>
+      <ClassStats class="org.joda.time.field.ImpreciseDateTimeField" sourceFile="ImpreciseDateTimeField.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.joda.time.field.ImpreciseDateTimeField$LinkedDurationField" sourceFile="ImpreciseDateTimeField.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.joda.time.field.LenientDateTimeField" sourceFile="LenientDateTimeField.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.joda.time.field.MillisDurationField" sourceFile="MillisDurationField.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.joda.time.field.OffsetDateTimeField" sourceFile="OffsetDateTimeField.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.joda.time.field.PreciseDateTimeField" sourceFile="PreciseDateTimeField.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.joda.time.field.PreciseDurationDateTimeField" sourceFile="PreciseDurationDateTimeField.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.joda.time.field.PreciseDurationField" sourceFile="PreciseDurationField.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.joda.time.field.RemainderDateTimeField" sourceFile="RemainderDateTimeField.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.joda.time.field.ScaledDurationField" sourceFile="ScaledDurationField.java" interface="false" size="58" bugs="0"/>
+      <ClassStats class="org.joda.time.field.SkipDateTimeField" sourceFile="SkipDateTimeField.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.joda.time.field.SkipUndoDateTimeField" sourceFile="SkipUndoDateTimeField.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.joda.time.field.StrictDateTimeField" sourceFile="StrictDateTimeField.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestAll" sourceFile="TestAll.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestBaseDateTimeField" sourceFile="TestBaseDateTimeField.java" interface="false" size="361" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestBaseDateTimeField$1" sourceFile="TestBaseDateTimeField.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestBaseDateTimeField$2" sourceFile="TestBaseDateTimeField.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestBaseDateTimeField$3" sourceFile="TestBaseDateTimeField.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestBaseDateTimeField$4" sourceFile="TestBaseDateTimeField.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestBaseDateTimeField$MockBaseDateTimeField" sourceFile="TestBaseDateTimeField.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestBaseDateTimeField$MockCountingDurationField" sourceFile="TestBaseDateTimeField.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestBaseDateTimeField$MockPartial" sourceFile="TestBaseDateTimeField.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestBaseDateTimeField$MockStandardBaseDateTimeField" sourceFile="TestBaseDateTimeField.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestFieldUtils" sourceFile="TestFieldUtils.java" interface="false" size="195" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestMillisDurationField" sourceFile="TestMillisDurationField.java" interface="false" size="133" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestOffsetDateTimeField" sourceFile="TestOffsetDateTimeField.java" interface="false" size="383" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestOffsetDateTimeField$MockOffsetDateTimeField" sourceFile="TestOffsetDateTimeField.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestOffsetDateTimeField$MockStandardDateTimeField" sourceFile="TestOffsetDateTimeField.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDateTimeField" sourceFile="TestPreciseDateTimeField.java" interface="false" size="395" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDateTimeField$MockCountingDurationField" sourceFile="TestPreciseDateTimeField.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDateTimeField$MockImpreciseDurationField" sourceFile="TestPreciseDateTimeField.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDateTimeField$MockPreciseDateTimeField" sourceFile="TestPreciseDateTimeField.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDateTimeField$MockStandardDateTimeField" sourceFile="TestPreciseDateTimeField.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDateTimeField$MockZeroDurationField" sourceFile="TestPreciseDateTimeField.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDurationDateTimeField" sourceFile="TestPreciseDurationDateTimeField.java" interface="false" size="380" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDurationDateTimeField$1" sourceFile="TestPreciseDurationDateTimeField.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDurationDateTimeField$2" sourceFile="TestPreciseDurationDateTimeField.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDurationDateTimeField$3" sourceFile="TestPreciseDurationDateTimeField.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDurationDateTimeField$4" sourceFile="TestPreciseDurationDateTimeField.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDurationDateTimeField$MockCountingDurationField" sourceFile="TestPreciseDurationDateTimeField.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDurationDateTimeField$MockImpreciseDurationField" sourceFile="TestPreciseDurationDateTimeField.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDurationDateTimeField$MockPreciseDurationDateTimeField" sourceFile="TestPreciseDurationDateTimeField.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDurationDateTimeField$MockStandardBaseDateTimeField" sourceFile="TestPreciseDurationDateTimeField.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDurationDateTimeField$MockZeroDurationField" sourceFile="TestPreciseDurationDateTimeField.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestPreciseDurationField" sourceFile="TestPreciseDurationField.java" interface="false" size="181" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestScaledDurationField" sourceFile="TestScaledDurationField.java" interface="false" size="194" bugs="0"/>
+      <ClassStats class="org.joda.time.field.TestUnsupportedDateTimeField" sourceFile="TestUnsupportedDateTimeField.java" interface="false" size="271" bugs="0"/>
+      <ClassStats class="org.joda.time.field.UnsupportedDateTimeField" sourceFile="UnsupportedDateTimeField.java" interface="false" size="128" bugs="0"/>
+      <ClassStats class="org.joda.time.field.UnsupportedDurationField" sourceFile="UnsupportedDurationField.java" interface="false" size="73" bugs="0"/>
+      <ClassStats class="org.joda.time.field.ZeroIsMaxDateTimeField" sourceFile="ZeroIsMaxDateTimeField.java" interface="false" size="64" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.joda.time.format" total_bugs="0" total_types="73" total_size="11486">
+      <ClassStats class="org.joda.time.format.DateTimeFormat" sourceFile="DateTimeFormat.java" interface="false" size="240" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormat$StyleFormatter" sourceFile="DateTimeFormat.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormat$StyleFormatterCacheKey" sourceFile="DateTimeFormat.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatter" sourceFile="DateTimeFormatter.java" interface="false" size="272" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="292" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$CharacterLiteral" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$Composite" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="90" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$FixedNumber" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$Fraction" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="112" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$MatchingParser" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$NumberFormatter" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$PaddedNumber" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$StringLiteral" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$TextField" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="82" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$TimeZoneId" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="73" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$TimeZoneName" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$TimeZoneOffset" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="168" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$TwoDigitYear" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="106" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeFormatterBuilder$UnpaddedNumber" sourceFile="DateTimeFormatterBuilder.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeParser" sourceFile="DateTimeParser.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeParserBucket" sourceFile="DateTimeParserBucket.java" interface="false" size="185" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeParserBucket$SavedField" sourceFile="DateTimeParserBucket.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeParserBucket$SavedState" sourceFile="DateTimeParserBucket.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimeParserInternalParser" sourceFile="DateTimeParserInternalParser.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimePrinter" sourceFile="DateTimePrinter.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.joda.time.format.DateTimePrinterInternalPrinter" sourceFile="DateTimePrinterInternalPrinter.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.joda.time.format.FormatUtils" sourceFile="FormatUtils.java" interface="false" size="201" bugs="0"/>
+      <ClassStats class="org.joda.time.format.ISODateTimeFormat" sourceFile="ISODateTimeFormat.java" interface="false" size="269" bugs="0"/>
+      <ClassStats class="org.joda.time.format.ISODateTimeFormat$Constants" sourceFile="ISODateTimeFormat.java" interface="false" size="661" bugs="0"/>
+      <ClassStats class="org.joda.time.format.ISOPeriodFormat" sourceFile="ISOPeriodFormat.java" interface="false" size="104" bugs="0"/>
+      <ClassStats class="org.joda.time.format.InternalParser" sourceFile="InternalParser.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.joda.time.format.InternalParserDateTimeParser" sourceFile="InternalParserDateTimeParser.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.joda.time.format.InternalPrinter" sourceFile="InternalPrinter.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.joda.time.format.InternalPrinterDateTimePrinter" sourceFile="InternalPrinterDateTimePrinter.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormat" sourceFile="PeriodFormat.java" interface="false" size="129" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormat$DynamicWordBased" sourceFile="PeriodFormat.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatter" sourceFile="PeriodFormatter.java" interface="false" size="84" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatterBuilder" sourceFile="PeriodFormatterBuilder.java" interface="false" size="272" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatterBuilder$Composite" sourceFile="PeriodFormatterBuilder.java" interface="false" size="72" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatterBuilder$CompositeAffix" sourceFile="PeriodFormatterBuilder.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatterBuilder$FieldFormatter" sourceFile="PeriodFormatterBuilder.java" interface="false" size="304" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatterBuilder$IgnorableAffix" sourceFile="PeriodFormatterBuilder.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatterBuilder$Literal" sourceFile="PeriodFormatterBuilder.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatterBuilder$PeriodFieldAffix" sourceFile="PeriodFormatterBuilder.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatterBuilder$PluralAffix" sourceFile="PeriodFormatterBuilder.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatterBuilder$RegExAffix" sourceFile="PeriodFormatterBuilder.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatterBuilder$RegExAffix$1" sourceFile="PeriodFormatterBuilder.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatterBuilder$Separator" sourceFile="PeriodFormatterBuilder.java" interface="false" size="120" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodFormatterBuilder$SimpleAffix" sourceFile="PeriodFormatterBuilder.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodParser" sourceFile="PeriodParser.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.joda.time.format.PeriodPrinter" sourceFile="PeriodPrinter.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestAll" sourceFile="TestAll.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestDateTimeFormat" sourceFile="TestDateTimeFormat.java" interface="false" size="824" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestDateTimeFormat$1" sourceFile="TestDateTimeFormat.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestDateTimeFormatStyle" sourceFile="TestDateTimeFormatStyle.java" interface="false" size="298" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestDateTimeFormatter" sourceFile="TestDateTimeFormatter.java" interface="false" size="816" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestDateTimeFormatter$CustomDateTimePrinter" sourceFile="TestDateTimeFormatter.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestDateTimeFormatterBuilder" sourceFile="TestDateTimeFormatterBuilder.java" interface="false" size="592" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestDateTimeParserBucket" sourceFile="TestDateTimeParserBucket.java" interface="false" size="229" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestDateTimeParserBucket$1" sourceFile="TestDateTimeParserBucket.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestISODateTimeFormat" sourceFile="TestISODateTimeFormat.java" interface="false" size="407" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestISODateTimeFormat$1" sourceFile="TestISODateTimeFormat.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestISODateTimeFormatParsing" sourceFile="TestISODateTimeFormatParsing.java" interface="false" size="701" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestISODateTimeFormat_Fields" sourceFile="TestISODateTimeFormat_Fields.java" interface="false" size="848" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestISOPeriodFormat" sourceFile="TestISOPeriodFormat.java" interface="false" size="145" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestISOPeriodFormat$1" sourceFile="TestISOPeriodFormat.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestISOPeriodFormatParsing" sourceFile="TestISOPeriodFormatParsing.java" interface="false" size="135" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestPeriodFormat" sourceFile="TestPeriodFormat.java" interface="false" size="459" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestPeriodFormat$1" sourceFile="TestPeriodFormat.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestPeriodFormatParsing" sourceFile="TestPeriodFormatParsing.java" interface="false" size="104" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestPeriodFormatter" sourceFile="TestPeriodFormatter.java" interface="false" size="158" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestPeriodFormatterBuilder" sourceFile="TestPeriodFormatterBuilder.java" interface="false" size="951" bugs="0"/>
+      <ClassStats class="org.joda.time.format.TestTextFields" sourceFile="TestTextFields.java" interface="false" size="92" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.joda.time.tz" total_bugs="5" total_types="31" total_size="2385" priority_2="2" priority_1="3">
+      <ClassStats class="org.joda.time.tz.CachedDateTimeZone" sourceFile="CachedDateTimeZone.java" interface="false" size="73" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.CachedDateTimeZone$Info" sourceFile="CachedDateTimeZone.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.DateTimeZoneBuilder" sourceFile="DateTimeZoneBuilder.java" interface="false" size="168" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.DateTimeZoneBuilder$DSTZone" sourceFile="DateTimeZoneBuilder.java" interface="false" size="98" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.DateTimeZoneBuilder$OfYear" sourceFile="DateTimeZoneBuilder.java" interface="false" size="160" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.DateTimeZoneBuilder$PrecalculatedZone" sourceFile="DateTimeZoneBuilder.java" interface="false" size="250" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.DateTimeZoneBuilder$Recurrence" sourceFile="DateTimeZoneBuilder.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.DateTimeZoneBuilder$Rule" sourceFile="DateTimeZoneBuilder.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.DateTimeZoneBuilder$RuleSet" sourceFile="DateTimeZoneBuilder.java" interface="false" size="110" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.DateTimeZoneBuilder$Transition" sourceFile="DateTimeZoneBuilder.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.DefaultNameProvider" sourceFile="DefaultNameProvider.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.FixedDateTimeZone" sourceFile="FixedDateTimeZone.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.NameProvider" sourceFile="NameProvider.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.Provider" sourceFile="Provider.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.TestAll" sourceFile="TestAll.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.TestBuilder" sourceFile="TestBuilder.java" interface="false" size="244" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.TestCachedDateTimeZone" sourceFile="TestCachedDateTimeZone.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.TestCompiler" sourceFile="TestCompiler.java" interface="false" size="146" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.TestCompiler$1" sourceFile="TestCompiler.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.TestFixedDateTimeZone" sourceFile="TestFixedDateTimeZone.java" interface="false" size="61" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.TestUTCProvider" sourceFile="TestUTCProvider.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.UTCProvider" sourceFile="UTCProvider.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.ZoneInfoCompiler" sourceFile="ZoneInfoCompiler.java" interface="false" size="304" bugs="4" priority_2="1" priority_1="3"/>
+      <ClassStats class="org.joda.time.tz.ZoneInfoCompiler$DateTimeOfYear" sourceFile="ZoneInfoCompiler.java" interface="false" size="101" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.ZoneInfoCompiler$Rule" sourceFile="ZoneInfoCompiler.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.ZoneInfoCompiler$RuleSet" sourceFile="ZoneInfoCompiler.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.ZoneInfoCompiler$Zone" sourceFile="ZoneInfoCompiler.java" interface="false" size="66" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.ZoneInfoLogger" sourceFile="ZoneInfoLogger.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.ZoneInfoLogger$1" sourceFile="ZoneInfoLogger.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.joda.time.tz.ZoneInfoProvider" sourceFile="ZoneInfoProvider.java" interface="false" size="112" bugs="1" priority_2="1"/>
+      <ClassStats class="org.joda.time.tz.ZoneInfoProvider$1" sourceFile="ZoneInfoProvider.java" interface="false" size="11" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile></FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1519838475909" release="" codeSize="0" numClasses="0"/>
+  </History>
+</BugCollection>

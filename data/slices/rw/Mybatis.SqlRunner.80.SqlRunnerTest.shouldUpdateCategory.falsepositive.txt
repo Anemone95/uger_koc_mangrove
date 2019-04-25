@@ -1,0 +1,10 @@
+[3168, 3165]
+1 :: ENTR :: entry :: null :: org.apache.ibatis.jdbc.SqlRunnerTest.shouldUpdateCategory()::CD,21:JM,1547:CD,46
+1609 :: ENTR :: entry :: null :: org.apache.ibatis.jdbc.SqlRunner.selectOne(java.lang.String,java.lang.Object[])::CD,1615:JM,3168
+1547 :: EXPR :: modify :: Ljava/sql/Connection :: p0 $this .connection = p1 $connection ::
+1615 :: CALL :: call :: Ljava/util/List :: v6 = p0 $this .selectAll(p1 $sql , p2 $args )::JM,3168:CL,3159
+21 :: NORM :: declaration :: Lorg/apache/ibatis/jdbc/SqlRunner :: v12 = new org.apache.ibatis.jdbc.SqlRunner::JM,3168
+3159 :: ENTR :: entry :: null :: org.apache.ibatis.jdbc.SqlRunner.selectAll(java.lang.String,java.lang.Object[])::CD,3168
+3165 :: EXPR :: reference :: Ljava/sql/Connection :: v5 = p0 $this .connection::JM,3168
+3168 :: CALL :: call :: Ljava/sql/PreparedStatement :: v7 = v5.prepareStatement(p1 $sql )::JM,3168
+46 :: CALL :: call :: Ljava/util/Map :: v26 = v12.selectOne(#(SELECT * FROM PRODUCT...), v24)::JM,3168:CL,1609

@@ -1,0 +1,26 @@
+[75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 89]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest05305.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,17:CD,21:CD,27:CD,31:CD,37:CD,43:CD,48:CD,49:CD,53:CD,58:CD,63:CD,68:CD,72:CD,75:CD,84
+12 :: CALL :: call :: Ljava/lang/String :: v9 = v5.getTheParameter(#(foo))::JM,27:CL,205
+17 :: NORM :: declaration :: Ljava/util/HashMap :: v11 = new java.util.HashMap::JM,48
+21 :: CALL :: call :: Ljava/lang/Object :: v16 = v11.put(#(keyA-80947), #(a Value))::
+27 :: CALL :: call :: Ljava/lang/String :: v19 = v9.toString()::JM,27
+31 :: CALL :: call :: Ljava/lang/Object :: v21 = v11.put(#(keyB-80947), v19)::
+37 :: CALL :: call :: Ljava/lang/Object :: v25 = v11.put(#(keyC), #(another Value))::
+43 :: CALL :: call :: Ljava/lang/Object :: v27 = v11.get(#(keyB-80947))::JM,48
+48 :: EXPR :: assign :: Ljava/lang/Object :: v28 = CHECKCAST v27::JM,84:CF,49
+49 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v29 = new java.lang.StringBuilder::JM,84
+53 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v29.append(#(SELECT * from USERS w...))::JM,84
+58 :: CALL :: call :: Ljava/lang/StringBuilder :: v35 = v33.append(v28)::JM,84
+63 :: CALL :: call :: Ljava/lang/StringBuilder :: v38 = v35.append(#('))::JM,84
+68 :: CALL :: call :: Ljava/lang/String :: v40 = v38.toString()::JM,84
+72 :: CALL :: call :: Ljava/sql/Statement :: v42 = getSqlStatement()::JM,84
+75 :: NORM :: declaration :: [Ljava/lang/String :: v44 = new java.lang.String[]::JM,84
+76 :: EXPR :: modify :: Ljava/lang/Object :: v44[#(0)] = #(username)::
+80 :: EXPR :: modify :: Ljava/lang/Object :: v44[#(1)] = #(password)::
+84 :: CALL :: call :: Z :: v50 = v42.execute(v40, v44)::JM,84
+205 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::CE,206:CD,213:CD,218
+206 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::JM,27
+210 :: EXPR :: reference :: Ljavax/servlet/http/HttpServletRequest :: v4 = p0 $this .request::JM,218
+213 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getParameter(p1 $p )::JM,218
+218 :: NORM :: compound :: Ljava/lang/String :: return v6::CF,206

@@ -1,0 +1,68 @@
+[643, 649]
+14 :: CALL :: call :: Ljava/lang/Object :: v8 = getInstance(v6)::JM,18:CL,562
+18 :: EXPR :: assign :: Ljava/lang/Object :: v9 = CHECKCAST v8::DD,19
+19 :: EXPR :: modify :: Lcom/ctrip/framework/apollo/util/ConfigUtil :: p0 $this .m_configUtil = v9::
+22 :: CALL :: call :: Ljava/io/File :: v11 = p0 $this .findLocalCacheDir()::CL,601
+343 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.core.utils.ApolloThreadFactory.<clinit>()::CD,353
+353 :: NORM :: declaration :: Ljava/lang/ThreadGroup :: v5 = new java.lang.ThreadGroup::
+377 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.build.ApolloInjector.<clinit>()::CF,380
+380 :: NORM :: declaration :: Ljava/lang/Object :: v2 = new java.lang.Object::JM,380
+389 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.Tracer.<clinit>()::CD,405:CD,411
+405 :: NORM :: declaration :: Ljava/lang/Object :: v7 = new java.lang.Object::JM,405
+411 :: CALL :: call :: Lcom/ctrip/framework/apollo/tracer/spi/MessageProducer :: v10 = getProducer()::CL,816
+421 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.core.utils.ClassLoaderUtil.<clinit>()::CD,431:CD,434:CD,438:CD,442:CD,444
+431 :: CALL :: call :: Ljava/lang/Thread :: v6 = currentThread()::JM,438
+434 :: CALL :: call :: Ljava/lang/ClassLoader :: v8 = v6.getContextClassLoader()::JM,438
+438 :: EXPR :: modify :: Ljava/lang/ClassLoader :: com.ctrip.framework.apollo.core.utils.ClassLoaderUtil.loader = v8::
+442 :: EXPR :: reference :: Ljava/lang/ClassLoader :: v10 = com.ctrip.framework.apollo.core.utils.ClassLoaderUtil.loader::DD,444
+444 :: PRED :: IF :: Z :: if (v10 != #(null)) goto 44::CD,451
+451 :: CALL :: call :: Ljava/lang/ClassLoader :: v16 = getSystemClassLoader()::
+1518 :: ENTR :: entry :: null :: com.ctrip.framework.foundation.internals.ServiceBootstrap.loadFirst(java.lang.Class)::CF,1519:CD,1522:CD,1551:CD,1555
+1519 :: EXIT :: exit :: Ljava/lang/Object :: com.ctrip.framework.foundation.internals.ServiceBootstrap.loadFirst(java.lang.Class)::JM,906
+1522 :: CALL :: call :: Ljava/util/Iterator :: v4 = loadAll(p1 $clazz )::JM,1555:JM,1551:CL,1906
+1551 :: CALL :: call :: Ljava/lang/Object :: v9 = v4.next()::JM,1555:JM,1551
+1555 :: NORM :: compound :: Ljava/lang/Object :: return v9::CF,1519
+538 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.internals.NullMessageProducerManager.<clinit>()::
+550 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.internals.NullMessageProducer.<clinit>()::
+562 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.build.ApolloInjector.getInstance(java.lang.Class)::CE,563:CD,566:CD,569:CD,574:CD,575:CD,579:CD,580:CD,588:JM,584
+563 :: EXIT :: exit :: Ljava/lang/Object :: com.ctrip.framework.apollo.build.ApolloInjector.getInstance(java.lang.Class)::JM,18
+566 :: CALL :: call :: Lcom/ctrip/framework/apollo/internals/Injector :: v4 = getInjector()::JM,569:JM,574:CL,889
+569 :: CALL :: call :: Ljava/lang/Object :: v6 = v4.getInstance(p1 $clazz )::JM,569:JM,574:JM,584
+574 :: NORM :: compound :: Ljava/lang/Object :: return v6::DD,563
+575 :: CALL :: call :: V :: logError(v7)::CL,937
+579 :: NORM :: declaration :: [Ljava/lang/Object :: v12 = new java.lang.Object[]::
+580 :: CALL :: call :: Ljava/lang/String :: v15 = p1 $clazz .getName()::JM,584:JM,569:JM,574
+584 :: EXPR :: modify :: Ljava/lang/Object :: v12[#(0)] = v15::
+588 :: CALL :: call :: Ljava/lang/String :: v17 = format(#(Unable to load instan...), v12)::
+601 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.internals.LocalFileConfigRepository.findLocalCacheDir()::CD,608:CD,612:CD,613:CD,631:CD,632:CD,637
+605 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/util/ConfigUtil :: v3 = p0 $this .m_configUtil::JM,608:JM,642:JM,613:JM,632:JM,637:JM,638
+608 :: CALL :: call :: Ljava/lang/String :: v5 = v3.getDefaultLocalCacheDir()::JM,608:JM,642:JM,613:JM,632:JM,637:JM,638
+612 :: NORM :: declaration :: [Ljava/lang/String :: v7 = new java.lang.String[]::JM,642:JM,613:JM,632:JM,637:JM,638
+613 :: CALL :: call :: Ljava/nio/file/Path :: v9 = get(v5, v7)::JM,642:JM,613:JM,632:JM,637:JM,638
+631 :: NORM :: declaration :: [Ljava/nio/file/LinkOption :: v16 = new java.nio.file.LinkOption[]::JM,642:JM,632:JM,637:JM,638
+632 :: CALL :: call :: Z :: v18 = exists(v9, v16)::JM,642:JM,632:JM,637:JM,638
+637 :: PRED :: IF :: Z :: if (v18 == #(0)) goto 66::CD,638:CD,642:JM,632:JM,637
+638 :: CALL :: call :: Z :: v20 = isWritable(v9)::JM,642:JM,632:JM,637:JM,638
+642 :: PRED :: IF :: Z :: if (v20 == #(0)) goto 66::CF,643:CD,649
+643 :: NORM :: declaration :: Ljava/io/File :: v21 = new java.io.File::DD,649
+649 :: NORM :: compound :: Ljava/io/File :: return v21::
+816 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.Tracer.getProducer()::
+1906 :: ENTR :: entry :: null :: com.ctrip.framework.foundation.internals.ServiceBootstrap.loadAll(java.lang.Class)::CF,1907:CD,1910:CD,1914:CD,1918
+1907 :: EXIT :: exit :: Ljava/util/Iterator :: com.ctrip.framework.foundation.internals.ServiceBootstrap.loadAll(java.lang.Class)::JM,1555:JM,1551
+1910 :: CALL :: call :: Ljava/util/ServiceLoader :: v4 = load(p1 $clazz )::JM,1910:JM,1914:JM,1918
+889 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.build.ApolloInjector.getInjector()::CE,890:CD,892:CD,894:CD,916:CD,924:CD,926
+890 :: EXIT :: exit :: Lcom/ctrip/framework/apollo/internals/Injector :: com.ctrip.framework.apollo.build.ApolloInjector.getInjector()::JM,569:JM,574
+1914 :: CALL :: call :: Ljava/util/Iterator :: v6 = v4.iterator()::JM,1914:JM,1918
+892 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/internals/Injector :: v2 = com.ctrip.framework.apollo.build.ApolloInjector.s_injector::DD,894
+894 :: PRED :: IF :: Z :: if (v2 != #(null)) goto 60::CD,898:CD,900
+1918 :: NORM :: compound :: Ljava/util/Iterator :: return v6::CF,1907
+898 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/internals/Injector :: v5 = com.ctrip.framework.apollo.build.ApolloInjector.s_injector::DD,900
+900 :: PRED :: IF :: Z :: if (v5 != #(null)) goto 51::CD,902:CD,906:CD,907
+902 :: CALL :: call :: Ljava/lang/Object :: v8 = loadFirst(v6)::JM,906:CL,1518
+906 :: EXPR :: assign :: Ljava/lang/Object :: v9 = CHECKCAST v8::CF,907
+907 :: EXPR :: modify :: Lcom/ctrip/framework/apollo/internals/Injector :: com.ctrip.framework.apollo.build.ApolloInjector.s_injector = v9::
+916 :: CALL :: call :: V :: logError(v11)::CL,937
+924 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/internals/Injector :: v16 = com.ctrip.framework.apollo.build.ApolloInjector.s_injector::CF,926
+926 :: NORM :: compound :: Lcom/ctrip/framework/apollo/internals/Injector :: return v16::DD,890
+937 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.Tracer.logError(java.lang.Throwable)::CD,941
+941 :: CALL :: call :: Lcom/ctrip/framework/apollo/tracer/spi/MessageProducer :: v4 = getProducer()::CL,816

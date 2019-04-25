@@ -1,0 +1,27 @@
+[495]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.rcsb.RCSBDescriptionFactoryTest.testUrl()::CD,5
+5 :: CALL :: call :: Lorg/biojava/nbio/structure/rcsb/RCSBDescription :: v5 = get(#(1w0p))::CL,227
+183 :: ENTR :: entry :: null :: org.biojava.nbio.structure.rcsb.RCSBDescriptionFactory.<clinit>()::CD,186:CD,187:CD,191:CD,195
+186 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lorg/biojava/nbio/structure/rcsb/RCSBDescriptionFactory>-><Primordial,Ljava/lang/Class>::
+187 :: CALL :: call :: Ljava/lang/Package :: v4 = v2.getPackage()::
+191 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getName()::
+195 :: CALL :: call :: Ljava/util/logging/Logger :: v8 = getLogger(v6)::
+203 :: ENTR :: entry :: null :: org.biojava.nbio.structure.rcsb.ReadUtils.<clinit>()::CD,206:CD,207:CD,211:CD,215
+206 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lorg/biojava/nbio/structure/rcsb/ReadUtils>-><Primordial,Ljava/lang/Class>::
+207 :: CALL :: call :: Ljava/lang/Package :: v4 = v2.getPackage()::
+211 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getName()::
+215 :: CALL :: call :: Ljava/util/logging/Logger :: v8 = getLogger(v6)::
+227 :: ENTR :: entry :: null :: org.biojava.nbio.structure.rcsb.RCSBDescriptionFactory.get(java.lang.String)::CD,231:CD,232:CD,237:CD,242:CD,250:CD,254:CD,270
+231 :: NORM :: declaration :: Ljava/net/URL :: v3 = new java.net.URL::JM,254:JM,495:CF,232
+232 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v4 = new java.lang.StringBuilder::
+237 :: CALL :: call :: Ljava/lang/StringBuilder :: v8 = v4.append(p1 $pdbId )::
+242 :: CALL :: call :: Ljava/lang/String :: v10 = v8.toString()::
+250 :: CALL :: call :: Ljava/net/URLConnection :: v13 = v3.openConnection()::JM,254:JM,495
+254 :: CALL :: call :: Ljava/io/InputStream :: v15 = v13.getInputStream()::JM,254:JM,495
+270 :: CALL :: call :: Lorg/biojava/nbio/structure/rcsb/RCSBDescription :: v23 = get(v15)::JM,495:CL,286
+286 :: ENTR :: entry :: null :: org.biojava.nbio.structure.rcsb.RCSBDescriptionFactory.get(java.io.InputStream)::CD,290:JM,495
+290 :: CALL :: call :: Lorg/w3c/dom/NodeList :: v4 = getNodes(p1 $stream )::JM,495:CL,454
+454 :: ENTR :: entry :: null :: org.biojava.nbio.structure.rcsb.ReadUtils.getNodes(java.io.InputStream)::CD,468:CD,471:CD,495
+468 :: CALL :: call :: Ljavax/xml/parsers/DocumentBuilderFactory :: v11 = newInstance()::JM,471:JM,495
+471 :: CALL :: call :: Ljavax/xml/parsers/DocumentBuilder :: v14 = v11.newDocumentBuilder()::JM,471:JM,495
+495 :: CALL :: call :: Lorg/w3c/dom/Document :: v24 = v14.parse(p1 $stream )::JM,495

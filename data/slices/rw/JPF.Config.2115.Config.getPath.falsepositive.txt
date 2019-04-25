@@ -1,0 +1,165 @@
+[12, 13, 21]
+1 :: ENTR :: entry :: null :: gov.nasa.jpf.Config.getPath(java.lang.String)::CD,6:CD,11
+6 :: CALL :: call :: Ljava/lang/String :: v5 = p0 $this .getProperty(p1 $key )::JM,11
+11 :: PRED :: IF :: Z :: if (v5 == #(null)) goto 23::CF,12:CD,13:CD,21
+12 :: NORM :: declaration :: Ljava/io/File :: v7 = new java.io.File::DD,21
+13 :: CALL :: call :: Ljava/lang/String :: v9 = asPlatformPath(v5)::CL,335
+21 :: NORM :: compound :: Ljava/io/File :: return v7::
+145 :: EXPR :: assign :: Ljava/lang/Class :: v4 = metadata <Application,Lgov/nasa/jpf/Config>-><Primordial,Ljava/lang/Class>::
+146 :: CALL :: call :: Ljava/lang/ClassLoader :: v6 = v4.getClassLoader()::
+153 :: NORM :: declaration :: Ljava/util/ArrayList :: v7 = new java.util.ArrayList::
+160 :: NORM :: declaration :: Ljava/util/LinkedList :: v9 = new java.util.LinkedList::
+212 :: ENTR :: entry :: null :: gov.nasa.jpf.Config.<clinit>()::CD,236:CD,237:CD,282
+236 :: NORM :: declaration :: Ljava/io/File :: v10 = new java.io.File::
+237 :: EXPR :: reference :: Ljava/lang/String :: v11 = java.io.File.separator::
+282 :: CALL :: call :: Ljava/util/regex/Pattern :: v23 = compile(#((?:[a-zA-Z]:)?[/\\].*))::
+335 :: ENTR :: entry :: null :: gov.nasa.jpf.util.FileUtils.asPlatformPath(java.lang.String)::CE,336:CD,339:CD,341:CD,351:CD,352
+336 :: EXIT :: exit :: Ljava/lang/String :: gov.nasa.jpf.util.FileUtils.asPlatformPath(java.lang.String)::
+339 :: EXPR :: reference :: C :: v3 = java.io.File.separatorChar::DD,341
+341 :: PRED :: IF :: Z :: if (v3 != #(47)) goto 17::CD,342:CD,347:CD,352
+342 :: CALL :: call :: Ljava/lang/String :: v8 = asCanonicalUnixPath(p1 $p )::JM,352:CL,359
+347 :: CALL :: call :: Ljava/lang/String :: v6 = asCanonicalWindowsPath(p1 $p )::JM,352:CL,656
+351 :: NORM :: compound :: Ljava/lang/String :: return v9::DD,336
+352 :: EXPR :: assign :: null :: PHI v9 = v8, v6::CF,351
+359 :: ENTR :: entry :: null :: gov.nasa.jpf.util.FileUtils.asCanonicalUnixPath(java.lang.String)::CE,360:CD,363:CD,367:CD,368:CD,375:CD,483:CD,491:CD,492:CD,493:CD,494:CD,515
+360 :: EXIT :: exit :: Ljava/lang/String :: gov.nasa.jpf.util.FileUtils.asCanonicalUnixPath(java.lang.String)::JM,352
+363 :: CALL :: call :: I :: v5 = p1 $p .length()::JM,515:JM,493:JM,367
+367 :: NORM :: declaration :: [C :: v6 = new []::JM,484:JM,515:JM,493:JM,367
+368 :: CALL :: call :: V :: p1 $p .getChars(#(0), v5, v6, #(0))::JM,515:JM,493:JM,367
+375 :: PRED :: IF :: Z :: if (v66 >= v65) goto 327::CD,380:CD,455:CD,481:CD,492:CD,493:CD,494:CD,505:CD,506:CD,507:CD,512:CD,513:CD,514:CF,483
+376 :: EXPR :: reference :: C :: v8 = v6[v66]::DD,380:DD,381:DD,382:DD,413:DD,440:DD,446
+380 :: PRED :: IF :: Z :: if (v8 == #(47)) goto 52::CD,381:CD,382:CD,387:CD,388:CD,495:CD,500:CD,501:CD,502:CD,505:CD,506:CD,507
+381 :: PRED :: IF :: Z :: if (v8 != #(92)) goto 139::CD,382:CD,387:CD,388:CD,413:CD,495:CD,500:CD,501:CD,502:CD,505:CD,506:CD,507
+382 :: PRED :: IF :: Z :: if (v8 != #(92)) goto 66::CF,495
+383 :: EXPR :: modify :: C :: v6[v66] = #(47)::
+387 :: EXPR :: assign :: Ljava/lang/Object :: v16 = v66 + #(1)::DD,388:DD,393
+388 :: PRED :: IF :: Z :: if (v16 >= v65) goto 132::CF,500:CD,393:CD,496:CD,497:CD,498:CD,499:CD,501:CD,502
+389 :: EXPR :: reference :: C :: v17 = v6[v16]::DD,499
+393 :: PRED :: IF :: Z :: if (v16 >= v27) goto 132::CF,500:CD,394
+394 :: PRED :: IF :: Z :: if (v28 == #(47)) goto 105::CD,393:CD,395:CD,406:CD,496:CD,497:CD,498:CD,499:CD,500:CD,501:CD,502
+395 :: PRED :: IF :: Z :: if (v28 != #(92)) goto 132::CF,500:CD,393:CD,406:CD,496:CD,497:CD,498:CD,499:CD,501:CD,502
+406 :: EXPR :: assign :: Ljava/lang/Object :: v24 = v27 + #(-1)::DD,497
+407 :: EXPR :: reference :: C :: v25 = v6[v16]::DD,499
+413 :: PRED :: IF :: Z :: if (v8 != #(58)) goto 212::CD,414:CD,415:CD,440:CD,503:CD,504:CD,505:CD,506:CD,507
+414 :: EXPR :: assign :: Ljava/lang/Object :: v32 = v66 + #(1)::DD,415
+415 :: PRED :: IF :: Z :: if (v32 >= v65) goto 205::CF,503:CD,420:CD,504
+416 :: EXPR :: reference :: C :: v33 = v6[v32]::DD,420
+420 :: PRED :: IF :: Z :: if (v33 != #(92)) goto 205::CF,503:CD,421:CD,504
+421 :: PRED :: IF :: Z :: if (v66 <= #(0)) goto 205::CF,503:CD,422
+422 :: PRED :: IF :: Z :: if (v66 == #(1)) goto 192::CD,423:CD,428:CD,438:CD,503:CD,504
+423 :: EXPR :: assign :: Ljava/lang/Object :: v34 = v66 - #(2)::
+424 :: EXPR :: reference :: C :: v35 = v6[v34]::DD,428
+428 :: PRED :: IF :: Z :: if (v35 != #(58)) goto 205::CF,503:CD,438:CD,504
+438 :: EXPR :: assign :: Ljava/lang/Object :: v40 = v65 + #(-2)::DD,504:CF,503
+440 :: PRED :: IF :: Z :: if (v8 != #(59)) goto 230::CD,446:CD,505:CD,506:CD,507
+441 :: EXPR :: modify :: C :: v6[v66] = #(58)::
+446 :: PRED :: IF :: Z :: if (v8 != #(44)) goto 244::CF,505:CD,506:CD,507
+447 :: EXPR :: modify :: C :: v6[v66] = #(58)::
+451 :: EXPR :: reference :: C :: v47 = v6[v69]::DD,455
+455 :: PRED :: IF :: Z :: if (v47 != #(58)) goto 320::CF,512:CD,456:CD,457:CD,513:CD,514
+456 :: EXPR :: assign :: Ljava/lang/Object :: v48 = v69 + #(1)::DD,457
+457 :: PRED :: IF :: Z :: if (v48 >= v44) goto 320::CF,512:CD,462:CD,463:CD,464:CD,508:CD,509:CD,510:CD,511:CD,513:CD,514
+458 :: EXPR :: reference :: C :: v49 = v6[v48]::DD,511
+462 :: PRED :: IF :: Z :: if (v58 == #(58)) goto 293::CD,475:CD,508:CD,509:CD,510:CD,511:CF,463
+463 :: PRED :: IF :: Z :: if (v58 == #(59)) goto 293::CD,462:CD,475:CD,508:CD,509:CD,510:CD,511:CF,464
+464 :: PRED :: IF :: Z :: if (v58 != #(44)) goto 320::CF,512:CD,462:CD,463:CD,475:CD,508:CD,509:CD,510:CD,511
+475 :: EXPR :: assign :: Ljava/lang/Object :: v54 = v57 + #(-1)::DD,509
+476 :: EXPR :: reference :: C :: v55 = v6[v48]::DD,511
+481 :: EXPR :: assign :: Ljava/lang/Object :: v63 = v72 + #(1)::DD,494
+483 :: PRED :: IF :: Z :: if (v64 == #(0)) goto 342::CF,515:CF,484
+484 :: NORM :: declaration :: Ljava/lang/String :: v73 = new java.lang.String::JM,484:DD,515
+491 :: NORM :: compound :: Ljava/lang/String :: return v75::DD,360
+492 :: EXPR :: assign :: null :: PHI v64 = v59, #(0)::CF,493:DD,483:DD,495:DD,503:DD,505
+493 :: EXPR :: assign :: null :: PHI v65 = v60, v5::CF,494:DD,375:DD,388:DD,415:DD,438:JM,484:DD,497:DD,501:DD,504:DD,506
+494 :: EXPR :: assign :: null :: PHI v66 = v63, #(0)::DD,375:DD,387:DD,414:DD,421:DD,422:DD,423:DD,498:DD,502:DD,507
+495 :: EXPR :: assign :: null :: PHI v15 = v64, #(1)::DD,496:DD,500:CF,387
+496 :: EXPR :: assign :: null :: PHI v26 = #(1), v15::CF,497:DD,500
+497 :: EXPR :: assign :: null :: PHI v27 = v24, v65::CF,498:DD,393:DD,406:DD,501
+498 :: EXPR :: assign :: null :: PHI v67 = v67, v66::CF,499:DD,498:DD,502
+499 :: EXPR :: assign :: null :: PHI v28 = v25, v17::DD,394:DD,395:CF,393
+500 :: EXPR :: assign :: null :: PHI v29 = v15, v26, v26::CF,501:DD,505
+501 :: EXPR :: assign :: null :: PHI v30 = v65, v27, v27::CF,502:DD,506
+502 :: EXPR :: assign :: null :: PHI v68 = v66, v67, v67::DD,507
+503 :: EXPR :: assign :: null :: PHI v41 = v64, v64, v64, v64, #(1)::CF,504:DD,505
+504 :: EXPR :: assign :: null :: PHI v42 = v65, v65, v65, v65, v40::DD,506
+505 :: EXPR :: assign :: null :: PHI v43 = v29, v41, #(1), v64, #(1)::CF,506:DD,508:DD,512
+506 :: EXPR :: assign :: null :: PHI v44 = v30, v42, v65, v65, v65::CF,507:DD,457:DD,509:DD,513
+507 :: EXPR :: assign :: null :: PHI v69 = v68, v66, v66, v66, v66::DD,456:DD,510:DD,514
+508 :: EXPR :: assign :: null :: PHI v56 = #(1), v43::CF,509:DD,512
+509 :: EXPR :: assign :: null :: PHI v57 = v54, v44::CF,510:DD,475:DD,513
+510 :: EXPR :: assign :: null :: PHI v70 = v70, v69::CF,511:DD,510:DD,514
+511 :: EXPR :: assign :: null :: PHI v58 = v55, v49::DD,462:DD,463:DD,464
+512 :: EXPR :: assign :: null :: PHI v59 = v43, v43, v56::CF,513:DD,492
+513 :: EXPR :: assign :: null :: PHI v60 = v44, v44, v57::CF,514:DD,493
+514 :: EXPR :: assign :: null :: PHI v72 = v69, v69, v70::DD,481
+515 :: EXPR :: assign :: null :: PHI v75 = p1 $p , v73::CF,491
+656 :: ENTR :: entry :: null :: gov.nasa.jpf.util.FileUtils.asCanonicalWindowsPath(java.lang.String)::CE,657:CD,660:CD,664:CD,665:CD,672:CD,774:CD,782:CD,783:CD,784:CD,785:CD,804
+657 :: EXIT :: exit :: Ljava/lang/String :: gov.nasa.jpf.util.FileUtils.asCanonicalWindowsPath(java.lang.String)::JM,352
+660 :: CALL :: call :: I :: v5 = p1 $p .length()::JM,784:JM,804:JM,664
+664 :: NORM :: declaration :: [C :: v6 = new []::JM,775:JM,784:JM,804:JM,664
+665 :: CALL :: call :: V :: p1 $p .getChars(#(0), v5, v6, #(0))::JM,784:JM,804:JM,664
+672 :: PRED :: IF :: Z :: if (v60 >= v59) goto 309::CD,677:CD,772:CD,783:CD,784:CD,785:CD,801:CD,802:CD,803:CF,774
+673 :: EXPR :: reference :: C :: v8 = v6[v60]::DD,677:DD,678:DD,679:DD,710:DD,737
+677 :: PRED :: IF :: Z :: if (v8 == #(47)) goto 52::CD,678:CD,679:CD,684:CD,685:CD,746:CD,786:CD,791:CD,792:CD,793:CD,794:CD,795:CD,796:CD,801:CD,802:CD,803
+678 :: PRED :: IF :: Z :: if (v8 != #(92)) goto 139::CD,679:CD,684:CD,685:CD,710:CD,746:CD,786:CD,791:CD,792:CD,793:CD,794:CD,795:CD,796:CD,801:CD,802:CD,803
+679 :: PRED :: IF :: Z :: if (v8 != #(47)) goto 66::CF,786
+680 :: EXPR :: modify :: C :: v6[v60] = #(92)::
+684 :: EXPR :: assign :: Ljava/lang/Object :: v18 = v60 + #(1)::DD,685:DD,690
+685 :: PRED :: IF :: Z :: if (v18 >= v59) goto 132::CF,791:CD,690:CD,787:CD,788:CD,789:CD,790:CD,792:CD,793
+686 :: EXPR :: reference :: C :: v19 = v6[v18]::DD,790
+690 :: PRED :: IF :: Z :: if (v18 >= v29) goto 132::CF,791:CD,691
+691 :: PRED :: IF :: Z :: if (v30 == #(47)) goto 105::CD,690:CD,692:CD,703:CD,787:CD,788:CD,789:CD,790:CD,791:CD,792:CD,793
+692 :: PRED :: IF :: Z :: if (v30 != #(92)) goto 132::CF,791:CD,690:CD,703:CD,787:CD,788:CD,789:CD,790:CD,792:CD,793
+703 :: EXPR :: assign :: Ljava/lang/Object :: v26 = v29 + #(-1)::DD,788
+704 :: EXPR :: reference :: C :: v27 = v6[v18]::DD,790
+710 :: PRED :: IF :: Z :: if (v8 != #(58)) goto 212::CD,711:CD,712:CD,737:CD,746:CD,794:CD,795:CD,796:CD,801:CD,802:CD,803
+711 :: EXPR :: assign :: Ljava/lang/Object :: v13 = v60 + #(1)::DD,712
+712 :: PRED :: IF :: Z :: if (v13 >= v59) goto 202::CD,717:CD,746:CD,794:CD,795:CD,796:CD,801:CD,802:CD,803
+713 :: EXPR :: reference :: C :: v14 = v6[v13]::DD,717
+717 :: PRED :: IF :: Z :: if (v14 == #(92)) goto 174::CD,722:CD,723
+718 :: EXPR :: reference :: C :: v15 = v6[v13]::DD,722
+722 :: PRED :: IF :: Z :: if (v15 != #(47)) goto 202::CD,723:CD,746:CD,794:CD,795:CD,796:CD,801:CD,802:CD,803
+723 :: PRED :: IF :: Z :: if (v60 <= #(0)) goto 202::CD,724:CD,746:CD,794:CD,795:CD,796:CD,801:CD,802:CD,803
+724 :: PRED :: IF :: Z :: if (v60 == #(1)) goto 302::CF,801:CD,725:CD,730
+725 :: EXPR :: assign :: Ljava/lang/Object :: v34 = v60 - #(2)::
+726 :: EXPR :: reference :: C :: v35 = v6[v34]::DD,730
+730 :: PRED :: IF :: Z :: if (v35 != #(59)) goto 202::CD,746:CD,794:CD,795:CD,796:CD,801:CD,802:CD,803
+732 :: EXPR :: modify :: C :: v6[v60] = #(59)::
+737 :: PRED :: IF :: Z :: if (v8 != #(44)) goto 226::CF,794:CD,795:CD,796
+738 :: EXPR :: modify :: C :: v6[v60] = #(59)::
+742 :: EXPR :: reference :: C :: v41 = v6[v63]::DD,746
+746 :: PRED :: IF :: Z :: if (v41 != #(59)) goto 302::CF,801:CD,747:CD,748:CD,802:CD,803
+747 :: EXPR :: assign :: Ljava/lang/Object :: v42 = v63 + #(1)::DD,748
+748 :: PRED :: IF :: Z :: if (v42 >= v38) goto 302::CF,801:CD,753:CD,754:CD,755:CD,797:CD,798:CD,799:CD,800:CD,802:CD,803
+749 :: EXPR :: reference :: C :: v43 = v6[v42]::DD,800
+753 :: PRED :: IF :: Z :: if (v52 == #(58)) goto 275::CD,766:CD,797:CD,798:CD,799:CD,800:CF,754
+754 :: PRED :: IF :: Z :: if (v52 == #(59)) goto 275::CD,753:CD,766:CD,797:CD,798:CD,799:CD,800:CF,755
+755 :: PRED :: IF :: Z :: if (v52 != #(44)) goto 302::CF,801:CD,753:CD,754:CD,766:CD,797:CD,798:CD,799:CD,800
+766 :: EXPR :: assign :: Ljava/lang/Object :: v48 = v51 + #(-1)::DD,798
+767 :: EXPR :: reference :: C :: v49 = v6[v42]::DD,800
+772 :: EXPR :: assign :: Ljava/lang/Object :: v57 = v66 + #(1)::DD,785
+774 :: PRED :: IF :: Z :: if (v58 == #(0)) goto 324::CF,804:CF,775
+775 :: NORM :: declaration :: Ljava/lang/String :: v67 = new java.lang.String::JM,775:DD,804
+782 :: NORM :: compound :: Ljava/lang/String :: return v69::DD,657
+783 :: EXPR :: assign :: null :: PHI v58 = v53, #(0)::CF,784:DD,774:DD,786:DD,794:DD,801
+784 :: EXPR :: assign :: null :: PHI v59 = v54, v5::CF,785:DD,672:DD,685:DD,712:JM,775:DD,788:DD,792:DD,795:DD,802
+785 :: EXPR :: assign :: null :: PHI v60 = v57, #(0)::DD,672:DD,684:DD,711:DD,723:DD,724:DD,725:DD,789:DD,793:DD,796:DD,803
+786 :: EXPR :: assign :: null :: PHI v17 = v58, #(1)::DD,787:DD,791:CF,684
+787 :: EXPR :: assign :: null :: PHI v28 = #(1), v17::CF,788:DD,791
+788 :: EXPR :: assign :: null :: PHI v29 = v26, v59::CF,789:DD,690:DD,703:DD,792
+789 :: EXPR :: assign :: null :: PHI v61 = v61, v60::CF,790:DD,789:DD,793
+790 :: EXPR :: assign :: null :: PHI v30 = v27, v19::DD,691:DD,692:CF,690
+791 :: EXPR :: assign :: null :: PHI v31 = v17, v28, v28::CF,792:DD,794
+792 :: EXPR :: assign :: null :: PHI v32 = v59, v29, v29::CF,793:DD,795
+793 :: EXPR :: assign :: null :: PHI v62 = v60, v61, v61::DD,796
+794 :: EXPR :: assign :: null :: PHI v37 = v31, #(1), v58, #(1)::CF,795:DD,797:DD,801
+795 :: EXPR :: assign :: null :: PHI v38 = v32, v59, v59, v59::CF,796:DD,748:DD,798:DD,802
+796 :: EXPR :: assign :: null :: PHI v63 = v62, v60, v60, v60::DD,747:DD,799:DD,803
+797 :: EXPR :: assign :: null :: PHI v50 = #(1), v37::CF,798:DD,801
+798 :: EXPR :: assign :: null :: PHI v51 = v48, v38::CF,799:DD,766:DD,802
+799 :: EXPR :: assign :: null :: PHI v64 = v64, v63::CF,800:DD,799:DD,803
+800 :: EXPR :: assign :: null :: PHI v52 = v49, v43::DD,753:DD,754:DD,755
+801 :: EXPR :: assign :: null :: PHI v53 = v58, v58, v37, v37, v50::CF,802:DD,783
+802 :: EXPR :: assign :: null :: PHI v54 = v59, v59, v38, v38, v51::CF,803:DD,784
+803 :: EXPR :: assign :: null :: PHI v66 = v60, v60, v63, v63, v64::DD,772
+804 :: EXPR :: assign :: null :: PHI v69 = p1 $p , v67::CF,782

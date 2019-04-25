@@ -1,0 +1,160 @@
+[544, 548, 536, 539, 540]
+1 :: ENTR :: entry :: null :: org.biojava.nbio.structure.ecod.EcodInstallation.main(java.lang.String[])::CD,5:CD,6
+5 :: EXPR :: assign :: I :: v3 = p1 $args .length::DD,6
+6 :: PRED :: IF :: Z :: if (v3 == #(1)) goto 22::CD,21:JM,403:JM,388:JM,310:JM,982:JM,346:JM,364
+17 :: EXPR :: reference :: Ljava/lang/Object :: v6 = p1 $args [#(0)]::JM,403:JM,388:JM,310:JM,982:JM,346:JM,364
+21 :: NORM :: declaration :: Lorg/biojava/nbio/structure/ecod/EcodInstallation$EcodParser :: v7 = new org.biojava.nbio.structure.ecod.EcodInstallation$EcodParser::JM,403:JM,388:JM,310:JM,982:JM,346:JM,364
+1292 :: ENTR :: entry :: null :: org.biojava.nbio.structure.ecod.EcodInstallation.access$0()::CF,1293:CD,1295:CD,1297
+1293 :: EXIT :: exit :: Lorg/slf4j/Logger :: org.biojava.nbio.structure.ecod.EcodInstallation.access$0()::JM,548
+1295 :: EXPR :: reference :: Lorg/slf4j/Logger :: v2 = org.biojava.nbio.structure.ecod.EcodInstallation.logger::CF,1297
+1297 :: NORM :: compound :: Lorg/slf4j/Logger :: return v2::CF,1293
+285 :: ENTR :: entry :: null :: org.biojava.nbio.structure.ecod.EcodInstallation.<clinit>()::CD,288:CD,289:CD,293:CD,295
+288 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lorg/biojava/nbio/structure/ecod/EcodInstallation>-><Primordial,Ljava/lang/Class>::JM,289:JM,293
+289 :: CALL :: call :: Lorg/slf4j/Logger :: v4 = getLogger(v2)::JM,289:JM,293
+293 :: EXPR :: modify :: Lorg/slf4j/Logger :: org.biojava.nbio.structure.ecod.EcodInstallation.logger = v4::
+295 :: CALL :: call :: Ljava/util/regex/Pattern :: v7 = compile(#(^e(....).+\d+$))::
+310 :: NORM :: declaration :: Ljava/io/File :: v4 = new java.io.File::JM,403:JM,388:JM,982:JM,346:JM,364
+346 :: NORM :: declaration :: Ljava/io/FileReader :: v4 = new java.io.FileReader::JM,403:JM,388:JM,982:JM,364
+364 :: NORM :: declaration :: Ljava/io/BufferedReader :: v4 = new java.io.BufferedReader::JM,403:JM,388:JM,982
+388 :: CALL :: call :: V :: p0 $this .parse(p1 $reader )::JM,403:JM,982:CL,398
+398 :: ENTR :: entry :: null :: org.biojava.nbio.structure.ecod.EcodInstallation.EcodParser.parse(java.io.BufferedReader)::CD,403:CD,408:CD,412:CD,416:CD,892:CD,971:CD,972:CD,973:CD,974:CD,979:CD,980:CD,981:CD,982:CD,983
+403 :: NORM :: declaration :: Ljava/util/ArrayList :: v4 = new java.util.ArrayList::
+408 :: CALL :: call :: Ljava/util/regex/Pattern :: v9 = compile(#(^\s*#.*ECOD\s*version...))::JM,430
+412 :: CALL :: call :: Ljava/util/regex/Pattern :: v12 = compile(#(^\s*#.*))::JM,449
+416 :: CALL :: call :: Ljava/lang/String :: v17 = p1 $in .readLine()::JM,982
+421 :: CALL :: call :: Ljava/util/regex/Matcher :: v20 = v9.matcher(v251)::JM,430
+426 :: CALL :: call :: Z :: v22 = v20.matches()::JM,430
+430 :: PRED :: IF :: Z :: if (v22 == #(0)) goto 78::CD,431:CD,440:CD,445:CD,449:CD,975:CD,976:CD,977:CD,978:JM,430
+431 :: CALL :: call :: Ljava/lang/String :: v38 = v20.group(#(1))::JM,430
+440 :: CALL :: call :: Ljava/util/regex/Matcher :: v25 = v12.matcher(v251)::JM,449
+445 :: CALL :: call :: Z :: v27 = v25.matches()::JM,449
+449 :: PRED :: IF :: Z :: if (v27 != #(0)) goto 874::CF,975:CD,450:CD,455:CD,456
+450 :: CALL :: call :: [Ljava/lang/String :: v30 = v251.split(#(	))::JM,455:JM,457:JM,459:JM,651:JM,479
+455 :: EXPR :: assign :: I :: v31 = v30.length::DD,456
+456 :: PRED :: IF :: Z :: if (v31 == #(13)) goto 131::CD,457:CD,458:CD,461:CD,466:CD,470:CD,474:CD,479:CD,480:CD,521:CD,526:CD,531:CD,532:CD,576:CD,577:CD,591:CD,592:CD,606:CD,607:CD,621:CD,622:CD,636:CD,641:CD,646:CD,651:CD,652:CD,658:CD,667:CD,676:CD,685:CD,694:CD,703:CD,708:CD,713:CD,764:CD,769:CD,807:CD,829:CD,954:CD,956:CD,961:CD,963:CD,968:CD,969:CD,975:CD,976:CD,977:CD,978
+457 :: EXPR :: assign :: I :: v33 = v30.length::DD,458
+458 :: PRED :: IF :: Z :: if (v33 == #(14)) goto 131::CD,459:CD,460:CD,461:CD,466:CD,470:CD,474:CD,479:CD,480:CD,521:CD,526:CD,531:CD,532:CD,576:CD,577:CD,591:CD,592:CD,606:CD,607:CD,621:CD,622:CD,636:CD,641:CD,646:CD,651:CD,652:CD,658:CD,667:CD,676:CD,685:CD,694:CD,703:CD,708:CD,713:CD,764:CD,769:CD,807:CD,829:CD,954:CD,956:CD,961:CD,963:CD,968:CD,969:CD,975:CD,976:CD,977:CD,978
+459 :: EXPR :: assign :: I :: v35 = v30.length::DD,460
+460 :: PRED :: IF :: Z :: if (v35 != #(15)) goto 826::CD,461:CD,466:CD,470:CD,474:CD,479:CD,480:CD,521:CD,526:CD,531:CD,532:CD,576:CD,577:CD,591:CD,592:CD,606:CD,607:CD,621:CD,622:CD,636:CD,641:CD,646:CD,651:CD,652:CD,658:CD,667:CD,676:CD,685:CD,694:CD,703:CD,708:CD,713:CD,764:CD,769:CD,807:CD,829:CD,858:CD,954:CD,956:CD,961:CD,963:CD,968:CD,969:CD,975:CD,976:CD,977:CD,978
+461 :: EXPR :: assign :: Ljava/lang/Object :: v39 = #(0) + #(1)::DD,474
+462 :: EXPR :: reference :: Ljava/lang/Object :: v40 = v30[#(0)]::
+466 :: CALL :: call :: J :: v42 = parseLong(v40)::
+470 :: CALL :: call :: Ljava/lang/Long :: v44 = valueOf(v42)::
+474 :: EXPR :: assign :: Ljava/lang/Object :: v45 = v39 + #(1)::DD,481:DD,954
+479 :: EXPR :: assign :: I :: v47 = v30.length::DD,480
+480 :: PRED :: IF :: Z :: if (v47 < #(14)) goto 233::CF,954:CD,481:CD,486:CD,491
+481 :: EXPR :: assign :: Ljava/lang/Object :: v48 = v45 + #(1)::DD,954
+482 :: EXPR :: reference :: Ljava/lang/Object :: v49 = v30[v45]::JM,491:JM,502
+486 :: CALL :: call :: Z :: v52 = v49.equalsIgnoreCase(#(MANUAL_REP))::JM,491
+491 :: PRED :: IF :: Z :: if (v52 == #(0)) goto 197::CD,497:CD,502:CD,954
+497 :: CALL :: call :: Z :: v57 = v49.equalsIgnoreCase(#(AUTO_NONREP))::JM,502
+502 :: PRED :: IF :: Z :: if (v57 == #(0)) goto 212::CD,511:CD,954
+511 :: CALL :: call :: Ljava/lang/Integer :: v64 = valueOf(v252)::
+521 :: EXPR :: assign :: Ljava/lang/Object :: v68 = v66 + #(1)::DD,539:DD,636
+526 :: CALL :: call :: [Ljava/lang/String :: v72 = v69.split(#(\.))::JM,576:JM,531:JM,533:JM,621:JM,606:JM,591
+531 :: EXPR :: assign :: I :: v73 = v72.length::DD,532
+532 :: PRED :: IF :: Z :: if (v73 < #(3)) goto 261::CD,533:CD,534:CD,535:CD,956
+533 :: EXPR :: assign :: I :: v76 = v72.length::CF,534
+534 :: PRED :: IF :: Z :: if (#(4) >= v76) goto 324::CF,956:CD,535
+535 :: PRED :: IF :: Z :: if (v249 <= #(1)) goto 294::CD,536:CD,539:CD,544:CD,548:CD,554:CD,556:CD,956
+536 :: CALL :: call :: Lorg/slf4j/Logger :: v78 = access$0()::JM,548:CL,1292
+539 :: EXPR :: assign :: Ljava/lang/Object :: v80 = v68 - #(1)::
+540 :: EXPR :: reference :: Ljava/lang/Object :: v81 = v30[v80]::JM,548
+544 :: CALL :: call :: Ljava/lang/Integer :: v83 = valueOf(v252)::JM,548
+548 :: CALL :: call :: V :: v78.warn(#(Unexpected format for...), v81, v83)::JM,548
+554 :: EXPR :: assign :: Ljava/lang/Object :: v86 = v249 + #(-1)::DD,956
+556 :: PRED :: IF :: Z :: if (v249 == #(0)) goto 324::CF,956:CD,565:CD,575
+565 :: CALL :: call :: Ljava/lang/Integer :: v93 = valueOf(v252)::
+575 :: EXPR :: assign :: Ljava/lang/Object :: v95 = v249 + #(-1)::DD,956
+576 :: EXPR :: assign :: I :: v97 = v72.length::DD,577
+577 :: PRED :: IF :: Z :: if (v97 <= #(0)) goto 346::CD,582:CD,586
+578 :: EXPR :: reference :: Ljava/lang/Object :: v98 = v72[#(0)]::
+582 :: CALL :: call :: I :: v100 = parseInt(v98)::
+586 :: CALL :: call :: Ljava/lang/Integer :: v102 = valueOf(v100)::
+591 :: EXPR :: assign :: I :: v104 = v72.length::DD,592
+592 :: PRED :: IF :: Z :: if (v104 <= #(1)) goto 369::CD,597:CD,601
+593 :: EXPR :: reference :: Ljava/lang/Object :: v105 = v72[#(1)]::
+597 :: CALL :: call :: I :: v107 = parseInt(v105)::
+601 :: CALL :: call :: Ljava/lang/Integer :: v109 = valueOf(v107)::
+606 :: EXPR :: assign :: I :: v111 = v72.length::DD,607
+607 :: PRED :: IF :: Z :: if (v111 <= #(2)) goto 392::CD,612:CD,616
+608 :: EXPR :: reference :: Ljava/lang/Object :: v113 = v72[#(2)]::
+612 :: CALL :: call :: I :: v115 = parseInt(v113)::
+616 :: CALL :: call :: Ljava/lang/Integer :: v117 = valueOf(v115)::
+621 :: EXPR :: assign :: I :: v119 = v72.length::DD,622
+622 :: PRED :: IF :: Z :: if (v119 <= #(3)) goto 417::CD,627:CD,631
+623 :: EXPR :: reference :: Ljava/lang/Object :: v120 = v72[#(3)]::
+627 :: CALL :: call :: I :: v122 = parseInt(v120)::
+631 :: CALL :: call :: Ljava/lang/Integer :: v124 = valueOf(v122)::
+636 :: EXPR :: assign :: Ljava/lang/Object :: v126 = v68 + #(1)::DD,641
+641 :: EXPR :: assign :: Ljava/lang/Object :: v128 = v126 + #(1)::DD,646
+646 :: EXPR :: assign :: Ljava/lang/Object :: v130 = v128 + #(1)::DD,653:DD,961
+651 :: EXPR :: assign :: I :: v132 = v30.length::DD,652
+652 :: PRED :: IF :: Z :: if (v132 < #(15)) goto 468::CF,961:CD,653
+653 :: EXPR :: assign :: Ljava/lang/Object :: v133 = v130 + #(1)::DD,961
+658 :: EXPR :: assign :: Ljava/lang/Object :: v137 = v135 + #(1)::DD,667
+667 :: EXPR :: assign :: Ljava/lang/Object :: v141 = v137 + #(1)::DD,676
+676 :: EXPR :: assign :: Ljava/lang/Object :: v145 = v141 + #(1)::DD,685
+685 :: EXPR :: assign :: Ljava/lang/Object :: v149 = v145 + #(1)::DD,694
+694 :: EXPR :: assign :: Ljava/lang/Object :: v153 = v149 + #(1)::DD,703
+703 :: EXPR :: assign :: Ljava/lang/Object :: v157 = v153 + #(1)::
+704 :: EXPR :: reference :: Ljava/lang/Object :: v158 = v30[v153]::JM,713:JM,720
+708 :: CALL :: call :: Z :: v161 = v158.equals(#(NOT_DOMAIN_ASSEMBLY))::JM,713
+713 :: PRED :: IF :: Z :: if (v161 == #(0)) goto 563::CD,715:CD,720:CD,963
+715 :: CALL :: call :: Z :: v164 = v158.equals(#(IS_DOMAIN_ASSEMBLY))::JM,720
+720 :: PRED :: IF :: Z :: if (v164 == #(0)) goto 624::CD,721:CD,751:CD,755:CD,963
+721 :: PRED :: IF :: Z :: if (v248 <= #(1)) goto 598::CD,725:CD,734:CD,736:CD,963
+725 :: CALL :: call :: Ljava/lang/Integer :: v169 = valueOf(v252)::
+734 :: EXPR :: assign :: Ljava/lang/Object :: v171 = v248 + #(-1)::DD,963
+736 :: PRED :: IF :: Z :: if (v248 != #(0)) goto 636::CF,963:CD,740:CD,749
+740 :: CALL :: call :: Ljava/lang/Integer :: v176 = valueOf(v252)::
+749 :: EXPR :: assign :: Ljava/lang/Object :: v178 = v248 + #(-1)::DD,963
+751 :: CALL :: call :: J :: v180 = parseLong(v158)::
+755 :: CALL :: call :: Ljava/lang/Long :: v182 = valueOf(v180)::
+760 :: EXPR :: reference :: Ljava/lang/Object :: v186 = v30[v157]::JM,769:JM,770:JM,774
+764 :: CALL :: call :: Z :: v189 = v186.equals(#(NO_LIGANDS_4A))::JM,769
+769 :: PRED :: IF :: Z :: if (v189 != #(0)) goto 663::CD,770:CD,774:CD,968:CD,969
+770 :: CALL :: call :: Z :: v191 = v186.isEmpty()::JM,770:JM,774
+774 :: PRED :: IF :: Z :: if (v191 == #(0)) goto 675::CD,779:CD,784:CD,785:CD,790:CD,806:CD,965:CD,966:CD,967:CD,968:CD,969
+779 :: CALL :: call :: [Ljava/lang/String :: v194 = v186.split(#(,))::JM,785:JM,790
+784 :: NORM :: declaration :: Ljava/util/LinkedHashSet :: v195 = new java.util.LinkedHashSet::CF,785
+785 :: EXPR :: assign :: I :: v196 = v194.length::
+790 :: EXPR :: assign :: I :: v198 = v194.length::DD,806
+792 :: EXPR :: reference :: Ljava/lang/Object :: v199 = v194[v205]::JM,796
+796 :: CALL :: call :: Ljava/lang/String :: v201 = v199.intern()::JM,796
+800 :: CALL :: call :: Z :: v203 = v195.add(v201)::
+805 :: EXPR :: assign :: Ljava/lang/Object :: v204 = v205 + #(1)::DD,967:CF,965
+806 :: PRED :: IF :: Z :: if (v205 < v198) goto 710::CF,968:CD,796:CD,800:CD,805:CD,965:CD,966:CD,967
+807 :: NORM :: declaration :: Lorg/biojava/nbio/structure/ecod/EcodDomain :: v209 = new org.biojava.nbio.structure.ecod.EcodDomain::
+829 :: CALL :: call :: Z :: v212 = v4.add(v209)::
+858 :: PRED :: IF :: Z :: if (v250 <= #(1)) goto 852::CD,862:CD,871:CD,873:CD,975:CD,976:CD,977:CD,978
+862 :: CALL :: call :: Ljava/lang/Integer :: v231 = valueOf(v252)::
+871 :: EXPR :: assign :: Ljava/lang/Object :: v233 = v250 + #(-1)::DD,977
+873 :: PRED :: IF :: Z :: if (v250 != #(0)) goto 874::CF,975:CD,877:CD,886:CD,976:CD,977:CD,978
+877 :: CALL :: call :: Ljava/lang/Integer :: v238 = valueOf(v252)::
+886 :: EXPR :: assign :: Ljava/lang/Object :: v240 = v248 + #(-1)::DD,975
+887 :: CALL :: call :: Ljava/lang/String :: v246 = p1 $in .readLine()::JM,982
+891 :: EXPR :: assign :: Ljava/lang/Object :: v247 = v263 + #(1)::DD,983:CF,979
+892 :: PRED :: IF :: Z :: if (v251 != #(null)) goto 48::CD,421:CD,426:CD,430:CD,887:CD,891:CD,975:CD,976:CD,977:CD,978:CD,979:CD,980:CD,981:CD,982:CD,983
+954 :: EXPR :: assign :: null :: PHI v66 = v45, v48, v48, v48::DD,521
+956 :: EXPR :: assign :: null :: PHI v96 = v249, v86, v249, v95::CF,576:DD,972:DD,976
+961 :: EXPR :: assign :: null :: PHI v135 = v130, v133::DD,658
+963 :: EXPR :: assign :: null :: PHI v183 = v248, v171, v248, v178, v248::DD,971:DD,975
+965 :: EXPR :: assign :: null :: PHI v253 = v250, v253::CF,966:DD,965:DD,968:DD,973
+966 :: EXPR :: assign :: null :: PHI v255 = v252, v255::CF,967:DD,966:DD,969:DD,974
+967 :: EXPR :: assign :: null :: PHI v205 = #(0), v204::DD,805:DD,806
+968 :: EXPR :: assign :: null :: PHI v256 = v250, v253::CF,969:DD,973:DD,977
+969 :: EXPR :: assign :: null :: PHI v258 = v252, v255::DD,974:DD,978
+971 :: EXPR :: assign :: null :: PHI v214 = v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v248, v183, v183, v183, v183, v183, v183, v183, v183, v183::DD,975
+972 :: EXPR :: assign :: null :: PHI v215 = v249, v249, v249, v249, v249, v249, v249, v249, v249, v249, v249, v249, v249, v249, v249, v249, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96, v96::DD,976
+973 :: EXPR :: assign :: null :: PHI v259 = v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v250, v253, v253, v256, v256::DD,977
+974 :: EXPR :: assign :: null :: PHI v261 = v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v252, v255, v255, v258, v258::DD,978
+975 :: EXPR :: assign :: null :: PHI v241 = v248, v248, v183, v214, v248, v248, v240::CF,976:DD,979
+976 :: EXPR :: assign :: null :: PHI v242 = v249, v249, v96, v215, v249, v249, v249::CF,977:DD,980
+977 :: EXPR :: assign :: null :: PHI v243 = v250, v250, v256, v259, v233, v250, v250::CF,978:DD,981
+978 :: EXPR :: assign :: null :: PHI v263 = v252, v252, v258, v261, v252, v252, v252::JM,982:DD,891
+979 :: EXPR :: assign :: null :: PHI v248 = #(1), v241::CF,980:DD,721:DD,734:DD,736:DD,749:DD,886:DD,963:DD,971:DD,975
+980 :: EXPR :: assign :: null :: PHI v249 = #(5), v242::CF,981:DD,535:DD,554:DD,556:DD,575:DD,956:DD,972:DD,976
+981 :: EXPR :: assign :: null :: PHI v250 = #(10), v243::CF,982:DD,858:DD,871:DD,873:DD,965:DD,968:DD,973:DD,977
+982 :: EXPR :: assign :: null :: PHI v251 = v17, v246::CF,983:JM,430:JM,449:DD,892
+983 :: EXPR :: assign :: null :: PHI v252 = #(1), v247::JM,548:DD,966:DD,969:DD,974:DD,978:CF,892

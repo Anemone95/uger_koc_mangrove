@@ -1,0 +1,21 @@
+[71, 75]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest06569.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,15:CD,45:CD,49:CD,54:CD,59:CD,64:CD,68:CD,71:CD,85:JM,21:JM,29:JM,30
+7 :: CALL :: call :: Ljava/lang/String :: v6 = p1 $request .getQueryString()::JM,85:JM,21:JM,11:JM,29:JM,30:JM,15
+11 :: CALL :: call :: I :: v8 = v6.length()::JM,85:JM,21:JM,11:JM,29:JM,30:JM,15
+15 :: PRED :: IF :: Z :: if (v8 <= #(1)) goto 54::CF,85:CF,16:CD,21:CD,25:CD,29:CD,30:CD,34:CD,41
+16 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v10 = new java.lang.StringBuilder::JM,85
+21 :: CALL :: call :: I :: v13 = v6.length()::JM,85:JM,21:JM,11:JM,29:JM,30:JM,15
+25 :: CALL :: call :: I :: v16 = #(Z).length()::JM,29
+29 :: EXPR :: assign :: Ljava/lang/Object :: v17 = v13 - v16::JM,85:JM,21:JM,11:JM,29:JM,30:JM,15
+30 :: CALL :: call :: I :: v19 = v6.length()::JM,85:JM,21:JM,11:JM,29:JM,30:JM,15
+34 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v10.replace(v17, v19, #(Z))::JM,85
+41 :: CALL :: call :: Ljava/lang/String :: v23 = v21.toString()::JM,85
+45 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v25 = new java.lang.StringBuilder::JM,71
+49 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v25.append(#(UPDATE USERS SET PASS...))::JM,71
+54 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v29.append(v24)::JM,71
+59 :: CALL :: call :: Ljava/lang/StringBuilder :: v34 = v31.append(#(' WHERE USERNAME='foo'))::JM,71
+64 :: CALL :: call :: Ljava/lang/String :: v36 = v34.toString()::JM,71
+68 :: CALL :: call :: Ljava/sql/Statement :: v38 = getSqlStatement()::JM,71
+71 :: CALL :: call :: I :: v40 = v38.executeUpdate(v36)::JM,71
+85 :: EXPR :: assign :: null :: PHI v24 = v6, v23::CF,45:JM,71

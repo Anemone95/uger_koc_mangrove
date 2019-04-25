@@ -1,0 +1,15 @@
+[58, 62]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest09074.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,27:CD,32:CD,36:CD,41:CD,46:CD,51:CD,55:CD,58
+27 :: CALL :: call :: Ljava/lang/String :: v19 = v15.doSomething(v14)::JM,58:CL,158
+32 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v20 = new java.lang.StringBuilder::JM,58
+36 :: CALL :: call :: Ljava/lang/StringBuilder :: v24 = v20.append(#(UPDATE USERS SET PASS...))::JM,58
+41 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v24.append(v19)::JM,58
+46 :: CALL :: call :: Ljava/lang/StringBuilder :: v29 = v26.append(#(' WHERE USERNAME='foo'))::JM,58
+51 :: CALL :: call :: Ljava/lang/String :: v31 = v29.toString()::JM,58
+55 :: CALL :: call :: Ljava/sql/Statement :: v33 = getSqlStatement()::JM,58
+58 :: CALL :: call :: I :: v35 = v33.executeUpdate(v31)::JM,58
+158 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest09074.Test.doSomething(java.lang.String)::CF,159:CD,163:CD,167
+159 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest09074.Test.doSomething(java.lang.String)::JM,58
+163 :: CALL :: call :: Ljava/lang/String :: v5 = htmlEscape(p1 $param )::JM,163:JM,167
+167 :: NORM :: compound :: Ljava/lang/String :: return v5::CF,159

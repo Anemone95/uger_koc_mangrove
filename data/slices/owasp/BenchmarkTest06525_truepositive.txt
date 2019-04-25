@@ -1,0 +1,13 @@
+[51, 46]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest06525.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,11:CD,20:CD,24:CD,29:CD,34:CD,39:CD,43:CD,46
+7 :: CALL :: call :: Ljava/lang/String :: v6 = p1 $request .getQueryString()::JM,11
+11 :: CALL :: call :: [Ljava/lang/String :: v9 = v6.split(#( ))::JM,11
+16 :: EXPR :: reference :: Ljava/lang/Object :: v11 = v9[#(0)]::JM,46
+20 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v12 = new java.lang.StringBuilder::JM,46
+24 :: CALL :: call :: Ljava/lang/StringBuilder :: v16 = v12.append(#(SELECT * from USERS w...))::JM,46
+29 :: CALL :: call :: Ljava/lang/StringBuilder :: v18 = v16.append(v11)::JM,46
+34 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v18.append(#('))::JM,46
+39 :: CALL :: call :: Ljava/lang/String :: v23 = v21.toString()::JM,46
+43 :: CALL :: call :: Ljava/sql/Statement :: v25 = getSqlStatement()::JM,46
+46 :: CALL :: call :: Z :: v28 = v25.execute(v23, #(1))::JM,46

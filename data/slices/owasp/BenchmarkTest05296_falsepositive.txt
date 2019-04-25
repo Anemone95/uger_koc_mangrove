@@ -1,0 +1,19 @@
+[51, 46]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest05296.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,12:CD,17:CD,18:CD,20:CD,24:CD,29:CD,34:CD,39:CD,43:CD,46:CD,61
+12 :: CALL :: call :: Ljava/lang/String :: v9 = v5.getTheParameter(#(foo))::JM,61:CL,152
+17 :: EXPR :: assign :: Ljava/lang/Object :: v12 = #(294) - #(86)::DD,18
+18 :: PRED :: IF :: Z :: if (v12 <= #(200)) goto 44::CD,61
+20 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v16 = new java.lang.StringBuilder::JM,46
+24 :: CALL :: call :: Ljava/lang/StringBuilder :: v20 = v16.append(#(SELECT * from USERS w...))::JM,46
+29 :: CALL :: call :: Ljava/lang/StringBuilder :: v22 = v20.append(v15)::JM,46
+34 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v22.append(#('))::JM,46
+39 :: CALL :: call :: Ljava/lang/String :: v27 = v25.toString()::JM,46
+43 :: CALL :: call :: Ljava/sql/Statement :: v29 = getSqlStatement()::JM,46
+46 :: CALL :: call :: Z :: v32 = v29.execute(v27, #(1))::JM,46
+61 :: EXPR :: assign :: null :: PHI v15 = #(This_should_always_happen), v9::CF,20:JM,46
+152 :: ENTR :: entry :: null :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::CE,153:CD,160:CD,165
+153 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.helpers.SeparateClassRequest.getTheParameter(java.lang.String)::JM,61
+157 :: EXPR :: reference :: Ljavax/servlet/http/HttpServletRequest :: v4 = p0 $this .request::JM,165
+160 :: CALL :: call :: Ljava/lang/String :: v6 = v4.getParameter(p1 $p )::JM,165
+165 :: NORM :: compound :: Ljava/lang/String :: return v6::CF,153

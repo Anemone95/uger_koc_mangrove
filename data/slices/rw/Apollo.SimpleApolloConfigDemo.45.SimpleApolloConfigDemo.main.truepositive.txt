@@ -1,0 +1,30 @@
+[354, 338, 340, 341, 345, 349]
+1 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.demo.api.SimpleApolloConfigDemo.main(java.lang.String[])::CD,5:CD,21:CD,35:CD,46:CD,59
+5 :: NORM :: declaration :: Lcom/ctrip/framework/apollo/demo/api/SimpleApolloConfigDemo :: v3 = new com.ctrip.framework.apollo.demo.api.SimpleApolloConfigDemo::JM,341:JM,345:JM,332
+21 :: NORM :: declaration :: Ljava/io/BufferedReader :: v11 = new java.io.BufferedReader::JM,341:JM,345:JM,332
+35 :: CALL :: call :: Ljava/lang/String :: v18 = v11.readLine()::JM,341:JM,345:JM,332
+46 :: CALL :: call :: Ljava/lang/String :: v24 = v18.trim()::JM,341:JM,345:JM,332
+59 :: CALL :: call :: Ljava/lang/String :: v30 = v3.getConfig(v24)::JM,341:JM,345:JM,332:CL,321
+191 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.demo.api.SimpleApolloConfigDemo.<clinit>()::CF,194:CD,195:CD,199
+194 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lcom/ctrip/framework/apollo/demo/api/SimpleApolloConfigDemo>-><Primordial,Ljava/lang/Class>::JM,195:JM,199
+195 :: CALL :: call :: Lorg/slf4j/Logger :: v4 = getLogger(v2)::JM,195:JM,199
+199 :: EXPR :: modify :: Lorg/slf4j/Logger :: com.ctrip.framework.apollo.demo.api.SimpleApolloConfigDemo.logger = v4::
+203 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.ConfigService.<clinit>()::
+215 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.build.ApolloInjector.<clinit>()::CF,218
+218 :: NORM :: declaration :: Ljava/lang/Object :: v2 = new java.lang.Object::JM,218
+227 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.Tracer.<clinit>()::CD,243:CD,249
+243 :: NORM :: declaration :: Ljava/lang/Object :: v7 = new java.lang.Object::JM,243
+249 :: CALL :: call :: Lcom/ctrip/framework/apollo/tracer/spi/MessageProducer :: v10 = getProducer()::CL,391
+259 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.internals.NullMessageProducerManager.<clinit>()::
+271 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.internals.NullMessageProducer.<clinit>()::
+321 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.demo.api.SimpleApolloConfigDemo.getConfig(java.lang.String)::CD,332:CD,338:CD,340:CD,349:CD,354:JM,341:JM,345
+326 :: EXPR :: reference :: Lcom/ctrip/framework/apollo/Config :: v4 = p0 $this .config::JM,345:JM,332
+329 :: EXPR :: reference :: Ljava/lang/String :: v5 = p0 $this .DEFAULT_VALUE::JM,345:JM,332
+332 :: CALL :: call :: Ljava/lang/String :: v7 = v4.getProperty(p1 $key , v5)::JM,345:JM,332:JM,341
+338 :: EXPR :: reference :: Lorg/slf4j/Logger :: v8 = com.ctrip.framework.apollo.demo.api.SimpleApolloConfigDemo.logger::JM,354:CF,340
+340 :: NORM :: declaration :: [Ljava/lang/Object :: v11 = new java.lang.Object[]::JM,354
+341 :: EXPR :: modify :: Ljava/lang/Object :: v11[#(0)] = p1 $key ::
+345 :: EXPR :: modify :: Ljava/lang/Object :: v11[#(1)] = v7::
+349 :: CALL :: call :: Ljava/lang/String :: v15 = format(#(Loading key : %s with...), v11)::JM,354
+354 :: CALL :: call :: V :: v8.info(v15)::JM,354
+391 :: ENTR :: entry :: null :: com.ctrip.framework.apollo.tracer.Tracer.getProducer()::

@@ -1,0 +1,21 @@
+[70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 84]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest01512.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,7:CD,12:CD,16:CD,22:CD,26:CD,32:CD,38:CD,43:CD,44:CD,48:CD,53:CD,58:CD,63:CD,67:CD,70:CD,79
+7 :: CALL :: call :: Ljava/lang/String :: v7 = p1 $request .getHeader(#(foo))::JM,22
+12 :: NORM :: declaration :: Ljava/util/HashMap :: v9 = new java.util.HashMap::JM,43
+16 :: CALL :: call :: Ljava/lang/Object :: v14 = v9.put(#(keyA-45504), #(a Value))::
+22 :: CALL :: call :: Ljava/lang/String :: v17 = v7.toString()::JM,22
+26 :: CALL :: call :: Ljava/lang/Object :: v19 = v9.put(#(keyB-45504), v17)::
+32 :: CALL :: call :: Ljava/lang/Object :: v23 = v9.put(#(keyC), #(another Value))::
+38 :: CALL :: call :: Ljava/lang/Object :: v25 = v9.get(#(keyB-45504))::JM,43
+43 :: EXPR :: assign :: Ljava/lang/Object :: v26 = CHECKCAST v25::JM,79:CF,44
+44 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v27 = new java.lang.StringBuilder::JM,79
+48 :: CALL :: call :: Ljava/lang/StringBuilder :: v31 = v27.append(#(SELECT * from USERS w...))::JM,79
+53 :: CALL :: call :: Ljava/lang/StringBuilder :: v33 = v31.append(v26)::JM,79
+58 :: CALL :: call :: Ljava/lang/StringBuilder :: v36 = v33.append(#('))::JM,79
+63 :: CALL :: call :: Ljava/lang/String :: v38 = v36.toString()::JM,79
+67 :: CALL :: call :: Ljava/sql/Connection :: v40 = getSqlConnection()::JM,79
+70 :: NORM :: declaration :: [Ljava/lang/String :: v42 = new java.lang.String[]::JM,79
+71 :: EXPR :: modify :: Ljava/lang/Object :: v42[#(0)] = #(Column1)::
+75 :: EXPR :: modify :: Ljava/lang/Object :: v42[#(1)] = #(Column2)::
+79 :: CALL :: call :: Ljava/sql/PreparedStatement :: v48 = v40.prepareStatement(v38, v42)::JM,79

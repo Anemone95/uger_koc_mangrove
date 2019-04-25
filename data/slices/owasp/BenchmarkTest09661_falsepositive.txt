@@ -1,0 +1,24 @@
+[64, 65, 66, 67, 68, 73, 59, 60, 61, 62, 63]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest09661.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,28:CD,33:CD,37:CD,42:CD,47:CD,52:CD,56:CD,59:CD,68
+28 :: CALL :: call :: Ljava/lang/String :: v20 = v16.doSomething(v15)::JM,68:CL,191
+33 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v21 = new java.lang.StringBuilder::JM,68
+37 :: CALL :: call :: Ljava/lang/StringBuilder :: v25 = v21.append(#(SELECT * from USERS w...))::JM,68
+42 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v25.append(v20)::JM,68
+47 :: CALL :: call :: Ljava/lang/StringBuilder :: v30 = v27.append(#('))::JM,68
+52 :: CALL :: call :: Ljava/lang/String :: v32 = v30.toString()::JM,68
+56 :: CALL :: call :: Ljava/sql/Connection :: v34 = getSqlConnection()::JM,68
+59 :: NORM :: declaration :: [Ljava/lang/String :: v36 = new java.lang.String[]::JM,68
+60 :: EXPR :: modify :: Ljava/lang/Object :: v36[#(0)] = #(Column1)::
+64 :: EXPR :: modify :: Ljava/lang/Object :: v36[#(1)] = #(Column2)::
+68 :: CALL :: call :: Ljava/sql/PreparedStatement :: v41 = v34.prepareStatement(v32, v36)::JM,68
+191 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest09661.Test.doSomething(java.lang.String)::CE,192:CD,196:CD,200:CD,206:CD,210:CD,216:CD,228:CD,233:CD,234
+192 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest09661.Test.doSomething(java.lang.String)::JM,68
+196 :: NORM :: declaration :: Ljava/util/HashMap :: v5 = new java.util.HashMap::JM,233
+200 :: CALL :: call :: Ljava/lang/Object :: v10 = v5.put(#(keyA-47295), #(a_Value))::
+206 :: CALL :: call :: Ljava/lang/String :: v13 = p1 $param .toString()::JM,196:JM,206
+210 :: CALL :: call :: Ljava/lang/Object :: v15 = v5.put(#(keyB-47295), v13)::
+216 :: CALL :: call :: Ljava/lang/Object :: v19 = v5.put(#(keyC), #(another_Value))::
+228 :: CALL :: call :: Ljava/lang/Object :: v24 = v5.get(#(keyA-47295))::JM,233
+233 :: EXPR :: assign :: Ljava/lang/Object :: v25 = CHECKCAST v24::DD,234
+234 :: NORM :: compound :: Ljava/lang/String :: return v25::DD,192

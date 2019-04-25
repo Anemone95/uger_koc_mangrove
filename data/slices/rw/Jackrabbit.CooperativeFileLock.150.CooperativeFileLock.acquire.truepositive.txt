@@ -1,0 +1,94 @@
+[772, 774, 779, 784, 788]
+1 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.util.CooperativeFileLock.acquire()::CD,35:JM,274
+35 :: CALL :: call :: V :: p0 $this .lockFile()::JM,274:CL,270
+1114 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.util.CooperativeFileLock.getException(java.lang.Throwable)::CD,1120:CD,1128:CD,1133
+1120 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v5 = new java.lang.StringBuilder::
+1125 :: EXPR :: reference :: Ljava/lang/String :: v8 = p0 $this .fileName::
+1128 :: CALL :: call :: Ljava/lang/StringBuilder :: v10 = v5.append(v8)::
+1133 :: CALL :: call :: Ljava/lang/String :: v12 = v10.toString()::
+191 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.util.CooperativeFileLock.<clinit>()::CF,194:CD,195:CD,199
+194 :: EXPR :: assign :: Ljava/lang/Class :: v2 = metadata <Application,Lorg/apache/jackrabbit/core/util/CooperativeFileLock>-><Primordial,Ljava/lang/Class>::JM,195:JM,199
+195 :: CALL :: call :: Lorg/slf4j/Logger :: v4 = getLogger(v2)::JM,195:JM,199
+199 :: EXPR :: modify :: Lorg/slf4j/Logger :: org.apache.jackrabbit.core.util.CooperativeFileLock.LOG = v4::
+270 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.util.CooperativeFileLock.lockFile()::CD,274:CD,281:CD,287:CD,291:CD,300:CD,304:CD,357:CD,360:CD,364
+274 :: NORM :: declaration :: Ljava/util/Properties :: v3 = new java.util.Properties::DD,278
+278 :: EXPR :: modify :: Ljava/util/Properties :: p0 $this .properties = v3::
+281 :: CALL :: call :: Ljava/util/UUID :: v6 = randomUUID()::JM,287
+284 :: EXPR :: reference :: Ljava/util/Properties :: v7 = p0 $this .properties::
+287 :: CALL :: call :: Ljava/lang/String :: v10 = v6.toString()::JM,287
+291 :: CALL :: call :: Ljava/lang/Object :: v12 = v7.setProperty(#(id), v10)::
+300 :: CALL :: call :: Z :: v15 = createNewFile(v13)::JM,304:CL,507
+304 :: PRED :: IF :: Z :: if (v15 != #(0)) goto 114::CD,305:CD,308:CD,336:CD,444
+305 :: CALL :: call :: V :: p0 $this .waitUntilOld()::CL,538
+308 :: CALL :: call :: V :: p0 $this .save()::CL,620
+312 :: CALL :: call :: V :: p0 $this .sleep(#(250))::CL,718
+316 :: CALL :: call :: Ljava/util/Properties :: v23 = p0 $this .load()::JM,274:CL,737
+320 :: EXPR :: reference :: Ljava/util/Properties :: v24 = p0 $this .properties::
+323 :: CALL :: call :: Z :: v26 = v23.equals(v24)::
+335 :: EXPR :: assign :: Ljava/lang/Object :: v28 = v29 + #(1)::DD,444
+336 :: PRED :: IF :: Z :: if (v29 < #(8)) goto 56::CD,312:CD,316:CD,323:CD,335:CD,444
+357 :: CALL :: call :: V :: p0 $this .save()::CL,620
+360 :: CALL :: call :: V :: p0 $this .sleep(#(25))::CL,718
+364 :: CALL :: call :: Ljava/util/Properties :: v39 = p0 $this .load()::JM,274:CL,737
+444 :: EXPR :: assign :: null :: PHI v29 = #(0), v28::DD,335:DD,336
+507 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.util.CooperativeFileLock.createNewFile(java.lang.String)::CF,508:CF,525:CD,511:CD,526:CD,529
+508 :: EXIT :: exit :: Z :: org.apache.jackrabbit.core.util.CooperativeFileLock.createNewFile(java.lang.String)::JM,304
+511 :: NORM :: declaration :: Ljava/io/File :: v3 = new java.io.File::JM,521
+517 :: CALL :: call :: Z :: v8 = v3.createNewFile()::JM,521
+521 :: NORM :: compound :: Z :: return v8::CF,508
+525 :: EXPR :: assign :: Ljava/lang/Object :: v12 = v14 + #(1)::CF,508:DD,529
+526 :: PRED :: IF :: Z :: if (v14 < #(16)) goto 15::CD,517:CD,521:CD,527
+527 :: NORM :: compound :: Z :: return #(0)::CF,508
+529 :: EXPR :: assign :: null :: PHI v14 = #(0), v12::DD,525:DD,526
+538 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.util.CooperativeFileLock.waitUntilOld()::CD,543:CD,551:CD,555:CD,558:CD,559:CD,560:CD,589
+543 :: NORM :: declaration :: Ljava/io/File :: v5 = new java.io.File::JM,558
+544 :: EXPR :: reference :: Ljava/lang/String :: v6 = p0 $this .fileName::
+551 :: CALL :: call :: J :: v9 = v5.lastModified()::JM,558
+555 :: CALL :: call :: J :: v11 = currentTimeMillis()::JM,558
+558 :: EXPR :: assign :: Ljava/lang/Object :: v12 = v11 - v9::DD,559:DD,573
+559 :: EXPR :: assign :: Z :: v14 = v12 == #(-2000 l)::DD,560
+560 :: PRED :: IF :: Z :: if (v14 >= #(0)) goto 67::CD,573:CD,574
+573 :: EXPR :: assign :: Z :: v16 = v12 == #(2000 l)::DD,574
+574 :: PRED :: IF :: Z :: if (v16 <= #(0)) goto 75::CD,543:CD,551:CD,555:CD,558:CD,559:CD,560
+589 :: CALL :: call :: Ljavax/jcr/RepositoryException :: v30 = p0 $this .error(#(Lock file recently mo...))::CL,815
+620 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.util.CooperativeFileLock.save()::CD,624:CD,635:CD,648:CD,656:CD,663:CD,665:CD,669:CD,694
+624 :: NORM :: declaration :: Ljava/io/FileOutputStream :: v3 = new java.io.FileOutputStream::
+625 :: EXPR :: reference :: Ljava/lang/String :: v4 = p0 $this .fileName::
+632 :: EXPR :: reference :: Ljava/util/Properties :: v6 = p0 $this .properties::
+635 :: CALL :: call :: V :: v6.store(v3, #(CooperativeFileLock))::
+648 :: NORM :: declaration :: Ljava/io/File :: v12 = new java.io.File::
+649 :: EXPR :: reference :: Ljava/lang/String :: v13 = p0 $this .fileName::
+656 :: CALL :: call :: J :: v16 = v12.lastModified()::
+663 :: EXPR :: reference :: Lorg/slf4j/Logger :: v17 = org.apache.jackrabbit.core.util.CooperativeFileLock.LOG::JM,665:JM,669
+665 :: CALL :: call :: Z :: v19 = v17.isDebugEnabled()::JM,665:JM,669
+669 :: PRED :: IF :: Z :: if (v19 == #(0)) goto 102::CD,672:CD,680:CD,685
+672 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v22 = new java.lang.StringBuilder::
+677 :: EXPR :: reference :: Ljava/util/Properties :: v25 = p0 $this .properties::
+680 :: CALL :: call :: Ljava/lang/StringBuilder :: v27 = v22.append(v25)::
+685 :: CALL :: call :: Ljava/lang/String :: v29 = v27.toString()::
+694 :: CALL :: call :: Ljavax/jcr/RepositoryException :: v33 = p0 $this .getException(v31)::CL,1114
+718 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.util.CooperativeFileLock.sleep(int)::CD,728
+728 :: CALL :: call :: Ljavax/jcr/RepositoryException :: v8 = p0 $this .getException(v6)::CL,1114
+737 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.util.CooperativeFileLock.load()::CE,738:CD,741:CD,745:CD,753:CD,765:CD,767:CD,771:CD,792:CD,793
+738 :: EXIT :: exit :: Ljava/util/Properties :: org.apache.jackrabbit.core.util.CooperativeFileLock.load()::
+741 :: NORM :: declaration :: Ljava/util/Properties :: v3 = new java.util.Properties::JM,788:DD,792
+745 :: NORM :: declaration :: Ljava/io/FileInputStream :: v5 = new java.io.FileInputStream::
+746 :: EXPR :: reference :: Ljava/lang/String :: v6 = p0 $this .fileName::
+753 :: CALL :: call :: V :: v3.load(v5)::
+765 :: EXPR :: reference :: Lorg/slf4j/Logger :: v12 = org.apache.jackrabbit.core.util.CooperativeFileLock.LOG::JM,771:JM,767
+767 :: CALL :: call :: Z :: v14 = v12.isDebugEnabled()::JM,771:JM,767
+771 :: PRED :: IF :: Z :: if (v14 == #(0)) goto 75::CD,772:CD,774:CD,779:CD,784:CD,788:CF,792
+772 :: EXPR :: reference :: Lorg/slf4j/Logger :: v16 = org.apache.jackrabbit.core.util.CooperativeFileLock.LOG::CF,774:JM,788
+774 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v17 = new java.lang.StringBuilder::JM,788
+779 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v17.append(v3)::JM,788
+784 :: CALL :: call :: Ljava/lang/String :: v23 = v21.toString()::JM,788
+788 :: CALL :: call :: V :: v16.debug(v23)::JM,788
+792 :: NORM :: compound :: Ljava/util/Properties :: return v3::DD,738
+793 :: CALL :: call :: Ljavax/jcr/RepositoryException :: v27 = p0 $this .getException(v25)::CL,1114
+815 :: ENTR :: entry :: null :: org.apache.jackrabbit.core.util.CooperativeFileLock.error(java.lang.String)::CD,821:CD,829:CD,834:CD,839:CD,844
+821 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v5 = new java.lang.StringBuilder::
+826 :: EXPR :: reference :: Ljava/lang/String :: v8 = p0 $this .fileName::
+829 :: CALL :: call :: Ljava/lang/StringBuilder :: v10 = v5.append(v8)::
+834 :: CALL :: call :: Ljava/lang/StringBuilder :: v13 = v10.append(#(, reason: ))::
+839 :: CALL :: call :: Ljava/lang/StringBuilder :: v15 = v13.append(p1 $reason )::
+844 :: CALL :: call :: Ljava/lang/String :: v17 = v15.toString()::

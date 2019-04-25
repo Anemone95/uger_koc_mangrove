@@ -1,0 +1,17 @@
+[51, 56]
+
+1 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest18479.doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)::CD,21:CD,25:CD,29:CD,34:CD,39:CD,44:CD,48:CD,51
+136 :: ENTR :: entry :: null :: org.owasp.benchmark.testcode.BenchmarkTest18479.doSomething(java.lang.String)::CF,137:CD,140:CD,141:CD,143:CD,144
+137 :: EXIT :: exit :: Ljava/lang/String :: org.owasp.benchmark.testcode.BenchmarkTest18479.doSomething(java.lang.String)::JM,51
+140 :: EXPR :: assign :: Ljava/lang/Object :: v5 = #(126) + #(106)::DD,141
+141 :: PRED :: IF :: Z :: if (v5 <= #(200)) goto 21::CD,144
+143 :: NORM :: compound :: Ljava/lang/String :: return v8::CF,137
+144 :: EXPR :: assign :: null :: PHI v8 = #(This_should_always_happen), p1 $param ::DD,143
+21 :: CALL :: call :: Ljava/lang/String :: v16 = doSomething(v14)::JM,51:CL,136
+25 :: NORM :: declaration :: Ljava/lang/StringBuilder :: v17 = new java.lang.StringBuilder::JM,51
+29 :: CALL :: call :: Ljava/lang/StringBuilder :: v21 = v17.append(#(UPDATE USERS SET PASS...))::JM,51
+34 :: CALL :: call :: Ljava/lang/StringBuilder :: v23 = v21.append(v16)::JM,51
+39 :: CALL :: call :: Ljava/lang/StringBuilder :: v26 = v23.append(#(' WHERE USERNAME='foo'))::JM,51
+44 :: CALL :: call :: Ljava/lang/String :: v28 = v26.toString()::JM,51
+48 :: CALL :: call :: Ljava/sql/Statement :: v30 = getSqlStatement()::JM,51
+51 :: CALL :: call :: I :: v33 = v30.executeUpdate(v28, #(1))::JM,51
