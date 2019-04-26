@@ -3,7 +3,7 @@
 
 ## Directories 
 
-- **hef,bow,lstm**, and **ggnn** directories contain the machine learning scripts, datasets, and dictinories. `run_exp.sh` scripts under these directories show the usage of that ML code. And the data directories contain sample input files to the ML script
+- **hef,bow,lstm**, and **ggnn** directories contain the machine learning scripts, datasets, and dictionaries. `run_exp.sh` scripts under these directories show the usage of that ML code. And the data directories contain sample input files to the ML script.
 
 - **parsers** directory contain the scripts that process the raw slice files to create the ML input files.
 
@@ -13,10 +13,10 @@
 - **Slicer** diretory contains the java program that computes the backward slices (and some other useful artifacts) from programs source code.
 
 ## Computing the Program Slices
-We used Joana and WALA libraries for computing the backward slice. You can obtain Joana from https://github.com/joana-team/joana. Follow the for compilation instructions.
+We used Joana and WALA libraries for computing the backward slice. You can obtain Joana from https://github.com/joana-team/joana. Follow their instructions for compilation.
 Import the slicer project into the Eclipse IDE. 
 Next, obtain the sources of the target files from their repositories (use the versions specified in the paper).
-You will need to update some paths in `pom.xml` file and the some java files to point to the target programs and the Joana jars.
+You will need to update the paths in `pom.xml` file and the java files to point to the target programs and the Joana jars.
 After all the paths are fixed, running `edu.umd.cs.mangrove.slicing.JoanaSlicingTest.java` as Java Application should produce the backward slice the example program from the paper (BenchmarkTest06570).
 
 
@@ -32,8 +32,8 @@ In Eclipse preferences, open SpotBugs configuration, add FindSecBugs jar file un
 - SqlInjectionDetector
 - XPathInjectionDetector
 - XssServletDetector
-- XssJsp
-- XssRequestWrapper
+- XssJspDetector
+- XssRequestWrapperDetector
 
 Note that all of these detectors are from the Find Security Bugs provider.
 
