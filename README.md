@@ -3,14 +3,14 @@
 
 ## Directories 
 
-- **hef,bow,lstm**, and **ggnn** directories contain the machine learning scripts, datasets, and dictionaries. `run_exp.sh` scripts under these directories show the usage of that ML code. And the data directories contain sample input files to the ML script.
+- **hef, bow, lstm**, and **ggnn** directories contain the machine learning scripts, datasets, and dictionaries. `run_exp.sh` scripts under these directories show the usage of that ML code. And the data directories contain sample input files to the ML script.
 
 - **parsers** directory contain the scripts that process the raw slice files to create the ML input files.
 
 - **data** directory contains the raw program slices, FindSecBugs reports, and labels (classification) files.
 
-- **analyze** diretory contains the R scripts used to create the tables in te paper.
-- **Slicer** diretory contains the java program that computes the backward slices (and some other useful artifacts) from programs source code.
+- **analyze** directory contains the R scripts used to create the tables in the paper.
+- **Slicer** directory contains the java program that computes the backward slices (and some other useful artifacts) from programs source code.
 
 ## Computing the Program Slices
 We used Joana and WALA libraries for computing the backward slice. You can obtain Joana from https://github.com/joana-team/joana. Follow their instructions for compilation.
@@ -22,7 +22,7 @@ After all the paths are fixed, running `edu.umd.cs.mangrove.slicing.JoanaSlicing
 
 ## Creating the FindSecBugs Reports
 First, install the SputBugs plugin to Ecplise. Obtain FindSecBugs 1.4.6 source and compile it to get the jar file (using mvn).
-In Eclipse preferences, open SpotBugs configuration, add FindSecBugs jar file under the 'Plugins and misc. Settings' tab and only select following detectors under the 'Detector Configuration' tab. This completes the confiugration of the SA tool.
+In Eclipse preferences, open SpotBugs configuration, add FindSecBugs jar file under the 'Plugins and misc. Settings' tab and only select the following detectors under the 'Detector Configuration' tab. This completes the configuration of the SA tool.
 
 - CommandInjectionDetector
 - CrlfLogInjectionDetector
