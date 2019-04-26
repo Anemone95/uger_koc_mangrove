@@ -1,5 +1,5 @@
 ## An Empirical Assessment of Machine Learning Approaches for Triaging Reports of a Java Static Analysis Tool
-###Ugur Koc, Shiyi Wei, Jeffrey Foster, Marine Carpuat and Adam   Porter
+###Ugur Koc, Shiyi Wei, Jeffrey Foster, Marine Carpuat, and Adam Porter
 
 ## Directories 
 
